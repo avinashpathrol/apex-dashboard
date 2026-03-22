@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX Trading Dashboard</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0d0d0f; color: #e8e8e8; min-height: 100vh; padding: 20px; }
+
+  .setup { background: #18181b; border: 1px solid #2a2a2e; border-radius: 12px; padding: 24px; max-width: 420px; margin: 50px auto; }
+  .setup h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .setup p { font-size: 13px; color: #888; margin-bottom: 18px; line-height: 1.5; }
+  .logo { font-size: 28px; font-weight: 700; letter-spacing: -1px; color: #22c55e; margin-bottom: 4px; }
+  input { width: 100%; background: #0d0d0f; border: 1px solid #2a2a2e; border-radius: 8px; padding: 11px 12px; color: #e8e8e8; font-size: 13px; font-family: monospace; margin-bottom: 10px; outline: none; -webkit-appearance: none; }
+  input:focus { border-color: #444; }
+  .connect-btn { width: 100%; background: #15803d; border: none; border-radius: 8px; padding: 12px; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .connect-btn:hover { background: #16a34a; }
+  .hint { font-size: 11px; color: #555; margin-top: 12px; line-height: 1.7; }
+  .hint a { color: #6b8cff; }
+  .err { color: #e05555; font-size: 12px; margin-top: 8px; }
+  .saved-msg { background: #052e16; color: #22c55e; font-size: 12px; padding: 8px 12px; border-radius: 6px; margin-bottom: 14px; }
+
+  .dash { display: none; max-width: 860px; margin: 0 auto; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .bot-name { font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .auto-badge { background: #052e16; color: #22c55e; font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .last-run { font-size: 11px; color: #555; font-family: monospace; margin-top: 3px; }
+  .timer-box { display: flex; align-items: center; gap: 8px; }
+  .next-run { background: #18181b; border: 1px solid #2a2a2e; border-radius: 8px; padding: 7px 12px; text-align: center; min-width: 110px; }
+  .next-label { font-size: 9px; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+  .next-val { font-size: 16px; font-weight: 600; font-family: monospace; color: #f59e0b; }
+  .progress-wrap { background: #1a1a1d; border-radius: 3px; height: 3px; margin-top: 4px; overflow: hidden; }
+  .progress-bar { height: 100%; border-radius: 3px; background: #f59e0b; transition: width 1s linear; }
+  .refresh-btn { background: #18181b; border: 1px solid #2a2a2e; border-radius: 7px; padding: 7px 12px; color: #aaa; font-size: 12px; cursor: pointer; white-space: nowrap; }
+  .refresh-btn:hover { color: #e8e8e8; }
+  .logout-btn { background: transparent; border: none; color: #444; font-size: 11px; cursor: pointer; padding: 4px; }
+  .logout-btn:hover { color: #888; }
+
+  .grid4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 10px; }
+  @media(min-width: 600px) { .grid4 { grid-template-columns: repeat(4, 1fr); } }
+  .mcard { background: #18181b; border: 1px solid #2a2a2e; border-radius: 10px; padding: 12px 14px; }
+  .mcard .label { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px; }
+  .mcard .val { font-size: 20px; font-weight: 600; font-family: monospace; }
+  .mcard .sub { font-size: 10px; color: #555; margin-top: 3px; }
+  .val.buy { color: #22c55e; }
+  .val.sell { color: #ef4444; }
+  .val.hold { color: #f59e0b; }
+  .val.skip { color: #555; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 10px; }
+  @media(min-width: 600px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+  .panel { background: #18181b; border: 1px solid #2a2a2e; border-radius: 10px; padding: 14px; }
+  .panel-title { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .sig { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid #1f1f22; font-size: 12px; color: #bbb; }
+  .sig:last-child { border-bottom: none; }
+  .sigd { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .bull-dot { background: #22c55e; }
+  .bear-dot { background: #ef4444; }
+
+  .hist-panel { background: #18181b; border: 1px solid #2a2a2e; border-radius: 10px; padding: 14px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 480px; }
+  th { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.06em; padding: 0 10px 10px 0; text-align: left; font-weight: 500; border-bottom: 1px solid #222; }
+  td { padding: 8px 10px 8px 0; border-bottom: 1px solid #1a1a1d; color: #bbb; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .b-buy { background: #052e16; color: #22c55e; }
+  .b-sell { background: #2d0a0a; color: #ef4444; }
+  .b-hold { background: #2d1f06; color: #f59e0b; }
+  .b-skip { background: #1a1a1d; color: #555; }
+  .bar-wrap { background: #111; border-radius: 3px; height: 4px; width: 50px; overflow: hidden; display: inline-block; vertical-align: middle; margin-right: 5px; }
+  .bar { height: 100%; border-radius: 3px; }
+  .loading { text-align: center; padding: 24px; color: #555; font-size: 13px; }
+  .reason-cell { max-width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #666; font-size: 11px; }
+  .flash { animation: flash 0.6s ease; }
+  @keyframes flash { 0%,100%{opacity:1} 50%{opacity:0.35} }
+</style>
+</head>
+<body>
+
+<div class="setup" id="setup">
+  <div class="logo">APEX</div>
+  <h2>Trading Dashboard</h2>
+  <p>Enter your GitHub token once — it's saved on this device so you never need to enter it again.</p>
+  <div id="saved-indicator"></div>
+  <input type="password" id="token" placeholder="GitHub Personal Access Token" autocomplete="current-password" />
+  <input type="text" id="repo" value="avinashpathrol/apex-trading-bot" />
+  <button class="connect-btn" onclick="connect()">Connect &amp; Save</button>
+  <div class="hint">
+    Token saved locally on this device only — never shared.<br>
+    Need a token? <a href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">Generate here</a> — tick <strong>repo</strong>.
+  </div>
+  <div class="err" id="err"></div>
+</div>
+
+<div class="dash" id="dash">
+  <div class="topbar">
+    <div>
+      <div class="bot-name"><div class="dot"></div> APEX Bot <span class="auto-badge">LIVE</span></div>
+      <div class="last-run" id="last-time">fetching...</div>
+    </div>
+    <div class="timer-box">
+      <div class="next-run">
+        <div class="next-label">Refresh in</div>
+        <div class="next-val" id="countdown">5:00</div>
+        <div class="progress-wrap"><div class="progress-bar" id="progress" style="width:100%"></div></div>
+      </div>
+      <button class="refresh-btn" onclick="manualRefresh()">↻ Now</button>
+      <button class="logout-btn" onclick="logout()" title="Sign out">✕</button>
+    </div>
+  </div>
+
+  <div class="grid4">
+    <div class="mcard"><div class="label">BTC Price</div><div class="val" id="m-price">—</div><div class="sub" id="m-price-time"></div></div>
+    <div class="mcard"><div class="label">Last Action</div><div class="val" id="m-action">—</div></div>
+    <div class="mcard"><div class="label">Confidence</div><div class="val" id="m-conf">—</div></div>
+    <div class="mcard"><div class="label">Total Runs</div><div class="val" id="m-total">—</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel"><div class="panel-title">Bullish signals</div><div id="bull">—</div></div>
+    <div class="panel"><div class="panel-title">Bearish signals</div><div id="bear">—</div></div>
+  </div>
+
+  <div class="hist-panel">
+    <div class="panel-title">Run history</div>
+    <div id="loading" class="loading">Loading runs...</div>
+    <table id="hist-table" style="display:none">
+      <thead><tr><th>Time</th><th>Price</th><th>Action</th><th>Confidence</th><th>Reason</th></tr></thead>
+      <tbody id="hist-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+let TOKEN, REPO;
+let countdownSecs = 300;
+let countdownInterval = null;
+let autoInterval = null;
+const SECS = 300;
+const TK = 'apex_token';
+const RK = 'apex_repo';
+
+async function gh(url, raw) {
+  const r = await fetch(url, { headers: { Authorization: `token ${TOKEN}`, Accept: raw ? 'application/vnd.github.v3.raw' : 'application/vnd.github+json' } });
+  if (!r.ok) throw new Error(r.status);
+  return raw ? r.text() : r.json();
+}
+
+function parse(log) {
+  let summary = null, bull = [], bear = [];
+  for (const line of log.split('\n')) {
+    if (line.includes('SUMMARY:')) { const i = line.indexOf('{'); if (i > -1) try { summary = JSON.parse(line.slice(i)); } catch(e){} }
+    if (line.includes('Bullish:')) { const m = line.match(/\[(.+)\]/); if (m) bull = m[1].split(',').map(s=>s.trim().replace(/['"]/g,'')); }
+    if (line.includes('Bearish:')) { const m = line.match(/\[(.+)\]/); if (m) bear = m[1].split(',').map(s=>s.trim().replace(/['"]/g,'')); }
+  }
+  return { summary, bull, bear };
+}
+
+function fmt(iso) { try { return new Date(iso).toLocaleString('en-CA',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}); } catch(e) { return iso||'—'; } }
+
+function badge(action, status) {
+  if (!action) return '<span class="badge b-skip">—</span>';
+  if ((status||'').toLowerCase().includes('skipped')) return '<span class="badge b-skip">SKIPPED</span>';
+  if (action==='BUY') return '<span class="badge b-buy">BUY</span>';
+  if (action==='SELL') return '<span class="badge b-sell">SELL</span>';
+  return '<span class="badge b-hold">HOLD</span>';
+}
+function barColor(a) { return a==='BUY'?'#22c55e':a==='SELL'?'#ef4444':'#f59e0b'; }
+
+function startCountdown() {
+  countdownSecs = SECS;
+  if (countdownInterval) clearInterval(countdownInterval);
+  countdownInterval = setInterval(() => {
+    countdownSecs = Math.max(0, countdownSecs - 1);
+    const m = Math.floor(countdownSecs/60), s = countdownSecs%60;
+    document.getElementById('countdown').textContent = m+':'+String(s).padStart(2,'0');
+    document.getElementById('progress').style.width = ((countdownSecs/SECS)*100)+'%';
+  }, 1000);
+}
+
+function manualRefresh() { startCountdown(); load(); }
+
+function logout() {
+  localStorage.removeItem(TK); localStorage.removeItem(RK);
+  if (autoInterval) clearInterval(autoInterval);
+  if (countdownInterval) clearInterval(countdownInterval);
+  document.getElementById('dash').style.display='none';
+  document.getElementById('setup').style.display='block';
+  document.getElementById('token').value='';
+  document.getElementById('saved-indicator').innerHTML='';
+}
+
+async function load() {
+  document.getElementById('last-time').textContent = 'refreshing...';
+  try {
+    const runs = await gh(`https://api.github.com/repos/${REPO}/actions/runs?per_page=10`);
+    document.getElementById('m-total').textContent = runs.total_count || 0;
+    const rows = []; let latest = null;
+    for (const run of (runs.workflow_runs||[]).slice(0,8)) {
+      const jobs = await gh(`https://api.github.com/repos/${REPO}/actions/runs/${run.id}/jobs`);
+      const job = (jobs.jobs||[])[0]; if (!job) continue;
+      let p = { summary:null, bull:[], bear:[] };
+      try { const log = await gh(`https://api.github.com/repos/${REPO}/actions/jobs/${job.id}/logs`, true); p = parse(log); } catch(e){}
+      rows.push({run,p});
+      if (!latest && p.summary) latest = p;
+    }
+    if (latest) {
+      const s = latest.summary;
+      const pe = document.getElementById('m-price');
+      pe.textContent = s.price ? '$'+Number(s.price).toLocaleString('en-US',{maximumFractionDigits:0}) : '—';
+      pe.classList.add('flash'); setTimeout(()=>pe.classList.remove('flash'),700);
+      document.getElementById('m-price-time').textContent = fmt(s.run_time||'');
+      const ae = document.getElementById('m-action');
+      ae.textContent = s.action||'—'; ae.className='val '+(s.action||'skip').toLowerCase();
+      document.getElementById('m-conf').textContent = s.confidence ? s.confidence+'%' : '—';
+      document.getElementById('last-time').textContent = 'Last run: '+fmt(s.run_time||rows[0]?.run?.created_at);
+      document.getElementById('bull').innerHTML = latest.bull.length ? latest.bull.map(b=>`<div class="sig"><span class="sigd bull-dot"></span>${b}</div>`).join('') : '<span style="color:#555;font-size:12px;">None</span>';
+      document.getElementById('bear').innerHTML = latest.bear.length ? latest.bear.map(b=>`<div class="sig"><span class="sigd bear-dot"></span>${b}</div>`).join('') : '<span style="color:#555;font-size:12px;">None</span>';
+    }
+    document.getElementById('loading').style.display='none';
+    document.getElementById('hist-table').style.display='table';
+    document.getElementById('hist-body').innerHTML = rows.map(({run,p})=>{
+      const s=p.summary;
+      return `<tr>
+        <td>${fmt(run.created_at)}</td>
+        <td style="font-family:monospace">${s?'$'+Number(s.price).toLocaleString('en-US',{maximumFractionDigits:0}):'—'}</td>
+        <td>${badge(s?.action,s?.status)}</td>
+        <td><span class="bar-wrap"><span class="bar" style="width:${s?.confidence||0}%;background:${barColor(s?.action)}"></span></span><span style="font-size:11px;color:#666">${s?.confidence?s.confidence+'%':'—'}</span></td>
+        <td class="reason-cell" title="${s?.reason||''}">${s?.reason||'—'}</td>
+      </tr>`;
+    }).join('');
+  } catch(e) { document.getElementById('last-time').textContent = 'Error: '+e.message; }
+}
+
+async function startDashboard() {
+  document.getElementById('setup').style.display='none';
+  document.getElementById('dash').style.display='block';
+  load(); startCountdown();
+  if (autoInterval) clearInterval(autoInterval);
+  autoInterval = setInterval(()=>{ load(); startCountdown(); }, SECS*1000);
+}
+
+async function connect() {
+  TOKEN = document.getElementById('token').value.trim();
+  REPO = document.getElementById('repo').value.trim();
+  const err = document.getElementById('err'); err.textContent='';
+  if (!TOKEN||!REPO) { err.textContent='Please fill in both fields.'; return; }
+  try {
+    await gh(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1`);
+    localStorage.setItem(TK, TOKEN); localStorage.setItem(RK, REPO);
+    startDashboard();
+  } catch(e) { err.textContent='Connection failed. Check token has repo scope.'; }
+}
+
+window.addEventListener('load', async () => {
+  const saved = localStorage.getItem(TK);
+  const savedRepo = localStorage.getItem(RK);
+  if (saved && savedRepo) {
+    TOKEN = saved; REPO = savedRepo;
+    document.getElementById('saved-indicator').innerHTML = '<div class="saved-msg">✓ Saved — connecting automatically...</div>';
+    try {
+      await gh(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1`);
+      startDashboard();
+    } catch(e) {
+      localStorage.removeItem(TK);
+      document.getElementById('saved-indicator').innerHTML = '<div style="color:#e05555;font-size:12px;margin-bottom:12px;">Token expired — please reconnect.</div>';
+    }
+  }
+});
+</script>
+</body>
+</html>
