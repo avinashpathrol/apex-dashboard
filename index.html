@@ -1180,7 +1180,11 @@ function chMonth(d) { calM += d; if(calM>11){calM=0;calY++;} if(calM<0){calM=11;
 function byDay(et) {
   const m = {};
   for (const t of et) {
-    const k = t.time.slice(0,10);
+    // Use local timezone date, not UTC
+    const d = new Date(t.time);
+    const k = d.getFullYear() + '-' +
+              String(d.getMonth()+1).padStart(2,'0') + '-' +
+              String(d.getDate()).padStart(2,'0');
     if (!m[k]) m[k] = {pnl:0,count:0,wins:0,losses:0};
     m[k].pnl += t.pnl; m[k].count++;
     if (t.pnl > 0) m[k].wins++; else m[k].losses++;
