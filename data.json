@@ -1,20 +1,22 @@
 {
-  "generated_at": "2026-03-23T21:44:31.044497+00:00",
+  "generated_at": "2026-03-23T21:59:17.180188+00:00",
   "symbol": "XBTCAD",
-  "price": 97449.8,
+  "price": 97372.1,
   "cad_balance": 24.2261,
   "btc_balance": 0.0,
-  "action": "HOLD",
-  "confidence": 0,
+  "action": "SELL",
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "SKIPPED \u2014 balance issue",
+  "reason": "RSI falling from high (54.7) | MACD below signal (bearish) | High volume confirms move",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "MACD below signal (bearish)"
+    "RSI falling from high (54.7)",
+    "MACD below signal (bearish)",
+    "High volume confirms move"
   ],
   "trades": [
     {
