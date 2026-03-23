@@ -1,0 +1,21 @@
+{
+  "name": "APEX Trading Bot",
+  "short_name": "APEX Bot",
+  "description": "Autonomous BTC/CAD trading bot dashboard",
+  "start_url": "/apex-dashboard/index.html",
+  "scope": "/apex-dashboard/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%230f0f11'/><polyline points='60,380 160,240 260,290 360,130 460,180' stroke='%2322c55e' stroke-width='40' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='360' cy='130' r='35' fill='%2322c55e'/></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "utilities"],
+  "lang": "en-CA"
+}
