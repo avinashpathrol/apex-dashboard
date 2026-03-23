@@ -61,6 +61,8 @@ input:focus{border-color:#3f3f46;}
 .trade-banner{display:none;background:#052e16;border:1px solid #16a34a;border-radius:10px;padding:12px 16px;margin-bottom:8px;flex-wrap:wrap;gap:8px;}
 .trade-banner.active{display:flex;align-items:center;justify-content:space-between;}
 .trade-banner.loss{background:#2d0a0a;border-color:#7f1d1d;}
+.trade-banner.last-trade{background:#111;border-color:#3f3f46;opacity:.9;}
+.trade-banner.last-trade.loss{background:#111;border-color:#3f3f46;}
 .tb-left{display:flex;align-items:center;gap:10px;}
 .tb-pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 1.5s infinite;flex-shrink:0;}
 .tb-pulse.loss{background:#f87171;}
@@ -850,6 +852,44 @@ function switchTab(id, el) {
 }
 
 // ── ACTIVE TRADE BANNER ──
+// ── LAST TRADE BANNER ──
+function showLastTradeBanner(buyTrade, sellTrade) {
+  const banner = document.getElementById('trade-banner');
+  const pnl = (sellTrade.cost - sellTrade.fee) - (buyTrade.cost + buyTrade.fee);
+  const pct = ((sellTrade.price - buyTrade.price) / buyTrade.price * 100);
+  const isProfit = pnl >= 0;
+
+  const diffMs = new Date(sellTrade.time) - new Date(buyTrade.time);
+  const diffMins = Math.floor(diffMs / 60000);
+  const diffH = Math.floor(diffMins / 60);
+  const dur = diffH > 0 ? diffH+'h '+(diffMins%60)+'m' : diffMins+'m';
+
+  banner.className = 'trade-banner active last-trade' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-pulse').className = 'tb-pulse' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-ico').textContent = isProfit ? '✅' : '❌';
+  document.getElementById('tb-label').textContent = 'LAST TRADE — ' + (isProfit ? 'Profit' : 'Loss');
+  document.getElementById('tb-label').className = 'tb-label-main' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-entry').textContent =
+    'Bought $' + Number(buyTrade.price).toLocaleString('en-US',{maximumFractionDigits:0}) +
+    ' → Sold $' + Number(sellTrade.price).toLocaleString('en-US',{maximumFractionDigits:0}) +
+    ' · ' + fmt(sellTrade.time);
+  document.getElementById('tb-entry').className = 'tb-entry' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-invested').textContent = '$' + (buyTrade.cost||20).toFixed(2) + ' CAD';
+  document.getElementById('tb-curval').textContent = '$' + ((buyTrade.cost||20) + pnl).toFixed(2) + ' CAD';
+  document.getElementById('tb-curval').style.color = isProfit ? '#22c55e' : '#f87171';
+  document.getElementById('tb-current').textContent = '$' + Number(sellTrade.price).toLocaleString('en-US',{maximumFractionDigits:0});
+  const pnlEl = document.getElementById('tb-pnl');
+  pnlEl.textContent = (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(4) + ' (' + pct.toFixed(2) + '%)';
+  pnlEl.className = 'tb-stat-val ' + (isProfit ? 'pos' : 'neg');
+  document.getElementById('tb-dur').textContent = dur;
+
+  // Update labels
+  document.getElementById('tb-stat-labels') && (document.getElementById('tb-stat-labels').style.display = 'none');
+  const labels = banner.querySelectorAll('.tb-stat-label');
+  if (labels[3]) labels[3].textContent = 'Realised P&L';
+  if (labels[4]) labels[4].textContent = 'Duration';
+}
+
 function saveActiveBuy(price, time, cost) { localStorage.setItem(BUY_KEY, JSON.stringify({price, time, cost: cost||20})); }
 function clearActiveBuy() { localStorage.removeItem(BUY_KEY); }
 function getActiveBuy() { try { return JSON.parse(localStorage.getItem(BUY_KEY)||'null'); } catch(e) { return null; } }
@@ -865,7 +905,16 @@ function updateBanner(currentPrice, krakenTrades, ghRows) {
       activeBuy = {price: last.price, time: last.time, cost: last.cost||20};
       saveActiveBuy(last.price, last.time, last.cost||20);
     } else if (last && last.action === 'SELL') {
+      // Trade is closed — clear active buy and show last trade summary
       clearActiveBuy();
+      activeBuy = null;
+      // Show last closed trade in banner
+      const lastSell = last;
+      const lastBuy = sorted.find(t => t.action === 'BUY');
+      if (lastBuy) {
+        showLastTradeBanner(lastBuy, lastSell);
+        return;
+      }
     }
   }
 
@@ -976,16 +1025,56 @@ function chkPush() { const b = document.getElementById('nd-push-btn'); if (!('No
 
 function getSeenTrades() { try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY)||'[]')); } catch(e) { return new Set(); } }
 function markSeen(id) { const s = getSeenTrades(); s.add(id); localStorage.setItem(SEEN_KEY, JSON.stringify([...s].slice(-100))); }
+function clearSeenTrades() {
+  localStorage.removeItem(SEEN_KEY);
+}
+
+// If bell has no notifications but we have trades — clear seen cache once
+// so existing trades get picked up
+function maybeResyncNotifs() {
+  if (notifs.length === 0 && localStorage.getItem(SEEN_KEY)) {
+    clearSeenTrades();
+  }
+}
+
 function chkKrakenTrades(trades) {
   const seen = getSeenTrades();
-  const sorted = [...trades].sort((a,b) => new Date(b.time)-new Date(a.time)).slice(0,5);
+  // Sort newest first, check last 10 trades
+  const sorted = [...trades].sort((a,b) => new Date(b.time)-new Date(a.time)).slice(0,10);
+
+  // Build a map of buys for P&L calculation on sells
+  const buyMap = {};
+  const chronoAll = [...trades].sort((a,b) => new Date(a.time)-new Date(b.time));
+  let lastBuy = null;
+  for (const t of chronoAll) {
+    if (t.action === 'BUY') lastBuy = t;
+    else if (t.action === 'SELL' && lastBuy) {
+      buyMap[t.time] = lastBuy;
+      lastBuy = null;
+    }
+  }
+
   for (const t of sorted) {
-    const id = t.time + '_' + t.action;
+    // Use date rounded to minute + action + price as stable ID
+    const roundedTime = new Date(new Date(t.time).setSeconds(0,0)).toISOString();
+    const id = roundedTime + '_' + t.action + '_' + Math.round(t.price);
     if (seen.has(id)) continue;
     markSeen(id);
+
     const pr = '$' + Number(t.price).toLocaleString('en-US',{maximumFractionDigits:0}) + ' CAD';
-    if (t.action === 'BUY') addNotif('buy', '🟢 BUY Executed', 'Bought BTC at ' + pr);
-    else if (t.action === 'SELL') addNotif('sell', '🔴 SELL Executed', 'Sold BTC at ' + pr);
+    if (t.action === 'BUY') {
+      addNotif('buy', '🟢 BUY Executed', 'Bought BTC at ' + pr + ' · $' + (t.cost||20).toFixed(2) + ' invested');
+    } else if (t.action === 'SELL') {
+      const matchBuy = buyMap[t.time];
+      if (matchBuy) {
+        const pnl = (t.cost - t.fee) - (matchBuy.cost + matchBuy.fee);
+        const pct = ((t.price - matchBuy.price) / matchBuy.price * 100);
+        const pnlStr = (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(4) + ' (' + pct.toFixed(2) + '%)';
+        addNotif('sell', '🔴 SELL Executed', 'Sold BTC at ' + pr + ' · P&L: ' + pnlStr);
+      } else {
+        addNotif('sell', '🔴 SELL Executed', 'Sold BTC at ' + pr);
+      }
+    }
   }
 }
 
@@ -1446,6 +1535,7 @@ function manualRefresh() { startCD(); load(); }
 // ── MAIN LOAD ──
 async function load() {
   document.getElementById('t-lastrun').textContent = 'refreshing...';
+  maybeResyncNotifs();
   try {
     const runs = await gh('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=50');
     totR = runs.total_count||0;
@@ -1483,11 +1573,21 @@ async function load() {
     chkKrakenTrades(allKT);
 
     allET=[]; totW=0; totL=0; totPnl=0;
-    let lbc=null, lbp=null;
-    for (const t of allKT) {
-      if (t.action==='BUY') { lbp=t.price; lbc=t.cost+t.fee; }
-      else if (t.action==='SELL' && lbp) { const pnl=(t.cost-t.fee)-lbc; totPnl+=pnl; if(pnl>0)totW++;else totL++; allET.push({time:t.time,pnl,price:t.price}); lbp=null; lbc=null; }
+    let lbc=null, lbp=null, lbt=null;
+    // Sort by time ascending to pair BUY→SELL correctly
+    const sortedKT = [...allKT].sort((a,b) => new Date(a.time)-new Date(b.time));
+    for (const t of sortedKT) {
+      if (t.action==='BUY') {
+        lbp=t.price; lbc=(t.cost||0)+(t.fee||0); lbt=t.time;
+      } else if (t.action==='SELL' && lbp) {
+        const pnl=(t.cost-t.fee)-lbc;
+        totPnl+=pnl;
+        if(pnl>0) totW++; else totL++;
+        allET.push({time:t.time, pnl, price:t.price, buyPrice:lbp, buyTime:lbt});
+        lbp=null; lbc=null; lbt=null;
+      }
     }
+    console.log('Kraken trades:', allKT.length, 'Enriched pairs:', allET.length, 'Total P&L:', totPnl);
     const tt=totW+totL, wr=tt>0?Math.round((totW/tt)*100):null;
 
     let price=0, ohlc=[];
@@ -1507,13 +1607,25 @@ async function load() {
     }
     document.getElementById('m-cad').textContent = cadBal>0?'$'+cadBal.toFixed(2):'—';
     const pe2 = document.getElementById('m-pnl');
-    pe2.textContent = tt>0?(totPnl>=0?'+':'')+' $'+totPnl.toFixed(2):'—';
-    pe2.className = 'mv '+(totPnl>=0?'pos':'neg');
-    document.getElementById('m-pnl-sub').textContent = tt>0?tt+' trades':'no trades yet';
+    if (tt > 0) {
+      pe2.textContent = (totPnl>=0?'+':'') + '$' + totPnl.toFixed(4);
+      pe2.className = 'mv ' + (totPnl>=0?'pos':'neg');
+      document.getElementById('m-pnl-sub').textContent = tt + ' closed trade' + (tt>1?'s':'');
+    } else {
+      pe2.textContent = '—';
+      pe2.className = 'mv neu';
+      document.getElementById('m-pnl-sub').textContent = 'no closed trades yet';
+    }
     const we = document.getElementById('m-wr');
-    we.textContent = wr!==null?wr+'%':'—';
-    we.className = 'mv '+(wr>=50?'pos':wr!==null?'neg':'skip');
-    document.getElementById('m-wr-sub').textContent = tt>0?totW+'W / '+totL+'L':'no trades yet';
+    if (wr !== null) {
+      we.textContent = wr + '%';
+      we.className = 'mv ' + (wr>=50?'pos':'neg');
+      document.getElementById('m-wr-sub').textContent = totW+'W / '+totL+'L';
+    } else {
+      we.textContent = '—';
+      we.className = 'mv skip';
+      document.getElementById('m-wr-sub').textContent = 'no trades yet';
+    }
 
     const tbd = byDay(allET); window._tbd=tbd; buildCal(tbd);
     updPeriod(actP);
