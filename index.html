@@ -1608,7 +1608,7 @@ async function load() {
     localStorage.removeItem(BUY_KEY);
   }
   try {
-    const runs = await gh('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=50');
+    const runs = await gh('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=100');
     totR = runs.total_count||0;
     const now=new Date(), ts=new Date(now.getFullYear(),now.getMonth(),now.getDate());
     const ws=new Date(ts); ws.setDate(ts.getDate()-ts.getDay());
@@ -1621,36 +1621,50 @@ async function load() {
 
     rows = [];
     let latest = null;
-    for (const run of all.slice(0,30)) {
-      const jobs = await gh('https://api.github.com/repos/' + REPO + '/actions/runs/' + run.id + '/jobs');
-      const job = (jobs.jobs||[])[0];
-      if (!job) continue;
-      let p = {summary:null, bull:[], bear:[]};
-      try { const log = await gh('https://api.github.com/repos/' + REPO + '/actions/jobs/' + job.id + '/logs', true); p = parseLogs(log); } catch(e) {}
-      rows.push({run, p});
-      if (!latest && p.summary) latest = p;
+    // Fetch runs in batches for better coverage
+    const runsToFetch = all.slice(0,50);
+    for (const run of runsToFetch) {
+      try {
+        const jobs = await gh('https://api.github.com/repos/' + REPO + '/actions/runs/' + run.id + '/jobs');
+        const job = (jobs.jobs||[])[0];
+        if (!job) continue;
+        let p = {summary:null, bull:[], bear:[]};
+        try {
+          const log = await gh('https://api.github.com/repos/' + REPO + '/actions/jobs/' + job.id + '/logs', true);
+          p = parseLogs(log);
+        } catch(e) {}
+        rows.push({run, p});
+        if (!latest && p.summary) latest = p;
+      } catch(e) { continue; }
     }
+    console.log('Fetched '+rows.length+' runs with logs');
 
+    // ── Read data.json written by bot (no CORS issues!) ──
     let cadBal = 0;
-    try { const b = await kPriv('Balance'); cadBal = parseFloat(b['ZCAD']||b['CAD']||0); } catch(e) {}
-
+    let botData = null;
     try {
-      const th = await kPriv('TradesHistory', {trades:true});
-      allKT = Object.values(th.trades||{}).map(t => ({
-        time: new Date(t.time*1000).toISOString(),
-        action: t.type.toUpperCase(),
-        price: parseFloat(t.price),
-        cost: parseFloat(t.cost),
-        fee: parseFloat(t.fee)
-      })).sort((a,b) => new Date(a.time)-new Date(b.time));
-      if (allKT.length) firstD = allKT[0].time;
-      console.log('Kraken TradesHistory loaded:', allKT.length, 'trades');
+      const cacheBust = '?t=' + Date.now();
+      const djRes = await fetch('https://raw.githubusercontent.com/' + REPO.replace('apex-trading-bot','apex-dashboard') + '/main/data.json' + cacheBust);
+      if (djRes.ok) {
+        botData = await djRes.json();
+        cadBal = botData.cad_balance || 0;
+        // Load trade history from data.json
+        if (botData.trades && botData.trades.length) {
+          allKT = botData.trades.map(t => ({
+            time:   t.time,
+            action: t.action,
+            price:  t.price,
+            cost:   t.cost,
+            fee:    t.fee,
+          })).sort((a,b) => new Date(a.time)-new Date(b.time));
+          if (allKT.length) firstD = allKT[0].time;
+          console.log('data.json loaded:', allKT.length, 'trades, balance: $'+cadBal);
+        }
+      }
     } catch(e) {
-      console.warn('Kraken TradesHistory failed:', e.message,
-        '→ Check API key has "Query Closed Orders & Trades" permission');
-      allKT = []; // ensure clean state
+      console.warn('data.json read failed:', e.message, '— using GitHub logs fallback');
+      allKT = [];
     }
-    // ← Kraken try/catch ends here — rest runs regardless
 
     updFees(allKT, rows);
     chkKrakenTrades(allKT);
@@ -1698,14 +1712,23 @@ async function load() {
           const cost = 20;
           const approxPnl = ((sellPrice - buyPrice) / buyPrice) * cost;
           // Only add if not already in allET (avoid Kraken + GH duplicate)
+          const sellTime = new Date(s.run_time || s.run_created_at);
           const alreadyExists = allET.some(t =>
-            Math.abs(new Date(t.time) - new Date(s.run_time)) < 10*60*1000
+            Math.abs(new Date(t.time) - sellTime) < 15*60*1000
           );
           if (!alreadyExists) {
             totPnl += approxPnl;
             if (approxPnl > 0) totW++; else totL++;
-            allET.push({time: s.run_time, pnl: approxPnl, price: sellPrice, buyPrice, buyTime: ghBuy.run_time});
-            console.log('GH trade pair: buy $'+buyPrice+' sell $'+sellPrice+' pnl $'+approxPnl.toFixed(4));
+            allET.push({
+              time: s.run_time || new Date().toISOString(),
+              pnl: approxPnl,
+              price: sellPrice,
+              buyPrice,
+              buyTime: ghBuy.run_time
+            });
+            console.log('GH trade pair #'+allET.length+': buy $'+buyPrice+' -> sell $'+sellPrice+' pnl $'+approxPnl.toFixed(4));
+          } else {
+            console.log('Skipping duplicate pair: sell $'+sellPrice);
           }
           ghBuy = null; // reset — ready for next pair
         }
@@ -1767,6 +1790,21 @@ async function load() {
     }
     if (allET.length) buildPnlChart(allET);
     loadSentiment();
+
+    // Use botData as primary source for latest action/signals if available
+    if (botData && botData.action) {
+      const ae = document.getElementById('m-action');
+      ae.textContent = botData.action||'—';
+      ae.className = 'mv '+(botData.action||'skip').toLowerCase();
+      const tap = document.getElementById('t-action');
+      tap.textContent = botData.action||'—';
+      tap.className = 'action-pill '+(botData.action||'skip').toLowerCase();
+      document.getElementById('t-lastrun').textContent = 'Last: '+fmt(botData.generated_at);
+      document.getElementById('m-action-price').textContent = botData.price ? '$'+Number(botData.price).toLocaleString('en-US',{maximumFractionDigits:0})+' CAD' : '';
+      const diffS = (Date.now()-new Date(botData.generated_at).getTime())/1000;
+      document.getElementById('m-action-time').textContent = diffS<60?'just now':diffS<3600?Math.floor(diffS/60)+'m ago':Math.floor(diffS/3600)+'h ago';
+      renderSignals(botData.bullish||[], botData.bearish||[], botData.action);
+    }
 
     if (latest) {
       const s = latest.summary;
