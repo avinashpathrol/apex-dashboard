@@ -157,7 +157,23 @@ input:focus{border-color:#3f3f46;}
 .tbl tr:last-child td{border-bottom:none;}
 .badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;font-weight:700;}
 .bb{background:#052e16;color:#22c55e;}.bs{background:#2d0a0a;color:#f87171;}
-.bh{background:#2d2006;color:#fbbf24;}.bsk{background:#1c1c1f;color:#52525b;}
+.bh{background:#2d2006;color:#fbbf24;}.bsk{background:#1c1c1f;color:#52525b;cursor:pointer;border-bottom:1px dashed #52525b;}
+.bsk:hover{background:#27272a;color:#a1a1aa;}
+.skip-popup{display:none;position:fixed;inset:0;z-index:2000;align-items:center;justify-content:center;padding:20px;}
+.skip-popup.open{display:flex;}
+.skip-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6);}
+.skip-card{background:#18181b;border:1px solid #27272a;border-radius:14px;padding:20px;max-width:340px;width:100%;position:relative;z-index:1;box-shadow:0 8px 30px rgba(0,0,0,.5);}
+.skip-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.skip-card-title{font-size:13px;font-weight:600;color:#e8e8e8;}
+.skip-card-x{background:none;border:none;color:#52525b;font-size:16px;cursor:pointer;padding:0;}
+.skip-card-x:hover{color:#e8e8e8;}
+.skip-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #1c1c1f;font-size:12px;}
+.skip-row:last-child{border-bottom:none;}
+.skip-row-label{color:#52525b;width:80px;flex-shrink:0;padding-top:1px;}
+.skip-row-val{color:#e8e8e8;font-family:monospace;flex:1;}
+.skip-reason-box{background:#2d1f06;border:1px solid #854f0b;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;color:#fbbf24;line-height:1.5;}
+.skip-reason-box.balance{background:#2d0a0a;border-color:#7f1d1d;color:#f87171;}
+.skip-reason-box.ok{background:#052e16;border-color:#16a34a;color:#22c55e;}
 .conf-bar-wrap{background:#1c1c1f;border-radius:3px;height:4px;width:48px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:5px;}
 .conf-bar{height:100%;border-radius:3px;}
 .notif-dd{display:none;position:absolute;top:calc(100% + 8px);right:0;width:300px;background:#18181b;border:1px solid #27272a;border-radius:12px;z-index:500;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.6);}
@@ -417,7 +433,7 @@ input:focus{border-color:#3f3f46;}
       </div>
       <div class="g5">
         <div class="mcard"><div class="ml">BTC Price</div><div class="mv" id="m-price">—</div><div class="ms">CAD live</div></div>
-        <div class="mcard"><div class="ml">Last Action</div><div class="mv" id="m-action">—</div></div>
+        <div class="mcard"><div class="ml">Last Action</div><div class="mv" id="m-action">—</div><div class="ms" id="m-action-price" style="font-family:monospace;font-size:11px;margin-top:2px;"></div><div class="ms" id="m-action-time" style="margin-top:1px;"></div></div>
         <div class="mcard"><div class="ml">CAD Balance</div><div class="mv" id="m-cad">—</div><div class="ms">available</div></div>
         <div class="mcard"><div class="ml">Total P&amp;L</div><div class="mv" id="m-pnl">—</div><div class="ms" id="m-pnl-sub"></div></div>
         <div class="mcard"><div class="ml">Win Rate</div><div class="mv" id="m-wr">—</div><div class="ms" id="m-wr-sub"></div></div>
@@ -724,9 +740,12 @@ function parseLogs(log) {
 // ── HELPERS ──
 function fmt(iso) { try { return new Date(iso).toLocaleString('en-CA', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}); } catch(e) { return iso||'—'; } }
 function fmtD(iso) { try { return new Date(iso).toLocaleDateString('en-CA', {year:'numeric',month:'short',day:'numeric'}); } catch(e) { return iso; } }
-function badge(a, s) {
+function badge(a, s, price, reason, time) {
   if (!a) return '<span class="badge bsk">—</span>';
-  if ((s||'').toLowerCase().includes('skipped')) return '<span class="badge bsk">SKIPPED</span>';
+  if ((s||'').toLowerCase().includes('skipped')) {
+    const onclick = "openSkipPopup('" + (a||'') + "','" + (price||'') + "','" + (s||'').replace(/'/g,"\'") + "','" + (reason||'').replace(/'/g,"\'") + "','" + (time||'') + "')";
+    return '<span class="badge bsk" onclick="' + onclick + '" title="Click to see why">SKIPPED ⓘ</span>';
+  }
   if (a === 'BUY') return '<span class="badge bb">BUY</span>';
   if (a === 'SELL') return '<span class="badge bs">SELL</span>';
   return '<span class="badge bh">HOLD</span>';
@@ -1185,7 +1204,19 @@ async function load() {
       const s = latest.summary;
       const ae = document.getElementById('m-action'); ae.textContent=s.action||'—'; ae.className='mv '+(s.action||'skip').toLowerCase();
       const tap = document.getElementById('t-action'); tap.textContent=s.action||'—'; tap.className='action-pill '+(s.action||'skip').toLowerCase();
-      document.getElementById('t-lastrun').textContent = 'Last: '+fmt(s.run_time||rows[0].run.created_at);
+      const runTime = s.run_time || rows[0].run.created_at;
+      document.getElementById('t-lastrun').textContent = 'Last: '+fmt(runTime);
+
+      // Last Action card details
+      if (s.price) {
+        const priceStr = '$' + Number(s.price).toLocaleString('en-US',{maximumFractionDigits:0}) + ' CAD';
+        document.getElementById('m-action-price').textContent = priceStr;
+      }
+      const runDate = new Date(runTime);
+      const diffS = (Date.now() - runDate.getTime()) / 1000;
+      const agoStr = diffS < 60 ? 'just now' : diffS < 3600 ? Math.floor(diffS/60)+'m ago' : diffS < 86400 ? Math.floor(diffS/3600)+'h ago' : fmt(runTime);
+      document.getElementById('m-action-time').textContent = agoStr;
+
       renderSignals(latest.bull, latest.bear, s.action);
     }
 
@@ -1194,7 +1225,7 @@ async function load() {
     document.getElementById('hist-body').innerHTML = rows.slice(0,15).map(({run,p}) => {
       const s=p.summary, pr2=s?'$'+Number(s.price).toLocaleString('en-US',{maximumFractionDigits:0}):'—', conf=s&&s.confidence||0;
       const rt=new Date(run.created_at).getTime(), mp=allET.find(r=>Math.abs(new Date(r.time).getTime()-rt)<5*60*1000);
-      return '<tr><td style="font-size:11px;color:#52525b;">'+fmt(run.created_at)+'</td><td style="font-family:monospace;">'+pr2+'</td><td>'+badge(s&&s.action,s&&s.status)+'</td><td><span class="conf-bar-wrap"><span class="conf-bar" style="width:'+conf+'%;background:'+bColor(s&&s.action)+';"></span></span><span style="font-size:11px;color:#52525b;">'+(conf?conf+'%':'—')+'</span></td><td style="font-family:monospace;font-size:11px;">'+(cadBal>0?'$'+cadBal.toFixed(2):'—')+'</td><td>'+(mp?'<span class="'+(mp.pnl>=0?'pl-p':'pl-n')+'">'+(mp.pnl>=0?'+':'')+'$'+mp.pnl.toFixed(4)+'</span>':'<span style="color:#52525b;">—</span>')+'</td></tr>';
+      return '<tr><td style="font-size:11px;color:#52525b;">'+fmt(run.created_at)+'</td><td style="font-family:monospace;">'+pr2+'</td><td>'+badge(s&&s.action,s&&s.status,s&&s.price,s&&s.reason,run.created_at)+'</td><td><span class="conf-bar-wrap"><span class="conf-bar" style="width:'+conf+'%;background:'+bColor(s&&s.action)+';"></span></span><span style="font-size:11px;color:#52525b;">'+(conf?conf+'%':'—')+'</span></td><td style="font-family:monospace;font-size:11px;">'+(cadBal>0?'$'+cadBal.toFixed(2):'—')+'</td><td>'+(mp?'<span class="'+(mp.pnl>=0?'pl-p':'pl-n')+'">'+(mp.pnl>=0?'+':'')+'$'+mp.pnl.toFixed(4)+'</span>':'<span style="color:#52525b;">—</span>')+'</td></tr>';
     }).join('');
 
   } catch(e) {
@@ -1212,10 +1243,72 @@ async function startApp() {
   aInt = setInterval(() => { load(); startCD(); }, SECS*1000);
 }
 
+// ── SKIP POPUP ──
+function openSkipPopup(action, price, status, reason, time) {
+  const st = (status||'').toLowerCase();
+  const pr = price ? '$' + Number(price).toLocaleString('en-US',{maximumFractionDigits:0}) + ' CAD' : '—';
+
+  // Determine reason message
+  let reasonMsg = '', reasonClass = '';
+  if (st.includes('balance issue') || st.includes('insufficient')) {
+    if (action === 'BUY') {
+      reasonMsg = '💰 Not enough CAD balance to place a BUY order. Either the balance was already deployed in an open trade, or the account had insufficient funds.';
+      reasonClass = 'balance';
+    } else {
+      reasonMsg = '₿ No BTC in the account to sell. The bot looked for an open position but found none.';
+      reasonClass = 'balance';
+    }
+  } else if (st.includes('no btc') || st.includes('no position')) {
+    reasonMsg = '₿ No BTC position to sell. The bot detected a SELL signal but there was nothing to sell.';
+    reasonClass = 'balance';
+  } else if (st.includes('hold')) {
+    reasonMsg = '⚖️ Signals were mixed — not enough conviction in either direction. The bot needs 3+ signals to trade.';
+    reasonClass = '';
+  } else if (reason) {
+    reasonMsg = reason;
+    reasonClass = '';
+  } else {
+    reasonMsg = 'The bot chose not to execute this trade based on current market conditions.';
+    reasonClass = '';
+  }
+
+  const signalSummary = reason ? reason.split('|').map(s => s.trim()).filter(Boolean) : [];
+
+  document.getElementById('skip-popup-body').innerHTML =
+    '<div class="skip-row"><span class="skip-row-label">Time</span><span class="skip-row-val">' + (time ? fmt(time) : '—') + '</span></div>' +
+    '<div class="skip-row"><span class="skip-row-label">Signal</span><span class="skip-row-val" style="color:' + (action==='BUY'?'#22c55e':action==='SELL'?'#f87171':'#fbbf24') + ';font-weight:700;">' + (action||'—') + '</span></div>' +
+    '<div class="skip-row"><span class="skip-row-label">Price</span><span class="skip-row-val">' + pr + '</span></div>' +
+    '<div class="skip-row"><span class="skip-row-label">Status</span><span class="skip-row-val" style="color:#52525b;">' + (status||'—') + '</span></div>' +
+    (signalSummary.length ? '<div class="skip-row"><span class="skip-row-label">Reason</span><span class="skip-row-val" style="color:#a1a1aa;">' + signalSummary.join('<br>') + '</span></div>' : '') +
+    '<div class="skip-reason-box ' + reasonClass + '">' + reasonMsg + '</div>';
+
+  document.getElementById('skip-popup').classList.add('open');
+}
+
+function closeSkipPopup(e) {
+  if (e.target.classList.contains('skip-backdrop') || e.target === document.getElementById('skip-popup')) {
+    document.getElementById('skip-popup').classList.remove('open');
+  }
+}
+function closeSkipPopupDirect() {
+  document.getElementById('skip-popup').classList.remove('open');
+}
+
 window.addEventListener('load', () => {
   if (hasCreds()) showPinScreen();
   else showFullSetup();
 });
 </script>
+<!-- SKIP REASON POPUP -->
+<div class="skip-popup" id="skip-popup" onclick="closeSkipPopup(event)">
+  <div class="skip-backdrop"></div>
+  <div class="skip-card">
+    <div class="skip-card-header">
+      <div class="skip-card-title">⏭ Why was this skipped?</div>
+      <button class="skip-card-x" onclick="closeSkipPopupDirect()">✕</button>
+    </div>
+    <div id="skip-popup-body"></div>
+  </div>
+</div>
 </body>
 </html>
