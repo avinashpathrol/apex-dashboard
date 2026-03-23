@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-03-23T19:52:13.783371+00:00",
+  "generated_at": "2026-03-23T19:58:12.378329+00:00",
   "symbol": "XBTCAD",
-  "price": 97175.5,
+  "price": 97046.8,
   "cad_balance": 24.2261,
   "btc_balance": 0.0,
   "action": "SELL",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "EXECUTED \u2705",
-  "reason": "RSI falling from high (52.3) | MACD below signal (bearish) | Price below EMA-20",
+  "status": "SKIPPED \u2014 balance issue",
+  "reason": "RSI falling from high (50.4) | MACD below signal (bearish) | Price below EMA-20",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
-    "RSI falling from high (52.3)",
+    "RSI falling from high (50.4)",
     "MACD below signal (bearish)",
     "Price below EMA-20"
   ],
