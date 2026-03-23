@@ -25,29 +25,31 @@ input:focus{border-color:#3f3f46;}
 .reset-link button{background:none;border:none;color:#52525b;font-size:11px;cursor:pointer;text-decoration:underline;}
 .reset-link button:hover{color:#a1a1aa;}
 .app{display:none;height:100vh;height:100dvh;flex-direction:column;overflow:hidden;}
-.topbar{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 12px;display:flex;align-items:center;justify-content:space-between;height:56px;flex-shrink:0;gap:6px;}
-.brand{display:flex;align-items:center;gap:7px;flex-shrink:0;}
-.brand-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;}
+.topbar{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:60px;flex-shrink:0;gap:8px;}
+.brand{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.brand-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.brand-name{font-size:13px;font-weight:700;color:#fff;}
-.brand-badge{background:#052e16;color:#22c55e;font-size:9px;padding:2px 7px;border-radius:4px;font-weight:600;}
-.topbar-center{display:flex;align-items:center;gap:6px;flex:1;justify-content:center;}
-.price-pill{background:#18181b;border:1px solid #27272a;border-radius:20px;padding:5px 12px;display:flex;align-items:center;gap:7px;}
-.price-val{font-size:14px;font-weight:700;font-family:monospace;color:#fff;}
-.price-label{font-size:10px;color:#52525b;}
-.action-pill{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;}
+.brand-name{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.2px;}
+.brand-badge{background:#052e16;color:#22c55e;font-size:9px;padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:.04em;}
+.topbar-center{display:flex;align-items:center;gap:8px;flex:1;justify-content:center;}
+.price-pill{background:#18181b;border:1px solid #27272a;border-radius:24px;padding:6px 14px;display:flex;align-items:center;gap:8px;}
+.price-val{font-size:15px;font-weight:700;font-family:monospace;color:#fff;}
+.price-label{font-size:10px;color:#52525b;font-weight:500;}
+.action-pill{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.03em;}
 .action-pill.buy{background:#052e16;color:#22c55e;}
 .action-pill.sell{background:#2d0a0a;color:#f87171;}
 .action-pill.hold{background:#2d2006;color:#fbbf24;}
 .action-pill.skip{background:#1c1c1f;color:#52525b;}
 .last-run-text{font-size:10px;color:#52525b;font-family:monospace;white-space:nowrap;}
-.topbar-right{display:flex;align-items:center;gap:5px;flex-shrink:0;}
-.tb-btn{background:#18181b;border:1px solid #27272a;border-radius:8px;padding:6px 10px;font-size:11px;color:#a1a1aa;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap;position:relative;}
-.tb-btn:hover{background:#27272a;color:#e8e8e8;}
-.tb-btn.blue{color:#818cf8;border-color:#1e1b4b;}.tb-btn.blue:hover{background:#1e1b4b;}
-.tb-btn.red{color:#f87171;border-color:#3d0f0f;}.tb-btn.red:hover{background:#2d0a0a;}
-.tb-btn.amber{color:#fbbf24;border-color:#3d2f00;}.tb-btn.amber:hover{background:#2d2200;}
-.notif-badge{position:absolute;top:-5px;right:-5px;background:#ef4444;color:#fff;font-size:8px;font-weight:700;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px;border:2px solid #09090b;}
+.topbar-right{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.tb-btn{background:#18181b;border:1px solid #27272a;border-radius:9px;padding:8px 14px;font-size:12px;color:#a1a1aa;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;position:relative;min-height:38px;min-width:38px;transition:all .15s;}
+.tb-btn:hover{background:#27272a;color:#e8e8e8;border-color:#3f3f46;}
+.tb-btn:active{transform:scale(.96);}
+.tb-btn.blue{color:#818cf8;border-color:#1e1b4b;background:#0f0f1a;}.tb-btn.blue:hover{background:#1e1b4b;}
+.tb-btn.red{color:#f87171;border-color:#3d0f0f;background:#160808;}.tb-btn.red:hover{background:#2d0a0a;}
+.tb-btn.amber{color:#fbbf24;border-color:#3d2f00;background:#130f00;}.tb-btn.amber:hover{background:#2d2200;}
+.tb-btn.active-notif{background:#2d2200;border-color:#854f0b;color:#fbbf24;}
+.notif-badge{position:absolute;top:-6px;right:-6px;background:#ef4444;color:#fff;font-size:8px;font-weight:700;min-width:17px;height:17px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;border:2px solid #09090b;line-height:1;}
 .notif-badge.hidden{display:none;}
 .tabs{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0;display:flex;flex-shrink:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 .tabs::-webkit-scrollbar{display:none;}
@@ -247,11 +249,13 @@ input:focus{border-color:#3f3f46;}
 .empty-state{text-align:center;padding:32px;color:#52525b;font-size:13px;}
 @media(max-width:600px){
   .setup{margin:20px 12px;padding:20px;}
-  .topbar{height:auto;min-height:52px;padding:8px 10px;flex-wrap:wrap;gap:6px;}
-  .topbar-center{order:3;width:100%;justify-content:flex-start;padding-bottom:4px;}
+  .topbar{height:auto;min-height:56px;padding:8px 12px;flex-wrap:wrap;gap:6px;}
+  .topbar-center{order:3;width:100%;justify-content:flex-start;padding-bottom:2px;}
   .last-run-text{display:none;}
   .brand-badge{display:none;}
   .tb-label{display:none;}
+  .tb-btn{min-height:40px;min-width:40px;padding:8px 10px;}
+  .topbar-right{gap:5px;}
   .content{padding:10px 10px 80px;}
   .chart-wrap{height:160px;}.chart-wrap-sm{height:120px;}
   .tab{padding:0 12px;font-size:11px;height:38px;}
@@ -377,28 +381,38 @@ input:focus{border-color:#3f3f46;}
       <span class="last-run-text" id="t-lastrun">—</span>
     </div>
     <div class="topbar-right">
-      <div style="background:#18181b;border:1px solid #27272a;border-radius:8px;padding:4px 10px;text-align:center;min-width:80px;">
-        <div style="font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1px;">Refresh</div>
-        <div style="font-size:13px;font-weight:700;font-family:monospace;color:#fbbf24;" id="countdown">5:00</div>
-        <div style="background:#27272a;border-radius:3px;height:2px;margin-top:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#fbbf24;transition:width 1s linear;" id="progress" style="width:100%"></div></div>
+      <!-- Countdown -->
+      <div style="background:#18181b;border:1px solid #27272a;border-radius:9px;padding:5px 12px;text-align:center;min-width:76px;min-height:38px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">Refresh</div>
+        <div style="font-size:14px;font-weight:700;font-family:monospace;color:#fbbf24;line-height:1;" id="countdown">5:00</div>
+        <div style="background:#27272a;border-radius:3px;height:2px;margin-top:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#fbbf24;transition:width 1s linear;width:100%;" id="progress"></div></div>
       </div>
-      <button class="tb-btn" onclick="manualRefresh()">↻ <span class="tb-label">Now</span></button>
+      <!-- Refresh now -->
+      <button class="tb-btn" onclick="manualRefresh()" title="Refresh now">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        <span class="tb-label">Now</span>
+      </button>
+      <!-- Notifications bell -->
       <div style="position:relative">
-        <button class="tb-btn amber" id="notif-btn" onclick="toggleNotif()">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <button class="tb-btn amber" id="notif-btn" onclick="toggleNotif()" title="Alerts">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           <span class="notif-badge hidden" id="nb">0</span>
         </button>
         <div class="notif-dd" id="notif-dd">
-          <div class="nd-header"><span class="nd-title">Alerts</span><button class="nd-clear" onclick="clearNotifs()">Clear all</button></div>
+          <div class="nd-header"><span class="nd-title">🔔 Alerts</span><button class="nd-clear" onclick="clearNotifs()">Clear all</button></div>
           <div class="nd-list" id="nd-list"><div class="nd-empty" id="nd-empty">No alerts yet</div></div>
-          <div class="nd-enable"><button class="nd-enable-btn" id="nd-push-btn" onclick="reqPush()">🔔 Enable Push Notifications</button></div>
+          <div class="nd-enable"><button class="nd-enable-btn" id="nd-push-btn" onclick="reqPush()">Enable Push Notifications</button></div>
         </div>
       </div>
-      <button class="tb-btn blue" onclick="openProfModal()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <!-- Profile -->
+      <button class="tb-btn blue" onclick="openProfModal()" title="Profile">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <span class="tb-label">Profile</span>
       </button>
-      <button class="tb-btn red" onclick="lockApp()" title="Lock">🔒</button>
+      <!-- Lock -->
+      <button class="tb-btn red" onclick="lockApp()" title="Lock dashboard">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </button>
     </div>
   </div>
 
@@ -447,16 +461,11 @@ input:focus{border-color:#3f3f46;}
         <div class="card-title">
           <span id="chart-title">BTC Price (24h)</span>
           <div style="display:flex;gap:5px;">
-            <button id="btn-normal" onclick="setChartMode('normal')" style="background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;">📊 Normal</button>
-            <button id="btn-trade" onclick="setChartMode('trade')" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;">🔴 In Trade</button>
+            <button id="btn-normal" onclick="setChartMode('normal')" style="background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;">📈 Market View</button>
+            <button id="btn-trade" onclick="setChartMode('trade')" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;">📍 In Trade</button>
           </div>
         </div>
-        <div id="chart-legend" style="display:none;margin-bottom:8px;display:flex;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:10px;color:#22c55e;">── Entry</span>
-          <span style="font-size:10px;color:#3b82f6;">── Current</span>
-          <span style="font-size:10px;color:#22c55e;opacity:.6;">- - TP +3.5%</span>
-          <span style="font-size:10px;color:#f87171;opacity:.6;">- - SL -2%</span>
-        </div>
+
         <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
       </div>
       <div class="g2">
@@ -1056,7 +1065,7 @@ function setChartMode(mode) {
     btnN.style.cssText = 'background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;';
     btnT.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
     legend.style.display = 'none';
-    title.textContent = 'BTC Price (24h)';
+    title.textContent = 'BTC Market View (24h)';
     if (_lastOhlc.length) buildPriceChart(_lastOhlc, _lastKtrades);
   } else {
     const ab = getActiveBuy();
@@ -1076,85 +1085,122 @@ function buildInTradeChart(activeBuy, ohlc) {
   const entryPrice = activeBuy.price;
   const cost = activeBuy.cost || 20;
   const entryTime = new Date(activeBuy.time).getTime();
-  const TP_PCT = 0.035; // 3.5%
-  const SL_PCT = 0.020; // 2%
+  const TP_PCT = 0.035;
+  const SL_PCT = 0.020;
   const tpPrice = entryPrice * (1 + TP_PCT);
   const slPrice = entryPrice * (1 - SL_PCT);
 
-  // Filter ohlc from entry point onwards
-  const tradeCandles = ohlc.filter(c => c[0] * 1000 >= entryTime - 15*60*1000);
-  const allCandles = tradeCandles.length >= 3 ? tradeCandles : ohlc.slice(-24);
+  // Only candles from entry time onwards
+  let tradeCandles = ohlc.filter(c => c[0] * 1000 >= entryTime - 5*60*1000);
+  if (tradeCandles.length < 2) tradeCandles = ohlc.slice(-6);
 
-  const labels = allCandles.map(c => {
+  const labels = tradeCandles.map(c => {
     const d = new Date(c[0]*1000);
     return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0');
   });
-  const prices = allCandles.map(c => parseFloat(c[4]));
-  // P&L right axis: (price - entry) * (cost/entry)
-  const pnls = prices.map(p => parseFloat(((p - entryPrice) / entryPrice * cost).toFixed(4)));
-  const tpLine = allCandles.map(() => tpPrice);
-  const slLine = allCandles.map(() => slPrice);
-  const entryLine = allCandles.map(() => entryPrice);
-  const currentP = prices[prices.length-1];
+  const prices = tradeCandles.map(c => parseFloat(c[4]));
+  const currentP = prices[prices.length - 1];
   const isProfit = currentP >= entryPrice;
+
+  // Tight Y axis — only show the zone between SL and TP with small buffer
+  const buffer = (tpPrice - slPrice) * 0.15;
+  const yMin = slPrice - buffer;
+  const yMax = tpPrice + buffer;
+
+  // P&L values for right axis — relative to entry
+  const pnls = prices.map(p => parseFloat(((p - entryPrice) / entryPrice * cost).toFixed(4)));
+
+  // Color each segment green if above entry, red if below
+  const gradientPlugin = {
+    id: 'fillGradient',
+    beforeDatasetsDraw(chart) {
+      const ctx2 = chart.ctx;
+      const yAxis = chart.scales['yPrice'];
+      const xAxis = chart.scales['x'];
+      if (!yAxis || !xAxis) return;
+      const entryY = yAxis.getPixelForValue(entryPrice);
+      const top = yAxis.top;
+      const bottom = yAxis.bottom;
+      const left = xAxis.left;
+      const right = xAxis.right;
+      // Green fill above entry
+      ctx2.save();
+      ctx2.fillStyle = 'rgba(34,197,94,0.08)';
+      ctx2.fillRect(left, top, right-left, entryY-top);
+      // Red fill below entry
+      ctx2.fillStyle = 'rgba(248,113,113,0.08)';
+      ctx2.fillRect(left, entryY, right-left, bottom-entryY);
+      ctx2.restore();
+    }
+  };
 
   pChart = new Chart(document.getElementById('priceChart'), {
     type: 'line',
+    plugins: [gradientPlugin],
     data: {
       labels,
       datasets: [
+        // Price line
         {
-          label: 'Price (CAD)',
+          label: 'Price',
           data: prices,
           borderColor: isProfit ? '#22c55e' : '#f87171',
-          borderWidth: 2,
-          pointRadius: 0,
-          fill: {target: 'origin', above: 'rgba(34,197,94,.07)', below: 'rgba(248,113,113,.07)'},
+          borderWidth: 2.5,
+          pointRadius: (ctx) => ctx.dataIndex === prices.length-1 ? 5 : 0,
+          pointBackgroundColor: isProfit ? '#22c55e' : '#f87171',
+          fill: false,
           tension: .3,
           yAxisID: 'yPrice',
+          order: 1,
         },
+        // Entry line
         {
-          label: 'TP +3.5%',
-          data: tpLine,
-          borderColor: 'rgba(34,197,94,.5)',
+          label: 'Entry $' + Number(entryPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
+          data: tradeCandles.map(() => entryPrice),
+          borderColor: 'rgba(255,255,255,0.4)',
           borderWidth: 1.5,
-          borderDash: [6,4],
+          borderDash: [4,4],
           pointRadius: 0,
           fill: false,
-          tension: 0,
           yAxisID: 'yPrice',
+          order: 3,
         },
+        // TP line
         {
-          label: 'SL -2%',
-          data: slLine,
-          borderColor: 'rgba(248,113,113,.5)',
+          label: 'TP +3.5% $' + Number(tpPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
+          data: tradeCandles.map(() => tpPrice),
+          borderColor: 'rgba(34,197,94,0.6)',
           borderWidth: 1.5,
-          borderDash: [6,4],
+          borderDash: [8,4],
           pointRadius: 0,
           fill: false,
-          tension: 0,
           yAxisID: 'yPrice',
+          order: 3,
         },
+        // SL line
         {
-          label: 'Entry',
-          data: entryLine,
-          borderColor: 'rgba(255,255,255,.25)',
-          borderWidth: 1,
-          borderDash: [3,3],
+          label: 'SL -2% $' + Number(slPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
+          data: tradeCandles.map(() => slPrice),
+          borderColor: 'rgba(248,113,113,0.6)',
+          borderWidth: 1.5,
+          borderDash: [8,4],
           pointRadius: 0,
           fill: false,
-          tension: 0,
           yAxisID: 'yPrice',
+          order: 3,
         },
+        // P&L line (right axis)
         {
-          label: 'P&L (CAD)',
+          label: 'P&L',
           data: pnls,
-          borderColor: 'rgba(99,102,241,.8)',
+          borderColor: 'rgba(129,140,248,0.8)',
           borderWidth: 1.5,
           pointRadius: 0,
           fill: false,
           tension: .3,
           yAxisID: 'yPnl',
+          order: 2,
+          borderDash: [2,2],
         },
       ]
     },
@@ -1163,25 +1209,55 @@ function buildInTradeChart(activeBuy, ohlc) {
       maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
       plugins: {
-        legend: { display: false },
+        legend: {
+          display: true,
+          position: 'top',
+          labels: {
+            color: '#71717a',
+            font: { size: 10 },
+            boxWidth: 20,
+            padding: 10,
+            usePointStyle: true,
+          }
+        },
         tooltip: {
+          backgroundColor: '#1c1c1f',
+          borderColor: '#27272a',
+          borderWidth: 1,
+          titleColor: '#e8e8e8',
+          bodyColor: '#a1a1aa',
+          padding: 10,
           callbacks: {
             label: function(ctx) {
-              if (ctx.dataset.label === 'P&L (CAD)') return 'P&L: ' + (ctx.raw >= 0 ? '+' : '') + '$' + ctx.raw.toFixed(4);
-              if (ctx.dataset.label === 'TP +3.5%') return 'Take Profit: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
-              if (ctx.dataset.label === 'SL -2%') return 'Stop Loss: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
-              if (ctx.dataset.label === 'Entry') return 'Entry: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
-              return 'Price: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
+              if (ctx.dataset.label === 'P&L') {
+                const v = ctx.raw;
+                return ' P&L: ' + (v>=0?'+':'') + '$' + v.toFixed(4) + ' CAD';
+              }
+              if (ctx.dataset.label === 'Price') {
+                const p = ctx.raw;
+                const pct = ((p - entryPrice)/entryPrice*100).toFixed(2);
+                return ' Price: $' + Number(p).toLocaleString('en-US',{maximumFractionDigits:0}) + ' (' + (pct>=0?'+':'') + pct + '%)';
+              }
+              return ' ' + ctx.dataset.label;
             }
           }
         }
       },
       scales: {
-        x: { ticks: { color:'#52525b', maxTicksLimit:8, font:{size:10} }, grid: { color:'#1c1c1f' } },
+        x: {
+          ticks: { color:'#52525b', maxTicksLimit:8, font:{size:10} },
+          grid: { color:'#1c1c1f' }
+        },
         yPrice: {
           type: 'linear',
           position: 'left',
-          ticks: { color:'#52525b', font:{size:10}, callback: v => '$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0}) },
+          min: yMin,
+          max: yMax,
+          ticks: {
+            color:'#52525b',
+            font:{size:10},
+            callback: v => '$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0})
+          },
           grid: { color:'#1c1c1f' }
         },
         yPnl: {
