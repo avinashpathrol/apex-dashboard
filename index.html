@@ -469,15 +469,24 @@ input:focus{border-color:#3f3f46;}
         <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
       </div>
       <div class="g2">
-        <div class="card"><div class="card-title">Bullish signals</div><div class="sig-list" id="bull">—</div></div>
-        <div class="card"><div class="card-title">Bearish signals</div><div class="sig-list" id="bear">—</div></div>
+        <div class="card"><div class="card-title"><span>Bullish signals</span><a href="guide.html" style="font-size:10px;color:#52525b;text-decoration:none;" title="Learn about signals">ℹ️</a></div><div class="sig-list" id="bull">—</div></div>
+        <div class="card"><div class="card-title"><span>Bearish signals</span><a href="guide.html" style="font-size:10px;color:#52525b;text-decoration:none;" title="Learn about signals">ℹ️</a></div><div class="sig-list" id="bear">—</div></div>
       </div>
     </div>
 
     <!-- SIGNALS -->
     <div class="tab-panel" id="tab-signals">
       <div class="card" style="margin-bottom:8px;">
-        <div class="card-title"><span>Signal strength</span><span id="strength-label" style="font-family:monospace;color:#a1a1aa;">—</span></div>
+        <div class="card-title">
+          <span>Signal strength</span>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span id="strength-label" style="font-family:monospace;color:#a1a1aa;">—</span>
+            <a href="guide.html" style="background:#0c1a2e;border:1px solid #1e3a5f;border-radius:6px;padding:3px 10px;font-size:10px;color:#818cf8;text-decoration:none;display:flex;align-items:center;gap:4px;white-space:nowrap;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Strategy Guide
+            </a>
+          </div>
+        </div>
         <div class="strength-track"><div class="strength-fill" id="strength-bar" style="width:0%;background:#3f3f46;"></div></div>
         <div class="strength-labels"><span>0</span><span>3 = trigger</span><span>6 max</span></div>
         <div class="sig-grid" id="sig-grid"></div>
