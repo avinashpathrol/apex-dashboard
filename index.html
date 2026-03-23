@@ -692,8 +692,8 @@ function parseLog(log){
   let summary=null,bull=[],bear=[];
   for(const line of log.split('\n')){
     if(line.includes('SUMMARY:')){const i=line.indexOf('{');if(i>-1)try{summary=JSON.parse(line.slice(i));}catch(e){}}
-    if(line.includes('Bullish signals:')||line.includes('Bullish:')){const m=line.match(/\[(.+)\]/);if(m)bull=m[1].split(',').map(s=>s.trim().replace(/['"]/g,'')).filter(Boolean);}
-    if(line.includes('Bearish signals:')||line.includes('Bearish:')){const m=line.match(/\[(.+)\]/);if(m)bear=m[1].split(',').map(s=>s.trim().replace(/['"]/g,'')).filter(Boolean);}
+    if(line.includes('Bullish signals:')||line.includes('Bullish:')){const idx=line.indexOf('[\'');if(idx>-1){const end=line.lastIndexOf(']');if(end>idx){const arr=line.slice(idx+1,end);bull=arr.split(',').map(s=>s.trim().replace(/['"]/g,'')).filter(Boolean);}}}
+    if(line.includes('Bearish signals:')||line.includes('Bearish:')){const idx=line.indexOf('[\'');if(idx>-1){const end=line.lastIndexOf(']');if(end>idx){const arr=line.slice(idx+1,end);bear=arr.split(',').map(s=>s.trim().replace(/['"]/g,'')).filter(Boolean);}}}
   }
   return{summary,bull,bear};
 }
