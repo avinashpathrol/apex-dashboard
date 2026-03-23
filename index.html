@@ -892,9 +892,11 @@ function switchTab(id, el) {
 // ── LAST TRADE BANNER ──
 function showLastTradeBanner(buyTrade, sellTrade) {
   const banner = document.getElementById('trade-banner');
-  const pnl = (sellTrade.cost - sellTrade.fee) - (buyTrade.cost + buyTrade.fee);
+  // Use price-based P&L (gross) — consistent with Total P&L card
+  const cost = buyTrade.cost || 20;
   const pct = ((sellTrade.price - buyTrade.price) / buyTrade.price * 100);
-  const isProfit = pnl >= 0;
+  const pnl = (pct / 100) * cost;
+  const isProfit = sellTrade.price > buyTrade.price;
 
   const diffMs = new Date(sellTrade.time) - new Date(buyTrade.time);
   const diffMins = Math.floor(diffMs / 60000);
@@ -1796,23 +1798,31 @@ async function load() {
           lbp=t.price; lbc=(t.cost||0)+(t.fee||0); lbt=t.time;
         }
       } else if (t.action==='SELL' && lbp) {
-        const pnl=(t.cost-t.fee)-lbc;
-        totPnl+=pnl;
-        if(pnl>0) totW++; else totL++;
+        // Use price-based gross P&L — simpler and consistent across all views
+        const cost = lbc || 20;
+        const pct = (t.price - lbp) / lbp;
+        const pnl = pct * cost;
+        totPnl += pnl;
+        if (pnl > 0) totW++; else totL++;
         allET.push({
           time: t.time,
           pnl,
           price: t.price,
           buyPrice: lbp,
           buyTime: lbt,
-          cost: t.cost,
-          fee: t.fee,
-          buyCost: lbc
+          cost: t.cost || cost,
+          fee: t.fee || 0,
         });
         lbp=null; lbc=null; lbt=null;
       }
     }
     console.log('Kraken trades:', allKT.length, 'Enriched pairs:', allET.length, 'Total P&L:', totPnl.toFixed(4), 'W:'+totW+' L:'+totL);
+    // If Kraken returned 0 trades but we expected data, clear cache so next load fetches fresh
+    if (allKT.length === 0 && window._dataJsonLoaded) {
+      localStorage.removeItem('apex_data_cache');
+      window._dataJsonLoaded = false;
+      console.log('Cleared stale cache — will fetch fresh data.json next load');
+    }
 
     // Fallback: only use GitHub logs if data.json didn't load
     if (rows.length > 0 && !window._dataJsonLoaded) {
@@ -1831,15 +1841,14 @@ async function load() {
         if (!s) continue;
         const st = (s.status||'').toLowerCase();
         if (s.action === 'BUY' && st.includes('executed')) {
-          ghBuy = s; // start of a new trade
+          ghBuy = {summary: s, run: row.run};
         } else if (s.action === 'SELL' && st.includes('executed') && ghBuy) {
-          // Completed BUY→SELL pair found
-          const buyPrice = ghBuy.price;
+          const buyPrice = ghBuy.summary.price;
           const sellPrice = s.price;
           const cost = 20;
           const approxPnl = ((sellPrice - buyPrice) / buyPrice) * cost;
-          // Only add if not already in allET (avoid Kraken + GH duplicate)
-          const sellTime = new Date(s.run_time || s.run_created_at);
+          // Use run.created_at (always present) converted to local time
+          const sellTime = new Date(row.run.created_at);
           const alreadyExists = allET.some(t =>
             Math.abs(new Date(t.time) - sellTime) < 15*60*1000
           );
@@ -1847,17 +1856,17 @@ async function load() {
             totPnl += approxPnl;
             if (approxPnl > 0) totW++; else totL++;
             allET.push({
-              time: s.run_time || new Date().toISOString(),
+              time: row.run.created_at,  // UTC ISO — byDay() converts to local
               pnl: approxPnl,
               price: sellPrice,
               buyPrice,
-              buyTime: ghBuy.run_time
+              buyTime: ghBuy.run.created_at
             });
             console.log('GH trade pair #'+allET.length+': buy $'+buyPrice+' -> sell $'+sellPrice+' pnl $'+approxPnl.toFixed(4));
           } else {
             console.log('Skipping duplicate pair: sell $'+sellPrice);
           }
-          ghBuy = null; // reset — ready for next pair
+          ghBuy = null;
         }
       }
       console.log('Total from GH logs: pairs='+allET.length+' totPnl='+totPnl.toFixed(4));
@@ -1879,7 +1888,8 @@ async function load() {
       pe.classList.add('flash'); setTimeout(()=>pe.classList.remove('flash'),500);
       document.getElementById('t-price').textContent = '$' + price.toLocaleString('en-US',{maximumFractionDigits:0});
     }
-    document.getElementById('m-cad').textContent = cadBal>0?'$'+cadBal.toFixed(2):'—';
+    const _bal = (botData && botData.cad_balance > 0) ? botData.cad_balance : cadBal;
+    document.getElementById('m-cad').textContent = _bal>0?'$'+_bal.toFixed(2):'—';
     const pe2 = document.getElementById('m-pnl');
     if (tt > 0) {
       pe2.textContent = (totPnl>=0?'+':'') + '$' + totPnl.toFixed(4);
@@ -1957,8 +1967,16 @@ async function load() {
     document.getElementById('hist-table').style.display = 'table';
     document.getElementById('hist-body').innerHTML = rows.slice(0,15).map(({run,p}) => {
       const s=p.summary, pr2=s?'$'+Number(s.price).toLocaleString('en-US',{maximumFractionDigits:0}):'—', conf=s&&s.confidence||0;
-      const rt=new Date(run.created_at).getTime(), mp=allET.find(r=>Math.abs(new Date(r.time).getTime()-rt)<5*60*1000);
-      return '<tr><td style="font-size:11px;color:#52525b;">'+fmt(run.created_at)+'</td><td style="font-family:monospace;">'+pr2+'</td><td>'+badge(s&&s.action,s&&s.status,s&&s.price,s&&s.reason,run.created_at)+'</td><td><span class="conf-bar-wrap"><span class="conf-bar" style="width:'+conf+'%;background:'+bColor(s&&s.action)+';"></span></span><span style="font-size:11px;color:#52525b;">'+(conf?conf+'%':'—')+'</span></td><td style="font-family:monospace;font-size:11px;">'+(cadBal>0?'$'+cadBal.toFixed(2):'—')+'</td><td>'+(mp?'<span class="'+(mp.pnl>=0?'pl-p':'pl-n')+'">'+(mp.pnl>=0?'+':'')+'$'+mp.pnl.toFixed(4)+'</span>':'<span style="color:#52525b;">—</span>')+'</td></tr>';
+      // Only match P&L to SELL rows
+      const isSell = s && s.action === 'SELL' && (s.status||'').toLowerCase().includes('executed');
+      const rt = new Date(run.created_at).getTime();
+      const mp = isSell ? allET.find(r => Math.abs(new Date(r.time).getTime()-rt) < 30*60*1000) : null;
+      // Balance: show live balance only on most recent row, — for others
+      const rowBal = cadBal > 0 ? '$'+cadBal.toFixed(2) : '—';
+      const pnlCell = mp
+        ? '<span class="'+(mp.pnl>=0?'pl-p':'pl-n')+'">'+(mp.pnl>=0?'+':'')+'$'+mp.pnl.toFixed(4)+'</span>'
+        : '<span style="color:#52525b;">—</span>';
+      return '<tr><td style="font-size:11px;color:#52525b;">'+fmt(run.created_at)+'</td><td style="font-family:monospace;">'+pr2+'</td><td>'+badge(s&&s.action,s&&s.status,s&&s.price,s&&s.reason,run.created_at)+'</td><td><span class="conf-bar-wrap"><span class="conf-bar" style="width:'+conf+'%;background:'+bColor(s&&s.action)+';"></span></span><span style="font-size:11px;color:#52525b;">'+(conf?conf+'%':'—')+'</span></td><td style="font-family:monospace;font-size:11px;">'+rowBal+'</td><td>'+pnlCell+'</td></tr>';
     }).join('');
 
   } catch(e) {
