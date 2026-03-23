@@ -764,8 +764,8 @@ function bColor(a){return a==='BUY'?'#22c55e':a==='SELL'?'#f87171':'#fbbf24';}
 // ── ACTIVE TRADE TRACKER ──
 const BUY_KEY = 'apex_active_buy';
 
-function saveActiveBuy(price, time){
-  localStorage.setItem(BUY_KEY, JSON.stringify({price, time}));
+function saveActiveBuy(price, time, cost){
+  localStorage.setItem(BUY_KEY, JSON.stringify({price, time, cost:cost||20}));
 }
 function clearActiveBuy(){
   localStorage.removeItem(BUY_KEY);
@@ -774,62 +774,46 @@ function getActiveBuy(){
   try{return JSON.parse(localStorage.getItem(BUY_KEY)||'null');}catch(e){return null;}
 }
 
-function updateActiveTradeBanner(currentPrice, krakenTrades){
+function updateActiveTradeBanner(currentPrice, krakenTrades, ghRows){
   const banner = document.getElementById('trade-banner');
-  
-  // Check if we have BTC balance (active position)
-  // Detect from trade history: last trade was BUY with no subsequent SELL
-  const sorted = [...krakenTrades].sort((a,b)=>new Date(b.time)-new Date(a.time));
-  const lastTrade = sorted[0];
-  
-  // Detect open position: last Kraken trade was a BUY
   let activeBuy = null;
-  if(lastTrade && lastTrade.action === 'BUY'){
-    activeBuy = {price: lastTrade.price, time: lastTrade.time, cost: lastTrade.cost};
-    saveActiveBuy(lastTrade.price, lastTrade.time);
-  } else if(lastTrade && lastTrade.action === 'SELL'){
-    clearActiveBuy();
+
+  // Method 1: Kraken trade history (most accurate)
+  if(krakenTrades && krakenTrades.length){
+    const sorted = [...krakenTrades].sort((a,b)=>new Date(b.time)-new Date(a.time));
+    const lastTrade = sorted[0];
+    if(lastTrade && lastTrade.action === 'BUY'){
+      activeBuy = {price: lastTrade.price, time: lastTrade.time, cost: lastTrade.cost||20};
+      saveActiveBuy(lastTrade.price, lastTrade.time, lastTrade.cost||20);
+    } else if(lastTrade && lastTrade.action === 'SELL'){
+      clearActiveBuy();
+    }
   }
-  
-  // Fallback: check log history for BUY without SELL
+
+  // Method 2: Scan GitHub logs for BUY EXECUTED without subsequent SELL EXECUTED
+  if(!activeBuy && ghRows && ghRows.length){
+    let foundBuy = null, soldAfter = false;
+    const chrono = [...ghRows].reverse();
+    for(const row of chrono){
+      const s = row.p && row.p.summary;
+      if(!s) continue;
+      const st = (s.status||'').toLowerCase();
+      if(s.action==='BUY' && st.includes('executed')){
+        foundBuy = {price: s.price, time: s.run_time, cost: 20};
+        soldAfter = false;
+      } else if(s.action==='SELL' && st.includes('executed') && foundBuy){
+        soldAfter = true;
+      }
+    }
+    if(foundBuy && !soldAfter){
+      activeBuy = foundBuy;
+      saveActiveBuy(foundBuy.price, foundBuy.time, 20);
+    }
+  }
+
+  // Method 3: localStorage fallback
   if(!activeBuy) activeBuy = getActiveBuy();
-  
-  if(!activeBuy || !currentPrice){
-    banner.className = 'trade-banner';
-    return;
-  }
-  
-  const buyPrice = activeBuy.price;
-  const buyTime = new Date(activeBuy.time);
-  const now = new Date();
-  const diffMs = now - buyTime;
-  const diffMins = Math.floor(diffMs / 60000);
-  const diffHours = Math.floor(diffMins / 60);
-  const diffDays = Math.floor(diffHours / 24);
-  
-  let duration = '';
-  if(diffDays > 0) duration = diffDays+'d '+(diffHours%24)+'h';
-  else if(diffHours > 0) duration = diffHours+'h '+(diffMins%60)+'m';
-  else duration = diffMins+'m';
-  
-  // Estimate P&L (rough — based on price move %)
-  const pctChange = ((currentPrice - buyPrice) / buyPrice) * 100;
-  const approxPnl = (activeBuy.cost || 20) * (pctChange / 100);
-  const isProfit = approxPnl >= 0;
-  
-  banner.className = 'trade-banner active' + (isProfit ? '' : ' loss');
-  document.getElementById('tb-pulse').className = 'tb-pulse' + (isProfit ? '' : ' loss');
-  document.getElementById('tb-ico').textContent = isProfit ? '🟢' : '🔴';
-  document.getElementById('tb-label').textContent = 'IN TRADE — BTC Long';
-  document.getElementById('tb-label').className = 'tb-label-main' + (isProfit ? '' : ' loss');
-  document.getElementById('tb-entry').textContent = 'Bought at $'+Number(buyPrice).toLocaleString('en-US',{maximumFractionDigits:0})+' CAD · '+new Date(activeBuy.time).toLocaleString('en-CA',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
-  document.getElementById('tb-entry').className = 'tb-entry' + (isProfit ? '' : ' loss');
-  document.getElementById('tb-current').textContent = '$'+Number(currentPrice).toLocaleString('en-US',{maximumFractionDigits:0});
-  const pnlEl = document.getElementById('tb-pnl');
-  pnlEl.textContent = (approxPnl >= 0 ? '+' : '') + '$' + Math.abs(approxPnl).toFixed(2) + ' ('+pctChange.toFixed(2)+'%)';
-  pnlEl.className = 'tb-stat-val ' + (isProfit ? 'pos' : 'neg');
-  document.getElementById('tb-duration').textContent = duration;
-}
+
 
 // Improved trade detection for notifications (catches missed trades)
 const SEEN_TRADES_KEY = 'apex_seen_trades';
@@ -1141,7 +1125,7 @@ async function load(){
     const tbd=byDay(allET);window._tbd=tbd;buildCal(tbd);
     updPeriod(actP);
     // Active trade banner + Kraken-based notifications
-    updateActiveTradeBanner(price, allKT);
+    updateActiveTradeBanner(price, allKT, rows);
     chkKrakenTrades(allKT);
 
     if(ohlc.length)buildPriceChart(ohlc.slice(-24),allKT);
