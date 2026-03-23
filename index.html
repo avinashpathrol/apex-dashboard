@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="APEX Bot">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#09090b">
+<!-- iOS splash/icon -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%230f0f11'/><polyline points='60,380 160,240 260,290 360,130 460,180' stroke='%2322c55e' stroke-width='40' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='360' cy='130' r='35' fill='%2322c55e'/></svg>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avinash Bot Dashboard</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d0d0f'/><polyline points='10,70 30,45 50,55 70,25 90,35' stroke='%2322c55e' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='70' cy='25' r='7' fill='%2322c55e'/></svg>">
@@ -788,13 +796,26 @@ function lockApp() {
 
 // ── API ──
 async function gh(url, raw) {
-  const r = await fetch(url, { headers: { Authorization: 'token ' + GH, Accept: raw ? 'application/vnd.github.v3.raw' : 'application/vnd.github+json' } });
+  const r = await fetch(url, {
+    method: 'GET',
+    headers: {
+      Authorization: 'token ' + GH,
+      Accept: raw ? 'application/vnd.github.v3.raw' : 'application/vnd.github+json',
+      'Cache-Control': 'no-cache',
+    },
+    cache: 'no-store',
+  });
   if (!r.ok) throw new Error('GH ' + r.status);
   return raw ? r.text() : r.json();
 }
 
 async function kPub(m, p) {
-  const r = await fetch('https://api.kraken.com/0/public/' + m + '?' + new URLSearchParams(p || {}));
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  const r = await fetch('https://api.kraken.com/0/public/' + m + '?' + new URLSearchParams(p || {}), {
+    signal: controller.signal,
+    cache: 'no-store',
+  }).finally(() => clearTimeout(timeout));
   const d = await r.json();
   if (d.error && d.error.length) throw new Error(d.error[0]);
   return d.result;
@@ -1788,7 +1809,7 @@ async function load() {
       }
       if (!useCache) {
         const cacheBust = '?t=' + Date.now();
-        const djRes = await fetch('https://raw.githubusercontent.com/' + REPO.replace('apex-trading-bot','apex-dashboard') + '/main/data.json' + cacheBust);
+        const djRes = await fetch('https://raw.githubusercontent.com/' + REPO.replace('apex-trading-bot','apex-dashboard') + '/main/data.json' + cacheBust, { cache: 'no-store', method: 'GET' });
         if (djRes.ok) {
           botData = await djRes.json();
           cadBal = botData.cad_balance || 0;
@@ -2393,5 +2414,28 @@ window.addEventListener('load', () => {
     <div id="skip-popup-body"></div>
   </div>
 </div>
+<script>
+// Register service worker for PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/apex-dashboard/sw.js')
+      .then(r => console.log('SW registered'))
+      .catch(e => console.log('SW failed:', e));
+  });
+}
+
+// Show iOS install prompt
+window.addEventListener('load', () => {
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isStandalone = window.navigator.standalone;
+  const dismissed = localStorage.getItem('pwa_prompt_dismissed');
+  if (isIOS && !isStandalone && !dismissed) {
+    setTimeout(() => {
+      showToast('info', '📱 Install as App', 'Tap Share → Add to Home Screen for the best experience', 8000);
+      localStorage.setItem('pwa_prompt_dismissed', '1');
+    }, 3000);
+  }
+});
+</script>
 </body>
 </html>
