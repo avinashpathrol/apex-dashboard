@@ -898,23 +898,51 @@ function updateBanner(currentPrice, krakenTrades, ghRows) {
   const banner = document.getElementById('trade-banner');
   let activeBuy = null;
 
+  // Method 1: Kraken trade history
   if (krakenTrades && krakenTrades.length) {
     const sorted = [...krakenTrades].sort((a,b) => new Date(b.time) - new Date(a.time));
     const last = sorted[0];
+    console.log('Last Kraken trade:', last?.action, last?.price, last?.time);
     if (last && last.action === 'BUY') {
       activeBuy = {price: last.price, time: last.time, cost: last.cost||20};
       saveActiveBuy(last.price, last.time, last.cost||20);
     } else if (last && last.action === 'SELL') {
-      // Trade is closed — clear active buy and show last trade summary
       clearActiveBuy();
       activeBuy = null;
-      // Show last closed trade in banner
       const lastSell = last;
       const lastBuy = sorted.find(t => t.action === 'BUY');
-      if (lastBuy) {
-        showLastTradeBanner(lastBuy, lastSell);
-        return;
+      if (lastBuy) { showLastTradeBanner(lastBuy, lastSell); return; }
+    }
+  }
+
+  // Method 2: GitHub log fallback — detect SELL EXECUTED in logs
+  if (!activeBuy && ghRows && ghRows.length) {
+    let lastExecutedBuy = null, lastExecutedSell = null;
+    const chrono = [...ghRows].reverse();
+    for (const row of chrono) {
+      const s = row.p && row.p.summary;
+      if (!s) continue;
+      const st = (s.status||'').toLowerCase();
+      if (s.action === 'BUY' && st.includes('executed')) {
+        lastExecutedBuy = s;
+        lastExecutedSell = null;
+      } else if (s.action === 'SELL' && st.includes('executed') && lastExecutedBuy) {
+        lastExecutedSell = s;
       }
+    }
+    console.log('GH logs - last buy:', lastExecutedBuy?.price, 'last sell:', lastExecutedSell?.price);
+    if (lastExecutedSell && lastExecutedBuy) {
+      // Trade is closed per GitHub logs — clear localStorage and show last trade
+      clearActiveBuy();
+      activeBuy = null;
+      const fakeBuy = {price: lastExecutedBuy.price, time: lastExecutedBuy.run_time, cost: 20, fee: 0.052};
+      const fakeSell = {price: lastExecutedSell.price, time: lastExecutedSell.run_time, cost: lastExecutedSell.price * (20/lastExecutedBuy.price), fee: 0.052};
+      showLastTradeBanner(fakeBuy, fakeSell);
+      return;
+    } else if (lastExecutedBuy && !lastExecutedSell) {
+      // Still in a buy from logs
+      activeBuy = {price: lastExecutedBuy.price, time: lastExecutedBuy.run_time, cost: 20};
+      saveActiveBuy(lastExecutedBuy.price, lastExecutedBuy.run_time, 20);
     }
   }
 
@@ -1536,6 +1564,12 @@ function manualRefresh() { startCD(); load(); }
 async function load() {
   document.getElementById('t-lastrun').textContent = 'refreshing...';
   maybeResyncNotifs();
+  // One-time fix: clear stuck active buy so banner re-evaluates from fresh data
+  // Remove this after confirmed working
+  if (localStorage.getItem(BUY_KEY)) {
+    console.log('Clearing cached buy to force re-evaluation...');
+    localStorage.removeItem(BUY_KEY);
+  }
   try {
     const runs = await gh('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=50');
     totR = runs.total_count||0;
@@ -1588,6 +1622,31 @@ async function load() {
       }
     }
     console.log('Kraken trades:', allKT.length, 'Enriched pairs:', allET.length, 'Total P&L:', totPnl);
+
+    // Fallback: if Kraken returned no trades, build P&L from GitHub logs
+    if (allET.length === 0 && rows.length > 0) {
+      console.log('Kraken trades empty — falling back to GitHub logs for P&L');
+      let ghBuy = null;
+      const chronoRows = [...rows].reverse();
+      for (const row of chronoRows) {
+        const s = row.p && row.p.summary;
+        if (!s) continue;
+        const st = (s.status||'').toLowerCase();
+        if (s.action === 'BUY' && st.includes('executed')) {
+          ghBuy = s;
+        } else if (s.action === 'SELL' && st.includes('executed') && ghBuy) {
+          const buyPrice = ghBuy.price;
+          const sellPrice = s.price;
+          const cost = 20;
+          const approxPnl = ((sellPrice - buyPrice) / buyPrice) * cost;
+          totPnl += approxPnl;
+          if (approxPnl > 0) totW++; else totL++;
+          allET.push({time: s.run_time, pnl: approxPnl, price: sellPrice, buyPrice, buyTime: ghBuy.run_time});
+          console.log('GH fallback trade: buy', buyPrice, 'sell', sellPrice, 'pnl', approxPnl);
+          ghBuy = null;
+        }
+      }
+    }
     const tt=totW+totL, wr=tt>0?Math.round((totW/tt)*100):null;
 
     let price=0, ohlc=[];
