@@ -1110,109 +1110,89 @@ function buildInTradeChart(activeBuy, ohlc) {
     const d = new Date(c[0]*1000);
     return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0');
   });
+
   const prices = tradeCandles.map(c => parseFloat(c[4]));
   const currentP = prices[prices.length - 1];
   const isProfit = currentP >= entryPrice;
 
-  // Tight Y axis — only show the zone between SL and TP with small buffer
-  const buffer = (tpPrice - slPrice) * 0.15;
+  // P&L values — small CAD amounts relative to $20 invested
+  const pnls = prices.map(p => parseFloat(((p - entryPrice) / entryPrice * cost).toFixed(4)));
+
+  // Tight Y axis zoom — SL to TP with 20% buffer
+  const buffer = (tpPrice - slPrice) * 0.2;
   const yMin = slPrice - buffer;
   const yMax = tpPrice + buffer;
 
-  // P&L values for right axis — relative to entry
-  const pnls = prices.map(p => parseFloat(((p - entryPrice) / entryPrice * cost).toFixed(4)));
-
-  // Color each segment green if above entry, red if below
-  const gradientPlugin = {
-    id: 'fillGradient',
-    beforeDatasetsDraw(chart) {
-      const ctx2 = chart.ctx;
-      const yAxis = chart.scales['yPrice'];
-      const xAxis = chart.scales['x'];
-      if (!yAxis || !xAxis) return;
-      const entryY = yAxis.getPixelForValue(entryPrice);
-      const top = yAxis.top;
-      const bottom = yAxis.bottom;
-      const left = xAxis.left;
-      const right = xAxis.right;
-      // Green fill above entry
-      ctx2.save();
-      ctx2.fillStyle = 'rgba(34,197,94,0.08)';
-      ctx2.fillRect(left, top, right-left, entryY-top);
-      // Red fill below entry
-      ctx2.fillStyle = 'rgba(248,113,113,0.08)';
-      ctx2.fillRect(left, entryY, right-left, bottom-entryY);
-      ctx2.restore();
-    }
-  };
+  // P&L axis min/max — symmetric around 0
+  const maxPnl = Math.max(Math.abs(Math.min(...pnls)), Math.abs(Math.max(...pnls)), cost * TP_PCT);
+  const pnlBuffer = maxPnl * 0.3;
 
   pChart = new Chart(document.getElementById('priceChart'), {
     type: 'line',
-    plugins: [gradientPlugin],
     data: {
       labels,
       datasets: [
-        // Price line
+        // ── Price line (left axis) ──
         {
           label: 'Price',
           data: prices,
           borderColor: isProfit ? '#22c55e' : '#f87171',
           borderWidth: 2.5,
-          pointRadius: (ctx) => ctx.dataIndex === prices.length-1 ? 5 : 0,
+          pointRadius: prices.map((_, i) => i === prices.length-1 ? 5 : 0),
           pointBackgroundColor: isProfit ? '#22c55e' : '#f87171',
           fill: false,
           tension: .3,
           yAxisID: 'yPrice',
           order: 1,
         },
-        // Entry line
+        // ── Entry reference line (left axis) ──
         {
           label: 'Entry $' + Number(entryPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
           data: tradeCandles.map(() => entryPrice),
-          borderColor: 'rgba(255,255,255,0.4)',
+          borderColor: 'rgba(255,255,255,0.35)',
           borderWidth: 1.5,
-          borderDash: [4,4],
+          borderDash: [5,4],
           pointRadius: 0,
           fill: false,
           yAxisID: 'yPrice',
-          order: 3,
+          order: 4,
         },
-        // TP line
+        // ── TP line (left axis) ──
         {
           label: 'TP +3.5% $' + Number(tpPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
           data: tradeCandles.map(() => tpPrice),
-          borderColor: 'rgba(34,197,94,0.6)',
+          borderColor: 'rgba(34,197,94,0.55)',
           borderWidth: 1.5,
-          borderDash: [8,4],
+          borderDash: [8,5],
           pointRadius: 0,
           fill: false,
           yAxisID: 'yPrice',
-          order: 3,
+          order: 4,
         },
-        // SL line
+        // ── SL line (left axis) ──
         {
           label: 'SL -2% $' + Number(slPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
           data: tradeCandles.map(() => slPrice),
-          borderColor: 'rgba(248,113,113,0.6)',
+          borderColor: 'rgba(248,113,113,0.55)',
           borderWidth: 1.5,
-          borderDash: [8,4],
+          borderDash: [8,5],
           pointRadius: 0,
           fill: false,
           yAxisID: 'yPrice',
-          order: 3,
+          order: 4,
         },
-        // P&L line (right axis)
+        // ── P&L line (RIGHT axis only) ──
         {
-          label: 'P&L',
+          label: 'P&L (CAD)',
           data: pnls,
-          borderColor: 'rgba(129,140,248,0.8)',
+          borderColor: 'rgba(129,140,248,0.9)',
           borderWidth: 1.5,
+          borderDash: [3,3],
           pointRadius: 0,
           fill: false,
           tension: .3,
           yAxisID: 'yPnl',
           order: 2,
-          borderDash: [2,2],
         },
       ]
     },
@@ -1227,13 +1207,13 @@ function buildInTradeChart(activeBuy, ohlc) {
           labels: {
             color: '#71717a',
             font: { size: 10 },
-            boxWidth: 20,
+            boxWidth: 16,
             padding: 10,
             usePointStyle: true,
           }
         },
         tooltip: {
-          backgroundColor: '#1c1c1f',
+          backgroundColor: '#18181b',
           borderColor: '#27272a',
           borderWidth: 1,
           titleColor: '#e8e8e8',
@@ -1241,14 +1221,13 @@ function buildInTradeChart(activeBuy, ohlc) {
           padding: 10,
           callbacks: {
             label: function(ctx) {
-              if (ctx.dataset.label === 'P&L') {
+              if (ctx.dataset.label === 'P&L (CAD)') {
                 const v = ctx.raw;
                 return ' P&L: ' + (v>=0?'+':'') + '$' + v.toFixed(4) + ' CAD';
               }
               if (ctx.dataset.label === 'Price') {
-                const p = ctx.raw;
-                const pct = ((p - entryPrice)/entryPrice*100).toFixed(2);
-                return ' Price: $' + Number(p).toLocaleString('en-US',{maximumFractionDigits:0}) + ' (' + (pct>=0?'+':'') + pct + '%)';
+                const pct = ((ctx.raw - entryPrice)/entryPrice*100);
+                return ' Price: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0}) + ' (' + (pct>=0?'+':'') + pct.toFixed(2) + '%)';
               }
               return ' ' + ctx.dataset.label;
             }
@@ -1266,25 +1245,45 @@ function buildInTradeChart(activeBuy, ohlc) {
           min: yMin,
           max: yMax,
           ticks: {
-            color:'#52525b',
-            font:{size:10},
-            callback: v => '$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0})
+            color: '#71717a',
+            font: { size: 10 },
+            callback: v => '$' + Number(v).toLocaleString('en-US',{maximumFractionDigits:0})
           },
-          grid: { color:'#1c1c1f' }
+          grid: { color: '#1c1c1f' }
         },
         yPnl: {
           type: 'linear',
           position: 'right',
+          min: -(maxPnl + pnlBuffer),
+          max: maxPnl + pnlBuffer,
           ticks: {
-            color:'#818cf8',
-            font:{size:10},
-            callback: v => (v>=0?'+':'')+'$'+v.toFixed(2)
+            color: '#818cf8',
+            font: { size: 10 },
+            callback: v => (v>=0?'+':'') + '$' + v.toFixed(2)
           },
           grid: { drawOnChartArea: false }
         }
       }
     }
   });
+
+  // Draw profit/loss zones as background after chart renders
+  setTimeout(() => {
+    const chartInst = pChart;
+    if (!chartInst) return;
+    const ctx2 = chartInst.ctx;
+    const yAxis = chartInst.scales['yPrice'];
+    const xAxis = chartInst.scales['x'];
+    if (!yAxis || !xAxis) return;
+    const entryY = yAxis.getPixelForValue(entryPrice);
+    ctx2.save();
+    ctx2.globalCompositeOperation = 'destination-over';
+    ctx2.fillStyle = 'rgba(34,197,94,0.05)';
+    ctx2.fillRect(xAxis.left, yAxis.top, xAxis.right-xAxis.left, entryY-yAxis.top);
+    ctx2.fillStyle = 'rgba(248,113,113,0.05)';
+    ctx2.fillRect(xAxis.left, entryY, xAxis.right-xAxis.left, yAxis.bottom-entryY);
+    ctx2.restore();
+  }, 50);
 }
 
 function buildPnlChart(rows2) {
