@@ -25,10 +25,10 @@ input:focus{border-color:#3f3f46;}
 .saved-msg{background:#052e16;color:#22c55e;font-size:12px;padding:8px 12px;border-radius:8px;margin-bottom:14px;}
 
 /* APP SHELL */
-.app{display:none;height:100vh;flex-direction:column;overflow:hidden;}
+.app{display:none;height:100vh;height:100dvh;flex-direction:column;overflow:hidden;}
 
 /* TOPBAR */
-.topbar{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:56px;flex-shrink:0;gap:12px;}
+.topbar{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 12px;display:flex;align-items:center;justify-content:space-between;height:56px;flex-shrink:0;gap:6px;}
 .brand{display:flex;align-items:center;gap:8px;flex-shrink:0;}
 .brand-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -57,15 +57,16 @@ input:focus{border-color:#3f3f46;}
 .last-run-text{font-size:10px;color:#52525b;font-family:monospace;white-space:nowrap;}
 
 /* TABS */
-.tabs{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 20px;display:flex;gap:0;flex-shrink:0;}
-.tab{padding:0 16px;height:42px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#52525b;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;}
+.tabs{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0;display:flex;gap:0;flex-shrink:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{padding:0 14px;height:42px;display:flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:#52525b;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;flex-shrink:0;}
 .tab:hover{color:#a1a1aa;}
 .tab.active{color:#22c55e;border-bottom-color:#22c55e;}
 .tab svg{opacity:.6;}
 .tab.active svg{opacity:1;}
 
 /* CONTENT */
-.content{flex:1;overflow-y:auto;padding:16px 20px;}
+.content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 14px 32px;}
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
 
@@ -75,8 +76,8 @@ input:focus{border-color:#3f3f46;}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px;}
 .g5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:10px;}
 .g2l{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:10px;}
-@media(max-width:700px){.g2,.g3,.g4,.g5,.g2l{grid-template-columns:1fr 1fr;}}
-@media(max-width:480px){.g3,.g4,.g5{grid-template-columns:1fr 1fr;}.g2l{grid-template-columns:1fr;}}
+@media(max-width:700px){.g5{grid-template-columns:repeat(3,1fr);}.g4{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.g2{grid-template-columns:1fr 1fr;}.g3{grid-template-columns:repeat(3,1fr);}.g4,.g5{grid-template-columns:repeat(2,1fr);}.g2l{grid-template-columns:1fr;}}
 
 /* CARDS */
 .card{background:#18181b;border:1px solid #27272a;border-radius:12px;padding:14px;}
@@ -269,6 +270,85 @@ input:focus{border-color:#3f3f46;}
 .pl-p{color:#22c55e;font-weight:600;}.pl-n{color:#f87171;font-weight:600;}
 .divider{font-size:10px;color:#3f3f46;text-transform:uppercase;letter-spacing:.1em;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid #1c1c1f;}
 .empty-state{text-align:center;padding:32px;color:#52525b;font-size:13px;}
+
+/* ── MOBILE RESPONSIVE ── */
+@media(max-width:600px){
+  /* Setup */
+  .setup{margin:20px 12px;padding:20px;}
+
+  /* Topbar */
+  .topbar{height:auto;min-height:52px;padding:8px 12px;flex-wrap:wrap;gap:6px;}
+  .topbar-center{order:3;width:100%;justify-content:flex-start;padding-bottom:4px;}
+  .last-run-text{display:none;}
+  .price-pill{padding:4px 10px;gap:6px;}
+  .price-val{font-size:13px;}
+  .brand-name{font-size:12px;}
+  .brand-badge{display:none;}
+  .tb-btn{padding:5px 8px;font-size:11px;}
+  .tb-label{display:none;}
+
+  /* Tabs */
+  .tabs{padding:0 4px;}
+  .tab{padding:0 12px;font-size:11px;gap:4px;height:38px;}
+  .tab svg{display:none;}
+
+  /* Content */
+  .content{padding:10px 10px 80px;}
+
+  /* Cards */
+  .card{padding:12px;border-radius:10px;}
+  .mcard{padding:10px 12px;}
+  .mcard .mv{font-size:17px;}
+
+  /* Charts */
+  .chart-wrap{height:160px;}
+  .chart-wrap-sm{height:120px;}
+
+  /* Calendar */
+  .cal-nav{flex-direction:column;align-items:flex-start;gap:8px;}
+  .cal-day{min-height:44px;}
+  .cal-pnl{font-size:8px;}
+  .cal-tc{display:none;}
+
+  /* Grids */
+  .g5{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+
+  /* Metric values */
+  .ret-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-g{grid-template-columns:repeat(2,1fr);}
+
+  /* Signal grid */
+  .sig-grid{grid-template-columns:1fr 1fr;}
+
+  /* Table */
+  .tbl{font-size:11px;}
+  .tbl th{font-size:9px;padding-bottom:6px;}
+  .tbl td{padding:6px 6px 6px 0;}
+
+  /* Notification dropdown */
+  .notif-dd{width:calc(100vw - 24px);right:-60px;}
+
+  /* Modal */
+  .modal-ov{padding:16px 10px;}
+  .modal-body{padding:14px;}
+  .prof-hdr{flex-direction:column;align-items:flex-start;gap:10px;}
+
+  /* Period tabs */
+  .period-tabs{gap:4px;}
+  .ptab{padding:4px 8px;font-size:10px;}
+
+  /* Next box */
+  .next-box{padding:10px;}
+  .next-txt{font-size:12px;}
+}
+
+@media(max-width:380px){
+  .g3{grid-template-columns:1fr 1fr;}
+  .g5{grid-template-columns:1fr 1fr;}
+  .tab{padding:0 10px;font-size:10px;}
+  .mcard .mv{font-size:15px;}
+}
 </style>
 </head>
 <body>
@@ -364,7 +444,7 @@ input:focus{border-color:#3f3f46;}
           <div style="background:#27272a;border-radius:3px;height:2px;margin-top:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;background:#fbbf24;transition:width 1s linear;" id="progress"></div></div>
         </div>
       </div>
-      <button class="tb-btn" onclick="manualRefresh()">↻</button>
+      <button class="tb-btn" onclick="manualRefresh()">↻ <span class="tb-label">Now</span></button>
       <div style="position:relative">
         <button class="tb-btn amber" id="notif-btn" onclick="toggleNotif()">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
@@ -378,9 +458,9 @@ input:focus{border-color:#3f3f46;}
       </div>
       <button class="tb-btn blue" onclick="openProfModal()">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Profile
+        <span class="tb-label">Profile</span>
       </button>
-      <button class="tb-btn red" onclick="logout()">✕</button>
+      <button class="tb-btn red" onclick="logout()" title="Sign out">✕</button>
     </div>
   </div>
 
