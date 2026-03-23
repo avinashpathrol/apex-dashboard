@@ -247,6 +247,65 @@ input:focus{border-color:#3f3f46;}
 @keyframes flash{0%,100%{opacity:1}50%{opacity:.4}}
 .pl-p{color:#22c55e;font-weight:600;}.pl-n{color:#f87171;font-weight:600;}
 .empty-state{text-align:center;padding:32px;color:#52525b;font-size:13px;}
+/* GUIDE MODAL */
+.guide-modal-ov{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.85);flex-direction:column;}
+.guide-modal-ov.open{display:flex;}
+.guide-modal{background:#09090b;flex:1;display:flex;flex-direction:column;overflow:hidden;max-width:100%;width:100%;}
+.guide-modal-header{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 16px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.guide-modal-title{font-size:14px;font-weight:700;color:#e8e8e8;}
+.guide-close-btn{background:#18181b;border:1px solid #27272a;border-radius:8px;padding:6px 14px;color:#a1a1aa;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:6px;}
+.guide-close-btn:hover{background:#27272a;color:#e8e8e8;}
+.guide-tabs{background:#0f0f11;border-bottom:1px solid #1c1c1f;display:flex;overflow-x:auto;scrollbar-width:none;flex-shrink:0;}
+.guide-tabs::-webkit-scrollbar{display:none;}
+.guide-tab{padding:0 14px;height:40px;display:flex;align-items:center;font-size:12px;font-weight:500;color:#52525b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;transition:all .15s;}
+.guide-tab:hover{color:#a1a1aa;}.guide-tab.active{color:#22c55e;border-bottom-color:#22c55e;}
+.guide-content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:20px 16px 40px;}
+.guide-section{display:none;max-width:680px;margin:0 auto;}
+.guide-section.active{display:block;}
+.g-page-title{font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+.g-page-heading{font-size:20px;font-weight:700;color:#e8e8e8;margin-bottom:6px;letter-spacing:-.3px;}
+.g-page-desc{font-size:13px;color:#71717a;line-height:1.6;margin-bottom:20px;}
+.g-card{background:#18181b;border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:12px;}
+.g-card-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
+.g-card-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.g-card-icon.green{background:#052e16;}.g-card-icon.blue{background:#0c1a2e;}.g-card-icon.amber{background:#2d1f06;}.g-card-icon.red{background:#2d0a0a;}
+.g-card-title{font-size:13px;font-weight:700;color:#e8e8e8;margin-bottom:2px;}
+.g-card-sub{font-size:11px;color:#52525b;line-height:1.5;}
+.g-sig-card{background:#111;border:1px solid #1c1c1f;border-radius:8px;padding:12px;margin-bottom:8px;}
+.g-sig-header{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.g-sig-name{font-size:12px;font-weight:700;color:#e8e8e8;flex:1;}
+.g-sig-tag{font-size:9px;padding:2px 7px;border-radius:4px;font-weight:600;}
+.tag-bull{background:#052e16;color:#22c55e;}.tag-bear{background:#2d0a0a;color:#f87171;}.tag-both{background:#2d2006;color:#fbbf24;}
+.g-sig-desc{font-size:11px;color:#71717a;line-height:1.6;margin-bottom:8px;}
+.g-sig-rule{background:#0d0d0f;border-radius:6px;padding:8px 10px;font-size:11px;font-family:monospace;color:#a1a1aa;line-height:1.8;border-left:3px solid #27272a;}
+.g-sig-rule .bull{color:#22c55e;}.g-sig-rule .bear{color:#f87171;}
+.g-body{font-size:12px;color:#a1a1aa;line-height:1.7;}
+.g-body strong{color:#e8e8e8;}
+.g-body code{background:#1c1c1f;border-radius:4px;padding:2px 6px;font-family:monospace;font-size:11px;color:#22c55e;}
+.g-callout{display:flex;gap:8px;padding:10px 12px;border-radius:8px;margin-bottom:10px;font-size:12px;line-height:1.6;}
+.g-callout.info{background:#0c1a2e;border:1px solid #1e3a5f;color:#93c5fd;}
+.g-callout.warn{background:#2d1f06;border:1px solid #854f0b;color:#fcd34d;}
+.g-callout.success{background:#052e16;border:1px solid #16a34a;color:#86efac;}
+.g-flow{display:flex;gap:12px;margin-bottom:14px;}
+.g-flow-num{width:26px;height:26px;border-radius:50%;background:#052e16;border:2px solid #22c55e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#22c55e;flex-shrink:0;margin-top:2px;}
+.g-flow-title{font-size:12px;font-weight:600;color:#e8e8e8;margin-bottom:3px;}
+.g-flow-body{font-size:11px;color:#71717a;line-height:1.6;}
+.g-flow-line{width:2px;height:12px;background:#1c1c1f;margin-left:12px;}
+.g-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px;}
+.g-table th{font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;padding:7px 10px;text-align:left;border-bottom:1px solid #27272a;background:#111;}
+.g-table td{padding:8px 10px;border-bottom:1px solid #1c1c1f;color:#a1a1aa;vertical-align:top;}
+.g-table tr:last-child td{border-bottom:none;}
+.g-table td:first-child{color:#e8e8e8;font-weight:600;}
+.vg{color:#22c55e;font-weight:700;font-family:monospace;}
+.vr{color:#f87171;font-weight:700;font-family:monospace;}
+.va{color:#fbbf24;font-weight:700;font-family:monospace;}
+.g-scenario{background:#111;border:1px solid #1c1c1f;border-radius:8px;padding:12px;margin-bottom:8px;}
+.g-scenario-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.g-scenario-title.win{color:#22c55e;}.g-scenario-title.loss{color:#f87171;}.g-scenario-title.hold{color:#fbbf24;}
+.g-scenario-row{display:flex;justify-content:space-between;font-size:11px;padding:4px 0;border-bottom:1px solid #1c1c1f;}
+.g-scenario-row:last-child{border-bottom:none;}
+.g-scenario-label{color:#52525b;}.g-scenario-val{font-family:monospace;font-weight:600;color:#e8e8e8;}
+
 @media(max-width:600px){
   .setup{margin:20px 12px;padding:20px;}
   .topbar{height:auto;min-height:56px;padding:8px 12px;flex-wrap:wrap;gap:6px;}
@@ -469,8 +528,8 @@ input:focus{border-color:#3f3f46;}
         <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
       </div>
       <div class="g2">
-        <div class="card"><div class="card-title"><span>Bullish signals</span><a href="guide.html" style="font-size:10px;color:#52525b;text-decoration:none;" title="Learn about signals">ℹ️</a></div><div class="sig-list" id="bull">—</div></div>
-        <div class="card"><div class="card-title"><span>Bearish signals</span><a href="guide.html" style="font-size:10px;color:#52525b;text-decoration:none;" title="Learn about signals">ℹ️</a></div><div class="sig-list" id="bear">—</div></div>
+        <div class="card"><div class="card-title"><span>Bullish signals</span><button onclick="openGuide('signals')" style="background:none;border:none;font-size:12px;cursor:pointer;padding:0;" title="Strategy Guide">ℹ️</button></div><div class="sig-list" id="bull">—</div></div>
+        <div class="card"><div class="card-title"><span>Bearish signals</span><button onclick="openGuide('signals')" style="background:none;border:none;font-size:12px;cursor:pointer;padding:0;" title="Strategy Guide">ℹ️</button></div><div class="sig-list" id="bear">—</div></div>
       </div>
     </div>
 
@@ -481,10 +540,10 @@ input:focus{border-color:#3f3f46;}
           <span>Signal strength</span>
           <div style="display:flex;align-items:center;gap:8px;">
             <span id="strength-label" style="font-family:monospace;color:#a1a1aa;">—</span>
-            <a href="guide.html" style="background:#0c1a2e;border:1px solid #1e3a5f;border-radius:6px;padding:3px 10px;font-size:10px;color:#818cf8;text-decoration:none;display:flex;align-items:center;gap:4px;white-space:nowrap;">
+            <button onclick="openGuide('signals')" style="background:#0c1a2e;border:1px solid #1e3a5f;border-radius:6px;padding:3px 10px;font-size:10px;color:#818cf8;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap;">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
               Strategy Guide
-            </a>
+            </button>
           </div>
         </div>
         <div class="strength-track"><div class="strength-fill" id="strength-bar" style="width:0%;background:#3f3f46;"></div></div>
@@ -1137,6 +1196,7 @@ function buildInTradeChart(activeBuy, ohlc) {
           label: 'Price',
           data: prices,
           borderColor: isProfit ? '#22c55e' : '#f87171',
+          backgroundColor: isProfit ? '#22c55e' : '#f87171',
           borderWidth: 2.5,
           pointRadius: prices.map((_, i) => i === prices.length-1 ? 5 : 0),
           pointBackgroundColor: isProfit ? '#22c55e' : '#f87171',
@@ -1150,6 +1210,7 @@ function buildInTradeChart(activeBuy, ohlc) {
           label: 'Entry $' + Number(entryPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
           data: tradeCandles.map(() => entryPrice),
           borderColor: 'rgba(255,255,255,0.35)',
+          backgroundColor: 'rgba(255,255,255,0.35)',
           borderWidth: 1.5,
           borderDash: [5,4],
           pointRadius: 0,
@@ -1162,6 +1223,7 @@ function buildInTradeChart(activeBuy, ohlc) {
           label: 'TP +3.5% $' + Number(tpPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
           data: tradeCandles.map(() => tpPrice),
           borderColor: 'rgba(34,197,94,0.55)',
+          backgroundColor: '#22c55e',
           borderWidth: 1.5,
           borderDash: [8,5],
           pointRadius: 0,
@@ -1174,6 +1236,7 @@ function buildInTradeChart(activeBuy, ohlc) {
           label: 'SL -2% $' + Number(slPrice).toLocaleString('en-US',{maximumFractionDigits:0}),
           data: tradeCandles.map(() => slPrice),
           borderColor: 'rgba(248,113,113,0.55)',
+          backgroundColor: '#f87171',
           borderWidth: 1.5,
           borderDash: [8,5],
           pointRadius: 0,
@@ -1186,6 +1249,7 @@ function buildInTradeChart(activeBuy, ohlc) {
           label: 'P&L (CAD)',
           data: pnls,
           borderColor: 'rgba(129,140,248,0.9)',
+          backgroundColor: '#818cf8',
           borderWidth: 1.5,
           borderDash: [3,3],
           pointRadius: 0,
@@ -1205,11 +1269,12 @@ function buildInTradeChart(activeBuy, ohlc) {
           display: true,
           position: 'top',
           labels: {
-            color: '#71717a',
+            color: '#a1a1aa',
             font: { size: 10 },
-            boxWidth: 16,
-            padding: 10,
-            usePointStyle: true,
+            boxWidth: 12,
+            boxHeight: 12,
+            padding: 12,
+            usePointStyle: false,
           }
         },
         tooltip: {
@@ -1510,6 +1575,27 @@ async function startApp() {
   aInt = setInterval(() => { load(); startCD(); }, SECS*1000);
 }
 
+// ── GUIDE MODAL ──
+function openGuide(tab) {
+  document.getElementById('guide-modal-ov').classList.add('open');
+  if (tab) {
+    const el = document.querySelector('.guide-tab[onclick*="' + tab + '"]');
+    if (el) showGuide(tab, el);
+  }
+  document.body.style.overflow = 'hidden';
+}
+function closeGuide() {
+  document.getElementById('guide-modal-ov').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showGuide(id, el) {
+  document.querySelectorAll('.guide-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.guide-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('gsec-' + id).classList.add('active');
+  el.classList.add('active');
+  document.querySelector('.guide-content').scrollTop = 0;
+}
+
 // ── SKIP POPUP ──
 function openSkipPopup(action, price, status, reason, time) {
   const st = (status||'').toLowerCase();
@@ -1566,6 +1652,163 @@ window.addEventListener('load', () => {
   else showFullSetup();
 });
 </script>
+<!-- GUIDE MODAL -->
+<div class="guide-modal-ov" id="guide-modal-ov">
+  <div class="guide-modal">
+    <div class="guide-modal-header">
+      <div class="guide-modal-title">📚 APEX Strategy Guide</div>
+      <button class="guide-close-btn" onclick="closeGuide()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Close
+      </button>
+    </div>
+    <div class="guide-tabs">
+      <div class="guide-tab active" onclick="showGuide('signals',this)">📡 Signals</div>
+      <div class="guide-tab" onclick="showGuide('how',this)">⚙️ How It Trades</div>
+      <div class="guide-tab" onclick="showGuide('risk',this)">🛡️ Risk</div>
+      <div class="guide-tab" onclick="showGuide('scenarios',this)">📊 Scenarios</div>
+      <div class="guide-tab" onclick="showGuide('glossary',this)">📖 Glossary</div>
+    </div>
+    <div class="guide-content">
+
+      <!-- SIGNALS -->
+      <div class="guide-section active" id="gsec-signals">
+        <div class="g-page-title">Understanding</div>
+        <div class="g-page-heading">Trading Signals</div>
+        <div class="g-page-desc">The bot uses 6 technical indicators. It needs at least <strong>3 signals in the same direction</strong> to place a trade.</div>
+        <div class="g-callout info"><span>ℹ️</span><div><strong>Scoring:</strong> Each indicator votes bullish or bearish. 3+ bullish = BUY. 3+ bearish = SELL. Anything else = HOLD.</div></div>
+        <div class="g-sig-card">
+          <div class="g-sig-header"><div class="g-sig-name">RSI — Relative Strength Index</div><span class="g-sig-tag tag-both">Both</span></div>
+          <div class="g-sig-desc">Measures momentum 0–100. Very low = oversold (likely to bounce). Very high = overbought (likely to drop).</div>
+          <div class="g-sig-rule"><span class="bull">BULL →</span> RSI &lt; 35 or RSI &lt; 50 and rising<br><span class="bear">BEAR →</span> RSI &gt; 65 or RSI &gt; 50 and falling<br>Window: <strong>14 periods × 15min</strong></div>
+        </div>
+        <div class="g-sig-card">
+          <div class="g-sig-header"><div class="g-sig-name">MACD — Moving Avg Convergence Divergence</div><span class="g-sig-tag tag-both">Both</span></div>
+          <div class="g-sig-desc">Tracks two moving averages. When MACD crosses above signal line = momentum shifting bullish. Below = bearish.</div>
+          <div class="g-sig-rule"><span class="bull">BULL →</span> MACD crosses above signal OR already above + histogram positive<br><span class="bear">BEAR →</span> MACD crosses below signal OR already below + histogram negative<br>Settings: <strong>12 / 26 / 9</strong></div>
+        </div>
+        <div class="g-sig-card">
+          <div class="g-sig-header"><div class="g-sig-name">EMA-20 — 20-Period Exponential Moving Average</div><span class="g-sig-tag tag-both">Both</span></div>
+          <div class="g-sig-desc">Average price of last 20 candles (5 hours). Price above it = short-term uptrend. Below = downtrend.</div>
+          <div class="g-sig-rule"><span class="bull">BULL →</span> Price &gt; EMA-20<br><span class="bear">BEAR →</span> Price &lt; EMA-20</div>
+        </div>
+        <div class="g-sig-card">
+          <div class="g-sig-header"><div class="g-sig-name">EMA-50 — 50-Period Exponential Moving Average</div><span class="g-sig-tag tag-both">Both</span></div>
+          <div class="g-sig-desc">Medium-term trend (12.5 hours). EMA-20 above EMA-50 = golden cross (uptrend). Below = death cross (downtrend).</div>
+          <div class="g-sig-rule"><span class="bull">BULL →</span> EMA-20 &gt; EMA-50 (uptrend)<br><span class="bear">BEAR →</span> EMA-20 &lt; EMA-50 (downtrend)</div>
+        </div>
+        <div class="g-sig-card">
+          <div class="g-sig-header"><div class="g-sig-name">Bollinger Bands — Volatility Envelope</div><span class="g-sig-tag tag-both">Both</span></div>
+          <div class="g-sig-desc">Two lines around price based on volatility. Near lower band = statistically stretched down, likely to bounce. Near upper = likely to drop.</div>
+          <div class="g-sig-rule"><span class="bull">BULL →</span> Price in bottom 20% of BB range<br><span class="bear">BEAR →</span> Price in top 20% of BB range<br>Settings: <strong>20 period, 2 std deviations</strong></div>
+        </div>
+        <div class="g-sig-card">
+          <div class="g-sig-header"><div class="g-sig-name">Volume Confirmation</div><span class="g-sig-tag tag-both">Confirming</span></div>
+          <div class="g-sig-desc">Doesn't trigger trades alone. Confirms the dominant direction when volume is unusually high.</div>
+          <div class="g-sig-rule">Fires when: <strong>current volume &gt; 1.3× 10-candle average</strong><br><span class="bull">BULL →</span> High vol when more bullish signals<br><span class="bear">BEAR →</span> High vol when more bearish signals</div>
+        </div>
+      </div>
+
+      <!-- HOW IT TRADES -->
+      <div class="guide-section" id="gsec-how">
+        <div class="g-page-title">Step by Step</div>
+        <div class="g-page-heading">How Each Trade is Taken</div>
+        <div class="g-page-desc">Every 7–15 minutes the bot runs through this exact process.</div>
+        <div class="g-card">
+          <div class="g-flow"><div class="g-flow-num">1</div><div><div class="g-flow-title">Fetch Market Data</div><div class="g-flow-body">Gets last 100 OHLC candles (15-min) for BTC/CAD from Kraken. ~25 hours of history for accurate indicators.</div></div></div>
+          <div class="g-flow-line"></div>
+          <div class="g-flow"><div class="g-flow-num">2</div><div><div class="g-flow-title">Calculate 6 Indicators</div><div class="g-flow-body">RSI, MACD, EMA-20, EMA-50, Bollinger Bands, Volume all calculated fresh every run.</div></div></div>
+          <div class="g-flow-line"></div>
+          <div class="g-flow"><div class="g-flow-num">3</div><div><div class="g-flow-title">Score Signals</div><div class="g-flow-body">Each indicator votes. 3+ bullish AND bullish &gt; bearish → BUY. 3+ bearish AND bearish &gt; bullish → SELL. Else → HOLD.</div></div></div>
+          <div class="g-flow-line"></div>
+          <div class="g-flow"><div class="g-flow-num">4</div><div><div class="g-flow-title">Check Balance</div><div class="g-flow-body">BUY needs ≥ $20 CAD. SELL needs actual BTC. If missing → SKIPPED (intentional protection, not an error).</div></div></div>
+          <div class="g-flow-line"></div>
+          <div class="g-flow"><div class="g-flow-num">5</div><div><div class="g-flow-title">Execute Market Order</div><div class="g-flow-body">Places a $20 CAD market order on Kraken. Fills instantly at the best available price.</div></div></div>
+          <div class="g-flow-line"></div>
+          <div class="g-flow"><div class="g-flow-num">6</div><div><div class="g-flow-title">Send Telegram Alert</div><div class="g-flow-body">Instant message with price, quantity, confidence and P&L. Fires even when dashboard is closed.</div></div></div>
+          <div class="g-flow-line"></div>
+          <div class="g-flow"><div class="g-flow-num">7</div><div><div class="g-flow-title">Log Summary</div><div class="g-flow-body">JSON summary written to GitHub Actions logs. Dashboard reads these to show history and stats.</div></div></div>
+        </div>
+        <div class="g-card">
+          <div class="g-card-header"><div class="g-card-icon amber">⚡</div><div><div class="g-card-title">Confidence Score</div><div class="g-card-sub">How certain the bot is</div></div></div>
+          <div class="g-body"><code>confidence = 55 + (dominant / total) × 45</code><br><br>3 of 3 signals = ~<strong>85%</strong>. 4 bullish + 1 bearish = slightly less. Max capped at <strong>95%</strong>. Risk is LOW if 4+ align, MEDIUM if exactly 3.</div>
+        </div>
+      </div>
+
+      <!-- RISK -->
+      <div class="guide-section" id="gsec-risk">
+        <div class="g-page-title">Protecting Capital</div>
+        <div class="g-page-heading">Risk Management</div>
+        <div class="g-page-desc">Every limit the bot has and why it exists.</div>
+        <div class="g-callout warn"><span>⚠️</span><div><strong>Note:</strong> TP/SL lines on the chart are <em>reference levels</em> — not hard orders on Kraken. The bot exits on signals, not fixed prices.</div></div>
+        <div class="g-card">
+          <table class="g-table">
+            <thead><tr><th>Parameter</th><th>Value</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Trade size</td><td><span class="va">$20 CAD</span></td><td>Small to prove strategy before scaling</td></tr>
+              <tr><td>Min signals</td><td><span class="vg">3 of 6</span></td><td>Reduces false positives from single indicators</td></tr>
+              <tr><td>Take Profit ref</td><td><span class="vg">+3.5%</span></td><td>Chart reference only — bot exits on signals</td></tr>
+              <tr><td>Stop Loss ref</td><td><span class="vr">-2.0%</span></td><td>Chart reference — bearish signals usually follow</td></tr>
+              <tr><td>One trade at a time</td><td><span class="vg">Yes</span></td><td>Balance checked before every order</td></tr>
+              <tr><td>Kraken fee</td><td><span class="vr">~0.26%</span></td><td>Per side (buy + sell = ~0.52% round trip)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="g-card">
+          <div class="g-card-header"><div class="g-card-icon red">📉</div><div><div class="g-card-title">Worst Case on $20 CAD</div></div></div>
+          <div class="g-body">If BTC drops −2% before SELL signal:<br><code>$20 × −2% = −$0.40</code> + <code>~$0.10 fees</code> = <strong style="color:#f87171;">~$0.50 max loss</strong><br><br>At $200 CAD that same loss = <strong>$5.00</strong> — still very manageable.</div>
+        </div>
+        <div class="g-card">
+          <div class="g-card-header"><div class="g-card-icon green">📈</div><div><div class="g-card-title">Best Case on $20 CAD</div></div></div>
+          <div class="g-body">If BTC rises +3.5% and bot catches the SELL:<br><code>$20 × +3.5% = +$0.70</code> − <code>$0.10 fees</code> = <strong style="color:#22c55e;">~$0.60 net profit</strong><br><br>At $200 CAD = <strong>+$6.00 per trade</strong>. Multiple trades/day compounds quickly.</div>
+        </div>
+      </div>
+
+      <!-- SCENARIOS -->
+      <div class="guide-section" id="gsec-scenarios">
+        <div class="g-page-title">Real Examples</div>
+        <div class="g-page-heading">Trade Scenarios</div>
+        <div class="g-page-desc">How different market situations play out.</div>
+        <div class="g-card">
+          <div class="g-card-header"><div class="g-card-icon green">✅</div><div><div class="g-card-title">Scenario 1 — Winning Trade</div><div class="g-card-sub">Like your first real trade on Mar 22</div></div></div>
+          <div class="g-scenario"><div class="g-scenario-title win">📈 BUY FIRES</div><div class="g-scenario-row"><span class="g-scenario-label">Signals</span><span class="g-scenario-val" style="color:#22c55e;font-size:11px;">RSI rising + MACD bullish + Price above EMA-20</span></div><div class="g-scenario-row"><span class="g-scenario-label">Confidence</span><span class="g-scenario-val">88%</span></div><div class="g-scenario-row"><span class="g-scenario-label">Entry</span><span class="g-scenario-val">$93,461 CAD</span></div><div class="g-scenario-row"><span class="g-scenario-label">Invested</span><span class="g-scenario-val">$20.00 CAD</span></div></div>
+          <div style="font-size:11px;color:#52525b;text-align:center;padding:6px 0;">↓ price rises to $94,200 ↓</div>
+          <div class="g-scenario"><div class="g-scenario-title win">💰 SELL FIRES</div><div class="g-scenario-row"><span class="g-scenario-label">Exit</span><span class="g-scenario-val">$94,200 CAD</span></div><div class="g-scenario-row"><span class="g-scenario-label">Gross profit</span><span class="g-scenario-val" style="color:#22c55e;">+$0.80</span></div><div class="g-scenario-row"><span class="g-scenario-label">Fees</span><span class="g-scenario-val" style="color:#f87171;">-$0.10</span></div><div class="g-scenario-row"><span class="g-scenario-label">Net profit</span><span class="g-scenario-val" style="color:#22c55e;">+$0.70 ✅</span></div></div>
+        </div>
+        <div class="g-card">
+          <div class="g-card-header"><div class="g-card-icon red">❌</div><div><div class="g-card-title">Scenario 2 — Losing Trade</div><div class="g-card-sub">Market reverses after entry</div></div></div>
+          <div class="g-scenario"><div class="g-scenario-title loss">📉 SELL FIRES (STOP)</div><div class="g-scenario-row"><span class="g-scenario-label">Entry</span><span class="g-scenario-val">$93,461 CAD</span></div><div class="g-scenario-row"><span class="g-scenario-label">Exit</span><span class="g-scenario-val">$91,592 (−2%)</span></div><div class="g-scenario-row"><span class="g-scenario-label">Net loss</span><span class="g-scenario-val" style="color:#f87171;">-$0.50 ❌</span></div></div>
+          <div class="g-callout success" style="margin-top:10px;margin-bottom:0;"><span>✅</span><div>Even in a loss, damage is capped at ~$0.50 and capital is freed for the next opportunity.</div></div>
+        </div>
+        <div class="g-card">
+          <div class="g-card-header"><div class="g-card-icon amber">⏭</div><div><div class="g-card-title">Scenario 3 — SKIPPED</div><div class="g-card-sub">Signal fires but can't execute</div></div></div>
+          <div class="g-body"><strong>SKIPPED — Balance issue (BUY):</strong> Wants to buy but CAD is $0 — already in an open trade. No double buying.<br><br><strong>SKIPPED — No BTC (SELL):</strong> Wants to sell but BTC balance is 0. Nothing to sell.<br><br>Neither is an error — it's the bot being responsible.</div>
+        </div>
+      </div>
+
+      <!-- GLOSSARY -->
+      <div class="guide-section" id="gsec-glossary">
+        <div class="g-page-title">Quick Reference</div>
+        <div class="g-page-heading">Glossary</div>
+        <div class="g-page-desc">Plain-English definitions for every term on the dashboard.</div>
+        <div class="g-card">
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">BUY / SELL / HOLD</div></div><div class="g-sig-desc"><strong>BUY</strong> — Purchased BTC. <strong>SELL</strong> — Sold all BTC. <strong>HOLD</strong> — Not enough signals. Waiting.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">SKIPPED</div></div><div class="g-sig-desc">Signal fired but couldn't execute. No CAD to buy, or no BTC to sell. Click the badge in History for details.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">Unrealised P&L</div></div><div class="g-sig-desc">Profit/loss on your open position <em>if you sold right now</em>. On paper until bot sells.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">Realised P&L</div></div><div class="g-sig-desc">Locked-in profit/loss after a SELL. Real money in your account.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">Confidence %</div></div><div class="g-sig-desc">How strongly signals agree. 88% = 88% of signal weight points in trade direction.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">Take Profit (TP) +3.5%</div></div><div class="g-sig-desc">Reference level on In Trade chart. Bot exits on signals, not this fixed %. Shown at +3.5% above entry.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">Stop Loss (SL) -2%</div></div><div class="g-sig-desc">Reference level at −2% below entry. If price hits here, bearish signals usually follow naturally.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">Market Order</div></div><div class="g-sig-desc">Executes immediately at the best current price. Used for instant fills.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">Win Rate</div></div><div class="g-sig-desc">% of completed trades that were profitable. 60% = 6 of every 10 trades made money.</div></div>
+          <div class="g-sig-card"><div class="g-sig-header"><div class="g-sig-name">OHLC</div></div><div class="g-sig-desc">Open, High, Low, Close — the 4 price points per 15-minute candle used for calculations.</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- SKIP REASON POPUP -->
 <div class="skip-popup" id="skip-popup" onclick="closeSkipPopup(event)">
   <div class="skip-backdrop"></div>
