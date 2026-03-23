@@ -459,7 +459,7 @@ input:focus{border-color:#3f3f46;}
       </div>
       <div class="card" style="margin-bottom:8px;">
         <div class="card-title">
-          <span id="chart-title">BTC Price (24h)</span>
+          <span id="chart-title">BTC Market View (24h)</span>
           <div style="display:flex;gap:5px;">
             <button id="btn-normal" onclick="setChartMode('normal')" style="background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;">📈 Market View</button>
             <button id="btn-trade" onclick="setChartMode('trade')" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;">📍 In Trade</button>
@@ -1058,23 +1058,26 @@ function setChartMode(mode) {
   chartMode = mode;
   const btnN = document.getElementById('btn-normal');
   const btnT = document.getElementById('btn-trade');
-  const legend = document.getElementById('chart-legend');
   const title = document.getElementById('chart-title');
 
   if (mode === 'normal') {
-    btnN.style.cssText = 'background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;';
-    btnT.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
-    legend.style.display = 'none';
-    title.textContent = 'BTC Market View (24h)';
+    if (btnN) btnN.style.cssText = 'background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;';
+    if (btnT) btnT.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
+    if (title) title.textContent = 'BTC Market View (24h)';
     if (_lastOhlc.length) buildPriceChart(_lastOhlc, _lastKtrades);
+    else showToast('info', 'Refreshing...', 'Loading chart data.');
   } else {
     const ab = getActiveBuy();
-    if (!ab) { showToast('warn', 'No active trade', 'In Trade mode requires an open position.'); return; }
-    btnT.style.cssText = 'background:#2d0a0a;border:1px solid #7f1d1d;border-radius:6px;padding:3px 10px;font-size:10px;color:#f87171;cursor:pointer;font-weight:600;';
-    btnN.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
-    legend.style.display = 'flex';
-    title.textContent = 'In Trade View';
-    buildInTradeChart(ab, _lastOhlc);
+    if (!ab) {
+      showToast('warn', 'No active trade', 'In Trade mode requires an open position.');
+      chartMode = 'normal';
+      return;
+    }
+    if (btnT) btnT.style.cssText = 'background:#2d0a0a;border:1px solid #7f1d1d;border-radius:6px;padding:3px 10px;font-size:10px;color:#f87171;cursor:pointer;font-weight:600;';
+    if (btnN) btnN.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
+    if (title) title.textContent = '📍 In Trade View';
+    if (_lastOhlc.length) buildInTradeChart(ab, _lastOhlc);
+    else showToast('warn', 'No chart data', 'Wait for next refresh.');
   }
 }
 
