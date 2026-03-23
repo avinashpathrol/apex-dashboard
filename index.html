@@ -1240,8 +1240,19 @@ function buildRetChart(trades) {
 function buildPriceChart(ohlc, trades) {
   const labels = ohlc.map(c => { const d=new Date(c[0]*1000); return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0'); });
   const prices = ohlc.map(c => parseFloat(c[4]));
-  const buys = ohlc.map(c => { const t=trades.find(t=>t.action==='BUY'&&Math.abs(t.price-parseFloat(c[4]))<500); return t?parseFloat(c[4]):null; });
-  const sells = ohlc.map(c => { const t=trades.find(t=>t.action==='SELL'&&Math.abs(t.price-parseFloat(c[4]))<500); return t?parseFloat(c[4]):null; });
+  // Only show actual executed trades (from allKT which has real Kraken trades)
+  const executedBuys = trades.filter(t => t.action === 'BUY');
+  const executedSells = trades.filter(t => t.action === 'SELL');
+  const buys = ohlc.map(c => {
+    const candleTime = c[0] * 1000;
+    const match = executedBuys.find(t => Math.abs(new Date(t.time).getTime() - candleTime) < 60*60*1000 && Math.abs(t.price - parseFloat(c[4])) < 300);
+    return match ? parseFloat(c[4]) : null;
+  });
+  const sells = ohlc.map(c => {
+    const candleTime = c[0] * 1000;
+    const match = executedSells.find(t => Math.abs(new Date(t.time).getTime() - candleTime) < 60*60*1000 && Math.abs(t.price - parseFloat(c[4])) < 300);
+    return match ? parseFloat(c[4]) : null;
+  });
   if (pChart) pChart.destroy();
   pChart = new Chart(document.getElementById('priceChart'), {type:'line',data:{labels,datasets:[{data:prices,borderColor:'#6366f1',borderWidth:1.5,pointRadius:0,fill:true,backgroundColor:'rgba(99,102,241,.05)',tension:.3},{data:buys,borderColor:'transparent',backgroundColor:'#22c55e',pointRadius:8,pointStyle:'triangle',showLine:false},{data:sells,borderColor:'transparent',backgroundColor:'#f87171',pointRadius:8,pointStyle:'triangle',rotation:180,showLine:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#52525b',maxTicksLimit:8,font:{size:10}},grid:{color:'#1c1c1f'}},y:{ticks:{color:'#52525b',font:{size:10},callback:v=>'$'+Number(v).toLocaleString()},grid:{color:'#1c1c1f'}}}}});
 }
@@ -1601,6 +1612,7 @@ function manualRefresh() { startCD(); load(); }
 async function load() {
   document.getElementById('t-lastrun').textContent = 'refreshing...';
   maybeResyncNotifs();
+  window._dataJsonLoaded = false; // reset each load
   // One-time fix: clear stuck active buy so banner re-evaluates from fresh data
   // Remove this after confirmed working
   if (localStorage.getItem(BUY_KEY)) {
@@ -1658,6 +1670,7 @@ async function load() {
             fee:    t.fee,
           })).sort((a,b) => new Date(a.time)-new Date(b.time));
           if (allKT.length) firstD = allKT[0].time;
+          window._dataJsonLoaded = true; // flag to skip GH fallback
           console.log('data.json loaded:', allKT.length, 'trades, balance: $'+cadBal);
         }
       }
@@ -1686,9 +1699,8 @@ async function load() {
     }
     console.log('Kraken trades:', allKT.length, 'Enriched pairs:', allET.length, 'Total P&L:', totPnl);
 
-    // Fallback: if Kraken returned no trades, build P&L from GitHub logs
-    // Always run this to catch all completed BUY→SELL pairs
-    if (rows.length > 0) {
+    // Fallback: only use GitHub logs if data.json didn't load
+    if (rows.length > 0 && !window._dataJsonLoaded) {
       console.log('Scanning GitHub logs for completed trades... rows='+rows.length);
       // Debug: show all executed trades found in logs
       rows.forEach((r,i) => {
