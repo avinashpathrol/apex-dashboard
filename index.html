@@ -938,7 +938,7 @@ function updateBanner(price, allKT, ghRows, botData) {
   // Method 0: Use botData directly (most reliable — written by bot server-side)
   if (botData && botData.btc_balance > 0.00001 && botData.action) {
     // Bot has BTC — find the open buy from trade history
-    const sortedTrades = (botData.trades||[]).filter(t => new Date(t.time) >= new Date('2026-03-22T00:00:00Z') && t.price > 50000)
+    const sortedTrades = (botData.trades||[]).filter(t => new Date(t.time) >= new Date('2026-03-22T00:00:00Z') && t.price > 50000 && t.cost >= 15 && t.cost <= 30)
       .sort((a,b) => new Date(a.time)-new Date(b.time));
     let openBuy = null;
     for (const t of sortedTrades) {
@@ -958,8 +958,8 @@ function updateBanner(price, allKT, ghRows, botData) {
   }
 
   // Method 1: Kraken trade history
-  if (krakenTrades && krakenTrades.length) {
-    const sorted = [...krakenTrades].sort((a,b) => new Date(b.time) - new Date(a.time));
+  if (allKT && allKT.length) {
+    const sorted = [...allKT].sort((a,b) => new Date(b.time) - new Date(a.time));
     const last = sorted[0];
     console.log('Last Kraken trade:', last?.action, last?.price, last?.time);
     if (last && last.action === 'BUY') {
@@ -1761,7 +1761,7 @@ async function load() {
             // Filter to only relevant trades (Mar 22 onwards, price > $50k = BTC/CAD)
             const START_DATE = new Date('2026-03-22T00:00:00Z'); // UTC midnight Mar 22
             allKT = botData.trades
-              .filter(t => new Date(t.time) >= START_DATE && t.price > 50000)
+              .filter(t => new Date(t.time) >= START_DATE && t.price > 50000 && t.cost >= 15 && t.cost <= 30)
               .map(t => ({
                 time:   t.time,
                 action: t.action,
