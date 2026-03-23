@@ -94,6 +94,26 @@ input:focus{border-color:#3f3f46;}
 .mv.hold{color:#fbbf24;}
 .mv.skip,.mv.neu{color:#52525b;}
 
+/* ACTIVE TRADE BANNER */
+.trade-banner{background:#052e16;border:1px solid #16a34a;border-radius:10px;padding:12px 16px;margin-bottom:8px;display:none;}
+.trade-banner.active{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.trade-banner.loss{background:#2d0a0a;border-color:#7f1d1d;}
+.tb-left{display:flex;align-items:center;gap:10px;}
+.tb-ico{font-size:18px;}
+.tb-label-main{font-size:12px;font-weight:700;color:#22c55e;}
+.tb-label-main.loss{color:#f87171;}
+.tb-entry{font-size:11px;color:#86efac;}
+.tb-entry.loss{color:#fca5a5;}
+.tb-right{display:flex;align-items:center;gap:16px;}
+.tb-stat{text-align:right;}
+.tb-stat-label{font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;}
+.tb-stat-val{font-size:15px;font-weight:700;font-family:monospace;}
+.tb-stat-val.pos{color:#22c55e;}
+.tb-stat-val.neg{color:#f87171;}
+.tb-stat-val.neu{color:#e8e8e8;}
+.tb-pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 1.5s infinite;flex-shrink:0;}
+.tb-pulse.loss{background:#f87171;}
+
 /* CHART */
 .chart-wrap{position:relative;width:100%;height:200px;}
 .chart-wrap-sm{position:relative;width:100%;height:140px;}
@@ -497,7 +517,34 @@ input:focus{border-color:#3f3f46;}
 
     <!-- OVERVIEW TAB -->
     <div class="tab-panel active" id="tab-overview">
-      <div class="g5" style="margin-bottom:10px;">
+
+      <!-- ACTIVE TRADE BANNER -->
+      <div class="trade-banner" id="trade-banner">
+        <div class="tb-left">
+          <div class="tb-pulse" id="tb-pulse"></div>
+          <div class="tb-ico" id="tb-ico">🟢</div>
+          <div>
+            <div class="tb-label-main" id="tb-label">IN TRADE — BTC Long</div>
+            <div class="tb-entry" id="tb-entry">Bought at — · Holding</div>
+          </div>
+        </div>
+        <div class="tb-right">
+          <div class="tb-stat">
+            <div class="tb-stat-label">Current Price</div>
+            <div class="tb-stat-val neu" id="tb-current">—</div>
+          </div>
+          <div class="tb-stat">
+            <div class="tb-stat-label">Unrealised P&L</div>
+            <div class="tb-stat-val" id="tb-pnl">—</div>
+          </div>
+          <div class="tb-stat">
+            <div class="tb-stat-label">Held for</div>
+            <div class="tb-stat-val neu" id="tb-duration">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="g5" style="margin-bottom:8px;">
         <div class="mcard"><div class="ml">BTC Price</div><div class="mv" id="m-price">—</div><div class="ms">CAD live</div></div>
         <div class="mcard"><div class="ml">Last Action</div><div class="mv" id="m-action">—</div></div>
         <div class="mcard"><div class="ml">CAD Balance</div><div class="mv" id="m-cad">—</div><div class="ms">available</div></div>
@@ -713,6 +760,94 @@ function badge(a,s){
   return'<span class="badge bh">HOLD</span>';
 }
 function bColor(a){return a==='BUY'?'#22c55e':a==='SELL'?'#f87171':'#fbbf24';}
+
+// ── ACTIVE TRADE TRACKER ──
+const BUY_KEY = 'apex_active_buy';
+
+function saveActiveBuy(price, time){
+  localStorage.setItem(BUY_KEY, JSON.stringify({price, time}));
+}
+function clearActiveBuy(){
+  localStorage.removeItem(BUY_KEY);
+}
+function getActiveBuy(){
+  try{return JSON.parse(localStorage.getItem(BUY_KEY)||'null');}catch(e){return null;}
+}
+
+function updateActiveTradeBanner(currentPrice, krakenTrades){
+  const banner = document.getElementById('trade-banner');
+  
+  // Check if we have BTC balance (active position)
+  // Detect from trade history: last trade was BUY with no subsequent SELL
+  const sorted = [...krakenTrades].sort((a,b)=>new Date(b.time)-new Date(a.time));
+  const lastTrade = sorted[0];
+  
+  // Detect open position: last Kraken trade was a BUY
+  let activeBuy = null;
+  if(lastTrade && lastTrade.action === 'BUY'){
+    activeBuy = {price: lastTrade.price, time: lastTrade.time, cost: lastTrade.cost};
+    saveActiveBuy(lastTrade.price, lastTrade.time);
+  } else if(lastTrade && lastTrade.action === 'SELL'){
+    clearActiveBuy();
+  }
+  
+  // Fallback: check log history for BUY without SELL
+  if(!activeBuy) activeBuy = getActiveBuy();
+  
+  if(!activeBuy || !currentPrice){
+    banner.className = 'trade-banner';
+    return;
+  }
+  
+  const buyPrice = activeBuy.price;
+  const buyTime = new Date(activeBuy.time);
+  const now = new Date();
+  const diffMs = now - buyTime;
+  const diffMins = Math.floor(diffMs / 60000);
+  const diffHours = Math.floor(diffMins / 60);
+  const diffDays = Math.floor(diffHours / 24);
+  
+  let duration = '';
+  if(diffDays > 0) duration = diffDays+'d '+(diffHours%24)+'h';
+  else if(diffHours > 0) duration = diffHours+'h '+(diffMins%60)+'m';
+  else duration = diffMins+'m';
+  
+  // Estimate P&L (rough — based on price move %)
+  const pctChange = ((currentPrice - buyPrice) / buyPrice) * 100;
+  const approxPnl = (activeBuy.cost || 20) * (pctChange / 100);
+  const isProfit = approxPnl >= 0;
+  
+  banner.className = 'trade-banner active' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-pulse').className = 'tb-pulse' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-ico').textContent = isProfit ? '🟢' : '🔴';
+  document.getElementById('tb-label').textContent = 'IN TRADE — BTC Long';
+  document.getElementById('tb-label').className = 'tb-label-main' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-entry').textContent = 'Bought at $'+Number(buyPrice).toLocaleString('en-US',{maximumFractionDigits:0})+' CAD · '+new Date(activeBuy.time).toLocaleString('en-CA',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  document.getElementById('tb-entry').className = 'tb-entry' + (isProfit ? '' : ' loss');
+  document.getElementById('tb-current').textContent = '$'+Number(currentPrice).toLocaleString('en-US',{maximumFractionDigits:0});
+  const pnlEl = document.getElementById('tb-pnl');
+  pnlEl.textContent = (approxPnl >= 0 ? '+' : '') + '$' + Math.abs(approxPnl).toFixed(2) + ' ('+pctChange.toFixed(2)+'%)';
+  pnlEl.className = 'tb-stat-val ' + (isProfit ? 'pos' : 'neg');
+  document.getElementById('tb-duration').textContent = duration;
+}
+
+// Improved trade detection for notifications (catches missed trades)
+const SEEN_TRADES_KEY = 'apex_seen_trades';
+function getSeenTrades(){try{return new Set(JSON.parse(localStorage.getItem(SEEN_TRADES_KEY)||'[]'));}catch(e){return new Set();}}
+function markTradeSeen(id){const s=getSeenTrades();s.add(id);localStorage.setItem(SEEN_TRADES_KEY,JSON.stringify([...s].slice(-100)));}
+
+function chkKrakenTrades(trades){
+  const seen = getSeenTrades();
+  const sorted = [...trades].sort((a,b)=>new Date(b.time)-new Date(a.time)).slice(0,5);
+  for(const t of sorted){
+    const id = t.time+'_'+t.action;
+    if(seen.has(id)) continue;
+    markTradeSeen(id);
+    const pr = '$'+Number(t.price).toLocaleString('en-US',{maximumFractionDigits:0})+' CAD';
+    if(t.action === 'BUY') addNotif('buy','🟢 BUY Executed',`Bot bought BTC at ${pr}`);
+    else if(t.action === 'SELL') addNotif('sell','🔴 SELL Executed',`Bot sold BTC at ${pr}`);
+  }
+}
 
 // ── SIGNALS ──
 function renderSignals(bull,bear,action){
@@ -1005,6 +1140,10 @@ async function load(){
 
     const tbd=byDay(allET);window._tbd=tbd;buildCal(tbd);
     updPeriod(actP);
+    // Active trade banner + Kraken-based notifications
+    updateActiveTradeBanner(price, allKT);
+    chkKrakenTrades(allKT);
+
     if(ohlc.length)buildPriceChart(ohlc.slice(-24),allKT);
     if(allET.length)buildPnlChart(allET);
     loadSentiment();
