@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-03-23T17:34:19.226446+00:00",
+  "symbol": "XBTCAD",
+  "price": 97200.9,
+  "cad_balance": 4.3354,
+  "btc_balance": 0.00020634,
+  "action": "BUY",
+  "confidence": 88,
+  "risk": "MEDIUM",
+  "status": "SKIPPED \u2014 balance issue",
+  "reason": "EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "bullish": [
+    "EMA-20 above EMA-50 (uptrend)",
+    "Price above EMA-20",
+    "High volume confirms move"
+  ],
+  "bearish": [
+    "MACD below signal (bearish)"
+  ],
+  "trades": [
+    {
+      "time": "2026-03-22T18:33:36.940644-07:00",
+      "action": "BUY",
+      "price": 93451.5,
+      "cost": 19.99769,
+      "fee": 0.07999,
+      "vol": 0.00021399
+    },
+    {
+      "time": "2026-03-22T22:21:44.198708-07:00",
+      "action": "SELL",
+      "price": 94329.6,
+      "cost": 20.10447,
+      "fee": 0.08042,
+      "vol": 0.00021313
+    },
+    {
+      "time": "2026-03-22T22:56:39.091236-07:00",
+      "action": "BUY",
+      "price": 94557.6914,
+      "cost": 20.0207,
+      "fee": 0.08008,
+      "vol": 0.00021173
+    },
+    {
+      "time": "2026-03-22T23:47:12.790018-07:00",
+      "action": "SELL",
+      "price": 93312.3,
+      "cost": 19.6777,
+      "fee": 0.07871,
+      "vol": 0.00021088
+    },
+    {
+      "time": "2026-03-23T01:33:26.653325-07:00",
+      "action": "BUY",
+      "price": 94177.06181,
+      "cost": 20.05218,
+      "fee": 0.0802,
+      "vol": 0.00021292
+    },
+    {
+      "time": "2026-03-23T02:37:45.914376-07:00",
+      "action": "SELL",
+      "price": 93358.72628,
+      "cost": 19.87794,
+      "fee": 0.07951,
+      "vol": 0.00021292
+    },
+    {
+      "time": "2026-03-23T03:10:27.819879-07:00",
+      "action": "BUY",
+      "price": 94341.7,
+      "cost": 19.98629,
+      "fee": 0.07995,
+      "vol": 0.00021185
+    },
+    {
+      "time": "2026-03-23T09:10:37.321301-07:00",
+      "action": "SELL",
+      "price": 96589.6,
+      "cost": 20.46251,
+      "fee": 0.1637,
+      "vol": 0.00021185
+    },
+    {
+      "time": "2026-03-23T10:32:54.427330-07:00",
+      "action": "BUY",
+      "price": 96964.9,
+      "cost": 20.00774,
+      "fee": 0.16006,
+      "vol": 0.00020634
+    }
+  ]
+}
