@@ -251,15 +251,17 @@ input:focus{border-color:#3f3f46;}
 .empty-state{text-align:center;padding:32px;color:#52525b;font-size:13px;}
 /* TRADE DETAIL MODAL */
 .trade-modal-ov{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.8);align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s ease;}
+@media(max-width:600px){.trade-modal-ov{align-items:flex-end;padding:0;}}
 .trade-modal-ov.open{display:flex;}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.trade-modal{background:#18181b;border:1px solid #27272a;border-radius:16px;width:100%;max-width:480px;overflow:hidden;animation:slideUp .25s ease;}
+.trade-modal{background:#18181b;border:1px solid #27272a;border-radius:16px;width:100%;max-width:460px;max-height:80vh;display:flex;flex-direction:column;overflow:hidden;animation:slideUp .25s ease;}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-.trade-modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #27272a;}
+.trade-modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #27272a;flex-shrink:0;}
 .trade-modal-title{font-size:13px;font-weight:600;color:#e8e8e8;}
 .trade-modal-x{background:none;border:none;color:#52525b;font-size:16px;cursor:pointer;}
 .trade-modal-x:hover{color:#e8e8e8;}
-.trade-modal-body{padding:16px 18px;}
+.trade-modal-body{padding:14px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1;}
+@media(max-width:600px){.trade-modal{max-width:100%;max-height:85vh;border-radius:16px 16px 0 0;align-self:flex-end;}}
 .tm-summary{display:flex;align-items:center;gap:12px;padding:14px;background:#111;border-radius:10px;margin-bottom:14px;border:1px solid #1c1c1f;}
 .tm-icon{font-size:24px;}
 .tm-title{font-size:14px;font-weight:700;}
@@ -1730,13 +1732,18 @@ async function load() {
           botData = await djRes.json();
           cadBal = botData.cad_balance || 0;
           if (botData.trades && botData.trades.length) {
-            allKT = botData.trades.map(t => ({
-              time:   t.time,
-              action: t.action,
-              price:  t.price,
-              cost:   t.cost,
-              fee:    t.fee,
-            })).sort((a,b) => new Date(a.time)-new Date(b.time));
+            // Filter to only relevant trades (Mar 22 onwards, price > $50k = BTC/CAD)
+            const START_DATE = new Date('2026-03-22T00:00:00');
+            allKT = botData.trades
+              .filter(t => new Date(t.time) >= START_DATE && t.price > 50000)
+              .map(t => ({
+                time:   t.time,
+                action: t.action,
+                price:  t.price,
+                cost:   t.cost,
+                fee:    t.fee,
+              })).sort((a,b) => new Date(a.time)-new Date(b.time));
+            console.log('Filtered trades:', allKT.length, 'from', botData.trades.length, 'total');
             if (allKT.length) firstD = allKT[0].time;
             window._dataJsonLoaded = true;
             console.log('data.json loaded:', allKT.length, 'trades, balance: $'+cadBal);
@@ -1992,25 +1999,28 @@ function openTradeModal(trades, title) {
     </div>
     <div style="font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Individual Trades</div>`;
 
-  for (const t of trades) {
+  for (const [i, t] of trades.entries()) {
     const pct = ((t.price - t.buyPrice) / t.buyPrice * 100).toFixed(2);
-    const dur = (() => {
-      const ms = new Date(t.time) - new Date(t.buyTime);
-      const mins = Math.floor(ms/60000);
-      const hrs = Math.floor(mins/60);
-      return hrs > 0 ? hrs+'h '+(mins%60)+'m' : mins+'m';
-    })();
+    const ms = new Date(t.time) - new Date(t.buyTime);
+    const mins = Math.floor(ms/60000);
+    const hrs = Math.floor(mins/60);
+    const dur = hrs > 0 ? hrs+'h '+(mins%60)+'m' : mins+'m';
+    const isWin = t.pnl >= 0;
     html += `
-      <div style="background:#111;border-radius:8px;padding:12px;margin-bottom:8px;border:1px solid #1c1c1f;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-          <span style="font-size:11px;color:#52525b;">${fmt(t.time)}</span>
-          <span style="font-size:13px;font-weight:700;${t.pnl>=0?'color:#22c55e':'color:#f87171'}">${t.pnl>=0?'+':''}$${t.pnl.toFixed(4)}</span>
+      <div style="background:#111;border-radius:8px;padding:10px 12px;margin-bottom:6px;border:1px solid ${isWin?'#16a34a':'#7f1d1d'};">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:10px;background:${isWin?'#052e16':'#2d0a0a'};color:${isWin?'#22c55e':'#f87171'};padding:2px 6px;border-radius:4px;font-weight:700;">${isWin?'WIN':'LOSS'}</span>
+            <span style="font-size:10px;color:#52525b;">${fmt(t.time)}</span>
+          </div>
+          <span style="font-size:14px;font-weight:700;color:${isWin?'#22c55e':'#f87171'}">${isWin?'+':''}$${t.pnl.toFixed(4)}</span>
         </div>
-        <div class="tm-trade-row"><span class="tm-trade-label">Bought at</span><span class="tm-trade-val">$${Number(t.buyPrice).toLocaleString('en-US',{maximumFractionDigits:0})} CAD</span></div>
-        <div class="tm-trade-row"><span class="tm-trade-label">Sold at</span><span class="tm-trade-val">$${Number(t.price).toLocaleString('en-US',{maximumFractionDigits:0})} CAD</span></div>
-        <div class="tm-trade-row"><span class="tm-trade-label">Move</span><span class="tm-trade-val" style="${parseFloat(pct)>=0?'color:#22c55e':'color:#f87171'}">${parseFloat(pct)>=0?'+':''}${pct}%</span></div>
-        <div class="tm-trade-row"><span class="tm-trade-label">Duration</span><span class="tm-trade-val">${dur}</span></div>
-        <div class="tm-trade-row"><span class="tm-trade-label">Invested</span><span class="tm-trade-val">$${(t.cost||20).toFixed(2)} CAD</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+          <div style="font-size:11px;color:#52525b;">Buy <span style="color:#e8e8e8;font-family:monospace;">$${Number(t.buyPrice).toLocaleString('en-US',{maximumFractionDigits:0})}</span></div>
+          <div style="font-size:11px;color:#52525b;">Sell <span style="color:#e8e8e8;font-family:monospace;">$${Number(t.price).toLocaleString('en-US',{maximumFractionDigits:0})}</span></div>
+          <div style="font-size:11px;color:#52525b;">Move <span style="color:${parseFloat(pct)>=0?'#22c55e':'#f87171'};font-family:monospace;">${parseFloat(pct)>=0?'+':''}${pct}%</span></div>
+          <div style="font-size:11px;color:#52525b;">Held <span style="color:#e8e8e8;font-family:monospace;">${dur}</span></div>
+        </div>
       </div>`;
   }
 
