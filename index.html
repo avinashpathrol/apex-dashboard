@@ -915,34 +915,39 @@ function updateBanner(currentPrice, krakenTrades, ghRows) {
     }
   }
 
-  // Method 2: GitHub log fallback — detect SELL EXECUTED in logs
-  if (!activeBuy && ghRows && ghRows.length) {
-    let lastExecutedBuy = null, lastExecutedSell = null;
-    const chrono = [...ghRows].reverse();
+  // Method 2: GitHub log fallback — scan ALL logs for current state
+  if (ghRows && ghRows.length) {
+    let currentBuy = null;
+    let lastClosedBuy = null, lastClosedSell = null;
+    const chrono = [...ghRows].reverse(); // oldest first
     for (const row of chrono) {
       const s = row.p && row.p.summary;
       if (!s) continue;
       const st = (s.status||'').toLowerCase();
       if (s.action === 'BUY' && st.includes('executed')) {
-        lastExecutedBuy = s;
-        lastExecutedSell = null;
-      } else if (s.action === 'SELL' && st.includes('executed') && lastExecutedBuy) {
-        lastExecutedSell = s;
+        currentBuy = s;
+      } else if (s.action === 'SELL' && st.includes('executed') && currentBuy) {
+        // Completed pair
+        lastClosedBuy = currentBuy;
+        lastClosedSell = s;
+        currentBuy = null; // reset for next pair
       }
     }
-    console.log('GH logs - last buy:', lastExecutedBuy?.price, 'last sell:', lastExecutedSell?.price);
-    if (lastExecutedSell && lastExecutedBuy) {
-      // Trade is closed per GitHub logs — clear localStorage and show last trade
+    // currentBuy = open trade (BUY without subsequent SELL)
+    // lastClosedBuy/Sell = most recent completed trade
+    console.log('GH state: openBuy=', currentBuy?.price, 'lastClosed=', lastClosedSell?.price);
+
+    if (currentBuy && !activeBuy) {
+      // We have an open trade from logs
+      activeBuy = {price: currentBuy.price, time: currentBuy.run_time, cost: 20};
+      saveActiveBuy(currentBuy.price, currentBuy.run_time, 20);
+    } else if (!currentBuy && lastClosedSell && !activeBuy) {
+      // Last trade was closed, no new open trade
       clearActiveBuy();
-      activeBuy = null;
-      const fakeBuy = {price: lastExecutedBuy.price, time: lastExecutedBuy.run_time, cost: 20, fee: 0.052};
-      const fakeSell = {price: lastExecutedSell.price, time: lastExecutedSell.run_time, cost: lastExecutedSell.price * (20/lastExecutedBuy.price), fee: 0.052};
+      const fakeBuy = {price: lastClosedBuy.price, time: lastClosedBuy.run_time, cost: 20, fee: 0.052};
+      const fakeSell = {price: lastClosedSell.price, time: lastClosedSell.run_time, cost: lastClosedSell.price * (20/lastClosedBuy.price), fee: 0.052};
       showLastTradeBanner(fakeBuy, fakeSell);
       return;
-    } else if (lastExecutedBuy && !lastExecutedSell) {
-      // Still in a buy from logs
-      activeBuy = {price: lastExecutedBuy.price, time: lastExecutedBuy.run_time, cost: 20};
-      saveActiveBuy(lastExecutedBuy.price, lastExecutedBuy.run_time, 20);
     }
   }
 
@@ -1011,8 +1016,9 @@ function addNotif(type, title, body) {
 function renderNotifs() {
   const list = document.getElementById('nd-list');
   const empty = document.getElementById('nd-empty');
-  if (!notifs.length) { list.innerHTML = ''; empty.style.display = 'block'; return; }
-  empty.style.display = 'none';
+  if (!list) return; // guard against calling before DOM ready
+  if (!notifs.length) { list.innerHTML = ''; if (empty) empty.style.display = 'block'; return; }
+  if (empty) empty.style.display = 'none';
   list.innerHTML = notifs.map(n => {
     const ico = n.type==='buy'?'📈':n.type==='sell'?'📉':n.type==='warn'?'⚠️':'ℹ️';
     return '<div class="nd-item ' + (n.read?'':'unread') + '"><div class="nd-ico ' + n.type + '">' + ico + '</div><div class="nd-content"><div class="nd-ttl">' + n.title + '</div><div class="nd-body">' + n.body + '</div><div class="nd-time">' + timeAgo(n.time) + '</div></div></div>';
@@ -1603,9 +1609,19 @@ async function load() {
 
     try {
       const th = await kPriv('TradesHistory', {trades:true});
-      allKT = Object.values(th.trades||{}).map(t => ({time:new Date(t.time*1000).toISOString(),action:t.type.toUpperCase(),price:parseFloat(t.price),cost:parseFloat(t.cost),fee:parseFloat(t.fee)})).sort((a,b)=>new Date(a.time)-new Date(b.time));
+      allKT = Object.values(th.trades||{}).map(t => ({
+        time: new Date(t.time*1000).toISOString(),
+        action: t.type.toUpperCase(),
+        price: parseFloat(t.price),
+        cost: parseFloat(t.cost),
+        fee: parseFloat(t.fee)
+      })).sort((a,b) => new Date(a.time)-new Date(b.time));
       if (allKT.length) firstD = allKT[0].time;
-    } catch(e) {}
+      console.log('Kraken TradesHistory loaded:', allKT.length, 'trades');
+    } catch(e) {
+      console.warn('Kraken TradesHistory failed:', e.message,
+        '→ Check API key has "Query Closed Orders & Trades" permission');
+    }
 
     updFees(allKT);
     chkKrakenTrades(allKT);
@@ -1628,28 +1644,37 @@ async function load() {
     console.log('Kraken trades:', allKT.length, 'Enriched pairs:', allET.length, 'Total P&L:', totPnl);
 
     // Fallback: if Kraken returned no trades, build P&L from GitHub logs
-    if (allET.length === 0 && rows.length > 0) {
-      console.log('Kraken trades empty — falling back to GitHub logs for P&L');
+    // Always run this to catch all completed BUY→SELL pairs
+    if (rows.length > 0) {
+      console.log('Scanning GitHub logs for completed trades...');
       let ghBuy = null;
-      const chronoRows = [...rows].reverse();
+      const chronoRows = [...rows].reverse(); // oldest first
       for (const row of chronoRows) {
         const s = row.p && row.p.summary;
         if (!s) continue;
         const st = (s.status||'').toLowerCase();
         if (s.action === 'BUY' && st.includes('executed')) {
-          ghBuy = s;
+          ghBuy = s; // start of a new trade
         } else if (s.action === 'SELL' && st.includes('executed') && ghBuy) {
+          // Completed BUY→SELL pair found
           const buyPrice = ghBuy.price;
           const sellPrice = s.price;
           const cost = 20;
           const approxPnl = ((sellPrice - buyPrice) / buyPrice) * cost;
-          totPnl += approxPnl;
-          if (approxPnl > 0) totW++; else totL++;
-          allET.push({time: s.run_time, pnl: approxPnl, price: sellPrice, buyPrice, buyTime: ghBuy.run_time});
-          console.log('GH fallback trade: buy', buyPrice, 'sell', sellPrice, 'pnl', approxPnl);
-          ghBuy = null;
+          // Only add if not already in allET (avoid Kraken + GH duplicate)
+          const alreadyExists = allET.some(t =>
+            Math.abs(new Date(t.time) - new Date(s.run_time)) < 10*60*1000
+          );
+          if (!alreadyExists) {
+            totPnl += approxPnl;
+            if (approxPnl > 0) totW++; else totL++;
+            allET.push({time: s.run_time, pnl: approxPnl, price: sellPrice, buyPrice, buyTime: ghBuy.run_time});
+            console.log('GH trade pair: buy $'+buyPrice+' sell $'+sellPrice+' pnl $'+approxPnl.toFixed(4));
+          }
+          ghBuy = null; // reset — ready for next pair
         }
       }
+      console.log('Total from GH logs: pairs='+allET.length+' totPnl='+totPnl.toFixed(4));
     }
     const tt=totW+totL, wr=tt>0?Math.round((totW/tt)*100):null;
 
