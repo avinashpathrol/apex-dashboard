@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX Bot — Strategy Guide</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d0d0f'/><polyline points='10,70 30,45 50,55 70,25 90,35' stroke='%2322c55e' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='70' cy='25' r='7' fill='%2322c55e'/></svg>">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#09090b;color:#e8e8e8;min-height:100vh;padding-bottom:60px;}
+
+/* HEADER */
+.header{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.header-left{display:flex;align-items:center;gap:10px;}
+.back-btn{background:#18181b;border:1px solid #27272a;border-radius:8px;padding:7px 14px;color:#a1a1aa;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none;}
+.back-btn:hover{background:#27272a;color:#e8e8e8;}
+.header-title{font-size:14px;font-weight:700;color:#e8e8e8;}
+.header-sub{font-size:11px;color:#52525b;margin-top:1px;}
+
+/* NAV TABS */
+.nav{background:#0f0f11;border-bottom:1px solid #1c1c1f;padding:0 20px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;position:sticky;top:56px;z-index:99;}
+.nav::-webkit-scrollbar{display:none;}
+.nav-tab{padding:0 16px;height:40px;display:flex;align-items:center;font-size:12px;font-weight:500;color:#52525b;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;transition:all .15s;}
+.nav-tab:hover{color:#a1a1aa;}
+.nav-tab.active{color:#22c55e;border-bottom-color:#22c55e;}
+
+/* CONTENT */
+.content{max-width:760px;margin:0 auto;padding:24px 20px;}
+.section{display:none;}
+.section.active{display:block;}
+
+/* CARDS */
+.card{background:#18181b;border:1px solid #27272a;border-radius:12px;padding:20px;margin-bottom:14px;}
+.card-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+.card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.card-icon.green{background:#052e16;}
+.card-icon.blue{background:#0c1a2e;}
+.card-icon.amber{background:#2d1f06;}
+.card-icon.red{background:#2d0a0a;}
+.card-icon.purple{background:#1a0c2e;}
+.card-title{font-size:14px;font-weight:700;color:#e8e8e8;margin-bottom:3px;}
+.card-sub{font-size:12px;color:#52525b;line-height:1.5;}
+.divider{height:1px;background:#1c1c1f;margin:14px 0;}
+.body-text{font-size:13px;color:#a1a1aa;line-height:1.7;}
+.body-text strong{color:#e8e8e8;font-weight:600;}
+.body-text code{background:#1c1c1f;border-radius:4px;padding:2px 6px;font-family:monospace;font-size:12px;color:#22c55e;}
+
+/* SIGNAL INDICATOR */
+.signal-card{background:#111;border:1px solid #1c1c1f;border-radius:10px;padding:14px;margin-bottom:10px;}
+.signal-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.signal-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.sd-bull{background:#22c55e;}.sd-bear{background:#f87171;}.sd-neutral{background:#fbbf24;}
+.signal-name{font-size:13px;font-weight:700;color:#e8e8e8;}
+.signal-tag{font-size:10px;padding:2px 8px;border-radius:4px;font-weight:600;margin-left:auto;}
+.tag-bull{background:#052e16;color:#22c55e;}
+.tag-bear{background:#2d0a0a;color:#f87171;}
+.tag-both{background:#2d2006;color:#fbbf24;}
+.signal-desc{font-size:12px;color:#71717a;line-height:1.6;margin-bottom:8px;}
+.signal-rule{background:#0d0d0f;border-radius:6px;padding:10px 12px;font-size:11px;font-family:monospace;color:#a1a1aa;line-height:1.8;border-left:3px solid #27272a;}
+.signal-rule .bull{color:#22c55e;}.signal-rule .bear{color:#f87171;}
+
+/* TRADE FLOW */
+.flow-step{display:flex;gap:14px;margin-bottom:16px;}
+.flow-num{width:28px;height:28px;border-radius:50%;background:#27272a;border:2px solid #3f3f46;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#e8e8e8;flex-shrink:0;margin-top:2px;}
+.flow-num.active{background:#052e16;border-color:#22c55e;color:#22c55e;}
+.flow-content{flex:1;}
+.flow-title{font-size:13px;font-weight:600;color:#e8e8e8;margin-bottom:4px;}
+.flow-body{font-size:12px;color:#71717a;line-height:1.6;}
+.flow-connector{width:2px;height:16px;background:#1c1c1f;margin-left:13px;}
+
+/* RISK TABLE */
+.risk-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px;}
+.risk-table th{font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px;text-align:left;border-bottom:1px solid #27272a;background:#111;}
+.risk-table td{padding:10px 12px;border-bottom:1px solid #1c1c1f;color:#a1a1aa;vertical-align:top;}
+.risk-table tr:last-child td{border-bottom:none;}
+.risk-table td:first-child{color:#e8e8e8;font-weight:600;}
+.val-green{color:#22c55e;font-weight:700;font-family:monospace;}
+.val-red{color:#f87171;font-weight:700;font-family:monospace;}
+.val-amber{color:#fbbf24;font-weight:700;font-family:monospace;}
+
+/* SCENARIO BOX */
+.scenario{background:#111;border:1px solid #1c1c1f;border-radius:10px;padding:14px;margin-bottom:10px;}
+.scenario-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.scenario-title.win{color:#22c55e;}.scenario-title.loss{color:#f87171;}.scenario-title.hold{color:#fbbf24;}
+.scenario-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid #1c1c1f;}
+.scenario-row:last-child{border-bottom:none;}
+.scenario-label{color:#52525b;}.scenario-val{font-family:monospace;font-weight:600;color:#e8e8e8;}
+
+/* INFO CALLOUT */
+.callout{display:flex;gap:10px;padding:12px 14px;border-radius:8px;margin-bottom:12px;font-size:12px;line-height:1.6;}
+.callout.info{background:#0c1a2e;border:1px solid #1e3a5f;color:#93c5fd;}
+.callout.warn{background:#2d1f06;border:1px solid #854f0b;color:#fcd34d;}
+.callout.success{background:#052e16;border:1px solid #16a34a;color:#86efac;}
+.callout-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
+
+/* PAGE TITLE */
+.page-title{font-size:11px;color:#52525b;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
+.page-heading{font-size:22px;font-weight:700;color:#e8e8e8;margin-bottom:6px;letter-spacing:-.3px;}
+.page-desc{font-size:13px;color:#71717a;line-height:1.6;margin-bottom:24px;}
+
+/* MOBILE */
+@media(max-width:600px){
+  .content{padding:16px 14px;}
+  .card{padding:14px;}
+  .header{padding:0 14px;}
+  .nav{padding:0 8px;}
+  .page-heading{font-size:18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <a class="back-btn" href="index.html">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15,18 9,12 15,6"/></svg>
+      Dashboard
+    </a>
+    <div>
+      <div class="header-title">APEX Strategy Guide</div>
+      <div class="header-sub">How the bot thinks and trades</div>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-tab active" onclick="showSection('signals', this)">📡 Signals</div>
+  <div class="nav-tab" onclick="showSection('how', this)">⚙️ How It Trades</div>
+  <div class="nav-tab" onclick="showSection('risk', this)">🛡️ Risk Management</div>
+  <div class="nav-tab" onclick="showSection('scenarios', this)">📊 Trade Scenarios</div>
+  <div class="nav-tab" onclick="showSection('glossary', this)">📖 Glossary</div>
+</div>
+
+<div class="content">
+
+  <!-- ── SIGNALS ── -->
+  <div class="section active" id="sec-signals">
+    <div class="page-title">Understanding</div>
+    <div class="page-heading">Trading Signals</div>
+    <div class="page-desc">The bot uses 6 technical indicators to score market conditions. It needs at least <strong>3 signals in the same direction</strong> to place a trade. Here's what each one means.</div>
+
+    <div class="callout info">
+      <div class="callout-icon">ℹ️</div>
+      <div><strong>How scoring works:</strong> Each indicator can contribute 1 bullish or 1 bearish signal. The bot counts them up — 3+ bullish = BUY, 3+ bearish = SELL, anything else = HOLD.</div>
+    </div>
+
+    <!-- RSI -->
+    <div class="signal-card">
+      <div class="signal-header">
+        <div class="signal-dot sd-both" style="background:linear-gradient(135deg,#22c55e,#f87171)"></div>
+        <div class="signal-name">RSI — Relative Strength Index</div>
+        <span class="signal-tag tag-both">Bullish + Bearish</span>
+      </div>
+      <div class="signal-desc">RSI measures momentum on a scale of 0–100. When it's very low, the asset is oversold (beaten down too much) and likely to bounce. When very high, it's overbought and likely to pull back. The bot watches RSI to catch these turning points.</div>
+      <div class="signal-rule">
+        <span class="bull">BULLISH →</span> RSI &lt; 35 (oversold) OR RSI &lt; 50 and rising<br>
+        <span class="bear">BEARISH →</span> RSI &gt; 65 (overbought) OR RSI &gt; 50 and falling<br>
+        Window: <strong>14 periods</strong> (each period = 15 min candle)
+      </div>
+    </div>
+
+    <!-- MACD -->
+    <div class="signal-card">
+      <div class="signal-header">
+        <div class="signal-dot sd-both" style="background:linear-gradient(135deg,#22c55e,#f87171)"></div>
+        <div class="signal-name">MACD — Moving Average Convergence Divergence</div>
+        <span class="signal-tag tag-both">Bullish + Bearish</span>
+      </div>
+      <div class="signal-desc">MACD tracks the relationship between two moving averages. When the MACD line crosses above the signal line, momentum is shifting bullish. A cross below signals the opposite. It's one of the most reliable trend-change indicators.</div>
+      <div class="signal-rule">
+        <span class="bull">BULLISH →</span> MACD crosses above signal line (crossover)<br>
+        <span class="bull">BULLISH →</span> MACD already above signal + histogram positive<br>
+        <span class="bear">BEARISH →</span> MACD crosses below signal line (crossover)<br>
+        <span class="bear">BEARISH →</span> MACD below signal + histogram negative<br>
+        Settings: <strong>12 / 26 / 9</strong> (standard)
+      </div>
+    </div>
+
+    <!-- EMA 20 -->
+    <div class="signal-card">
+      <div class="signal-header">
+        <div class="signal-dot sd-both" style="background:linear-gradient(135deg,#22c55e,#f87171)"></div>
+        <div class="signal-name">EMA-20 — 20-Period Exponential Moving Average</div>
+        <span class="signal-tag tag-both">Bullish + Bearish</span>
+      </div>
+      <div class="signal-desc">The EMA-20 is the average price of the last 20 candles, weighted to give more importance to recent prices. If the current price is above it, the short-term trend is up. Below it means short-term downtrend.</div>
+      <div class="signal-rule">
+        <span class="bull">BULLISH →</span> Current price &gt; EMA-20 (price above short-term average)<br>
+        <span class="bear">BEARISH →</span> Current price &lt; EMA-20 (price below short-term average)<br>
+        Period: <strong>20 candles × 15 min = 5 hours</strong>
+      </div>
+    </div>
+
+    <!-- EMA 50 -->
+    <div class="signal-card">
+      <div class="signal-header">
+        <div class="signal-dot sd-both" style="background:linear-gradient(135deg,#22c55e,#f87171)"></div>
+        <div class="signal-name">EMA-50 — 50-Period Exponential Moving Average</div>
+        <span class="signal-tag tag-both">Bullish + Bearish</span>
+      </div>
+      <div class="signal-desc">The EMA-50 captures the medium-term trend. The relationship between EMA-20 and EMA-50 is classic "golden cross / death cross" logic. When the faster average is above the slower one, it indicates sustained upward momentum.</div>
+      <div class="signal-rule">
+        <span class="bull">BULLISH →</span> EMA-20 &gt; EMA-50 (short-term above medium-term = uptrend)<br>
+        <span class="bear">BEARISH →</span> EMA-20 &lt; EMA-50 (short-term below medium-term = downtrend)<br>
+        Period: <strong>50 candles × 15 min = ~12.5 hours</strong>
+      </div>
+    </div>
+
+    <!-- Bollinger Bands -->
+    <div class="signal-card">
+      <div class="signal-header">
+        <div class="signal-dot sd-both" style="background:linear-gradient(135deg,#22c55e,#f87171)"></div>
+        <div class="signal-name">Bollinger Bands — Volatility Envelope</div>
+        <span class="signal-tag tag-both">Bullish + Bearish</span>
+      </div>
+      <div class="signal-desc">Bollinger Bands draw an upper and lower boundary around price based on volatility. When price touches the lower band, it's statistically stretched too far down and often bounces. Upper band touch suggests the opposite.</div>
+      <div class="signal-rule">
+        <span class="bull">BULLISH →</span> Price in bottom 20% of BB range (near lower band)<br>
+        <span class="bear">BEARISH →</span> Price in top 20% of BB range (near upper band)<br>
+        Settings: <strong>20 period, 2 standard deviations</strong>
+      </div>
+    </div>
+
+    <!-- Volume -->
+    <div class="signal-card">
+      <div class="signal-header">
+        <div class="signal-dot sd-neutral"></div>
+        <div class="signal-name">Volume Confirmation</div>
+        <span class="signal-tag tag-both">Confirming only</span>
+      </div>
+      <div class="signal-desc">Volume doesn't trigger trades on its own — it confirms them. A big price move on high volume is much more reliable than the same move on low volume. The bot uses this as a tiebreaker to strengthen the dominant signal direction.</div>
+      <div class="signal-rule">
+        Triggers when: <strong>current volume &gt; 1.3× average of last 10 candles</strong><br>
+        <span class="bull">BULLISH →</span> High volume when more bullish signals active<br>
+        <span class="bear">BEARISH →</span> High volume when more bearish signals active
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HOW IT TRADES ── -->
+  <div class="section" id="sec-how">
+    <div class="page-title">Step by Step</div>
+    <div class="page-heading">How Each Trade is Taken</div>
+    <div class="page-desc">Every 7–15 minutes the bot wakes up, runs through this exact process, and makes a decision. Here's the full lifecycle of a trade.</div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon green">🔄</div>
+        <div>
+          <div class="card-title">The Bot Cycle</div>
+          <div class="card-sub">Runs every ~7–15 min via two GitHub Actions workflows (offset by 7 min to reduce gaps)</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-num active">1</div>
+        <div class="flow-content">
+          <div class="flow-title">Fetch Market Data</div>
+          <div class="flow-body">Calls Kraken API to get the last 100 OHLC candles (15-minute intervals) for BTC/CAD. This gives ~25 hours of price history — enough for all indicators to be accurate.</div>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-num active">2</div>
+        <div class="flow-content">
+          <div class="flow-title">Calculate All 6 Indicators</div>
+          <div class="flow-body">RSI, MACD, EMA-20, EMA-50, Bollinger Bands and Volume are all calculated fresh from the latest data. No cached values — everything is recalculated every single run.</div>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-num active">3</div>
+        <div class="flow-content">
+          <div class="flow-title">Score Signals</div>
+          <div class="flow-body">Each indicator votes bullish or bearish (or neither). Votes are tallied. If bullish ≥ 3 AND bullish &gt; bearish → BUY. If bearish ≥ 3 AND bearish &gt; bullish → SELL. Otherwise → HOLD.</div>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-num active">4</div>
+        <div class="flow-content">
+          <div class="flow-title">Check Balance</div>
+          <div class="flow-body">Before executing, the bot checks your Kraken account. For BUY: needs ≥ $20 CAD available. For SELL: needs actual BTC balance. If either is missing, the trade is SKIPPED (not an error — this is intentional protection).</div>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-num active">5</div>
+        <div class="flow-content">
+          <div class="flow-title">Execute Market Order</div>
+          <div class="flow-body">Places a market order on Kraken for <strong>$20 CAD</strong> worth of BTC. Market orders fill instantly at the current best price. The transaction ID is logged for your records.</div>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-num active">6</div>
+        <div class="flow-content">
+          <div class="flow-title">Send Telegram Alert</div>
+          <div class="flow-body">Instantly sends you a Telegram message with the trade details — price, quantity, confidence, signals, and estimated P&L on sells.</div>
+        </div>
+      </div>
+      <div class="flow-connector"></div>
+
+      <div class="flow-step">
+        <div class="flow-num active">7</div>
+        <div class="flow-content">
+          <div class="flow-title">Log Summary</div>
+          <div class="flow-body">Writes a JSON summary to GitHub Actions logs. The dashboard reads these logs to populate trade history, signal displays, and all statistics.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon amber">⚡</div>
+        <div>
+          <div class="card-title">Confidence Score</div>
+          <div class="card-sub">How certain the bot is about each trade</div>
+        </div>
+      </div>
+      <div class="body-text">
+        The confidence score (shown as a % in the history table) is calculated as:<br><br>
+        <code>confidence = 55 + (dominant_signals / total_signals) × 45</code><br><br>
+        So a trade with 3 signals where all 3 are bullish gets <strong>~85%</strong>. A trade with 4 bullish and 1 bearish gets a bit less because there's some disagreement. Maximum is capped at <strong>95%</strong> — the bot never claims to be 100% certain.<br><br>
+        <strong>Risk level</strong> is set to LOW if 4+ signals align, MEDIUM if exactly 3.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RISK MANAGEMENT ── -->
+  <div class="section" id="sec-risk">
+    <div class="page-title">Protecting Your Capital</div>
+    <div class="page-heading">Risk Management</div>
+    <div class="page-desc">The bot has built-in risk rules to protect your account. Here's every limit and why it exists.</div>
+
+    <div class="callout warn">
+      <div class="callout-icon">⚠️</div>
+      <div><strong>Important:</strong> The bot uses signal-based exits (SELL when bearish signals ≥ 3), not hard stop-loss orders on Kraken. The TP/SL lines on the In Trade chart are <em>reference levels</em> to help you visualise risk — not automatic triggers.</div>
+    </div>
+
+    <div class="card">
+      <table class="risk-table">
+        <thead>
+          <tr><th>Parameter</th><th>Value</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trade size</td>
+            <td><span class="val-amber">$20 CAD</span></td>
+            <td>Small fixed amount to prove the strategy before scaling. Limits max loss per trade to a few cents.</td>
+          </tr>
+          <tr>
+            <td>Min signals to trade</td>
+            <td><span class="val-green">3 of 6</span></td>
+            <td>Reduces false signals. A single indicator being wrong won't trigger a trade.</td>
+          </tr>
+          <tr>
+            <td>Take Profit target</td>
+            <td><span class="val-green">+3.5%</span></td>
+            <td>Reference level shown on In Trade chart. Bot exits on signal, not this number.</td>
+          </tr>
+          <tr>
+            <td>Stop Loss reference</td>
+            <td><span class="val-red">-2.0%</span></td>
+            <td>Reference level shown on In Trade chart. If price falls 2% from entry, a SELL signal usually follows naturally.</td>
+          </tr>
+          <tr>
+            <td>One trade at a time</td>
+            <td><span class="val-green">Yes</span></td>
+            <td>Bot checks balance before every trade. Won't double-buy or sell what it doesn't have.</td>
+          </tr>
+          <tr>
+            <td>HIGH risk trades</td>
+            <td><span class="val-red">Skipped</span></td>
+            <td>If risk is flagged HIGH (future feature), the trade is skipped regardless of signals.</td>
+          </tr>
+          <tr>
+            <td>Market order type</td>
+            <td><span class="val-amber">Market</span></td>
+            <td>Fills instantly at best available price. No slippage risk from limit orders not filling.</td>
+          </tr>
+          <tr>
+            <td>Kraken trading fee</td>
+            <td><span class="val-red">~0.26%</span></td>
+            <td>Maker/taker fee on Kraken. Tracked in the fees section of dashboard.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon red">📉</div>
+        <div>
+          <div class="card-title">Worst Case on $20 CAD</div>
+          <div class="card-sub">Maximum realistic loss per trade</div>
+        </div>
+      </div>
+      <div class="body-text">
+        If BTC drops <strong>-2%</strong> from your entry before the bot signals a SELL:<br><br>
+        <code>$20.00 × -2% = -$0.40 CAD loss</code><br><br>
+        Plus Kraken fees for both BUY and SELL:<br>
+        <code>$20.00 × 0.26% × 2 = ~$0.10 in fees</code><br><br>
+        <strong>Total worst case: ~$0.50 CAD</strong> — less than a coffee. This is why starting small to prove the strategy makes sense before scaling to $150–200 CAD.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon green">📈</div>
+        <div>
+          <div class="card-title">Best Case on $20 CAD</div>
+          <div class="card-sub">At the +3.5% take profit level</div>
+        </div>
+      </div>
+      <div class="body-text">
+        If BTC rises <strong>+3.5%</strong> and the bot catches the SELL signal near the top:<br><br>
+        <code>$20.00 × 3.5% = +$0.70 CAD profit</code><br><br>
+        Minus fees:<br>
+        <code>-$0.10 in fees</code><br><br>
+        <strong>Net: ~$0.60 CAD</strong> — small now, but at $200 CAD that same move = <strong>+$6.00 per trade</strong>. Multiple trades per day compounds quickly.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCENARIOS ── -->
+  <div class="section" id="sec-scenarios">
+    <div class="page-title">Real Examples</div>
+    <div class="page-heading">Trade Scenarios</div>
+    <div class="page-desc">Walk through how different market situations play out with the APEX bot.</div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon green">✅</div>
+        <div>
+          <div class="card-title">Scenario 1 — Winning Trade</div>
+          <div class="card-sub">Like your first real trade on Mar 22</div>
+        </div>
+      </div>
+      <div class="scenario">
+        <div class="scenario-title win">📈 BUY SIGNAL FIRES</div>
+        <div class="scenario-row"><span class="scenario-label">Signals firing</span><span class="scenario-val" style="color:#22c55e;">RSI rising + MACD bullish + Price above EMA-20</span></div>
+        <div class="scenario-row"><span class="scenario-label">Confidence</span><span class="scenario-val">88%</span></div>
+        <div class="scenario-row"><span class="scenario-label">Entry price</span><span class="scenario-val">$93,461 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">BTC bought</span><span class="scenario-val">0.000214 BTC</span></div>
+        <div class="scenario-row"><span class="scenario-label">Amount invested</span><span class="scenario-val">$20.00 CAD</span></div>
+      </div>
+      <div class="flow-connector"></div>
+      <div class="body-text" style="margin:10px 0;">Bot holds position, checking every 7–15 min for SELL signal. Price rises to $94,200...</div>
+      <div class="scenario">
+        <div class="scenario-title win">💰 SELL SIGNAL FIRES</div>
+        <div class="scenario-row"><span class="scenario-label">Signals firing</span><span class="scenario-val" style="color:#f87171;">RSI overbought + MACD bearish cross + BB upper</span></div>
+        <div class="scenario-row"><span class="scenario-label">Exit price</span><span class="scenario-val">$94,200 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">Gross profit</span><span class="scenario-val" style="color:#22c55e;">+$0.80 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">Fees (both sides)</span><span class="scenario-val" style="color:#f87171;">-$0.10 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">Net profit</span><span class="scenario-val" style="color:#22c55e;font-size:14px;">+$0.70 CAD ✅</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon red">❌</div>
+        <div>
+          <div class="card-title">Scenario 2 — Losing Trade</div>
+          <div class="card-sub">Market reverses after entry</div>
+        </div>
+      </div>
+      <div class="scenario">
+        <div class="scenario-title loss">📈 BUY SIGNAL FIRES</div>
+        <div class="scenario-row"><span class="scenario-label">Entry price</span><span class="scenario-val">$93,461 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">Amount invested</span><span class="scenario-val">$20.00 CAD</span></div>
+      </div>
+      <div class="flow-connector"></div>
+      <div class="body-text" style="margin:10px 0;">Market turns bearish — price drops to $91,592 (−2%). Bot detects 3 bearish signals and exits.</div>
+      <div class="scenario">
+        <div class="scenario-title loss">📉 SELL SIGNAL (STOP)</div>
+        <div class="scenario-row"><span class="scenario-label">Exit price</span><span class="scenario-val">$91,592 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">Gross loss</span><span class="scenario-val" style="color:#f87171;">-$0.40 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">Fees</span><span class="scenario-val" style="color:#f87171;">-$0.10 CAD</span></div>
+        <div class="scenario-row"><span class="scenario-label">Net loss</span><span class="scenario-val" style="color:#f87171;font-size:14px;">-$0.50 CAD ❌</span></div>
+      </div>
+      <div class="callout success" style="margin-top:12px;margin-bottom:0;">
+        <div class="callout-icon">✅</div>
+        <div>Even in a loss, the bot limits damage to <strong>$0.50 max</strong> and immediately frees up capital for the next BUY opportunity.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon amber">⏳</div>
+        <div>
+          <div class="card-title">Scenario 3 — SKIPPED Trade</div>
+          <div class="card-sub">Signal fires but can't execute</div>
+        </div>
+      </div>
+      <div class="body-text">
+        <strong>SKIPPED — Balance issue (BUY)</strong><br>
+        Bot sees 3 bullish signals and wants to BUY, but your CAD balance is $0.00 because you're already in an open BTC trade. Bot skips safely — no double buying.<br><br>
+        <strong>SKIPPED — No BTC to sell (SELL)</strong><br>
+        Bot sees 3 bearish signals and wants to SELL, but BTC balance is 0. This happens if a SELL signal fires before the first BUY, or if a previous SELL already closed the position.<br><br>
+        <strong>Neither case is an error</strong> — it's the bot being responsible with your money.
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GLOSSARY ── -->
+  <div class="section" id="sec-glossary">
+    <div class="page-title">Quick Reference</div>
+    <div class="page-heading">Glossary</div>
+    <div class="page-desc">Plain-English definitions for every term you'll see on the dashboard.</div>
+
+    <div class="card">
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">BUY / SELL / HOLD</div></div>
+        <div class="signal-desc"><strong>BUY</strong> — Bot placed an order to purchase BTC. <strong>SELL</strong> — Bot sold all BTC. <strong>HOLD</strong> — Not enough signals to act. Waiting for clearer conditions.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">SKIPPED</div></div>
+        <div class="signal-desc">A trade was signalled but couldn't execute. Either no CAD to buy with, or no BTC to sell. Click the SKIPPED badge in History for the specific reason.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Unrealised P&L</div></div>
+        <div class="signal-desc">Profit or loss on your current open position <em>if you sold right now</em>. It's "on paper" — becomes real when the bot sells.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Realised P&L</div></div>
+        <div class="signal-desc">Profit or loss that has been locked in after a SELL. This is real money that moved in your account.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Confidence %</div></div>
+        <div class="signal-desc">How strongly the signals agree. 88% means 88% of the signal scoring weight points in the trade direction. Higher = stronger conviction.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">OHLC</div></div>
+        <div class="signal-desc">Open, High, Low, Close — the four price points for each 15-minute candle. The bot uses the closing price for most calculations.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Take Profit (TP)</div></div>
+        <div class="signal-desc">A target price where a winning trade <em>could</em> be closed. Set at +3.5% above entry on the In Trade chart. The bot exits on signals, not this fixed level.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Stop Loss (SL)</div></div>
+        <div class="signal-desc">A reference price showing the −2% level below entry. If price hits here, bearish signals usually follow and the bot will SELL. Not a hard stop order on Kraken.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">EMA (Exponential Moving Average)</div></div>
+        <div class="signal-desc">An average price over N candles, weighted to give more importance to recent prices. Faster to react than a simple moving average.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Bollinger Bands</div></div>
+        <div class="signal-desc">Two lines drawn 2 standard deviations above and below a 20-period moving average. They expand when volatility is high and contract when it's low.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Market Order</div></div>
+        <div class="signal-desc">An order that executes immediately at the best available current price. Used by the bot for instant fills — no waiting for a specific price.</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-header"><div class="signal-name">Win Rate</div></div>
+        <div class="signal-desc">Percentage of completed trades that were profitable. 60% win rate means 6 out of every 10 closed trades made money.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showSection(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>
