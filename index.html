@@ -374,6 +374,10 @@ input:focus{border-color:#3f3f46;}
   .trade-banner{padding:10px 12px;gap:6px;}
   .tb-right{width:100%;justify-content:space-between;gap:6px;}
   .tb-stat{flex:1;min-width:0;text-align:center;}
+  .tb-entry{font-size:10px;}
+  .tb-label-main{font-size:11px;}
+  .trade-banner .tb-stat-label{font-size:8px;}
+  .trade-banner .tb-stat-val{font-size:11px;}
 }
 </style>
 </head>
@@ -927,9 +931,31 @@ function saveActiveBuy(price, time, cost) { localStorage.setItem(BUY_KEY, JSON.s
 function clearActiveBuy() { localStorage.removeItem(BUY_KEY); }
 function getActiveBuy() { try { return JSON.parse(localStorage.getItem(BUY_KEY)||'null'); } catch(e) { return null; } }
 
-function updateBanner(currentPrice, krakenTrades, ghRows) {
+function updateBanner(price, allKT, ghRows, botData) {
   const banner = document.getElementById('trade-banner');
   let activeBuy = null;
+
+  // Method 0: Use botData directly (most reliable — written by bot server-side)
+  if (botData && botData.btc_balance > 0.00001 && botData.action) {
+    // Bot has BTC — find the open buy from trade history
+    const sortedTrades = (botData.trades||[]).filter(t => new Date(t.time) >= new Date('2026-03-22T00:00:00Z') && t.price > 50000)
+      .sort((a,b) => new Date(a.time)-new Date(b.time));
+    let openBuy = null;
+    for (const t of sortedTrades) {
+      if (t.action === 'BUY') openBuy = t;
+      else if (t.action === 'SELL') openBuy = null;
+    }
+    if (openBuy) {
+      activeBuy = {price: openBuy.price, time: openBuy.time, cost: openBuy.cost || 20};
+      saveActiveBuy(openBuy.price, openBuy.time, openBuy.cost || 20);
+      console.log('Banner: open trade from botData, buy @', openBuy.price);
+    } else if (botData.btc_balance < 0.00001) {
+      clearActiveBuy(); activeBuy = null;
+    }
+  } else if (botData && botData.btc_balance < 0.00001) {
+    // No BTC held — clear banner
+    clearActiveBuy(); activeBuy = null;
+  }
 
   // Method 1: Kraken trade history
   if (krakenTrades && krakenTrades.length) {
@@ -1653,7 +1679,7 @@ async function load() {
   document.getElementById('t-lastrun').textContent = 'refreshing...';
   document.getElementById('t-price').textContent = '...';
   maybeResyncNotifs();
-  window._dataJsonLoaded = false; // reset each load
+  // Don't reset _dataJsonLoaded — once data.json works, always use it this session
   // One-time fix: clear stuck active buy so banner re-evaluates from fresh data
   // Remove this after confirmed working
   if (localStorage.getItem(BUY_KEY)) {
@@ -1733,7 +1759,7 @@ async function load() {
           cadBal = botData.cad_balance || 0;
           if (botData.trades && botData.trades.length) {
             // Filter to only relevant trades (Mar 22 onwards, price > $50k = BTC/CAD)
-            const START_DATE = new Date('2026-03-22T00:00:00');
+            const START_DATE = new Date('2026-03-22T00:00:00Z'); // UTC midnight Mar 22
             allKT = botData.trades
               .filter(t => new Date(t.time) >= START_DATE && t.price > 50000)
               .map(t => ({
