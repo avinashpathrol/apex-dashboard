@@ -444,7 +444,19 @@ input:focus{border-color:#3f3f46;}
         <div class="mcard"><div class="ml">Total Runs</div><div class="mv neu" id="m-total">—</div><div class="ms">all time</div></div>
       </div>
       <div class="card" style="margin-bottom:8px;">
-        <div class="card-title"><span>BTC Price (24h)</span><span style="font-size:10px;color:#52525b;">▲ BUY  ▼ SELL</span></div>
+        <div class="card-title">
+          <span id="chart-title">BTC Price (24h)</span>
+          <div style="display:flex;gap:5px;">
+            <button id="btn-normal" onclick="setChartMode('normal')" style="background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;">📊 Normal</button>
+            <button id="btn-trade" onclick="setChartMode('trade')" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;">🔴 In Trade</button>
+          </div>
+        </div>
+        <div id="chart-legend" style="display:none;margin-bottom:8px;display:flex;gap:12px;flex-wrap:wrap;">
+          <span style="font-size:10px;color:#22c55e;">── Entry</span>
+          <span style="font-size:10px;color:#3b82f6;">── Current</span>
+          <span style="font-size:10px;color:#22c55e;opacity:.6;">- - TP +3.5%</span>
+          <span style="font-size:10px;color:#f87171;opacity:.6;">- - SL -2%</span>
+        </div>
         <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
       </div>
       <div class="g2">
@@ -1029,6 +1041,164 @@ function buildPriceChart(ohlc, trades) {
   if (pChart) pChart.destroy();
   pChart = new Chart(document.getElementById('priceChart'), {type:'line',data:{labels,datasets:[{data:prices,borderColor:'#6366f1',borderWidth:1.5,pointRadius:0,fill:true,backgroundColor:'rgba(99,102,241,.05)',tension:.3},{data:buys,borderColor:'transparent',backgroundColor:'#22c55e',pointRadius:8,pointStyle:'triangle',showLine:false},{data:sells,borderColor:'transparent',backgroundColor:'#f87171',pointRadius:8,pointStyle:'triangle',rotation:180,showLine:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#52525b',maxTicksLimit:8,font:{size:10}},grid:{color:'#1c1c1f'}},y:{ticks:{color:'#52525b',font:{size:10},callback:v=>'$'+Number(v).toLocaleString()},grid:{color:'#1c1c1f'}}}}});
 }
+// ── CHART MODE ──
+let chartMode = 'normal';
+let _lastOhlc = [], _lastKtrades = [];
+
+function setChartMode(mode) {
+  chartMode = mode;
+  const btnN = document.getElementById('btn-normal');
+  const btnT = document.getElementById('btn-trade');
+  const legend = document.getElementById('chart-legend');
+  const title = document.getElementById('chart-title');
+
+  if (mode === 'normal') {
+    btnN.style.cssText = 'background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;';
+    btnT.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
+    legend.style.display = 'none';
+    title.textContent = 'BTC Price (24h)';
+    if (_lastOhlc.length) buildPriceChart(_lastOhlc, _lastKtrades);
+  } else {
+    const ab = getActiveBuy();
+    if (!ab) { showToast('warn', 'No active trade', 'In Trade mode requires an open position.'); return; }
+    btnT.style.cssText = 'background:#2d0a0a;border:1px solid #7f1d1d;border-radius:6px;padding:3px 10px;font-size:10px;color:#f87171;cursor:pointer;font-weight:600;';
+    btnN.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
+    legend.style.display = 'flex';
+    title.textContent = 'In Trade View';
+    buildInTradeChart(ab, _lastOhlc);
+  }
+}
+
+function buildInTradeChart(activeBuy, ohlc) {
+  if (pChart) pChart.destroy();
+  if (!ohlc || !ohlc.length) return;
+
+  const entryPrice = activeBuy.price;
+  const cost = activeBuy.cost || 20;
+  const entryTime = new Date(activeBuy.time).getTime();
+  const TP_PCT = 0.035; // 3.5%
+  const SL_PCT = 0.020; // 2%
+  const tpPrice = entryPrice * (1 + TP_PCT);
+  const slPrice = entryPrice * (1 - SL_PCT);
+
+  // Filter ohlc from entry point onwards
+  const tradeCandles = ohlc.filter(c => c[0] * 1000 >= entryTime - 15*60*1000);
+  const allCandles = tradeCandles.length >= 3 ? tradeCandles : ohlc.slice(-24);
+
+  const labels = allCandles.map(c => {
+    const d = new Date(c[0]*1000);
+    return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0');
+  });
+  const prices = allCandles.map(c => parseFloat(c[4]));
+  // P&L right axis: (price - entry) * (cost/entry)
+  const pnls = prices.map(p => parseFloat(((p - entryPrice) / entryPrice * cost).toFixed(4)));
+  const tpLine = allCandles.map(() => tpPrice);
+  const slLine = allCandles.map(() => slPrice);
+  const entryLine = allCandles.map(() => entryPrice);
+  const currentP = prices[prices.length-1];
+  const isProfit = currentP >= entryPrice;
+
+  pChart = new Chart(document.getElementById('priceChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Price (CAD)',
+          data: prices,
+          borderColor: isProfit ? '#22c55e' : '#f87171',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: {target: 'origin', above: 'rgba(34,197,94,.07)', below: 'rgba(248,113,113,.07)'},
+          tension: .3,
+          yAxisID: 'yPrice',
+        },
+        {
+          label: 'TP +3.5%',
+          data: tpLine,
+          borderColor: 'rgba(34,197,94,.5)',
+          borderWidth: 1.5,
+          borderDash: [6,4],
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+          yAxisID: 'yPrice',
+        },
+        {
+          label: 'SL -2%',
+          data: slLine,
+          borderColor: 'rgba(248,113,113,.5)',
+          borderWidth: 1.5,
+          borderDash: [6,4],
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+          yAxisID: 'yPrice',
+        },
+        {
+          label: 'Entry',
+          data: entryLine,
+          borderColor: 'rgba(255,255,255,.25)',
+          borderWidth: 1,
+          borderDash: [3,3],
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+          yAxisID: 'yPrice',
+        },
+        {
+          label: 'P&L (CAD)',
+          data: pnls,
+          borderColor: 'rgba(99,102,241,.8)',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          fill: false,
+          tension: .3,
+          yAxisID: 'yPnl',
+        },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              if (ctx.dataset.label === 'P&L (CAD)') return 'P&L: ' + (ctx.raw >= 0 ? '+' : '') + '$' + ctx.raw.toFixed(4);
+              if (ctx.dataset.label === 'TP +3.5%') return 'Take Profit: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
+              if (ctx.dataset.label === 'SL -2%') return 'Stop Loss: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
+              if (ctx.dataset.label === 'Entry') return 'Entry: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
+              return 'Price: $' + Number(ctx.raw).toLocaleString('en-US',{maximumFractionDigits:0});
+            }
+          }
+        }
+      },
+      scales: {
+        x: { ticks: { color:'#52525b', maxTicksLimit:8, font:{size:10} }, grid: { color:'#1c1c1f' } },
+        yPrice: {
+          type: 'linear',
+          position: 'left',
+          ticks: { color:'#52525b', font:{size:10}, callback: v => '$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:0}) },
+          grid: { color:'#1c1c1f' }
+        },
+        yPnl: {
+          type: 'linear',
+          position: 'right',
+          ticks: {
+            color:'#818cf8',
+            font:{size:10},
+            callback: v => (v>=0?'+':'')+'$'+v.toFixed(2)
+          },
+          grid: { drawOnChartArea: false }
+        }
+      }
+    }
+  });
+}
+
 function buildPnlChart(rows2) {
   let cum=0; const labels=[], data=[], colors=[];
   for (const r of [...rows2].sort((a,b)=>new Date(a.time)-new Date(b.time))) {
@@ -1196,7 +1366,17 @@ async function load() {
     const tbd = byDay(allET); window._tbd=tbd; buildCal(tbd);
     updPeriod(actP);
     updateBanner(price, allKT, rows);
-    if (ohlc.length) buildPriceChart(ohlc.slice(-24), allKT);
+    if (ohlc.length) {
+      _lastOhlc = ohlc.slice(-24);
+      _lastKtrades = allKT;
+      if (chartMode === 'trade') {
+        const ab = getActiveBuy();
+        if (ab) buildInTradeChart(ab, ohlc);
+        else { chartMode = 'normal'; setChartMode('normal'); buildPriceChart(ohlc.slice(-24), allKT); }
+      } else {
+        buildPriceChart(ohlc.slice(-24), allKT);
+      }
+    }
     if (allET.length) buildPnlChart(allET);
     loadSentiment();
 
