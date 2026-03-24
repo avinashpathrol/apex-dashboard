@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T05:40:33.428572+00:00",
+  "generated_at": "2026-03-24T05:46:17.808753+00:00",
   "symbol": "XBTCAD",
   "price": 96635.2,
   "cad_balance": 3.7542,
@@ -8,11 +8,11 @@
   "confidence": 82,
   "risk": "MEDIUM",
   "status": "SKIPPED \u2014 balance issue",
-  "reason": "RSI rising from low (41.5) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (12%)",
+  "reason": "RSI rising from low (44.9) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (14%)",
   "bullish": [
-    "RSI rising from low (41.5)",
+    "RSI rising from low (44.9)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (12%)"
+    "Price near BB lower band (14%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
