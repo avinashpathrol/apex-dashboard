@@ -1176,6 +1176,9 @@ function updateBanner(price, allKT, ghRows, botData) {
   const isProfit = approxPnl >= 0;
 
   banner.className = 'trade-banner active' + (isProfit ? '' : ' loss');
+  // Dynamic asset label
+  const _assetLabel = {btc:'BTC', eth:'ETH', gold:'Gold'}[ACTIVE_ASSET] || 'BTC';
+  document.getElementById('tb-label').textContent = 'IN TRADE — ' + _assetLabel + ' Long';
   document.getElementById('tb-pulse').className = 'tb-pulse' + (isProfit ? '' : ' loss');
   document.getElementById('tb-ico').textContent = isProfit ? '🟢' : '🔴';
   document.getElementById('tb-label').className = 'tb-label-main' + (isProfit ? '' : ' loss');
@@ -1284,7 +1287,8 @@ function chkKrakenTrades(trades) {
 
     const pr = '$' + Number(t.price).toLocaleString('en-US',{maximumFractionDigits:0}) + ' CAD';
     if (t.action === 'BUY') {
-      addNotif('buy', '🟢 BUY Executed', 'Bought BTC at ' + pr + ' · $' + (t.cost||20).toFixed(2) + ' invested');
+      const assetLabel = ACTIVE_ASSET === 'eth' ? 'ETH' : ACTIVE_ASSET === 'gold' ? 'Gold' : 'BTC';
+        addNotif('buy', '🟢 BUY Executed', 'Bought ' + assetLabel + ' at ' + pr + ' · $' + (t.cost||20).toFixed(2) + ' invested');
     } else if (t.action === 'SELL') {
       const matchBuy = buyMap[t.time];
       if (matchBuy) {
