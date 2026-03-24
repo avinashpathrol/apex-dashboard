@@ -290,6 +290,51 @@ input:focus{border-color:#3f3f46;}
 .clickable-stat:hover{border-color:#3f3f46 !important;background:#1c1c1f !important;}
 .clickable-cal-day{cursor:pointer;}
 
+/* ASSET SWITCHER */
+.asset-bar{background:#0a0a0c;border-bottom:1px solid #1c1c1f;padding:0 16px;display:flex;align-items:center;gap:6px;height:38px;flex-shrink:0;}
+.asset-btn{background:none;border:1px solid transparent;border-radius:8px;padding:4px 12px;font-size:11px;font-weight:600;color:#52525b;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .15s;}
+.asset-btn:hover{color:#a1a1aa;background:#18181b;}
+.asset-btn.active{background:#18181b;border-color:#27272a;color:#e8e8e8;}
+.asset-btn.active.btc{border-color:#f7931a;color:#f7931a;background:#1a1200;}
+.asset-btn.active.eth{border-color:#627eea;color:#627eea;background:#0d1128;}
+.asset-btn.active.gold{border-color:#fbbf24;color:#fbbf24;background:#130f00;}
+.asset-btn .asset-dot{width:6px;height:6px;border-radius:50%;}
+.asset-btn.active.btc .asset-dot{background:#f7931a;}
+.asset-btn.active.eth .asset-dot{background:#627eea;}
+.asset-btn.active.gold .asset-dot{background:#fbbf24;}
+.add-asset-btn{margin-left:auto;background:none;border:1px dashed #27272a;border-radius:8px;padding:4px 10px;font-size:10px;color:#3f3f46;cursor:pointer;}
+.add-asset-btn:hover{color:#a1a1aa;border-color:#3f3f46;}
+
+/* SETTINGS PANEL */
+.settings-ov{display:none;position:fixed;inset:0;z-index:2500;background:rgba(0,0,0,.8);align-items:center;justify-content:center;padding:20px;}
+.settings-ov.open{display:flex;}
+.settings-modal{background:#18181b;border:1px solid #27272a;border-radius:16px;width:100%;max-width:440px;max-height:85vh;display:flex;flex-direction:column;overflow:hidden;}
+.settings-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #27272a;flex-shrink:0;}
+.settings-title{font-size:13px;font-weight:700;color:#e8e8e8;}
+.settings-body{padding:16px 18px;overflow-y:auto;flex:1;}
+.settings-section{margin-bottom:20px;}
+.settings-section-title{font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:#111;border-radius:8px;margin-bottom:6px;border:1px solid #1c1c1f;}
+.settings-label{font-size:12px;color:#a1a1aa;}
+.settings-label span{display:block;font-size:10px;color:#52525b;margin-top:2px;}
+.settings-input{background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:5px 10px;font-size:12px;color:#e8e8e8;width:100px;text-align:right;font-family:monospace;}
+.settings-input:focus{outline:none;border-color:#3f3f46;}
+.settings-save-btn{width:100%;background:#052e16;border:1px solid #16a34a;border-radius:8px;padding:10px;font-size:13px;font-weight:700;color:#22c55e;cursor:pointer;margin-top:8px;}
+.settings-save-btn:hover{background:#14532d;}
+.settings-status{font-size:11px;text-align:center;margin-top:8px;color:#52525b;min-height:16px;}
+
+/* ADD ASSET MODAL */
+.add-asset-ov{display:none;position:fixed;inset:0;z-index:2600;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px;}
+.add-asset-ov.open{display:flex;}
+.add-asset-modal{background:#18181b;border:1px solid #27272a;border-radius:16px;width:100%;max-width:420px;overflow:hidden;}
+.add-asset-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #27272a;}
+.add-asset-body{padding:16px 18px;}
+.aa-field{margin-bottom:12px;}
+.aa-label{font-size:11px;color:#52525b;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;}
+.aa-input{width:100%;background:#111;border:1px solid #27272a;border-radius:8px;padding:8px 12px;font-size:12px;color:#e8e8e8;box-sizing:border-box;}
+.aa-input:focus{outline:none;border-color:#3f3f46;}
+.aa-save-btn{width:100%;background:#052e16;border:1px solid #16a34a;border-radius:8px;padding:10px;font-size:13px;font-weight:700;color:#22c55e;cursor:pointer;margin-top:4px;}
+
 /* GUIDE MODAL */
 .guide-modal-ov{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.85);flex-direction:column;}
 .guide-modal-ov.open{display:flex;}
@@ -522,6 +567,21 @@ input:focus{border-color:#3f3f46;}
     </div>
   </div>
 
+  <!-- ASSET SWITCHER BAR -->
+  <div class="asset-bar" id="asset-bar">
+    <button class="asset-btn btc active" id="ab-btc" onclick="switchAsset('btc', true)">
+      <span class="asset-dot"></span> ₿ BTC
+    </button>
+    <button class="asset-btn eth" id="ab-eth" onclick="switchAsset('eth', true)" style="display:none">
+      <span class="asset-dot"></span> Ξ ETH
+    </button>
+    <button class="asset-btn gold" id="ab-gold" onclick="switchAsset('gold', true)" style="display:none">
+      <span class="asset-dot"></span> 🥇 Gold
+    </button>
+    <button class="add-asset-btn" onclick="openAddAsset()">+ Add Asset</button>
+    <button class="add-asset-btn" style="border-color:#1e3a5f;color:#818cf8;" onclick="openSettings()">⚙️ Settings</button>
+  </div>
+
   <div class="tabs">
     <div class="tab active" onclick="switchTab('overview',this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</div>
     <div class="tab" onclick="switchTab('signals',this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>Signals</div>
@@ -693,6 +753,8 @@ input:focus{border-color:#3f3f46;}
 <script>
 // ── STATE ──
 let GH, REPO, KRK, KRS;
+let ACTIVE_ASSET = localStorage.getItem('apex_active_asset') || 'btc';
+let ASSETS = {}; // stores credentials per asset
 let pChart = null, pnlChart = null, retChart = null;
 let cSecs = 300, cInt = null, aInt = null;
 const SECS = 300;
@@ -754,7 +816,12 @@ async function unlockPin() {
   try {
     const data = await decrypt(localStorage.getItem(ENC_KEY), pin);
     if (!data.gh || !data.repo || !data.krk || !data.krs) throw new Error('bad');
-    GH = data.gh; REPO = data.repo; KRK = data.krk; KRS = data.krs;
+    // Load all assets from saved data
+    ASSETS.btc = {gh: data.gh, repo: data.repo, krk: data.krk, krs: data.krs};
+    if (data.eth) ASSETS.eth = data.eth;
+    if (data.gold) ASSETS.gold = data.gold;
+    // Load active asset
+    switchAsset(ACTIVE_ASSET, false);
     startApp();
   } catch(e) {
     errEl.textContent = 'Wrong PIN. Try again.';
@@ -775,8 +842,17 @@ async function saveAndConnect() {
   if (!pin || pin.length < 4) { errEl.textContent = 'PIN must be at least 4 digits.'; return; }
   try {
     await gh('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=1');
-    const enc = await encrypt({ gh:GH, repo:REPO, krk:KRK, krs:KRS }, pin);
+    // Save BTC as primary asset, preserve existing ETH/gold if any
+    let existingData = {};
+    try { existingData = await decrypt(localStorage.getItem(ENC_KEY), pin); } catch(e) {}
+    const saveData = {
+      ...existingData,
+      gh: GH, repo: REPO, krk: KRK, krs: KRS
+    };
+    const enc = await encrypt(saveData, pin);
     localStorage.setItem(ENC_KEY, enc);
+    ASSETS.btc = {gh: GH, repo: REPO, krk: KRK, krs: KRS};
+    switchAsset('btc', false);
     startApp();
   } catch(e) {
     errEl.textContent = 'Connection failed. Check your GitHub token.';
@@ -1805,7 +1881,13 @@ async function load() {
       }
       if (!useCache) {
         const cacheBust = '?t=' + Date.now();
-        const djRes = await fetch('https://raw.githubusercontent.com/' + REPO.replace('apex-trading-bot','apex-dashboard') + '/main/data.json' + cacheBust, { cache: 'no-store', method: 'GET' });
+        // Use correct data file based on active asset
+        const dataFile = ACTIVE_ASSET === 'eth' ? 'data_eth.json' :
+                         ACTIVE_ASSET === 'gold' ? 'data_gold.json' : 'data.json';
+        const dashRepo = REPO.includes('apex-') ?
+          REPO.replace(/apex-[^/]+/, 'apex-dashboard') :
+          'avinashpathrol/apex-dashboard';
+        const djRes = await fetch('https://raw.githubusercontent.com/' + dashRepo + '/main/' + dataFile + cacheBust, { cache: 'no-store', method: 'GET' });
         if (djRes.ok) {
           botData = await djRes.json();
           cadBal = botData.cad_balance || 0;
@@ -2154,6 +2236,203 @@ function openDayTrades(dateKey) {
   openTradeModal(dayTrades, '📅 ' + label);
 }
 
+// ── ASSET SWITCHER ──
+function switchAsset(asset, reload) {
+  ACTIVE_ASSET = asset;
+  localStorage.setItem('apex_active_asset', asset);
+
+  // Update button states
+  ['btc','eth','gold'].forEach(a => {
+    const btn = document.getElementById('ab-'+a);
+    if (btn) {
+      btn.classList.remove('active');
+      if (a === asset) btn.classList.add('active');
+    }
+  });
+
+  // Load credentials for this asset
+  if (ASSETS[asset]) {
+    const creds = ASSETS[asset];
+    GH   = creds.gh   || ASSETS.btc.gh;  // share GH token
+    REPO = creds.repo || ASSETS.btc.repo;
+    KRK  = creds.krk  || ASSETS.btc.krk; // share Kraken keys
+    KRS  = creds.krs  || ASSETS.btc.krs;
+  } else if (ASSETS.btc) {
+    // Asset not configured yet — use BTC credentials
+    GH = ASSETS.btc.gh; REPO = ASSETS.btc.repo;
+    KRK = ASSETS.btc.krk; KRS = ASSETS.btc.krs;
+  }
+
+  // Update brand name
+  const names = {btc: 'BTC Bot', eth: 'ETH Bot', gold: 'Gold Bot'};
+  const el = document.querySelector('.brand-name');
+  if (el) el.textContent = 'Avinash ' + (names[asset] || 'Bot');
+
+  // Update topbar price label
+  const labels = {btc: 'BTC/CAD', eth: 'ETH/CAD', gold: 'XAU/USD'};
+  const lbl = document.getElementById('price-label');
+  if (lbl) lbl.textContent = labels[asset] || 'BTC/CAD';
+
+  // Clear cache to force fresh data
+  localStorage.removeItem('apex_data_cache');
+  window._dataJsonLoaded = false;
+
+  if (reload) {
+    // Reset display
+    document.getElementById('m-price').textContent = '...';
+    document.getElementById('t-price').textContent = '...';
+    manualRefresh();
+  }
+}
+
+// ── SETTINGS ──
+async function openSettings() {
+  // Load current config from bot repo
+  try {
+    const repo = ASSETS.btc?.repo || REPO;
+    const url = `https://raw.githubusercontent.com/${repo}/main/config.json?t=${Date.now()}`;
+    const r = await fetch(url, {headers:{Authorization:'token '+GH}});
+    if (r.ok) {
+      const cfg = await r.json();
+      if (cfg.trade_amount_cad)  document.getElementById('cfg-btc-amount').value  = cfg.trade_amount_cad;
+      if (cfg.min_signals)       document.getElementById('cfg-btc-signals').value  = cfg.min_signals;
+      if (cfg.eth?.trade_amount) document.getElementById('cfg-eth-amount').value  = cfg.eth.trade_amount;
+      if (cfg.eth?.min_signals)  document.getElementById('cfg-eth-signals').value  = cfg.eth.min_signals;
+    }
+  } catch(e) {}
+
+  // Show ETH/gold sections if connected
+  document.getElementById('cfg-eth-section').style.display = ASSETS.eth ? 'block' : 'none';
+  document.getElementById('cfg-gold-section').style.display = ASSETS.gold ? 'block' : 'none';
+  document.getElementById('settings-status').textContent = '';
+  document.getElementById('settings-ov').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSettings() {
+  document.getElementById('settings-ov').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function saveSettings() {
+  const statusEl = document.getElementById('settings-status');
+  statusEl.textContent = 'Saving...';
+  statusEl.style.color = '#fbbf24';
+
+  const config = {
+    trade_amount_cad: parseInt(document.getElementById('cfg-btc-amount').value) || 40,
+    min_signals:      parseInt(document.getElementById('cfg-btc-signals').value) || 3,
+    updated_at:       new Date().toISOString(),
+  };
+  if (ASSETS.eth) {
+    config.eth = {
+      trade_amount: parseInt(document.getElementById('cfg-eth-amount').value) || 70,
+      min_signals:  parseInt(document.getElementById('cfg-eth-signals').value) || 3,
+    };
+  }
+  if (ASSETS.gold) {
+    config.gold = {
+      trade_amount: parseInt(document.getElementById('cfg-gold-amount').value) || 40,
+    };
+  }
+
+  // Push config.json to BTC bot repo
+  try {
+    const repo = ASSETS.btc?.repo || REPO;
+    const ok = await pushConfigJson(repo, config, 'BTC');
+    if (ok) {
+      // Also push to ETH repo if connected
+      if (ASSETS.eth && config.eth) {
+        await pushConfigJson(ASSETS.eth.repo, {
+          trade_amount_cad: config.eth.trade_amount,
+          min_signals: config.eth.min_signals,
+          updated_at: config.updated_at,
+        }, 'ETH');
+      }
+      statusEl.textContent = '✅ Saved! Bot will use new settings within 7-8 minutes.';
+      statusEl.style.color = '#22c55e';
+    } else {
+      statusEl.textContent = '❌ Failed to save. Check your GitHub token.';
+      statusEl.style.color = '#f87171';
+    }
+  } catch(e) {
+    statusEl.textContent = '❌ Error: ' + e.message;
+    statusEl.style.color = '#f87171';
+  }
+}
+
+async function pushConfigJson(repo, config, label) {
+  const url = `https://api.github.com/repos/${repo}/contents/config.json`;
+  const headers = {Authorization:'token '+GH, Accept:'application/vnd.github+json'};
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(config, null, 2))));
+  // Get existing SHA
+  const existing = await fetch(url, {headers});
+  const sha = existing.ok ? (await existing.json()).sha : null;
+  const payload = {message:`dashboard: update config ${new Date().toLocaleTimeString()}`, content};
+  if (sha) payload.sha = sha;
+  const r = await fetch(url, {method:'PUT', headers, body:JSON.stringify(payload)});
+  console.log(`Config pushed to ${label} repo:`, r.status);
+  return r.status === 200 || r.status === 201;
+}
+
+// ── ADD ASSET ──
+function openAddAsset() {
+  document.getElementById('add-asset-status').textContent = '';
+  document.getElementById('add-asset-ov').classList.add('open');
+}
+function closeAddAsset() {
+  document.getElementById('add-asset-ov').classList.remove('open');
+}
+
+async function saveNewAsset() {
+  const asset = document.getElementById('aa-asset').value;
+  const repo  = document.getElementById('aa-repo').value.trim();
+  const statusEl = document.getElementById('add-asset-status');
+
+  if (!repo) { statusEl.textContent = 'Please enter the repo name'; return; }
+
+  statusEl.textContent = 'Connecting...';
+
+  // Verify repo exists
+  try {
+    const r = await fetch(`https://api.github.com/repos/${repo}`,
+      {headers:{Authorization:'token '+GH}});
+    if (!r.ok) { statusEl.textContent = '❌ Repo not found. Check the name.'; return; }
+  } catch(e) { statusEl.textContent = '❌ Could not verify repo'; return; }
+
+  // Save asset credentials (share GH token and Kraken keys)
+  ASSETS[asset] = {
+    gh: ASSETS.btc.gh,
+    repo: repo,
+    krk: ASSETS.btc.krk,
+    krs: ASSETS.btc.krs,
+  };
+
+  // Save to encrypted storage
+  try {
+    const pin = prompt('Enter your PIN to save:');
+    if (!pin) return;
+    const existing = await decrypt(localStorage.getItem(ENC_KEY), pin);
+    existing[asset] = ASSETS[asset];
+    const enc = await encrypt(existing, pin);
+    localStorage.setItem(ENC_KEY, enc);
+  } catch(e) {
+    statusEl.textContent = '❌ Wrong PIN'; return;
+  }
+
+  // Show the new asset button
+  const btn = document.getElementById('ab-'+asset);
+  if (btn) btn.style.display = 'flex';
+
+  statusEl.textContent = '✅ Connected! Switching to ' + asset.toUpperCase() + '...';
+  statusEl.style.color = '#22c55e';
+
+  setTimeout(() => {
+    closeAddAsset();
+    switchAsset(asset, true);
+  }, 1500);
+}
+
 // ── GUIDE MODAL ──
 function openGuide(tab) {
   document.getElementById('guide-modal-ov').classList.add('open');
@@ -2239,6 +2518,86 @@ window.addEventListener('load', () => {
       <button class="trade-modal-x" onclick="closeTradeModalDirect()">✕</button>
     </div>
     <div class="trade-modal-body" id="tm-body"></div>
+  </div>
+</div>
+
+<!-- SETTINGS MODAL -->
+<div class="settings-ov" id="settings-ov" onclick="if(event.target===this)closeSettings()">
+  <div class="settings-modal">
+    <div class="settings-hdr">
+      <div class="settings-title">⚙️ Bot Settings</div>
+      <button class="trade-modal-x" onclick="closeSettings()">✕</button>
+    </div>
+    <div class="settings-body">
+      <div class="settings-section">
+        <div class="settings-section-title">₿ BTC Bot — Trade Size</div>
+        <div class="settings-row">
+          <div class="settings-label">Trade Amount (CAD)<span>Per trade on Kraken</span></div>
+          <input class="settings-input" id="cfg-btc-amount" type="number" min="10" max="10000" value="40" placeholder="40">
+        </div>
+        <div class="settings-row">
+          <div class="settings-label">Min Signals to Trade<span>3-6 recommended</span></div>
+          <input class="settings-input" id="cfg-btc-signals" type="number" min="2" max="6" value="3" placeholder="3">
+        </div>
+      </div>
+      <div class="settings-section" id="cfg-eth-section" style="display:none">
+        <div class="settings-section-title">Ξ ETH Bot — Trade Size</div>
+        <div class="settings-row">
+          <div class="settings-label">Trade Amount (CAD)<span>Per trade on Kraken</span></div>
+          <input class="settings-input" id="cfg-eth-amount" type="number" min="10" max="10000" value="70" placeholder="70">
+        </div>
+        <div class="settings-row">
+          <div class="settings-label">Min Signals to Trade<span>3-6 recommended</span></div>
+          <input class="settings-input" id="cfg-eth-signals" type="number" min="2" max="6" value="3" placeholder="3">
+        </div>
+      </div>
+      <div class="settings-section" id="cfg-gold-section" style="display:none">
+        <div class="settings-section-title">🥇 Gold Bot — Trade Size</div>
+        <div class="settings-row">
+          <div class="settings-label">Trade Amount (CAD)<span>Per trade on Kraken</span></div>
+          <input class="settings-input" id="cfg-gold-amount" type="number" min="10" max="10000" value="40" placeholder="40">
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">How It Works</div>
+        <div style="font-size:11px;color:#52525b;line-height:1.7;background:#111;border-radius:8px;padding:10px 12px;">
+          Saving will push a <code style="color:#22c55e;font-size:10px;">config.json</code> to your bot repo.<br>
+          The bot reads it on every run — no GitHub file editing needed!<br>
+          Changes take effect within 7-8 minutes automatically.
+        </div>
+      </div>
+      <button class="settings-save-btn" onclick="saveSettings()">💾 Save & Push to Bot</button>
+      <div class="settings-status" id="settings-status"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD ASSET MODAL -->
+<div class="add-asset-ov" id="add-asset-ov" onclick="if(event.target===this)closeAddAsset()">
+  <div class="add-asset-modal">
+    <div class="add-asset-hdr">
+      <div class="settings-title">+ Connect New Bot</div>
+      <button class="trade-modal-x" onclick="closeAddAsset()">✕</button>
+    </div>
+    <div class="add-asset-body">
+      <div class="aa-field">
+        <div class="aa-label">Asset</div>
+        <select class="aa-input" id="aa-asset" style="cursor:pointer;">
+          <option value="eth">Ξ ETH — apex-eth-bot</option>
+          <option value="gold">🥇 Gold — apex-gold-bot</option>
+        </select>
+      </div>
+      <div class="aa-field">
+        <div class="aa-label">GitHub Repo</div>
+        <input class="aa-input" id="aa-repo" placeholder="avinashpathrol/apex-eth-bot">
+      </div>
+      <div style="font-size:11px;color:#52525b;margin-bottom:12px;line-height:1.6;">
+        Uses same GitHub token and Kraken API keys as your BTC bot.
+        Just enter the new repo name.
+      </div>
+      <button class="aa-save-btn" onclick="saveNewAsset()">✅ Connect Asset</button>
+      <div class="settings-status" id="add-asset-status"></div>
+    </div>
   </div>
 </div>
 
