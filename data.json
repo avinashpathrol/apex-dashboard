@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-24T22:49:06.372933+00:00",
+  "generated_at": "2026-03-24T22:58:04.498183+00:00",
   "symbol": "XBTCAD",
-  "price": 96772.7,
-  "cad_balance": 172.5936,
+  "price": 96922.9,
+  "cad_balance": 31.4736,
   "btc_balance": 0.0,
   "action": "HOLD",
   "confidence": 0,
@@ -14,8 +14,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (58.0)",
-    "EMA-20 below EMA-50 (downtrend)"
+    "EMA-20 below EMA-50 (downtrend)",
+    "Price near BB upper band (84%)"
   ],
   "trades": [
     {
@@ -177,6 +177,22 @@
       "cost": 20.04675,
       "fee": 0.16037,
       "vol": 0.00020822
+    },
+    {
+      "time": "2026-03-24T15:50:32.563788-07:00",
+      "action": "BUY",
+      "price": 2952.26,
+      "cost": 70.0,
+      "fee": 0.56,
+      "vol": 0.02371065
+    },
+    {
+      "time": "2026-03-24T15:51:07.088536-07:00",
+      "action": "BUY",
+      "price": 2952.26,
+      "cost": 70.0,
+      "fee": 0.56,
+      "vol": 0.02371065
     }
   ]
 }
