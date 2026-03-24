@@ -612,7 +612,7 @@ input:focus{border-color:#3f3f46;}
         </div>
       </div>
       <div class="g5">
-        <div class="mcard"><div class="ml">BTC Price</div><div class="mv" id="m-price">—</div><div class="ms">CAD live</div></div>
+        <div class="mcard"><div class="ml" id="lbl-price">BTC Price</div><div class="mv" id="m-price">—</div><div class="ms" id="lbl-price-sub">CAD live</div></div>
         <div class="mcard"><div class="ml">Last Action</div><div class="mv" id="m-action">—</div><div class="ms" id="m-action-price" style="font-family:monospace;font-size:11px;margin-top:2px;"></div><div class="ms" id="m-action-time" style="margin-top:1px;"></div></div>
         <div class="mcard"><div class="ml">CAD Balance</div><div class="mv" id="m-cad">—</div><div class="ms">available</div></div>
         <div class="mcard clickable-stat" onclick="openAllTrades()" title="Click to see all trades"><div class="ml">Total P&amp;L <span style="font-size:9px;color:#3f3f46;">↗</span></div><div class="mv" id="m-pnl">—</div><div class="ms" id="m-pnl-sub"></div></div>
@@ -1897,14 +1897,19 @@ async function load() {
           cadBal = botData.cad_balance || 0;
           if (botData.trades && botData.trades.length) {
             // Filter to only relevant trades (Mar 22 onwards, price > $50k = BTC/CAD)
-            const START_DATE = new Date('2026-03-22T00:00:00Z'); // UTC midnight Mar 22
+            const START_DATE = new Date('2026-03-22T00:00:00Z');
+            // Filter by asset price range to separate BTC vs ETH trades
+            const isEth  = ACTIVE_ASSET === 'eth';
+            const isGold = ACTIVE_ASSET === 'gold';
+            const minPrice = isEth ? 500 : isGold ? 100 : 50000;
+            const maxPrice = isEth ? 50000 : isGold ? 50000 : 9999999;
+            const minCost  = isEth ? 50 : isGold ? 20 : 10;
+            const maxCost  = isEth ? 200 : isGold ? 200 : 200;
             allKT = botData.trades
               .filter(t => {
                 const d = new Date(t.time);
                 const cost = parseFloat(t.cost) || 0;
-                const vol = parseFloat(t.vol || t.fee / 0.0026 / t.price || 0);
-                // Must be after Mar 22, BTC/CAD price, cost ~$20 (allow $10-25 for fees/slippage)
-                return d >= START_DATE && t.price > 50000 && cost >= 10 && cost <= 25;
+                return d >= START_DATE && t.price >= minPrice && t.price <= maxPrice && cost >= minCost && cost <= maxCost;
               })
               .map(t => ({
                 time:   t.time,
@@ -2281,6 +2286,13 @@ function switchAsset(asset, reload) {
   const labels = {btc: 'BTC/CAD', eth: 'ETH/CAD', gold: 'XAU/USD'};
   const lbl = document.getElementById('price-label');
   if (lbl) lbl.textContent = labels[asset] || 'BTC/CAD';
+  // Update card labels
+  const priceLabel = document.getElementById('lbl-price');
+  const priceLabels = {btc: 'BTC PRICE', eth: 'ETH PRICE', gold: 'GOLD PRICE'};
+  if (priceLabel) priceLabel.textContent = priceLabels[asset] || 'PRICE';
+  const priceSub = document.getElementById('lbl-price-sub');
+  const priceSubLabels = {btc: 'CAD live', eth: 'CAD live', gold: 'USD live'};
+  if (priceSub) priceSub.textContent = priceSubLabels[asset] || 'live';
 
   // Clear cache to force fresh data
   localStorage.removeItem('apex_data_cache');
