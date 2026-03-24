@@ -2254,7 +2254,8 @@ function switchAsset(asset, reload) {
   if (ASSETS[asset]) {
     const creds = ASSETS[asset];
     GH   = creds.gh   || ASSETS.btc.gh;  // share GH token
-    REPO = creds.repo || ASSETS.btc.repo;
+    // Clean repo URL in case full GitHub URL was stored
+    REPO = (creds.repo || ASSETS.btc.repo).replace('https://github.com/','').replace(/\/$/,'');
     KRK  = creds.krk  || ASSETS.btc.krk; // share Kraken keys
     KRS  = creds.krs  || ASSETS.btc.krs;
   } else if (ASSETS.btc) {
@@ -2386,7 +2387,9 @@ function closeAddAsset() {
 
 async function saveNewAsset() {
   const asset = document.getElementById('aa-asset').value;
-  const repo  = document.getElementById('aa-repo').value.trim();
+  let repo    = document.getElementById('aa-repo').value.trim();
+  // Strip full GitHub URL if user pasted it
+  repo = repo.replace('https://github.com/', '').replace('http://github.com/', '').replace(/\/$/, '');
   const statusEl = document.getElementById('add-asset-status');
 
   if (!repo) { statusEl.textContent = 'Please enter the repo name'; return; }
