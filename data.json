@@ -1,21 +1,22 @@
 {
-  "generated_at": "2026-03-24T21:21:23.175898+00:00",
+  "generated_at": "2026-03-24T21:25:50.278192+00:00",
   "symbol": "XBTCAD",
-  "price": 96352.7,
-  "cad_balance": 2.7071,
-  "btc_balance": 0.00020822,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 96316.9,
+  "cad_balance": 22.5936,
+  "btc_balance": 0.0,
+  "action": "SELL",
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "EXECUTED \u2705",
+  "reason": "RSI falling from high (54.4) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (84%)",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
+    "RSI falling from high (54.4)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (86%)"
+    "Price near BB upper band (84%)"
   ],
   "trades": [
     {
@@ -168,6 +169,14 @@
       "price": 96072.9,
       "cost": 20.0043,
       "fee": 0.16003,
+      "vol": 0.00020822
+    },
+    {
+      "time": "2026-03-24T14:25:49.103230-07:00",
+      "action": "SELL",
+      "price": 96276.77457,
+      "cost": 20.04675,
+      "fee": 0.16037,
       "vol": 0.00020822
     }
   ]
