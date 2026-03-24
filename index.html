@@ -818,8 +818,8 @@ async function unlockPin() {
     if (!data.gh || !data.repo || !data.krk || !data.krs) throw new Error('bad');
     // Load all assets from saved data
     ASSETS.btc = {gh: data.gh, repo: data.repo, krk: data.krk, krs: data.krs};
-    if (data.eth) ASSETS.eth = data.eth;
-    if (data.gold) ASSETS.gold = data.gold;
+    if (data.eth)  { ASSETS.eth  = data.eth;  document.getElementById('ab-eth').style.display  = 'flex'; }
+    if (data.gold) { ASSETS.gold = data.gold; document.getElementById('ab-gold').style.display = 'flex'; }
     // Load active asset
     switchAsset(ACTIVE_ASSET, false);
     startApp();
@@ -1884,9 +1884,8 @@ async function load() {
         // Use correct data file based on active asset
         const dataFile = ACTIVE_ASSET === 'eth' ? 'data_eth.json' :
                          ACTIVE_ASSET === 'gold' ? 'data_gold.json' : 'data.json';
-        const dashRepo = REPO.includes('apex-') ?
-          REPO.replace(/apex-[^/]+/, 'apex-dashboard') :
-          'avinashpathrol/apex-dashboard';
+        // Always read from apex-dashboard repo (where bots push data)
+        const dashRepo = 'avinashpathrol/apex-dashboard';
         const djRes = await fetch('https://raw.githubusercontent.com/' + dashRepo + '/main/' + dataFile + cacheBust, { cache: 'no-store', method: 'GET' });
         if (djRes.ok) {
           botData = await djRes.json();
@@ -2405,22 +2404,25 @@ async function saveNewAsset() {
 
   // Save asset credentials (share GH token and Kraken keys)
   ASSETS[asset] = {
-    gh: ASSETS.btc.gh,
+    gh:   ASSETS.btc.gh,
     repo: repo,
-    krk: ASSETS.btc.krk,
-    krs: ASSETS.btc.krs,
+    krk:  ASSETS.btc.krk,
+    krs:  ASSETS.btc.krs,
   };
 
-  // Save to encrypted storage
+  // Save to encrypted storage using PIN field
+  const pin = document.getElementById('aa-pin').value.trim();
+  if (!pin) { statusEl.textContent = '❌ Please enter your PIN'; return; }
   try {
-    const pin = prompt('Enter your PIN to save:');
-    if (!pin) return;
     const existing = await decrypt(localStorage.getItem(ENC_KEY), pin);
     existing[asset] = ASSETS[asset];
     const enc = await encrypt(existing, pin);
     localStorage.setItem(ENC_KEY, enc);
+    console.log('✅ Asset saved to encrypted storage:', asset);
   } catch(e) {
-    statusEl.textContent = '❌ Wrong PIN'; return;
+    statusEl.textContent = '❌ Wrong PIN — try again';
+    statusEl.style.color = '#f87171';
+    return;
   }
 
   // Show the new asset button
@@ -2592,11 +2594,14 @@ window.addEventListener('load', () => {
       </div>
       <div class="aa-field">
         <div class="aa-label">GitHub Repo</div>
-        <input class="aa-input" id="aa-repo" placeholder="avinashpathrol/apex-eth-bot">
+        <input class="aa-input" id="aa-repo" placeholder="avinashpathrol/apex-trading-bot-ETH">
+      </div>
+      <div class="aa-field">
+        <div class="aa-label">Your PIN</div>
+        <input class="aa-input" id="aa-pin" type="password" placeholder="Enter PIN to save">
       </div>
       <div style="font-size:11px;color:#52525b;margin-bottom:12px;line-height:1.6;">
         Uses same GitHub token and Kraken API keys as your BTC bot.
-        Just enter the new repo name.
       </div>
       <button class="aa-save-btn" onclick="saveNewAsset()">✅ Connect Asset</button>
       <div class="settings-status" id="add-asset-status"></div>
