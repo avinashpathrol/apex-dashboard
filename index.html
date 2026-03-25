@@ -2621,83 +2621,64 @@ async function buildTechChart() {
     Object.values(tcCharts).forEach(ch => { try { ch.destroy(); } catch(e){} });
     tcCharts = {};
 
-    // ── CANDLESTICK (simulated with bar chart using open/close as stack) ──
+    // ── CANDLESTICK using floating bars [low,high] with body overlay ──
     const candleCtx = document.getElementById('tcCandleChart')?.getContext('2d');
     if (candleCtx) {
-      // Use floating bar to simulate candlestick
-      const candleData = candles.map((c,i) => ({
-        x: xLabels[i],
-        o: parseFloat(c[1]),
-        h: parseFloat(c[2]),
-        l: parseFloat(c[3]),
-        c: parseFloat(c[4]),
-      }));
+      const barW = Math.max(2, Math.min(12, Math.floor(900/count)));
 
-      // Entry price annotation dataset
-      const entryDataset = entryPrice ? [{
-        type: 'line',
-        label: 'Entry',
-        data: xLabels.map(() => entryPrice),
-        borderColor: '#fbbf24',
-        borderWidth: 1.5,
-        borderDash: [4,4],
-        pointRadius: 0,
-        fill: false,
-        tension: 0,
-        yAxisID: 'y',
-      }] : [];
+      // Floating bar: [low, high] for wicks, [min(o,c), max(o,c)] for body
+      const wickData  = candles.map(c => [parseFloat(c[3]), parseFloat(c[2])]);
+      const bodyData  = candles.map(c => [Math.min(parseFloat(c[1]),parseFloat(c[4])), Math.max(parseFloat(c[1]),parseFloat(c[4]))]);
+      const bodyColors = candles.map(c => parseFloat(c[4]) >= parseFloat(c[1]) ? 'rgba(34,197,94,0.85)' : 'rgba(248,113,113,0.85)');
+      const wickColors = candles.map(c => parseFloat(c[4]) >= parseFloat(c[1]) ? 'rgba(34,197,94,0.5)' : 'rgba(248,113,113,0.5)');
+
+      const datasets = [
+        // Wicks (thin)
+        { label:'Wick', data: wickData, backgroundColor: wickColors, borderColor:'transparent', barThickness: Math.max(1, Math.floor(barW*0.25)), order:2 },
+        // Bodies (thick)
+        { label:'Body', data: bodyData, backgroundColor: bodyColors, borderColor:'transparent', barThickness: barW, order:1 },
+      ];
+
+      // Entry price line
+      if (entryPrice) {
+        datasets.push({
+          type:'line', label:'Entry $'+entryPrice.toFixed(0),
+          data: xLabels.map(()=>entryPrice),
+          borderColor:'#fbbf24', borderWidth:1.5,
+          borderDash:[5,4], pointRadius:0, fill:false, tension:0, order:0,
+        });
+      }
 
       tcCharts.candle = new Chart(candleCtx, {
         type: 'bar',
-        data: {
-          labels: xLabels,
-          datasets: [
-            // Low to Open (invisible spacer)
-            {
-              label: 'Low',
-              data: candles.map(c => parseFloat(c[3])),
-              backgroundColor: 'transparent',
-              borderColor: 'transparent',
-              stack: 'candle',
-              barThickness: Math.max(2, Math.floor(600/count)),
-            },
-            // Open to Close (body)
-            {
-              label: 'Body',
-              data: candles.map(c => Math.abs(parseFloat(c[4]) - parseFloat(c[1]))),
-              backgroundColor: candleColors.map(c => c + 'cc'),
-              borderColor: candleBorders,
-              borderWidth: 1,
-              stack: 'candle',
-              barThickness: Math.max(2, Math.floor(600/count)),
-            },
-            // Close to High (wick top — invisible, drawn as line below)
-            {
-              label: 'High',
-              data: candles.map(c => parseFloat(c[2]) - Math.max(parseFloat(c[1]),parseFloat(c[4]))),
-              backgroundColor: candleColors.map(c => c + '44'),
-              borderColor: 'transparent',
-              stack: 'candle',
-              barThickness: 1,
-            },
-            ...entryDataset,
-          ],
-        },
+        data: { labels: xLabels, datasets },
         options: {
-          responsive: true, maintainAspectRatio: false, animation: false,
-          plugins: { legend: { display: false }, tooltip: {
-            callbacks: {
-              label: (ctx) => {
-                if (ctx.datasetIndex !== 1) return null;
-                const c = candleData[ctx.dataIndex];
-                return [`O: ${c.o.toFixed(2)}`, `H: ${c.h.toFixed(2)}`, `L: ${c.l.toFixed(2)}`, `C: ${c.c.toFixed(2)}`];
+          responsive:true, maintainAspectRatio:false, animation:false,
+          plugins:{
+            legend:{display: entryPrice ? true : false, labels:{color:'#fbbf24',filter:i=>i.text.startsWith('Entry'),font:{size:10}}},
+            tooltip:{
+              callbacks:{
+                title: ctx => xLabels[ctx[0].dataIndex],
+                label: ctx => {
+                  if (ctx.datasetIndex !== 1) return null;
+                  const c = candles[ctx.dataIndex];
+                  const o=parseFloat(c[1]),h=parseFloat(c[2]),l=parseFloat(c[3]),cl=parseFloat(c[4]);
+                  return [`O: $${o.toLocaleString()}`, `H: $${h.toLocaleString()}`, `L: $${l.toLocaleString()}`, `C: $${cl.toLocaleString()}`];
+                },
+                filter: item => item.datasetIndex === 1 || item.datasetIndex === 2,
               }
             }
-          }},
-          scales: {
-            x: { stacked: true, ticks: { color:'#52525b', font:{size:9}, maxTicksLimit:8, maxRotation:0 }, grid:{color:'#1c1c1f'} },
-            y: { stacked: true, ticks: { color:'#52525b', font:{size:9} }, grid:{color:'#1c1c1f'},
-                 afterDataLimits: axis => { axis.min = axis.min * 0.9995; axis.max = axis.max * 1.0005; } }
+          },
+          scales:{
+            x:{ ticks:{color:'#52525b',font:{size:9},maxTicksLimit:8,maxRotation:0}, grid:{color:'#1c1c1f'} },
+            y:{ ticks:{color:'#52525b',font:{size:9},
+                  callback: v => '$'+v.toLocaleString('en-CA',{minimumFractionDigits:0})},
+                grid:{color:'#1c1c1f'},
+                afterDataLimits: a => {
+                  const pad = (a.max - a.min) * 0.05;
+                  a.min -= pad; a.max += pad;
+                }
+              }
           }
         }
       });
