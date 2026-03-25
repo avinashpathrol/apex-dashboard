@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-25T00:56:06.272547+00:00",
+  "generated_at": "2026-03-25T01:23:58.015267+00:00",
   "symbol": "XBTCAD",
-  "price": 97553.4,
+  "price": 97431.7,
   "cad_balance": 31.4736,
   "btc_balance": 0.0,
   "action": "BUY",
-  "confidence": 82,
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "SKIPPED \u2014 balance issue",
   "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
@@ -15,8 +15,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (65.9)",
-    "Price near BB upper band (85%)"
+    "RSI falling from high (61.7)"
   ],
   "trades": [
     {
