@@ -2125,6 +2125,7 @@ async function load() {
       pe2.textContent = '—';
       pe2.className = 'mv neu';
       document.getElementById('m-pnl-sub').textContent = 'no closed trades yet';
+      updateCombinedPnl(ACTIVE_ASSET, 0);
     }
     const we = document.getElementById('m-wr');
     if (wr !== null) {
@@ -3013,21 +3014,31 @@ function updateCombinedPnl(asset, pnl) {
   const el = document.getElementById('combined-pnl');
   if (!el) return;
 
-  const assets = Object.keys(_pnlCache);
-  if (assets.length === 0) return;
+  // Always show all known assets, default 0 for ones not yet loaded
+  const knownAssets = ['btc', 'eth'];
+  if (ASSETS.gold) knownAssets.push('gold');
 
-  const total = Object.values(_pnlCache).reduce((a,b) => a+b, 0);
-  const parts = assets.map(a => {
-    const p = _pnlCache[a];
-    const col = p >= 0 ? '#22c55e' : '#f87171';
-    return `<span style="color:${col}">${a.toUpperCase()} ${p>=0?'+':''}$${p.toFixed(2)}</span>`;
+  // Only show assets that have been visited (have data in cache)
+  const activeAssets = knownAssets.filter(a => _pnlCache[a] !== undefined);
+  if (activeAssets.length === 0) return;
+
+  const total = activeAssets.reduce((sum, a) => sum + (_pnlCache[a] || 0), 0);
+
+  const parts = activeAssets.map(a => {
+    const p = _pnlCache[a] || 0;
+    const col = p > 0 ? '#22c55e' : p < 0 ? '#f87171' : '#52525b';
+    const icons = {btc:'₿', eth:'Ξ', gold:'🥇'};
+    return '<span style="color:' + col + '">' + (icons[a]||a.toUpperCase()) + ' ' + (p>=0?'+':'') + '$' + p.toFixed(2) + '</span>';
   }).join('<span style="color:#3f3f46"> · </span>');
 
-  const totalCol = total >= 0 ? '#22c55e' : '#f87171';
+  const totalCol = total > 0 ? '#22c55e' : total < 0 ? '#f87171' : '#52525b';
   el.style.display = 'inline-flex';
   el.style.alignItems = 'center';
   el.style.gap = '4px';
-  el.innerHTML = `<span style="color:#52525b;font-size:9px;">YTD</span> ${parts} <span style="color:#3f3f46">|</span> <span style="color:${totalCol};font-weight:700;">${total>=0?'+':''}$${total.toFixed(2)}</span>`;
+  el.innerHTML = '<span style="color:#52525b;font-size:9px;margin-right:2px;">YTD</span>'
+    + parts
+    + '<span style="color:#27272a"> | </span>'
+    + '<span style="color:' + totalCol + ';font-weight:700;">' + (total>=0?'+':'') + '$' + total.toFixed(2) + '</span>';
 }
 
 function storeEntryForChart(price) {
