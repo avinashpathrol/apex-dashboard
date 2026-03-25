@@ -2238,9 +2238,14 @@ async function load() {
         if (!isBuy) {
           const prevBuy = ktRows.slice(i+1).find(r => r.action === 'BUY');
           if (prevBuy) {
-            const pnl = (t.price - prevBuy.price) * t.vol;
-            const pct = (t.price - prevBuy.price) / prevBuy.price * 100;
-            pnlStr = (pnl>=0?'+':'') + '$' + pnl.toFixed(4) + ' (' + (pct>=0?'+':'') + pct.toFixed(2) + '%)';
+            const sellPrice = parseFloat(t.price) || 0;
+            const buyPrice  = parseFloat(prevBuy.price) || 0;
+            const vol       = parseFloat(t.vol) || 0;
+            if (buyPrice > 0 && vol > 0) {
+              const pnl = (sellPrice - buyPrice) * vol;
+              const pct = (sellPrice - buyPrice) / buyPrice * 100;
+              pnlStr = (pnl>=0?'+':'') + '$' + pnl.toFixed(4) + ' (' + (pct>=0?'+':'') + pct.toFixed(2) + '%)';
+            }
           }
         }
         const actionCol = isBuy ? '#22c55e' : '#f87171';
@@ -2257,8 +2262,19 @@ async function load() {
       return;
     }
 
-    document.getElementById('hist-body').innerHTML = rows.slice(0,15).map(({run,p}) => {
-      const s=p.summary, pr2=s?'$'+Number(s.price).toLocaleString('en-US',{maximumFractionDigits:0}):'—', conf=s&&s.confidence||0;
+    // Filter to only show EXECUTED trades + SKIPPED with high confidence (interesting events)
+    const filteredRows = rows.filter(({run,p}) => {
+      const s = p.summary;
+      if (!s) return false;
+      const status = (s.status||'').toLowerCase();
+      // Show: executed trades, skipped high confidence, trailing stops
+      return status.includes('executed') || status.includes('trailing') ||
+             (status.includes('skipped') && (s.confidence||0) >= 88) ||
+             s.action === 'BUY' || s.action === 'SELL';
+    });
+
+    document.getElementById('hist-body').innerHTML = filteredRows.slice(0,20).map(({run,p}) => {
+      const s=p.summary, pr2=s?'$'+Number(s.price).toLocaleString('en-CA',{maximumFractionDigits:0}):'—', conf=s&&s.confidence||0;
       // Only match P&L to SELL rows
       const isSell = s && s.action === 'SELL' && (s.status||'').toLowerCase().includes('executed');
       const rt = new Date(run.created_at).getTime();
@@ -2618,6 +2634,8 @@ async function buildTechChart() {
   const pair     = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
   const label    = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
   const ivLabel  = {15:'15m',60:'1H',240:'4H',1440:'1D'}[interval] || interval+'m';
+  // Make canvas wider than screen for scroll
+  window._tcScrollable = true;
 
   const titleEl = document.getElementById('tc-title');
   if (titleEl) titleEl.textContent = label + ' · ' + ivLabel;
@@ -2686,6 +2704,24 @@ async function buildTechChart() {
 
     // Draw all charts
     drawCandleChart('tcCandleChart', O, H, L, C, T, entry, interval);
+    // Scroll candle chart to the right (most recent candles)
+    const candleWrap = document.getElementById('tcCandleChart')?.parentElement;
+    if (candleWrap) {
+      candleWrap.style.overflowX = 'auto';
+      candleWrap.style.overflowY = 'hidden';
+      candleWrap.style.webkitOverflowScrolling = 'touch';
+      setTimeout(() => { candleWrap.scrollLeft = candleWrap.scrollWidth; }, 50);
+    }
+    // Also scroll vol/rsi/macd
+    ['tcVolChart','tcRsiChart','tcMacdChart'].forEach(id => {
+      const wrap = document.getElementById(id)?.parentElement;
+      if (wrap) {
+        wrap.style.overflowX = 'auto';
+        wrap.style.overflowY = 'hidden';
+        wrap.style.webkitOverflowScrolling = 'touch';
+        setTimeout(() => { wrap.scrollLeft = wrap.scrollWidth; }, 50);
+      }
+    });
     drawVolChart('tcVolChart', V, C, T);
     drawRSIChart('tcRsiChart', rsi, T);
     drawMACDChart('tcMacdChart', macd, signal, hist, T);
@@ -2697,13 +2733,16 @@ async function buildTechChart() {
 
 // ── CANVAS DRAWING HELPERS ──
 
-function getCtx(id, h) {
+function getCtx(id, h, extraWide=false) {
   const el = document.getElementById(id);
   if (!el) return null;
   const dpr = window.devicePixelRatio || 1;
-  const w   = el.parentElement.clientWidth || 600;
+  const containerW = el.parentElement.clientWidth || 600;
+  // For main candle chart: make it 1.8x wider to allow scrolling
+  const w = (extraWide && window._tcScrollable) ? Math.max(containerW, containerW * 1.8) : containerW;
   el.width  = w * dpr;
   el.height = h * dpr;
+  el.style.width  = w + 'px';
   el.style.height = h + 'px';
   const ctx = el.getContext('2d');
   ctx.scale(dpr, dpr);
@@ -2717,7 +2756,7 @@ function mapY(v, min, max, h, pad=10) {
 
 function drawCandleChart(id, O, H, L, C, T, entry, interval) {
   const H_CHART = 340;
-  const ctx = getCtx(id, H_CHART);
+  const ctx = getCtx(id, H_CHART, true);  // extraWide for scroll
   if (!ctx) return;
   const W = ctx._w, H2 = ctx._h;
   const PAD_L = 62, PAD_R = 8, PAD_T = 16, PAD_B = 28;
@@ -2865,7 +2904,7 @@ function drawCandleChart(id, O, H, L, C, T, entry, interval) {
 }
 
 function drawVolChart(id, V, C, T) {
-  const ctx = getCtx(id, 60);
+  const ctx = getCtx(id, 60, true);
   if (!ctx) return;
   const W = ctx._w, H = ctx._h;
   const PAD_L = 62, PAD_R = 8, PAD_T = 4, PAD_B = 4;
@@ -2891,7 +2930,7 @@ function drawVolChart(id, V, C, T) {
 }
 
 function drawRSIChart(id, rsi, T) {
-  const ctx = getCtx(id, 70);
+  const ctx = getCtx(id, 70, true);
   if (!ctx) return;
   const W = ctx._w, H = ctx._h;
   const PAD_L = 62, PAD_R = 8, PAD_T = 4, PAD_B = 4;
@@ -2937,7 +2976,7 @@ function drawRSIChart(id, rsi, T) {
 }
 
 function drawMACDChart(id, macd, signal, hist, T) {
-  const ctx = getCtx(id, 70);
+  const ctx = getCtx(id, 70, true);
   if (!ctx) return;
   const W = ctx._w, H = ctx._h;
   const PAD_L = 62, PAD_R = 8, PAD_T = 4, PAD_B = 4;
