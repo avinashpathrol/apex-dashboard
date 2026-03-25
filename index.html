@@ -638,6 +638,12 @@ input:focus{border-color:#3f3f46;}
           <div class="tb-stat"><div class="tb-stat-label">Held for</div><div class="tb-stat-val neu" id="tb-dur">—</div></div>
         </div>
       </div>
+
+      <!-- MANUAL SELL BUTTON — shows only when IN TRADE -->
+      <button id="manual-sell-btn" class="manual-sell-btn" onclick="openSellModal()">
+        🔴 MANUAL SELL — Close Position Now
+      </button>
+
       <div class="g5">
         <div class="mcard"><div class="ml" id="lbl-price">BTC Price</div><div class="mv" id="m-price">—</div><div class="ms" id="lbl-price-sub">CAD live</div></div>
         <div class="mcard"><div class="ml">Last Action</div><div class="mv" id="m-action">—</div><div class="ms" id="m-action-price" style="font-family:monospace;font-size:11px;margin-top:2px;"></div><div class="ms" id="m-action-time" style="margin-top:1px;"></div></div>
