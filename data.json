@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-25T14:25:45.075672+00:00",
+  "generated_at": "2026-03-25T14:44:26.421950+00:00",
   "symbol": "XBTCAD",
-  "price": 98474.2,
+  "price": 98480.2,
   "cad_balance": 6.2936,
   "btc_balance": 0.00025475,
   "action": "HOLD",
@@ -10,7 +10,7 @@
   "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "bullish": [
-    "RSI rising from low (48.6)",
+    "RSI rising from low (48.8)",
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
