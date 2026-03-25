@@ -2465,17 +2465,29 @@ function switchAsset(asset, reload) {
 
 // ── SETTINGS ──
 async function openSettings() {
-  // Load current config from bot repo
+  // Load current configs from both repos separately
   try {
-    const repo = ASSETS.btc?.repo || REPO;
-    const url = `https://raw.githubusercontent.com/${repo}/main/config.json?t=${Date.now()}`;
-    const r = await fetch(url, {headers:{Authorization:'token '+GH}});
-    if (r.ok) {
-      const cfg = await r.json();
-      if (cfg.trade_amount_cad)  document.getElementById('cfg-btc-amount').value  = cfg.trade_amount_cad;
-      if (cfg.min_signals)       document.getElementById('cfg-btc-signals').value  = cfg.min_signals;
-      if (cfg.eth?.trade_amount) document.getElementById('cfg-eth-amount').value  = cfg.eth.trade_amount;
-      if (cfg.eth?.min_signals)  document.getElementById('cfg-eth-signals').value  = cfg.eth.min_signals;
+    // BTC config
+    const btcRepo = ASSETS.btc?.repo || REPO;
+    const btcUrl = 'https://raw.githubusercontent.com/' + btcRepo + '/main/config.json?t=' + Date.now();
+    const btcR = await fetch(btcUrl, {headers:{Authorization:'token '+GH}});
+    if (btcR.ok) {
+      const cfg = await btcR.json();
+      if (cfg.trade_amount_cad) document.getElementById('cfg-btc-amount').value = cfg.trade_amount_cad;
+      if (cfg.min_signals)      document.getElementById('cfg-btc-signals').value = cfg.min_signals;
+    }
+  } catch(e) {}
+
+  try {
+    // ETH config — from ETH repo separately
+    if (ASSETS.eth?.repo) {
+      const ethUrl = 'https://raw.githubusercontent.com/' + ASSETS.eth.repo + '/main/config.json?t=' + Date.now();
+      const ethR = await fetch(ethUrl, {headers:{Authorization:'token '+GH}});
+      if (ethR.ok) {
+        const cfg = await ethR.json();
+        if (cfg.trade_amount_cad) document.getElementById('cfg-eth-amount').value = cfg.trade_amount_cad;
+        if (cfg.min_signals)      document.getElementById('cfg-eth-signals').value = cfg.min_signals;
+      }
     }
   } catch(e) {}
 
@@ -2497,40 +2509,37 @@ async function saveSettings() {
   statusEl.textContent = 'Saving...';
   statusEl.style.color = '#fbbf24';
 
-  const config = {
+  const ts = new Date().toISOString();
+
+  // BTC config — push to BTC repo
+  const btcConfig = {
     trade_amount_cad: parseInt(document.getElementById('cfg-btc-amount').value) || 40,
     min_signals:      parseInt(document.getElementById('cfg-btc-signals').value) || 3,
-    updated_at:       new Date().toISOString(),
+    updated_at:       ts,
   };
-  if (ASSETS.eth) {
-    config.eth = {
-      trade_amount: parseInt(document.getElementById('cfg-eth-amount').value) || 70,
-      min_signals:  parseInt(document.getElementById('cfg-eth-signals').value) || 3,
-    };
-  }
-  if (ASSETS.gold) {
-    config.gold = {
-      trade_amount: parseInt(document.getElementById('cfg-gold-amount').value) || 40,
-    };
-  }
 
-  // Push config.json to BTC bot repo
+  // ETH config — push to ETH repo separately
+  const ethConfig = {
+    trade_amount_cad: parseInt(document.getElementById('cfg-eth-amount').value) || 70,
+    min_signals:      parseInt(document.getElementById('cfg-eth-signals').value) || 3,
+    updated_at:       ts,
+  };
+
   try {
-    const repo = ASSETS.btc?.repo || REPO;
-    const ok = await pushConfigJson(repo, config, 'BTC');
-    if (ok) {
-      // Also push to ETH repo if connected
-      if (ASSETS.eth && config.eth) {
-        await pushConfigJson(ASSETS.eth.repo, {
-          trade_amount_cad: config.eth.trade_amount,
-          min_signals: config.eth.min_signals,
-          updated_at: config.updated_at,
-        }, 'ETH');
-      }
-      statusEl.textContent = '✅ Saved! Bot will use new settings within 7-8 minutes.';
+    const btcRepo = ASSETS.btc?.repo || REPO;
+    const btcOk = await pushConfigJson(btcRepo, btcConfig, 'BTC');
+
+    let ethOk = true;
+    if (ASSETS.eth?.repo) {
+      ethOk = await pushConfigJson(ASSETS.eth.repo, ethConfig, 'ETH');
+    }
+
+    if (btcOk) {
+      const ethMsg = ASSETS.eth?.repo ? (ethOk ? ' + ETH' : ' (ETH failed)') : '';
+      statusEl.textContent = '✅ Saved BTC' + ethMsg + '! Takes effect within 7-8 minutes.';
       statusEl.style.color = '#22c55e';
     } else {
-      statusEl.textContent = '❌ Failed to save. Check your GitHub token.';
+      statusEl.textContent = '❌ Failed to save. Check GitHub token permissions.';
       statusEl.style.color = '#f87171';
     }
   } catch(e) {
