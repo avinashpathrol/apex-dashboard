@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-25T13:39:00.807472+00:00",
+  "generated_at": "2026-03-25T13:43:07.248573+00:00",
   "symbol": "XETHZCAD",
-  "price": 3028.43,
+  "price": 3029.77,
   "cad_balance": 6.2936,
   "btc_balance": 0.0474213,
   "action": "HOLD",
@@ -15,7 +15,7 @@
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "Price near BB upper band (95%)"
+    "Price near BB upper band (98%)"
   ],
   "trades": [
     {
