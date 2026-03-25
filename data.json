@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-25T01:23:58.015267+00:00",
+  "generated_at": "2026-03-25T01:35:42.982041+00:00",
   "symbol": "XBTCAD",
-  "price": 97431.7,
+  "price": 97308.3,
   "cad_balance": 31.4736,
   "btc_balance": 0.0,
   "action": "BUY",
@@ -15,7 +15,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (61.7)"
+    "RSI falling from high (58.5)"
   ],
   "trades": [
     {
