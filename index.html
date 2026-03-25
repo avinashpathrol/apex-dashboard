@@ -3046,7 +3046,8 @@ async function openSellModal() {
   const entry  = window._openBuyPrice || 0;
   const asset  = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
   const symbol = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
-  const heldBal = window._lastBotData ? (window._lastBotData.btc_balance || 0) : 0;
+  // btc_balance field stores the crypto balance (XXBT for BTC, XETH for ETH)
+  const heldBal = window._lastBotData ? (parseFloat(window._lastBotData.btc_balance) || 0) : 0;
   const pnlPct  = entry ? (price - entry) / entry * 100 : 0;
   const pnlCad  = entry && heldBal ? (price - entry) * heldBal : 0;
   const durEl   = document.getElementById('tb-dur');
@@ -3069,10 +3070,10 @@ async function openSellModal() {
   document.body.style.overflow = 'hidden';
 
   // Run live signal check
-  await runSellSignalCheck(symbol, price, entry);
+  await runSellSignalCheck(symbol, price, entry, pnlCad, pnlPct);
 }
 
-async function runSellSignalCheck(symbol, price, entry) {
+async function runSellSignalCheck(symbol, price, entry, pnlCad=0, pnlPct=0) {
   const box = document.getElementById('sell-signal-box');
   if (!box) return;
   box.innerHTML = '<div style="color:#52525b;font-size:11px;text-align:center;padding:8px;">🔍 Checking live signals...</div>';
