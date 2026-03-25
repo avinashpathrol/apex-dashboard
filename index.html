@@ -1221,7 +1221,7 @@ function updateBanner(price, allKT, ghRows, botData) {
   const _assetLabel = {btc:'BTC', eth:'ETH', gold:'Gold'}[ACTIVE_ASSET] || 'BTC';
   document.getElementById('tb-label').textContent = 'IN TRADE — ' + _assetLabel + ' Long';
   // Store entry price for tech chart
-  if (openBuy && openBuy.price) storeEntryForChart(openBuy.price);
+  if (activeBuy && activeBuy.price) storeEntryForChart(activeBuy.price);
   document.getElementById('tb-pulse').className = 'tb-pulse' + (isProfit ? '' : ' loss');
   document.getElementById('tb-ico').textContent = isProfit ? '🟢' : '🔴';
   document.getElementById('tb-label').className = 'tb-label-main' + (isProfit ? '' : ' loss');
