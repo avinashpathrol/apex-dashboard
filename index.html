@@ -433,6 +433,7 @@ input:focus{border-color:#3f3f46;}
   .trade-banner .tb-stat-val{font-size:11px;}
 }
 </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="toast-container" id="tc"></div>
@@ -589,6 +590,7 @@ input:focus{border-color:#3f3f46;}
     <div class="tab" onclick="switchTab('calendar',this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar</div>
     <div class="tab" onclick="switchTab('market',this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Market</div>
     <div class="tab" onclick="switchTab('history',this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>History</div>
+    <div class="tab" onclick="switchTab('techchart',this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>Chart</div>
   </div>
 
   <div class="content">
@@ -747,6 +749,50 @@ input:focus{border-color:#3f3f46;}
         </div>
       </div>
     </div>
+
+    <!-- TECH CHART TAB -->
+    <div class="tab-panel" id="tab-techchart">
+      <div class="card" style="margin-bottom:8px;">
+        <div class="card-title">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span id="tc-title">Price Chart</span>
+            <span id="tc-badge" style="font-size:10px;padding:2px 8px;border-radius:4px;background:#052e16;color:#22c55e;display:none;">● IN TRADE</span>
+          </div>
+          <div style="display:flex;gap:5px;">
+            <select id="tc-interval" onchange="buildTechChart()" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 8px;font-size:10px;color:#a1a1aa;cursor:pointer;">
+              <option value="15">15m</option>
+              <option value="60" selected>1H</option>
+              <option value="240">4H</option>
+              <option value="1440">1D</option>
+            </select>
+            <select id="tc-candles" onchange="buildTechChart()" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 8px;font-size:10px;color:#a1a1aa;cursor:pointer;">
+              <option value="50">50</option>
+              <option value="100" selected>100</option>
+              <option value="200">200</option>
+            </select>
+          </div>
+        </div>
+        <div style="position:relative;width:100%;height:300px;"><canvas id="tcCandleChart"></canvas></div>
+      </div>
+      <div class="card" style="margin-bottom:8px;">
+        <div class="card-title"><span>Volume</span></div>
+        <div style="position:relative;width:100%;height:70px;"><canvas id="tcVolChart"></canvas></div>
+      </div>
+      <div class="card" style="margin-bottom:8px;">
+        <div class="card-title"><span>RSI (14)</span><span id="tc-rsi-val" style="font-family:monospace;color:#a1a1aa;font-size:11px;">—</span></div>
+        <div style="position:relative;width:100%;height:90px;"><canvas id="tcRsiChart"></canvas></div>
+      </div>
+      <div class="card" style="margin-bottom:8px;">
+        <div class="card-title"><span>MACD (12/26/9)</span><span id="tc-macd-val" style="font-family:monospace;font-size:10px;color:#a1a1aa;">—</span></div>
+        <div style="position:relative;width:100%;height:90px;"><canvas id="tcMacdChart"></canvas></div>
+      </div>
+      <div class="g3" style="margin-bottom:8px;">
+        <div class="mcard"><div class="ml">Current Price</div><div class="mv" id="tc-price">—</div></div>
+        <div class="mcard"><div class="ml">Entry Price</div><div class="mv" id="tc-entry" style="color:#fbbf24;">—</div></div>
+        <div class="mcard"><div class="ml">Move Since Entry</div><div class="mv" id="tc-move">—</div></div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -974,12 +1020,7 @@ function badge(a, s, price, reason, time) {
 function bColor(a) { return a==='BUY'?'#22c55e':a==='SELL'?'#f87171':'#fbbf24'; }
 
 // ── TABS ──
-function switchTab(id, el) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('tab-' + id).classList.add('active');
-}
+// switchTab replaced by tech chart version below
 
 // ── ACTIVE TRADE BANNER ──
 // ── LAST TRADE BANNER ──
@@ -1179,6 +1220,8 @@ function updateBanner(price, allKT, ghRows, botData) {
   // Dynamic asset label
   const _assetLabel = {btc:'BTC', eth:'ETH', gold:'Gold'}[ACTIVE_ASSET] || 'BTC';
   document.getElementById('tb-label').textContent = 'IN TRADE — ' + _assetLabel + ' Long';
+  // Store entry price for tech chart
+  if (openBuy && openBuy.price) storeEntryForChart(openBuy.price);
   document.getElementById('tb-pulse').className = 'tb-pulse' + (isProfit ? '' : ' loss');
   document.getElementById('tb-ico').textContent = isProfit ? '🟢' : '🔴';
   document.getElementById('tb-label').className = 'tb-label-main' + (isProfit ? '' : ' loss');
@@ -1901,19 +1944,31 @@ async function load() {
           cadBal = botData.cad_balance || 0;
           if (botData.trades && botData.trades.length) {
             // Filter to only relevant trades (Mar 22 onwards, price > $50k = BTC/CAD)
-            const START_DATE = new Date('2026-03-22T00:00:00Z');
-            // Filter by asset price range to separate BTC vs ETH trades
+            // Start date per asset
+            const startDates = {
+              btc:  new Date('2026-03-22T00:00:00Z'),
+              eth:  new Date('2026-03-24T00:00:00Z'),
+              gold: new Date('2026-03-24T00:00:00Z'),
+            };
+            const START_DATE = startDates[ACTIVE_ASSET] || new Date('2026-03-22T00:00:00Z');
+
+            // Price range per asset to separate BTC vs ETH vs Gold trades
             const isEth  = ACTIVE_ASSET === 'eth';
             const isGold = ACTIVE_ASSET === 'gold';
             const minPrice = isEth ? 500 : isGold ? 100 : 50000;
             const maxPrice = isEth ? 50000 : isGold ? 50000 : 9999999;
-            const minCost  = isEth ? 50 : isGold ? 20 : 10;
-            const maxCost  = isEth ? 200 : isGold ? 200 : 200;
+            const minCost  = isEth ? 30 : isGold ? 20 : 5;
+            const maxCost  = isEth ? 500 : isGold ? 500 : 500;
+
             allKT = botData.trades
               .filter(t => {
                 const d = new Date(t.time);
                 const cost = parseFloat(t.cost) || 0;
-                return d >= START_DATE && t.price >= minPrice && t.price <= maxPrice && cost >= minCost && cost <= maxCost;
+                return d >= START_DATE
+                  && t.price >= minPrice
+                  && t.price <= maxPrice
+                  && cost >= minCost
+                  && cost <= maxCost;
               })
               .map(t => ({
                 time:   t.time,
@@ -2461,6 +2516,325 @@ async function saveNewAsset() {
     closeAddAsset();
     switchAsset(asset, true);
   }, 1500);
+}
+
+// ── TECH CHART ──
+let tcCharts = {};
+
+function switchTab(name, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  if (el) el.classList.add('active');
+  const panel = document.getElementById('tab-' + name);
+  if (panel) panel.classList.add('active');
+  if (name === 'techchart') { loadEntryForChart(); buildTechChart(); }
+}
+
+async function buildTechChart() {
+  const interval = document.getElementById('tc-interval')?.value || '60';
+  const count    = parseInt(document.getElementById('tc-candles')?.value || '100');
+  const pair     = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' :
+                   ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
+  const label    = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' :
+                   ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
+
+  // Update title
+  const title = document.getElementById('tc-title');
+  if (title) title.textContent = label + ' — ' + (interval==='15'?'15min':interval==='60'?'1H':interval==='240'?'4H':'1D') + ' Chart';
+
+  // Show loading
+  ['tc-price','tc-entry','tc-move','tc-rsi-val','tc-macd-val'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '...';
+  });
+
+  try {
+    // Fetch OHLC from Kraken
+    const r = await kPub('OHLC', {pair, interval});
+    const key = Object.keys(r).find(k => k !== 'last');
+    const raw = r[key] || [];
+    const candles = raw.slice(-count);
+
+    // Parse candles
+    const times  = candles.map(c => new Date(c[0]*1000));
+    const opens  = candles.map(c => parseFloat(c[1]));
+    const highs  = candles.map(c => parseFloat(c[2]));
+    const lows   = candles.map(c => parseFloat(c[3]));
+    const closes = candles.map(c => parseFloat(c[4]));
+    const vols   = candles.map(c => parseFloat(c[6]));
+
+    // Calculate RSI
+    const rsiVals = calcRSI(closes, 14);
+    // Calculate MACD
+    const {macd, signal, hist} = calcMACD(closes, 12, 26, 9);
+
+    // Current values
+    const curPrice = closes[closes.length-1];
+    const curRSI   = rsiVals[rsiVals.length-1];
+    const curMACD  = macd[macd.length-1];
+    const curSig   = signal[signal.length-1];
+
+    // Entry price from open position
+    const entryPrice = window._openBuyPrice || null;
+    const move = entryPrice ? ((curPrice - entryPrice) / entryPrice * 100) : null;
+
+    // Update stats
+    document.getElementById('tc-price').textContent = '$' + curPrice.toLocaleString('en-CA', {minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById('tc-entry').textContent = entryPrice ? ('$' + entryPrice.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2})) : 'No open trade';
+    const moveEl = document.getElementById('tc-move');
+    if (move !== null) {
+      moveEl.textContent = (move>=0?'+':'') + move.toFixed(2) + '%';
+      moveEl.style.color = move >= 0 ? '#22c55e' : '#f87171';
+    } else {
+      moveEl.textContent = '—';
+      moveEl.style.color = '#a1a1aa';
+    }
+
+    // RSI color
+    const rsiEl = document.getElementById('tc-rsi-val');
+    if (rsiEl) {
+      rsiEl.textContent = curRSI ? curRSI.toFixed(1) : '—';
+      rsiEl.style.color = curRSI > 70 ? '#f87171' : curRSI < 30 ? '#22c55e' : '#a1a1aa';
+    }
+
+    const macdEl = document.getElementById('tc-macd-val');
+    if (macdEl && curMACD) {
+      macdEl.textContent = `MACD: ${curMACD.toFixed(2)} | Sig: ${curSig.toFixed(2)} | Hist: ${(curMACD-curSig).toFixed(2)}`;
+      macdEl.style.color = curMACD > curSig ? '#22c55e' : '#f87171';
+    }
+
+    // IN TRADE badge
+    const badge = document.getElementById('tc-badge');
+    if (badge) badge.style.display = entryPrice ? 'inline-block' : 'none';
+
+    // Format x-axis labels
+    const xLabels = times.map(t => {
+      if (interval === '1440') return t.toLocaleDateString('en-CA',{month:'short',day:'numeric'});
+      return t.toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',hour12:false});
+    });
+
+    // Build candle colors
+    const candleColors = candles.map(c => parseFloat(c[4]) >= parseFloat(c[1]) ? '#22c55e' : '#f87171');
+    const candleBorders = candleColors;
+
+    // Destroy old charts
+    Object.values(tcCharts).forEach(ch => { try { ch.destroy(); } catch(e){} });
+    tcCharts = {};
+
+    // ── CANDLESTICK (simulated with bar chart using open/close as stack) ──
+    const candleCtx = document.getElementById('tcCandleChart')?.getContext('2d');
+    if (candleCtx) {
+      // Use floating bar to simulate candlestick
+      const candleData = candles.map((c,i) => ({
+        x: xLabels[i],
+        o: parseFloat(c[1]),
+        h: parseFloat(c[2]),
+        l: parseFloat(c[3]),
+        c: parseFloat(c[4]),
+      }));
+
+      // Entry price annotation dataset
+      const entryDataset = entryPrice ? [{
+        type: 'line',
+        label: 'Entry',
+        data: xLabels.map(() => entryPrice),
+        borderColor: '#fbbf24',
+        borderWidth: 1.5,
+        borderDash: [4,4],
+        pointRadius: 0,
+        fill: false,
+        tension: 0,
+        yAxisID: 'y',
+      }] : [];
+
+      tcCharts.candle = new Chart(candleCtx, {
+        type: 'bar',
+        data: {
+          labels: xLabels,
+          datasets: [
+            // Low to Open (invisible spacer)
+            {
+              label: 'Low',
+              data: candles.map(c => parseFloat(c[3])),
+              backgroundColor: 'transparent',
+              borderColor: 'transparent',
+              stack: 'candle',
+              barThickness: Math.max(2, Math.floor(600/count)),
+            },
+            // Open to Close (body)
+            {
+              label: 'Body',
+              data: candles.map(c => Math.abs(parseFloat(c[4]) - parseFloat(c[1]))),
+              backgroundColor: candleColors.map(c => c + 'cc'),
+              borderColor: candleBorders,
+              borderWidth: 1,
+              stack: 'candle',
+              barThickness: Math.max(2, Math.floor(600/count)),
+            },
+            // Close to High (wick top — invisible, drawn as line below)
+            {
+              label: 'High',
+              data: candles.map(c => parseFloat(c[2]) - Math.max(parseFloat(c[1]),parseFloat(c[4]))),
+              backgroundColor: candleColors.map(c => c + '44'),
+              borderColor: 'transparent',
+              stack: 'candle',
+              barThickness: 1,
+            },
+            ...entryDataset,
+          ],
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, animation: false,
+          plugins: { legend: { display: false }, tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                if (ctx.datasetIndex !== 1) return null;
+                const c = candleData[ctx.dataIndex];
+                return [`O: ${c.o.toFixed(2)}`, `H: ${c.h.toFixed(2)}`, `L: ${c.l.toFixed(2)}`, `C: ${c.c.toFixed(2)}`];
+              }
+            }
+          }},
+          scales: {
+            x: { stacked: true, ticks: { color:'#52525b', font:{size:9}, maxTicksLimit:8, maxRotation:0 }, grid:{color:'#1c1c1f'} },
+            y: { stacked: true, ticks: { color:'#52525b', font:{size:9} }, grid:{color:'#1c1c1f'},
+                 afterDataLimits: axis => { axis.min = axis.min * 0.9995; axis.max = axis.max * 1.0005; } }
+          }
+        }
+      });
+    }
+
+    // ── VOLUME CHART ──
+    const volCtx = document.getElementById('tcVolChart')?.getContext('2d');
+    if (volCtx) {
+      tcCharts.vol = new Chart(volCtx, {
+        type: 'bar',
+        data: {
+          labels: xLabels,
+          datasets: [{
+            data: vols,
+            backgroundColor: candleColors.map(c => c + '88'),
+            borderColor: 'transparent',
+          }]
+        },
+        options: {
+          responsive:true, maintainAspectRatio:false, animation:false,
+          plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>'Vol: '+ctx.raw.toFixed(4)}}},
+          scales:{
+            x:{ticks:{display:false}, grid:{color:'#1c1c1f'}},
+            y:{ticks:{color:'#52525b',font:{size:8},maxTicksLimit:3}, grid:{color:'#1c1c1f'}}
+          }
+        }
+      });
+    }
+
+    // ── RSI CHART ──
+    const rsiCtx = document.getElementById('tcRsiChart')?.getContext('2d');
+    if (rsiCtx) {
+      tcCharts.rsi = new Chart(rsiCtx, {
+        type: 'line',
+        data: {
+          labels: xLabels,
+          datasets: [
+            { data: rsiVals, borderColor:'#818cf8', borderWidth:1.5, pointRadius:0, fill:false, tension:0.3 },
+            { data: xLabels.map(()=>70), borderColor:'#f8718144', borderWidth:1, borderDash:[3,3], pointRadius:0 },
+            { data: xLabels.map(()=>30), borderColor:'#22c55e44', borderWidth:1, borderDash:[3,3], pointRadius:0 },
+          ]
+        },
+        options: {
+          responsive:true, maintainAspectRatio:false, animation:false,
+          plugins:{legend:{display:false}},
+          scales:{
+            x:{ticks:{display:false}, grid:{color:'#1c1c1f'}},
+            y:{min:0,max:100, ticks:{color:'#52525b',font:{size:8},stepSize:25}, grid:{color:'#1c1c1f'}}
+          }
+        }
+      });
+    }
+
+    // ── MACD CHART ──
+    const macdCtx = document.getElementById('tcMacdChart')?.getContext('2d');
+    if (macdCtx) {
+      tcCharts.macd = new Chart(macdCtx, {
+        type: 'bar',
+        data: {
+          labels: xLabels,
+          datasets: [
+            { type:'line', label:'MACD', data:macd, borderColor:'#60a5fa', borderWidth:1.5, pointRadius:0, fill:false, tension:0.3 },
+            { type:'line', label:'Signal', data:signal, borderColor:'#f97316', borderWidth:1.5, pointRadius:0, fill:false, tension:0.3 },
+            { type:'bar', label:'Hist', data:hist, backgroundColor: hist.map(v => v >= 0 ? '#22c55e88' : '#f8718188'), borderColor:'transparent' },
+          ]
+        },
+        options: {
+          responsive:true, maintainAspectRatio:false, animation:false,
+          plugins:{legend:{display:false}},
+          scales:{
+            x:{ticks:{display:false}, grid:{color:'#1c1c1f'}},
+            y:{ticks:{color:'#52525b',font:{size:8},maxTicksLimit:4}, grid:{color:'#1c1c1f'}}
+          }
+        }
+      });
+    }
+
+  } catch(e) {
+    console.error('Chart build failed:', e);
+  }
+}
+
+// ── INDICATORS ──
+function calcRSI(closes, period=14) {
+  const rsi = new Array(closes.length).fill(null);
+  let gains = 0, losses = 0;
+  for (let i = 1; i <= period; i++) {
+    const diff = closes[i] - closes[i-1];
+    if (diff > 0) gains += diff; else losses -= diff;
+  }
+  let avgGain = gains / period;
+  let avgLoss = losses / period;
+  rsi[period] = avgLoss === 0 ? 100 : 100 - (100 / (1 + avgGain/avgLoss));
+  for (let i = period+1; i < closes.length; i++) {
+    const diff = closes[i] - closes[i-1];
+    avgGain = (avgGain*(period-1) + Math.max(diff,0)) / period;
+    avgLoss = (avgLoss*(period-1) + Math.max(-diff,0)) / period;
+    rsi[i] = avgLoss === 0 ? 100 : 100 - (100 / (1 + avgGain/avgLoss));
+  }
+  return rsi;
+}
+
+function calcEMA(data, period) {
+  const k = 2 / (period + 1);
+  const ema = new Array(data.length).fill(null);
+  let sum = 0, start = 0;
+  for (let i = 0; i < period; i++) { if (data[i] !== null) { sum += data[i]; start = i; } }
+  ema[start] = sum / period;
+  for (let i = start+1; i < data.length; i++) {
+    if (data[i] !== null) ema[i] = data[i] * k + ema[i-1] * (1-k);
+  }
+  return ema;
+}
+
+function calcMACD(closes, fast=12, slow=26, sig=9) {
+  const emaFast = calcEMA(closes, fast);
+  const emaSlow = calcEMA(closes, slow);
+  const macd    = closes.map((_,i) => emaFast[i]!==null&&emaSlow[i]!==null ? emaFast[i]-emaSlow[i] : null);
+  const signal  = calcEMA(macd.filter(v=>v!==null), sig);
+  // Pad signal to match length
+  const sigPadded = new Array(macd.length).fill(null);
+  let si = 0;
+  for (let i = 0; i < macd.length; i++) {
+    if (macd[i] !== null) { sigPadded[i] = signal[si++] ?? null; }
+  }
+  const hist = macd.map((v,i) => v!==null&&sigPadded[i]!==null ? v-sigPadded[i] : null);
+  return {macd, signal:sigPadded, hist};
+}
+
+// Store entry price for chart when trade opens
+function storeEntryForChart(price) {
+  window._openBuyPrice = price;
+  localStorage.setItem('apex_entry_' + ACTIVE_ASSET, price);
+}
+function loadEntryForChart() {
+  const saved = localStorage.getItem('apex_entry_' + ACTIVE_ASSET);
+  if (saved) window._openBuyPrice = parseFloat(saved);
 }
 
 // ── GUIDE MODAL ──
