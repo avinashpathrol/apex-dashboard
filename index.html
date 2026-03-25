@@ -525,11 +525,12 @@ input:focus{border-color:#3f3f46;}
     </div>
     <div class="topbar-center">
       <div class="price-pill">
-        <span class="price-label">BTC/CAD</span>
+        <span class="price-label" id="price-label">BTC/CAD</span>
         <span class="price-val" id="t-price">—</span>
         <span class="action-pill skip" id="t-action">—</span>
       </div>
       <span class="last-run-text" id="t-lastrun">—</span>
+      <span id="combined-pnl" title="Combined YTD P&L across all bots" style="display:none;font-size:10px;padding:2px 8px;border-radius:4px;background:#111;border:1px solid #27272a;color:#a1a1aa;cursor:default;"></span>
     </div>
     <div class="topbar-right">
       <!-- Countdown -->
@@ -2119,6 +2120,7 @@ async function load() {
       pe2.textContent = (totPnl>=0?'+':'') + '$' + totPnl.toFixed(4);
       pe2.className = 'mv ' + (totPnl>=0?'pos':'neg');
       document.getElementById('m-pnl-sub').textContent = tt + ' closed trade' + (tt>1?'s':'');
+      updateCombinedPnl(ACTIVE_ASSET, totPnl);
     } else {
       pe2.textContent = '—';
       pe2.className = 'mv neu';
@@ -2189,6 +2191,40 @@ async function load() {
 
     document.getElementById('hist-loading').style.display = 'none';
     document.getElementById('hist-table').style.display = 'table';
+
+    // For ETH/Gold: use Kraken trade history directly (no GitHub logs)
+    if (ACTIVE_ASSET !== 'btc' && allKT && allKT.length > 0) {
+      const ktRows = [...allKT].reverse().slice(0,30);
+      document.getElementById('hist-body').innerHTML = ktRows.map((t,i) => {
+        const isBuy = t.action === 'BUY';
+        const pr = '$' + Number(t.price).toLocaleString('en-CA',{maximumFractionDigits:2,minimumFractionDigits:2});
+        const cost = t.cost ? '$' + Number(t.cost).toFixed(2) : '—';
+        const dt = new Date(t.time);
+        const timeStr = dt.toLocaleDateString('en-CA',{month:'short',day:'numeric'}) + ' ' + dt.toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',hour12:false});
+        // Try to find P&L for SELL rows
+        let pnlCell = '<td>—</td>';
+        if (!isBuy) {
+          const prevBuy = ktRows.slice(i+1).find(r => r.action === 'BUY');
+          if (prevBuy) {
+            const pnl = (t.price - prevBuy.price) * t.vol;
+            const pct = (t.price - prevBuy.price) / prevBuy.price * 100;
+            const col = pnl >= 0 ? '#22c55e' : '#f87171';
+            pnlCell = '<td style="color:'+col+'">'+(pnl>=0?'+':'')+'$'+pnl.toFixed(4)+' ('+(pct>=0?'+':'')+pct.toFixed(2)+'%)</td>';
+          }
+        }
+        const actionCol = isBuy ? '#22c55e' : '#f87171';
+        return `<tr>
+          <td>\${timeStr}</td>
+          <td>\${pr}</td>
+          <td style="color:\${actionCol};font-weight:700;">\${t.action}</td>
+          <td>—</td>
+          <td>\${cost}</td>
+          \${pnlCell}
+        </tr>`;
+      }).join('');
+      return;
+    }
+
     document.getElementById('hist-body').innerHTML = rows.slice(0,15).map(({run,p}) => {
       const s=p.summary, pr2=s?'$'+Number(s.price).toLocaleString('en-US',{maximumFractionDigits:0}):'—', conf=s&&s.confidence||0;
       // Only match P&L to SELL rows
@@ -2968,6 +3004,31 @@ function calcMACD(closes, fast=12, slow=26, sig=9) {
   const sigLine = calcEMA(macd, sig);
   const hist = macd.map((v,i) => v!==null&&sigLine[i]!==null ? v-sigLine[i] : null);
   return {macd, signal:sigLine, hist};
+}
+
+// ── COMBINED P&L TICKER ──
+const _pnlCache = {};
+
+function updateCombinedPnl(asset, pnl) {
+  _pnlCache[asset] = pnl;
+  const el = document.getElementById('combined-pnl');
+  if (!el) return;
+
+  const assets = Object.keys(_pnlCache);
+  if (assets.length === 0) return;
+
+  const total = Object.values(_pnlCache).reduce((a,b) => a+b, 0);
+  const parts = assets.map(a => {
+    const p = _pnlCache[a];
+    const col = p >= 0 ? '#22c55e' : '#f87171';
+    return `<span style="color:${col}">${a.toUpperCase()} ${p>=0?'+':''}$${p.toFixed(2)}</span>`;
+  }).join('<span style="color:#3f3f46"> · </span>');
+
+  const totalCol = total >= 0 ? '#22c55e' : '#f87171';
+  el.style.display = 'inline-flex';
+  el.style.alignItems = 'center';
+  el.style.gap = '4px';
+  el.innerHTML = `<span style="color:#52525b;font-size:9px;">YTD</span> ${parts} <span style="color:#3f3f46">|</span> <span style="color:${totalCol};font-weight:700;">${total>=0?'+':''}$${total.toFixed(2)}</span>`;
 }
 
 function storeEntryForChart(price) {
