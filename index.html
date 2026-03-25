@@ -2197,30 +2197,29 @@ async function load() {
       const ktRows = [...allKT].reverse().slice(0,30);
       document.getElementById('hist-body').innerHTML = ktRows.map((t,i) => {
         const isBuy = t.action === 'BUY';
-        const pr = '$' + Number(t.price).toLocaleString('en-CA',{maximumFractionDigits:2,minimumFractionDigits:2});
+        const pr = '$' + Number(t.price).toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2});
         const cost = t.cost ? '$' + Number(t.cost).toFixed(2) : '—';
         const dt = new Date(t.time);
         const timeStr = dt.toLocaleDateString('en-CA',{month:'short',day:'numeric'}) + ' ' + dt.toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',hour12:false});
-        // Try to find P&L for SELL rows
-        let pnlCell = '<td>—</td>';
+        let pnlStr = '—';
         if (!isBuy) {
           const prevBuy = ktRows.slice(i+1).find(r => r.action === 'BUY');
           if (prevBuy) {
             const pnl = (t.price - prevBuy.price) * t.vol;
             const pct = (t.price - prevBuy.price) / prevBuy.price * 100;
-            const col = pnl >= 0 ? '#22c55e' : '#f87171';
-            pnlCell = '<td style="color:'+col+'">'+(pnl>=0?'+':'')+'$'+pnl.toFixed(4)+' ('+(pct>=0?'+':'')+pct.toFixed(2)+'%)</td>';
+            pnlStr = (pnl>=0?'+':'') + '$' + pnl.toFixed(4) + ' (' + (pct>=0?'+':'') + pct.toFixed(2) + '%)';
           }
         }
         const actionCol = isBuy ? '#22c55e' : '#f87171';
-        return `<tr>
-          <td>\${timeStr}</td>
-          <td>\${pr}</td>
-          <td style="color:\${actionCol};font-weight:700;">\${t.action}</td>
-          <td>—</td>
-          <td>\${cost}</td>
-          \${pnlCell}
-        </tr>`;
+        const pnlCol = pnlStr.startsWith('+') ? '#22c55e' : pnlStr === '—' ? '#52525b' : '#f87171';
+        return '<tr>'
+          + '<td>' + timeStr + '</td>'
+          + '<td>' + pr + '</td>'
+          + '<td style="color:' + actionCol + ';font-weight:700;">' + t.action + '</td>'
+          + '<td>—</td>'
+          + '<td>' + cost + '</td>'
+          + '<td style="color:' + pnlCol + ';">' + pnlStr + '</td>'
+          + '</tr>';
       }).join('');
       return;
     }
