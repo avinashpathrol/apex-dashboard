@@ -433,7 +433,6 @@ input:focus{border-color:#3f3f46;}
   .trade-banner .tb-stat-val{font-size:11px;}
 }
 </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="toast-container" id="tc"></div>
@@ -752,45 +751,60 @@ input:focus{border-color:#3f3f46;}
 
     <!-- TECH CHART TAB -->
     <div class="tab-panel" id="tab-techchart">
-      <div class="card" style="margin-bottom:8px;">
-        <div class="card-title">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <span id="tc-title">Price Chart</span>
-            <span id="tc-badge" style="font-size:10px;padding:2px 8px;border-radius:4px;background:#052e16;color:#22c55e;display:none;">● IN TRADE</span>
-          </div>
-          <div style="display:flex;gap:5px;">
-            <select id="tc-interval" onchange="buildTechChart()" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 8px;font-size:10px;color:#a1a1aa;cursor:pointer;">
-              <option value="15">15m</option>
-              <option value="60" selected>1H</option>
-              <option value="240">4H</option>
-              <option value="1440">1D</option>
-            </select>
-            <select id="tc-candles" onchange="buildTechChart()" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 8px;font-size:10px;color:#a1a1aa;cursor:pointer;">
-              <option value="50">50</option>
-              <option value="100" selected>100</option>
-              <option value="200">200</option>
-            </select>
-          </div>
+
+      <!-- Controls row -->
+      <div style="display:flex;align-items:center;gap:8px;padding:10px 4px 6px;">
+        <span id="tc-title" style="font-size:12px;font-weight:700;color:#e8e8e8;flex:1;"></span>
+        <span id="tc-badge" style="font-size:10px;padding:2px 8px;border-radius:4px;background:#052e16;border:1px solid #16a34a;color:#22c55e;display:none;">● IN TRADE</span>
+        <select id="tc-interval" onchange="buildTechChart()" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 8px;font-size:10px;color:#a1a1aa;cursor:pointer;">
+          <option value="15">15m</option>
+          <option value="60" selected>1H</option>
+          <option value="240">4H</option>
+          <option value="1440">1D</option>
+        </select>
+        <select id="tc-candles" onchange="buildTechChart()" style="background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 8px;font-size:10px;color:#a1a1aa;cursor:pointer;">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="200">200</option>
+        </select>
+      </div>
+
+      <!-- Stats row -->
+      <div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;">
+        <div class="mcard" style="flex:1;min-width:100px;"><div class="ml">Price</div><div class="mv" id="tc-price" style="font-size:16px;">—</div></div>
+        <div class="mcard" style="flex:1;min-width:100px;"><div class="ml">Entry</div><div class="mv" id="tc-entry" style="color:#fbbf24;">—</div></div>
+        <div class="mcard" style="flex:1;min-width:100px;"><div class="ml">P&L Since Entry</div><div class="mv" id="tc-move">—</div></div>
+        <div class="mcard" style="flex:1;min-width:80px;"><div class="ml">RSI</div><div class="mv" id="tc-rsi-val">—</div></div>
+      </div>
+
+      <!-- Main chart canvas -->
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:6px;">
+        <canvas id="tcCandleChart" style="display:block;width:100%;"></canvas>
+      </div>
+
+      <!-- Volume canvas -->
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:6px;">
+        <canvas id="tcVolChart" style="display:block;width:100%;height:60px;"></canvas>
+      </div>
+
+      <!-- RSI canvas -->
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:6px;">
+        <div style="padding:6px 10px 0;display:flex;justify-content:space-between;">
+          <span style="font-size:10px;color:#52525b;">RSI (14)</span>
+          <span id="tc-rsi-label" style="font-size:10px;color:#a1a1aa;"></span>
         </div>
-        <div style="position:relative;width:100%;height:300px;"><canvas id="tcCandleChart"></canvas></div>
+        <canvas id="tcRsiChart" style="display:block;width:100%;height:70px;"></canvas>
       </div>
-      <div class="card" style="margin-bottom:8px;">
-        <div class="card-title"><span>Volume</span></div>
-        <div style="position:relative;width:100%;height:70px;"><canvas id="tcVolChart"></canvas></div>
+
+      <!-- MACD canvas -->
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="padding:6px 10px 0;display:flex;justify-content:space-between;">
+          <span style="font-size:10px;color:#52525b;">MACD (12,26,9)</span>
+          <span id="tc-macd-label" style="font-size:10px;color:#a1a1aa;"></span>
+        </div>
+        <canvas id="tcMacdChart" style="display:block;width:100%;height:70px;"></canvas>
       </div>
-      <div class="card" style="margin-bottom:8px;">
-        <div class="card-title"><span>RSI (14)</span><span id="tc-rsi-val" style="font-family:monospace;color:#a1a1aa;font-size:11px;">—</span></div>
-        <div style="position:relative;width:100%;height:90px;"><canvas id="tcRsiChart"></canvas></div>
-      </div>
-      <div class="card" style="margin-bottom:8px;">
-        <div class="card-title"><span>MACD (12/26/9)</span><span id="tc-macd-val" style="font-family:monospace;font-size:10px;color:#a1a1aa;">—</span></div>
-        <div style="position:relative;width:100%;height:90px;"><canvas id="tcMacdChart"></canvas></div>
-      </div>
-      <div class="g3" style="margin-bottom:8px;">
-        <div class="mcard"><div class="ml">Current Price</div><div class="mv" id="tc-price">—</div></div>
-        <div class="mcard"><div class="ml">Entry Price</div><div class="mv" id="tc-entry" style="color:#fbbf24;">—</div></div>
-        <div class="mcard"><div class="ml">Move Since Entry</div><div class="mv" id="tc-move">—</div></div>
-      </div>
+
     </div>
 
   </div>
@@ -2533,232 +2547,385 @@ function switchTab(name, el) {
 async function buildTechChart() {
   const interval = document.getElementById('tc-interval')?.value || '60';
   const count    = parseInt(document.getElementById('tc-candles')?.value || '100');
-  const pair     = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' :
-                   ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
-  const label    = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' :
-                   ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
+  const pair     = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
+  const label    = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
+  const ivLabel  = {15:'15m',60:'1H',240:'4H',1440:'1D'}[interval] || interval+'m';
 
-  // Update title
-  const title = document.getElementById('tc-title');
-  if (title) title.textContent = label + ' — ' + (interval==='15'?'15min':interval==='60'?'1H':interval==='240'?'4H':'1D') + ' Chart';
+  const titleEl = document.getElementById('tc-title');
+  if (titleEl) titleEl.textContent = label + ' · ' + ivLabel;
 
-  // Show loading
-  ['tc-price','tc-entry','tc-move','tc-rsi-val','tc-macd-val'].forEach(id => {
+  ['tc-price','tc-entry','tc-move','tc-rsi-val'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.textContent = '...';
+    if (el) { el.textContent = '…'; el.style.color = ''; }
   });
 
   try {
-    // Fetch OHLC from Kraken
-    const r = await kPub('OHLC', {pair, interval});
+    const r   = await kPub('OHLC', {pair, interval});
     const key = Object.keys(r).find(k => k !== 'last');
-    const raw = r[key] || [];
-    const candles = raw.slice(-count);
+    const raw = (r[key] || []).slice(-count);
 
-    // Parse candles
-    const times  = candles.map(c => new Date(c[0]*1000));
-    const opens  = candles.map(c => parseFloat(c[1]));
-    const highs  = candles.map(c => parseFloat(c[2]));
-    const lows   = candles.map(c => parseFloat(c[3]));
-    const closes = candles.map(c => parseFloat(c[4]));
-    const vols   = candles.map(c => parseFloat(c[6]));
+    const O = raw.map(c => +c[1]), H = raw.map(c => +c[2]);
+    const L = raw.map(c => +c[3]), C = raw.map(c => +c[4]);
+    const V = raw.map(c => +c[6]);
+    const T = raw.map(c => new Date(c[0]*1000));
 
-    // Calculate RSI
-    const rsiVals = calcRSI(closes, 14);
-    // Calculate MACD
-    const {macd, signal, hist} = calcMACD(closes, 12, 26, 9);
+    const rsi  = calcRSI(C, 14);
+    const {macd, signal, hist} = calcMACD(C, 12, 26, 9);
 
-    // Current values
-    const curPrice = closes[closes.length-1];
-    const curRSI   = rsiVals[rsiVals.length-1];
-    const curMACD  = macd[macd.length-1];
-    const curSig   = signal[signal.length-1];
+    const cur   = C[C.length-1];
+    const curRSI = rsi[rsi.length-1];
+    const entry = window._openBuyPrice || null;
+    const move  = entry ? (cur - entry) / entry * 100 : null;
 
-    // Entry price from open position
-    const entryPrice = window._openBuyPrice || null;
-    const move = entryPrice ? ((curPrice - entryPrice) / entryPrice * 100) : null;
+    // Stats
+    const fmt = v => '$' + v.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2});
+    const pEl = document.getElementById('tc-price');
+    if (pEl) { pEl.textContent = fmt(cur); pEl.style.color = C[C.length-1] >= C[C.length-2] ? '#22c55e' : '#f87171'; }
 
-    // Update stats
-    document.getElementById('tc-price').textContent = '$' + curPrice.toLocaleString('en-CA', {minimumFractionDigits:2,maximumFractionDigits:2});
-    document.getElementById('tc-entry').textContent = entryPrice ? ('$' + entryPrice.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2})) : 'No open trade';
-    const moveEl = document.getElementById('tc-move');
-    if (move !== null) {
-      moveEl.textContent = (move>=0?'+':'') + move.toFixed(2) + '%';
-      moveEl.style.color = move >= 0 ? '#22c55e' : '#f87171';
-    } else {
-      moveEl.textContent = '—';
-      moveEl.style.color = '#a1a1aa';
+    const eEl = document.getElementById('tc-entry');
+    if (eEl) eEl.textContent = entry ? fmt(entry) : 'No trade';
+
+    const mEl = document.getElementById('tc-move');
+    if (mEl && move !== null) {
+      mEl.textContent = (move>=0?'+':'') + move.toFixed(2) + '%';
+      mEl.style.color = move >= 0 ? '#22c55e' : '#f87171';
+    } else if (mEl) { mEl.textContent = '—'; }
+
+    const rEl = document.getElementById('tc-rsi-val');
+    if (rEl && curRSI) {
+      rEl.textContent = curRSI.toFixed(1);
+      rEl.style.color = curRSI > 70 ? '#f87171' : curRSI < 30 ? '#22c55e' : '#a1a1aa';
     }
 
-    // RSI color
-    const rsiEl = document.getElementById('tc-rsi-val');
-    if (rsiEl) {
-      rsiEl.textContent = curRSI ? curRSI.toFixed(1) : '—';
-      rsiEl.style.color = curRSI > 70 ? '#f87171' : curRSI < 30 ? '#22c55e' : '#a1a1aa';
-    }
-
-    const macdEl = document.getElementById('tc-macd-val');
-    if (macdEl && curMACD) {
-      macdEl.textContent = `MACD: ${curMACD.toFixed(2)} | Sig: ${curSig.toFixed(2)} | Hist: ${(curMACD-curSig).toFixed(2)}`;
-      macdEl.style.color = curMACD > curSig ? '#22c55e' : '#f87171';
-    }
-
-    // IN TRADE badge
+    // Badge
     const badge = document.getElementById('tc-badge');
-    if (badge) badge.style.display = entryPrice ? 'inline-block' : 'none';
+    if (badge) badge.style.display = entry ? 'inline-block' : 'none';
 
-    // Format x-axis labels
-    const xLabels = times.map(t => {
-      if (interval === '1440') return t.toLocaleDateString('en-CA',{month:'short',day:'numeric'});
-      return t.toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',hour12:false});
-    });
-
-    // Build candle colors
-    const candleColors = candles.map(c => parseFloat(c[4]) >= parseFloat(c[1]) ? '#22c55e' : '#f87171');
-    const candleBorders = candleColors;
-
-    // Destroy old charts
-    Object.values(tcCharts).forEach(ch => { try { ch.destroy(); } catch(e){} });
-    tcCharts = {};
-
-    // ── CANDLESTICK using floating bars [low,high] with body overlay ──
-    const candleCtx = document.getElementById('tcCandleChart')?.getContext('2d');
-    if (candleCtx) {
-      const barW = Math.max(2, Math.min(12, Math.floor(900/count)));
-
-      // Floating bar: [low, high] for wicks, [min(o,c), max(o,c)] for body
-      const wickData  = candles.map(c => [parseFloat(c[3]), parseFloat(c[2])]);
-      const bodyData  = candles.map(c => [Math.min(parseFloat(c[1]),parseFloat(c[4])), Math.max(parseFloat(c[1]),parseFloat(c[4]))]);
-      const bodyColors = candles.map(c => parseFloat(c[4]) >= parseFloat(c[1]) ? 'rgba(34,197,94,0.85)' : 'rgba(248,113,113,0.85)');
-      const wickColors = candles.map(c => parseFloat(c[4]) >= parseFloat(c[1]) ? 'rgba(34,197,94,0.5)' : 'rgba(248,113,113,0.5)');
-
-      const datasets = [
-        // Wicks (thin)
-        { label:'Wick', data: wickData, backgroundColor: wickColors, borderColor:'transparent', barThickness: Math.max(1, Math.floor(barW*0.25)), order:2 },
-        // Bodies (thick)
-        { label:'Body', data: bodyData, backgroundColor: bodyColors, borderColor:'transparent', barThickness: barW, order:1 },
-      ];
-
-      // Entry price line
-      if (entryPrice) {
-        datasets.push({
-          type:'line', label:'Entry $'+entryPrice.toFixed(0),
-          data: xLabels.map(()=>entryPrice),
-          borderColor:'#fbbf24', borderWidth:1.5,
-          borderDash:[5,4], pointRadius:0, fill:false, tension:0, order:0,
-        });
-      }
-
-      tcCharts.candle = new Chart(candleCtx, {
-        type: 'bar',
-        data: { labels: xLabels, datasets },
-        options: {
-          responsive:true, maintainAspectRatio:false, animation:false,
-          plugins:{
-            legend:{display: entryPrice ? true : false, labels:{color:'#fbbf24',filter:i=>i.text.startsWith('Entry'),font:{size:10}}},
-            tooltip:{
-              callbacks:{
-                title: ctx => xLabels[ctx[0].dataIndex],
-                label: ctx => {
-                  if (ctx.datasetIndex !== 1) return null;
-                  const c = candles[ctx.dataIndex];
-                  const o=parseFloat(c[1]),h=parseFloat(c[2]),l=parseFloat(c[3]),cl=parseFloat(c[4]);
-                  return [`O: $${o.toLocaleString()}`, `H: $${h.toLocaleString()}`, `L: $${l.toLocaleString()}`, `C: $${cl.toLocaleString()}`];
-                },
-                filter: item => item.datasetIndex === 1 || item.datasetIndex === 2,
-              }
-            }
-          },
-          scales:{
-            x:{ ticks:{color:'#52525b',font:{size:9},maxTicksLimit:8,maxRotation:0}, grid:{color:'#1c1c1f'} },
-            y:{ ticks:{color:'#52525b',font:{size:9},
-                  callback: v => '$'+v.toLocaleString('en-CA',{minimumFractionDigits:0})},
-                grid:{color:'#1c1c1f'},
-                afterDataLimits: a => {
-                  const pad = (a.max - a.min) * 0.05;
-                  a.min -= pad; a.max += pad;
-                }
-              }
-          }
-        }
-      });
+    // RSI label
+    const rLbl = document.getElementById('tc-rsi-label');
+    if (rLbl && curRSI) {
+      rLbl.textContent = curRSI.toFixed(1) + (curRSI>70?' OVERBOUGHT':curRSI<30?' OVERSOLD':'');
+      rLbl.style.color = curRSI>70?'#f87171':curRSI<30?'#22c55e':'#a1a1aa';
     }
 
-    // ── VOLUME CHART ──
-    const volCtx = document.getElementById('tcVolChart')?.getContext('2d');
-    if (volCtx) {
-      tcCharts.vol = new Chart(volCtx, {
-        type: 'bar',
-        data: {
-          labels: xLabels,
-          datasets: [{
-            data: vols,
-            backgroundColor: candleColors.map(c => c + '88'),
-            borderColor: 'transparent',
-          }]
-        },
-        options: {
-          responsive:true, maintainAspectRatio:false, animation:false,
-          plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>'Vol: '+ctx.raw.toFixed(4)}}},
-          scales:{
-            x:{ticks:{display:false}, grid:{color:'#1c1c1f'}},
-            y:{ticks:{color:'#52525b',font:{size:8},maxTicksLimit:3}, grid:{color:'#1c1c1f'}}
-          }
-        }
-      });
+    // MACD label
+    const mLbl = document.getElementById('tc-macd-label');
+    const cm = macd[macd.length-1], cs = signal[signal.length-1];
+    if (mLbl && cm && cs) {
+      mLbl.textContent = 'MACD ' + cm.toFixed(1) + ' Sig ' + cs.toFixed(1);
+      mLbl.style.color = cm > cs ? '#22c55e' : '#f87171';
     }
 
-    // ── RSI CHART ──
-    const rsiCtx = document.getElementById('tcRsiChart')?.getContext('2d');
-    if (rsiCtx) {
-      tcCharts.rsi = new Chart(rsiCtx, {
-        type: 'line',
-        data: {
-          labels: xLabels,
-          datasets: [
-            { data: rsiVals, borderColor:'#818cf8', borderWidth:1.5, pointRadius:0, fill:false, tension:0.3 },
-            { data: xLabels.map(()=>70), borderColor:'#f8718144', borderWidth:1, borderDash:[3,3], pointRadius:0 },
-            { data: xLabels.map(()=>30), borderColor:'#22c55e44', borderWidth:1, borderDash:[3,3], pointRadius:0 },
-          ]
-        },
-        options: {
-          responsive:true, maintainAspectRatio:false, animation:false,
-          plugins:{legend:{display:false}},
-          scales:{
-            x:{ticks:{display:false}, grid:{color:'#1c1c1f'}},
-            y:{min:0,max:100, ticks:{color:'#52525b',font:{size:8},stepSize:25}, grid:{color:'#1c1c1f'}}
-          }
-        }
-      });
-    }
-
-    // ── MACD CHART ──
-    const macdCtx = document.getElementById('tcMacdChart')?.getContext('2d');
-    if (macdCtx) {
-      tcCharts.macd = new Chart(macdCtx, {
-        type: 'bar',
-        data: {
-          labels: xLabels,
-          datasets: [
-            { type:'line', label:'MACD', data:macd, borderColor:'#60a5fa', borderWidth:1.5, pointRadius:0, fill:false, tension:0.3 },
-            { type:'line', label:'Signal', data:signal, borderColor:'#f97316', borderWidth:1.5, pointRadius:0, fill:false, tension:0.3 },
-            { type:'bar', label:'Hist', data:hist, backgroundColor: hist.map(v => v >= 0 ? '#22c55e88' : '#f8718188'), borderColor:'transparent' },
-          ]
-        },
-        options: {
-          responsive:true, maintainAspectRatio:false, animation:false,
-          plugins:{legend:{display:false}},
-          scales:{
-            x:{ticks:{display:false}, grid:{color:'#1c1c1f'}},
-            y:{ticks:{color:'#52525b',font:{size:8},maxTicksLimit:4}, grid:{color:'#1c1c1f'}}
-          }
-        }
-      });
-    }
+    // Draw all charts
+    drawCandleChart('tcCandleChart', O, H, L, C, T, entry, interval);
+    drawVolChart('tcVolChart', V, C, T);
+    drawRSIChart('tcRsiChart', rsi, T);
+    drawMACDChart('tcMacdChart', macd, signal, hist, T);
 
   } catch(e) {
-    console.error('Chart build failed:', e);
+    console.error('Chart error:', e);
   }
+}
+
+// ── CANVAS DRAWING HELPERS ──
+
+function getCtx(id, h) {
+  const el = document.getElementById(id);
+  if (!el) return null;
+  const dpr = window.devicePixelRatio || 1;
+  const w   = el.parentElement.clientWidth || 600;
+  el.width  = w * dpr;
+  el.height = h * dpr;
+  el.style.height = h + 'px';
+  const ctx = el.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx._w = w; ctx._h = h;
+  return ctx;
+}
+
+function mapY(v, min, max, h, pad=10) {
+  return pad + (1 - (v - min) / (max - min)) * (h - pad*2);
+}
+
+function drawCandleChart(id, O, H, L, C, T, entry, interval) {
+  const H_CHART = 340;
+  const ctx = getCtx(id, H_CHART);
+  if (!ctx) return;
+  const W = ctx._w, H2 = ctx._h;
+  const PAD_L = 62, PAD_R = 8, PAD_T = 16, PAD_B = 28;
+  const cw = W - PAD_L - PAD_R;
+  const ch = H2 - PAD_T - PAD_B;
+  const n  = C.length;
+
+  // Price range with padding
+  let lo = Math.min(...L), hi = Math.max(...H);
+  if (entry) { lo = Math.min(lo, entry*0.998); hi = Math.max(hi, entry*1.002); }
+  const range = hi - lo || 1;
+  const padPct = 0.04;
+  lo -= range * padPct; hi += range * padPct;
+
+  const py = v => PAD_T + (1 - (v - lo)/(hi - lo)) * ch;
+  const px = i => PAD_L + (i + 0.5) / n * cw;
+  const bw = Math.max(1, Math.floor(cw / n * 0.6));
+
+  // Background
+  ctx.fillStyle = '#0d0d0f';
+  ctx.fillRect(0, 0, W, H2);
+
+  // Grid lines
+  ctx.strokeStyle = '#1c1c1f';
+  ctx.lineWidth = 1;
+  const steps = 6;
+  for (let i = 0; i <= steps; i++) {
+    const v = lo + (hi - lo) * i / steps;
+    const y = py(v);
+    ctx.beginPath(); ctx.moveTo(PAD_L, y); ctx.lineTo(W - PAD_R, y); ctx.stroke();
+    ctx.fillStyle = '#3f3f46';
+    ctx.font = '9px monospace';
+    ctx.textAlign = 'right';
+    const lbl = v >= 1000 ? '$' + v.toLocaleString('en-CA',{minimumFractionDigits:0,maximumFractionDigits:0}) : '$' + v.toFixed(2);
+    ctx.fillText(lbl, PAD_L - 4, y + 3);
+  }
+
+  // X axis labels
+  ctx.fillStyle = '#3f3f46';
+  ctx.font = '9px monospace';
+  ctx.textAlign = 'center';
+  const maxLabels = Math.min(8, n);
+  const step = Math.floor(n / maxLabels);
+  for (let i = 0; i < n; i += step) {
+    const t = T[i];
+    const lbl = +interval >= 1440
+      ? t.toLocaleDateString('en-CA',{month:'short',day:'numeric'})
+      : t.toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',hour12:false});
+    ctx.fillText(lbl, px(i), H2 - 6);
+  }
+
+  // Entry price zone (shaded area above entry)
+  if (entry) {
+    const ey = py(entry);
+    // Green zone above entry
+    ctx.fillStyle = 'rgba(34,197,94,0.06)';
+    ctx.fillRect(PAD_L, PAD_T, cw, Math.max(0, ey - PAD_T));
+    // Red zone below entry
+    ctx.fillStyle = 'rgba(248,113,113,0.06)';
+    ctx.fillRect(PAD_L, ey, cw, Math.max(0, PAD_T + ch - ey));
+
+    // TP line (+2%)
+    const tp = entry * 1.02;
+    if (tp <= hi) {
+      const ty = py(tp);
+      ctx.strokeStyle = 'rgba(34,197,94,0.5)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(PAD_L, ty); ctx.lineTo(W-PAD_R, ty); ctx.stroke();
+      ctx.fillStyle = 'rgba(34,197,94,0.8)';
+      ctx.font = 'bold 9px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('TP +2% $' + tp.toFixed(0), PAD_L + 4, ty - 3);
+    }
+
+    // SL line (-1.5%)
+    const sl = entry * 0.985;
+    if (sl >= lo) {
+      const sy = py(sl);
+      ctx.strokeStyle = 'rgba(248,113,113,0.5)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(PAD_L, sy); ctx.lineTo(W-PAD_R, sy); ctx.stroke();
+      ctx.fillStyle = 'rgba(248,113,113,0.8)';
+      ctx.font = 'bold 9px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('SL -1.5% $' + sl.toFixed(0), PAD_L + 4, sy + 10);
+    }
+
+    // Entry line (solid yellow)
+    ctx.setLineDash([]);
+    ctx.strokeStyle = '#fbbf24';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(PAD_L, ey); ctx.lineTo(W-PAD_R, ey); ctx.stroke();
+    // Entry label box
+    ctx.fillStyle = '#fbbf24';
+    ctx.fillRect(W - PAD_R - 70, ey - 9, 70, 16);
+    ctx.fillStyle = '#000';
+    ctx.font = 'bold 9px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('ENTRY $' + entry.toFixed(0), W - PAD_R - 35, ey + 3);
+    ctx.setLineDash([]);
+  }
+
+  // Candles
+  for (let i = 0; i < n; i++) {
+    const x  = px(i);
+    const isUp = C[i] >= O[i];
+    const col  = isUp ? '#22c55e' : '#f87171';
+    const colFaded = isUp ? 'rgba(34,197,94,0.25)' : 'rgba(248,113,113,0.25)';
+
+    // Wick
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x, py(H[i]));
+    ctx.lineTo(x, py(L[i]));
+    ctx.stroke();
+
+    // Body
+    const yTop = py(Math.max(O[i], C[i]));
+    const yBot = py(Math.min(O[i], C[i]));
+    const bodyH = Math.max(1, yBot - yTop);
+    ctx.fillStyle = isUp ? '#22c55e' : '#f87171';
+    ctx.fillRect(x - bw/2, yTop, bw, bodyH);
+  }
+
+  // Current price line
+  const curP = C[C.length-1];
+  const cy = py(curP);
+  const isUp = C[C.length-1] >= C[C.length-2];
+  ctx.setLineDash([2,3]);
+  ctx.strokeStyle = isUp ? '#22c55e88' : '#f8718188';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(PAD_L, cy); ctx.lineTo(W-PAD_R-50, cy); ctx.stroke();
+  ctx.setLineDash([]);
+  // Price tag
+  const tagCol = isUp ? '#22c55e' : '#f87171';
+  ctx.fillStyle = tagCol;
+  ctx.fillRect(W - PAD_R - 50, cy - 9, 50, 16);
+  ctx.fillStyle = '#000';
+  ctx.font = 'bold 9px monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText('$' + curP.toFixed(0), W - PAD_R - 25, cy + 3);
+}
+
+function drawVolChart(id, V, C, T) {
+  const ctx = getCtx(id, 60);
+  if (!ctx) return;
+  const W = ctx._w, H = ctx._h;
+  const PAD_L = 62, PAD_R = 8, PAD_T = 4, PAD_B = 4;
+  const n = V.length;
+  const maxV = Math.max(...V) || 1;
+  const bw = Math.max(1, Math.floor((W - PAD_L - PAD_R) / n * 0.7));
+
+  ctx.fillStyle = '#0d0d0f';
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.fillStyle = '#3f3f46';
+  ctx.font = '8px monospace';
+  ctx.textAlign = 'right';
+  ctx.fillText('VOL', PAD_L - 4, H/2 + 3);
+
+  for (let i = 0; i < n; i++) {
+    const x = PAD_L + (i + 0.5) / n * (W - PAD_L - PAD_R);
+    const barH = ((V[i] / maxV) * (H - PAD_T - PAD_B));
+    const isUp = C[i] >= (i > 0 ? C[i-1] : C[i]);
+    ctx.fillStyle = isUp ? 'rgba(34,197,94,0.6)' : 'rgba(248,113,113,0.6)';
+    ctx.fillRect(x - bw/2, H - PAD_B - barH, bw, barH);
+  }
+}
+
+function drawRSIChart(id, rsi, T) {
+  const ctx = getCtx(id, 70);
+  if (!ctx) return;
+  const W = ctx._w, H = ctx._h;
+  const PAD_L = 62, PAD_R = 8, PAD_T = 4, PAD_B = 4;
+  const n = rsi.length;
+  const cw = W - PAD_L - PAD_R;
+
+  ctx.fillStyle = '#0d0d0f';
+  ctx.fillRect(0, 0, W, H);
+
+  const py = v => PAD_T + (1 - v/100) * (H - PAD_T - PAD_B);
+  const px = i => PAD_L + (i + 0.5) / n * cw;
+
+  // Zone fills
+  ctx.fillStyle = 'rgba(248,113,113,0.08)';
+  ctx.fillRect(PAD_L, PAD_T, cw, py(100) - py(70));
+  ctx.fillStyle = 'rgba(34,197,94,0.08)';
+  ctx.fillRect(PAD_L, py(30), cw, py(0) - py(30));
+
+  // 70/30 lines
+  [70, 50, 30].forEach(v => {
+    ctx.strokeStyle = v === 50 ? '#27272a' : v === 70 ? '#f8718144' : '#22c55e44';
+    ctx.lineWidth = 1;
+    ctx.setLineDash(v===50?[2,3]:[]);
+    ctx.beginPath();
+    ctx.moveTo(PAD_L, py(v)); ctx.lineTo(W-PAD_R, py(v)); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#3f3f46'; ctx.font = '8px monospace'; ctx.textAlign = 'right';
+    ctx.fillText(v, PAD_L - 4, py(v) + 3);
+  });
+
+  // RSI line
+  ctx.strokeStyle = '#818cf8';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  let first = true;
+  for (let i = 0; i < n; i++) {
+    if (rsi[i] === null) continue;
+    const x = px(i), y = py(rsi[i]);
+    if (first) { ctx.moveTo(x, y); first = false; }
+    else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+}
+
+function drawMACDChart(id, macd, signal, hist, T) {
+  const ctx = getCtx(id, 70);
+  if (!ctx) return;
+  const W = ctx._w, H = ctx._h;
+  const PAD_L = 62, PAD_R = 8, PAD_T = 4, PAD_B = 4;
+  const n = macd.length;
+  const cw = W - PAD_L - PAD_R;
+
+  ctx.fillStyle = '#0d0d0f';
+  ctx.fillRect(0, 0, W, H);
+
+  const valid = [...macd, ...signal, ...hist].filter(v => v !== null);
+  if (!valid.length) return;
+  let lo = Math.min(...valid), hi = Math.max(...valid);
+  const pad = (hi-lo)*0.1; lo -= pad; hi += pad;
+  const py = v => PAD_T + (1 - (v-lo)/(hi-lo)) * (H - PAD_T - PAD_B);
+  const px = i => PAD_L + (i+0.5)/n * cw;
+  const zero = py(0);
+
+  // Zero line
+  ctx.strokeStyle = '#27272a'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(PAD_L, zero); ctx.lineTo(W-PAD_R, zero); ctx.stroke();
+
+  // Histogram
+  const bw = Math.max(1, Math.floor(cw/n*0.6));
+  for (let i = 0; i < n; i++) {
+    if (hist[i] === null) continue;
+    const x = px(i);
+    const y = py(hist[i]);
+    ctx.fillStyle = hist[i] >= 0 ? 'rgba(34,197,94,0.5)' : 'rgba(248,113,113,0.5)';
+    ctx.fillRect(x-bw/2, Math.min(y,zero), bw, Math.abs(y-zero));
+  }
+
+  // MACD line (blue)
+  ctx.strokeStyle = '#60a5fa'; ctx.lineWidth = 1.5; ctx.beginPath();
+  let first = true;
+  for (let i = 0; i < n; i++) {
+    if (macd[i]===null) continue;
+    first ? ctx.moveTo(px(i),py(macd[i])) : ctx.lineTo(px(i),py(macd[i]));
+    first = false;
+  }
+  ctx.stroke();
+
+  // Signal line (orange)
+  ctx.strokeStyle = '#f97316'; ctx.lineWidth = 1.5; ctx.beginPath();
+  first = true;
+  for (let i = 0; i < n; i++) {
+    if (signal[i]===null) continue;
+    first ? ctx.moveTo(px(i),py(signal[i])) : ctx.lineTo(px(i),py(signal[i]));
+    first = false;
+  }
+  ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#3f3f46'; ctx.font = '8px monospace'; ctx.textAlign = 'left';
+  ctx.fillText('MACD', PAD_L + 2, PAD_T + 10);
+  ctx.fillStyle = '#60a5fa'; ctx.fillRect(PAD_L+32, PAD_T+2, 8, 2);
+  ctx.fillStyle = '#f97316'; ctx.fillRect(PAD_L+46, PAD_T+2, 8, 2);
 }
 
 // ── INDICATORS ──
@@ -2766,49 +2933,43 @@ function calcRSI(closes, period=14) {
   const rsi = new Array(closes.length).fill(null);
   let gains = 0, losses = 0;
   for (let i = 1; i <= period; i++) {
-    const diff = closes[i] - closes[i-1];
-    if (diff > 0) gains += diff; else losses -= diff;
+    const d = closes[i] - closes[i-1];
+    if (d > 0) gains += d; else losses -= d;
   }
-  let avgGain = gains / period;
-  let avgLoss = losses / period;
-  rsi[period] = avgLoss === 0 ? 100 : 100 - (100 / (1 + avgGain/avgLoss));
+  let avgG = gains/period, avgL = losses/period;
+  rsi[period] = avgL === 0 ? 100 : 100 - 100/(1 + avgG/avgL);
   for (let i = period+1; i < closes.length; i++) {
-    const diff = closes[i] - closes[i-1];
-    avgGain = (avgGain*(period-1) + Math.max(diff,0)) / period;
-    avgLoss = (avgLoss*(period-1) + Math.max(-diff,0)) / period;
-    rsi[i] = avgLoss === 0 ? 100 : 100 - (100 / (1 + avgGain/avgLoss));
+    const d = closes[i] - closes[i-1];
+    avgG = (avgG*(period-1) + Math.max(d,0))/period;
+    avgL = (avgL*(period-1) + Math.max(-d,0))/period;
+    rsi[i] = avgL === 0 ? 100 : 100 - 100/(1 + avgG/avgL);
   }
   return rsi;
 }
 
 function calcEMA(data, period) {
-  const k = 2 / (period + 1);
-  const ema = new Array(data.length).fill(null);
-  let sum = 0, start = 0;
-  for (let i = 0; i < period; i++) { if (data[i] !== null) { sum += data[i]; start = i; } }
-  ema[start] = sum / period;
-  for (let i = start+1; i < data.length; i++) {
-    if (data[i] !== null) ema[i] = data[i] * k + ema[i-1] * (1-k);
+  const k = 2/(period+1), ema = new Array(data.length).fill(null);
+  let sum = 0, cnt = 0, si = -1;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] === null) continue;
+    sum += data[i]; cnt++;
+    if (cnt === period) { ema[i] = sum/period; si = i; break; }
+  }
+  if (si < 0) return ema;
+  for (let i = si+1; i < data.length; i++) {
+    if (data[i] !== null) ema[i] = data[i]*k + ema[i-1]*(1-k);
   }
   return ema;
 }
 
 function calcMACD(closes, fast=12, slow=26, sig=9) {
-  const emaFast = calcEMA(closes, fast);
-  const emaSlow = calcEMA(closes, slow);
-  const macd    = closes.map((_,i) => emaFast[i]!==null&&emaSlow[i]!==null ? emaFast[i]-emaSlow[i] : null);
-  const signal  = calcEMA(macd.filter(v=>v!==null), sig);
-  // Pad signal to match length
-  const sigPadded = new Array(macd.length).fill(null);
-  let si = 0;
-  for (let i = 0; i < macd.length; i++) {
-    if (macd[i] !== null) { sigPadded[i] = signal[si++] ?? null; }
-  }
-  const hist = macd.map((v,i) => v!==null&&sigPadded[i]!==null ? v-sigPadded[i] : null);
-  return {macd, signal:sigPadded, hist};
+  const ef = calcEMA(closes, fast), es = calcEMA(closes, slow);
+  const macd = closes.map((_,i) => ef[i]!==null&&es[i]!==null ? ef[i]-es[i] : null);
+  const sigLine = calcEMA(macd, sig);
+  const hist = macd.map((v,i) => v!==null&&sigLine[i]!==null ? v-sigLine[i] : null);
+  return {macd, signal:sigLine, hist};
 }
 
-// Store entry price for chart when trade opens
 function storeEntryForChart(price) {
   window._openBuyPrice = price;
   localStorage.setItem('apex_entry_' + ACTIVE_ASSET, price);
@@ -2817,6 +2978,7 @@ function loadEntryForChart() {
   const saved = localStorage.getItem('apex_entry_' + ACTIVE_ASSET);
   if (saved) window._openBuyPrice = parseFloat(saved);
 }
+
 
 // ── GUIDE MODAL ──
 function openGuide(tab) {
