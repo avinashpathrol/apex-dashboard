@@ -3236,8 +3236,18 @@ async function executeManualSell() {
   try {
     // Get current balance to sell full position
     const balResult = await kPriv('Balance', {});
-    const balKey    = ACTIVE_ASSET === 'eth' ? 'XETH' : ACTIVE_ASSET === 'gold' ? 'XXAU' : 'XXBT';
-    const volume    = parseFloat(balResult[balKey] || 0);
+    console.log('Balance result:', JSON.stringify(balResult));
+    // kPriv returns result directly
+    // ETH on Kraken can be 'XETH' or 'ETH' depending on account
+    let volume = 0;
+    if (ACTIVE_ASSET === 'eth') {
+      volume = parseFloat(balResult['XETH'] || balResult['ETH'] || 0);
+    } else if (ACTIVE_ASSET === 'gold') {
+      volume = parseFloat(balResult['XXAU'] || balResult['XAU'] || 0);
+    } else {
+      volume = parseFloat(balResult['XXBT'] || balResult['XBT'] || 0);
+    }
+    console.log('Volume to sell:', volume, 'for asset:', ACTIVE_ASSET);
 
     if (volume < 0.00001) {
       status.textContent = '❌ No position found to sell';
