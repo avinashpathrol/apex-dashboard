@@ -290,6 +290,31 @@ input:focus{border-color:#3f3f46;}
 .clickable-stat:hover{border-color:#3f3f46 !important;background:#1c1c1f !important;}
 .clickable-cal-day{cursor:pointer;}
 
+/* MANUAL SELL BUTTON */
+.manual-sell-btn{width:100%;background:#1a0000;border:1.5px solid #dc2626;border-radius:10px;padding:12px;font-size:13px;font-weight:700;color:#f87171;cursor:pointer;display:none;margin:8px 0;letter-spacing:.05em;transition:all .15s;}
+.manual-sell-btn:hover{background:#dc2626;color:#fff;border-color:#dc2626;}
+.manual-sell-btn.visible{display:block;}
+
+/* SELL CONFIRM MODAL */
+.sell-ov{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px;}
+.sell-ov.open{display:flex;}
+.sell-modal{background:#18181b;border:1px solid #dc2626;border-radius:16px;width:100%;max-width:380px;overflow:hidden;}
+.sell-hdr{background:#1a0000;padding:14px 18px;border-bottom:1px solid #27272a;display:flex;align-items:center;gap:8px;}
+.sell-hdr-title{font-size:13px;font-weight:700;color:#f87171;}
+.sell-body{padding:18px;}
+.sell-detail{background:#111;border-radius:8px;padding:12px;margin-bottom:14px;}
+.sell-detail-row{display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px;}
+.sell-detail-row:last-child{margin-bottom:0;}
+.sell-detail-label{color:#52525b;}
+.sell-detail-val{color:#e8e8e8;font-weight:600;font-family:monospace;}
+.sell-detail-val.green{color:#22c55e;}
+.sell-detail-val.red{color:#f87171;}
+.sell-confirm-btn{width:100%;background:#dc2626;border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:700;color:#fff;cursor:pointer;margin-bottom:8px;}
+.sell-confirm-btn:hover{background:#b91c1c;}
+.sell-cancel-btn{width:100%;background:none;border:1px solid #27272a;border-radius:8px;padding:10px;font-size:12px;color:#52525b;cursor:pointer;}
+.sell-cancel-btn:hover{border-color:#3f3f46;color:#a1a1aa;}
+.sell-status{font-size:11px;text-align:center;margin-top:8px;min-height:16px;color:#52525b;}
+
 /* ASSET SWITCHER */
 .asset-bar{background:#0a0a0c;border-bottom:1px solid #1c1c1f;padding:0 16px;display:flex;align-items:center;gap:6px;height:38px;flex-shrink:0;}
 .asset-btn{background:none;border:1px solid transparent;border-radius:8px;padding:4px 12px;font-size:11px;font-weight:600;color:#52525b;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .15s;}
@@ -1237,6 +1262,7 @@ function updateBanner(price, allKT, ghRows, botData) {
   document.getElementById('tb-label').textContent = 'IN TRADE — ' + _assetLabel + ' Long';
   // Store entry price for tech chart
   if (activeBuy && activeBuy.price) storeEntryForChart(activeBuy.price);
+  updateSellButton(true);  // Show manual sell button
   document.getElementById('tb-pulse').className = 'tb-pulse' + (isProfit ? '' : ' loss');
   document.getElementById('tb-ico').textContent = isProfit ? '🟢' : '🔴';
   document.getElementById('tb-label').className = 'tb-label-main' + (isProfit ? '' : ' loss');
@@ -3006,6 +3032,252 @@ function calcMACD(closes, fast=12, slow=26, sig=9) {
   return {macd, signal:sigLine, hist};
 }
 
+// ── MANUAL SELL ──
+let _sellContext = {};
+
+async function openSellModal() {
+  const price  = parseFloat(document.getElementById('m-price')?.textContent?.replace(/[$,]/g,'')) || 0;
+  const entry  = window._openBuyPrice || 0;
+  const asset  = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
+  const symbol = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
+  const heldBal = window._lastBotData ? (window._lastBotData.btc_balance || 0) : 0;
+  const pnlPct  = entry ? (price - entry) / entry * 100 : 0;
+  const pnlCad  = entry && heldBal ? (price - entry) * heldBal : 0;
+  const durEl   = document.getElementById('tb-dur');
+  const dur     = durEl ? durEl.textContent : '—';
+
+  // Fill basic info
+  document.getElementById('sell-asset').textContent = asset;
+  document.getElementById('sell-price').textContent = '$' + price.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2});
+  document.getElementById('sell-entry').textContent = entry ? '$' + entry.toLocaleString('en-CA',{minimumFractionDigits:2,maximumFractionDigits:2}) : 'Unknown';
+  const pnlEl = document.getElementById('sell-pnl');
+  pnlEl.textContent = entry ? (pnlCad>=0?'+':'') + '$' + pnlCad.toFixed(4) + ' (' + (pnlPct>=0?'+':'') + pnlPct.toFixed(2) + '%)' : '—';
+  pnlEl.className   = 'sell-detail-val ' + (pnlCad >= 0 ? 'green' : 'red');
+  document.getElementById('sell-duration').textContent = dur;
+  document.getElementById('sell-status').textContent   = '';
+  document.getElementById('sell-confirm-btn').disabled = false;
+  document.getElementById('sell-confirm-btn').textContent = '🔴 SELL NOW — Market Order';
+
+  _sellContext = { symbol, price, entry, pnlCad, pnlPct };
+  document.getElementById('sell-ov').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // Run live signal check
+  await runSellSignalCheck(symbol, price, entry);
+}
+
+async function runSellSignalCheck(symbol, price, entry) {
+  const box = document.getElementById('sell-signal-box');
+  if (!box) return;
+  box.innerHTML = '<div style="color:#52525b;font-size:11px;text-align:center;padding:8px;">🔍 Checking live signals...</div>';
+
+  try {
+    // Fetch 15min OHLC
+    const r = await kPub('OHLC', {pair: symbol, interval: 15});
+    const key = Object.keys(r).find(k => k !== 'last');
+    const raw = (r[key] || []).slice(-100);
+    const closes = raw.map(c => +c[4]);
+    const highs  = raw.map(c => +c[2]);
+    const lows   = raw.map(c => +c[3]);
+    const vols   = raw.map(c => +c[6]);
+
+    // Calculate indicators
+    const rsiArr  = calcRSI(closes, 14);
+    const {macd, signal} = calcMACD(closes, 12, 26, 9);
+    const ema20   = calcEMA(closes, 20);
+    const ema50   = calcEMA(closes, 50);
+
+    const n    = closes.length - 1;
+    const rsi  = rsiArr[n];
+    const macdV = macd[n], sigV = signal[n], macdPrev = macd[n-1], sigPrev = signal[n-1];
+    const e20  = ema20[n], e50 = ema50[n];
+    const cur  = closes[n], prev = closes[n-1];
+
+    // BB
+    const period = 20;
+    const slice  = closes.slice(-period);
+    const mean   = slice.reduce((a,b)=>a+b,0)/period;
+    const std    = Math.sqrt(slice.reduce((a,b)=>a+(b-mean)**2,0)/period);
+    const bbUp   = mean + 2*std, bbLo = mean - 2*std;
+    const bbPct  = (cur - bbLo) / (bbUp - bbLo);
+
+    // 1H trend
+    let trend = 'CHECKING...';
+    try {
+      const r1h = await kPub('OHLC', {pair: symbol, interval: 60});
+      const k1h = Object.keys(r1h).find(k => k !== 'last');
+      const c1h = (r1h[k1h]||[]).slice(-60).map(c=>+c[4]);
+      const e20h = calcEMA(c1h,20), e50h = calcEMA(c1h,50);
+      const lastC = c1h[c1h.length-1], lastE20 = e20h[e20h.length-1], lastE50 = e50h[e50h.length-1];
+      if (lastC > lastE20 && lastE20 > lastE50) trend = 'BULLISH ↑';
+      else if (lastC < lastE20 && lastE20 < lastE50) trend = 'BEARISH ↓';
+      else trend = 'SIDEWAYS →';
+    } catch(e) { trend = 'UNKNOWN'; }
+
+    // Score signals
+    const bull = [], bear = [];
+    if (rsi < 35) bull.push({label:'RSI oversold', v: rsi.toFixed(1)});
+    else if (rsi < 50 && rsi > (rsiArr[n-1]||rsi)) bull.push({label:'RSI rising', v: rsi.toFixed(1)});
+    if (rsi > 65) bear.push({label:'RSI overbought', v: rsi.toFixed(1)});
+    else if (rsi > 50 && rsi < (rsiArr[n-1]||rsi)) bear.push({label:'RSI falling', v: rsi.toFixed(1)});
+
+    if (macdPrev < sigPrev && macdV > sigV) bull.push({label:'MACD bullish cross', v:''});
+    else if (macdV > sigV) bull.push({label:'MACD above signal', v:''});
+    if (macdPrev > sigPrev && macdV < sigV) bear.push({label:'MACD bearish cross ⚠️', v:''});
+    else if (macdV < sigV) bear.push({label:'MACD below signal', v:''});
+
+    if (e20 > e50) bull.push({label:'EMA uptrend', v:''}); else bear.push({label:'EMA downtrend', v:''});
+    if (cur > e20) bull.push({label:'Price above EMA-20', v:''}); else bear.push({label:'Price below EMA-20', v:''});
+    if (bbPct > 0.80) bear.push({label:'Near BB upper band', v: (bbPct*100).toFixed(0)+'%'});
+    else if (bbPct < 0.20) bull.push({label:'Near BB lower band', v: (bbPct*100).toFixed(0)+'%'});
+
+    const bc = bull.length, rc = bear.length, total = bc + rc || 1;
+    const bullPct = Math.round(bc/total*100);
+    const bearPct = 100 - bullPct;
+
+    // Recommendation
+    let rec, recCol, recIcon, advice;
+    const trendBull = trend.includes('BULLISH');
+    const trendBear = trend.includes('BEARISH');
+
+    if (bc >= 3 && trendBull) {
+      rec = 'STRONG HOLD'; recCol = '#22c55e'; recIcon = '💪';
+      advice = 'Momentum strongly up. Likely to keep rising.';
+    } else if (bc >= 3 && !trendBear) {
+      rec = 'HOLD'; recCol = '#86efac'; recIcon = '✅';
+      advice = 'More bullish than bearish. Consider holding.';
+    } else if (rc >= 3 && trendBear) {
+      rec = 'GOOD TIME TO SELL'; recCol = '#f87171'; recIcon = '🔴';
+      advice = 'Bearish signals + downtrend. Selling looks smart.';
+    } else if (rc >= 3) {
+      rec = 'SELL POSSIBLE'; recCol = '#fbbf24'; recIcon = '⚠️';
+      advice = 'Bearish signals building. Could be a good exit.';
+    } else {
+      rec = 'MIXED'; recCol = '#a1a1aa'; recIcon = '🟡';
+      advice = 'Signals unclear. Your call.';
+    }
+
+    // Build UI
+    const trendCol = trendBull ? '#22c55e' : trendBear ? '#f87171' : '#fbbf24';
+    const barBull  = Math.round(bullPct * 1.4);
+    const barBear  = Math.round(bearPct * 1.4);
+
+    box.innerHTML = `
+      <div style="border-top:1px solid #1c1c1f;margin:12px 0 8px;padding-top:12px;">
+        <div style="font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">🔍 Live Signal Check</div>
+
+        <!-- Trend -->
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:11px;">
+          <span style="color:#52525b;">1H Trend</span>
+          <span style="color:${trendCol};font-weight:700;">${trend}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:11px;">
+          <span style="color:#52525b;">RSI (14)</span>
+          <span style="color:${rsi>65?'#f87171':rsi<35?'#22c55e':'#a1a1aa'};font-weight:600;">${rsi.toFixed(1)} ${rsi>65?'— overbought':rsi<35?'— oversold':'— neutral'}</span>
+        </div>
+
+        <!-- Signal bar -->
+        <div style="margin:10px 0 6px;">
+          <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:4px;">
+            <span style="color:#22c55e;">🟢 ${bc} bullish</span>
+            <span style="color:#f87171;">${rc} bearish 🔴</span>
+          </div>
+          <div style="background:#1c1c1f;border-radius:4px;height:8px;overflow:hidden;">
+            <div style="height:100%;width:${bullPct}%;background:linear-gradient(90deg,#16a34a,#22c55e);border-radius:4px;float:left;"></div>
+            <div style="height:100%;width:${bearPct}%;background:linear-gradient(90deg,#dc2626,#f87171);border-radius:4px;float:right;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:10px;margin-top:3px;">
+            <span style="color:#22c55e;">${bullPct}%</span>
+            <span style="color:#f87171;">${bearPct}%</span>
+          </div>
+        </div>
+
+        <!-- Individual signals -->
+        <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;">
+          ${bull.map(s=>`<span style="background:#052e16;color:#22c55e;font-size:9px;padding:2px 6px;border-radius:4px;">✓ ${s.label}${s.v?' '+s.v:''}</span>`).join('')}
+          ${bear.map(s=>`<span style="background:#1a0000;color:#f87171;font-size:9px;padding:2px 6px;border-radius:4px;">✗ ${s.label}${s.v?' '+s.v:''}</span>`).join('')}
+        </div>
+
+        <!-- Recommendation -->
+        <div style="background:#111;border:1px solid #27272a;border-radius:8px;padding:10px;text-align:center;">
+          <div style="font-size:18px;margin-bottom:4px;">${recIcon}</div>
+          <div style="font-size:13px;font-weight:700;color:${recCol};margin-bottom:4px;">${rec}</div>
+          <div style="font-size:11px;color:#71717a;">${advice}</div>
+          ${entry ? `<div style="font-size:10px;color:#52525b;margin-top:4px;">If sells now: <span style="color:${pnlCad>=0?'#22c55e':'#f87171'}">${pnlCad>=0?'+':''}$${pnlCad.toFixed(4)} (${pnlPct>=0?'+':''}${pnlPct.toFixed(2)}%)</span></div>` : ''}
+        </div>
+      </div>`;
+
+  } catch(e) {
+    box.innerHTML = '<div style="color:#52525b;font-size:11px;text-align:center;padding:8px;">⚠️ Signal check failed — ' + e.message + '</div>';
+    console.error('Signal check error:', e);
+  }
+}
+
+function closeSellModal() {
+  document.getElementById('sell-ov').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function executeManualSell() {
+  const btn    = document.getElementById('sell-confirm-btn');
+  const status = document.getElementById('sell-status');
+  btn.disabled = true;
+  btn.textContent = '⏳ Placing order...';
+  status.textContent = '';
+  status.style.color = '#fbbf24';
+
+  try {
+    // Get current balance to sell full position
+    const balResult = await kPriv('Balance', {});
+    const balKey    = ACTIVE_ASSET === 'eth' ? 'XETH' : ACTIVE_ASSET === 'gold' ? 'XXAU' : 'XXBT';
+    const volume    = parseFloat(balResult[balKey] || 0);
+
+    if (volume < 0.00001) {
+      status.textContent = '❌ No position found to sell';
+      status.style.color = '#f87171';
+      btn.disabled = false;
+      btn.textContent = '🔴 SELL NOW — Market Order';
+      return;
+    }
+
+    status.textContent = 'Sending market sell for ' + volume.toFixed(6) + ' ' + balKey + '...';
+
+    const resp = await kPriv('AddOrder', {
+      pair:      _sellContext.symbol,
+      type:      'sell',
+      ordertype: 'market',
+      volume:    String(volume),
+    });
+
+    const txid = resp?.txid?.[0] || 'unknown';
+    status.textContent = '✅ Sold! txid: ' + txid;
+    status.style.color = '#22c55e';
+    btn.textContent    = '✅ Order Placed';
+
+    // Close modal after 2s and refresh
+    setTimeout(() => {
+      closeSellModal();
+      manualRefresh();
+    }, 2500);
+
+  } catch(e) {
+    status.textContent = '❌ Error: ' + (e.message || 'Unknown error');
+    status.style.color = '#f87171';
+    btn.disabled = false;
+    btn.textContent = '🔴 SELL NOW — Market Order';
+    console.error('Manual sell error:', e);
+  }
+}
+
+// Show/hide sell button based on trade status
+function updateSellButton(hasOpenTrade) {
+  const btn = document.getElementById('manual-sell-btn');
+  if (btn) {
+    if (hasOpenTrade) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }
+}
+
 // ── COMBINED P&L TICKER ──
 const _pnlCache = {};
 
@@ -3218,6 +3490,48 @@ window.addEventListener('load', () => {
       </div>
       <button class="aa-save-btn" onclick="saveNewAsset()">✅ Connect Asset</button>
       <div class="settings-status" id="add-asset-status"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MANUAL SELL CONFIRM MODAL -->
+<div class="sell-ov" id="sell-ov" onclick="if(event.target===this)closeSellModal()">
+  <div class="sell-modal">
+    <div class="sell-hdr">
+      <span style="font-size:16px;">🔴</span>
+      <div class="sell-hdr-title">Manual Sell — Confirm</div>
+    </div>
+    <div class="sell-body">
+      <div class="sell-detail">
+        <div class="sell-detail-row">
+          <span class="sell-detail-label">Asset</span>
+          <span class="sell-detail-val" id="sell-asset">—</span>
+        </div>
+        <div class="sell-detail-row">
+          <span class="sell-detail-label">Current Price</span>
+          <span class="sell-detail-val" id="sell-price">—</span>
+        </div>
+        <div class="sell-detail-row">
+          <span class="sell-detail-label">Entry Price</span>
+          <span class="sell-detail-val" id="sell-entry">—</span>
+        </div>
+        <div class="sell-detail-row">
+          <span class="sell-detail-label">Est. P&L</span>
+          <span class="sell-detail-val" id="sell-pnl">—</span>
+        </div>
+        <div class="sell-detail-row">
+          <span class="sell-detail-label">Hold Time</span>
+          <span class="sell-detail-val" id="sell-duration">—</span>
+        </div>
+      </div>
+      <!-- Live signal check output -->
+      <div id="sell-signal-box"></div>
+
+      <button class="sell-confirm-btn" id="sell-confirm-btn" onclick="executeManualSell()">
+        🔴 SELL NOW — Market Order
+      </button>
+      <button class="sell-cancel-btn" onclick="closeSellModal()">Cancel</button>
+      <div class="sell-status" id="sell-status"></div>
     </div>
   </div>
 </div>
