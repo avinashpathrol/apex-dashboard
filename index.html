@@ -918,6 +918,9 @@ async function unlockPin() {
     if (data.eth)  { ASSETS.eth  = data.eth;  document.getElementById('ab-eth').style.display  = 'flex'; }
     if (data.gold) { ASSETS.gold = data.gold; document.getElementById('ab-gold').style.display = 'flex'; }
     if (data.sol)  { ASSETS.sol  = data.sol;  document.getElementById('ab-sol').style.display  = 'flex'; }
+    // If active asset button is hidden, show it
+    const activeBtn = document.getElementById('ab-' + ACTIVE_ASSET);
+    if (activeBtn) activeBtn.style.display = 'flex';
     // Load active asset
     switchAsset(ACTIVE_ASSET, false);
     startApp();
@@ -2513,6 +2516,24 @@ async function openSettings() {
   // Show ETH/gold sections if connected
   document.getElementById('cfg-eth-section').style.display = ASSETS.eth ? 'block' : 'none';
   document.getElementById('cfg-gold-section').style.display = ASSETS.gold ? 'block' : 'none';
+  document.getElementById('cfg-sol-section').style.display = ASSETS.sol ? 'block' : 'none';
+  // Update BTC section title based on what's in that repo
+  const btcTitle = document.getElementById('cfg-btc-title');
+  if (btcTitle) btcTitle.textContent = ASSETS.sol ? '◎ SOL BOT — TRADE SIZE' : '₿ BTC BOT — TRADE SIZE';
+  // Load SOL config if connected
+  if (ASSETS.sol?.repo) {
+    try {
+      const solUrl = 'https://raw.githubusercontent.com/' + ASSETS.sol.repo + '/main/config.json?t=' + Date.now();
+      const solR = await fetch(solUrl, {headers:{Authorization:'token '+GH}});
+      if (solR.ok) {
+        const cfg = await solR.json();
+        if (cfg.trade_amount_cad) document.getElementById('cfg-sol-amount').value = cfg.trade_amount_cad;
+        if (cfg.min_signals)      document.getElementById('cfg-sol-signals').value = cfg.min_signals;
+        // Also update BTC/SOL section
+        if (cfg.trade_amount_cad) document.getElementById('cfg-btc-amount').value = cfg.trade_amount_cad;
+      }
+    } catch(e) {}
+  }
   document.getElementById('settings-status').textContent = '';
   document.getElementById('settings-ov').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -2530,10 +2551,17 @@ async function saveSettings() {
 
   const ts = new Date().toISOString();
 
-  // BTC config — push to BTC repo
+  // BTC/SOL config — push to BTC/SOL repo (same repo, same config)
   const btcConfig = {
     trade_amount_cad: parseInt(document.getElementById('cfg-btc-amount').value) || 40,
     min_signals:      parseInt(document.getElementById('cfg-btc-signals').value) || 3,
+    updated_at:       ts,
+  };
+
+  // SOL config — same repo as BTC (apex-trading-bot)
+  const solConfig = {
+    trade_amount_cad: parseInt(document.getElementById('cfg-sol-amount')?.value) || 25,
+    min_signals:      parseInt(document.getElementById('cfg-sol-signals')?.value) || 3,
     updated_at:       ts,
   };
 
@@ -2546,7 +2574,9 @@ async function saveSettings() {
 
   try {
     const btcRepo = ASSETS.btc?.repo || REPO;
-    const btcOk = await pushConfigJson(btcRepo, btcConfig, 'BTC');
+    const solRepo = ASSETS.sol?.repo || btcRepo; // SOL uses same repo as BTC
+    const configToSave = ASSETS.sol ? solConfig : btcConfig; // save SOL config if connected
+    const btcOk = await pushConfigJson(solRepo, configToSave, 'SOL/BTC');
 
     let ethOk = true;
     if (ASSETS.eth?.repo) {
@@ -2555,7 +2585,7 @@ async function saveSettings() {
 
     if (btcOk) {
       const ethMsg = ASSETS.eth?.repo ? (ethOk ? ' + ETH' : ' (ETH failed)') : '';
-      statusEl.textContent = '✅ Saved BTC' + ethMsg + '! Takes effect within 7-8 minutes.';
+      statusEl.textContent = '✅ Saved SOL' + ethMsg + '! Takes effect within 7-8 minutes.';
       statusEl.style.color = '#22c55e';
     } else {
       statusEl.textContent = '❌ Failed to save. Check GitHub token permissions.';
