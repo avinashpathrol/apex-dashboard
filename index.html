@@ -1559,7 +1559,7 @@ function setChartMode(mode) {
     if (btnN) btnN.style.cssText = 'background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;';
     if (btnT) btnT.style.cssText = 'background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
     if (title) {
-      const assetLabels = {btc:'BTC Market View (24h)', eth:'ETH Market View (24h)', gold:'Gold Market View (24h)'};
+      const assetLabels = {btc:'BTC Market View (24h)', eth:'ETH Market View (24h)', gold:'Gold Market View (24h)', sol:'SOL Market View (24h)'};
       title.textContent = assetLabels[ACTIVE_ASSET] || 'Market View (24h)';
     }
     if (_lastOhlc.length) buildPriceChart(_lastOhlc, _lastKtrades);
@@ -1934,7 +1934,7 @@ async function load() {
 
     // If data.json loaded, we only need a few recent runs for signals/history display
     // Otherwise fetch more for the GitHub logs P&L fallback
-    // Skip GitHub logs entirely for ETH/Gold — they use data_eth.json only
+    // Skip GitHub logs entirely for non-BTC assets
     const skipGHLogs = ACTIVE_ASSET !== 'btc';
     const numRuns = skipGHLogs ? 0 : (window._dataJsonLoaded ? 12 : 50);
     const runsToFetch = all.slice(0, numRuns);
@@ -1993,6 +1993,16 @@ async function load() {
         // Always read from apex-dashboard repo (where bots push data)
         const dashRepo = 'avinashpathrol/apex-dashboard';
         const djRes = await fetch('https://raw.githubusercontent.com/' + dashRepo + '/main/' + dataFile + cacheBust, { cache: 'no-store', method: 'GET' });
+        if (!djRes.ok && ACTIVE_ASSET !== 'btc') {
+          // data_sol.json / data_eth.json doesn't exist yet
+          // Bot needs to run first — show empty state
+          console.log(dataFile + ' not found — bot needs to run first');
+          document.getElementById('m-price').textContent = '$' + (await kPub('Ticker', {pair: ACTIVE_ASSET === 'sol' ? 'SOLCAD' : ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD'})).then ? '...' : '...';
+          rows = []; latest = null;
+          updateBanner(0, [], [], null);
+          return;
+        }
+
         if (djRes.ok) {
           botData = await djRes.json();
           cadBal = botData.cad_balance || 0;
@@ -2138,7 +2148,8 @@ async function load() {
     try {
       // Use correct pair based on active asset
       const pair = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' :
-                   ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
+                   ACTIVE_ASSET === 'gold' ? 'XAUUSD' :
+                   ACTIVE_ASSET === 'sol'  ? 'SOLCAD' : 'XBTCAD';
       const interval = ACTIVE_ASSET === 'gold' ? 60 : 60;
       const tk = await kPub('Ticker', {pair});
       price = parseFloat(Object.values(tk)[0].c[0]);
@@ -2234,7 +2245,7 @@ async function load() {
     document.getElementById('hist-table').style.display = 'table';
 
     // For ETH/Gold: use Kraken trade history directly (no GitHub logs)
-    if (ACTIVE_ASSET !== 'btc' && allKT && allKT.length > 0) {
+    if (ACTIVE_ASSET !== 'btc' && allKT && allKT.length > 0) {  // ETH/SOL/Gold use Kraken trades directly
       const ktRows = [...allKT].reverse().slice(0,30);
       document.getElementById('hist-body').innerHTML = ktRows.map((t,i) => {
         const isBuy = t.action === 'BUY';
@@ -2456,7 +2467,7 @@ function switchAsset(asset, reload) {
   const priceLabels = {btc: 'BTC PRICE', eth: 'ETH PRICE', gold: 'GOLD PRICE'};
   if (priceLabel) priceLabel.textContent = priceLabels[asset] || 'PRICE';
   const priceSub = document.getElementById('lbl-price-sub');
-  const priceSubLabels = {btc: 'CAD live', eth: 'CAD live', gold: 'USD live'};
+  const priceSubLabels = {btc: 'CAD live', eth: 'CAD live', gold: 'USD live', sol: 'CAD live'};
   if (priceSub) priceSub.textContent = priceSubLabels[asset] || 'live';
 
   // Clear cache to force fresh data
