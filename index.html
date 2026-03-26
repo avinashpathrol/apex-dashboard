@@ -323,6 +323,8 @@ input:focus{border-color:#3f3f46;}
 .asset-btn.active.btc{border-color:#f7931a;color:#f7931a;background:#1a1200;}
 .asset-btn.active.eth{border-color:#627eea;color:#627eea;background:#0d1128;}
 .asset-btn.active.gold{border-color:#fbbf24;color:#fbbf24;background:#130f00;}
+.asset-btn.active.sol{border-color:#9945ff;color:#9945ff;background:#0d0019;}
+.asset-btn.active.sol .asset-dot{background:#9945ff;}
 .asset-btn .asset-dot{width:6px;height:6px;border-radius:50%;}
 .asset-btn.active.btc .asset-dot{background:#f7931a;}
 .asset-btn.active.eth .asset-dot{background:#627eea;}
@@ -603,6 +605,9 @@ input:focus{border-color:#3f3f46;}
     </button>
     <button class="asset-btn gold" id="ab-gold" onclick="switchAsset('gold', true)" style="display:none">
       <span class="asset-dot"></span> 🥇 Gold
+    </button>
+    <button class="asset-btn sol" id="ab-sol" onclick="switchAsset('sol', true)" style="display:none">
+      <span class="asset-dot"></span> ◎ SOL
     </button>
     <button class="add-asset-btn" onclick="openAddAsset()">+ Add Asset</button>
     <button class="add-asset-btn" style="border-color:#1e3a5f;color:#818cf8;" onclick="openSettings()">⚙️ Settings</button>
@@ -912,6 +917,7 @@ async function unlockPin() {
     ASSETS.btc = {gh: data.gh, repo: data.repo, krk: data.krk, krs: data.krs};
     if (data.eth)  { ASSETS.eth  = data.eth;  document.getElementById('ab-eth').style.display  = 'flex'; }
     if (data.gold) { ASSETS.gold = data.gold; document.getElementById('ab-gold').style.display = 'flex'; }
+    if (data.sol)  { ASSETS.sol  = data.sol;  document.getElementById('ab-sol').style.display  = 'flex'; }
     // Load active asset
     switchAsset(ACTIVE_ASSET, false);
     startApp();
@@ -1982,7 +1988,8 @@ async function load() {
         const cacheBust = '?t=' + Date.now();
         // Use correct data file based on active asset
         const dataFile = ACTIVE_ASSET === 'eth' ? 'data_eth.json' :
-                         ACTIVE_ASSET === 'gold' ? 'data_gold.json' : 'data.json';
+                         ACTIVE_ASSET === 'gold' ? 'data_gold.json' :
+                         ACTIVE_ASSET === 'sol' ? 'data_sol.json' : 'data.json';
         // Always read from apex-dashboard repo (where bots push data)
         const dashRepo = 'avinashpathrol/apex-dashboard';
         const djRes = await fetch('https://raw.githubusercontent.com/' + dashRepo + '/main/' + dataFile + cacheBust, { cache: 'no-store', method: 'GET' });
@@ -2002,9 +2009,10 @@ async function load() {
             // Price range per asset to separate BTC vs ETH vs Gold trades
             const isEth  = ACTIVE_ASSET === 'eth';
             const isGold = ACTIVE_ASSET === 'gold';
-            const minPrice = isEth ? 500 : isGold ? 100 : 50000;
-            const maxPrice = isEth ? 50000 : isGold ? 50000 : 9999999;
-            const minCost  = isEth ? 30 : isGold ? 20 : 5;
+            const isSol   = ACTIVE_ASSET === 'sol';
+            const minPrice = isEth ? 500 : isGold ? 100 : isSol ? 50 : 50000;
+            const maxPrice = isEth ? 50000 : isGold ? 50000 : isSol ? 1000 : 9999999;
+            const minCost  = isEth ? 30 : isGold ? 20 : isSol ? 15 : 5;
             const maxCost  = isEth ? 500 : isGold ? 500 : 500;
 
             allKT = botData.trades
@@ -2435,12 +2443,12 @@ function switchAsset(asset, reload) {
   }
 
   // Update brand name
-  const names = {btc: 'BTC Bot', eth: 'ETH Bot', gold: 'Gold Bot'};
+  const names = {btc: 'BTC Bot', eth: 'ETH Bot', gold: 'Gold Bot', sol: 'SOL Bot'};
   const el = document.querySelector('.brand-name');
   if (el) el.textContent = 'Avinash ' + (names[asset] || 'Bot');
 
   // Update topbar price label
-  const labels = {btc: 'BTC/CAD', eth: 'ETH/CAD', gold: 'XAU/USD'};
+  const labels = {btc: 'BTC/CAD', eth: 'ETH/CAD', gold: 'XAU/USD', sol: 'SOL/CAD'};
   const lbl = document.getElementById('price-label');
   if (lbl) lbl.textContent = labels[asset] || 'BTC/CAD';
   // Update card labels
@@ -3092,8 +3100,8 @@ let _sellContext = {};
 async function openSellModal() {
   const price  = parseFloat(document.getElementById('m-price')?.textContent?.replace(/[$,]/g,'')) || 0;
   const entry  = window._openBuyPrice || 0;
-  const asset  = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
-  const symbol = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
+  const asset  = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : ACTIVE_ASSET === 'sol' ? 'SOL/CAD' : 'BTC/CAD';
+  const symbol = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : ACTIVE_ASSET === 'sol' ? 'SOLCAD' : 'XBTCAD';
   // btc_balance field stores the crypto balance (XXBT for BTC, XETH for ETH)
   const heldBal = window._lastBotData ? (parseFloat(window._lastBotData.btc_balance) || 0) : 0;
   const pnlPct  = entry ? (price - entry) / entry * 100 : 0;
@@ -3506,6 +3514,17 @@ window.addEventListener('load', () => {
           <input class="settings-input" id="cfg-eth-signals" type="number" min="2" max="6" value="3" placeholder="3">
         </div>
       </div>
+      <div class="settings-section" id="cfg-sol-section" style="display:none">
+        <div class="settings-section-title">◎ SOL Bot — Trade Size</div>
+        <div class="settings-row">
+          <div class="settings-label">Trade Amount (CAD)<span>Per trade on Kraken</span></div>
+          <input class="settings-input" id="cfg-sol-amount" type="number" min="10" max="10000" value="25" placeholder="25">
+        </div>
+        <div class="settings-row">
+          <div class="settings-label">Min Signals to Trade<span>3-6 recommended</span></div>
+          <input class="settings-input" id="cfg-sol-signals" type="number" min="2" max="6" value="3" placeholder="3">
+        </div>
+      </div>
       <div class="settings-section" id="cfg-gold-section" style="display:none">
         <div class="settings-section-title">🥇 Gold Bot — Trade Size</div>
         <div class="settings-row">
@@ -3539,6 +3558,7 @@ window.addEventListener('load', () => {
         <div class="aa-label">Asset</div>
         <select class="aa-input" id="aa-asset" style="cursor:pointer;">
           <option value="eth">Ξ ETH — apex-eth-bot</option>
+          <option value="sol">◎ SOL — apex-sol-bot</option>
           <option value="gold">🥇 Gold — apex-gold-bot</option>
         </select>
       </div>
