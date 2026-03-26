@@ -2688,8 +2688,8 @@ function switchTab(name, el) {
 async function buildTechChart() {
   const interval = document.getElementById('tc-interval')?.value || '60';
   const count    = parseInt(document.getElementById('tc-candles')?.value || '100');
-  const pair     = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : 'XBTCAD';
-  const label    = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : 'BTC/CAD';
+  const pair     = ACTIVE_ASSET === 'eth' ? 'XETHZCAD' : ACTIVE_ASSET === 'gold' ? 'XAUUSD' : ACTIVE_ASSET === 'sol' ? 'SOLCAD' : 'XBTCAD';
+  const label    = ACTIVE_ASSET === 'eth' ? 'ETH/CAD' : ACTIVE_ASSET === 'gold' ? 'XAU/USD' : ACTIVE_ASSET === 'sol' ? 'SOL/CAD' : 'BTC/CAD';
   const ivLabel  = {15:'15m',60:'1H',240:'4H',1440:'1D'}[interval] || interval+'m';
   // Make canvas wider than screen for scroll
   window._tcScrollable = true;
