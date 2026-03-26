@@ -2433,12 +2433,15 @@ function switchAsset(asset, reload) {
   ACTIVE_ASSET = asset;
   localStorage.setItem('apex_active_asset', asset);
 
-  // Update button states
-  ['btc','eth','gold'].forEach(a => {
+  // Update button states — include sol
+  ['btc','eth','gold','sol'].forEach(a => {
     const btn = document.getElementById('ab-'+a);
     if (btn) {
       btn.classList.remove('active');
-      if (a === asset) btn.classList.add('active');
+      if (a === asset) {
+        btn.style.display = 'flex'; // make sure active tab is visible
+        btn.classList.add('active');
+      }
     }
   });
 
@@ -2488,30 +2491,39 @@ function switchAsset(asset, reload) {
 // ── SETTINGS ──
 async function openSettings() {
   // Load current configs from both repos separately
-  try {
-    // BTC config
-    const btcRepo = ASSETS.btc?.repo || REPO;
-    const btcUrl = 'https://raw.githubusercontent.com/' + btcRepo + '/main/config.json?t=' + Date.now();
-    const btcR = await fetch(btcUrl, {headers:{Authorization:'token '+GH}});
-    if (btcR.ok) {
-      const cfg = await btcR.json();
-      if (cfg.trade_amount_cad) document.getElementById('cfg-btc-amount').value = cfg.trade_amount_cad;
-      if (cfg.min_signals)      document.getElementById('cfg-btc-signals').value = cfg.min_signals;
-    }
-  } catch(e) {}
+  // Use GitHub API (not raw) to avoid CORS on private repos
+  async function fetchConfig(repo) {
+    try {
+      const url = 'https://api.github.com/repos/' + repo + '/contents/config.json';
+      const r = await fetch(url, {headers:{Authorization:'token '+GH, Accept:'application/vnd.github+json'}});
+      if (!r.ok) return null;
+      const data = await r.json();
+      return JSON.parse(atob(data.content));
+    } catch(e) { return null; }
+  }
 
-  try {
-    // ETH config — from ETH repo separately
-    if (ASSETS.eth?.repo) {
-      const ethUrl = 'https://raw.githubusercontent.com/' + ASSETS.eth.repo + '/main/config.json?t=' + Date.now();
-      const ethR = await fetch(ethUrl, {headers:{Authorization:'token '+GH}});
-      if (ethR.ok) {
-        const cfg = await ethR.json();
-        if (cfg.trade_amount_cad) document.getElementById('cfg-eth-amount').value = cfg.trade_amount_cad;
-        if (cfg.min_signals)      document.getElementById('cfg-eth-signals').value = cfg.min_signals;
-      }
+  // Load BTC/SOL config
+  const btcRepo = ASSETS.sol?.repo || ASSETS.btc?.repo || REPO;
+  const btcCfg = await fetchConfig(btcRepo);
+  if (btcCfg) {
+    if (btcCfg.trade_amount_cad) {
+      document.getElementById('cfg-btc-amount').value = btcCfg.trade_amount_cad;
+      if (document.getElementById('cfg-sol-amount')) document.getElementById('cfg-sol-amount').value = btcCfg.trade_amount_cad;
     }
-  } catch(e) {}
+    if (btcCfg.min_signals) {
+      document.getElementById('cfg-btc-signals').value = btcCfg.min_signals;
+      if (document.getElementById('cfg-sol-signals')) document.getElementById('cfg-sol-signals').value = btcCfg.min_signals;
+    }
+  }
+
+  // Load ETH config
+  if (ASSETS.eth?.repo) {
+    const ethCfg = await fetchConfig(ASSETS.eth.repo);
+    if (ethCfg) {
+      if (ethCfg.trade_amount_cad) document.getElementById('cfg-eth-amount').value = ethCfg.trade_amount_cad;
+      if (ethCfg.min_signals)      document.getElementById('cfg-eth-signals').value = ethCfg.min_signals;
+    }
+  }
 
   // Show ETH/gold sections if connected
   document.getElementById('cfg-eth-section').style.display = ASSETS.eth ? 'block' : 'none';
@@ -2520,20 +2532,7 @@ async function openSettings() {
   // Update BTC section title based on what's in that repo
   const btcTitle = document.getElementById('cfg-btc-title');
   if (btcTitle) btcTitle.textContent = ASSETS.sol ? '◎ SOL BOT — TRADE SIZE' : '₿ BTC BOT — TRADE SIZE';
-  // Load SOL config if connected
-  if (ASSETS.sol?.repo) {
-    try {
-      const solUrl = 'https://raw.githubusercontent.com/' + ASSETS.sol.repo + '/main/config.json?t=' + Date.now();
-      const solR = await fetch(solUrl, {headers:{Authorization:'token '+GH}});
-      if (solR.ok) {
-        const cfg = await solR.json();
-        if (cfg.trade_amount_cad) document.getElementById('cfg-sol-amount').value = cfg.trade_amount_cad;
-        if (cfg.min_signals)      document.getElementById('cfg-sol-signals').value = cfg.min_signals;
-        // Also update BTC/SOL section
-        if (cfg.trade_amount_cad) document.getElementById('cfg-btc-amount').value = cfg.trade_amount_cad;
-      }
-    } catch(e) {}
-  }
+  // SOL config already loaded above via fetchConfig
   document.getElementById('settings-status').textContent = '';
   document.getElementById('settings-ov').classList.add('open');
   document.body.style.overflow = 'hidden';
