@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-26T18:38:13.382377+00:00",
+  "generated_at": "2026-03-26T18:41:51.363902+00:00",
   "symbol": "SOLCAD",
-  "price": 119.1,
+  "price": 119.19,
   "cad_balance": 222.4979,
   "btc_balance": 0.0,
   "action": "SELL",
@@ -10,8 +10,8 @@
   "status": "SKIPPED \u2014 balance issue",
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bullish": [
-    "RSI oversold (23.4)",
-    "Price near BB lower band (-11%)"
+    "RSI oversold (25.2)",
+    "Price near BB lower band (-9%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
