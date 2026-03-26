@@ -1,18 +1,19 @@
 {
-  "generated_at": "2026-03-26T12:02:50.562897+00:00",
+  "generated_at": "2026-03-26T12:06:31.999461+00:00",
   "symbol": "SOLCAD",
-  "price": 121.41,
+  "price": 121.08,
   "cad_balance": 222.4979,
   "btc_balance": 0.0,
   "action": "HOLD",
-  "confidence": 82,
-  "risk": "MEDIUM",
+  "confidence": 85,
+  "risk": "LOW",
   "status": "SKIPPED \u2014 1H trend is BEARISH, no buys in downtrend",
-  "reason": "RSI oversold (28.2) | MACD above signal (bullish) | Price near BB lower band (19%)",
+  "reason": "RSI oversold (25.5) | MACD above signal (bullish) | Price near BB lower band (9%) | High volume confirms move",
   "bullish": [
-    "RSI oversold (28.2)",
+    "RSI oversold (25.5)",
     "MACD above signal (bullish)",
-    "Price near BB lower band (19%)"
+    "Price near BB lower band (9%)",
+    "High volume confirms move"
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
