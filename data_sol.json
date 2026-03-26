@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T17:11:30.837109+00:00",
+  "generated_at": "2026-03-26T17:16:55.555578+00:00",
   "symbol": "SOLCAD",
   "price": 120.78,
   "cad_balance": 222.4979,
@@ -11,7 +11,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "bullish": [
     "MACD above signal (bullish)",
-    "Price near BB lower band (6%)"
+    "Price near BB lower band (11%)"
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
