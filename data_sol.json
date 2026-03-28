@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-28T20:14:05.069677+00:00",
+  "generated_at": "2026-03-28T20:15:51.097589+00:00",
   "symbol": "SOLCAD",
   "price": 116.03,
   "cad_balance": 213.6286,
@@ -7,13 +7,14 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
+    "RSI falling from high (53.1)",
     "MACD below signal (bearish)"
   ],
   "trades": [
