@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-28T12:20:53.571755+00:00",
+  "generated_at": "2026-03-28T12:22:37.267174+00:00",
   "symbol": "SOLCAD",
-  "price": 115.49,
+  "price": 115.67,
   "cad_balance": 6.639,
   "btc_balance": 0.69270067,
   "action": "BUY",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "EXECUTED \u2705",
+  "status": "SKIPPED \u2014 balance issue",
   "reason": "EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
