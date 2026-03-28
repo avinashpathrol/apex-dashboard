@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-28T07:58:40.488183+00:00",
+  "generated_at": "2026-03-28T08:03:27.101620+00:00",
   "symbol": "SOLCAD",
   "price": 116.18,
   "cad_balance": 10.8107,
@@ -16,7 +16,7 @@
   ],
   "bearish": [
     "RSI overbought (70.2)",
-    "Price near BB upper band (102%)"
+    "Price near BB upper band (95%)"
   ],
   "trades": [
     {
