@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-29T01:30:33.333867+00:00",
+  "generated_at": "2026-03-29T01:31:36.566089+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
-  "price": 82.39,
+  "price": 82.36,
   "usdt_balance": 147.3203987,
   "sol_balance": 0.0,
   "btc_balance": 0.0,
@@ -24,7 +24,7 @@
     "Price below EMA-20"
   ],
   "trades": [],
-  "run_count": 14,
+  "run_count": 15,
   "trade_amount": 80.0,
   "min_signals": 3
 }
