@@ -11,7 +11,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>APEX Bot Dashboard</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d0d0f'/><polyline points='10,70 30,45 50,55 70,25 90,35' stroke='%2322c55e' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='70' cy='25' r='7' fill='%2322c55e'/></svg>">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js">function renderMarginStatus(level){
+  const pill = document.getElementById('marginPill');
+  if(!pill) return;
+  const n = Number(level);
+  if(!Number.isFinite(n) || n === 999){
+    pill.className = 'margin-pill margin-pill-safe';
+    pill.textContent = '🟢 Margin Safe';
+    pill.title = 'No meaningful margin risk detected right now.';
+    return;
+  }
+
+  let cls = 'margin-pill-safe';
+  let icon = '🟢';
+  let label = 'Margin Safe';
+  let title = `Margin level ${n.toFixed(2)}. Healthy range.`;
+
+  if(n < 1.30){
+    cls = 'margin-pill-critical';
+    icon = '🔴';
+    label = 'Critical';
+    title = `Margin level ${n.toFixed(2)}. Critical risk zone.`;
+  } else if(n < 1.50){
+    cls = 'margin-pill-danger';
+    icon = '🔴';
+    label = 'Margin Risk';
+    title = `Margin level ${n.toFixed(2)}. Elevated liquidation risk.`;
+  } else if(n < 2.00){
+    cls = 'margin-pill-warn';
+    icon = '🟡';
+    label = 'Margin Medium';
+    title = `Margin level ${n.toFixed(2)}. Caution range.`;
+  }
+
+  pill.className = `margin-pill ${cls}`;
+  pill.textContent = `${icon} ${label} (${n.toFixed(2)})`;
+  pill.title = title;
+}
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#09090b;color:#e8e8e8;min-height:100vh;}
@@ -409,6 +446,7 @@ input:focus{border-color:#3f3f46;}
       <span class="last-run-text" id="t-lastrun">—</span>
     </div>
     <div class="topbar-right">
+      <div id="marginPill" class="margin-pill margin-pill-safe" title="Current margin safety level">🟢 Margin Safe</div>
       <!-- Countdown: 60s to match bot -->
       <div style="background:#18181b;border:1px solid #27272a;border-radius:9px;padding:5px 12px;text-align:center;min-width:76px;min-height:38px;display:flex;flex-direction:column;justify-content:center;">
         <div style="font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">Refresh</div>
