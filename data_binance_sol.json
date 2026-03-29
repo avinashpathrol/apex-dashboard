@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-03-29T06:05:24.157228+00:00",
+  "generated_at": "2026-03-29T06:06:27.771306+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
-  "price": 82.77,
-  "usdt_balance": 146.86720024,
+  "price": 82.75,
+  "usdt_balance": -171.54313976,
   "sol_balance": 3.84245,
   "btc_balance": 3.84245,
-  "cad_balance": 146.86720024,
-  "margin_level": 1.61025441,
-  "position": null,
+  "cad_balance": -171.54313976,
+  "margin_level": 1.61050151,
+  "position": "LONG",
   "action": "LONG",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "LONG OPENED \u2705",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | Price above EMA-20 | High volume confirms move",
   "reason": "MACD above signal (bullish) | Price above EMA-20 | High volume confirms move",
   "trend": "BEARISH",
   "bullish": [
@@ -146,7 +146,7 @@
       "fee": 0.000391
     }
   ],
-  "run_count": 36,
+  "run_count": 37,
   "trade_amount": 80.0,
   "min_signals": 3
 }
