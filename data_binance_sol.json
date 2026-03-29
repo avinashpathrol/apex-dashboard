@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-29T03:34:16.380861+00:00",
+  "generated_at": "2026-03-29T03:35:20.291611+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
-  "price": 83.0,
+  "price": 82.96,
   "usdt_balance": 147.63314734,
   "sol_balance": 0.000142,
   "btc_balance": 0.000142,
@@ -14,16 +14,16 @@
   "confidence": 82,
   "risk": "MEDIUM",
   "status": "SHORT FAILED \u274c",
-  "reason": "RSI falling from high (60.0) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (93%)",
+  "reason": "RSI falling from high (58.3) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (91%)",
   "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (60.0)",
+    "RSI falling from high (58.3)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (93%)"
+    "Price near BB upper band (91%)"
   ],
   "trades": [
     {
@@ -67,7 +67,7 @@
       "fee": 0.30509022
     }
   ],
-  "run_count": 131,
+  "run_count": 132,
   "trade_amount": 80.0,
   "min_signals": 3
 }
