@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-29T05:41:44.497647+00:00",
+  "generated_at": "2026-03-29T05:42:48.876695+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
-  "price": 82.65,
+  "price": 82.66,
   "usdt_balance": 147.63314734,
   "sol_balance": 0.000142,
   "btc_balance": 0.000142,
@@ -17,7 +17,7 @@
   "reason": "MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (48.0)"
+    "RSI rising from low (48.3)"
   ],
   "bearish": [
     "MACD bearish crossover",
@@ -66,7 +66,7 @@
       "fee": 0.30509022
     }
   ],
-  "run_count": 14,
+  "run_count": 15,
   "trade_amount": 80.0,
   "min_signals": 3
 }
