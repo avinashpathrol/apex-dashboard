@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-29T06:29:04.364925+00:00",
+  "generated_at": "2026-03-29T06:30:08.777374+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
@@ -14,13 +14,13 @@
   "confidence": 88,
   "risk": "MEDIUM",
   "status": "SHORT FAILED \u274c",
-  "reason": "MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "Price near BB lower band (9%)"
+    "Price near BB lower band (7%)"
   ],
   "bearish": [
-    "MACD bearish crossover",
+    "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
     "Price below EMA-20"
   ],
@@ -266,7 +266,7 @@
       "fee": 0.05463165
     }
   ],
-  "run_count": 58,
+  "run_count": 59,
   "trade_amount": 80.0,
   "min_signals": 3
 }
