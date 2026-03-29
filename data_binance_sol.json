@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-29T06:39:48.529134+00:00",
+  "generated_at": "2026-03-29T06:40:52.801065+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
@@ -17,7 +17,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (41.7)",
+    "RSI rising from low (41.3)",
     "Price near BB lower band (11%)"
   ],
   "bearish": [
@@ -267,7 +267,7 @@
       "fee": 0.05463165
     }
   ],
-  "run_count": 68,
+  "run_count": 69,
   "trade_amount": 80.0,
   "min_signals": 3
 }
