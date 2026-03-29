@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-29T20:22:41.432278+00:00",
+  "generated_at": "2026-03-29T20:23:45.553030+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
-  "price": 82.01,
+  "price": 82.1,
   "usdt_balance": 146.66571962,
   "sol_balance": 0.0,
   "btc_balance": 0.0,
@@ -15,14 +15,14 @@
   "risk": "MEDIUM",
   "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
-  "trend": "BEARISH",
+  "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (102%)"
+    "Price near BB upper band (112%)"
   ],
   "trades": [
     {
@@ -392,7 +392,7 @@
     "long_trades": 3,
     "short_trades": 4
   },
-  "run_count": 141,
+  "run_count": 142,
   "trade_amount": 80.0,
   "min_signals": 3
 }
