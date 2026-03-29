@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-29T06:20:29.102543+00:00",
+  "generated_at": "2026-03-29T06:21:33.431292+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 4.0,
@@ -9,11 +9,11 @@
   "btc_balance": 0.000602,
   "cad_balance": 144.91546102,
   "margin_level": 999.0,
-  "position": "LONG",
+  "position": null,
   "action": "SHORT",
   "confidence": 95,
   "risk": "MEDIUM",
-  "status": "CLOSED LONG, SHORT FAILED",
+  "status": "SHORT FAILED \u274c",
   "reason": "MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [],
@@ -264,7 +264,7 @@
       "fee": 0.05463165
     }
   ],
-  "run_count": 50,
+  "run_count": 51,
   "trade_amount": 80.0,
   "min_signals": 3
 }
