@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-03-30T18:29:16.006484+00:00",
+  "generated_at": "2026-03-30T18:30:25.815695+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.86,
-  "usdt_balance": -261.06134772,
-  "sol_balance": 4.8283363,
-  "cad_balance": -261.06134772,
-  "margin_level": 1.43434341,
-  "position": "LONG",
-  "action": "LONG",
+  "price": 82.84,
+  "usdt_balance": 138.49022076,
+  "sol_balance": 0.0003363,
+  "cad_balance": 138.49022076,
+  "margin_level": 999.0,
+  "position": null,
+  "action": "SHORT",
   "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 RSI oversold (32.7) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (-6%)",
-  "reason": "RSI oversold (32.7) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (-6%)",
+  "status": "CLOSED LONG ONLY \u2014 low margin 1.43 blocked new SHORT",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI oversold (32.7)",
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (-6%)"
+    "RSI oversold (32.8)",
+    "Price near BB lower band (2%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
+    "EMA-20 below EMA-50 (downtrend)",
     "Price below EMA-20"
   ],
   "trades": [
@@ -336,6 +336,62 @@
       "qty": 4.814,
       "cost": 397.92524,
       "fee": 0.004814
+    },
+    {
+      "time": "2026-03-30T11:30:20.440000-07:00",
+      "action": "SELL",
+      "price": 82.84,
+      "qty": 0.061,
+      "cost": 5.05324,
+      "fee": 0.00505324
+    },
+    {
+      "time": "2026-03-30T11:30:20.440000-07:00",
+      "action": "SELL",
+      "price": 82.84,
+      "qty": 0.064,
+      "cost": 5.30176,
+      "fee": 0.00530176
+    },
+    {
+      "time": "2026-03-30T11:30:20.440000-07:00",
+      "action": "SELL",
+      "price": 82.84,
+      "qty": 0.064,
+      "cost": 5.30176,
+      "fee": 0.00530176
+    },
+    {
+      "time": "2026-03-30T11:30:20.440000-07:00",
+      "action": "SELL",
+      "price": 82.84,
+      "qty": 0.064,
+      "cost": 5.30176,
+      "fee": 0.00530176
+    },
+    {
+      "time": "2026-03-30T11:30:20.440000-07:00",
+      "action": "SELL",
+      "price": 82.84,
+      "qty": 0.064,
+      "cost": 5.30176,
+      "fee": 0.00530176
+    },
+    {
+      "time": "2026-03-30T11:30:20.440000-07:00",
+      "action": "SELL",
+      "price": 82.84,
+      "qty": 0.064,
+      "cost": 5.30176,
+      "fee": 0.00530176
+    },
+    {
+      "time": "2026-03-30T11:30:20.440000-07:00",
+      "action": "SELL",
+      "price": 82.84,
+      "qty": 4.447,
+      "cost": 368.38948,
+      "fee": 0.36838948
     }
   ],
   "closed_trades": [
@@ -478,19 +534,33 @@
       "opened_at": "2026-03-29T18:37:29.747000-07:00",
       "closed_at": "2026-03-29T18:45:08.873000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 82.66,
+      "exit_price": 82.84,
+      "qty": 0.061,
+      "fee": 0.00986724,
+      "pnl": 0.0011,
+      "pnl_pct": 1.09,
+      "win": true,
+      "opened_at": "2026-03-29T18:46:21.756000-07:00",
+      "closed_at": "2026-03-30T11:30:20.440000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 10,
-    "wins": 4,
+    "closed_trades": 11,
+    "wins": 5,
     "losses": 6,
-    "win_rate": 40.0,
-    "net_profit": -3.2818,
-    "avg_profit_per_trade": -0.3282,
-    "long_trades": 3,
+    "win_rate": 45.45,
+    "net_profit": -3.2807,
+    "avg_profit_per_trade": -0.2982,
+    "long_trades": 4,
     "short_trades": 7
   },
-  "run_count": 1079,
+  "run_count": 1080,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -505,11 +575,7 @@
       "manual_reentry_cooldown_minutes": 10,
       "updated_at": "2026-03-29T23:01:12.005Z"
     },
-    "queued": {
-      "trade_amount_usdt": 80.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
