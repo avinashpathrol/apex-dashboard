@@ -119,13 +119,21 @@ input:focus{border-color:#3f3f46;}
 .pb-stat-val.pos{color:#22c55e;}.pb-stat-val.neg{color:#f87171;}.pb-stat-val.neu{color:#e8e8e8;}
 .lev-badge{background:#1e1b4b;color:#818cf8;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;border:1px solid #312e81;}
 /* Margin gauge */
-.margin-gauge{background:#18181b;border:1px solid #27272a;border-radius:10px;padding:12px 14px;margin-bottom:8px;}
-.mg-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
-.mg-title{font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.08em;}
-.mg-value{font-size:16px;font-weight:700;font-family:monospace;}
-.mg-track{background:#1c1c1f;border-radius:6px;height:8px;overflow:hidden;}
-.mg-fill{height:100%;border-radius:6px;transition:width .8s ease;}
-.mg-labels{display:flex;justify-content:space-between;font-size:9px;color:#52525b;margin-top:4px;}
+.mg2{background:#18181b;border:1px solid #27272a;border-radius:12px;padding:14px;margin-bottom:8px;}
+.mg2-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;}
+.mg2-label{font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:2px;}
+.mg2-hint{font-size:10px;color:#3f3f46;margin-top:1px;}
+.mg2-num{font-size:26px;font-weight:700;font-family:monospace;line-height:1;}
+.mg2-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;display:inline-block;margin-top:3px;}
+.mg2-bar-wrap{position:relative;margin-bottom:6px;}
+.mg2-bar{height:12px;border-radius:8px;background:linear-gradient(to right,#7f1d1d 0%,#dc2626 8%,#f97316 22%,#fbbf24 38%,#86efac 65%,#22c55e 100%);position:relative;}
+.mg2-needle{position:absolute;top:-5px;width:3px;height:22px;background:#fff;border-radius:2px;transform:translateX(-50%);box-shadow:0 0 8px rgba(255,255,255,.6);transition:left .9s ease;pointer-events:none;}
+.mg2-zones{display:flex;justify-content:space-between;font-size:8.5px;margin-top:3px;padding:0 1px;}
+.mg2-zone-liq{color:#ef4444;}.mg2-zone-crit{color:#f97316;}.mg2-zone-warn{color:#fbbf24;}.mg2-zone-ok{color:#86efac;}.mg2-zone-safe{color:#22c55e;}
+.mg2-rows{margin-top:10px;display:flex;flex-direction:column;gap:4px;}
+.mg2-row{display:flex;align-items:center;justify-content:space-between;background:#131315;border-radius:6px;padding:5px 9px;}
+.mg2-row-label{font-size:10px;color:#71717a;}
+.mg2-row-val{font-size:10px;font-weight:700;font-family:monospace;}
 .mg-safe{color:#22c55e;}.mg-warn{color:#fbbf24;}.mg-danger{color:#f87171;}
 /* Close position button */
 .close-pos-btn{width:100%;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;display:none;margin:8px 0;letter-spacing:.05em;transition:all .15s;}
@@ -503,17 +511,44 @@ input:focus{border-color:#3f3f46;}
   <div class="content">
     <!-- OVERVIEW -->
     <div class="tab-panel active" id="tab-overview">
-      <!-- Margin gauge — hidden when safe -->
-      <div class="margin-gauge" id="margin-gauge-card" style="display:none">
-        <div class="mg-header">
-          <span class="mg-title">🛡️ Margin Safety Level</span>
-          <span class="mg-value" id="mg-value">—</span>
+      <!-- Margin gauge — always visible -->
+      <div class="mg2" id="margin-gauge-card">
+        <div class="mg2-top">
+          <div>
+            <div class="mg2-label">🛡 Margin Safety</div>
+            <div class="mg2-hint" id="mg2-hint">Loading...</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="mg2-num" id="mg2-num">—</div>
+            <div><span class="mg2-badge" id="mg2-badge">—</span></div>
+          </div>
         </div>
-        <div class="mg-track"><div class="mg-fill" id="mg-fill" style="width:100%;background:#22c55e;"></div></div>
-        <div class="mg-labels">
-          <span class="mg-danger">1.1 = Liquidation</span>
-          <span class="mg-warn">1.5 = Warning</span>
-          <span class="mg-safe">999 = Safe</span>
+        <div class="mg2-bar-wrap">
+          <div class="mg2-bar">
+            <div class="mg2-needle" id="mg2-needle" style="left:100%"></div>
+          </div>
+          <div class="mg2-zones">
+            <span class="mg2-zone-liq">1.0 Liq</span>
+            <span class="mg2-zone-crit">1.1 Critical</span>
+            <span class="mg2-zone-warn">1.3 Danger</span>
+            <span class="mg2-zone-warn">1.5 Watch</span>
+            <span class="mg2-zone-ok">2.0 Good</span>
+            <span class="mg2-zone-safe">3.0+ Safe</span>
+          </div>
+        </div>
+        <div class="mg2-rows">
+          <div class="mg2-row">
+            <span class="mg2-row-label">💀 Liquidation near</span>
+            <span class="mg2-row-val mg-danger">≈ 1.10</span>
+          </div>
+          <div class="mg2-row">
+            <span class="mg2-row-label">⛔ Bot stops new trades at</span>
+            <span class="mg2-row-val mg-warn">1.50</span>
+          </div>
+          <div class="mg2-row">
+            <span class="mg2-row-label">📊 Current status</span>
+            <span class="mg2-row-val" id="mg2-status-row">—</span>
+          </div>
         </div>
       </div>
 
@@ -537,6 +572,15 @@ input:focus{border-color:#3f3f46;}
 
       <!-- Close button -->
       <button id="close-pos-btn" class="close-pos-btn" onclick="openCloseModal()">🔴 CLOSE POSITION NOW</button>
+
+      <!-- Cooldown banner -->
+      <div id="cooldown-banner" style="display:none;background:#1c1a0a;border:1px solid #854f0b;border-radius:10px;padding:10px 14px;margin-bottom:8px;align-items:center;gap:10px;">
+        <span style="font-size:18px;">🕒</span>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#fbbf24;" id="cooldown-title">Cooldown active</div>
+          <div style="font-size:11px;color:#a1a1aa;margin-top:2px;" id="cooldown-sub">—</div>
+        </div>
+      </div>
 
       <div class="g5">
         <div class="mcard"><div class="ml">SOL Price</div><div class="mv" id="m-price">—</div><div class="ms">USDT live</div></div>
@@ -567,6 +611,45 @@ input:focus{border-color:#3f3f46;}
           </div>
         </div>
         <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+        <!-- Trade levels panel — visible only in Position mode -->
+        <div id="trade-levels" style="display:none;margin-top:10px;padding:10px 12px 6px;border-top:1px solid #1c1c1f;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px;">
+            <div style="text-align:center;">
+              <div style="font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Entry</div>
+              <div style="font-size:13px;font-weight:700;color:#fbbf24;font-family:monospace;" id="tl-entry">—</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Current</div>
+              <div style="font-size:13px;font-weight:700;font-family:monospace;" id="tl-current">—</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Unreal P&L</div>
+              <div style="font-size:13px;font-weight:700;font-family:monospace;" id="tl-pnl">—</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px;">
+            <div style="text-align:center;background:#2d0a0a;border:1px solid #7f1d1d;border-radius:6px;padding:7px 4px;">
+              <div style="font-size:9px;color:#f87171;text-transform:uppercase;letter-spacing:.06em;">Stop Loss</div>
+              <div style="font-size:12px;font-weight:700;color:#f87171;font-family:monospace;margin-top:2px;" id="tl-sl">—</div>
+              <div style="font-size:10px;color:#7f1d1d;margin-top:1px;" id="tl-sl-pct">—</div>
+            </div>
+            <div style="text-align:center;background:#0f2110;border:1px solid #166534;border-radius:6px;padding:7px 4px;">
+              <div style="font-size:9px;color:#22c55e;text-transform:uppercase;letter-spacing:.06em;">TP1 · 1:1</div>
+              <div style="font-size:12px;font-weight:700;color:#22c55e;font-family:monospace;margin-top:2px;" id="tl-tp1">—</div>
+              <div style="font-size:10px;color:#166534;margin-top:1px;" id="tl-tp1-pct">—</div>
+            </div>
+            <div style="text-align:center;background:#0a1e10;border:1px solid #14532d;border-radius:6px;padding:7px 4px;">
+              <div style="font-size:9px;color:#4ade80;text-transform:uppercase;letter-spacing:.06em;">TP2 · 2:1 ★</div>
+              <div style="font-size:12px;font-weight:700;color:#4ade80;font-family:monospace;margin-top:2px;" id="tl-tp2">—</div>
+              <div style="font-size:10px;color:#14532d;margin-top:1px;" id="tl-tp2-pct">—</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;background:#18181b;border-radius:6px;padding:6px 10px;">
+            <span style="font-size:10px;color:#52525b;">Bot signal</span>
+            <span id="tl-signal" style="font-size:11px;font-weight:700;">—</span>
+            <span style="font-size:10px;color:#52525b;">SL based on 1.5× ATR(14)</span>
+          </div>
+        </div>
       </div>
 
       <div class="g2">
@@ -926,24 +1009,54 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
 // ── MARGIN LEVEL ──
 function updateMarginLevel(level){
   const v=n(level,999);
-  const isSafe = v===999 || v>=3;
-  // Only show gauge card when there's actual risk
-  const gaugeCard=qs('margin-gauge-card');
-  if(gaugeCard) gaugeCard.style.display = isSafe ? 'none' : 'block';
+  const safe=v===999||v>=3;
 
-  let pct=100, color='#22c55e', label='SAFE';
-  if(v===999||v>=3){ pct=100; color='#22c55e'; label='SAFE'; }
-  else if(v>=2)    { pct=75;  color='#86efac'; label=v.toFixed(2)+' — Good'; }
-  else if(v>=1.5)  { pct=50;  color='#fbbf24'; label=v.toFixed(2)+' — Watch ⚠️'; }
-  else             { pct=25;  color='#f87171'; label=v.toFixed(2)+' — DANGER ❌'; }
+  let color, badgeTxt, badgeBg, hint, statusTxt;
+  if(safe){
+    color='#22c55e'; badgeTxt='SAFE'; badgeBg='rgba(34,197,94,.12)';
+    hint='No borrow or well-collateralised'; statusTxt='All clear — new trades allowed';
+  } else if(v>=2){
+    color='#86efac'; badgeTxt='HEALTHY'; badgeBg='rgba(134,239,172,.12)';
+    hint='Comfortable buffer above danger zone'; statusTxt='Healthy — new trades allowed';
+  } else if(v>=1.5){
+    color='#fbbf24'; badgeTxt='CAUTION'; badgeBg='rgba(251,191,36,.12)';
+    hint='Approaching bot pause threshold (1.50)'; statusTxt='Watch — new trades still allowed';
+  } else if(v>=1.3){
+    color='#f97316'; badgeTxt='DANGER'; badgeBg='rgba(249,115,22,.15)';
+    hint='Bot has paused new entries'; statusTxt='No new trades — reduce or add margin';
+  } else if(v>=1.1){
+    color='#ef4444'; badgeTxt='CRITICAL'; badgeBg='rgba(239,68,68,.15)';
+    hint='Close to Binance liquidation threshold'; statusTxt='Close position or add funds NOW';
+  } else {
+    color='#7f1d1d'; badgeTxt='LIQUIDATION'; badgeBg='rgba(127,29,29,.3)';
+    hint='Binance may force-close your position'; statusTxt='Liquidation in progress';
+  }
 
-  const mgVal=qs('mg-value'); if(mgVal){ mgVal.textContent=label; mgVal.style.color=color; }
-  const mgFill=qs('mg-fill'); if(mgFill){ mgFill.style.width=pct+'%'; mgFill.style.background=color; }
-  const mlEl=qs('m-margin-level'); if(mlEl){ mlEl.textContent=isSafe?'SAFE':v.toFixed(2); mlEl.style.color=color; }
-  const mlSub=qs('m-margin-sub'); if(mlSub){ mlSub.textContent=isSafe?'no borrow':(v<1.5?'danger':v<2?'watch':'healthy'); mlSub.style.color=color; }
-  const mlMini=qs('ml-mini-val'); if(mlMini){ mlMini.textContent=isSafe?'SAFE':v.toFixed(2); mlMini.style.color=color; }
+  // Number
+  const numEl=qs('mg2-num');
+  if(numEl){numEl.textContent=safe?'Safe':v.toFixed(2);numEl.style.color=color;}
 
-  if(v<1.5&&v!==999) addNotif('warn','⚠️ Margin Level Low',`Level: ${v.toFixed(2)} — liquidation risk!`);
+  // Badge
+  const badgeEl=qs('mg2-badge');
+  if(badgeEl){badgeEl.textContent=badgeTxt;badgeEl.style.color=color;badgeEl.style.background=badgeBg;badgeEl.style.border='1px solid '+color+'55';}
+
+  // Hint
+  setEl('mg2-hint',hint);
+
+  // Needle: scale 1.0→3.0 maps to 0%→100%
+  const needlePct=safe?100:Math.min(100,Math.max(0,((v-1.0)/2.0)*100));
+  const needle=qs('mg2-needle');
+  if(needle){needle.style.left=needlePct+'%';needle.style.boxShadow='0 0 8px '+color;}
+
+  // Status row
+  const srEl=qs('mg2-status-row');if(srEl){srEl.textContent=statusTxt;srEl.style.color=color;}
+
+  // Stats card (margin level mini card)
+  const mlEl=qs('m-margin-level');if(mlEl){mlEl.textContent=safe?'SAFE':v.toFixed(2);mlEl.style.color=color;}
+  const mlSub=qs('m-margin-sub');if(mlSub){mlSub.textContent=badgeTxt.toLowerCase();mlSub.style.color=color;}
+  const mlMini=qs('ml-mini-val');if(mlMini){mlMini.textContent=safe?'SAFE':v.toFixed(2);mlMini.style.color=color;}
+
+  if(v<1.5&&!safe) addNotif('warn','⚠️ Margin Level Low',`Level: ${v.toFixed(2)} — liquidation risk!`);
 }
 
 // ── POSITION BANNER ──
@@ -1049,13 +1162,55 @@ function buildPriceChart(klines){
   const labels=klines.map(k=>{ const d=new Date(k[0]); return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0'); });
   const prices=klines.map(k=>+k[4]);
   const datasets=[{data:prices,borderColor:'#9945ff',borderWidth:1.5,pointRadius:0,fill:true,backgroundColor:'rgba(153,69,255,.05)',tension:.3}];
-  // Add entry line if in trade
-  if(currentEntryPrice&&currentPosition){
-    datasets.push({data:klines.map(()=>currentEntryPrice),borderColor:'rgba(251,191,36,0.6)',borderWidth:1.5,borderDash:[5,4],pointRadius:0,fill:false,label:'Entry'});
+  const tl=qs('trade-levels');
+  let showLegend=false;
+
+  if(chartMode==='trade'&&currentEntryPrice&&currentPosition){
+    const isLong=currentPosition==='LONG';
+    // ATR(14) — average of (high - low) over last 14 candles
+    const highs=klines.map(k=>+k[2]), lows=klines.map(k=>+k[3]);
+    const slice=Math.min(14,klines.length);
+    const atr=highs.slice(-slice).reduce((s,h,i)=>s+(h-lows[lows.length-slice+i]),0)/slice;
+    const slDist=atr*1.5;
+    const sl  =isLong?currentEntryPrice-slDist:currentEntryPrice+slDist;
+    const tp1 =isLong?currentEntryPrice+slDist:currentEntryPrice-slDist;
+    const tp2 =isLong?currentEntryPrice+slDist*2:currentEntryPrice-slDist*2;
+    const cur =currentLivePriceUSDT||prices[prices.length-1];
+    const lev =n(botData?.leverage,4), col=n(botData?.trade_amount,80);
+    const move=isLong?((cur-currentEntryPrice)/currentEntryPrice*100*lev):((currentEntryPrice-cur)/currentEntryPrice*100*lev);
+    const pnlU=(move/100)*col;
+    const slPct=((slDist/currentEntryPrice)*100).toFixed(2);
+    const tp1Pct=slPct;
+    const tp2Pct=((slDist*2/currentEntryPrice)*100).toFixed(2);
+
+    datasets.push({data:klines.map(()=>currentEntryPrice),borderColor:'rgba(251,191,36,0.8)',borderWidth:1.5,borderDash:[5,4],pointRadius:0,fill:false,label:'Entry'});
+    datasets.push({data:klines.map(()=>sl), borderColor:'rgba(248,113,113,0.7)',borderWidth:1,borderDash:[3,3],pointRadius:0,fill:false,label:'SL'});
+    datasets.push({data:klines.map(()=>tp1),borderColor:'rgba(34,197,94,0.6)', borderWidth:1,borderDash:[3,3],pointRadius:0,fill:false,label:'TP1'});
+    datasets.push({data:klines.map(()=>tp2),borderColor:'rgba(74,222,128,0.85)',borderWidth:1.5,borderDash:[4,3],pointRadius:0,fill:false,label:'TP2★'});
+    showLegend=true;
+
+    if(tl){
+      tl.style.display='block';
+      setEl('tl-entry','$'+currentEntryPrice.toFixed(2));
+      const curEl=qs('tl-current');if(curEl){curEl.textContent='$'+cur.toFixed(2);curEl.style.color=move>=0?'#22c55e':'#f87171';}
+      const pnlEl=qs('tl-pnl');if(pnlEl){pnlEl.textContent=(pnlU>=0?'+':'')+pnlU.toFixed(2)+' USDT';pnlEl.style.color=pnlU>=0?'#22c55e':'#f87171';}
+      setEl('tl-sl','$'+sl.toFixed(2));   setEl('tl-sl-pct', isLong?'-'+slPct+'%':'+'+slPct+'%');
+      setEl('tl-tp1','$'+tp1.toFixed(2)); setEl('tl-tp1-pct',isLong?'+'+tp1Pct+'%':'-'+tp1Pct+'%');
+      setEl('tl-tp2','$'+tp2.toFixed(2)); setEl('tl-tp2-pct',isLong?'+'+tp2Pct+'%':'-'+tp2Pct+'%');
+      const action=botData?.action||'HOLD';
+      const sigEl=qs('tl-signal');
+      if(sigEl){sigEl.textContent=action;sigEl.style.color=action==='LONG'?'#22c55e':action==='SHORT'?'#f87171':'#fbbf24';}
+    }
+  } else {
+    if(currentEntryPrice&&currentPosition)
+      datasets.push({data:klines.map(()=>currentEntryPrice),borderColor:'rgba(251,191,36,0.6)',borderWidth:1.5,borderDash:[5,4],pointRadius:0,fill:false,label:'Entry'});
+    if(tl) tl.style.display='none';
   }
+
   pChart=new Chart(el,{
     type:'line',data:{labels,datasets},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:showLegend,position:'top',labels:{color:'#71717a',font:{size:9},boxWidth:8,padding:6}}},
       scales:{x:{ticks:{color:'#52525b',maxTicksLimit:8,font:{size:10}},grid:{color:'#1c1c1f'}},
               y:{ticks:{color:'#52525b',font:{size:10},callback:v=>'$'+v.toFixed(2)},grid:{color:'#1c1c1f'}}}}
   });
@@ -1094,10 +1249,14 @@ function setChartMode(mode){
   if(mode==='normal'){
     if(btnN)btnN.style.cssText='background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;';
     if(btnT)btnT.style.cssText='background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
+    setEl('chart-title','SOL/USDT Market View (24h)');
+    const tl=qs('trade-levels');if(tl)tl.style.display='none';
   } else {
     if(!currentPosition||!currentEntryPrice){showToast('warn','No open position','Position mode needs an active LONG or SHORT.'); chartMode='normal'; return;}
     if(btnT)btnT.style.cssText='background:#2d0a0a;border:1px solid #7f1d1d;border-radius:6px;padding:3px 10px;font-size:10px;color:#f87171;cursor:pointer;font-weight:600;';
     if(btnN)btnN.style.cssText='background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
+    const icon=currentPosition==='LONG'?'🟢':'🔴';
+    setEl('chart-title',icon+' '+currentPosition+' Position — Entry '+(currentEntryPrice?'$'+currentEntryPrice.toFixed(2):'—'));
   }
   loadPrice();
 }
@@ -1359,10 +1518,37 @@ function openCloseModal(){
 function closeCloseModal(){ qs('close-ov').classList.remove('open'); }
 async function executeClosePosition(){
   const btn=qs('close-confirm-btn'),status=qs('close-status');
-  btn.disabled=true;btn.textContent='⏳ Processing...';
-  status.textContent='Manual close requires Binance credentials in the bot. Bot will auto-close on next signal flip.';
-  status.style.color='#fbbf24';
-  setTimeout(()=>closeCloseModal(),3500);
+  if(!GH){
+    status.textContent='GitHub token required — unlock in settings first.';
+    status.style.color='#f87171';
+    return;
+  }
+  btn.disabled=true; btn.textContent='⏳ Sending...';
+  status.textContent='Writing close request...'; status.style.color='#a1a1aa';
+  try{
+    const api=`https://api.github.com/repos/${DASHBOARD_REPO}/contents/${BOT_CONFIG_FILE}`;
+    const headers={'Authorization':`token ${GH}`,'Accept':'application/vnd.github+json','Content-Type':'application/json'};
+    let sha=null, existingCfg={};
+    const cur=await fetch(api,{headers,cache:'no-store'});
+    if(cur.ok){
+      const j=await cur.json();
+      sha=j.sha||null;
+      try{ existingCfg=JSON.parse(atob(j.content.replace(/\n/g,''))); }catch(e){}
+    }
+    const cfg={...existingCfg, close_requested:true, close_requested_at:new Date().toISOString()};
+    const payload={message:`dashboard: close position request ${new Date().toISOString()}`,content:btoa(unescape(encodeURIComponent(JSON.stringify(cfg,null,2))))};
+    if(sha) payload.sha=sha;
+    const put=await fetch(api,{method:'PUT',headers,body:JSON.stringify(payload)});
+    if(!put.ok) throw new Error(`GitHub write failed (${put.status})`);
+    status.textContent='✅ Close request sent — bot will execute within ~60s.';
+    status.style.color='#22c55e';
+    btn.textContent='Request Sent ✅';
+    setTimeout(()=>closeCloseModal(),4000);
+  }catch(e){
+    status.textContent='❌ Failed: '+String(e.message||e);
+    status.style.color='#f87171';
+    btn.disabled=false; btn.textContent='Close Position Now';
+  }
 }
 
 // ── COUNTDOWN ──
@@ -1529,6 +1715,20 @@ async function load(){
     if(position==='LONG'){setEl('m-position','🟢 LONG');qs('m-position').style.color='#22c55e';setEl('m-position-sub','in trade');}
     else if(position==='SHORT'){setEl('m-position','🔴 SHORT');qs('m-position').style.color='#f87171';setEl('m-position-sub','in trade');}
     else{setEl('m-position','—');qs('m-position').style.color='#52525b';setEl('m-position-sub','no position');}
+
+    // ── Cooldown banner ──
+    const cd=botData.cooldown||{};
+    const cdBanner=qs('cooldown-banner');
+    if(cdBanner){
+      if(cd.remaining_seconds>0&&cd.side){
+        const mins=Math.floor(cd.remaining_seconds/60), secs=cd.remaining_seconds%60;
+        setEl('cooldown-title',`🕒 ${cd.side} re-entry blocked — manual close detected`);
+        setEl('cooldown-sub',`${mins}m ${secs}s remaining · Opposite side still allowed`);
+        cdBanner.style.display='flex';
+      } else {
+        cdBanner.style.display='none';
+      }
+    }
 
     updateMarginLevel(marginLevel);
 
