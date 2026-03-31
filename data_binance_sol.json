@@ -1,28 +1,27 @@
 {
-  "generated_at": "2026-03-31T23:16:09.736989+00:00",
+  "generated_at": "2026-03-31T23:17:26.703213+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.75,
+  "price": 82.82,
   "usdt_balance": -296.94098197,
   "sol_balance": 5.1083849,
   "cad_balance": -296.94098197,
-  "margin_level": 1.36980683,
+  "margin_level": 1.37043972,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit 0.06% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (2) but profit 0.15% below threshold",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (53.0)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -1361,7 +1360,7 @@
     "long_trades": 7,
     "short_trades": 17
   },
-  "run_count": 23,
+  "run_count": 24,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1391,7 +1390,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is showing mixed signals across timeframes, with the current price holding above the EMA-20, but the MACD indicating a bearish trend. The short-term timeframes are showing a slight uptrend, while the longer timeframes are indicating a potential reversal. Overall, the market is in a state of uncertainty, with bulls and bears evenly matched.",
+    "5m": "The 5-minute chart is showing a slight increase in price, with a 0.17% change and a high of 83.4, indicating some buying pressure.",
+    "15m": "The 15-minute chart is indicating a moderate uptrend, with a 0.45% change and a high of 83.47, but the low of 80.08 suggests some selling pressure.",
+    "30m": "The 30-minute chart is showing a similar pattern, with a 0.34% change and a high of 84.62, but the low of 80.08 indicates a potential reversal.",
+    "1h": "The 1-hour chart is indicating a stronger uptrend, with a 1.14% change and a high of 84.99, but the MACD below the signal line suggests a potential bearish reversal.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a break above 84.99 or a drop below 80.08 to determine the next direction of the market.",
+    "risk_warning": "The mixed signals and low confidence level of the bot signal indicate a high level of uncertainty, and traders should exercise caution when entering or exiting positions.",
+    "generated_at": "2026-03-31T23:17:25.854543+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 82.82,
+        "open": 82.68,
+        "high": 83.4,
+        "low": 82.33,
+        "change_pct": 0.17,
+        "atr": 0.1671,
+        "avg_vol": 7964.24,
+        "last_vol": 1183.14
+      },
+      "15m": {
+        "close": 82.82,
+        "open": 82.45,
+        "high": 83.47,
+        "low": 80.08,
+        "change_pct": 0.45,
+        "atr": 0.3457,
+        "avg_vol": 55064.97,
+        "last_vol": 1183.14
+      },
+      "30m": {
+        "close": 82.82,
+        "open": 82.54,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": 0.34,
+        "atr": 0.6679,
+        "avg_vol": 88193.81,
+        "last_vol": 34227.84
+      },
+      "1h": {
+        "close": 82.82,
+        "open": 81.89,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": 1.14,
+        "atr": 0.9471,
+        "avg_vol": 150699.71,
+        "last_vol": 34227.84
+      }
+    }
+  },
   "trail": {
     "entry_price": 82.7,
     "best_price": 82.87,
