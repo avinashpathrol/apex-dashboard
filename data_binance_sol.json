@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T08:57:09.882251+00:00",
+  "generated_at": "2026-03-31T08:59:06.328123+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.36,
+  "price": 82.3,
   "usdt_balance": 517.40168676,
   "sol_balance": -4.80784915,
   "cad_balance": 517.40168676,
-  "margin_level": 1.30699268,
+  "margin_level": 1.30790705,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 91,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20 | High volume confirms move",
   "trend": "SIDEWAYS",
   "bullish": [
-    "Price near BB lower band (-10%)"
+    "Price near BB lower band (-13%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1036,7 +1036,7 @@
     "long_trades": 6,
     "short_trades": 12
   },
-  "run_count": 144,
+  "run_count": 145,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1066,13 +1066,68 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with bearish signals from the MACD and EMA indicators, and high volume confirming the move. The price is currently near the lower Bollinger Band, but the overall trend remains bearish. The short-term timeframes are also showing a decline in price, with a decrease in value over the 5m, 15m, and 30m periods.",
+    "5m": "The 5m timeframe is showing a decline in price, with a 1.54% decrease and a high volume, indicating a strong bearish momentum.",
+    "15m": "The 15m timeframe is also showing a decline in price, with a 0.95% decrease and a high volume, confirming the bearish trend.",
+    "30m": "The 30m timeframe is showing a more significant decline in price, with a 2.31% decrease, indicating a strong bearish momentum.",
+    "1h": "The 1h timeframe is showing a relatively stable price, with only a 0.06% decrease, but the overall trend remains bearish.",
+    "key_level_support": 78.96,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential bounce near the lower Bollinger Band, but the overall trend remains bearish, and a short position may be maintained.",
+    "risk_warning": "A bounce near the key level support could lead to a short-term reversal, and traders should be prepared to adjust their positions accordingly.",
+    "generated_at": "2026-03-31T08:59:05.398652+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 82.3,
+        "open": 83.59,
+        "high": 83.91,
+        "low": 82.24,
+        "change_pct": -1.54,
+        "atr": 0.2193,
+        "avg_vol": 8751.34,
+        "last_vol": 6825.08
+      },
+      "15m": {
+        "close": 82.3,
+        "open": 83.09,
+        "high": 84.62,
+        "low": 81.96,
+        "change_pct": -0.95,
+        "atr": 0.3793,
+        "avg_vol": 26692.39,
+        "last_vol": 35728.97
+      },
+      "30m": {
+        "close": 82.31,
+        "open": 84.26,
+        "high": 84.99,
+        "low": 81.96,
+        "change_pct": -2.31,
+        "atr": 0.5286,
+        "avg_vol": 55487.34,
+        "last_vol": 65670.82
+      },
+      "1h": {
+        "close": 82.31,
+        "open": 82.36,
+        "high": 84.99,
+        "low": 78.96,
+        "change_pct": -0.06,
+        "atr": 0.85,
+        "avg_vol": 108351.13,
+        "last_vol": 110325.3
+      }
+    }
+  },
   "trail": {
     "entry_price": 82.44,
-    "best_price": 82.31,
+    "best_price": 82.3,
     "atr": 0.3792857142857124,
     "sl": 83.00892857142857,
-    "trail_stop": 82.87892857142857,
+    "trail_stop": 82.86892857142857,
     "active": false
   }
 }
