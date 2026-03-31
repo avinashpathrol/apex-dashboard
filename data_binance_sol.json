@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-31T23:46:41.575474+00:00",
+  "generated_at": "2026-03-31T23:47:50.898584+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.03,
+  "price": 83.1,
   "usdt_balance": 126.29288051,
   "sol_balance": 0.0003849,
   "cad_balance": 126.29288051,
@@ -12,18 +12,19 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "HOLD \u2014 Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 2 bullish, 3 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 2 bullish, 3 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (57.4)",
-    "MACD below signal (bearish)"
+    "RSI falling from high (59.3)",
+    "MACD below signal (bearish)",
+    "Price near BB upper band (82%)"
   ],
   "trades": [
     {
@@ -1411,7 +1412,7 @@
     "long_trades": 8,
     "short_trades": 17
   },
-  "run_count": 22,
+  "run_count": 23,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1438,7 +1439,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is showing mixed signals across timeframes, with uptrend indicators on the higher timeframe but bearish signals on the lower timeframe, resulting in a neutral outlook. The price is currently near the upper band of the Bollinger Bands, indicating potential resistance. The market is waiting for a breakout or a reversal signal to determine its next direction.",
+    "5m": "The 5-minute chart shows a slight increase in price with a 0.37% change, but the overall movement is limited.",
+    "15m": "The 15-minute chart indicates a 1.14% price increase, with the price bouncing off the lower low of $80.08.",
+    "30m": "The 30-minute chart shows a 0.84% price increase, with the price struggling to break above the $84 resistance level.",
+    "1h": "The 1-hour chart shows a 1.48% price increase, with the price forming a higher high and higher low, indicating a potential uptrend.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a breakout above $84.99 or a breakdown below $80.08 to determine the next market direction.",
+    "risk_warning": "The market is near the upper band of the Bollinger Bands, indicating potential resistance and increased volatility.",
+    "generated_at": "2026-03-31T23:47:50.049325+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.1,
+        "open": 82.79,
+        "high": 83.4,
+        "low": 82.33,
+        "change_pct": 0.37,
+        "atr": 0.175,
+        "avg_vol": 7933.6,
+        "last_vol": 8486.99
+      },
+      "15m": {
+        "close": 83.1,
+        "open": 82.16,
+        "high": 83.47,
+        "low": 80.08,
+        "change_pct": 1.14,
+        "atr": 0.3171,
+        "avg_vol": 54753.54,
+        "last_vol": 8494.47
+      },
+      "30m": {
+        "close": 83.1,
+        "open": 82.41,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": 0.84,
+        "atr": 0.5693,
+        "avg_vol": 88667.34,
+        "last_vol": 29852.71
+      },
+      "1h": {
+        "close": 83.1,
+        "open": 81.89,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": 1.48,
+        "atr": 0.9707,
+        "avg_vol": 151705.98,
+        "last_vol": 82528.99
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
