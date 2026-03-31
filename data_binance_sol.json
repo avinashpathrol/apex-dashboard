@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T08:09:31.690910+00:00",
+  "generated_at": "2026-03-31T08:10:39.651479+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.2,
+  "price": 83.16,
   "usdt_balance": 517.33014687,
   "sol_balance": -4.79112966,
   "cad_balance": 517.33014687,
-  "margin_level": 1.29848539,
+  "margin_level": 1.29829235,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (48.8)"
+    "RSI rising from low (48.0)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -975,7 +975,7 @@
     "long_trades": 6,
     "short_trades": 10
   },
-  "run_count": 103,
+  "run_count": 104,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1008,56 +1008,56 @@
   "ai_analysis": {
     "verdict": "BEARISH",
     "strength": 7,
-    "summary": "The SOL/USDT market is currently showing a downtrend across multiple timeframes, with the price below the EMA-20 and the MACD below its signal line, indicating bearish momentum. However, the RSI is rising from a low level, which could suggest a potential bounce. The overall trend remains bearish, but traders should be cautious of a possible reversal.",
-    "5m": "The 5-minute chart shows a slight decline in price, with a change of -0.61% and a relatively low ATR of 0.2143, indicating low volatility.",
-    "15m": "The 15-minute chart displays a minor drop in price, with a change of -0.22% and a moderate ATR of 0.3471, suggesting a potential consolidation.",
-    "30m": "The 30-minute chart reveals a more significant decline in price, with a change of -1.55% and a higher ATR of 0.5271, indicating increased bearish pressure.",
-    "1h": "The 1-hour chart shows a slight increase in price, with a change of 1.03% and a higher ATR of 0.7957, which could be a sign of a potential bounce or reversal.",
+    "summary": "The market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a bearish bias. However, the RSI is rising from a low, which could suggest a potential bounce. The current short position and bot signal confirm the bearish outlook.",
+    "5m": "The 5-minute chart shows a small decline in price with a moderate ATR, indicating a lack of strong momentum.",
+    "15m": "The 15-minute chart displays a slow downtrend with a relatively low ATR, suggesting a potential consolidation phase.",
+    "30m": "The 30-minute chart reveals a more pronounced decline in price with a higher ATR, indicating increased volatility and bearish pressure.",
+    "1h": "The 1-hour chart shows a rebound from a lower low, but the price remains below the EMA-20, keeping the overall trend bearish.",
     "key_level_support": 78.96,
     "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential bounce off the key support level at 78.96, but maintain a bearish bias due to the overall downtrend.",
-    "risk_warning": "A break below the key support level at 78.96 could lead to a significant decline in price, so traders should adjust their positions accordingly.",
-    "generated_at": "2026-03-31T08:09:30.789078+00:00",
+    "recommendation": "Traders should watch for a potential bounce towards the key resistance level, but be prepared to short on a rejection.",
+    "risk_warning": "A strong bullish reversal could occur if the RSI continues to rise and breaks above 60, so traders should adjust their positions accordingly.",
+    "generated_at": "2026-03-31T08:10:38.705982+00:00",
     "timeframes": {
       "5m": {
-        "close": 83.21,
-        "open": 83.72,
+        "close": 83.16,
+        "open": 83.57,
         "high": 83.91,
         "low": 82.68,
-        "change_pct": -0.61,
-        "atr": 0.2143,
-        "avg_vol": 8165.99,
-        "last_vol": 3766.61
+        "change_pct": -0.49,
+        "atr": 0.2129,
+        "avg_vol": 8136.41,
+        "last_vol": 418.82
       },
       "15m": {
-        "close": 83.21,
+        "close": 83.16,
         "open": 83.39,
         "high": 84.62,
         "low": 81.96,
-        "change_pct": -0.22,
-        "atr": 0.3471,
-        "avg_vol": 27321.51,
-        "last_vol": 24682.77
+        "change_pct": -0.28,
+        "atr": 0.35,
+        "avg_vol": 27338.88,
+        "last_vol": 25724.49
       },
       "30m": {
-        "close": 83.21,
+        "close": 83.16,
         "open": 84.52,
         "high": 84.99,
         "low": 81.96,
-        "change_pct": -1.55,
-        "atr": 0.5271,
-        "avg_vol": 55815.86,
-        "last_vol": 24682.77
+        "change_pct": -1.61,
+        "atr": 0.53,
+        "avg_vol": 55837.57,
+        "last_vol": 25724.49
       },
       "1h": {
-        "close": 83.21,
+        "close": 83.16,
         "open": 82.36,
         "high": 84.99,
         "low": 78.96,
-        "change_pct": 1.03,
-        "atr": 0.7957,
-        "avg_vol": 106566.91,
-        "last_vol": 24682.77
+        "change_pct": 0.97,
+        "atr": 0.7986,
+        "avg_vol": 106588.61,
+        "last_vol": 25724.49
       }
     }
   },
