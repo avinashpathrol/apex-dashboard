@@ -1,23 +1,24 @@
 {
-  "generated_at": "2026-03-31T12:59:32.167141+00:00",
+  "generated_at": "2026-03-31T13:00:41.059669+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.82,
+  "price": 80.83,
   "usdt_balance": 523.89864646,
   "sol_balance": -4.91087351,
   "cad_balance": 523.89864646,
-  "margin_level": 1.3200793,
+  "margin_level": 1.3202145,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING SHORT \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
+  "status": "HOLDING SHORT \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
+    "RSI rising from low (38.1)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -1064,7 +1065,7 @@
     "long_trades": 6,
     "short_trades": 13
   },
-  "run_count": 343,
+  "run_count": 344,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1094,62 +1095,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is currently experiencing a downtrend across multiple timeframes, with the price below the EMA-20 and EMA-50, indicating a bearish bias. However, the MACD is above the signal line, which could be a sign of a potential reversal. The market is showing signs of volatility, with a significant change in price over the 30m and 1h timeframes.",
-    "5m": "The 5m timeframe is showing a significant drop in price, with a change of -2.8% and a low of 80.08, indicating strong bearish momentum.",
-    "15m": "The 15m timeframe is also showing a downtrend, with the price closing below the open and a high of 84.62, which could be a sign of a failed attempt to break out.",
-    "30m": "The 30m timeframe is indicating a strong bearish trend, with the price closing below the EMA-20 and a change of -4.42%, which is the largest drop across all timeframes.",
-    "1h": "The 1h timeframe is showing a more neutral trend, with a smaller change in price and a high of 84.99, which could be a sign of a potential reversal or consolidation.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential bounce off the key level support at 78.96, which could be a sign of a reversal or a consolidation phase.",
-    "risk_warning": "The market is showing signs of high volatility, and traders should be cautious of potential whipsaws and false breakouts.",
-    "generated_at": "2026-03-31T12:59:30.902570+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.83,
-        "open": 83.16,
-        "high": 83.35,
-        "low": 80.08,
-        "change_pct": -2.8,
-        "atr": 0.2364,
-        "avg_vol": 24815.68,
-        "last_vol": 3146.03
-      },
-      "15m": {
-        "close": 80.83,
-        "open": 82.91,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -2.51,
-        "atr": 0.5386,
-        "avg_vol": 41634.4,
-        "last_vol": 24304.68
-      },
-      "30m": {
-        "close": 80.83,
-        "open": 84.57,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -4.42,
-        "atr": 0.6943,
-        "avg_vol": 75758.41,
-        "last_vol": 64692.9
-      },
-      "1h": {
-        "close": 80.83,
-        "open": 81.92,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": -1.33,
-        "atr": 0.9407,
-        "avg_vol": 133291.53,
-        "last_vol": 154747.33
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 80.72,
     "best_price": 80.41,
