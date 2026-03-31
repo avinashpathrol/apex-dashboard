@@ -1737,7 +1737,7 @@ function openTradeModal(trades,title){
   const body=qs('tm-body');
   if(!trades||!trades.length){body.innerHTML='<div style="text-align:center;padding:24px;color:#52525b;">No completed trades for this period.</div>';qs('trade-modal-ov').classList.add('open');return;}
   let totalPnl=0,wins=0,losses=0;
-  for(const t of trades){totalPnl+=n(t.pnl);if(n(t.pnl)>0)wins++;else losses++;}
+  for(const t of trades){totalPnl+=n(t.pnl);if(n(t.pnl)>n(t.fee))wins++;else losses++;}
   const wr=trades.length>0?Math.round((wins/trades.length)*100):0,isProfit=totalPnl>=0;
   let html=`
     <div style="display:flex;align-items:center;gap:12px;padding:14px;background:#111;border-radius:10px;margin-bottom:14px;border:1px solid #1c1c1f;">
@@ -1752,7 +1752,7 @@ function openTradeModal(trades,title){
     <div style="font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Individual Trades</div>`;
   let lastDateBanner='';
   for(const t of [...trades].reverse()){
-    const pnl=n(t.pnl),isWin=pnl>=0,lev=n(t.leverage,4);
+    const pnl=n(t.pnl),fee=n(t.fee),isWin=pnl>fee,lev=n(t.leverage,4);
     const pct=t.entry_price>0?((t.exit_price-t.entry_price)/t.entry_price*100*(t.type==='SHORT'?-1:1)*lev):0;
     const ms=t.opened_at&&t.closed_at?new Date(t.closed_at)-new Date(t.opened_at):0;
     const mins=Math.floor(ms/60000),hrs=Math.floor(mins/60);
@@ -2163,11 +2163,11 @@ async function load(){
     // ── KEY FIX: Build closed trade pairs from raw trades ──
     allET=buildClosedTrades(allKT, leverage, tradeAmount);
 
-    // ── Compute performance from closed trades ──
+    // ── Compute performance from closed trades (fee-adjusted win%) ──
     totW=0;totL=0;totPnl=0;totFees=0;totLongs=0;totShorts=0;
     for(const t of allET){
       totPnl+=n(t.pnl); totFees+=n(t.fee);
-      if(n(t.pnl)>0)totW++;else totL++;
+      if(n(t.pnl)>n(t.fee))totW++;else totL++;  // win = profit exceeds fees
       if(t.type==='LONG')totLongs++;else totShorts++;
     }
     const tt=totW+totL,wr=tt>0?Math.round((totW/tt)*100):null;
