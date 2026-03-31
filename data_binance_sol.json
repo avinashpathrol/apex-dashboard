@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-31T14:23:40.604908+00:00",
+  "generated_at": "2026-03-31T14:25:29.787136+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 518.75944351,
   "sol_balance": -4.84588543,
   "cad_balance": 518.75944351,
-  "margin_level": 1.30037262,
+  "margin_level": 1.30071525,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
@@ -1095,7 +1095,7 @@
     "long_trades": 6,
     "short_trades": 14
   },
-  "run_count": 408,
+  "run_count": 409,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1125,7 +1125,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across timeframes, with the price hovering near the upper Bollinger Band and the EMA-20 below EMA-50 indicating a downtrend, but the MACD above the signal line and price above EMA-20 suggesting bullish momentum. The short-term timeframes show a slight increase in price, while the longer timeframes indicate a decrease. Overall, the market is indecisive and awaiting a breakout or reversal.",
+    "5m": "The 5-minute timeframe shows a slight 0.59% increase in price, with a relatively low ATR of 0.335, indicating low volatility.",
+    "15m": "The 15-minute timeframe displays a 0.3% decrease in price, with the price struggling to break above the recent high of 84.62.",
+    "30m": "The 30-minute timeframe reveals a more significant 2.46% decrease in price, with the price bouncing off the low of 80.08 and attempting to regain momentum.",
+    "1h": "The 1-hour timeframe shows a 0.61% increase in price, with the price attempting to break above the recent high of 84.99 and establish a new uptrend.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a breakout above 84.99 or a breakdown below 80.08 to determine the next market direction.",
+    "risk_warning": "The current HOLD signal with 0% confidence from the bot indicates high uncertainty, and traders should exercise caution and consider reducing their position size.",
+    "generated_at": "2026-03-31T14:25:28.586073+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 82.3,
+        "open": 81.82,
+        "high": 82.59,
+        "low": 80.08,
+        "change_pct": 0.59,
+        "atr": 0.335,
+        "avg_vol": 27993.73,
+        "last_vol": 24211.77
+      },
+      "15m": {
+        "close": 82.3,
+        "open": 82.55,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": -0.3,
+        "atr": 0.5057,
+        "avg_vol": 45594.24,
+        "last_vol": 53434.17
+      },
+      "30m": {
+        "close": 82.31,
+        "open": 84.39,
+        "high": 84.76,
+        "low": 80.08,
+        "change_pct": -2.46,
+        "atr": 0.7371,
+        "avg_vol": 78343.73,
+        "last_vol": 128662.28
+      },
+      "1h": {
+        "close": 82.31,
+        "open": 81.81,
+        "high": 84.99,
+        "low": 78.96,
+        "change_pct": 0.61,
+        "atr": 0.9986,
+        "avg_vol": 137811.5,
+        "last_vol": 128662.28
+      }
+    }
+  },
   "trail": {
     "entry_price": 81.8,
     "best_price": 81.63,
