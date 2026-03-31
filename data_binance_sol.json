@@ -1,30 +1,29 @@
 {
-  "generated_at": "2026-03-31T20:15:35.024738+00:00",
+  "generated_at": "2026-03-31T20:16:42.419755+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.23,
+  "price": 83.24,
   "usdt_balance": -274.091763,
   "sol_balance": 4.8204979,
   "cad_balance": -274.091763,
-  "margin_level": 1.39822057,
+  "margin_level": 1.3982013,
   "position": "LONG",
   "action": "LONG",
-  "confidence": 91,
-  "risk": "LOW",
-  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "confidence": 88,
+  "risk": "MEDIUM",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
-    "High volume confirms move"
+    "Price above EMA-20"
   ],
   "bearish": [
-    "Price near BB upper band (80%)"
+    "RSI falling from high (62.9)"
   ],
   "trades": [
     {
@@ -1092,7 +1091,7 @@
     "long_trades": 4,
     "short_trades": 14
   },
-  "run_count": 221,
+  "run_count": 222,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1122,62 +1121,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and high volume confirming the move, although it's nearing the upper Bollinger Band. The MACD and EMA indicators are also supporting the bullish trend. However, caution is needed as the price approaches the upper band, which could lead to a potential reversal.",
-    "5m": "The 5-minute chart shows a significant price increase of 2.21% with high volatility, indicating strong bullish momentum.",
-    "15m": "The 15-minute chart indicates a slight pause in the uptrend, with a minimal price change of 0.05%, potentially signaling a brief consolidation.",
-    "30m": "The 30-minute chart displays a steady uptrend, with the price increasing by 0.53% and maintaining above the EMA-20, supporting the overall bullish trend.",
-    "1h": "The 1-hour chart shows a notable price increase of 1.3%, with the price reaching new highs and the MACD remaining above the signal line, confirming the bullish sentiment.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential pullback to the key support level of 80.08, which could offer a buying opportunity to join the ongoing uptrend.",
-    "risk_warning": "A break above the upper Bollinger Band could lead to a reversal, so traders should be cautious and set stop-loss orders accordingly.",
-    "generated_at": "2026-03-31T20:15:34.186753+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.23,
-        "open": 81.43,
-        "high": 83.47,
-        "low": 80.81,
-        "change_pct": 2.21,
-        "atr": 0.2307,
-        "avg_vol": 16177.62,
-        "last_vol": 26726.11
-      },
-      "15m": {
-        "close": 83.23,
-        "open": 83.19,
-        "high": 83.83,
-        "low": 80.08,
-        "change_pct": 0.05,
-        "atr": 0.5021,
-        "avg_vol": 56765.69,
-        "last_vol": 52576.16
-      },
-      "30m": {
-        "close": 83.23,
-        "open": 82.79,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": 0.53,
-        "atr": 0.935,
-        "avg_vol": 88488.95,
-        "last_vol": 52576.16
-      },
-      "1h": {
-        "close": 83.23,
-        "open": 82.16,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": 1.3,
-        "atr": 1.1514,
-        "avg_vol": 157995.76,
-        "last_vol": 52576.16
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 82.79,
     "best_price": 83.38,
