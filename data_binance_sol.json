@@ -1,31 +1,215 @@
 {
-  "generated_at": "2026-03-31T22:48:17.722656+00:00",
+  "generated_at": "2026-03-31T22:49:07.602311+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.71,
+  "price": 82.66,
   "usdt_balance": -296.94098197,
   "sol_balance": 5.1083849,
   "cad_balance": -296.94098197,
-  "margin_level": 1.36942293,
+  "margin_level": 1.36906614,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit 0.01% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (1) but profit -0.05% below threshold",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 1 bullish, 3 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20"
+    "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
-    "RSI falling from high (52.3)",
-    "MACD below signal (bearish)"
+    "RSI falling from high (51.3)",
+    "MACD below signal (bearish)",
+    "Price below EMA-20"
   ],
   "trades": [
+    {
+      "time": "2026-03-28T18:52:43.797000-07:00",
+      "action": "BUY",
+      "price": 82.52,
+      "qty": 3.858,
+      "cost": 318.36216,
+      "fee": 0.003858
+    },
+    {
+      "time": "2026-03-28T20:06:35.351000-07:00",
+      "action": "SELL",
+      "price": 82.77,
+      "qty": 0.028,
+      "cost": 2.31756,
+      "fee": 0.00231756
+    },
+    {
+      "time": "2026-03-28T20:06:35.351000-07:00",
+      "action": "SELL",
+      "price": 82.77,
+      "qty": 0.073,
+      "cost": 6.04221,
+      "fee": 0.00604221
+    },
+    {
+      "time": "2026-03-28T20:06:35.351000-07:00",
+      "action": "SELL",
+      "price": 82.77,
+      "qty": 0.067,
+      "cost": 5.54559,
+      "fee": 0.00554559
+    },
+    {
+      "time": "2026-03-28T20:06:35.351000-07:00",
+      "action": "SELL",
+      "price": 82.77,
+      "qty": 3.686,
+      "cost": 305.09022,
+      "fee": 0.30509022
+    },
+    {
+      "time": "2026-03-28T22:53:31.447000-07:00",
+      "action": "BUY",
+      "price": 82.78,
+      "qty": 3.846,
+      "cost": 318.37188,
+      "fee": 0.003846
+    },
+    {
+      "time": "2026-03-28T22:59:55.460000-07:00",
+      "action": "SELL",
+      "price": 82.75,
+      "qty": 3.842,
+      "cost": 317.9255,
+      "fee": 0.3179255
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 2.983,
+      "cost": 246.96257,
+      "fee": 0.002983
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 0.091,
+      "cost": 7.53389,
+      "fee": 9.1e-05
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 0.073,
+      "cost": 6.04367,
+      "fee": 7.3e-05
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 0.061,
+      "cost": 5.05019,
+      "fee": 6.1e-05
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 0.121,
+      "cost": 10.01759,
+      "fee": 0.000121
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 0.063,
+      "cost": 5.21577,
+      "fee": 6.3e-05
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 0.063,
+      "cost": 5.21577,
+      "fee": 6.3e-05
+    },
+    {
+      "time": "2026-03-28T23:05:22.339000-07:00",
+      "action": "BUY",
+      "price": 82.79,
+      "qty": 0.391,
+      "cost": 32.37089,
+      "fee": 0.000391
+    },
+    {
+      "time": "2026-03-28T23:10:42.510000-07:00",
+      "action": "SELL",
+      "price": 82.71,
+      "qty": 3.842,
+      "cost": 317.77182,
+      "fee": 0.31777182
+    },
+    {
+      "time": "2026-03-28T23:11:52.496000-07:00",
+      "action": "BUY",
+      "price": 82.74,
+      "qty": 2.124,
+      "cost": 175.73976,
+      "fee": 0.002124
+    },
+    {
+      "time": "2026-03-28T23:11:52.496000-07:00",
+      "action": "BUY",
+      "price": 82.74,
+      "qty": 0.122,
+      "cost": 10.09428,
+      "fee": 0.000122
+    },
+    {
+      "time": "2026-03-28T23:11:52.496000-07:00",
+      "action": "BUY",
+      "price": 82.74,
+      "qty": 0.073,
+      "cost": 6.04002,
+      "fee": 7.3e-05
+    },
+    {
+      "time": "2026-03-28T23:11:52.496000-07:00",
+      "action": "BUY",
+      "price": 82.74,
+      "qty": 0.067,
+      "cost": 5.54358,
+      "fee": 6.7e-05
+    },
+    {
+      "time": "2026-03-28T23:11:52.496000-07:00",
+      "action": "BUY",
+      "price": 82.74,
+      "qty": 0.064,
+      "cost": 5.29536,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-28T23:11:52.496000-07:00",
+      "action": "BUY",
+      "price": 82.74,
+      "qty": 0.064,
+      "cost": 5.29536,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-28T23:11:52.496000-07:00",
+      "action": "BUY",
+      "price": 82.74,
+      "qty": 1.334,
+      "cost": 110.37516,
+      "fee": 0.001334
+    },
     {
       "time": "2026-03-28T23:20:23.533000-07:00",
       "action": "SELL",
@@ -832,12 +1016,82 @@
   "closed_trades": [
     {
       "source": "binance",
+      "side": "LONG",
+      "entry_price": 82.52,
+      "exit_price": 82.77,
+      "qty": 0.028,
+      "fee": 0.00617556,
+      "pnl": 0.0008,
+      "pnl_pct": 1.51,
+      "win": true,
+      "opened_at": "2026-03-28T18:52:43.797000-07:00",
+      "closed_at": "2026-03-28T20:06:35.351000-07:00",
+      "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "SHORT",
+      "entry_price": 82.77,
+      "exit_price": 82.78,
+      "qty": 0.073,
+      "fee": 0.00988821,
+      "pnl": -0.0106,
+      "pnl_pct": -0.06,
+      "win": false,
+      "opened_at": "2026-03-28T20:06:35.351000-07:00",
+      "closed_at": "2026-03-28T22:53:31.447000-07:00",
+      "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "SHORT",
+      "entry_price": 82.75,
+      "exit_price": 82.79,
+      "qty": 2.983,
+      "fee": 0.3209085,
+      "pnl": -0.4402,
+      "pnl_pct": -0.24,
+      "win": false,
+      "opened_at": "2026-03-28T22:59:55.460000-07:00",
+      "closed_at": "2026-03-28T23:05:22.339000-07:00",
+      "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 82.79,
+      "exit_price": 82.71,
+      "qty": 0.091,
+      "fee": 0.31786282,
+      "pnl": -0.3251,
+      "pnl_pct": -0.48,
+      "win": false,
+      "opened_at": "2026-03-28T23:05:22.339000-07:00",
+      "closed_at": "2026-03-28T23:10:42.510000-07:00",
+      "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 82.74,
+      "exit_price": 82.65,
+      "qty": 0.133,
+      "fee": 0.01311645,
+      "pnl": -0.0251,
+      "pnl_pct": -0.54,
+      "win": false,
+      "opened_at": "2026-03-28T23:11:52.496000-07:00",
+      "closed_at": "2026-03-28T23:20:23.533000-07:00",
+      "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
       "side": "SHORT",
       "entry_price": 82.65,
       "exit_price": 81.8,
-      "qty": 0.133,
-      "fee": 0.01485745,
-      "pnl": 0.0982,
+      "qty": 2.796,
+      "fee": 0.2349544,
+      "pnl": 2.1416,
       "pnl_pct": 5.14,
       "win": true,
       "opened_at": "2026-03-28T23:20:23.533000-07:00",
@@ -1098,16 +1352,16 @@
     }
   ],
   "performance": {
-    "closed_trades": 19,
-    "wins": 10,
-    "losses": 9,
-    "win_rate": 52.63,
-    "net_profit": -2.9177,
-    "avg_profit_per_trade": -0.1536,
-    "long_trades": 4,
-    "short_trades": 15
+    "closed_trades": 24,
+    "wins": 11,
+    "losses": 13,
+    "win_rate": 45.83,
+    "net_profit": -1.6745,
+    "avg_profit_per_trade": -0.0698,
+    "long_trades": 7,
+    "short_trades": 17
   },
-  "run_count": 46,
+  "run_count": 1,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
