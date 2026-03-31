@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T10:26:53.556301+00:00",
+  "generated_at": "2026-03-31T10:28:00.864622+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.73,
+  "price": 80.75,
   "usdt_balance": 517.40168676,
   "sol_balance": -4.80792627,
   "cad_balance": 517.40168676,
-  "margin_level": 1.33281384,
+  "margin_level": 1.3326953,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 82,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (24.0)",
+    "RSI oversold (24.6)",
     "Price near BB lower band (2%)"
   ],
   "bearish": [
@@ -1036,7 +1036,7 @@
     "long_trades": 6,
     "short_trades": 12
   },
-  "run_count": 219,
+  "run_count": 220,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1066,62 +1066,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with the current price below the EMA-20 and EMA-50, indicating a bearish bias. The RSI is oversold, but the MACD and EMA indicators are still bearish, suggesting a potential continuation of the downtrend. The market is experiencing a significant decline in price, with a 3.8% change in the 30m timeframe.",
-    "5m": "The 5m timeframe is showing a sharp decline in price, with a 3.14% change and a low of 80.08, indicating strong bearish momentum.",
-    "15m": "The 15m timeframe is also bearish, with a 1.76% change and a low of 80.08, suggesting a potential continuation of the downtrend.",
-    "30m": "The 30m timeframe is showing a significant decline in price, with a 3.8% change and a low of 80.08, indicating a strong bearish trend.",
-    "1h": "The 1h timeframe is bearish, with a 2.24% change and a low of 78.96, suggesting a potential test of the lower support levels.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential test of the key level support at 78.96 and consider adding to their short positions if the price breaks below this level.",
-    "risk_warning": "A bullish reversal is possible if the RSI oversold condition is relieved, so traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-03-31T10:26:52.557474+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.73,
-        "open": 83.35,
-        "high": 83.83,
-        "low": 80.08,
-        "change_pct": -3.14,
-        "atr": 0.3557,
-        "avg_vol": 14424.54,
-        "last_vol": 6359.38
-      },
-      "15m": {
-        "close": 80.73,
-        "open": 82.18,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -1.76,
-        "atr": 0.5136,
-        "avg_vol": 31367.0,
-        "last_vol": 64621.7
-      },
-      "30m": {
-        "close": 80.73,
-        "open": 83.92,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -3.8,
-        "atr": 0.665,
-        "avg_vol": 62193.31,
-        "last_vol": 142872.72
-      },
-      "1h": {
-        "close": 80.73,
-        "open": 82.58,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": -2.24,
-        "atr": 0.9657,
-        "avg_vol": 115438.7,
-        "last_vol": 142872.72
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 82.44,
     "best_price": 80.36,
