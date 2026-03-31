@@ -1304,8 +1304,8 @@ function updatePositionBanner(pos, price){
 
 // ── SIGNALS ──
 function renderSignals(bulls=[], bears=[], action='HOLD'){
-  const mkRow=(s,type)=>`<div class="sig-row" onclick="openSigModal(${JSON.stringify(s)},${JSON.stringify(type)})"><span class="srd ${type==='bull'?'bull-d':'bear-d'}"></span>${s}</div>`;
-  const mkChip=(s,type)=>`<div class="sig-chip" onclick="openSigModal(${JSON.stringify(s)},${JSON.stringify(type)})"><span class="sig-dot ${type==='bull'?'sd-bull':'sd-bear'}"></span><span class="sig-lbl">${s}</span></div>`;
+  const mkRow=(s,type)=>`<div class="sig-row" onclick='openSigModal(${JSON.stringify(s)},${JSON.stringify(type)})'><span class="srd ${type==='bull'?'bull-d':'bear-d'}"></span>${s}</div>`;
+  const mkChip=(s,type)=>`<div class="sig-chip" onclick='openSigModal(${JSON.stringify(s)},${JSON.stringify(type)})'><span class="sig-dot ${type==='bull'?'sd-bull':'sd-bear'}"></span><span class="sig-lbl">${s}</span></div>`;
   const bullHtml=bulls.length?bulls.map(s=>mkRow(s,'bull')).join(''):'<span style="color:#52525b;font-size:12px;">None</span>';
   const bearHtml=bears.length?bears.map(s=>mkRow(s,'bear')).join(''):'<span style="color:#52525b;font-size:12px;">None</span>';
   qs('bull').innerHTML=bullHtml; qs('bear').innerHTML=bearHtml;
