@@ -1049,7 +1049,7 @@ document.addEventListener('click',e=>{ const btn=qs('notif-btn'),dd=qs('notif-dd
 function timeAgo(iso){ const s=(Date.now()-new Date(iso).getTime())/1000; if(s<60)return 'just now'; if(s<3600)return Math.floor(s/60)+'m ago'; if(s<86400)return Math.floor(s/3600)+'h ago'; return Math.floor(s/86400)+'d ago'; }
 function showToast(type,title,body){ const id='t'+Date.now(); const ico=type==='long'?'📈':type==='short'?'📉':type==='warn'?'⚠️':'ℹ️'; const div=document.createElement('div'); div.className='toast'; div.id=id; div.innerHTML=`<div class="toast-ico">${ico}</div><div style="flex:1"><div class="toast-title">${title}</div><div class="toast-body">${body}</div></div><button class="toast-x" onclick="rmToast('${id}')">✕</button><div class="toast-prog ${type}"></div>`; qs('tc').appendChild(div); setTimeout(()=>rmToast(id),5500); }
 function rmToast(id){ const el=qs(id); if(!el)return; el.classList.add('out'); setTimeout(()=>el&&el.remove(),280); }
-function addNotif(type,title,body){ notifs.unshift({type,title,body,time:new Date().toISOString(),read:false}); saveN(); renderNotifs(); showToast(type,title,body); if(Notification.permission==='granted'&&document.hidden) new Notification('APEX — '+title,{body}); }
+function addNotif(type,title,body,toast=false){ notifs.unshift({type,title,body,time:new Date().toISOString(),read:false}); saveN(); renderNotifs(); if(toast){showToast(type,title,body); if(Notification.permission==='granted'&&document.hidden) new Notification('APEX — '+title,{body});} updBadge(); }
 async function reqPush(){ if(!('Notification' in window))return; const p=await Notification.requestPermission(); const btn=qs('nd-push-btn'); if(p==='granted'){btn.textContent='✅ Push Enabled';btn.classList.add('done');}else{btn.textContent='❌ Denied';btn.classList.add('done');} }
 
 // ── SEEN TRADES (notifications) ──
@@ -1062,8 +1062,8 @@ function chkNewTrades(rawTrades){
     const id=new Date(t.time).toISOString().slice(0,16)+'_'+t.action+'_'+Math.round(t.price);
     if(seen.has(id)) continue;
     markSeen(id);
-    if(t.action==='BUY') addNotif('long','🟢 LONG Opened',`Bought SOL at ${fmtP(t.price)}`);
-    else if(t.action==='SELL') addNotif('short','🔴 Position Closed / Short Opened',`Sold SOL at ${fmtP(t.price)}`);
+    if(t.action==='BUY') addNotif('long','🟢 LONG Opened',`Bought SOL at ${fmtP(t.price)}`,true);
+    else if(t.action==='SELL') addNotif('short','🔴 Position Closed / Short Opened',`Sold SOL at ${fmtP(t.price)}`,true);
   }
 }
 
@@ -1194,7 +1194,7 @@ function updateMarginLevel(level){
   const mlSub=qs('m-margin-sub');if(mlSub){mlSub.textContent=badgeTxt.toLowerCase();mlSub.style.color=color;}
   const mlMini=qs('ml-mini-val');if(mlMini){mlMini.textContent=safe?'SAFE':v.toFixed(2);mlMini.style.color=color;}
 
-  if(v<1.5&&!safe) addNotif('warn','⚠️ Margin Level Low',`Level: ${v.toFixed(2)} — liquidation risk!`);
+  // margin level visible in dashboard banner — no notification needed
 }
 
 // ── POSITION BANNER ──
