@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-31T15:57:50.844426+00:00",
+  "generated_at": "2026-03-31T16:00:21.226580+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.89,
+  "price": 80.94,
   "usdt_balance": 122.92584351,
   "sol_balance": 0.0192031,
   "cad_balance": 122.92584351,
@@ -12,12 +12,13 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
+    "RSI rising from low (44.5)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -1116,7 +1117,7 @@
     "long_trades": 6,
     "short_trades": 15
   },
-  "run_count": 6,
+  "run_count": 8,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1142,62 +1143,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is currently experiencing a downtrend across multiple timeframes, with the price below the EMA-20 and EMA-50 indicating bearish momentum. However, the MACD is above the signal line, which could be a sign of a potential bullish reversal. The overall trend is bearish, but traders should be cautious of a potential bounce.",
-    "5m": "The 5-minute chart shows a slight increase in price, but the overall trend is still bearish with a low ATR of 0.3757.",
-    "15m": "The 15-minute chart indicates a significant drop in price, with a 2.55% change and a higher ATR of 0.635, suggesting increased volatility.",
-    "30m": "The 30-minute chart shows a continued downtrend, with the price below the EMA-20 and EMA-50, and a higher ATR of 0.8629, indicating increased price movement.",
-    "1h": "The 1-hour chart confirms the bearish trend, with the price below the EMA-20 and EMA-50, and a moderate ATR of 1.0143, suggesting a potential for further downside.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential bounce off the key support level of 78.96, but be cautious of the overall bearish trend.",
-    "risk_warning": "Trading in a bearish market can result in significant losses, so traders should adjust their positions accordingly and use proper risk management techniques.",
-    "generated_at": "2026-03-31T15:57:49.961084+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.89,
-        "open": 80.65,
-        "high": 82.59,
-        "low": 80.28,
-        "change_pct": 0.3,
-        "atr": 0.3757,
-        "avg_vol": 25295.94,
-        "last_vol": 13525.4
-      },
-      "15m": {
-        "close": 80.89,
-        "open": 83.01,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -2.55,
-        "atr": 0.635,
-        "avg_vol": 49766.15,
-        "last_vol": 64845.96
-      },
-      "30m": {
-        "close": 80.91,
-        "open": 84.1,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -3.79,
-        "atr": 0.8629,
-        "avg_vol": 82672.23,
-        "last_vol": 89648.0
-      },
-      "1h": {
-        "close": 80.91,
-        "open": 81.71,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": -0.98,
-        "atr": 1.0143,
-        "avg_vol": 144634.88,
-        "last_vol": 215000.06
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
