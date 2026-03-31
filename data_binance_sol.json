@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T12:51:29.059288+00:00",
+  "generated_at": "2026-03-31T12:53:04.238828+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.72,
+  "price": 80.69,
   "usdt_balance": 523.89864646,
   "sol_balance": -4.91087351,
   "cad_balance": 523.89864646,
-  "margin_level": 1.32169864,
+  "margin_level": 1.32250298,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
@@ -1064,7 +1064,7 @@
     "long_trades": 6,
     "short_trades": 13
   },
-  "run_count": 337,
+  "run_count": 338,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1094,7 +1094,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 6,
+    "summary": "The SOL/USDT market is currently experiencing a downtrend across multiple timeframes, with the price below the EMA-20 and EMA-50, indicating a bearish bias. However, the MACD is above the signal line, which could be a sign of a potential reversal. The market is showing signs of volatility, with a significant change in price over the past hour.",
+    "5m": "The 5-minute chart shows a significant drop in price, with a change of -2.9% and a high ATR of 0.245, indicating high volatility.",
+    "15m": "The 15-minute chart also shows a downtrend, with the price closing at 80.69, below the open of 82.91, and a high ATR of 0.5386.",
+    "30m": "The 30-minute chart indicates a strong bearish move, with the price dropping by 4.58% and a high ATR of 0.6943, suggesting increased market volatility.",
+    "1h": "The 1-hour chart shows a more moderate decline, with the price closing at 80.7, below the open of 81.92, and a high ATR of 0.9407, indicating a potential for further downside.",
+    "key_level_support": 78.96,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential bounce off the key level support at 78.96, which could be a buying opportunity if the MACD bullish signal is confirmed.",
+    "risk_warning": "The high ATR values across timeframes indicate increased market volatility, and traders should be cautious of potential whipsaws and adjust their positions accordingly.",
+    "generated_at": "2026-03-31T12:53:03.358018+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.69,
+        "open": 83.1,
+        "high": 83.35,
+        "low": 80.08,
+        "change_pct": -2.9,
+        "atr": 0.245,
+        "avg_vol": 24749.59,
+        "last_vol": 3187.27
+      },
+      "15m": {
+        "close": 80.69,
+        "open": 82.91,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": -2.68,
+        "atr": 0.5386,
+        "avg_vol": 41527.97,
+        "last_vol": 17919.35
+      },
+      "30m": {
+        "close": 80.7,
+        "open": 84.57,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": -4.58,
+        "atr": 0.6943,
+        "avg_vol": 75625.4,
+        "last_vol": 58308.14
+      },
+      "1h": {
+        "close": 80.7,
+        "open": 81.92,
+        "high": 84.99,
+        "low": 78.96,
+        "change_pct": -1.49,
+        "atr": 0.9407,
+        "avg_vol": 133158.51,
+        "last_vol": 148362.56
+      }
+    }
+  },
   "trail": {
     "entry_price": 80.72,
     "best_price": 80.41,
