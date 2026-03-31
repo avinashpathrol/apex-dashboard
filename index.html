@@ -142,6 +142,11 @@ input:focus{border-color:#3f3f46;}
 .close-pos-btn.short-close{background:#052e16;border:1.5px solid #16a34a;color:#22c55e;}
 .close-pos-btn.short-close:hover{background:#16a34a;color:#fff;}
 .close-pos-btn.visible{display:block;}
+/* Force trail button */
+.force-trail-btn{width:100%;border-radius:10px;padding:10px;font-size:12px;font-weight:700;cursor:pointer;display:none;margin:-4px 0 8px;letter-spacing:.05em;transition:all .15s;background:#0d1117;border:1.5px solid #7c3aed;color:#a78bfa;}
+.force-trail-btn:hover{background:#7c3aed;color:#fff;}
+.force-trail-btn.visible{display:block;}
+.force-trail-btn.sent{background:#4c1d95;border-color:#a78bfa;color:#c4b5fd;pointer-events:none;}
 /* Grids */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px;}
@@ -610,6 +615,8 @@ input:focus{border-color:#3f3f46;}
 
       <!-- Close button -->
       <button id="close-pos-btn" class="close-pos-btn" onclick="openCloseModal()">🔴 CLOSE POSITION NOW</button>
+      <!-- Force trail button -->
+      <button id="force-trail-btn" class="force-trail-btn" onclick="sendForceTrail()">🔒 LOCK TRAIL AT CURRENT PRICE</button>
 
       <!-- Pause banner -->
       <div id="pause-banner" style="display:none;background:#1a1a2e;border:1px solid #3730a3;border-radius:10px;padding:10px 14px;margin-bottom:8px;align-items:center;justify-content:space-between;gap:10px;">
@@ -1239,6 +1246,7 @@ function updatePositionBanner(pos, price){
     qs('pb-pnl').className='pb-stat-val neu';
     qs('pb-dur').textContent='—';
     if(closeBtn) closeBtn.classList.remove('visible');
+    const ftBtn2=qs('force-trail-btn'); if(ftBtn2) ftBtn2.classList.remove('visible');
     return;
   }
 
@@ -1299,6 +1307,12 @@ function updatePositionBanner(pos, price){
     closeBtn.classList.add('visible');
     closeBtn.className='close-pos-btn visible '+(isLong?'long-close':'short-close');
     closeBtn.textContent=isLong?'🔴 CLOSE LONG POSITION NOW':'🟢 CLOSE SHORT POSITION NOW';
+  }
+  const ftBtn=qs('force-trail-btn');
+  if(ftBtn){
+    ftBtn.className='force-trail-btn visible';
+    const trailActive=botData?.trail?.active;
+    ftBtn.textContent=trailActive?'🔒 TRAIL ACTIVE — LOCK AT NEW PRICE':'🔒 LOCK TRAIL AT CURRENT PRICE';
   }
 }
 
@@ -2045,6 +2059,29 @@ function applyPauseUI(paused){
   if(banner) banner.style.display=paused?'flex':'none';
 }
 
+async function sendForceTrail(){
+  if(!GH){ addNotif('warn','GitHub token missing','Unlock in settings first.'); return; }
+  const btn=qs('force-trail-btn');
+  if(btn){ btn.className='force-trail-btn visible sent'; btn.textContent='⏳ Sending to bot…'; }
+  try{
+    const api=`https://api.github.com/repos/${REPO}/contents/bot_config.json`;
+    const headers={'Authorization':'token '+GH,'Accept':'application/vnd.github+json','Content-Type':'application/json'};
+    let existingCfg={}, sha;
+    const g=await fetch(api,{headers});
+    if(g.ok){ const j=await g.json(); sha=j.sha; try{ existingCfg=JSON.parse(atob(j.content.replace(/\n/g,''))); }catch(e){} }
+    const cfg={...existingCfg, force_trail:true};
+    const payload={message:`dashboard: force trail activation ${new Date().toISOString()}`,content:btoa(unescape(encodeURIComponent(JSON.stringify(cfg,null,2))))};
+    if(sha) payload.sha=sha;
+    const put=await fetch(api,{method:'PUT',headers,body:JSON.stringify(payload)});
+    if(!put.ok) throw new Error(`GitHub write failed (${put.status})`);
+    if(btn){ btn.textContent='✅ Sent — bot activates within ~5s'; }
+    addNotif('info','Force Trail Sent','Bot will lock trail at current price within 5 seconds.',true);
+    setTimeout(()=>{ if(btn&&btn.classList.contains('sent')){ btn.className='force-trail-btn visible'; btn.textContent='🔒 LOCK TRAIL AT CURRENT PRICE'; } },8000);
+  } catch(e){
+    if(btn){ btn.className='force-trail-btn visible'; btn.textContent='🔒 LOCK TRAIL AT CURRENT PRICE'; }
+    addNotif('warn','Force Trail Failed',e.message);
+  }
+}
 async function executeClosePosition(){
   const btn=qs('close-confirm-btn'),status=qs('close-status');
   if(!GH){
