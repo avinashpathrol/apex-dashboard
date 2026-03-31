@@ -422,6 +422,16 @@ input:focus{border-color:#3f3f46;}
         <button class="cbtn" style="margin:0;" onclick="saveBotConfig()">💾 Save Bot Settings</button>
       </div>
       <div id="cfg-status" style="font-size:11px;color:#a1a1aa;margin-bottom:8px;">Settings not loaded yet.</div>
+      <!-- Pause toggle -->
+      <div style="background:#131315;border:1px solid #27272a;border-radius:10px;padding:12px 14px;margin-bottom:10px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#e8e8e8;">⏸️ Pause Bot Entries</div>
+            <div style="font-size:10px;color:#52525b;margin-top:2px;">SL & trailing stop still active. Use when updating code.</div>
+          </div>
+          <button id="pause-btn" onclick="toggleBotPause()" style="border:none;border-radius:8px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;background:#27272a;color:#a1a1aa;">Loading...</button>
+        </div>
+      </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
         <div style="background:#111;border:1px solid #27272a;border-radius:10px;padding:10px;">
           <div style="font-size:9px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Live Bot</div>
@@ -573,6 +583,18 @@ input:focus{border-color:#3f3f46;}
 
       <!-- Close button -->
       <button id="close-pos-btn" class="close-pos-btn" onclick="openCloseModal()">🔴 CLOSE POSITION NOW</button>
+
+      <!-- Pause banner -->
+      <div id="pause-banner" style="display:none;background:#1a1a2e;border:1px solid #3730a3;border-radius:10px;padding:10px 14px;margin-bottom:8px;align-items:center;justify-content:space-between;gap:10px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:18px;">⏸️</span>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:#818cf8;">Bot entries paused</div>
+            <div style="font-size:11px;color:#a1a1aa;margin-top:2px;">No new trades will open. SL &amp; trail stop still protecting position.</div>
+          </div>
+        </div>
+        <button onclick="toggleBotPause()" style="background:#312e81;border:1px solid #3730a3;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;color:#818cf8;cursor:pointer;white-space:nowrap;">Resume</button>
+      </div>
 
       <!-- Cooldown banner -->
       <div id="cooldown-banner" style="display:none;background:#1c1a0a;border:1px solid #854f0b;border-radius:10px;padding:10px 14px;margin-bottom:8px;align-items:center;gap:10px;">
@@ -1583,6 +1605,44 @@ function openCloseModal(){
   qs('close-ov').classList.add('open');
 }
 function closeCloseModal(){ qs('close-ov').classList.remove('open'); }
+async function toggleBotPause(){
+  if(!GH){ addNotif('warn','GitHub token missing','Unlock in settings first.'); return; }
+  const btn=qs('pause-btn');
+  const currentlyPaused=btn.dataset.paused==='true';
+  const newPaused=!currentlyPaused;
+  btn.disabled=true; btn.textContent='Saving...';
+  try{
+    const api=`https://api.github.com/repos/${DASHBOARD_REPO}/contents/${BOT_CONFIG_FILE}`;
+    const headers={'Authorization':`token ${GH}`,'Accept':'application/vnd.github+json','Content-Type':'application/json'};
+    let sha=null, existingCfg={};
+    const cur=await fetch(api,{headers,cache:'no-store'});
+    if(cur.ok){ const j=await cur.json(); sha=j.sha||null; try{ existingCfg=JSON.parse(atob(j.content.replace(/\n/g,''))); }catch(e){} }
+    const cfg={...existingCfg, bot_paused:newPaused, updated_at:new Date().toISOString()};
+    const payload={message:`dashboard: ${newPaused?'pause':'resume'} bot ${new Date().toISOString()}`,content:btoa(unescape(encodeURIComponent(JSON.stringify(cfg,null,2))))};
+    if(sha) payload.sha=sha;
+    const put=await fetch(api,{method:'PUT',headers,body:JSON.stringify(payload)});
+    if(!put.ok) throw new Error(`GitHub write failed (${put.status})`);
+    applyPauseUI(newPaused);
+    addNotif(newPaused?'warn':'info', newPaused?'⏸️ Bot Paused':'▶️ Bot Resumed', newPaused?'New entries disabled. SL/trail still active.':'Bot will resume trading on next signal.');
+  }catch(e){
+    addNotif('warn','Pause toggle failed', String(e.message||e));
+  }
+  btn.disabled=false;
+}
+
+function applyPauseUI(paused){
+  const btn=qs('pause-btn');
+  const banner=qs('pause-banner');
+  if(btn){
+    btn.dataset.paused=String(paused);
+    btn.textContent=paused?'▶️ Resume Trading':'⏸️ Pause Bot';
+    btn.style.background=paused?'#052e16':'#2d1b00';
+    btn.style.color=paused?'#22c55e':'#fbbf24';
+    btn.style.border=`1px solid ${paused?'#166534':'#854f0b'}`;
+  }
+  if(banner) banner.style.display=paused?'flex':'none';
+}
+
 async function executeClosePosition(){
   const btn=qs('close-confirm-btn'),status=qs('close-status');
   if(!GH){
@@ -1644,6 +1704,7 @@ async function loadBotConfig(force=false){
     if(res.ok){
       botConfig=await res.json();
       try{ localStorage.setItem(cacheKey,JSON.stringify({ts:Date.now(),data:botConfig})); }catch(e){}
+      applyPauseUI(!!botConfig.bot_paused);
       return botConfig;
     }
   }catch(e){}
@@ -1782,6 +1843,9 @@ async function load(){
     if(position==='LONG'){setEl('m-position','🟢 LONG');qs('m-position').style.color='#22c55e';setEl('m-position-sub','in trade');}
     else if(position==='SHORT'){setEl('m-position','🔴 SHORT');qs('m-position').style.color='#f87171';setEl('m-position-sub','in trade');}
     else{setEl('m-position','—');qs('m-position').style.color='#52525b';setEl('m-position-sub','no position');}
+
+    // ── Pause banner (from live bot data) ──
+    if(botData.bot_paused !== undefined) applyPauseUI(!!botData.bot_paused);
 
     // ── Cooldown banner ──
     const cd=botData.cooldown||{};
