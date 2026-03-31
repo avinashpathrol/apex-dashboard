@@ -1,25 +1,23 @@
 {
-  "generated_at": "2026-03-31T08:30:00.074496+00:00",
+  "generated_at": "2026-03-31T08:31:08.313756+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.17,
+  "price": 83.15,
   "usdt_balance": 517.33014687,
   "sol_balance": -4.79112966,
   "cad_balance": 517.33014687,
-  "margin_level": 1.29818181,
+  "margin_level": 1.29915956,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 88,
+  "confidence": 95,
   "risk": "MEDIUM",
   "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
-  "bullish": [
-    "RSI rising from low (48.6)"
-  ],
+  "bullish": [],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
@@ -975,7 +973,7 @@
     "long_trades": 6,
     "short_trades": 10
   },
-  "run_count": 121,
+  "run_count": 122,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1007,57 +1005,57 @@
   },
   "ai_analysis": {
     "verdict": "BEARISH",
-    "strength": 7,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the current price below the EMA-20 and the MACD below its signal line, indicating bearish momentum. However, the RSI is rising from a low level, which could suggest a potential bounce. The overall trend remains bearish, but traders should be cautious of a possible short-term reversal.",
-    "5m": "The 5-minute chart shows a small decline in price, with a change of -0.49% and a relatively low ATR of 0.1986, indicating low volatility.",
-    "15m": "The 15-minute chart displays a similar downtrend, with a change of -0.36% and a moderate ATR of 0.36, suggesting a slight increase in volatility.",
-    "30m": "The 30-minute chart reveals a more significant decline in price, with a change of -1.6% and a higher ATR of 0.5371, indicating increased volatility and bearish momentum.",
-    "1h": "The 1-hour chart shows a slight increase in price, with a change of 0.98% and a higher ATR of 0.8057, which could be a sign of a short-term bounce or consolidation.",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with bearish signals from the MACD and EMA indicators. The price is currently below the EMA-20, indicating a short-term bearish bias. The market is likely to continue its downward momentum unless a strong bullish signal emerges.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a small range and low volatility, indicating a potential pause in the downtrend.",
+    "15m": "The 15-minute chart reveals a narrow range and low volatility, suggesting a consolidation phase before a potential continuation of the downtrend.",
+    "30m": "The 30-minute chart displays a more significant decline in price, with increasing volatility, indicating a potential acceleration of the downtrend.",
+    "1h": "The 1-hour chart shows a rebound from the lows, but the overall trend remains bearish, with the price still below the EMA-20 and EMA-50.",
     "key_level_support": 78.96,
     "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential short-term bounce towards the key level resistance at 84.99, but maintain a bearish outlook and consider adding to short positions on a bounce.",
-    "risk_warning": "A strong bounce above 84.99 could invalidate the bearish outlook, and traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-03-31T08:29:59.197143+00:00",
+    "recommendation": "Traders should watch for a potential breakdown below the key support level of 78.96, which could lead to further downside momentum.",
+    "risk_warning": "A false breakout or a sudden reversal could lead to significant losses, so traders should adjust their positions accordingly and use proper risk management techniques.",
+    "generated_at": "2026-03-31T08:31:07.440099+00:00",
     "timeframes": {
       "5m": {
-        "close": 83.17,
-        "open": 83.58,
+        "close": 83.16,
+        "open": 83.36,
         "high": 83.91,
         "low": 82.68,
-        "change_pct": -0.49,
-        "atr": 0.1986,
-        "avg_vol": 8297.15,
-        "last_vol": 1938.71
+        "change_pct": -0.24,
+        "atr": 0.1871,
+        "avg_vol": 8173.37,
+        "last_vol": 467.36
       },
       "15m": {
-        "close": 83.17,
-        "open": 83.47,
+        "close": 83.16,
+        "open": 83.26,
         "high": 84.62,
         "low": 81.96,
-        "change_pct": -0.36,
-        "atr": 0.36,
-        "avg_vol": 26738.67,
-        "last_vol": 15557.17
+        "change_pct": -0.12,
+        "atr": 0.3321,
+        "avg_vol": 26324.22,
+        "last_vol": 467.36
       },
       "30m": {
-        "close": 83.17,
-        "open": 84.52,
+        "close": 83.16,
+        "open": 84.26,
         "high": 84.99,
         "low": 81.96,
-        "change_pct": -1.6,
-        "atr": 0.5371,
-        "avg_vol": 56231.93,
-        "last_vol": 44654.01
+        "change_pct": -1.31,
+        "atr": 0.4664,
+        "avg_vol": 54128.93,
+        "last_vol": 467.36
       },
       "1h": {
-        "close": 83.17,
+        "close": 83.16,
         "open": 82.36,
         "high": 84.99,
         "low": 78.96,
-        "change_pct": 0.98,
+        "change_pct": 0.97,
         "atr": 0.8057,
-        "avg_vol": 106982.98,
-        "last_vol": 44654.01
+        "avg_vol": 106992.72,
+        "last_vol": 45121.84
       }
     }
   },
