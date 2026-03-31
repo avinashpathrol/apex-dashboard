@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T14:56:50.117878+00:00",
+  "generated_at": "2026-03-31T14:58:47.887811+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.54,
+  "price": 80.59,
   "usdt_balance": 518.75944351,
   "sol_balance": -4.84588543,
   "cad_balance": 518.75944351,
-  "margin_level": 1.32910036,
+  "margin_level": 1.3276884,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
@@ -1095,7 +1095,7 @@
     "long_trades": 6,
     "short_trades": 14
   },
-  "run_count": 434,
+  "run_count": 435,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1125,7 +1125,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the current price below the EMA-20 and high volume confirming the move. The bearish signals are dominating, with the EMA-20 below EMA-50 and price below EMA-20. The MACD above signal is a bullish signal, but it's not strong enough to reverse the overall bearish trend.",
+    "5m": "The 5-minute chart is showing a slight increase, but the overall trend is still bearish with a low change of 0.01%.",
+    "15m": "The 15-minute chart is showing a significant decrease of 2.21%, with the price moving below the EMA-20 and confirming the downtrend.",
+    "30m": "The 30-minute chart is showing a strong downtrend, with the price decreasing by 4.17% and the EMA-20 below the EMA-50.",
+    "1h": "The 1-hour chart is showing a decrease of 1.48%, with the price still below the EMA-20 and the overall trend remaining bearish.",
+    "key_level_support": 78.96,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential short opportunity if the price breaks below the key level support of 78.96.",
+    "risk_warning": "The high volume and strong downtrend increase the risk of a further price drop, so traders should be cautious and set stop-loss orders accordingly.",
+    "generated_at": "2026-03-31T14:58:47.012617+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.59,
+        "open": 80.58,
+        "high": 82.59,
+        "low": 80.28,
+        "change_pct": 0.01,
+        "atr": 0.4136,
+        "avg_vol": 26720.49,
+        "last_vol": 21837.51
+      },
+      "15m": {
+        "close": 80.59,
+        "open": 82.41,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": -2.21,
+        "atr": 0.585,
+        "avg_vol": 48166.53,
+        "last_vol": 121573.35
+      },
+      "30m": {
+        "close": 80.6,
+        "open": 84.11,
+        "high": 84.76,
+        "low": 80.08,
+        "change_pct": -4.17,
+        "atr": 0.8529,
+        "avg_vol": 80009.85,
+        "last_vol": 167348.87
+      },
+      "1h": {
+        "close": 80.6,
+        "open": 81.81,
+        "high": 84.99,
+        "low": 78.96,
+        "change_pct": -1.48,
+        "atr": 1.0836,
+        "avg_vol": 141559.64,
+        "last_vol": 308572.92
+      }
+    }
+  },
   "trail": {
     "entry_price": 81.8,
     "best_price": 80.54,
