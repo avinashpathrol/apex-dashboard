@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-31T13:50:27.270240+00:00",
+  "generated_at": "2026-03-31T13:52:21.702688+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.7,
+  "price": 81.67,
   "usdt_balance": 121.05459646,
   "sol_balance": 0.01915319,
   "cad_balance": 121.05459646,
@@ -23,7 +23,7 @@
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (86%)"
+    "Price near BB upper band (84%)"
   ],
   "trades": [
     {
@@ -1087,7 +1087,7 @@
     "long_trades": 6,
     "short_trades": 14
   },
-  "run_count": 383,
+  "run_count": 384,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1113,7 +1113,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price trading near the upper band of the Bollinger Bands. The MACD is above the signal line, indicating a bullish trend, but the EMA-20 is below the EMA-50, suggesting a downtrend. The market is likely to remain volatile in the short term.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a change of -0.71% and an ATR of 0.2471, indicating low volatility.",
+    "15m": "The 15-minute chart indicates a bearish trend, with the price closing at 81.67, down 0.81% from the open, and an ATR of 0.46.",
+    "30m": "The 30-minute chart shows a significant decline in price, with a change of -2.89% and an ATR of 0.7036, indicating moderate volatility.",
+    "1h": "The 1-hour chart shows a relatively stable price, with a change of -0.37% and an ATR of 0.9686, indicating moderate volatility.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 84.99 or a breakdown below the key support level of 80.08 to determine the next market direction.",
+    "risk_warning": "The market is currently near the upper band of the Bollinger Bands, which may indicate a potential reversal, so traders should be cautious of a potential pullback.",
+    "generated_at": "2026-03-31T13:52:20.847893+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 81.67,
+        "open": 82.25,
+        "high": 82.47,
+        "low": 80.08,
+        "change_pct": -0.71,
+        "atr": 0.2471,
+        "avg_vol": 26375.47,
+        "last_vol": 2960.87
+      },
+      "15m": {
+        "close": 81.67,
+        "open": 82.34,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": -0.81,
+        "atr": 0.46,
+        "avg_vol": 43782.77,
+        "last_vol": 44954.67
+      },
+      "30m": {
+        "close": 81.67,
+        "open": 84.1,
+        "high": 84.76,
+        "low": 80.08,
+        "change_pct": -2.89,
+        "atr": 0.7036,
+        "avg_vol": 76406.74,
+        "last_vol": 120962.96
+      },
+      "1h": {
+        "close": 81.63,
+        "open": 81.93,
+        "high": 84.99,
+        "low": 78.96,
+        "change_pct": -0.37,
+        "atr": 0.9686,
+        "avg_vol": 135954.05,
+        "last_vol": 192249.58
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
