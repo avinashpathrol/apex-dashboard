@@ -1,23 +1,24 @@
 {
-  "generated_at": "2026-03-31T08:23:11.438133+00:00",
+  "generated_at": "2026-03-31T08:24:20.057906+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.27,
+  "price": 83.23,
   "usdt_balance": 517.33014687,
   "sol_balance": -4.79112966,
   "cad_balance": 517.33014687,
-  "margin_level": 1.29666816,
+  "margin_level": 1.29696855,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING SHORT \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
+  "status": "HOLDING SHORT \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
+    "RSI rising from low (49.8)",
     "Price above EMA-20"
   ],
   "bearish": [
@@ -974,7 +975,7 @@
     "long_trades": 6,
     "short_trades": 10
   },
-  "run_count": 115,
+  "run_count": 116,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1005,58 +1006,58 @@
     "minutes": 10
   },
   "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is showing signs of a downtrend across multiple timeframes, with the MACD below the signal line and EMA-20 below EMA-50, indicating a bearish bias. However, the price is still above the EMA-20, which could lead to a potential bounce. The overall trend is bearish, but with some bullish undertones.",
-    "5m": "The 5-minute chart shows a slight decline in price with a small ATR, indicating low volatility and a potential for a breakout.",
-    "15m": "The 15-minute chart displays a similar downtrend with a slightly higher ATR, suggesting increasing volatility and potential for a larger move.",
-    "30m": "The 30-minute chart reveals a more significant decline in price with a higher ATR, indicating a stronger downtrend and increased volatility.",
-    "1h": "The 1-hour chart shows a bullish candle, but the overall trend is still bearish, with the price struggling to break above the recent high.",
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the RSI rising from a low and price above EMA-20 indicating potential for a bounce, but the MACD below signal and EMA-20 below EMA-50 suggesting a downtrend. The short-term timeframes show a slight decline, while the 1-hour timeframe shows a small gain. Overall, the market is indecisive and awaiting a breakout or reversal signal.",
+    "5m": "The 5-minute timeframe shows a slight decline of -0.34% with a narrow ATR of 0.22, indicating low volatility and a lack of clear direction.",
+    "15m": "The 15-minute timeframe also shows a small decline of -0.28% with a moderate ATR of 0.36, suggesting a potential consolidation phase.",
+    "30m": "The 30-minute timeframe reveals a more significant decline of -1.51% with a higher ATR of 0.5371, indicating increased volatility and potential for further downside.",
+    "1h": "The 1-hour timeframe, however, shows a small gain of 1.07% with a higher ATR of 0.8057, suggesting a potential reversal or bounce.",
     "key_level_support": 78.96,
     "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential breakdown below the key support level of 78.96, which could lead to a further decline in price.",
-    "risk_warning": "A false breakout above the key resistance level of 84.99 could lead to a sharp reversal, so traders should be cautious and set appropriate stop-loss levels.",
-    "generated_at": "2026-03-31T08:23:10.616475+00:00",
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 84.99 or a breakdown below the key support level of 78.96 to determine the next direction.",
+    "risk_warning": "The current market indecision and mixed signals increase the risk of a false breakout or sudden reversal, so traders should exercise caution and set appropriate stop-loss levels.",
+    "generated_at": "2026-03-31T08:24:19.208925+00:00",
     "timeframes": {
       "5m": {
-        "close": 83.27,
+        "close": 83.24,
         "open": 83.52,
         "high": 83.91,
         "low": 82.68,
-        "change_pct": -0.3,
+        "change_pct": -0.34,
         "atr": 0.22,
-        "avg_vol": 8279.83,
-        "last_vol": 7830.41
+        "avg_vol": 8287.15,
+        "last_vol": 8269.42
       },
       "15m": {
-        "close": 83.27,
+        "close": 83.24,
         "open": 83.47,
         "high": 84.62,
         "low": 81.96,
-        "change_pct": -0.24,
+        "change_pct": -0.28,
         "atr": 0.36,
-        "avg_vol": 26691.52,
-        "last_vol": 12728.41
+        "avg_vol": 26698.83,
+        "last_vol": 13166.94
       },
       "30m": {
-        "close": 83.27,
+        "close": 83.24,
         "open": 84.52,
         "high": 84.99,
         "low": 81.96,
-        "change_pct": -1.48,
+        "change_pct": -1.51,
         "atr": 0.5371,
-        "avg_vol": 56173.0,
-        "last_vol": 41825.25
+        "avg_vol": 56182.14,
+        "last_vol": 42263.78
       },
       "1h": {
-        "close": 83.27,
+        "close": 83.24,
         "open": 82.36,
         "high": 84.99,
         "low": 78.96,
-        "change_pct": 1.1,
+        "change_pct": 1.07,
         "atr": 0.8057,
-        "avg_vol": 106924.05,
-        "last_vol": 41825.25
+        "avg_vol": 106933.18,
+        "last_vol": 42263.78
       }
     }
   },
