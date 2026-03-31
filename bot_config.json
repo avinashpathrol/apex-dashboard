@@ -2,6 +2,5 @@
   "trade_amount": 85,
   "leverage": 5,
   "updated_at": "2026-03-31T06:19:37.579Z",
-  "close_requested": true,
-  "close_requested_at": "2026-03-31T08:47:32.843Z"
+  "close_requested": false
 }
