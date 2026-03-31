@@ -566,6 +566,7 @@ input:focus{border-color:#3f3f46;}
           <div class="pb-stat"><div class="pb-stat-label">Collateral</div><div class="pb-stat-val neu" id="pb-collateral">—</div></div>
           <div class="pb-stat"><div class="pb-stat-label">Effective</div><div class="pb-stat-val neu" id="pb-effective">—</div></div>
           <div class="pb-stat"><div class="pb-stat-label">Unreal P&L</div><div class="pb-stat-val neu" id="pb-pnl">—</div></div>
+          <div class="pb-stat"><div class="pb-stat-label">Locked Min</div><div class="pb-stat-val neu" id="pb-locked">—</div></div>
           <div class="pb-stat"><div class="pb-stat-label">Held for</div><div class="pb-stat-val neu" id="pb-dur">—</div></div>
         </div>
       </div>
@@ -644,10 +645,31 @@ input:focus{border-color:#3f3f46;}
               <div style="font-size:10px;color:#14532d;margin-top:1px;" id="tl-tp2-pct">—</div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;background:#18181b;border-radius:6px;padding:6px 10px;">
-            <span style="font-size:10px;color:#52525b;">Bot signal</span>
-            <span id="tl-signal" style="font-size:11px;font-weight:700;">—</span>
-            <span style="font-size:10px;color:#52525b;">SL based on 1.5× ATR(14)</span>
+          <!-- Trailing stop status row -->
+          <div id="tl-trail-row" style="background:#0f1a0f;border:1px solid #14532d;border-radius:8px;padding:8px 12px;margin-bottom:6px;display:none;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
+              <span style="font-size:10px;font-weight:700;color:#4ade80;">📐 Trailing Stop ACTIVE</span>
+              <span style="font-size:10px;color:#52525b;">protecting your gains</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+              <div style="text-align:center;">
+                <div style="font-size:9px;color:#52525b;margin-bottom:2px;">Best price</div>
+                <div style="font-size:11px;font-weight:700;color:#4ade80;font-family:monospace;" id="tl-best">—</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:9px;color:#52525b;margin-bottom:2px;">Trail stop</div>
+                <div style="font-size:11px;font-weight:700;color:#fbbf24;font-family:monospace;" id="tl-trail-stop">—</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:9px;color:#52525b;margin-bottom:2px;">Min profit locked</div>
+                <div style="font-size:11px;font-weight:700;color:#22c55e;font-family:monospace;" id="tl-locked-pnl">—</div>
+              </div>
+            </div>
+          </div>
+          <!-- Inactive trail notice -->
+          <div id="tl-trail-inactive" style="background:#18181b;border:1px solid #27272a;border-radius:8px;padding:7px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:10px;color:#52525b;">📐 Trail activates after <span id="tl-trail-needed" style="color:#fbbf24;">1× ATR profit</span></span>
+            <span id="tl-signal" style="font-size:11px;font-weight:700;color:#52525b;">—</span>
           </div>
         </div>
       </div>
@@ -1109,6 +1131,22 @@ function updatePositionBanner(pos, price){
     qs('pb-pnl').className='pb-stat-val neu';
   }
 
+  // Locked minimum profit from trail stop
+  const trail=botData?.trail;
+  const lockedEl=qs('pb-locked');
+  if(lockedEl){
+    if(trail?.active && trail?.trail_stop && currentEntryPrice){
+      const trailStop=n(trail.trail_stop);
+      const lockedMove=isLong?((trailStop-currentEntryPrice)/currentEntryPrice)*100*lev:((currentEntryPrice-trailStop)/currentEntryPrice)*100*lev;
+      const lockedUSDT=(lockedMove/100)*collateral;
+      lockedEl.textContent=(lockedUSDT>=0?'+':'')+lockedUSDT.toFixed(2)+' USDT';
+      lockedEl.className='pb-stat-val '+(lockedUSDT>=0?'pos':'neg');
+    } else {
+      lockedEl.textContent='not active';
+      lockedEl.className='pb-stat-val neu';
+    }
+  }
+
   // Duration — find last open trade
   const openTrade = isLong
     ? [...allKT].reverse().find(t=>t.action==='BUY')
@@ -1184,9 +1222,16 @@ function buildPriceChart(klines){
     const tp2Pct=((slDist*2/currentEntryPrice)*100).toFixed(2);
 
     datasets.push({data:klines.map(()=>currentEntryPrice),borderColor:'rgba(251,191,36,0.8)',borderWidth:1.5,borderDash:[5,4],pointRadius:0,fill:false,label:'Entry'});
-    datasets.push({data:klines.map(()=>sl), borderColor:'rgba(248,113,113,0.7)',borderWidth:1,borderDash:[3,3],pointRadius:0,fill:false,label:'SL'});
+    datasets.push({data:klines.map(()=>sl), borderColor:'rgba(248,113,113,0.7)',borderWidth:1,borderDash:[3,3],pointRadius:0,fill:false,label:'Hard SL'});
     datasets.push({data:klines.map(()=>tp1),borderColor:'rgba(34,197,94,0.6)', borderWidth:1,borderDash:[3,3],pointRadius:0,fill:false,label:'TP1'});
     datasets.push({data:klines.map(()=>tp2),borderColor:'rgba(74,222,128,0.85)',borderWidth:1.5,borderDash:[4,3],pointRadius:0,fill:false,label:'TP2★'});
+
+    // Trail stop line from bot data — brighter, solid when active
+    const trail=botData?.trail;
+    if(trail?.trail_stop){
+      const trailActive=trail.active;
+      datasets.push({data:klines.map(()=>n(trail.trail_stop)),borderColor:trailActive?'rgba(251,191,36,1)':'rgba(251,191,36,0.3)',borderWidth:trailActive?2:1,borderDash:trailActive?[]:[ 2,4],pointRadius:0,fill:false,label:trailActive?'Trail🔒':'Trail(pending)'});
+    }
     showLegend=true;
 
     if(tl){
@@ -1200,6 +1245,28 @@ function buildPriceChart(klines){
       const action=botData?.action||'HOLD';
       const sigEl=qs('tl-signal');
       if(sigEl){sigEl.textContent=action;sigEl.style.color=action==='LONG'?'#22c55e':action==='SHORT'?'#f87171':'#fbbf24';}
+
+      // Trail stop panel
+      const trailRow=qs('tl-trail-row'), trailInactive=qs('tl-trail-inactive');
+      if(trail?.active && trail?.trail_stop){
+        const trailStop=n(trail.trail_stop);
+        const lockedMove=isLong?((trailStop-currentEntryPrice)/currentEntryPrice*100*lev):((currentEntryPrice-trailStop)/currentEntryPrice*100*lev);
+        const lockedUSDT=(lockedMove/100)*col;
+        if(trailRow) trailRow.style.display='block';
+        if(trailInactive) trailInactive.style.display='none';
+        setEl('tl-best','$'+n(trail.best_price).toFixed(2));
+        setEl('tl-trail-stop','$'+trailStop.toFixed(2));
+        const lockedEl=qs('tl-locked-pnl');
+        if(lockedEl){lockedEl.textContent=(lockedUSDT>=0?'+':'')+lockedUSDT.toFixed(2)+' USDT';lockedEl.style.color=lockedUSDT>=0?'#22c55e':'#f87171';}
+      } else {
+        if(trailRow) trailRow.style.display='none';
+        if(trailInactive) trailInactive.style.display='flex';
+        // Show how far price needs to move to activate trail
+        if(trail?.atr && currentEntryPrice){
+          const needed=isLong?currentEntryPrice+n(trail.atr):currentEntryPrice-n(trail.atr);
+          setEl('tl-trail-needed','$'+needed.toFixed(2));
+        }
+      }
     }
   } else {
     if(currentEntryPrice&&currentPosition)
