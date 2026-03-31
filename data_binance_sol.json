@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T08:41:24.024554+00:00",
+  "generated_at": "2026-03-31T08:42:31.607110+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.64,
+  "price": 82.51,
   "usdt_balance": 517.33014687,
   "sol_balance": -4.79112966,
   "cad_balance": 517.33014687,
-  "margin_level": 1.30651694,
+  "margin_level": 1.30851823,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "Price near BB lower band (-6%)"
+    "Price near BB lower band (-14%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -975,7 +975,7 @@
     "long_trades": 6,
     "short_trades": 10
   },
-  "run_count": 131,
+  "run_count": 132,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1008,65 +1008,65 @@
   "ai_analysis": {
     "verdict": "BEARISH",
     "strength": 8,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price currently below the EMA-20 and the MACD below the signal line, indicating a strong bearish bias. The price is also near the lower Bollinger Band, which could lead to a bounce, but the overall trend remains bearish. The current short position and 88% confidence in the short signal further support this outlook.",
-    "5m": "The 5-minute chart shows a small loss of -0.89% with a high ATR of 0.1986, indicating increased volatility and potential for further downside.",
-    "15m": "The 15-minute chart is also bearish, with a loss of -0.73% and a higher ATR of 0.3664, suggesting a continuation of the downtrend.",
-    "30m": "The 30-minute chart shows a more significant loss of -1.91% with an even higher ATR of 0.5007, reinforcing the bearish trend.",
-    "1h": "The 1-hour chart shows a small gain of 0.35% but with a high ATR of 0.8221, indicating that the market is still volatile and could turn bearish again.",
+    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with the price trading below the EMA-20 and EMA-50, and the MACD below the signal line. The current price is near the lower Bollinger Band, which could lead to a bounce, but the overall trend remains bearish. The bot's short position and 88% confidence in the short signal further support this outlook.",
+    "5m": "The 5-minute chart shows a small range with a slight bearish bias, indicating a potential continuation of the downtrend.",
+    "15m": "The 15-minute chart is showing a downtrend with a slight increase in volatility, as indicated by the ATR, which could lead to a breakout or a further decline.",
+    "30m": "The 30-minute chart is displaying a clear downtrend with the price making lower highs and lower lows, confirming the bearish trend.",
+    "1h": "The 1-hour chart is showing a slight bullish divergence, with the price closing above the open, but the overall trend remains bearish, and this could be a false signal.",
     "key_level_support": 78.96,
     "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential bounce near the lower Bollinger Band and consider adding to short positions if the price breaks below the key support level.",
-    "risk_warning": "A bounce near the lower Bollinger Band could lead to a short-term reversal, so traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-03-31T08:41:23.099609+00:00",
+    "recommendation": "Traders should watch for a potential bounce near the key level support at 78.96, but be prepared for a further decline if the support is broken.",
+    "risk_warning": "Trading in a downtrend can be risky, and traders should be prepared for a potential increase in volatility and further declines.",
+    "generated_at": "2026-03-31T08:42:30.709415+00:00",
     "timeframes": {
       "5m": {
-        "close": 82.65,
+        "close": 82.52,
         "open": 83.39,
         "high": 83.91,
-        "low": 82.63,
-        "change_pct": -0.89,
-        "atr": 0.1986,
-        "avg_vol": 8176.67,
-        "last_vol": 5772.3
+        "low": 82.45,
+        "change_pct": -1.04,
+        "atr": 0.2114,
+        "avg_vol": 8286.03,
+        "last_vol": 12333.58
       },
       "15m": {
-        "close": 82.65,
+        "close": 82.52,
         "open": 83.26,
         "high": 84.62,
         "low": 81.96,
-        "change_pct": -0.73,
-        "atr": 0.3664,
-        "avg_vol": 26556.52,
-        "last_vol": 14405.47
+        "change_pct": -0.89,
+        "atr": 0.3793,
+        "avg_vol": 26665.88,
+        "last_vol": 20966.75
       },
       "30m": {
-        "close": 82.65,
+        "close": 82.52,
         "open": 84.26,
         "high": 84.99,
         "low": 81.96,
-        "change_pct": -1.91,
-        "atr": 0.5007,
-        "avg_vol": 54419.31,
-        "last_vol": 14405.47
+        "change_pct": -2.07,
+        "atr": 0.5136,
+        "avg_vol": 54556.01,
+        "last_vol": 20966.84
       },
       "1h": {
-        "close": 82.65,
+        "close": 82.52,
         "open": 82.36,
         "high": 84.99,
         "low": 78.96,
-        "change_pct": 0.35,
-        "atr": 0.8221,
-        "avg_vol": 107283.1,
-        "last_vol": 59059.96
+        "change_pct": 0.19,
+        "atr": 0.835,
+        "avg_vol": 107419.8,
+        "last_vol": 65621.32
       }
     }
   },
   "trail": {
     "entry_price": 83.05,
-    "best_price": 82.64,
+    "best_price": 82.51,
     "atr": 0.34428571428571175,
     "sl": 83.56642857142856,
-    "trail_stop": 83.15642857142856,
+    "trail_stop": 83.02642857142857,
     "active": true
   }
 }
