@@ -1,28 +1,29 @@
 {
-  "generated_at": "2026-03-31T01:34:40.811426+00:00",
+  "generated_at": "2026-03-31T01:35:46.162948+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 84.38,
+  "price": 84.28,
   "usdt_balance": 536.0504226,
   "sol_balance": -4.80796246,
   "cad_balance": 536.0504226,
-  "margin_level": 1.32209237,
+  "margin_level": 1.32167139,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 82,
-  "risk": "MEDIUM",
-  "status": "HOLDING SHORT \u2014 RSI overbought (71.8) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (123%)",
-  "reason": "RSI overbought (71.8) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (123%)",
+  "confidence": 85,
+  "risk": "LOW",
+  "status": "HOLDING SHORT \u2014 RSI overbought (71.1) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (120%) | High volume confirms move",
+  "reason": "RSI overbought (71.1) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (120%) | High volume confirms move",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (71.8)",
+    "RSI overbought (71.1)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (123%)"
+    "Price near BB upper band (120%)",
+    "High volume confirms move"
   ],
   "trades": [
     {
@@ -664,7 +665,7 @@
     "long_trades": 4,
     "short_trades": 7
   },
-  "run_count": 85,
+  "run_count": 86,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
