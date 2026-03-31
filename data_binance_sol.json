@@ -1,30 +1,31 @@
 {
-  "generated_at": "2026-03-31T11:11:40.633506+00:00",
+  "generated_at": "2026-03-31T11:12:47.094011+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.46,
+  "price": 80.57,
   "usdt_balance": 517.40168676,
   "sol_balance": -4.80796426,
   "cad_balance": 517.40168676,
-  "margin_level": 1.33638373,
+  "margin_level": 1.33687161,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 82,
-  "risk": "MEDIUM",
-  "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
+  "confidence": 85,
+  "risk": "LOW",
+  "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20 | High volume confirms move",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20 | High volume confirms move",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (22.4)",
-    "Price near BB lower band (12%)"
+    "RSI oversold (25.1)",
+    "Price near BB lower band (14%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price below EMA-20"
+    "Price below EMA-20",
+    "High volume confirms move"
   ],
   "trades": [
     {
@@ -1036,7 +1037,7 @@
     "long_trades": 6,
     "short_trades": 12
   },
-  "run_count": 258,
+  "run_count": 259,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
