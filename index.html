@@ -1750,17 +1750,34 @@ function openTradeModal(trades,title){
       <div style="background:#111;border-radius:8px;padding:10px 12px;border:1px solid #1c1c1f;"><div style="font-size:9px;color:#52525b;margin-bottom:3px;">WIN RATE</div><div style="font-size:14px;font-weight:700;font-family:monospace;color:${wr>=50?'#22c55e':'#f87171'}">${wr}%</div></div>
     </div>
     <div style="font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Individual Trades</div>`;
+  let lastDateBanner='';
   for(const t of [...trades].reverse()){
     const pnl=n(t.pnl),isWin=pnl>=0,lev=n(t.leverage,4);
     const pct=t.entry_price>0?((t.exit_price-t.entry_price)/t.entry_price*100*(t.type==='SHORT'?-1:1)*lev):0;
     const ms=t.opened_at&&t.closed_at?new Date(t.closed_at)-new Date(t.opened_at):0;
     const mins=Math.floor(ms/60000),hrs=Math.floor(mins/60);
-    const dur=hrs>0?hrs+'h '+mins%60+'m':mins+'m';
+    const dur=hrs>0?hrs+'h '+mins%60+'m':mins>0?mins+'m':'<1m';
+    // Date banner
+    const tradeDate=t.closed_at||t.opened_at||t.time;
+    const dateBannerKey=tradeDate?new Date(tradeDate).toLocaleDateString('en-CA',{year:'numeric',month:'short',day:'numeric',weekday:'short'}):'';
+    if(dateBannerKey&&dateBannerKey!==lastDateBanner){
+      lastDateBanner=dateBannerKey;
+      html+=`<div style="display:flex;align-items:center;gap:8px;margin:10px 0 6px;">
+        <div style="flex:1;height:1px;background:#27272a;"></div>
+        <span style="font-size:10px;color:#52525b;font-weight:600;white-space:nowrap;">${dateBannerKey}</span>
+        <div style="flex:1;height:1px;background:#27272a;"></div>
+      </div>`;
+    }
+    // Open / close times
+    const fmtTime=iso=>iso?new Date(iso).toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',hour12:false}):'—';
+    const openTime=fmtTime(t.opened_at);
+    const closeTime=fmtTime(t.closed_at);
     html+=`<div style="background:#111;border-radius:8px;padding:10px 12px;margin-bottom:6px;border:1px solid ${isWin?'#16a34a':'#7f1d1d'};">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
         <div style="display:flex;align-items:center;gap:6px;">
           <span style="font-size:10px;background:${t.type==='LONG'?'#052e16':'#2d0a0a'};color:${t.type==='LONG'?'#22c55e':'#f87171'};padding:2px 6px;border-radius:4px;font-weight:700;">${t.type}</span>
           <span style="font-size:10px;background:${isWin?'#052e16':'#2d0a0a'};color:${isWin?'#22c55e':'#f87171'};padding:2px 6px;border-radius:4px;font-weight:700;">${isWin?'WIN':'LOSS'}</span>
+          <span style="font-size:10px;color:#52525b;">${openTime} → ${closeTime}</span>
         </div>
         <span style="font-size:14px;font-weight:700;color:${isWin?'#22c55e':'#f87171'}">${isWin?'+':''}$${pnl.toFixed(2)}</span>
       </div>
