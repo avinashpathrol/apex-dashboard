@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-03-31T20:45:53.404610+00:00",
+  "generated_at": "2026-03-31T20:46:59.861580+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.94,
+  "price": 82.9,
   "usdt_balance": -274.091763,
   "sol_balance": 4.8204979,
   "cad_balance": -274.091763,
-  "margin_level": 1.39283037,
+  "margin_level": 1.39248418,
   "position": "LONG",
   "action": "LONG",
-  "confidence": 95,
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
@@ -22,7 +22,9 @@
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
-  "bearish": [],
+  "bearish": [
+    "RSI falling from high (57.3)"
+  ],
   "trades": [
     {
       "time": "2026-03-28T23:11:52.496000-07:00",
@@ -1089,7 +1091,7 @@
     "long_trades": 4,
     "short_trades": 14
   },
-  "run_count": 247,
+  "run_count": 248,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1119,62 +1121,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The market is showing a strong uptrend across multiple timeframes, with the current price above the EMA-20 and MACD above the signal line, indicating a continuation of the bullish trend. The 5m and 1h timeframes are particularly bullish, with significant price increases. However, the 15m and 30m timeframes show a slight pullback, which may be a buying opportunity.",
-    "5m": "The 5m timeframe is highly bullish, with a 2.17% price increase and a high of 83.47, indicating strong buying pressure.",
-    "15m": "The 15m timeframe shows a slight pullback, with a -0.53% price decrease, but the overall trend remains bullish.",
-    "30m": "The 30m timeframe also shows a slight pullback, with a -0.52% price decrease, but the price is still above the EMA-20, indicating a strong uptrend.",
-    "1h": "The 1h timeframe is bullish, with a 0.95% price increase and a high of 84.99, indicating a strong buying pressure.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential breakout above the 84.99 resistance level, which could lead to further price increases.",
-    "risk_warning": "A failure to hold above the 80.08 support level could lead to a significant price drop.",
-    "generated_at": "2026-03-31T20:45:52.567204+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 82.94,
-        "open": 81.18,
-        "high": 83.47,
-        "low": 80.81,
-        "change_pct": 2.17,
-        "atr": 0.2107,
-        "avg_vol": 15524.18,
-        "last_vol": 76.46
-      },
-      "15m": {
-        "close": 82.94,
-        "open": 83.38,
-        "high": 83.83,
-        "low": 80.08,
-        "change_pct": -0.53,
-        "atr": 0.4007,
-        "avg_vol": 56373.64,
-        "last_vol": 76.46
-      },
-      "30m": {
-        "close": 82.94,
-        "open": 83.37,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -0.52,
-        "atr": 0.8714,
-        "avg_vol": 88823.29,
-        "last_vol": 17777.14
-      },
-      "1h": {
-        "close": 82.94,
-        "open": 82.16,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": 0.95,
-        "atr": 1.1514,
-        "avg_vol": 158842.53,
-        "last_vol": 93220.92
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 82.79,
     "best_price": 83.38,
