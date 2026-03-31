@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T12:06:57.149477+00:00",
+  "generated_at": "2026-03-31T12:08:12.522244+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.96,
+  "price": 80.89,
   "usdt_balance": 523.89864646,
-  "sol_balance": -4.91083521,
+  "sol_balance": -4.91087351,
   "cad_balance": 523.89864646,
-  "margin_level": 1.31814077,
+  "margin_level": 1.31869583,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (34.7)"
+    "RSI oversold (33.0)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1065,7 +1065,7 @@
     "long_trades": 6,
     "short_trades": 13
   },
-  "run_count": 302,
+  "run_count": 303,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1095,62 +1095,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with the price currently below the EMA-20 and EMA-50, indicating a bearish bias. The RSI is oversold, which could lead to a potential bounce, but the overall trend remains bearish. The MACD below the signal line further confirms the bearish sentiment.",
-    "5m": "The 5-minute chart shows a sharp decline, with a 2.53% drop in price, indicating strong bearish momentum.",
-    "15m": "The 15-minute chart confirms the downtrend, with the price closing below the opening price and a 2.89% drop, indicating sustained bearish pressure.",
-    "30m": "The 30-minute chart shows a significant drop of 4.17%, with the price failing to break above the EMA-20, indicating a strong bearish trend.",
-    "1h": "The 1-hour chart shows a more moderate decline of 1.16%, but the price remains below the EMA-20, indicating a bearish bias.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential bounce off the key support level at 78.96, but the overall trend remains bearish, and a short position may be maintained.",
-    "risk_warning": "A strong bullish reversal could occur if the RSI oversold condition is relieved, so traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-03-31T12:06:56.262872+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.96,
-        "open": 83.06,
-        "high": 83.35,
-        "low": 80.08,
-        "change_pct": -2.53,
-        "atr": 0.2607,
-        "avg_vol": 23942.34,
-        "last_vol": 1431.67
-      },
-      "15m": {
-        "close": 80.96,
-        "open": 83.37,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -2.89,
-        "atr": 0.5136,
-        "avg_vol": 40729.01,
-        "last_vol": 16896.87
-      },
-      "30m": {
-        "close": 80.97,
-        "open": 84.49,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -4.17,
-        "atr": 0.675,
-        "avg_vol": 73889.81,
-        "last_vol": 16897.06
-      },
-      "1h": {
-        "close": 80.97,
-        "open": 81.92,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": -1.16,
-        "atr": 0.9043,
-        "avg_vol": 130419.68,
-        "last_vol": 16898.54
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 80.72,
     "best_price": 80.52,
