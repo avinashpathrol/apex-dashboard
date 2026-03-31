@@ -516,6 +516,7 @@ input:focus{border-color:#3f3f46;}
     <div class="tab" onclick="switchTab('market',this)">Market</div>
     <div class="tab" onclick="switchTab('history',this)">History</div>
     <div class="tab" onclick="switchTab('techchart',this)">Chart</div>
+    <div class="tab" onclick="switchTab('ai',this)">🤖 AI</div>
   </div>
 
   <div class="content">
@@ -841,6 +842,67 @@ input:focus{border-color:#3f3f46;}
         <span style="font-size:10px;color:#52525b;">MACD (12,26,9)</span>
         <div style="height:80px;"><canvas id="tcMacdChart"></canvas></div>
       </div>
+    </div>
+
+    <!-- AI ANALYSIS TAB -->
+    <div class="tab-panel" id="tab-ai">
+      <div style="padding:10px 4px 6px;display:flex;align-items:center;gap:8px;">
+        <span style="font-size:12px;font-weight:700;color:#e8e8e8;flex:1;">🤖 AI Market Analysis · SOL/USDT</span>
+        <span id="ai-updated" style="font-size:10px;color:#52525b;">—</span>
+      </div>
+
+      <!-- Verdict banner -->
+      <div id="ai-verdict-banner" style="border-radius:10px;padding:12px 16px;margin-bottom:10px;display:flex;align-items:center;gap:10px;background:#18181b;border:1px solid #27272a;">
+        <div id="ai-verdict-ico" style="font-size:24px;">—</div>
+        <div style="flex:1;">
+          <div id="ai-verdict-label" style="font-size:13px;font-weight:700;color:#e8e8e8;">Waiting for analysis…</div>
+          <div id="ai-strength-bar-wrap" style="margin-top:4px;height:6px;border-radius:3px;background:#27272a;overflow:hidden;">
+            <div id="ai-strength-bar" style="height:100%;width:0%;border-radius:3px;background:#a1a1aa;transition:width .4s;"></div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div id="ai-strength-pct" style="font-size:16px;font-weight:700;color:#e8e8e8;">—</div>
+          <div style="font-size:9px;color:#52525b;">CONVICTION</div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="card" style="padding:12px;margin-bottom:8px;">
+        <div style="font-size:10px;color:#52525b;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Summary</div>
+        <div id="ai-summary" style="font-size:12px;color:#a1a1aa;line-height:1.6;">—</div>
+      </div>
+
+      <!-- Per-timeframe analysis -->
+      <div style="font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Timeframe Breakdown</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;" id="ai-tf-grid">
+        <div class="card" id="ai-tf-5m"  style="padding:10px;"><div class="ml">5m</div><div class="mv" style="font-size:11px;">—</div></div>
+        <div class="card" id="ai-tf-15m" style="padding:10px;"><div class="ml">15m</div><div class="mv" style="font-size:11px;">—</div></div>
+        <div class="card" id="ai-tf-30m" style="padding:10px;"><div class="ml">30m</div><div class="mv" style="font-size:11px;">—</div></div>
+        <div class="card" id="ai-tf-1h"  style="padding:10px;"><div class="ml">1h</div><div class="mv" style="font-size:11px;">—</div></div>
+      </div>
+
+      <!-- Support / Resistance -->
+      <div class="card" style="padding:12px;margin-bottom:8px;">
+        <div style="font-size:10px;color:#52525b;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Key Levels</div>
+        <div style="display:flex;gap:6px;">
+          <div style="flex:1;background:#052e16;border:1px solid #166534;border-radius:8px;padding:8px;text-align:center;">
+            <div style="font-size:9px;color:#4ade80;margin-bottom:4px;">SUPPORT</div>
+            <div id="ai-support" style="font-size:13px;font-weight:700;color:#4ade80;">—</div>
+          </div>
+          <div style="flex:1;background:#1a0000;border:1px solid #7f1d1d;border-radius:8px;padding:8px;text-align:center;">
+            <div style="font-size:9px;color:#f87171;margin-bottom:4px;">RESISTANCE</div>
+            <div id="ai-resistance" style="font-size:13px;font-weight:700;color:#f87171;">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendation -->
+      <div class="card" style="padding:12px;">
+        <div style="font-size:10px;color:#52525b;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Recommendation</div>
+        <div id="ai-recommendation" style="font-size:12px;color:#a1a1aa;line-height:1.6;">—</div>
+      </div>
+
+      <div style="margin-top:10px;font-size:10px;color:#3f3f46;text-align:center;">Analysis updates every ~5 minutes (5 bot runs) · Powered by Groq llama-3.3-70b</div>
     </div>
   </div>
 </div>
@@ -1579,6 +1641,93 @@ function switchTab(name,el){
   if(el)el.classList.add('active');
   const panel=qs('tab-'+name);if(panel)panel.classList.add('active');
   if(name==='techchart')buildTechChart();
+  if(name==='ai')renderAiTab();
+}
+
+// ── AI TAB ──
+function renderAiTab(){
+  const d=botData;
+  const ai=d&&d.ai_analysis&&Object.keys(d.ai_analysis).length?d.ai_analysis:null;
+  if(!ai){
+    setEl('ai-verdict-label','No analysis yet — arrives after 5 bot runs (~5 min)');
+    qs('ai-verdict-ico').textContent='⏳';
+    setEl('ai-summary','Bot will analyse 5m / 15m / 30m / 1h candles every 5 runs and post results here.');
+    setEl('ai-updated','—');
+    ['5m','15m','30m','1h'].forEach(tf=>{
+      const el=qs('ai-tf-'+tf);if(!el)return;
+      el.querySelector('.mv').textContent='—';
+      el.style.borderColor='#27272a';
+    });
+    setEl('ai-support','—');setEl('ai-resistance','—');
+    setEl('ai-recommendation','—');
+    return;
+  }
+
+  // Verdict banner — bot returns BULLISH/BEARISH/NEUTRAL/CHOPPY
+  const verdict=(ai.verdict||'').toUpperCase();
+  // strength is 1-10 from bot, convert to percent for bar
+  const strengthRaw=parseFloat(ai.strength)||0;
+  const strengthPct=Math.round(Math.min(strengthRaw*10,100));
+  const ico={'BULLISH':'📈','BEARISH':'📉','NEUTRAL':'➡️','CHOPPY':'〰️'}[verdict]||'🤔';
+  const bannerCol={'BULLISH':'#052e16','BEARISH':'#1a0000','NEUTRAL':'#18181b','CHOPPY':'#1c1c28'}[verdict]||'#18181b';
+  const borderCol={'BULLISH':'#166534','BEARISH':'#7f1d1d','NEUTRAL':'#27272a','CHOPPY':'#3730a3'}[verdict]||'#27272a';
+  const labelCol={'BULLISH':'#4ade80','BEARISH':'#f87171','NEUTRAL':'#a1a1aa','CHOPPY':'#818cf8'}[verdict]||'#e8e8e8';
+  const barCol={'BULLISH':'#22c55e','BEARISH':'#ef4444','NEUTRAL':'#71717a','CHOPPY':'#6366f1'}[verdict]||'#a1a1aa';
+  const banner=qs('ai-verdict-banner');
+  banner.style.background=bannerCol;banner.style.borderColor=borderCol;
+  qs('ai-verdict-ico').textContent=ico;
+  qs('ai-verdict-label').textContent=verdict+' — '+((ai.summary||'').split('.')[0]||'');
+  qs('ai-verdict-label').style.color=labelCol;
+  qs('ai-strength-bar').style.width=strengthPct+'%';
+  qs('ai-strength-bar').style.background=barCol;
+  qs('ai-strength-pct').textContent=strengthRaw+'/10';
+  qs('ai-strength-pct').style.color=labelCol;
+
+  setEl('ai-summary',ai.summary||'—');
+
+  // Timeframe breakdown — bot returns flat keys ai['5m'], ai['15m'] etc as one-sentence strings
+  // ai.timeframes holds the OHLC stats per tf
+  const tfStats=ai.timeframes||{};
+  ['5m','15m','30m','1h'].forEach(tf=>{
+    const el=qs('ai-tf-'+tf);if(!el)return;
+    const note=ai[tf]||'—';  // one-sentence string from AI
+    const stats=tfStats[tf]||{};
+    const chg=stats.change_pct!=null?stats.change_pct:null;
+    // Infer bias from sentence content for colour
+    const lower=(note||'').toLowerCase();
+    const isBull=lower.includes('bull')||lower.includes('upward')||lower.includes('rising')||lower.includes('bounce');
+    const isBear=lower.includes('bear')||lower.includes('down')||lower.includes('falling')||lower.includes('sell');
+    const bCol=isBull?'#22c55e':isBear?'#f87171':'#a1a1aa';
+    const bBorder=isBull?'#166534':isBear?'#7f1d1d':'#27272a';
+    el.style.borderColor=bBorder;
+    el.querySelector('.ml').textContent=tf+(chg!=null?' ('+(chg>=0?'+':'')+parseFloat(chg).toFixed(2)+'%)':'');
+    const mv=el.querySelector('.mv');
+    mv.style.color=bCol;
+    mv.textContent=note;
+    mv.style.fontSize='10px';
+    mv.style.fontWeight='400';
+    mv.style.lineHeight='1.4';
+    mv.style.marginTop='2px';
+  });
+
+  // Key levels
+  const sup=ai.key_level_support;
+  const res=ai.key_level_resistance;
+  setEl('ai-support',sup?fmtP(parseFloat(sup)):'—');
+  setEl('ai-resistance',res?fmtP(parseFloat(res)):'—');
+
+  // Recommendation + risk warning
+  let rec=ai.recommendation||'—';
+  if(ai.risk_warning&&ai.risk_warning!=='null')rec+='\n⚠️ '+ai.risk_warning;
+  setEl('ai-recommendation',rec);
+
+  // Updated time — bot stores generated_at as ISO string
+  if(ai.generated_at){
+    const dt=new Date(ai.generated_at);
+    setEl('ai-updated','Updated '+dt.toLocaleTimeString('en-CA',{hour:'2-digit',minute:'2-digit',hour12:false}));
+  } else {
+    setEl('ai-updated','—');
+  }
 }
 
 // ── CLOSE POSITION MODAL ──
@@ -1906,6 +2055,9 @@ async function load(){
     // ── Load live price + chart ──
     await loadPrice();
     loadSentiment();
+
+    // ── Refresh AI tab if active ──
+    if(qs('tab-ai')&&qs('tab-ai').classList.contains('active'))renderAiTab();
 
   }catch(e){
     console.error('load failed:',e);
