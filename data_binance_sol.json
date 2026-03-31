@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-31T10:20:11.025811+00:00",
+  "generated_at": "2026-03-31T10:21:18.187269+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 517.40168676,
   "sol_balance": -4.80792627,
   "cad_balance": 517.40168676,
-  "margin_level": 1.33455655,
+  "margin_level": 1.33568255,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 82,
@@ -1036,7 +1036,7 @@
     "long_trades": 6,
     "short_trades": 12
   },
-  "run_count": 213,
+  "run_count": 214,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1066,62 +1066,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with the price currently below the EMA-20 and EMA-50, indicating a bearish bias. The RSI is oversold, but the MACD and EMA crossovers suggest the downtrend may continue. The market is experiencing a significant decline in price, with a 3.99% change in the 30m timeframe.",
-    "5m": "The 5m timeframe is showing a significant decline in price, with a 3.13% change and a low of 80.08, indicating strong bearish momentum.",
-    "15m": "The 15m timeframe is also showing a decline in price, with a 1.96% change and a low of 80.08, suggesting the bearish trend is persistent.",
-    "30m": "The 30m timeframe is indicating a strong downtrend, with a 3.99% change and a low of 80.08, confirming the bearish bias.",
-    "1h": "The 1h timeframe is showing a decline in price, with a 2.45% change and a low of 78.96, indicating the bearish trend is intact.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential bounce off the key level support at 78.96, but the overall trend remains bearish, so any long positions should be taken with caution.",
-    "risk_warning": "The high ATR values across timeframes indicate high volatility, so traders should be prepared for significant price swings and adjust their positions accordingly.",
-    "generated_at": "2026-03-31T10:20:10.164006+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.59,
-        "open": 83.19,
-        "high": 83.83,
-        "low": 80.08,
-        "change_pct": -3.13,
-        "atr": 0.3407,
-        "avg_vol": 14043.13,
-        "last_vol": 2156.09
-      },
-      "15m": {
-        "close": 80.57,
-        "open": 82.18,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -1.96,
-        "atr": 0.5071,
-        "avg_vol": 30887.06,
-        "last_vol": 35825.6
-      },
-      "30m": {
-        "close": 80.57,
-        "open": 83.92,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -3.99,
-        "atr": 0.665,
-        "avg_vol": 61593.32,
-        "last_vol": 114073.32
-      },
-      "1h": {
-        "close": 80.56,
-        "open": 82.58,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": -2.45,
-        "atr": 0.9657,
-        "avg_vol": 114845.84,
-        "last_vol": 114415.51
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 82.44,
     "best_price": 80.36,
