@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-03-31T14:05:37.474454+00:00",
+  "generated_at": "2026-03-31T14:06:53.974121+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.75,
+  "price": 81.72,
   "usdt_balance": 518.75944351,
   "sol_balance": -4.84588543,
   "cad_balance": 518.75944351,
-  "margin_level": 1.30908177,
+  "margin_level": 1.31033855,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLDING SHORT \u2014 RSI falling from high (53.9) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (91%)",
+  "status": "HOLDING SHORT \u2014 RSI falling from high (53.5) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (90%)",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "RSI falling from high (53.9) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (91%)",
+  "reason": "RSI falling from high (53.5) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (90%)",
   "trend": "BEARISH",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (53.9)",
+    "RSI falling from high (53.5)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (91%)"
+    "Price near BB upper band (90%)"
   ],
   "trades": [
     {
@@ -1096,7 +1096,7 @@
     "long_trades": 6,
     "short_trades": 14
   },
-  "run_count": 394,
+  "run_count": 395,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1126,68 +1126,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 7,
-    "summary": "The SOL/USDT market is showing signs of a potential downtrend across multiple timeframes, with the current price near the upper Bollinger Band and the RSI falling from a high level. The EMA-20 is also below the EMA-50, indicating a bearish trend. However, the MACD is above the signal line, which could be a bullish signal, but the overall bearish signals outweigh the bullish ones.",
-    "5m": "The 5-minute chart shows a slight decline in price with a moderate ATR, indicating a potential short-term bearish momentum.",
-    "15m": "The 15-minute chart reveals a more significant price drop with a higher ATR, suggesting increased volatility and bearish pressure.",
-    "30m": "The 30-minute chart displays a notable price decline with a higher ATR, indicating a stronger bearish trend and potential for further downside.",
-    "1h": "The 1-hour chart shows a relatively stable price with a high ATR, indicating a potential consolidation phase before a potential bearish breakout.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential breakdown below the key support level of 78.96, which could confirm the bearish trend and lead to further downside.",
-    "risk_warning": "A false breakout above the key resistance level of 84.99 could lead to a significant short squeeze, so traders should be cautious and adjust their positions accordingly.",
-    "generated_at": "2026-03-31T14:05:36.554831+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 81.75,
-        "open": 82.16,
-        "high": 82.27,
-        "low": 80.08,
-        "change_pct": -0.5,
-        "atr": 0.285,
-        "avg_vol": 27377.53,
-        "last_vol": 72.98
-      },
-      "15m": {
-        "close": 81.75,
-        "open": 82.53,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -0.95,
-        "atr": 0.4829,
-        "avg_vol": 44491.86,
-        "last_vol": 47813.46
-      },
-      "30m": {
-        "close": 81.74,
-        "open": 84.39,
-        "high": 84.76,
-        "low": 80.08,
-        "change_pct": -3.14,
-        "atr": 0.7036,
-        "avg_vol": 76659.98,
-        "last_vol": 47841.88
-      },
-      "1h": {
-        "close": 81.74,
-        "open": 81.81,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": -0.09,
-        "atr": 0.965,
-        "avg_vol": 136127.75,
-        "last_vol": 47841.88
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 81.8,
-    "best_price": 81.75,
+    "best_price": 81.72,
     "atr": 0.4499999999999998,
     "sl": 82.475,
-    "trail_stop": 82.425,
+    "trail_stop": 82.395,
     "active": false
   }
 }
