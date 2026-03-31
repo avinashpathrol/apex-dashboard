@@ -179,6 +179,23 @@ input:focus{border-color:#3f3f46;}
 .next-ico{font-size:18px;flex-shrink:0;margin-top:1px;}
 .next-txt{font-size:13px;color:#a1a1aa;line-height:1.5;}
 .next-txt strong{color:#e8e8e8;}
+/* Signal info modal */
+.sig-info-ov{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:flex-end;justify-content:center;z-index:900;opacity:0;pointer-events:none;transition:opacity .2s;}
+.sig-info-ov.open{opacity:1;pointer-events:all;}
+.sig-info-box{background:#18181b;border:1px solid #27272a;border-radius:16px 16px 0 0;padding:20px;width:100%;max-width:480px;transform:translateY(20px);transition:transform .25s;}
+.sig-info-ov.open .sig-info-box{transform:translateY(0);}
+.sig-info-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sig-info-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.sig-info-title{font-size:14px;font-weight:700;color:#e8e8e8;flex:1;}
+.sig-info-close{background:none;border:none;color:#52525b;font-size:18px;cursor:pointer;padding:0;}
+.sig-info-val{font-size:22px;font-weight:700;margin-bottom:6px;}
+.sig-info-label{font-size:10px;color:#52525b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;}
+.sig-info-what{font-size:12px;color:#a1a1aa;line-height:1.6;margin-bottom:10px;}
+.sig-info-imp{font-size:12px;padding:10px 12px;border-radius:8px;line-height:1.5;}
+.sig-row{cursor:pointer;transition:background .15s;border-radius:4px;padding-left:4px;margin-left:-4px;}
+.sig-row:hover{background:#1c1c1f;}
+.sig-chip{cursor:pointer;transition:opacity .15s;}
+.sig-chip:hover{opacity:.75;}
 /* Sentiment */
 .sent-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #1c1c1f;font-size:12px;}
 .sent-row:last-child{border-bottom:none;}
@@ -907,6 +924,21 @@ input:focus{border-color:#3f3f46;}
   </div>
 </div>
 
+<!-- SIGNAL INFO MODAL -->
+<div class="sig-info-ov" id="sig-info-ov" onclick="if(event.target===this)closeSigModal()">
+  <div class="sig-info-box">
+    <div class="sig-info-hdr">
+      <div class="sig-info-dot" id="sig-info-dot"></div>
+      <div class="sig-info-title" id="sig-info-title">Signal</div>
+      <button class="sig-info-close" onclick="closeSigModal()">✕</button>
+    </div>
+    <div class="sig-info-val" id="sig-info-val"></div>
+    <div class="sig-info-label" id="sig-info-label"></div>
+    <div class="sig-info-what" id="sig-info-what"></div>
+    <div class="sig-info-imp" id="sig-info-imp"></div>
+  </div>
+</div>
+
 <!-- TRADE DETAIL MODAL -->
 <div class="trade-modal-ov" id="trade-modal-ov" onclick="if(event.target===this)closeTradeModalDirect()">
   <div class="trade-modal">
@@ -1250,8 +1282,10 @@ function updatePositionBanner(pos, price){
 
 // ── SIGNALS ──
 function renderSignals(bulls=[], bears=[], action='HOLD'){
-  const bullHtml=bulls.length?bulls.map(s=>`<div class="sig-row"><span class="srd bull-d"></span>${s}</div>`).join(''):'<span style="color:#52525b;font-size:12px;">None</span>';
-  const bearHtml=bears.length?bears.map(s=>`<div class="sig-row"><span class="srd bear-d"></span>${s}</div>`).join(''):'<span style="color:#52525b;font-size:12px;">None</span>';
+  const mkRow=(s,type)=>`<div class="sig-row" onclick="openSigModal(${JSON.stringify(s)},${JSON.stringify(type)})"><span class="srd ${type==='bull'?'bull-d':'bear-d'}"></span>${s}</div>`;
+  const mkChip=(s,type)=>`<div class="sig-chip" onclick="openSigModal(${JSON.stringify(s)},${JSON.stringify(type)})"><span class="sig-dot ${type==='bull'?'sd-bull':'sd-bear'}"></span><span class="sig-lbl">${s}</span></div>`;
+  const bullHtml=bulls.length?bulls.map(s=>mkRow(s,'bull')).join(''):'<span style="color:#52525b;font-size:12px;">None</span>';
+  const bearHtml=bears.length?bears.map(s=>mkRow(s,'bear')).join(''):'<span style="color:#52525b;font-size:12px;">None</span>';
   qs('bull').innerHTML=bullHtml; qs('bear').innerHTML=bearHtml;
   qs('bull2').innerHTML=bullHtml; qs('bear2').innerHTML=bearHtml;
 
@@ -1263,7 +1297,7 @@ function renderSignals(bulls=[], bears=[], action='HOLD'){
   qs('strength-label').textContent=score+'/6 (need 3)';
 
   const allSigs=[...bulls.map(s=>({t:s,k:'bull'})),...bears.map(s=>({t:s,k:'bear'}))];
-  qs('sig-grid').innerHTML=allSigs.slice(0,6).map(s=>`<div class="sig-chip"><span class="sig-dot ${s.k==='bull'?'sd-bull':'sd-bear'}"></span><span class="sig-lbl">${s.t}</span></div>`).join('');
+  qs('sig-grid').innerHTML=allSigs.slice(0,6).map(s=>mkChip(s.t,s.k)).join('');
 
   const bc=bulls.length, rc=bears.length;
   let ico, txt;
@@ -1276,6 +1310,143 @@ function renderSignals(bulls=[], bears=[], action='HOLD'){
   qs('next-ico').textContent=ico;
   qs('next-txt').innerHTML=txt;
 }
+
+// ── SIGNAL EXPLANATION MODAL ──
+function sigExplain(text, type){
+  const isBull=type==='bull';
+  const num=m=>{ const r=text.match(m); return r?parseFloat(r[1]):null; };
+  const t=text.toLowerCase();
+
+  if(t.includes('ema-20 above ema-50')||t.includes('ema-20 below ema-50')){
+    const up=t.includes('above');
+    return{
+      title:'EMA Trend Filter',
+      val: up?'EMA-20 > EMA-50':'EMA-20 < EMA-50',
+      label:'Exponential Moving Average Crossover',
+      what:`The 20-period EMA tracks recent price action; the 50-period EMA tracks the medium-term trend. When EMA-20 is ${up?'above':'below'} EMA-50, price momentum is ${up?'upward (uptrend)':'downward (downtrend)'}.`,
+      imp: up?'Bullish: the short-term trend is above the longer-term trend — market is in an uptrend. Bot will only open LONGs while this holds.':'Bearish: short-term trend has crossed below medium-term — market is in a downtrend. Bot will only open SHORTs while this holds.',
+    };
+  }
+  if(t.includes('rsi oversold')){
+    const v=num(/\((\d+\.?\d*)\)/);
+    return{
+      title:'RSI Oversold',
+      val:v?v.toFixed(1):'< 30',label:'Relative Strength Index',
+      what:`RSI measures how overbought or oversold a market is, on a scale of 0–100. RSI below 30 means price has dropped very fast and sellers may be exhausted.${v?' Current RSI: '+v.toFixed(1)+'.':''}`,
+      imp:'Bullish: price is likely oversold and due for a bounce or reversal upward. Strong buy signal.',
+    };
+  }
+  if(t.includes('rsi overbought')){
+    const v=num(/\((\d+\.?\d*)\)/);
+    return{
+      title:'RSI Overbought',
+      val:v?v.toFixed(1):'> 70',label:'Relative Strength Index',
+      what:`RSI above 70 means price has risen very fast and buyers may be exhausted.${v?' Current RSI: '+v.toFixed(1)+'.':''}`,
+      imp:'Bearish: price is likely overbought and due for a pullback or reversal downward. Strong sell signal.',
+    };
+  }
+  if(t.includes('rsi rising from low')){
+    const v=num(/\((\d+\.?\d*)\)/);
+    return{
+      title:'RSI Rising from Low',
+      val:v?v.toFixed(1):'—',label:'Relative Strength Index — recovering',
+      what:`RSI was in oversold territory and is now turning back up.${v?' Current RSI: '+v.toFixed(1)+'.':''} This signals that selling pressure is fading and buyers are stepping in.`,
+      imp:'Bullish: momentum is shifting upward after a dip — early sign of recovery.',
+    };
+  }
+  if(t.includes('rsi falling from high')){
+    const v=num(/\((\d+\.?\d*)\)/);
+    return{
+      title:'RSI Falling from High',
+      val:v?v.toFixed(1):'—',label:'Relative Strength Index — weakening',
+      what:`RSI was elevated and is now turning back down.${v?' Current RSI: '+v.toFixed(1)+'.':''} This signals that buying pressure is fading and sellers are taking control.`,
+      imp:'Bearish: momentum is rolling over from a high — early sign of downward move.',
+    };
+  }
+  if(t.includes('macd above signal')){
+    return{
+      title:'MACD Bullish Cross',
+      val:'MACD > Signal',label:'Moving Average Convergence Divergence',
+      what:'MACD line is above its signal line. MACD measures the difference between two EMAs (12 and 26 period). When MACD crosses above signal, momentum is turning bullish.',
+      imp:'Bullish: short-term momentum is accelerating upward. Confirms upward price movement.',
+    };
+  }
+  if(t.includes('macd below signal')){
+    return{
+      title:'MACD Bearish Cross',
+      val:'MACD < Signal',label:'Moving Average Convergence Divergence',
+      what:'MACD line is below its signal line. When MACD crosses below signal, momentum is turning bearish.',
+      imp:'Bearish: short-term momentum is accelerating downward. Confirms downward price movement.',
+    };
+  }
+  if(t.includes('price above ema-20')){
+    return{
+      title:'Price Above EMA-20',
+      val:'Price > EMA-20',label:'Short-term momentum',
+      what:'The current price is trading above its 20-period moving average. EMA-20 acts as a dynamic support level in uptrends.',
+      imp:'Bullish: price is holding above short-term support — buyers are in control and momentum is positive.',
+    };
+  }
+  if(t.includes('price below ema-20')){
+    return{
+      title:'Price Below EMA-20',
+      val:'Price < EMA-20',label:'Short-term momentum',
+      what:'The current price is trading below its 20-period moving average. EMA-20 acts as a dynamic resistance level in downtrends.',
+      imp:'Bearish: price has lost short-term support — sellers are in control and momentum is negative.',
+    };
+  }
+  if(t.includes('bb lower band')||t.includes('near bb lower')){
+    const v=num(/\((\d+\.?\d*)%\)/);
+    return{
+      title:'Price Near Bollinger Lower Band',
+      val:v?v.toFixed(0)+'% position':'Low in range',label:'Bollinger Band — oversold zone',
+      what:`Price is near the bottom of its Bollinger Band range.${v?' Currently at '+v.toFixed(0)+'% of the band (0%=bottom, 100%=top).':''} Bands expand and contract with volatility.`,
+      imp:'Bullish: price is at a statistically low level relative to recent volatility — historically tends to mean-revert upward.',
+    };
+  }
+  if(t.includes('bb upper band')||t.includes('near bb upper')){
+    const v=num(/\((\d+\.?\d*)%\)/);
+    return{
+      title:'Price Near Bollinger Upper Band',
+      val:v?v.toFixed(0)+'% position':'High in range',label:'Bollinger Band — overbought zone',
+      what:`Price is near the top of its Bollinger Band range.${v?' Currently at '+v.toFixed(0)+'% of the band (0%=bottom, 100%=top).':''} Upper band acts as dynamic resistance.`,
+      imp:'Bearish: price is at a statistically high level relative to recent volatility — historically tends to mean-revert downward.',
+    };
+  }
+  if(t.includes('high volume confirms')){
+    return{
+      title:'High Volume Confirmation',
+      val:'Volume > 1.3× avg',label:'Volume spike',
+      what:'Current candle volume is at least 30% above the 10-candle average. High volume on a move means more participants are involved and the move is more credible.',
+      imp:`${isBull?'Bullish':'Bearish'}: the current ${isBull?'upward':'downward'} move has strong participation behind it — not just a low-conviction drift. Increases confidence in the signal.`,
+    };
+  }
+  // fallback
+  return{
+    title:text,val:'—',label:'Signal',
+    what:'This signal was generated by the bot based on current market conditions.',
+    imp:isBull?'Bullish signal — contributes toward a LONG entry.':'Bearish signal — contributes toward a SHORT entry.',
+  };
+}
+
+function openSigModal(text, type){
+  const isBull=type==='bull';
+  const info=sigExplain(text,type);
+  const dot=qs('sig-info-dot');
+  dot.style.background=isBull?'#22c55e':'#f87171';
+  setEl('sig-info-title',info.title);
+  qs('sig-info-val').textContent=info.val;
+  qs('sig-info-val').style.color=isBull?'#22c55e':'#f87171';
+  setEl('sig-info-label',info.label);
+  setEl('sig-info-what',info.what);
+  const imp=qs('sig-info-imp');
+  imp.textContent=info.imp;
+  imp.style.background=isBull?'#052e16':'#1a0000';
+  imp.style.color=isBull?'#4ade80':'#f87171';
+  imp.style.border='1px solid '+(isBull?'#166534':'#7f1d1d');
+  qs('sig-info-ov').classList.add('open');
+}
+function closeSigModal(){ qs('sig-info-ov').classList.remove('open'); }
 
 // ── CHARTS ──
 function buildPriceChart(klines){
