@@ -2080,7 +2080,8 @@ async function saveBotConfig(){
   if(!GH){ addNotif('warn','GitHub token missing','Unlock again so the dashboard can save config to GitHub.'); return; }
 
   const cfg={
-    trade_amount: tradeAmount,
+    trade_amount_usdt: tradeAmount,
+    trade_amount: tradeAmount,  // kept for dashboard display compatibility
     leverage,
     updated_at: new Date().toISOString()
   };
