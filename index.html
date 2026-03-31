@@ -1103,56 +1103,90 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
     if(t.action === 'BUY'){
       if(openShort){
         // Closing a SHORT: bought back borrowed SOL
-        const entryPrice = openShort.price;
-        const closePrice = price;
-        const tradeQty   = openShort.qty || qty;
-        // SHORT profit: sold high, bought low
-        const pnl = (entryPrice - closePrice) * tradeQty;
-        const totalFee = openShort.fee + fee;
-        closed.push({
-          time:        t.time,
-          opened_at:   openShort.time,
-          closed_at:   t.time,
-          type:        'SHORT',
-          entry_price: entryPrice,
-          exit_price:  closePrice,
-          qty:         tradeQty,
-          pnl:         parseFloat(pnl.toFixed(4)),
-          fee:         parseFloat(totalFee.toFixed(6)),
-          collateral,
-          leverage:    lev,
-        });
-        openShort = null;
+        // Aggregate multiple close fills into weighted avg
+        const totalQty = openShort.closeQty ? openShort.closeQty + qty : qty;
+        const avgClose = openShort.closeQty
+          ? (openShort.closePrice * openShort.closeQty + price * qty) / totalQty
+          : price;
+        const closeFeeAcc = (openShort.closeFee||0) + fee;
+        // Check if more fills expected: if totalQty < openShort.qty, keep accumulating
+        if(totalQty < openShort.qty * 0.99){
+          openShort.closeQty = totalQty;
+          openShort.closePrice = avgClose;
+          openShort.closeFee = closeFeeAcc;
+        } else {
+          const entryPrice = openShort.price;
+          const closePrice = avgClose;
+          const tradeQty   = openShort.qty;
+          const pnl = (entryPrice - closePrice) * tradeQty;
+          const totalFee = openShort.fee + closeFeeAcc;
+          closed.push({
+            time:        t.time,
+            opened_at:   openShort.time,
+            closed_at:   t.time,
+            type:        'SHORT',
+            entry_price: entryPrice,
+            exit_price:  closePrice,
+            qty:         tradeQty,
+            pnl:         parseFloat(pnl.toFixed(4)),
+            fee:         parseFloat(totalFee.toFixed(6)),
+            collateral,
+            leverage:    lev,
+          });
+          openShort = null;
+        }
       } else if(!openLong){
-        // Opening a LONG
+        // Opening a LONG — first fill
         openLong = {price, time:t.time, qty, fee};
+      } else {
+        // Additional fill for existing LONG entry — aggregate (weighted avg price)
+        const totalQty = openLong.qty + qty;
+        openLong.price = (openLong.price * openLong.qty + price * qty) / totalQty;
+        openLong.qty   = totalQty;
+        openLong.fee  += fee;
       }
     } else if(t.action === 'SELL'){
       if(openLong){
-        // Closing a LONG: sold SOL that was bought
-        const entryPrice = openLong.price;
-        const closePrice = price;
-        const tradeQty   = openLong.qty || qty;
-        // LONG profit: bought low, sold high
-        const pnl = (closePrice - entryPrice) * tradeQty;
-        const totalFee = openLong.fee + fee;
-        closed.push({
-          time:        t.time,
-          opened_at:   openLong.time,
-          closed_at:   t.time,
-          type:        'LONG',
-          entry_price: entryPrice,
-          exit_price:  closePrice,
-          qty:         tradeQty,
-          pnl:         parseFloat(pnl.toFixed(4)),
-          fee:         parseFloat(totalFee.toFixed(6)),
-          collateral,
-          leverage:    lev,
-        });
-        openLong = null;
+        // Closing a LONG — aggregate multiple close fills
+        const totalQty = openLong.closeQty ? openLong.closeQty + qty : qty;
+        const avgClose = openLong.closeQty
+          ? (openLong.closePrice * openLong.closeQty + price * qty) / totalQty
+          : price;
+        const closeFeeAcc = (openLong.closeFee||0) + fee;
+        if(totalQty < openLong.qty * 0.99){
+          openLong.closeQty = totalQty;
+          openLong.closePrice = avgClose;
+          openLong.closeFee = closeFeeAcc;
+        } else {
+          const entryPrice = openLong.price;
+          const closePrice = avgClose;
+          const tradeQty   = openLong.qty;
+          const pnl = (closePrice - entryPrice) * tradeQty;
+          const totalFee = openLong.fee + closeFeeAcc;
+          closed.push({
+            time:        t.time,
+            opened_at:   openLong.time,
+            closed_at:   t.time,
+            type:        'LONG',
+            entry_price: entryPrice,
+            exit_price:  closePrice,
+            qty:         tradeQty,
+            pnl:         parseFloat(pnl.toFixed(4)),
+            fee:         parseFloat(totalFee.toFixed(6)),
+            collateral,
+            leverage:    lev,
+          });
+          openLong = null;
+        }
       } else if(!openShort){
-        // Opening a SHORT
+        // Opening a SHORT — first fill
         openShort = {price, time:t.time, qty, fee};
+      } else {
+        // Additional fill for existing SHORT entry — aggregate
+        const totalQty = openShort.qty + qty;
+        openShort.price = (openShort.price * openShort.qty + price * qty) / totalQty;
+        openShort.qty   = totalQty;
+        openShort.fee  += fee;
       }
     }
   }
