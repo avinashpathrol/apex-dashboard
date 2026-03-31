@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T15:03:17.604925+00:00",
+  "generated_at": "2026-03-31T15:05:24.382383+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.88,
+  "price": 80.87,
   "usdt_balance": 518.75944351,
   "sol_balance": -4.84588543,
   "cad_balance": 518.75944351,
-  "margin_level": 1.32241043,
+  "margin_level": 1.32434955,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
@@ -18,7 +18,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (43.2)",
+    "RSI rising from low (42.8)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -1095,7 +1095,7 @@
     "long_trades": 6,
     "short_trades": 14
   },
-  "run_count": 439,
+  "run_count": 440,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1125,7 +1125,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is experiencing mixed signals across timeframes, with the current short position and hold signal indicating a potential reversal, while the RSI and MACD suggest bullish momentum, but the price remains below the EMA-20, indicating a downtrend. The market is choppy, with significant price fluctuations across timeframes. A breakout or reversal is likely to occur soon, driven by the interplay between these signals.",
+    "5m": "The 5-minute timeframe shows a slight increase in price, but the overall trend is neutral, with a small ATR of 0.4121.",
+    "15m": "The 15-minute timeframe indicates a downtrend, with a significant price drop of 1.87% and a higher ATR of 0.5793, suggesting increased volatility.",
+    "30m": "The 30-minute timeframe shows a more pronounced downtrend, with a 4.31% price drop and a higher ATR of 0.8429, indicating increased market uncertainty.",
+    "1h": "The 1-hour timeframe indicates a slight downtrend, with a 1.03% price drop, but the ATR of 0.9643 suggests that the market is still volatile and prone to significant price movements.",
+    "key_level_support": 78.96,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 84.99 or a breakdown below the key support level of 78.96 to determine the next market direction.",
+    "risk_warning": "The high volatility and mixed signals in the market increase the risk of significant losses, and traders should adjust their positions accordingly.",
+    "generated_at": "2026-03-31T15:05:23.132382+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.87,
+        "open": 80.8,
+        "high": 82.59,
+        "low": 80.28,
+        "change_pct": 0.09,
+        "atr": 0.4121,
+        "avg_vol": 26523.86,
+        "last_vol": 18247.22
+      },
+      "15m": {
+        "close": 80.87,
+        "open": 82.41,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": -1.87,
+        "atr": 0.5793,
+        "avg_vol": 48320.84,
+        "last_vol": 18247.22
+      },
+      "30m": {
+        "close": 80.87,
+        "open": 84.51,
+        "high": 84.76,
+        "low": 80.08,
+        "change_pct": -4.31,
+        "atr": 0.8429,
+        "avg_vol": 79763.26,
+        "last_vol": 18247.22
+      },
+      "1h": {
+        "close": 80.87,
+        "open": 81.71,
+        "high": 84.99,
+        "low": 78.96,
+        "change_pct": -1.03,
+        "atr": 0.9643,
+        "avg_vol": 140536.26,
+        "last_vol": 18266.12
+      }
+    }
+  },
   "trail": {
     "entry_price": 81.8,
     "best_price": 80.54,
