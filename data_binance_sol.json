@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T14:52:16.954837+00:00",
+  "generated_at": "2026-03-31T14:53:27.862844+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.58,
+  "price": 80.66,
   "usdt_balance": 518.75944351,
   "sol_balance": -4.84588543,
   "cad_balance": 518.75944351,
-  "margin_level": 1.32737941,
+  "margin_level": 1.32870064,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
@@ -1095,7 +1095,7 @@
     "long_trades": 6,
     "short_trades": 14
   },
-  "run_count": 430,
+  "run_count": 431,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1125,62 +1125,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the current price below the EMA-20 and high volume confirming the move. The bearish signals are dominating, despite the MACD being above the signal line. The market is likely to continue its downward momentum in the short term.",
-    "5m": "The 5-minute chart shows a slight increase in price, but the overall trend remains bearish with a low ATR of 0.4214.",
-    "15m": "The 15-minute chart indicates a significant drop in price, with a 2.21% change and a higher ATR of 0.5771, confirming the bearish move.",
-    "30m": "The 30-minute chart shows a more pronounced downtrend, with a 4.28% change and an ATR of 0.845, indicating increased volatility.",
-    "1h": "The 1-hour chart also shows a bearish trend, with a 1.59% change and an ATR of 1.0757, suggesting that the market is likely to continue its downward momentum.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential short-term bounce towards the key level resistance at 84.99, but the overall trend remains bearish.",
-    "risk_warning": "Trading in a bearish market can result in significant losses, so traders should exercise caution and set appropriate stop-loss levels.",
-    "generated_at": "2026-03-31T14:52:16.010588+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.59,
-        "open": 80.55,
-        "high": 82.59,
-        "low": 80.08,
-        "change_pct": 0.05,
-        "atr": 0.4214,
-        "avg_vol": 27880.76,
-        "last_vol": 19920.08
-      },
-      "15m": {
-        "close": 80.59,
-        "open": 82.41,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -2.21,
-        "atr": 0.5771,
-        "avg_vol": 47438.4,
-        "last_vol": 77885.52
-      },
-      "30m": {
-        "close": 80.51,
-        "open": 84.11,
-        "high": 84.76,
-        "low": 80.08,
-        "change_pct": -4.28,
-        "atr": 0.845,
-        "avg_vol": 79110.64,
-        "last_vol": 124186.79
-      },
-      "1h": {
-        "close": 80.51,
-        "open": 81.81,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": -1.59,
-        "atr": 1.0757,
-        "avg_vol": 140660.43,
-        "last_vol": 265410.84
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 81.8,
     "best_price": 80.58,
