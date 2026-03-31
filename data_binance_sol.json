@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T18:58:21.307382+00:00",
+  "generated_at": "2026-03-31T18:59:36.004001+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.83,
+  "price": 82.88,
   "usdt_balance": -274.08951986,
   "sol_balance": 4.8204979,
   "cad_balance": -274.08951986,
-  "margin_level": 1.39105919,
+  "margin_level": 1.3923089,
   "position": "LONG",
   "action": "LONG",
   "confidence": 95,
@@ -1089,7 +1089,7 @@
     "long_trades": 4,
     "short_trades": 14
   },
-  "run_count": 155,
+  "run_count": 156,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -1119,7 +1119,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a bullish momentum. The recent price action has been driven by buying pressure, with the 1-hour timeframe showing a significant increase. The overall trend suggests a continuation of the uptrend, with potential for further gains.",
+    "5m": "The 5-minute timeframe is showing a slight pullback after a brief surge, but the overall momentum remains bullish.",
+    "15m": "The 15-minute timeframe is experiencing a minor correction, but the price is still holding above the EMA-20, indicating a strong support level.",
+    "30m": "The 30-minute timeframe is displaying a steady uptrend, with the price consolidating above the EMA-20 and preparing for a potential breakout.",
+    "1h": "The 1-hour timeframe is showing a significant increase in price, with the MACD above the signal line and the EMA-20 above the EMA-50, indicating a strong bullish trend.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential breakout above the 84.99 resistance level, which could lead to further gains and a continuation of the uptrend.",
+    "risk_warning": "A failure to hold above the 80.08 support level could lead to a reversal of the trend, so traders should be cautious and adjust their positions accordingly.",
+    "generated_at": "2026-03-31T18:59:35.093656+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 82.87,
+        "open": 81.78,
+        "high": 83.47,
+        "low": 80.4,
+        "change_pct": 1.33,
+        "atr": 0.2264,
+        "avg_vol": 20116.08,
+        "last_vol": 2882.64
+      },
+      "15m": {
+        "close": 82.87,
+        "open": 83.59,
+        "high": 83.91,
+        "low": 80.08,
+        "change_pct": -0.86,
+        "atr": 0.6007,
+        "avg_vol": 55732.74,
+        "last_vol": 14360.71
+      },
+      "30m": {
+        "close": 82.87,
+        "open": 82.2,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": 0.82,
+        "atr": 0.9236,
+        "avg_vol": 90097.33,
+        "last_vol": 45264.51
+      },
+      "1h": {
+        "close": 82.87,
+        "open": 81.62,
+        "high": 84.99,
+        "low": 78.96,
+        "change_pct": 1.53,
+        "atr": 1.1771,
+        "avg_vol": 155913.73,
+        "last_vol": 96658.13
+      }
+    }
+  },
   "trail": {
     "entry_price": 82.79,
     "best_price": 82.98,
