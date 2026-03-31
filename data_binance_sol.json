@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-31T06:32:47.854008+00:00",
+  "generated_at": "2026-03-31T06:33:55.341208+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.13,
+  "price": 83.15,
   "usdt_balance": 119.59952603,
   "sol_balance": 0.0187303,
   "cad_balance": 119.59952603,
@@ -19,7 +19,7 @@
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (15%)"
+    "Price near BB lower band (17%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -937,7 +937,7 @@
     "long_trades": 5,
     "short_trades": 10
   },
-  "run_count": 18,
+  "run_count": 19,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
@@ -966,56 +966,56 @@
   "ai_analysis": {
     "verdict": "NEUTRAL",
     "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price hovering near the lower Bollinger Band, indicating potential support, while the MACD below the signal line suggests bearish momentum. The EMA-20 being above EMA-50 indicates an uptrend, but the price is currently below the EMA-20, which could be a bearish sign. Overall, the market is indecisive, and a clear direction is yet to be established.",
-    "5m": "The 5-minute chart shows a slight decline in price, with a 1.15% change, indicating short-term bearish pressure.",
-    "15m": "The 15-minute chart reveals a more pronounced decline, with a 1.63% change, and the price is nearing the lower end of its recent range.",
-    "30m": "The 30-minute chart displays a relatively stable price action, with a minor 0.56% change, suggesting a temporary consolidation phase.",
-    "1h": "The 1-hour chart shows a slight increase in price, with a 0.81% change, which could be a sign of potential bullish reversal or a trap.",
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price hovering near the lower Bollinger Band, indicating potential oversold conditions, while the MACD below the signal line suggests bearish momentum. The EMA-20 being above EMA-50 indicates an uptrend, but the price is currently below the EMA-20, which is a bearish sign. Overall, the market is indecisive and lacks clear direction.",
+    "5m": "The 5-minute chart shows a slight decline in price with a moderate ATR, indicating moderate volatility.",
+    "15m": "The 15-minute chart displays a more pronounced decline in price with a higher ATR, suggesting increased volatility and potential for further downward movement.",
+    "30m": "The 30-minute chart exhibits a relatively stable price action with a higher ATR, indicating that the market is consolidating and preparing for a potential breakout.",
+    "1h": "The 1-hour chart shows a slight increase in price with a higher ATR, suggesting that the market is trying to regain its footing and potentially reverse the downtrend.",
     "key_level_support": 78.96,
     "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential bounce off the lower Bollinger Band or a break below the key support level to determine the next market direction.",
-    "risk_warning": "Trading in a neutral market with mixed signals can be risky, and traders should be cautious of false breakouts or sudden changes in market sentiment.",
-    "generated_at": "2026-03-31T06:32:46.736945+00:00",
+    "recommendation": "Traders should watch for a potential bounce off the lower Bollinger Band and a break above the EMA-20 as a sign of bullish momentum.",
+    "risk_warning": "The lack of clear direction and mixed signals across timeframes increases the risk of whipsaws and false breakouts, so traders should exercise caution and consider reducing position sizes.",
+    "generated_at": "2026-03-31T06:33:54.476475+00:00",
     "timeframes": {
       "5m": {
-        "close": 83.13,
+        "close": 83.15,
         "open": 84.1,
         "high": 84.55,
         "low": 82.9,
-        "change_pct": -1.15,
+        "change_pct": -1.13,
         "atr": 0.1879,
-        "avg_vol": 8121.87,
-        "last_vol": 5785.36
+        "avg_vol": 8137.14,
+        "last_vol": 6702.08
       },
       "15m": {
-        "close": 83.13,
+        "close": 83.15,
         "open": 84.51,
         "high": 84.72,
         "low": 81.96,
-        "change_pct": -1.63,
+        "change_pct": -1.61,
         "atr": 0.3393,
-        "avg_vol": 26621.92,
-        "last_vol": 5785.36
+        "avg_vol": 26637.2,
+        "last_vol": 6702.08
       },
       "30m": {
-        "close": 83.12,
+        "close": 83.15,
         "open": 83.59,
         "high": 84.99,
         "low": 81.96,
-        "change_pct": -0.56,
+        "change_pct": -0.53,
         "atr": 0.5721,
-        "avg_vol": 55892.0,
-        "last_vol": 5786.35
+        "avg_vol": 55911.29,
+        "last_vol": 6712.27
       },
       "1h": {
-        "close": 83.12,
+        "close": 83.15,
         "open": 82.45,
         "high": 84.99,
         "low": 78.96,
-        "change_pct": 0.81,
+        "change_pct": 0.85,
         "atr": 0.8814,
-        "avg_vol": 104171.54,
-        "last_vol": 104789.24
+        "avg_vol": 104190.83,
+        "last_vol": 105715.16
       }
     }
   },
