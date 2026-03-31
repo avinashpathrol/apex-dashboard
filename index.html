@@ -540,44 +540,50 @@ input:focus{border-color:#3f3f46;}
     <!-- OVERVIEW -->
     <div class="tab-panel active" id="tab-overview">
       <!-- Margin gauge — always visible -->
-      <div class="mg2" id="margin-gauge-card">
-        <div class="mg2-top">
-          <div>
-            <div class="mg2-label">🛡 Margin Safety</div>
-            <div class="mg2-hint" id="mg2-hint">Loading...</div>
+      <!-- Margin gauge — compact bar, expands to full detail only when level < 1.5 -->
+      <div id="margin-gauge-card" style="margin-bottom:8px;">
+        <!-- Compact view (always visible) -->
+        <div id="mg2-compact" style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:#18181b;border:1px solid #27272a;border-radius:10px;cursor:pointer;" onclick="toggleMarginDetail()">
+          <div style="flex:1;height:6px;border-radius:3px;background:#27272a;overflow:hidden;">
+            <div id="mg2-bar-fill" style="height:100%;border-radius:3px;width:100%;background:#22c55e;transition:width .9s,background .4s;"></div>
           </div>
-          <div style="text-align:right;">
-            <div class="mg2-num" id="mg2-num">—</div>
-            <div><span class="mg2-badge" id="mg2-badge">—</span></div>
+          <span id="mg2-compact-label" style="font-size:10px;font-weight:700;color:#22c55e;white-space:nowrap;">SAFE</span>
+          <span id="mg2-num" style="font-size:10px;color:#52525b;font-family:monospace;">—</span>
+          <span style="font-size:9px;color:#3f3f46;">▾</span>
+        </div>
+        <!-- Detail view (hidden when safe, shown when warning) -->
+        <div id="mg2-detail" style="display:none;padding:10px 12px;background:#18181b;border:1px solid #27272a;border-top:none;border-radius:0 0 10px 10px;">
+          <div class="mg2-bar-wrap" style="margin-bottom:4px;">
+            <div class="mg2-bar">
+              <div class="mg2-needle" id="mg2-needle" style="left:100%"></div>
+            </div>
+            <div class="mg2-zones">
+              <span class="mg2-zone-liq">1.0 Liq</span>
+              <span class="mg2-zone-crit">1.1 Crit</span>
+              <span class="mg2-zone-warn">1.3 Danger</span>
+              <span class="mg2-zone-warn">1.5 Watch</span>
+              <span class="mg2-zone-ok">2.0 Good</span>
+              <span class="mg2-zone-safe">3.0+ Safe</span>
+            </div>
+          </div>
+          <div class="mg2-rows" style="margin-top:6px;">
+            <div class="mg2-row">
+              <span class="mg2-row-label">💀 Liquidation near</span>
+              <span class="mg2-row-val mg-danger">≈ 1.10</span>
+            </div>
+            <div class="mg2-row">
+              <span class="mg2-row-label">⛔ Bot stops new trades at</span>
+              <span class="mg2-row-val mg-warn">1.50</span>
+            </div>
+            <div class="mg2-row">
+              <span class="mg2-row-label">📊 Current status</span>
+              <span class="mg2-row-val" id="mg2-status-row">—</span>
+            </div>
           </div>
         </div>
-        <div class="mg2-bar-wrap">
-          <div class="mg2-bar">
-            <div class="mg2-needle" id="mg2-needle" style="left:100%"></div>
-          </div>
-          <div class="mg2-zones">
-            <span class="mg2-zone-liq">1.0 Liq</span>
-            <span class="mg2-zone-crit">1.1 Critical</span>
-            <span class="mg2-zone-warn">1.3 Danger</span>
-            <span class="mg2-zone-warn">1.5 Watch</span>
-            <span class="mg2-zone-ok">2.0 Good</span>
-            <span class="mg2-zone-safe">3.0+ Safe</span>
-          </div>
-        </div>
-        <div class="mg2-rows">
-          <div class="mg2-row">
-            <span class="mg2-row-label">💀 Liquidation near</span>
-            <span class="mg2-row-val mg-danger">≈ 1.10</span>
-          </div>
-          <div class="mg2-row">
-            <span class="mg2-row-label">⛔ Bot stops new trades at</span>
-            <span class="mg2-row-val mg-warn">1.50</span>
-          </div>
-          <div class="mg2-row">
-            <span class="mg2-row-label">📊 Current status</span>
-            <span class="mg2-row-val" id="mg2-status-row">—</span>
-          </div>
-        </div>
+        <!-- Hidden elements kept for JS compatibility -->
+        <span id="mg2-badge" style="display:none;"></span>
+        <span id="mg2-hint" style="display:none;"></span>
       </div>
 
       <!-- Position banner -->
@@ -1170,18 +1176,31 @@ function updateMarginLevel(level){
     hint='Binance may force-close your position'; statusTxt='Liquidation in progress';
   }
 
-  // Number
+  // Compact bar fill (1.0→3.0 = 0%→100%)
+  const barPct=safe?100:Math.min(100,Math.max(0,((v-1.0)/2.0)*100));
+  const barFill=qs('mg2-bar-fill');
+  if(barFill){barFill.style.width=barPct+'%';barFill.style.background=color;}
+  const compactLabel=qs('mg2-compact-label');
+  if(compactLabel){compactLabel.textContent=badgeTxt;compactLabel.style.color=color;}
   const numEl=qs('mg2-num');
-  if(numEl){numEl.textContent=safe?'Safe':v.toFixed(2);numEl.style.color=color;}
+  if(numEl){numEl.textContent=safe?'':v.toFixed(2);numEl.style.color=color;}
 
-  // Badge
-  const badgeEl=qs('mg2-badge');
-  if(badgeEl){badgeEl.textContent=badgeTxt;badgeEl.style.color=color;badgeEl.style.background=badgeBg;badgeEl.style.border='1px solid '+color+'55';}
+  // Auto-expand detail only when margin is critical (< 1.1), otherwise stay collapsed
+  const detail=qs('mg2-detail');
+  const compact=qs('mg2-compact');
+  if(detail&&compact){
+    if(!detail.dataset.manualOpen){
+      if(v<1.1&&!safe){
+        detail.style.display='block';
+        compact.style.borderRadius='10px 10px 0 0';
+      } else {
+        detail.style.display='none';
+        compact.style.borderRadius='10px';
+      }
+    }
+  }
 
-  // Hint
-  setEl('mg2-hint',hint);
-
-  // Needle: scale 1.0→3.0 maps to 0%→100%
+  // Needle in detail view
   const needlePct=safe?100:Math.min(100,Math.max(0,((v-1.0)/2.0)*100));
   const needle=qs('mg2-needle');
   if(needle){needle.style.left=needlePct+'%';needle.style.boxShadow='0 0 8px '+color;}
@@ -1447,6 +1466,14 @@ function openSigModal(text, type){
   qs('sig-info-ov').classList.add('open');
 }
 function closeSigModal(){ qs('sig-info-ov').classList.remove('open'); }
+function toggleMarginDetail(){
+  const detail=qs('mg2-detail');
+  const compact=qs('mg2-compact');
+  if(!detail)return;
+  const open=detail.style.display!=='none';
+  if(open){detail.style.display='none';compact.style.borderRadius='10px';delete detail.dataset.manualOpen;}
+  else{detail.style.display='block';compact.style.borderRadius='10px 10px 0 0';detail.dataset.manualOpen='1';}
+}
 
 // ── CHARTS ──
 function buildPriceChart(klines){
