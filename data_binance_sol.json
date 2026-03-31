@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-03-31T05:15:16.894794+00:00",
+  "generated_at": "2026-03-31T05:16:26.453259+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.92,
+  "price": 83.0,
   "usdt_balance": 126.89496284,
-  "sol_balance": 0.00042129,
+  "sol_balance": -4.79461672,
   "cad_balance": 126.89496284,
-  "margin_level": 999.0,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "margin_level": 1.31808787,
+  "position": "SHORT",
+  "action": "SHORT",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Dashboard close request executed",
-  "reason": "Dashboard close request executed",
+  "status": "SHORT OPENED \u2705",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "Price near BB lower band (18%)"
+    "RSI rising from low (42.2)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -519,6 +519,110 @@
       "qty": 4.761,
       "cost": 394.78212,
       "fee": 0.39478212
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.121,
+      "cost": 10.04179,
+      "fee": 0.01004179
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.062,
+      "cost": 5.14538,
+      "fee": 0.00514538
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 0.064,
+      "cost": 5.31136,
+      "fee": 0.00531136
+    },
+    {
+      "time": "2026-03-30T22:16:23.979000-07:00",
+      "action": "SELL",
+      "price": 82.99,
+      "qty": 3.972,
+      "cost": 329.63628,
+      "fee": 0.32963628
     }
   ],
   "closed_trades": [
@@ -715,14 +819,14 @@
     "long_trades": 5,
     "short_trades": 8
   },
-  "run_count": 287,
+  "run_count": 288,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 80.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 80.0,
@@ -732,7 +836,11 @@
       "close_requested": true,
       "close_requested_at": "2026-03-31T05:14:34.837Z"
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 80.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
