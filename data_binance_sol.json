@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-31T22:31:57.086489+00:00",
+  "generated_at": "2026-03-31T22:33:07.119935+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.54,
+  "price": 82.45,
   "usdt_balance": 125.90411803,
   "sol_balance": 0.0004979,
   "cad_balance": 125.90411803,
@@ -19,7 +19,7 @@
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (18%)"
+    "Price near BB lower band (8%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1107,7 +1107,7 @@
     "long_trades": 5,
     "short_trades": 14
   },
-  "run_count": 32,
+  "run_count": 33,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1133,62 +1133,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price hovering near the lower Bollinger Band, indicating potential buying interest, but also below the EMA-20, suggesting bearish pressure. The MACD is below the signal line, further supporting the bearish case. However, the EMA-20 is still above the EMA-50, indicating an overall uptrend.",
-    "5m": "The 5-minute chart shows a slight decline in price, with a small change and low ATR, indicating a lack of momentum.",
-    "15m": "The 15-minute chart reveals a more significant decline, with the price dropping below the opening price and a higher ATR, suggesting increased volatility.",
-    "30m": "The 30-minute chart shows a relatively stable price, with a small change and moderate ATR, indicating a balance between buyers and sellers.",
-    "1h": "The 1-hour chart displays a notable increase in price, with a higher close and higher ATR, suggesting a potential bullish reversal.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential breakout above the EMA-20 or a bounce off the lower Bollinger Band to determine the next market direction.",
-    "risk_warning": "The mixed signals and low confidence level of the bot signal indicate a high level of uncertainty, and traders should exercise caution when entering trades.",
-    "generated_at": "2026-03-31T22:31:56.260579+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 82.54,
-        "open": 82.6,
-        "high": 83.4,
-        "low": 82.18,
-        "change_pct": -0.07,
-        "atr": 0.1879,
-        "avg_vol": 8658.01,
-        "last_vol": 1964.07
-      },
-      "15m": {
-        "close": 82.54,
-        "open": 83.1,
-        "high": 83.47,
-        "low": 80.08,
-        "change_pct": -0.67,
-        "atr": 0.3493,
-        "avg_vol": 54621.85,
-        "last_vol": 1964.07
-      },
-      "30m": {
-        "close": 82.54,
-        "open": 82.53,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": 0.01,
-        "atr": 0.66,
-        "avg_vol": 87682.3,
-        "last_vol": 1964.07
-      },
-      "1h": {
-        "close": 82.54,
-        "open": 81.44,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": 1.35,
-        "atr": 1.0871,
-        "avg_vol": 152328.79,
-        "last_vol": 56632.45
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
