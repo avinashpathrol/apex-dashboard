@@ -1812,7 +1812,14 @@ function switchTab(name,el){
   if(el)el.classList.add('active');
   const panel=qs('tab-'+name);if(panel)panel.classList.add('active');
   if(name==='techchart')buildTechChart();
-  if(name==='ai')renderAiTab();
+  if(name==='ai'){
+    if(botData) renderAiTab();
+    else {
+      // data not loaded yet — retry every 500ms until it arrives
+      const retry=setInterval(()=>{ if(botData){ clearInterval(retry); renderAiTab(); } },500);
+      setTimeout(()=>clearInterval(retry),15000); // give up after 15s
+    }
+  }
 }
 
 // ── AI TAB ──
