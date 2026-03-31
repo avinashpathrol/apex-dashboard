@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-03-31T08:52:28.240682+00:00",
+  "generated_at": "2026-03-31T08:53:43.450612+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.39,
-  "usdt_balance": 119.81352291,
-  "sol_balance": 0.01918911,
-  "cad_balance": 119.81352291,
-  "margin_level": 999.0,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 82.44,
+  "usdt_balance": 517.40168676,
+  "sol_balance": -4.80784915,
+  "cad_balance": 517.40168676,
+  "margin_level": 1.30454483,
+  "position": "SHORT",
+  "action": "SHORT",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "CLOSED BY DASHBOARD \u2705",
+  "status": "SHORT OPENED \u2705",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Dashboard close request executed",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "Price near BB lower band (-9%)"
+    "Price near BB lower band (-6%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -761,6 +761,14 @@
       "qty": 4.828,
       "cost": 397.73064,
       "fee": 0.004828
+    },
+    {
+      "time": "2026-03-31T01:53:39.671000-07:00",
+      "action": "SELL",
+      "price": 82.45,
+      "qty": 4.827,
+      "cost": 397.98615,
+      "fee": 0.39798615
     }
   ],
   "closed_trades": [
@@ -1027,14 +1035,14 @@
     "long_trades": 6,
     "short_trades": 12
   },
-  "run_count": 140,
+  "run_count": 141,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 80.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 80.0,
@@ -1045,7 +1053,11 @@
       "close_requested_at": "2026-03-31T08:47:32.843Z",
       "bot_paused": false
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 80.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -1053,68 +1065,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing bearish signs across multiple timeframes, with the price currently below the EMA-20 and MACD below the signal line, indicating a potential downtrend. The price is also near the lower Bollinger Band, which could lead to a bounce or a breakdown. Overall, the market is favoring a short position.",
-    "5m": "The 5-minute chart shows a decline of 1.39% with a high ATR, indicating increased volatility and potential for further downward movement.",
-    "15m": "The 15-minute chart displays a modest decline of 0.81% with a relatively high ATR, suggesting the market is still in a downtrend with some volatility.",
-    "30m": "The 30-minute chart reveals a more significant drop of 2.18% with an even higher ATR, reinforcing the bearish outlook and increased volatility.",
-    "1h": "The 1-hour chart shows a slight increase of 0.07% but with a high ATR and a significant price swing, indicating the market is still unpredictable and potentially bearish.",
-    "key_level_support": 78.96,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential short entry around the current price level, considering the bot's short signal with 88% confidence.",
-    "risk_warning": "The high ATR values across timeframes indicate increased volatility, so traders should be cautious and set appropriate stop-loss levels to manage risk.",
-    "generated_at": "2026-03-31T08:52:27.355279+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 82.44,
-        "open": 83.6,
-        "high": 83.91,
-        "low": 82.24,
-        "change_pct": -1.39,
-        "atr": 0.2229,
-        "avg_vol": 8617.37,
-        "last_vol": 4482.9
-      },
-      "15m": {
-        "close": 82.42,
-        "open": 83.09,
-        "high": 84.62,
-        "low": 81.96,
-        "change_pct": -0.81,
-        "atr": 0.3793,
-        "avg_vol": 26500.92,
-        "last_vol": 24240.39
-      },
-      "30m": {
-        "close": 82.42,
-        "open": 84.26,
-        "high": 84.99,
-        "low": 81.96,
-        "change_pct": -2.18,
-        "atr": 0.5286,
-        "avg_vol": 55247.99,
-        "last_vol": 54182.09
-      },
-      "1h": {
-        "close": 82.42,
-        "open": 82.36,
-        "high": 84.99,
-        "low": 78.96,
-        "change_pct": 0.07,
-        "atr": 0.85,
-        "avg_vol": 108111.78,
-        "last_vol": 98836.58
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 82.44,
+    "best_price": 82.44,
+    "atr": 0.3792857142857124,
+    "sl": 83.00892857142857,
+    "trail_stop": 83.00892857142857,
     "active": false
   }
 }
