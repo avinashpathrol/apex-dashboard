@@ -1818,7 +1818,7 @@ function switchTab(name,el){
 // ── AI TAB ──
 function renderAiTab(){
   const d=botData;
-  const ai=d&&d.ai_analysis&&Object.keys(d.ai_analysis).length?d.ai_analysis:null;
+  const ai=(d&&d.ai_analysis&&d.ai_analysis.verdict)?d.ai_analysis:null;
   if(!ai){
     setEl('ai-verdict-label','No analysis yet — arrives after 5 bot runs (~5 min)');
     qs('ai-verdict-ico').textContent='⏳';
