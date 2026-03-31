@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-03-31T05:16:26.453259+00:00",
+  "generated_at": "2026-03-31T05:17:41.551202+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.0,
-  "usdt_balance": 126.89496284,
-  "sol_balance": -4.79461672,
-  "cad_balance": 126.89496284,
-  "margin_level": 1.31808787,
-  "position": "SHORT",
-  "action": "SHORT",
-  "confidence": 88,
+  "price": 83.08,
+  "usdt_balance": 124.05827579,
+  "sol_balance": 0.01856528,
+  "cad_balance": 124.05827579,
+  "margin_level": 999.0,
+  "position": null,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "SHORT OPENED \u2705",
-  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
+  "status": "CLOSED BY DASHBOARD \u2705",
+  "reason": "Dashboard close request executed",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (42.2)"
+    "RSI rising from low (44.1)",
+    "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "EMA-20 below EMA-50 (downtrend)",
     "Price below EMA-20"
   ],
   "trades": [
@@ -623,6 +623,14 @@
       "qty": 3.972,
       "cost": 329.63628,
       "fee": 0.32963628
+    },
+    {
+      "time": "2026-03-30T22:17:33.899000-07:00",
+      "action": "BUY",
+      "price": 83.1,
+      "qty": 4.818,
+      "cost": 400.3758,
+      "fee": 0.004818
     }
   ],
   "closed_trades": [
@@ -807,26 +815,40 @@
       "opened_at": "2026-03-30T19:46:50.808000-07:00",
       "closed_at": "2026-03-30T22:15:12.575000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "SHORT",
+      "entry_price": 82.99,
+      "exit_price": 83.1,
+      "qty": 0.064,
+      "fee": 0.01012936,
+      "pnl": -0.0172,
+      "pnl_pct": -0.66,
+      "win": false,
+      "opened_at": "2026-03-30T22:16:23.979000-07:00",
+      "closed_at": "2026-03-30T22:17:33.899000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 13,
+    "closed_trades": 14,
     "wins": 5,
-    "losses": 8,
-    "win_rate": 38.46,
-    "net_profit": -8.1274,
-    "avg_profit_per_trade": -0.6252,
+    "losses": 9,
+    "win_rate": 35.71,
+    "net_profit": -8.1446,
+    "avg_profit_per_trade": -0.5818,
     "long_trades": 5,
-    "short_trades": 8
+    "short_trades": 9
   },
-  "run_count": 288,
+  "run_count": 289,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 80.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 80.0,
@@ -836,11 +858,7 @@
       "close_requested": true,
       "close_requested_at": "2026-03-31T05:14:34.837Z"
     },
-    "queued": {
-      "trade_amount_usdt": 80.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
