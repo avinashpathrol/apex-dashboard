@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-03-31T06:40:47.207300+00:00",
+  "generated_at": "2026-03-31T06:41:56.023022+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.19,
+  "price": 83.28,
   "usdt_balance": -278.38256837,
   "sol_balance": 4.7979463,
   "cad_balance": -278.38256837,
-  "margin_level": 1.37684166,
+  "margin_level": 1.37868055,
   "position": "LONG",
-  "action": "LONG",
-  "confidence": 82,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "LONG OPENED \u2705",
+  "status": "HOLDING LONG \u2014 Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 2 bullish, 3 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "RSI rising from low (46.9) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (20%)",
+  "reason": "Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 2 bullish, 3 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (46.9)",
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (20%)"
+    "RSI rising from low (49.1)",
+    "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "Price below EMA-20"
+    "Price below EMA-20",
+    "High volume confirms move"
   ],
   "trades": [
     {
@@ -946,14 +946,14 @@
     "long_trades": 5,
     "short_trades": 10
   },
-  "run_count": 25,
+  "run_count": 26,
   "trade_amount": 80.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 80.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 80.0,
@@ -977,67 +977,67 @@
     "minutes": 10
   },
   "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 7,
-    "summary": "The market is showing signs of a potential uptrend across multiple timeframes, with the RSI rising from a low and the EMA-20 above the EMA-50, indicating a bullish bias. However, the MACD below the signal line and price below the EMA-20 are causing some uncertainty. The overall trend is expected to be bullish in the short term.",
-    "5m": "The 5-minute chart shows a slight decline in price, but the overall momentum is still bullish with a relatively low ATR of 0.175.",
-    "15m": "The 15-minute chart indicates a more significant decline in price, with a 1.56% change and a higher ATR of 0.34, suggesting increased volatility.",
-    "30m": "The 30-minute chart shows a moderate decline in price, with a 0.48% change and an ATR of 0.5729, indicating a potential consolidation phase.",
-    "1h": "The 1-hour chart displays a bullish trend, with a 0.9% increase in price and a higher ATR of 0.8821, suggesting a potential breakout.",
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is experiencing mixed signals across timeframes, with the current price holding above $80 but struggling to break above $84, indicating a potential consolidation phase. The RSI is rising from a low, but the MACD remains bearish, and high volume confirms the recent move. Overall, the market is indecisive, and a clear direction is yet to be established.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a 0.58% change, indicating a short-term bearish bias.",
+    "15m": "The 15-minute chart reveals a more significant drop, with a 1.46% change, suggesting that the bearish momentum is gaining strength in the medium term.",
+    "30m": "The 30-minute chart displays a relatively stable price, with a 0.37% change, indicating a potential pause in the market's downward movement.",
+    "1h": "The 1-hour chart shows a 1.01% increase, which could be a sign of a potential reversal or a bounce from the recent lows.",
     "key_level_support": 78.96,
     "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential long entry above the EMA-20, with a target near the key level resistance of 84.99.",
-    "risk_warning": "A failure to break above the EMA-20 could lead to a bearish reversal, so traders should set stop-losses accordingly.",
-    "generated_at": "2026-03-31T06:40:46.354139+00:00",
+    "recommendation": "Traders should watch for a break above $85 or a drop below $79 to determine the next direction of the market.",
+    "risk_warning": "The market's indecisive nature and mixed signals increase the risk of a false breakout, so traders should exercise caution and consider reducing their position size.",
+    "generated_at": "2026-03-31T06:41:55.088308+00:00",
     "timeframes": {
       "5m": {
-        "close": 83.19,
+        "close": 83.28,
         "open": 83.77,
         "high": 84.07,
         "low": 82.9,
-        "change_pct": -0.69,
-        "atr": 0.175,
-        "avg_vol": 7583.52,
-        "last_vol": 584.76
+        "change_pct": -0.58,
+        "atr": 0.1893,
+        "avg_vol": 7853.16,
+        "last_vol": 16763.12
       },
       "15m": {
-        "close": 83.19,
+        "close": 83.28,
         "open": 84.51,
         "high": 84.72,
         "low": 81.96,
-        "change_pct": -1.56,
-        "atr": 0.34,
-        "avg_vol": 26873.49,
-        "last_vol": 20879.93
+        "change_pct": -1.46,
+        "atr": 0.3507,
+        "avg_vol": 27143.13,
+        "last_vol": 37058.29
       },
       "30m": {
-        "close": 83.19,
+        "close": 83.28,
         "open": 83.59,
         "high": 84.99,
         "low": 81.96,
-        "change_pct": -0.48,
-        "atr": 0.5729,
-        "avg_vol": 56207.85,
-        "last_vol": 20947.19
+        "change_pct": -0.37,
+        "atr": 0.5836,
+        "avg_vol": 56543.5,
+        "last_vol": 37058.29
       },
       "1h": {
-        "close": 83.19,
+        "close": 83.28,
         "open": 82.45,
         "high": 84.99,
         "low": 78.96,
-        "change_pct": 0.9,
+        "change_pct": 1.01,
         "atr": 0.8821,
-        "avg_vol": 104487.4,
-        "last_vol": 119950.08
+        "avg_vol": 104823.04,
+        "last_vol": 136061.19
       }
     }
   },
   "trail": {
     "entry_price": 83.19,
-    "best_price": 83.19,
+    "best_price": 83.28,
     "atr": 0.33999999999999836,
     "sl": 82.68,
-    "trail_stop": 82.68,
+    "trail_stop": 82.77000000000001,
     "active": false
   }
 }
