@@ -2103,7 +2103,7 @@ async function sendForceTrail(){
     let existingCfg={}, sha;
     const g=await fetch(api,{headers});
     if(g.ok){ const j=await g.json(); sha=j.sha; try{ existingCfg=JSON.parse(atob(j.content.replace(/\n/g,''))); }catch(e){} }
-    const cfg={...existingCfg, force_trail:true};
+    const cfg={...existingCfg, force_trail:true, force_trail_at:new Date().toISOString()};
     const payload={message:`dashboard: force trail activation ${new Date().toISOString()}`,content:btoa(unescape(encodeURIComponent(JSON.stringify(cfg,null,2))))};
     if(sha) payload.sha=sha;
     const put=await fetch(api,{method:'PUT',headers,body:JSON.stringify(payload)});
