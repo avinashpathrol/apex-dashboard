@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T22:04:57.849987+00:00",
+  "generated_at": "2026-04-01T22:06:59.139995+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.63,
+  "price": 81.49,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,8 +18,8 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (30.6)",
-    "Price near BB lower band (4%)"
+    "RSI oversold (29.6)",
+    "Price near BB lower band (1%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2752,7 +2752,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 67,
+  "run_count": 68,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2780,7 +2780,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with bearish signals dominating the technical indicators. The price is currently below the EMA-20 and EMA-50, indicating a bearish trend. The RSI oversold condition may lead to a potential bounce, but the overall trend remains bearish.",
+    "5m": "The 5-minute chart shows a sharp decline, with a 4.97% drop in price, indicating strong bearish momentum.",
+    "15m": "The 15-minute chart confirms the downtrend, with the price closing below the opening price and a bearish MACD signal.",
+    "30m": "The 30-minute chart shows a slower decline, but the price is still below the EMA-20 and EMA-50, indicating a bearish trend.",
+    "1h": "The 1-hour chart shows a bearish engulfing candle, with the price closing below the opening price and a bearish MACD signal.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a potential short entry on a bounce to the EMA-20 or EMA-50, with a target of 75.00.",
+    "risk_warning": "A strong bullish reversal is possible if the price breaks above the EMA-50, so traders should set stop-loss orders accordingly.",
+    "generated_at": "2026-04-01T22:06:57.864991+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 81.48,
+        "open": 85.74,
+        "high": 86.14,
+        "low": 81.42,
+        "change_pct": -4.97,
+        "atr": 0.3164,
+        "avg_vol": 22187.89,
+        "last_vol": 8572.07
+      },
+      "15m": {
+        "close": 81.46,
+        "open": 84.21,
+        "high": 86.65,
+        "low": 81.42,
+        "change_pct": -3.27,
+        "atr": 0.5479,
+        "avg_vol": 54040.26,
+        "last_vol": 43808.06
+      },
+      "30m": {
+        "close": 81.46,
+        "open": 82.76,
+        "high": 86.65,
+        "low": 81.42,
+        "change_pct": -1.57,
+        "atr": 0.9357,
+        "avg_vol": 88698.14,
+        "last_vol": 43808.06
+      },
+      "1h": {
+        "close": 81.47,
+        "open": 82.54,
+        "high": 86.65,
+        "low": 80.08,
+        "change_pct": -1.3,
+        "atr": 1.1057,
+        "avg_vol": 176339.55,
+        "last_vol": 43809.44
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
