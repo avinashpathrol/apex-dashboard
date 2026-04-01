@@ -2316,6 +2316,13 @@ async function load(){
       currentEntryPrice=null;
     }
 
+    // Auto-switch chart to Position mode when trade opens, back to Market when closed
+    if(position && currentEntryPrice && chartMode!=='trade'){
+      setChartMode('trade');
+    } else if(!position && chartMode==='trade'){
+      setChartMode('normal');
+    }
+
     // ── KEY FIX: Build closed trade pairs from raw trades ──
     allET=buildClosedTrades(allKT, leverage, tradeAmount);
 
