@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-01T11:27:51.754645+00:00",
+  "generated_at": "2026-04-01T11:29:07.065858+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.31,
+  "price": 83.26,
   "usdt_balance": -298.63740621,
   "sol_balance": 5.0589969,
   "cad_balance": -298.63740621,
-  "margin_level": 1.36097701,
+  "margin_level": 1.36038752,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (1) but profit -0.22% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (1) but profit -0.28% below threshold",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
@@ -1913,7 +1913,7 @@
     "long_trades": 12,
     "short_trades": 21
   },
-  "run_count": 228,
+  "run_count": 229,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1945,62 +1945,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price fluctuating around the $83 level, indicating a potential consolidation phase. The bullish EMA-20 above EMA-50 signal is countered by the bearish MACD and price below EMA-20 signals. Overall, the market is lacking a clear direction.",
-    "5m": "The 5-minute chart shows a minor decline with a 1.39% change, indicating a short-term bearish bias.",
-    "15m": "The 15-minute chart displays a slight increase with a 0.43% change, suggesting a minor bullish attempt to regain momentum.",
-    "30m": "The 30-minute chart reveals a notable 3.03% increase, indicating a potential bullish reversal attempt.",
-    "1h": "The 1-hour chart exhibits a 1.42% decline, signaling a bearish influence on the market.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a break above the $85 resistance level or a drop below the $80 support level to determine the next market direction.",
-    "risk_warning": "The lack of a clear trend and conflicting signals increases the risk of whipsaws, so traders should exercise caution and consider reducing their position size.",
-    "generated_at": "2026-04-01T11:27:50.574796+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.3,
-        "open": 84.47,
-        "high": 84.74,
-        "low": 83.07,
-        "change_pct": -1.39,
-        "atr": 0.1621,
-        "avg_vol": 10367.13,
-        "last_vol": 2512.67
-      },
-      "15m": {
-        "close": 83.3,
-        "open": 82.94,
-        "high": 84.74,
-        "low": 82.33,
-        "change_pct": 0.43,
-        "atr": 0.325,
-        "avg_vol": 27620.17,
-        "last_vol": 23253.01
-      },
-      "30m": {
-        "close": 83.3,
-        "open": 80.85,
-        "high": 84.74,
-        "low": 80.4,
-        "change_pct": 3.03,
-        "atr": 0.5086,
-        "avg_vol": 80291.81,
-        "last_vol": 39758.3
-      },
-      "1h": {
-        "close": 83.29,
-        "open": 84.49,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -1.42,
-        "atr": 0.6586,
-        "avg_vol": 145758.74,
-        "last_vol": 39778.69
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.49,
     "best_price": 83.6,
