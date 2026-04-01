@@ -1,30 +1,29 @@
 {
-  "generated_at": "2026-04-01T00:59:56.551470+00:00",
+  "generated_at": "2026-04-01T01:01:05.138935+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.38,
+  "price": 83.42,
   "usdt_balance": -296.59874949,
   "sol_balance": 5.0763039,
   "cad_balance": -296.59874949,
-  "margin_level": 1.37241981,
+  "margin_level": 1.37350958,
   "position": "LONG",
   "action": "LONG",
-  "confidence": 91,
-  "risk": "LOW",
-  "status": "HOLDING LONG \u2014 MACD bullish crossover | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "confidence": 88,
+  "risk": "MEDIUM",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "MACD bullish crossover | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
-    "MACD bullish crossover",
+    "MACD above signal (bullish)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
-    "High volume confirms move"
+    "Price above EMA-20"
   ],
   "bearish": [
-    "Price near BB upper band (103%)"
+    "Price near BB upper band (102%)"
   ],
   "trades": [
     {
@@ -1434,7 +1433,7 @@
     "long_trades": 8,
     "short_trades": 18
   },
-  "run_count": 84,
+  "run_count": 85,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
