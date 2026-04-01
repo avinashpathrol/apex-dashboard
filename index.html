@@ -977,8 +977,11 @@ input:focus{border-color:#3f3f46;}
       <div class="close-detail">
         <div class="close-detail-row"><span class="close-detail-label">Asset</span><span class="close-detail-val">SOL/USDT</span></div>
         <div class="close-detail-row"><span class="close-detail-label">Position</span><span class="close-detail-val" id="close-pos-type">—</span></div>
+        <div class="close-detail-row"><span class="close-detail-label">Entry Price</span><span class="close-detail-val" id="close-entry">—</span></div>
         <div class="close-detail-row"><span class="close-detail-label">Current Price</span><span class="close-detail-val" id="close-price">—</span></div>
-        <div class="close-detail-row"><span class="close-detail-label">Est. P&L</span><span class="close-detail-val" id="close-pnl">—</span></div>
+        <div class="close-detail-row"><span class="close-detail-label">Gross P&L</span><span class="close-detail-val" id="close-pnl">—</span></div>
+        <div class="close-detail-row"><span class="close-detail-label">Est. Fees</span><span class="close-detail-val" id="close-fee" style="color:#f87171;">—</span></div>
+        <div class="close-detail-row" style="border-top:1px solid #27272a;padding-top:6px;margin-top:2px;"><span class="close-detail-label" style="font-weight:700;color:#e8e8e8;">Net After Fees</span><span class="close-detail-val" id="close-net" style="font-size:14px;">—</span></div>
       </div>
       <div style="background:#2d1f06;border:1px solid #854f0b;border-radius:8px;padding:10px 12px;font-size:12px;color:#fbbf24;margin-bottom:14px;">
         ⚠️ This closes your position and repays all borrowed funds on Binance. Cannot be undone.
@@ -2043,13 +2046,24 @@ function openCloseModal(){
   setEl('close-pos-type',currentPosition||'—');
   qs('close-pos-type').style.color=isLong?'#22c55e':'#f87171';
   setEl('close-price',price?fmtP(price)+' USDT':'—');
+  setEl('close-entry', currentEntryPrice ? fmtP(currentEntryPrice) : '—');
   if(currentEntryPrice&&price){
     const lev=n(botData?.leverage,4);
-    const pnl=isLong?((price-currentEntryPrice)/currentEntryPrice*100*lev):((currentEntryPrice-price)/currentEntryPrice*100*lev);
+    const collateral=n(botData?.trade_amount,85);
+    const qty=(collateral*lev)/currentEntryPrice;
+    const gross=isLong?(price-currentEntryPrice)*qty:(currentEntryPrice-price)*qty;
+    const fee=(currentEntryPrice+price)*qty*0.001;
+    const net=gross-fee;
     const pnlEl=qs('close-pnl');
-    pnlEl.textContent=(pnl>=0?'+':'')+pnl.toFixed(2)+'% ('+lev+'x levered)';
-    pnlEl.className='close-detail-val '+(pnl>=0?'green':'red');
-  } else setEl('close-pnl','—');
+    pnlEl.textContent=(gross>=0?'+':'')+'$'+gross.toFixed(2)+' USDT';
+    pnlEl.className='close-detail-val '+(gross>=0?'green':'red');
+    setEl('close-fee','-$'+fee.toFixed(2)+' USDT');
+    const netEl=qs('close-net');
+    netEl.textContent=(net>=0?'+':'')+'$'+net.toFixed(2)+' USDT';
+    netEl.className='close-detail-val '+(net>=0?'green':'red');
+  } else {
+    setEl('close-pnl','—'); setEl('close-fee','—'); setEl('close-net','—');
+  }
   setEl('close-status','');
   qs('close-confirm-btn').disabled=false;
   qs('close-ov').classList.add('open');
