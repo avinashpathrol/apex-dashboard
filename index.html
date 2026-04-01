@@ -2098,7 +2098,7 @@ async function sendForceTrail(){
   const btn=qs('force-trail-btn');
   if(btn){ btn.className='force-trail-btn visible sent'; btn.textContent='⏳ Sending to bot…'; }
   try{
-    const api=`https://api.github.com/repos/${REPO}/contents/bot_config.json`;
+    const api=`https://api.github.com/repos/${DASHBOARD_REPO}/contents/${BOT_CONFIG_FILE}`;
     const headers={'Authorization':'token '+GH,'Accept':'application/vnd.github+json','Content-Type':'application/json'};
     let existingCfg={}, sha;
     const g=await fetch(api,{headers});
