@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T03:33:59.370106+00:00",
+  "generated_at": "2026-04-01T03:35:33.942937+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.19,
+  "price": 83.1,
   "usdt_balance": 123.15712351,
   "sol_balance": 0.0001869,
   "cad_balance": 123.15712351,
@@ -12,16 +12,17 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
+    "RSI falling from high (54.7)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -1566,7 +1567,7 @@
     "long_trades": 9,
     "short_trades": 19
   },
-  "run_count": 216,
+  "run_count": 217,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1593,7 +1594,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price holding above the EMA-20 but the RSI and MACD indicating potential bearish momentum. The short-term timeframes show a slight increase, while the longer timeframes exhibit a decrease. Overall, the market is indecisive, waiting for a breakout or a trend confirmation.",
+    "5m": "The 5-minute timeframe shows a slight increase of 0.4% with a relatively low ATR, indicating low volatility and a potential consolidation.",
+    "15m": "The 15-minute timeframe displays a 2.87% increase, suggesting a short-term bullish bias, but the momentum may be fading as the price is currently below the high of the timeframe.",
+    "30m": "The 30-minute timeframe exhibits a minor decrease of 0.31%, indicating a potential loss of momentum and a need for the price to break above the recent high to confirm the uptrend.",
+    "1h": "The 1-hour timeframe shows a decrease of 0.8%, which may indicate a bearish bias, but the price is still holding above the EMA-20, suggesting that the uptrend is not yet broken.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a breakout above the 1-hour high of 84.99 or a breakdown below the key support level of 80.08 to determine the next market direction.",
+    "risk_warning": "The mixed signals and low confidence of the bot signal suggest a high level of uncertainty, and traders should be cautious and adjust their positions accordingly.",
+    "generated_at": "2026-04-01T03:35:33.031961+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.1,
+        "open": 82.77,
+        "high": 83.58,
+        "low": 82.48,
+        "change_pct": 0.4,
+        "atr": 0.1757,
+        "avg_vol": 8067.56,
+        "last_vol": 11.34
+      },
+      "15m": {
+        "close": 83.1,
+        "open": 80.78,
+        "high": 83.58,
+        "low": 80.4,
+        "change_pct": 2.87,
+        "atr": 0.3529,
+        "avg_vol": 38526.62,
+        "last_vol": 5440.95
+      },
+      "30m": {
+        "close": 83.1,
+        "open": 83.36,
+        "high": 83.91,
+        "low": 80.08,
+        "change_pct": -0.31,
+        "atr": 0.4636,
+        "avg_vol": 87312.25,
+        "last_vol": 5440.95
+      },
+      "1h": {
+        "close": 83.1,
+        "open": 83.77,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": -0.8,
+        "atr": 0.9307,
+        "avg_vol": 145074.24,
+        "last_vol": 47482.31
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
