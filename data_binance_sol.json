@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-01T14:00:14.885103+00:00",
+  "generated_at": "2026-04-01T14:01:30.097569+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.63,
+  "price": 82.75,
   "usdt_balance": 542.51796015,
   "sol_balance": -5.1152151,
   "cad_balance": 542.51796015,
-  "margin_level": 1.28307028,
+  "margin_level": 1.28212721,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 88,
+  "confidence": 82,
   "risk": "MEDIUM",
   "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
@@ -18,7 +18,8 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "Price near BB lower band (-8%)"
+    "RSI rising from low (37.9)",
+    "Price near BB lower band (1%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2079,7 +2080,7 @@
     "long_trades": 15,
     "short_trades": 21
   },
-  "run_count": 348,
+  "run_count": 349,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2111,62 +2112,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong bearish trend across multiple timeframes, with the price currently trading below the EMA-20 and EMA-50, and the MACD below the signal line. The recent price action has been driven by selling pressure, with the 1-hour timeframe showing a significant decline. The market is likely to continue its downtrend unless it breaks above the key resistance level.",
-    "5m": "The 5-minute timeframe is showing a minor pullback, but the overall trend remains bearish with a decline of 0.96%.",
-    "15m": "The 15-minute timeframe is consolidating, but the bearish trend is still intact with the price trading below the EMA-20 and EMA-50.",
-    "30m": "The 30-minute timeframe is showing a bullish candle, but it's not enough to reverse the overall bearish trend, and the price is still trading below the EMA-20.",
-    "1h": "The 1-hour timeframe is showing a significant decline of 2.22%, with the price breaking below the support level of $84.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.76,
-    "recommendation": "Traders should watch for a potential breakdown below the key support level of $80.08, which could lead to further downside momentum.",
-    "risk_warning": "Trading in a bearish market can result in significant losses if not managed properly, so traders should exercise caution and set stop-loss levels accordingly.",
-    "generated_at": "2026-04-01T14:00:13.568281+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 82.63,
-        "open": 83.43,
-        "high": 83.77,
-        "low": 82.4,
-        "change_pct": -0.96,
-        "atr": 0.2907,
-        "avg_vol": 11370.38,
-        "last_vol": 1161.63
-      },
-      "15m": {
-        "close": 82.63,
-        "open": 83.0,
-        "high": 84.74,
-        "low": 82.4,
-        "change_pct": -0.45,
-        "atr": 0.4,
-        "avg_vol": 31306.95,
-        "last_vol": 1161.63
-      },
-      "30m": {
-        "close": 82.63,
-        "open": 80.63,
-        "high": 84.74,
-        "low": 80.4,
-        "change_pct": 2.48,
-        "atr": 0.5014,
-        "avg_vol": 70048.31,
-        "last_vol": 1162.6
-      },
-      "1h": {
-        "close": 82.63,
-        "open": 84.51,
-        "high": 84.76,
-        "low": 80.08,
-        "change_pct": -2.22,
-        "atr": 0.6679,
-        "avg_vol": 146571.73,
-        "last_vol": 1162.6
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 82.65,
     "best_price": 82.5,
