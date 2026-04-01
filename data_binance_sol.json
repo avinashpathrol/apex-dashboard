@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T23:54:03.034399+00:00",
+  "generated_at": "2026-04-01T23:55:16.080485+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.26,
+  "price": 81.28,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (32.9)"
+    "RSI oversold (33.1)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 152,
+  "run_count": 153,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2779,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and EMA-50, indicating a strong bearish momentum. The MACD is below the signal line, further confirming the bearish trend. However, the RSI is oversold, which could lead to a potential bounce.",
-    "5m": "The 5m chart shows a sharp decline, with a 2.88% drop in price, indicating intense selling pressure.",
-    "15m": "The 15m chart confirms the downtrend, with the price closing below the opening price, and a significant drop in value.",
-    "30m": "The 30m chart shows a similar pattern, with the price struggling to stay above the EMA-20, and a notable increase in volatility.",
-    "1h": "The 1h chart indicates a slower but steady decline, with the price hovering below the EMA-20, and a relatively high ATR.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential short entry, as the bot signal is indicating a high confidence short, but be cautious of a potential bounce due to the oversold RSI.",
-    "risk_warning": "A false breakout above the key level resistance could lead to a significant price spike, so traders should set tight stop-losses.",
-    "generated_at": "2026-04-01T23:54:01.846127+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 81.25,
-        "open": 83.66,
-        "high": 84.43,
-        "low": 80.77,
-        "change_pct": -2.88,
-        "atr": 0.1836,
-        "avg_vol": 22675.64,
-        "last_vol": 11114.02
-      },
-      "15m": {
-        "close": 81.25,
-        "open": 83.48,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -2.67,
-        "atr": 0.4807,
-        "avg_vol": 58880.62,
-        "last_vol": 22266.68
-      },
-      "30m": {
-        "close": 81.25,
-        "open": 83.05,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -2.17,
-        "atr": 0.8657,
-        "avg_vol": 97077.05,
-        "last_vol": 49591.33
-      },
-      "1h": {
-        "close": 81.24,
-        "open": 82.72,
-        "high": 86.65,
-        "low": 80.08,
-        "change_pct": -1.79,
-        "atr": 1.1407,
-        "avg_vol": 186091.54,
-        "last_vol": 129978.75
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
