@@ -1,24 +1,25 @@
 {
-  "generated_at": "2026-04-01T13:47:34.538951+00:00",
+  "generated_at": "2026-04-01T13:48:49.118426+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.65,
+  "price": 82.55,
   "usdt_balance": 542.51796015,
   "sol_balance": -5.1152151,
   "cad_balance": 542.51796015,
-  "margin_level": 1.28265487,
+  "margin_level": 1.28550186,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 88,
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "FLIPPED \u2192SHORT \u2705",
+  "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "Price near BB lower band (-19%)"
+    "RSI oversold (34.1)",
+    "Price near BB lower band (-24%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2079,14 +2080,14 @@
     "long_trades": 15,
     "short_trades": 21
   },
-  "run_count": 338,
+  "run_count": 339,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -2114,10 +2115,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 82.65,
-    "best_price": 82.65,
+    "best_price": 82.55,
     "atr": 0.40071428571428364,
     "sl": 83.25107142857144,
-    "trail_stop": 83.25107142857144,
+    "trail_stop": 83.15107142857143,
     "active": false
   }
 }
