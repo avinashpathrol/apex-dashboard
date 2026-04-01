@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T19:47:53.698277+00:00",
+  "generated_at": "2026-04-01T19:49:40.013528+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 84.05,
+  "price": 84.0,
   "usdt_balance": 108.21525564,
   "sol_balance": 0.0005089,
   "cad_balance": 108.21525564,
@@ -2555,7 +2555,7 @@
     "long_trades": 18,
     "short_trades": 25
   },
-  "run_count": 622,
+  "run_count": 623,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2583,7 +2583,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price showing a slight increase but struggling to maintain momentum. The bullish EMA-20 above EMA-50 signal is countered by the bearish MACD and price below EMA-20, indicating a potential trend reversal. Overall, the market is indecisive, with no clear direction emerging.",
+    "5m": "The 5-minute chart shows a modest 0.67% increase, but the price is still below the recent high of 86.65, suggesting a lack of strong buying pressure.",
+    "15m": "The 15-minute chart indicates a slow and steady uptrend, but the price is still below the key resistance level, and the ATR is relatively high, indicating potential volatility.",
+    "30m": "The 30-minute chart shows a more pronounced 1.2% increase, but the price is still struggling to break above the EMA-20, which is acting as a resistance level.",
+    "1h": "The 1-hour chart displays a stronger 1.46% increase, but the price is still below the recent high, and the MACD is bearish, suggesting a potential reversal.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a break above the EMA-20 or a drop below the key support level to determine the next direction of the market.",
+    "risk_warning": "The high ATR values across timeframes indicate potential volatility, and traders should be cautious of sudden price movements.",
+    "generated_at": "2026-04-01T19:49:38.765736+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 84.0,
+        "open": 83.44,
+        "high": 86.65,
+        "low": 83.08,
+        "change_pct": 0.67,
+        "atr": 0.2429,
+        "avg_vol": 24568.97,
+        "last_vol": 8249.98
+      },
+      "15m": {
+        "close": 84.0,
+        "open": 83.65,
+        "high": 86.65,
+        "low": 82.4,
+        "change_pct": 0.42,
+        "atr": 0.6893,
+        "avg_vol": 48297.7,
+        "last_vol": 8249.98
+      },
+      "30m": {
+        "close": 84.0,
+        "open": 83.0,
+        "high": 86.65,
+        "low": 82.33,
+        "change_pct": 1.2,
+        "atr": 0.8921,
+        "avg_vol": 78385.44,
+        "last_vol": 35218.06
+      },
+      "1h": {
+        "close": 84.0,
+        "open": 82.79,
+        "high": 86.65,
+        "low": 80.08,
+        "change_pct": 1.46,
+        "atr": 0.9957,
+        "avg_vol": 166736.83,
+        "last_vol": 77346.46
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
