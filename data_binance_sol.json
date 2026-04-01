@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T07:55:23.114430+00:00",
+  "generated_at": "2026-04-01T07:56:35.380992+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.89,
+  "price": 83.91,
   "usdt_balance": 124.20659379,
   "sol_balance": 6.09e-05,
   "cad_balance": 124.20659379,
@@ -21,7 +21,7 @@
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
-    "RSI falling from high (52.5)",
+    "RSI falling from high (52.7)",
     "MACD bearish crossover",
     "Price below EMA-20"
   ],
@@ -1828,7 +1828,7 @@
     "long_trades": 12,
     "short_trades": 20
   },
-  "run_count": 60,
+  "run_count": 61,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1856,62 +1856,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price fluctuating above and below key moving averages. The bullish EMA-20 above EMA-50 uptrend is countered by bearish signals such as the RSI falling from high and MACD bearish crossover. Overall, the market is indecisive, awaiting a breakout or reversal signal.",
-    "5m": "The 5-minute timeframe shows a slight increase in price with a 1.51% change, indicating some short-term buying interest.",
-    "15m": "The 15-minute timeframe displays a modest 0.88% price increase, suggesting a gradual upward movement but lacking strong momentum.",
-    "30m": "The 30-minute timeframe reveals a similar 0.88% price increase, with the price still below the recent high, indicating a potential struggle to maintain upward momentum.",
-    "1h": "The 1-hour timeframe shows a -0.73% price decrease, highlighting the market's inability to sustain higher prices over the longer term.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a breakout above the recent high of 84.99 or a drop below the key support level of 80.08 to determine the next market direction.",
-    "risk_warning": "The mixed signals and lack of clear direction increase the risk of whipsaws, making it essential for traders to set tight stop-losses and monitor the market closely.",
-    "generated_at": "2026-04-01T07:55:21.917669+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.9,
-        "open": 82.65,
-        "high": 84.74,
-        "low": 82.6,
-        "change_pct": 1.51,
-        "atr": 0.225,
-        "avg_vol": 10992.29,
-        "last_vol": 8553.09
-      },
-      "15m": {
-        "close": 83.9,
-        "open": 83.17,
-        "high": 84.74,
-        "low": 82.18,
-        "change_pct": 0.88,
-        "atr": 0.3836,
-        "avg_vol": 31516.4,
-        "last_vol": 24380.55
-      },
-      "30m": {
-        "close": 83.9,
-        "open": 83.17,
-        "high": 84.74,
-        "low": 80.08,
-        "change_pct": 0.88,
-        "atr": 0.5193,
-        "avg_vol": 91354.18,
-        "last_vol": 61974.55
-      },
-      "1h": {
-        "close": 83.9,
-        "open": 84.52,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -0.73,
-        "atr": 0.6893,
-        "avg_vol": 148419.43,
-        "last_vol": 137062.05
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
