@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-04-01T13:46:14.855440+00:00",
+  "generated_at": "2026-04-01T13:47:34.538951+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.67,
-  "usdt_balance": 37.79105263,
-  "sol_balance": 0.0007849,
-  "cad_balance": 37.79105263,
-  "margin_level": 999.0,
-  "position": null,
+  "price": 82.65,
+  "usdt_balance": 542.51796015,
+  "sol_balance": -5.1152151,
+  "cad_balance": 542.51796015,
+  "margin_level": 1.28265487,
+  "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "LONG CLOSED \u2014 SHORT queued next run \u23f3",
+  "status": "FLIPPED \u2192SHORT \u2705",
   "bot_paused": false,
-  "flip_pending": "SHORT",
+  "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "Price near BB lower band (-17%)"
+    "Price near BB lower band (-19%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1481,6 +1481,86 @@
       "cost": 422.88856,
       "fee": 0.42288856,
       "reason": "Signal flipped to SHORT \u2014 waiting one cycle before re-entry"
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.061,
+      "cost": 5.03982,
+      "fee": 0.00503982
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.091,
+      "cost": 7.51842,
+      "fee": 0.00751842
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.122,
+      "cost": 10.07964,
+      "fee": 0.01007964
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.073,
+      "cost": 6.03126,
+      "fee": 0.00603126
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.067,
+      "cost": 5.53554,
+      "fee": 0.00553554
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 1.795,
+      "cost": 148.3029,
+      "fee": 0.1483029
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.133,
+      "cost": 10.98846,
+      "fee": 0.01098846
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.064,
+      "cost": 5.28768,
+      "fee": 0.00528768
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 0.064,
+      "cost": 5.28768,
+      "fee": 0.00528768
+    },
+    {
+      "time": "2026-04-01T06:47:30.304000-07:00",
+      "action": "SELL",
+      "price": 82.62,
+      "qty": 2.646,
+      "cost": 218.61252,
+      "fee": 0.21861252
     }
   ],
   "closed_trades": [
@@ -1999,14 +2079,14 @@
     "long_trades": 15,
     "short_trades": 21
   },
-  "run_count": 337,
+  "run_count": 338,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -2019,7 +2099,11 @@
       "force_trail": false,
       "force_trail_at": "2026-04-01T06:36:36.854Z"
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 85.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -2029,11 +2113,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 82.57,
-    "best_price": 82.67,
-    "atr": 0.4021428571428558,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 82.65,
+    "best_price": 82.65,
+    "atr": 0.40071428571428364,
+    "sl": 83.25107142857144,
+    "trail_stop": 83.25107142857144,
     "active": false
   }
 }
