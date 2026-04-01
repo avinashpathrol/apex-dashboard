@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-01T15:31:34.593111+00:00",
+  "generated_at": "2026-04-01T15:32:46.685621+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.58,
+  "price": 83.57,
   "usdt_balance": -311.39900379,
   "sol_balance": 5.0734979,
   "cad_balance": -311.39900379,
-  "margin_level": 1.33076944,
+  "margin_level": 1.33220453,
   "position": "LONG",
   "action": "LONG",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "FLIPPED \u2192LONG \u2705",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "Price near BB upper band (83%)"
+    "Price near BB upper band (82%)"
   ],
   "trades": [
     {
@@ -2243,14 +2243,14 @@
     "long_trades": 15,
     "short_trades": 23
   },
-  "run_count": 420,
+  "run_count": 421,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -2275,62 +2275,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a potential continuation of the bullish trend. The recent price action has been driven by a significant increase in buying pressure, as evidenced by the 2.9% gain in the 30m timeframe. However, the price is nearing the upper Bollinger Band, which may lead to a short-term correction.",
-    "5m": "The 5m chart shows a slight increase in price, with a 0.49% gain, indicating a slow and steady uptrend.",
-    "15m": "The 15m chart reveals a modest gain of 0.25%, with the price struggling to break above the recent high of 84.74.",
-    "30m": "The 30m chart displays a significant 2.9% increase, driven by a strong bullish candle that pushed the price above the EMA-20 and EMA-50.",
-    "1h": "The 1h chart shows a minor correction of -0.72%, with the price pulling back from the recent high, but still holding above the EMA-20.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.74,
-    "recommendation": "Traders should watch for a potential breakout above 84.74, which could lead to a further uptrend, while also being mindful of a potential correction to the key support level of 80.08.",
-    "risk_warning": "A failure to hold above the key support level of 80.08 could lead to a significant downturn in the market.",
-    "generated_at": "2026-04-01T15:31:33.382574+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.61,
-        "open": 83.2,
-        "high": 83.88,
-        "low": 82.4,
-        "change_pct": 0.49,
-        "atr": 0.2957,
-        "avg_vol": 12530.99,
-        "last_vol": 4586.56
-      },
-      "15m": {
-        "close": 83.61,
-        "open": 83.4,
-        "high": 84.74,
-        "low": 82.4,
-        "change_pct": 0.25,
-        "atr": 0.5129,
-        "avg_vol": 32777.88,
-        "last_vol": 4586.56
-      },
-      "30m": {
-        "close": 83.61,
-        "open": 81.25,
-        "high": 84.74,
-        "low": 80.87,
-        "change_pct": 2.9,
-        "atr": 0.5564,
-        "avg_vol": 66301.94,
-        "last_vol": 4586.56
-      },
-      "1h": {
-        "close": 83.61,
-        "open": 84.22,
-        "high": 84.74,
-        "low": 80.08,
-        "change_pct": -0.72,
-        "atr": 0.7421,
-        "avg_vol": 149181.67,
-        "last_vol": 92082.85
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.58,
     "best_price": 83.58,
