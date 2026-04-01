@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T09:11:02.780485+00:00",
+  "generated_at": "2026-04-01T09:12:15.478834+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.42,
+  "price": 83.45,
   "usdt_balance": 124.20659379,
   "sol_balance": 6.09e-05,
   "cad_balance": 124.20659379,
@@ -19,7 +19,7 @@
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (14%)"
+    "Price near BB lower band (15%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1828,7 +1828,7 @@
     "long_trades": 12,
     "short_trades": 20
   },
-  "run_count": 120,
+  "run_count": 121,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1856,62 +1856,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price hovering near the lower Bollinger Band, indicating potential support, while the MACD below the signal line suggests bearish momentum. The EMA-20 being above EMA-50 indicates an uptrend, but the price is currently below the EMA-20, causing uncertainty. Overall, the market is indecisive, waiting for a breakout or a trend confirmation.",
-    "5m": "The 5-minute timeframe shows a slight increase in price, but the overall movement is minimal, indicating a lack of strong momentum.",
-    "15m": "The 15-minute chart displays a more significant price increase, with a 0.77% change, suggesting some bullish interest, but it's not enough to confirm a strong uptrend.",
-    "30m": "The 30-minute timeframe reveals a more substantial price increase of 3.56%, indicating a potential bullish reversal, but the price needs to sustain above the EMA-20 to confirm this trend.",
-    "1h": "The 1-hour chart shows a decrease in price, with a 0.6% change, suggesting that the bearish momentum is still present, and the bulls are struggling to gain control.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a breakout above the EMA-20 or a bounce off the lower Bollinger Band to potentially enter a long position, but with caution due to the mixed signals.",
-    "risk_warning": "The market's indecisiveness and mixed signals increase the risk of a false breakout, so traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-04-01T09:11:01.508088+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.42,
-        "open": 83.37,
-        "high": 84.74,
-        "low": 83.28,
-        "change_pct": 0.06,
-        "atr": 0.2071,
-        "avg_vol": 12045.69,
-        "last_vol": 2877.82
-      },
-      "15m": {
-        "close": 83.42,
-        "open": 82.78,
-        "high": 84.74,
-        "low": 82.33,
-        "change_pct": 0.77,
-        "atr": 0.3864,
-        "avg_vol": 28388.71,
-        "last_vol": 22327.43
-      },
-      "30m": {
-        "close": 83.42,
-        "open": 80.55,
-        "high": 84.74,
-        "low": 80.08,
-        "change_pct": 3.56,
-        "atr": 0.5286,
-        "avg_vol": 91170.08,
-        "last_vol": 22327.43
-      },
-      "1h": {
-        "close": 83.42,
-        "open": 83.92,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -0.6,
-        "atr": 0.6779,
-        "avg_vol": 146292.29,
-        "last_vol": 22327.43
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
