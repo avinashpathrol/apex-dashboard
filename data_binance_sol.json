@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-01T20:19:53.755593+00:00",
+  "generated_at": "2026-04-01T20:21:08.957781+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.91,
+  "price": 82.87,
   "usdt_balance": -314.74502436,
   "sol_balance": 5.0864179,
   "cad_balance": -314.74502436,
-  "margin_level": 1.31480337,
+  "margin_level": 1.31404899,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.18% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.23% below threshold",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (8%)"
+    "Price near BB lower band (7%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2564,7 +2564,7 @@
     "long_trades": 18,
     "short_trades": 25
   },
-  "run_count": 647,
+  "run_count": 648,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2596,62 +2596,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price hovering near the lower Bollinger Band and the EMA-20 above EMA-50 indicating a potential uptrend, but the MACD below the signal line and price below EMA-20 suggesting bearish pressure. The market is consolidating, and the current bot position is long with a hold signal. The overall trend is uncertain, with the price showing minor fluctuations across timeframes.",
-    "5m": "The 5-minute timeframe shows a minor decline of 0.93% with a high ATR of 0.2864, indicating increased volatility.",
-    "15m": "The 15-minute timeframe exhibits a more pronounced decline of 1.32% with an ATR of 0.6843, suggesting growing bearish momentum.",
-    "30m": "The 30-minute timeframe displays a relatively stable price action with a minor decline of 0.31% and an ATR of 0.9264, indicating reduced volatility.",
-    "1h": "The 1-hour timeframe shows a minor decline of 0.3% with an ATR of 1.015, suggesting a potential reversal or consolidation.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential breakout above the EMA-20 or a breakdown below the lower Bollinger Band to determine the next market direction.",
-    "risk_warning": "The current market uncertainty and mixed signals increase the risk of false breakouts, so traders should exercise caution and consider adjusting their positions accordingly.",
-    "generated_at": "2026-04-01T20:19:52.561269+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 82.9,
-        "open": 83.68,
-        "high": 86.65,
-        "low": 82.89,
-        "change_pct": -0.93,
-        "atr": 0.2864,
-        "avg_vol": 26914.28,
-        "last_vol": 12994.39
-      },
-      "15m": {
-        "close": 82.9,
-        "open": 84.01,
-        "high": 86.65,
-        "low": 82.4,
-        "change_pct": -1.32,
-        "atr": 0.6843,
-        "avg_vol": 50597.83,
-        "last_vol": 12994.39
-      },
-      "30m": {
-        "close": 82.9,
-        "open": 83.16,
-        "high": 86.65,
-        "low": 82.33,
-        "change_pct": -0.31,
-        "atr": 0.9264,
-        "avg_vol": 81281.21,
-        "last_vol": 178848.25
-      },
-      "1h": {
-        "close": 82.9,
-        "open": 83.15,
-        "high": 86.65,
-        "low": 80.08,
-        "change_pct": -0.3,
-        "atr": 1.015,
-        "avg_vol": 169734.15,
-        "last_vol": 178848.25
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.06,
     "best_price": 83.09,
