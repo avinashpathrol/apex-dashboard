@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-01T01:17:23.783612+00:00",
+  "generated_at": "2026-04-01T01:18:59.418886+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.11,
+  "price": 83.14,
   "usdt_balance": -296.59874949,
   "sol_balance": 5.0763039,
   "cad_balance": -296.59874949,
-  "margin_level": 1.36827358,
+  "margin_level": 1.36913185,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.13% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.10% below threshold",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
@@ -22,7 +22,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (55.7)",
+    "RSI falling from high (56.5)",
     "MACD bearish crossover"
   ],
   "trades": [
@@ -1433,7 +1433,7 @@
     "long_trades": 8,
     "short_trades": 18
   },
-  "run_count": 99,
+  "run_count": 100,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1464,7 +1464,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across timeframes, with the price holding above the EMA-20 but also showing a bearish MACD crossover and falling RSI. The short-term trend is slightly bullish, while the medium-term trend is neutral. Overall, the market is waiting for a breakout or a trend reversal.",
+    "5m": "The 5-minute chart shows a slight increase in price with a small ATR, indicating low volatility and a potential consolidation phase.",
+    "15m": "The 15-minute chart displays a bullish trend with a significant price increase and a moderate ATR, suggesting a potential uptrend.",
+    "30m": "The 30-minute chart shows a bearish trend with a decreasing price and a moderate ATR, indicating a potential downtrend.",
+    "1h": "The 1-hour chart displays a neutral trend with a small price decrease and a high ATR, suggesting a potential breakout or trend reversal.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.62,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 84.62 or a breakdown below the key support level of 80.08 to determine the next trend direction.",
+    "risk_warning": "The bearish MACD crossover and falling RSI may lead to a trend reversal, so traders should be cautious and adjust their positions accordingly.",
+    "generated_at": "2026-04-01T01:18:58.584039+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.14,
+        "open": 83.05,
+        "high": 83.58,
+        "low": 82.33,
+        "change_pct": 0.11,
+        "atr": 0.2,
+        "avg_vol": 7803.72,
+        "last_vol": 7559.26
+      },
+      "15m": {
+        "close": 83.14,
+        "open": 80.51,
+        "high": 83.58,
+        "low": 80.28,
+        "change_pct": 3.27,
+        "atr": 0.3279,
+        "avg_vol": 49814.87,
+        "last_vol": 7559.26
+      },
+      "30m": {
+        "close": 83.14,
+        "open": 83.85,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": -0.85,
+        "atr": 0.4736,
+        "avg_vol": 88322.16,
+        "last_vol": 38504.17
+      },
+      "1h": {
+        "close": 83.14,
+        "open": 83.35,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": -0.25,
+        "atr": 0.9579,
+        "avg_vol": 149046.74,
+        "last_vol": 38504.17
+      }
+    }
+  },
   "trail": {
     "entry_price": 83.22,
     "best_price": 83.47,
