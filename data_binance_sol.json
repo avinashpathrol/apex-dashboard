@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T16:15:43.863439+00:00",
+  "generated_at": "2026-04-01T16:17:01.730238+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": -310.95890148,
   "sol_balance": 5.0514419,
   "cad_balance": -310.95890148,
-  "margin_level": 1.32080694,
+  "margin_level": 1.32143144,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
@@ -2350,7 +2350,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 455,
+  "run_count": 456,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2382,7 +2382,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The market is showing mixed signals across timeframes, with the current price being below the EMA-20, but the MACD is above the signal line, indicating a potential bullish trend, while the EMA-20 is above EMA-50, confirming an uptrend, but the bot signal has 0% confidence, suggesting uncertainty. The price is fluctuating, with a slight increase in the 30m timeframe, but a decrease in the 5m and 1h timeframes. The overall trend is unclear, with both bullish and bearish signals present.",
+    "5m": "The 5m timeframe is showing a slight decrease in price, with a change of -0.1%, indicating a potential short-term bearish trend.",
+    "15m": "The 15m timeframe is showing a slight increase in price, with a change of 0.24%, indicating a potential short-term bullish trend.",
+    "30m": "The 30m timeframe is showing a significant increase in price, with a change of 1.0%, indicating a potential medium-term bullish trend.",
+    "1h": "The 1h timeframe is showing a slight decrease in price, with a change of -0.08%, indicating a potential medium-term bearish trend.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.74,
+    "recommendation": "Traders should watch for a break above the key level resistance at 84.74 or a drop below the key level support at 80.08 to determine the next trend.",
+    "risk_warning": "The bot signal has 0% confidence, indicating high uncertainty in the market, and traders should be cautious with their positions.",
+    "generated_at": "2026-04-01T16:17:00.492887+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.2,
+        "open": 83.28,
+        "high": 83.88,
+        "low": 82.4,
+        "change_pct": -0.1,
+        "atr": 0.2414,
+        "avg_vol": 13043.55,
+        "last_vol": 2639.48
+      },
+      "15m": {
+        "close": 83.21,
+        "open": 83.01,
+        "high": 84.74,
+        "low": 82.4,
+        "change_pct": 0.24,
+        "atr": 0.455,
+        "avg_vol": 32592.65,
+        "last_vol": 2640.7
+      },
+      "30m": {
+        "close": 83.21,
+        "open": 82.39,
+        "high": 84.74,
+        "low": 81.05,
+        "change_pct": 1.0,
+        "atr": 0.5793,
+        "avg_vol": 67020.47,
+        "last_vol": 38704.81
+      },
+      "1h": {
+        "close": 83.19,
+        "open": 83.26,
+        "high": 84.74,
+        "low": 80.08,
+        "change_pct": -0.08,
+        "atr": 0.7521,
+        "avg_vol": 149534.38,
+        "last_vol": 38886.82
+      }
+    }
+  },
   "trail": {
     "entry_price": 83.63,
     "best_price": 83.74,
