@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T03:10:46.790029+00:00",
+  "generated_at": "2026-04-01T03:11:55.476778+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.28,
+  "price": 83.27,
   "usdt_balance": 123.15712351,
   "sol_balance": 0.0001869,
   "cad_balance": 123.15712351,
@@ -23,7 +23,7 @@
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "Price near BB upper band (86%)"
+    "Price near BB upper band (85%)"
   ],
   "trades": [
     {
@@ -1567,7 +1567,7 @@
     "long_trades": 9,
     "short_trades": 19
   },
-  "run_count": 196,
+  "run_count": 197,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
