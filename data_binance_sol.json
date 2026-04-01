@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T09:56:43.558514+00:00",
+  "generated_at": "2026-04-01T09:57:58.981049+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": -298.63740621,
   "sol_balance": 5.0589969,
   "cad_balance": -298.63740621,
-  "margin_level": 1.36311683,
+  "margin_level": 1.36348989,
   "position": "LONG",
   "action": "LONG",
   "confidence": 82,
@@ -1915,7 +1915,7 @@
     "long_trades": 12,
     "short_trades": 21
   },
-  "run_count": 156,
+  "run_count": 157,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1947,62 +1947,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 7,
-    "summary": "The SOL/USDT market is showing signs of a potential uptrend across multiple timeframes, with the RSI rising from a low level and the EMA-20 above the EMA-50, indicating a bullish bias. However, the MACD below the signal line and price below the EMA-20 are causing some hesitation. The overall trend is bullish, but with caution.",
-    "5m": "The 5-minute chart shows a slight increase in price, with a small gain of 0.07% and a relatively low ATR of 0.1979, indicating a lack of volatility.",
-    "15m": "The 15-minute chart displays a more significant price increase of 0.81%, with the price closing above the opening price and a moderate ATR of 0.3857, suggesting some buying interest.",
-    "30m": "The 30-minute chart reveals a stronger uptrend, with a 3.34% price increase and a higher ATR of 0.545, indicating increased momentum and volatility.",
-    "1h": "The 1-hour chart shows a slight decline of 0.56%, but the price is still above the recent lows, and the ATR of 0.6957 is relatively high, suggesting some uncertainty.",
-    "key_level_support": 80.28,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential breakout above the 1-hour high of 84.99, which could confirm the bullish trend and lead to further gains.",
-    "risk_warning": "However, a failure to hold above the key support level of 80.28 could lead to a reversal of the trend and significant losses.",
-    "generated_at": "2026-04-01T09:56:42.392622+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.45,
-        "open": 83.39,
-        "high": 84.74,
-        "low": 83.14,
-        "change_pct": 0.07,
-        "atr": 0.1979,
-        "avg_vol": 12388.29,
-        "last_vol": 657.52
-      },
-      "15m": {
-        "close": 83.45,
-        "open": 82.78,
-        "high": 84.74,
-        "low": 82.33,
-        "change_pct": 0.81,
-        "atr": 0.3857,
-        "avg_vol": 28613.51,
-        "last_vol": 10689.68
-      },
-      "30m": {
-        "close": 83.45,
-        "open": 80.75,
-        "high": 84.74,
-        "low": 80.28,
-        "change_pct": 3.34,
-        "atr": 0.545,
-        "avg_vol": 87888.66,
-        "last_vol": 49977.37
-      },
-      "1h": {
-        "close": 83.45,
-        "open": 83.92,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -0.56,
-        "atr": 0.6957,
-        "avg_vol": 148035.26,
-        "last_vol": 105989.91
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.49,
     "best_price": 83.6,
