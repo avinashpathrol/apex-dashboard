@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T01:03:50.018362+00:00",
+  "generated_at": "2026-04-01T01:04:57.968873+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": -296.59874949,
   "sol_balance": 5.0763039,
   "cad_balance": -296.59874949,
-  "margin_level": 1.37290036,
+  "margin_level": 1.37265515,
   "position": "LONG",
   "action": "LONG",
   "confidence": 88,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "Price near BB upper band (101%)"
+    "Price near BB upper band (102%)"
   ],
   "trades": [
     {
@@ -1433,7 +1433,7 @@
     "long_trades": 8,
     "short_trades": 18
   },
-  "run_count": 87,
+  "run_count": 88,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1464,62 +1464,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a continuation of the bullish trend. The recent price action has been driven by buying pressure, with the 15m timeframe showing a significant increase of 3.31%. However, the price is nearing the upper Bollinger Band, which may lead to a potential pullback. ",
-    "5m": "The 5m timeframe is showing a slight increase in price, with a change of 0.51%, indicating a continuation of the bullish trend.",
-    "15m": "The 15m timeframe is showing a significant increase in price, with a change of 3.31%, driven by strong buying pressure.",
-    "30m": "The 30m timeframe is showing a slight decrease in price, with a change of -0.51%, which may be a minor correction in the overall uptrend.",
-    "1h": "The 1h timeframe is showing a relatively stable price, with a change of 0.08%, indicating a potential consolidation phase.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential pullback to the key level support at 80.08, which could provide a buying opportunity.",
-    "risk_warning": "A break below the key level support at 80.08 could lead to a reversal of the trend, so traders should be cautious and adjust their positions accordingly.",
-    "generated_at": "2026-04-01T01:03:49.174212+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.41,
-        "open": 82.99,
-        "high": 83.58,
-        "low": 82.33,
-        "change_pct": 0.51,
-        "atr": 0.1964,
-        "avg_vol": 8080.68,
-        "last_vol": 5489.9
-      },
-      "15m": {
-        "close": 83.42,
-        "open": 80.75,
-        "high": 83.58,
-        "low": 80.28,
-        "change_pct": 3.31,
-        "atr": 0.3336,
-        "avg_vol": 50484.59,
-        "last_vol": 5491.02
-      },
-      "30m": {
-        "close": 83.42,
-        "open": 83.85,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": -0.51,
-        "atr": 0.4593,
-        "avg_vol": 87634.38,
-        "last_vol": 5491.02
-      },
-      "1h": {
-        "close": 83.42,
-        "open": 83.35,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": 0.08,
-        "atr": 0.9436,
-        "avg_vol": 148358.97,
-        "last_vol": 5491.02
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.22,
     "best_price": 83.47,
