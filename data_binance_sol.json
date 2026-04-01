@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-01T00:18:22.128535+00:00",
+  "generated_at": "2026-04-01T00:19:34.118223+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.16,
-  "usdt_balance": 126.29288051,
-  "sol_balance": 0.0003849,
-  "cad_balance": 126.29288051,
-  "margin_level": 999.0,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 83.22,
+  "usdt_balance": -296.59874949,
+  "sol_balance": 5.0763039,
+  "cad_balance": -296.59874949,
+  "margin_level": 1.37038517,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "MACD bullish crossover | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
+    "MACD bullish crossover",
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "MACD below signal (bearish)",
-    "Price near BB upper band (82%)"
+    "Price near BB upper band (89%)"
   ],
   "trades": [
     {
@@ -1047,6 +1047,14 @@
       "cost": 408.97714,
       "fee": 0.40897714,
       "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.31% (above fee threshold)"
+    },
+    {
+      "time": "2026-03-31T17:19:30.039000-07:00",
+      "action": "BUY",
+      "price": 83.23,
+      "qty": 5.081,
+      "cost": 422.89163,
+      "fee": 0.005081
     }
   ],
   "closed_trades": [
@@ -1399,19 +1407,33 @@
       "opened_at": "2026-03-31T15:41:13.346000-07:00",
       "closed_at": "2026-03-31T16:18:33.314000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "SHORT",
+      "entry_price": 82.94,
+      "exit_price": 83.23,
+      "qty": 0.064,
+      "fee": 0.01038916,
+      "pnl": -0.0289,
+      "pnl_pct": -1.75,
+      "win": false,
+      "opened_at": "2026-03-31T16:18:33.314000-07:00",
+      "closed_at": "2026-03-31T17:19:30.039000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 25,
+    "closed_trades": 26,
     "wins": 12,
-    "losses": 13,
-    "win_rate": 48.0,
-    "net_profit": -1.6669,
-    "avg_profit_per_trade": -0.0667,
+    "losses": 14,
+    "win_rate": 46.15,
+    "net_profit": -1.6958,
+    "avg_profit_per_trade": -0.0652,
     "long_trades": 8,
-    "short_trades": 17
+    "short_trades": 18
   },
-  "run_count": 48,
+  "run_count": 49,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1430,7 +1452,11 @@
       "bot_paused": false,
       "force_trail": false
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 85.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -1438,68 +1464,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is showing mixed signals across timeframes, with the price currently holding above the EMA-20 but near the upper Bollinger Band, indicating a potential pullback, while the MACD is bearish, suggesting a reversal, and the recent price action is choppy with low ATR values. The uptrend is still intact but losing momentum. The market is waiting for a catalyst to break out of the current range.",
-    "5m": "The 5-minute chart shows a small gain with a low ATR, indicating low volatility and a potential consolidation phase.",
-    "15m": "The 15-minute chart displays a stronger uptrend with a higher ATR, suggesting that the market is still bullish in the short term but may be due for a correction.",
-    "30m": "The 30-minute chart indicates a slowing uptrend with decreasing ATR values, hinting at a potential reversal or consolidation.",
-    "1h": "The 1-hour chart shows a bullish trend but with a bearish MACD, warning of a potential trend reversal if the price fails to hold above the EMA-20.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a break below the EMA-20 or a failure to hold above the key level support at 80.08, which could indicate a trend reversal.",
-    "risk_warning": "The market is showing signs of a potential reversal, and traders should be cautious of a pullback to the key level support.",
-    "generated_at": "2026-04-01T00:18:21.236289+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.16,
-        "open": 82.7,
-        "high": 83.4,
-        "low": 82.33,
-        "change_pct": 0.56,
-        "atr": 0.17,
-        "avg_vol": 8255.88,
-        "last_vol": 1646.79
-      },
-      "15m": {
-        "close": 83.16,
-        "open": 81.84,
-        "high": 83.47,
-        "low": 80.08,
-        "change_pct": 1.61,
-        "atr": 0.3043,
-        "avg_vol": 54227.49,
-        "last_vol": 1646.79
-      },
-      "30m": {
-        "close": 83.16,
-        "open": 82.72,
-        "high": 84.62,
-        "low": 80.08,
-        "change_pct": 0.53,
-        "atr": 0.4986,
-        "avg_vol": 88728.05,
-        "last_vol": 26674.31
-      },
-      "1h": {
-        "close": 83.16,
-        "open": 82.71,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": 0.54,
-        "atr": 0.945,
-        "avg_vol": 148406.86,
-        "last_vol": 26674.31
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 83.22,
+    "best_price": 83.22,
+    "atr": 0.3200000000000013,
+    "sl": 82.74,
+    "trail_stop": 82.74,
     "active": false
   }
 }
