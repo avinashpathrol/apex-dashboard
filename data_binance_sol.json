@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-01T20:32:25.905993+00:00",
+  "generated_at": "2026-04-01T20:33:44.966670+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.5,
-  "usdt_balance": -314.74502436,
-  "sol_balance": 5.0864179,
-  "cad_balance": -314.74502436,
-  "margin_level": 1.30883379,
-  "position": "LONG",
+  "price": 82.61,
+  "usdt_balance": 104.93847204,
+  "sol_balance": 0.0004179,
+  "cad_balance": 104.93847204,
+  "margin_level": 999.0,
+  "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.67% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.54% below threshold",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Dashboard close request executed",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (3%)"
+    "Price near BB lower band (5%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1948,6 +1948,69 @@
       "qty": 5.091,
       "cost": 422.96028,
       "fee": 0.005091
+    },
+    {
+      "time": "2026-04-01T13:33:39.387000-07:00",
+      "action": "SELL",
+      "price": 82.6,
+      "qty": 0.062,
+      "cost": 5.1212,
+      "fee": 0.0051212,
+      "reason": "Dashboard close request"
+    },
+    {
+      "time": "2026-04-01T13:33:39.387000-07:00",
+      "action": "SELL",
+      "price": 82.6,
+      "qty": 0.062,
+      "cost": 5.1212,
+      "fee": 0.0051212,
+      "reason": "Dashboard close request"
+    },
+    {
+      "time": "2026-04-01T13:33:39.387000-07:00",
+      "action": "SELL",
+      "price": 82.6,
+      "qty": 0.122,
+      "cost": 10.0772,
+      "fee": 0.0100772,
+      "reason": "Dashboard close request"
+    },
+    {
+      "time": "2026-04-01T13:33:39.387000-07:00",
+      "action": "SELL",
+      "price": 82.6,
+      "qty": 0.091,
+      "cost": 7.5166,
+      "fee": 0.0075166,
+      "reason": "Dashboard close request"
+    },
+    {
+      "time": "2026-04-01T13:33:39.387000-07:00",
+      "action": "SELL",
+      "price": 82.6,
+      "qty": 0.073,
+      "cost": 6.0298,
+      "fee": 0.0060298,
+      "reason": "Dashboard close request"
+    },
+    {
+      "time": "2026-04-01T13:33:39.387000-07:00",
+      "action": "SELL",
+      "price": 82.6,
+      "qty": 0.067,
+      "cost": 5.5342,
+      "fee": 0.0055342,
+      "reason": "Dashboard close request"
+    },
+    {
+      "time": "2026-04-01T13:33:39.387000-07:00",
+      "action": "SELL",
+      "price": 82.6,
+      "qty": 4.609,
+      "cost": 380.7034,
+      "fee": 0.3807034,
+      "reason": "Dashboard close request"
     }
   ],
   "closed_trades": [
@@ -2552,19 +2615,33 @@
       "opened_at": "2026-04-01T10:29:07.129000-07:00",
       "closed_at": "2026-04-01T11:55:25.506000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 83.08,
+      "exit_price": 82.6,
+      "qty": 0.062,
+      "fee": 0.0102122,
+      "pnl": -0.04,
+      "pnl_pct": -2.89,
+      "win": false,
+      "opened_at": "2026-04-01T13:16:47.985000-07:00",
+      "closed_at": "2026-04-01T13:33:39.387000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 43,
+    "closed_trades": 44,
     "wins": 16,
-    "losses": 27,
-    "win_rate": 37.21,
-    "net_profit": -9.6573,
-    "avg_profit_per_trade": -0.2246,
-    "long_trades": 18,
+    "losses": 28,
+    "win_rate": 36.36,
+    "net_profit": -9.6973,
+    "avg_profit_per_trade": -0.2204,
+    "long_trades": 19,
     "short_trades": 25
   },
-  "run_count": 657,
+  "run_count": 658,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2584,11 +2661,7 @@
       "force_trail": false,
       "force_trail_at": "2026-04-01T18:47:19.475Z"
     },
-    "queued": {
-      "trade_amount_usdt": 85.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -2601,8 +2674,8 @@
     "entry_price": 83.06,
     "best_price": 83.09,
     "atr": 0.6821428571428579,
-    "sl": 82.03678571428571,
-    "trail_stop": 82.06678571428571,
+    "sl": null,
+    "trail_stop": null,
     "active": false
   }
 }
