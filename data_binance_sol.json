@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T19:02:51.474183+00:00",
+  "generated_at": "2026-04-01T19:04:17.127628+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.75,
+  "price": 83.77,
   "usdt_balance": 108.21525564,
   "sol_balance": 0.0005089,
   "cad_balance": 108.21525564,
@@ -18,7 +18,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (47.5)",
+    "RSI rising from low (47.7)",
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
@@ -2556,7 +2556,7 @@
     "long_trades": 18,
     "short_trades": 25
   },
-  "run_count": 586,
+  "run_count": 587,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2584,7 +2584,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the RSI indicating a potential uptrend but the MACD and price below EMA-20 suggesting bearish pressure. The market is trading sideways, with a slight increase in price over the past hour. Overall, the market is waiting for a breakout or a clear direction.",
+    "5m": "The 5-minute chart shows a slight increase in price with a 1.23% change, indicating a potential short-term bullish momentum.",
+    "15m": "The 15-minute chart shows a relatively stable price with a 0.37% change, indicating a lack of clear direction in the short term.",
+    "30m": "The 30-minute chart shows a 1.29% increase in price, suggesting a potential medium-term uptrend.",
+    "1h": "The 1-hour chart shows a 1.18% increase in price, but with a significant low at 80.08, indicating a potential support level.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a breakout above 86.65 or a breakdown below 80.08 to determine the next direction.",
+    "risk_warning": "Trading in a neutral market with mixed signals can be risky, and traders should be cautious of potential whipsaws.",
+    "generated_at": "2026-04-01T19:04:15.813081+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.77,
+        "open": 82.75,
+        "high": 86.65,
+        "low": 82.51,
+        "change_pct": 1.23,
+        "atr": 0.2871,
+        "avg_vol": 24986.79,
+        "last_vol": 7363.3
+      },
+      "15m": {
+        "close": 83.77,
+        "open": 83.46,
+        "high": 86.65,
+        "low": 82.4,
+        "change_pct": 0.37,
+        "atr": 0.7343,
+        "avg_vol": 48183.09,
+        "last_vol": 7363.48
+      },
+      "30m": {
+        "close": 83.77,
+        "open": 82.7,
+        "high": 86.65,
+        "low": 82.33,
+        "change_pct": 1.29,
+        "atr": 0.8814,
+        "avg_vol": 78642.82,
+        "last_vol": 7363.48
+      },
+      "1h": {
+        "close": 83.77,
+        "open": 82.79,
+        "high": 86.65,
+        "low": 80.08,
+        "change_pct": 1.18,
+        "atr": 0.9486,
+        "avg_vol": 165278.85,
+        "last_vol": 7363.48
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
