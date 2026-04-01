@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-04-01T10:25:40.331937+00:00",
+  "generated_at": "2026-04-01T10:27:15.522904+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.3,
+  "price": 83.27,
   "usdt_balance": -298.63740621,
   "sol_balance": 5.0589969,
   "cad_balance": -298.63740621,
-  "margin_level": 1.36142375,
+  "margin_level": 1.36100758,
   "position": "LONG",
   "action": "LONG",
   "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 RSI rising from low (43.2) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (18%)",
+  "status": "HOLDING LONG \u2014 RSI rising from low (42.5) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (17%)",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "RSI rising from low (43.2) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (18%)",
+  "reason": "RSI rising from low (42.5) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (17%)",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (43.2)",
+    "RSI rising from low (42.5)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (18%)"
+    "Price near BB lower band (17%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1915,7 +1915,7 @@
     "long_trades": 12,
     "short_trades": 21
   },
-  "run_count": 179,
+  "run_count": 180,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1947,7 +1947,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing signs of a potential uptrend across multiple timeframes, with the RSI rising from a low and the EMA-20 above the EMA-50, indicating a bullish bias. However, the MACD below the signal line and price below EMA-20 suggest some bearish pressure. Overall, the market is poised for a potential breakout.",
+    "5m": "The 5-minute chart shows a slight decline, but the price is still near the lower Bollinger Band, indicating potential for a bounce.",
+    "15m": "The 15-minute chart is bullish, with a rising RSI and a close above the open, suggesting a potential continuation of the uptrend.",
+    "30m": "The 30-minute chart shows a strong bullish candle, with a close above the open and a high above the previous high, indicating a potential trend reversal.",
+    "1h": "The 1-hour chart is neutral, with a decline in price, but the overall trend is still bullish, and the price is near the lower Bollinger Band, indicating potential for a bounce.",
+    "key_level_support": 80.28,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential breakout above the 1-hour high of 84.99, which could confirm the bullish trend.",
+    "risk_warning": "A break below the key support level of 80.28 could lead to a significant decline, so traders should adjust their stop-loss levels accordingly.",
+    "generated_at": "2026-04-01T10:27:14.367306+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.27,
+        "open": 84.09,
+        "high": 84.74,
+        "low": 83.14,
+        "change_pct": -0.98,
+        "atr": 0.1536,
+        "avg_vol": 11755.2,
+        "last_vol": 4275.22
+      },
+      "15m": {
+        "close": 83.27,
+        "open": 82.66,
+        "high": 84.74,
+        "low": 82.33,
+        "change_pct": 0.74,
+        "atr": 0.3593,
+        "avg_vol": 28812.01,
+        "last_vol": 21254.81
+      },
+      "30m": {
+        "close": 83.27,
+        "open": 80.47,
+        "high": 84.74,
+        "low": 80.28,
+        "change_pct": 3.48,
+        "atr": 0.5043,
+        "avg_vol": 85534.55,
+        "last_vol": 34554.95
+      },
+      "1h": {
+        "close": 83.27,
+        "open": 84.24,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": -1.15,
+        "atr": 0.6579,
+        "avg_vol": 146505.4,
+        "last_vol": 34554.95
+      }
+    }
+  },
   "trail": {
     "entry_price": 83.49,
     "best_price": 83.6,
