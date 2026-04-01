@@ -1357,10 +1357,10 @@ function updatePositionBanner(pos, price){
   const ftInfo=qs('force-trail-info');
   if(ftInfo && botData?.trail?.atr && currentLivePriceUSDT){
     const atr=n(botData.trail.atr);
-    const buf=atr*0.5;
+    const buf=atr*0.70;
     const previewStop=isLong ? currentLivePriceUSDT-buf : currentLivePriceUSDT+buf;
     ftInfo.style.display='block';
-    ftInfo.innerHTML=`If clicked now &rarr; stop at <b style="color:#c4b5fd;">${previewStop.toFixed(4)}</b> &nbsp;(${currentLivePriceUSDT.toFixed(4)} ${isLong?'−':'+'}  0.5×ATR ${buf.toFixed(4)})`;
+    ftInfo.innerHTML=`If clicked now &rarr; stop at <b style="color:#c4b5fd;">${previewStop.toFixed(4)}</b> &nbsp;(${currentLivePriceUSDT.toFixed(4)} ${isLong?'−':'+'}  0.70×ATR ${buf.toFixed(4)})`;
   } else if(ftInfo){
     ftInfo.style.display='none';
   }
