@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T00:16:19.248239+00:00",
+  "generated_at": "2026-04-01T00:18:22.128535+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.13,
+  "price": 83.16,
   "usdt_balance": 126.29288051,
   "sol_balance": 0.0003849,
   "cad_balance": 126.29288051,
@@ -12,17 +12,18 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "MACD below signal (bearish)"
+    "MACD below signal (bearish)",
+    "Price near BB upper band (82%)"
   ],
   "trades": [
     {
@@ -1410,7 +1411,7 @@
     "long_trades": 8,
     "short_trades": 17
   },
-  "run_count": 47,
+  "run_count": 48,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1437,7 +1438,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is showing mixed signals across timeframes, with the price currently holding above the EMA-20 but near the upper Bollinger Band, indicating a potential pullback, while the MACD is bearish, suggesting a reversal, and the recent price action is choppy with low ATR values. The uptrend is still intact but losing momentum. The market is waiting for a catalyst to break out of the current range.",
+    "5m": "The 5-minute chart shows a small gain with a low ATR, indicating low volatility and a potential consolidation phase.",
+    "15m": "The 15-minute chart displays a stronger uptrend with a higher ATR, suggesting that the market is still bullish in the short term but may be due for a correction.",
+    "30m": "The 30-minute chart indicates a slowing uptrend with decreasing ATR values, hinting at a potential reversal or consolidation.",
+    "1h": "The 1-hour chart shows a bullish trend but with a bearish MACD, warning of a potential trend reversal if the price fails to hold above the EMA-20.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a break below the EMA-20 or a failure to hold above the key level support at 80.08, which could indicate a trend reversal.",
+    "risk_warning": "The market is showing signs of a potential reversal, and traders should be cautious of a pullback to the key level support.",
+    "generated_at": "2026-04-01T00:18:21.236289+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.16,
+        "open": 82.7,
+        "high": 83.4,
+        "low": 82.33,
+        "change_pct": 0.56,
+        "atr": 0.17,
+        "avg_vol": 8255.88,
+        "last_vol": 1646.79
+      },
+      "15m": {
+        "close": 83.16,
+        "open": 81.84,
+        "high": 83.47,
+        "low": 80.08,
+        "change_pct": 1.61,
+        "atr": 0.3043,
+        "avg_vol": 54227.49,
+        "last_vol": 1646.79
+      },
+      "30m": {
+        "close": 83.16,
+        "open": 82.72,
+        "high": 84.62,
+        "low": 80.08,
+        "change_pct": 0.53,
+        "atr": 0.4986,
+        "avg_vol": 88728.05,
+        "last_vol": 26674.31
+      },
+      "1h": {
+        "close": 83.16,
+        "open": 82.71,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": 0.54,
+        "atr": 0.945,
+        "avg_vol": 148406.86,
+        "last_vol": 26674.31
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
