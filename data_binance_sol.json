@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-01T05:06:48.664092+00:00",
+  "generated_at": "2026-04-01T05:07:56.865194+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.45,
+  "price": 83.41,
   "usdt_balance": -299.68793649,
   "sol_balance": 5.0731089,
   "cad_balance": -299.68793649,
-  "margin_level": 1.36377978,
+  "margin_level": 1.36310912,
   "position": "LONG",
   "action": "LONG",
   "confidence": 88,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (57.2)"
+    "RSI falling from high (56.3)"
   ],
   "trades": [
     {
@@ -1703,7 +1703,7 @@
     "long_trades": 9,
     "short_trades": 19
   },
-  "run_count": 295,
+  "run_count": 296,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1734,62 +1734,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a bullish trend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a potential continuation of the uptrend. However, the RSI is falling from a high, which may lead to a short-term correction. The overall trend remains bullish, with the price holding above key support levels.",
-    "5m": "The 5-minute chart shows a slight increase in price, with a 0.43% change, indicating a potential short-term bullish momentum.",
-    "15m": "The 15-minute chart displays a stronger bullish trend, with a 1.37% price increase and a higher high, suggesting a potential breakout.",
-    "30m": "The 30-minute chart shows a minor correction, with a -0.38% price change, but the overall trend remains bullish, with the price above the EMA-20.",
-    "1h": "The 1-hour chart indicates a neutral trend, with a -0.02% price change, but the price is still holding above the key support level.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 84.99, which could lead to a further uptrend.",
-    "risk_warning": "A failure to hold above the key support level of 80.08 could lead to a bearish reversal.",
-    "generated_at": "2026-04-01T05:06:47.571178+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.45,
-        "open": 83.09,
-        "high": 83.86,
-        "low": 82.48,
-        "change_pct": 0.43,
-        "atr": 0.1757,
-        "avg_vol": 8147.11,
-        "last_vol": 1376.45
-      },
-      "15m": {
-        "close": 83.45,
-        "open": 82.32,
-        "high": 83.86,
-        "low": 80.4,
-        "change_pct": 1.37,
-        "atr": 0.3336,
-        "avg_vol": 35396.67,
-        "last_vol": 18327.98
-      },
-      "30m": {
-        "close": 83.45,
-        "open": 83.77,
-        "high": 83.86,
-        "low": 80.08,
-        "change_pct": -0.38,
-        "atr": 0.4714,
-        "avg_vol": 87839.35,
-        "last_vol": 18327.98
-      },
-      "1h": {
-        "close": 83.45,
-        "open": 83.47,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -0.02,
-        "atr": 0.7707,
-        "avg_vol": 142545.74,
-        "last_vol": 18327.98
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.26,
     "best_price": 83.72,
