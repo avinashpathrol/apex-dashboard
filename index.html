@@ -617,6 +617,7 @@ input:focus{border-color:#3f3f46;}
       <button id="close-pos-btn" class="close-pos-btn" onclick="openCloseModal()">🔴 CLOSE POSITION NOW</button>
       <!-- Force trail button -->
       <button id="force-trail-btn" class="force-trail-btn" onclick="sendForceTrail()">🔒 LOCK TRAIL AT CURRENT PRICE</button>
+      <div id="force-trail-info" style="display:none;font-size:11px;color:#a78bfa;text-align:center;margin:-4px 0 8px;padding:4px 8px;background:#0d0d1a;border:1px solid #4c1d95;border-top:none;border-radius:0 0 8px 8px;"></div>
 
       <!-- Pause banner -->
       <div id="pause-banner" style="display:none;background:#1a1a2e;border:1px solid #3730a3;border-radius:10px;padding:10px 14px;margin-bottom:8px;align-items:center;justify-content:space-between;gap:10px;">
@@ -1284,6 +1285,7 @@ function updatePositionBanner(pos, price){
     qs('pb-dur').textContent='—';
     if(closeBtn) closeBtn.classList.remove('visible');
     const ftBtn2=qs('force-trail-btn'); if(ftBtn2) ftBtn2.classList.remove('visible');
+    const ftInfo2=qs('force-trail-info'); if(ftInfo2) ftInfo2.style.display='none';
     return;
   }
 
@@ -1350,6 +1352,17 @@ function updatePositionBanner(pos, price){
     ftBtn.className='force-trail-btn visible';
     const trailActive=botData?.trail?.active;
     ftBtn.textContent=trailActive?'🔒 TRAIL ACTIVE — LOCK AT NEW PRICE':'🔒 LOCK TRAIL AT CURRENT PRICE';
+  }
+  // Live trail stop preview
+  const ftInfo=qs('force-trail-info');
+  if(ftInfo && botData?.trail?.atr && currentLivePriceUSDT){
+    const atr=n(botData.trail.atr);
+    const buf=atr*0.5;
+    const previewStop=isLong ? currentLivePriceUSDT-buf : currentLivePriceUSDT+buf;
+    ftInfo.style.display='block';
+    ftInfo.innerHTML=`If clicked now &rarr; stop at <b style="color:#c4b5fd;">${previewStop.toFixed(4)}</b> &nbsp;(${currentLivePriceUSDT.toFixed(4)} ${isLong?'−':'+'}  0.5×ATR ${buf.toFixed(4)})`;
+  } else if(ftInfo){
+    ftInfo.style.display='none';
   }
 }
 
