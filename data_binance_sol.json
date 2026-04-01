@@ -1,27 +1,25 @@
 {
-  "generated_at": "2026-04-01T13:14:21.736313+00:00",
+  "generated_at": "2026-04-01T13:15:39.308962+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.16,
-  "usdt_balance": -302.40447615,
-  "sol_balance": 5.0869059,
-  "cad_balance": -302.40447615,
-  "margin_level": 1.35528179,
-  "position": "LONG",
-  "action": "LONG",
-  "confidence": 85,
-  "risk": "LOW",
-  "status": "HOLDING LONG \u2014 RSI rising from low (43.2) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (20%) | High volume confirms move",
+  "price": 83.28,
+  "usdt_balance": 37.59552385,
+  "sol_balance": 0.0009059,
+  "cad_balance": 37.59552385,
+  "margin_level": 999.0,
+  "position": null,
+  "action": "HOLD",
+  "confidence": 0,
+  "risk": "MEDIUM",
+  "status": "LONG CLOSED \u2014 signals faded, profit secured \u2705",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "RSI rising from low (43.2) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (20%) | High volume confirms move",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (43.2)",
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (20%)",
-    "High volume confirms move"
+    "RSI rising from low (46.2)",
+    "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1457,6 +1455,15 @@
       "qty": 5.091,
       "cost": 422.80755,
       "fee": 0.005091
+    },
+    {
+      "time": "2026-04-01T06:15:35.687000-07:00",
+      "action": "SELL",
+      "price": 83.27,
+      "qty": 5.086,
+      "cost": 423.51122,
+      "fee": 0.42351122,
+      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.28% (above fee threshold)"
     }
   ],
   "closed_trades": [
@@ -1935,19 +1942,33 @@
       "opened_at": "2026-04-01T02:18:16.875000-07:00",
       "closed_at": "2026-04-01T05:38:20.164000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 83.05,
+      "exit_price": 83.27,
+      "qty": 5.086,
+      "fee": 0.42860222,
+      "pnl": 0.6903,
+      "pnl_pct": 1.32,
+      "win": true,
+      "opened_at": "2026-04-01T06:00:10.209000-07:00",
+      "closed_at": "2026-04-01T06:15:35.687000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 34,
-    "wins": 15,
+    "closed_trades": 35,
+    "wins": 16,
     "losses": 19,
-    "win_rate": 44.12,
-    "net_profit": -2.1742,
-    "avg_profit_per_trade": -0.0639,
-    "long_trades": 13,
+    "win_rate": 45.71,
+    "net_profit": -1.4839,
+    "avg_profit_per_trade": -0.0424,
+    "long_trades": 14,
     "short_trades": 21
   },
-  "run_count": 312,
+  "run_count": 313,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1967,11 +1988,7 @@
       "force_trail": false,
       "force_trail_at": "2026-04-01T06:36:36.854Z"
     },
-    "queued": {
-      "trade_amount_usdt": 85.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -1979,68 +1996,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 7,
-    "summary": "The market is showing signs of a potential uptrend across multiple timeframes, with the RSI rising from a low and the EMA-20 above the EMA-50, indicating a bullish bias. However, the MACD below the signal line and price below EMA-20 are causing some uncertainty. Overall, the bullish signals are currently outweighing the bearish ones, suggesting a potential continuation of the uptrend.",
-    "5m": "The 5-minute chart shows a slight decline in price, but the high volume confirms the move, indicating a potential buying opportunity.",
-    "15m": "The 15-minute chart is showing a bullish bias, with the price closing above the open and the ATR indicating increasing volatility.",
-    "30m": "The 30-minute chart is indicating a strong uptrend, with the price closing 1.6% higher and the ATR suggesting increasing momentum.",
-    "1h": "The 1-hour chart is showing a slight pullback, but the price is still above the recent lows, indicating a potential buying opportunity.",
-    "key_level_support": 80.4,
-    "key_level_resistance": 84.74,
-    "recommendation": "Traders should watch for a potential breakout above the key level resistance at 84.74, which could confirm the bullish bias and lead to further upside.",
-    "risk_warning": "However, a failure to break above the resistance level could lead to a reversal, and traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-04-01T13:14:20.496635+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.17,
-        "open": 83.61,
-        "high": 83.95,
-        "low": 82.71,
-        "change_pct": -0.53,
-        "atr": 0.3243,
-        "avg_vol": 10204.09,
-        "last_vol": 19088.88
-      },
-      "15m": {
-        "close": 83.17,
-        "open": 82.66,
-        "high": 84.74,
-        "low": 82.33,
-        "change_pct": 0.62,
-        "atr": 0.3521,
-        "avg_vol": 30243.37,
-        "last_vol": 52889.99
-      },
-      "30m": {
-        "close": 83.17,
-        "open": 81.86,
-        "high": 84.74,
-        "low": 80.4,
-        "change_pct": 1.6,
-        "atr": 0.4971,
-        "avg_vol": 72786.08,
-        "last_vol": 52889.99
-      },
-      "1h": {
-        "close": 83.17,
-        "open": 84.39,
-        "high": 84.76,
-        "low": 80.08,
-        "change_pct": -1.45,
-        "atr": 0.68,
-        "avg_vol": 146672.76,
-        "last_vol": 52889.99
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.05,
-    "best_price": 83.21,
+    "best_price": 83.35,
     "atr": 0.3164285714285689,
-    "sl": 82.57535714285714,
-    "trail_stop": 82.73535714285714,
+    "sl": null,
+    "trail_stop": null,
     "active": false
   }
 }
