@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T20:33:44.966670+00:00",
+  "generated_at": "2026-04-01T20:35:05.127281+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.61,
+  "price": 82.63,
   "usdt_balance": 104.93847204,
   "sol_balance": 0.0004179,
   "cad_balance": 104.93847204,
@@ -12,14 +12,14 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.54% below threshold",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Dashboard close request executed",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (5%)"
+    "Price near BB lower band (6%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2641,14 +2641,14 @@
     "long_trades": 19,
     "short_trades": 25
   },
-  "run_count": 658,
+  "run_count": 659,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -2669,11 +2669,66 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price hovering near the lower Bollinger Band, indicating potential support, while the MACD below the signal line suggests bearish momentum. The market is choppy, with the price fluctuating within a narrow range. Overall, the market is waiting for a breakout or a clear direction.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a decrease of 1.01% and a relatively low ATR of 0.3, indicating low volatility.",
+    "15m": "The 15-minute chart reveals a more significant drop of 1.78%, with the price moving away from the recent high, and an increasing ATR of 0.6186, suggesting rising volatility.",
+    "30m": "The 30-minute chart displays a minor decline of 0.31%, with the price still above the recent low, and a moderate ATR of 0.8907, indicating moderate volatility.",
+    "1h": "The 1-hour chart shows a decline of 0.61%, with the price bouncing off the lower Bollinger Band, and a higher ATR of 1.0457, suggesting increased volatility and potential for a breakout.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a breakout above the resistance level of 86.65 or a breakdown below the support level of 80.08 to determine the next direction.",
+    "risk_warning": "The market's choppy nature and conflicting signals increase the risk of false breakouts, so traders should exercise caution and consider tightening stop-loss levels.",
+    "generated_at": "2026-04-01T20:35:03.894653+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 82.64,
+        "open": 83.48,
+        "high": 86.65,
+        "low": 82.46,
+        "change_pct": -1.01,
+        "atr": 0.3,
+        "avg_vol": 26663.81,
+        "last_vol": 22131.32
+      },
+      "15m": {
+        "close": 82.64,
+        "open": 84.14,
+        "high": 86.65,
+        "low": 82.4,
+        "change_pct": -1.78,
+        "atr": 0.6186,
+        "avg_vol": 50749.37,
+        "last_vol": 22136.74
+      },
+      "30m": {
+        "close": 82.64,
+        "open": 82.9,
+        "high": 86.65,
+        "low": 82.33,
+        "change_pct": -0.31,
+        "atr": 0.8907,
+        "avg_vol": 81436.34,
+        "last_vol": 22136.74
+      },
+      "1h": {
+        "close": 82.64,
+        "open": 83.15,
+        "high": 86.65,
+        "low": 80.08,
+        "change_pct": -0.61,
+        "atr": 1.0457,
+        "avg_vol": 170579.43,
+        "last_vol": 219421.78
+      }
+    }
+  },
   "trail": {
-    "entry_price": 83.06,
-    "best_price": 83.09,
-    "atr": 0.6821428571428579,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
     "sl": null,
     "trail_stop": null,
     "active": false
