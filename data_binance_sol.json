@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-01T07:08:23.284239+00:00",
+  "generated_at": "2026-04-01T07:09:45.441323+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 84.57,
+  "price": 84.6,
   "usdt_balance": -295.18961019,
   "sol_balance": 4.9990609,
   "cad_balance": -295.18961019,
-  "margin_level": 1.37541677,
+  "margin_level": 1.37548026,
   "position": "LONG",
   "action": "LONG",
   "confidence": 82,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (70.0)",
+    "RSI overbought (70.5)",
     "Price near BB upper band (86%)"
   ],
   "trades": [
@@ -1820,7 +1820,7 @@
     "long_trades": 12,
     "short_trades": 20
   },
-  "run_count": 23,
+  "run_count": 24,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1852,7 +1852,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a bullish momentum. However, the RSI is overbought, suggesting a potential pullback. The market is expected to continue its upward trend, but with caution due to the overbought condition.",
+    "5m": "The 5-minute chart shows a strong bullish candle, with a 2.12% increase in price, indicating a short-term buying interest.",
+    "15m": "The 15-minute chart confirms the uptrend, with a 4.14% price increase and the price trading above the EMA-20, indicating a medium-term bullish momentum.",
+    "30m": "The 30-minute chart shows a slight slowdown in the uptrend, but the price is still trading above the EMA-20, indicating a bullish bias.",
+    "1h": "The 1-hour chart shows a consolidation phase, with a small 0.11% price increase, indicating a potential pause in the uptrend.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 86.0,
+    "recommendation": "Traders should watch for a potential pullback to the key support level of 80.08, which could be a buying opportunity.",
+    "risk_warning": "The RSI is overbought, and the price is near the upper Bollinger Band, indicating a high risk of a pullback.",
+    "generated_at": "2026-04-01T07:09:44.254565+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 84.61,
+        "open": 82.85,
+        "high": 84.74,
+        "low": 82.48,
+        "change_pct": 2.12,
+        "atr": 0.2186,
+        "avg_vol": 10160.68,
+        "last_vol": 10730.73
+      },
+      "15m": {
+        "close": 84.61,
+        "open": 81.25,
+        "high": 84.74,
+        "low": 81.05,
+        "change_pct": 4.14,
+        "atr": 0.3507,
+        "avg_vol": 32739.0,
+        "last_vol": 19196.83
+      },
+      "30m": {
+        "close": 84.61,
+        "open": 83.1,
+        "high": 84.74,
+        "low": 80.08,
+        "change_pct": 1.82,
+        "atr": 0.5014,
+        "avg_vol": 89739.51,
+        "last_vol": 19197.16
+      },
+      "1h": {
+        "close": 84.61,
+        "open": 84.52,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": 0.11,
+        "atr": 0.6414,
+        "avg_vol": 145963.91,
+        "last_vol": 19197.16
+      }
+    }
+  },
   "trail": {
     "entry_price": 84.5,
     "best_price": 84.7,
