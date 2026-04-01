@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T21:51:38.267341+00:00",
+  "generated_at": "2026-04-01T21:52:50.351182+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.98,
+  "price": 81.55,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,8 +18,8 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI oversold (33.3)",
-    "Price near BB lower band (8%)"
+    "RSI oversold (30.2)",
+    "Price near BB lower band (0%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2752,7 +2752,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 56,
+  "run_count": 57,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2780,62 +2780,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with the price currently below the EMA-20 and EMA-50, indicating a bearish bias. The MACD is also below the signal line, further confirming the downtrend. However, the RSI is oversold, which could lead to a potential bounce.",
-    "5m": "The 5-minute chart shows a sharp decline, with a 3.85% drop in price, indicating strong bearish momentum.",
-    "15m": "The 15-minute chart also shows a decline, with a 3.17% drop in price, and the price is currently near the lower end of the recent range.",
-    "30m": "The 30-minute chart shows a more moderate decline, with a 0.82% drop in price, but the price is still below the EMA-20 and EMA-50.",
-    "1h": "The 1-hour chart shows a decline, with a 1.0% drop in price, and the price is currently below the EMA-20, indicating a short-term downtrend.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential short entry on a bounce to the EMA-20 or a break below the key support level at 80.08.",
-    "risk_warning": "A strong bounce from the oversold RSI could lead to a false breakout, so traders should be cautious and set stop-loss orders accordingly.",
-    "generated_at": "2026-04-01T21:51:37.065458+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 81.98,
-        "open": 85.26,
-        "high": 86.65,
-        "low": 81.96,
-        "change_pct": -3.85,
-        "atr": 0.2593,
-        "avg_vol": 25903.26,
-        "last_vol": 2099.11
-      },
-      "15m": {
-        "close": 81.98,
-        "open": 84.66,
-        "high": 86.65,
-        "low": 81.96,
-        "change_pct": -3.17,
-        "atr": 0.5171,
-        "avg_vol": 52755.62,
-        "last_vol": 17867.78
-      },
-      "30m": {
-        "close": 81.98,
-        "open": 82.66,
-        "high": 86.65,
-        "low": 81.96,
-        "change_pct": -0.82,
-        "atr": 0.9193,
-        "avg_vol": 87543.66,
-        "last_vol": 112089.56
-      },
-      "1h": {
-        "close": 81.98,
-        "open": 82.81,
-        "high": 86.65,
-        "low": 80.08,
-        "change_pct": -1.0,
-        "atr": 1.0779,
-        "avg_vol": 175466.64,
-        "last_vol": 260230.08
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
