@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-04-01T11:56:51.725888+00:00",
+  "generated_at": "2026-04-01T11:58:15.682134+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.36,
+  "price": 83.38,
   "usdt_balance": -298.63740621,
   "sol_balance": 5.0589969,
   "cad_balance": -298.63740621,
-  "margin_level": 1.36191901,
+  "margin_level": 1.36272473,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.16% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.13% below threshold",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (46.4)",
+    "RSI rising from low (46.9)",
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
@@ -1914,7 +1914,7 @@
     "long_trades": 12,
     "short_trades": 21
   },
-  "run_count": 251,
+  "run_count": 252,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1946,7 +1946,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the RSI rising from a low and the EMA-20 above EMA-50 indicating an uptrend, but the MACD below the signal line and price below EMA-20 suggesting bearish pressure. The market is trading below the 1-hour opening price, but above the 30-minute opening price. Overall, the market is consolidating and waiting for a breakout.",
+    "5m": "The 5-minute chart shows a decline in price, with a 1.35% change and a high ATR of 0.1421, indicating increased volatility.",
+    "15m": "The 15-minute chart shows a slight increase in price, with a 0.8% change and a moderate ATR of 0.2871, suggesting a potential reversal.",
+    "30m": "The 30-minute chart shows a significant increase in price, with a 3.12% change and a high ATR of 0.4964, indicating strong bullish momentum.",
+    "1h": "The 1-hour chart shows a decline in price, with a 1.3% change and a high ATR of 0.6593, indicating increased bearish pressure.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a breakout above the 1-hour high of 84.99 or a breakdown below the 1-hour low of 80.08 to determine the next market direction.",
+    "risk_warning": "The MACD below the signal line and price below EMA-20 suggest potential bearish pressure, so traders should be cautious and set stop-loss orders accordingly.",
+    "generated_at": "2026-04-01T11:58:14.429311+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.38,
+        "open": 84.52,
+        "high": 84.74,
+        "low": 83.07,
+        "change_pct": -1.35,
+        "atr": 0.1421,
+        "avg_vol": 9287.54,
+        "last_vol": 3484.71
+      },
+      "15m": {
+        "close": 83.38,
+        "open": 82.72,
+        "high": 84.74,
+        "low": 82.33,
+        "change_pct": 0.8,
+        "atr": 0.2871,
+        "avg_vol": 27638.59,
+        "last_vol": 13576.83
+      },
+      "30m": {
+        "close": 83.39,
+        "open": 80.87,
+        "high": 84.74,
+        "low": 80.4,
+        "change_pct": 3.12,
+        "atr": 0.4964,
+        "avg_vol": 72312.45,
+        "last_vol": 31314.03
+      },
+      "1h": {
+        "close": 83.39,
+        "open": 84.49,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": -1.3,
+        "atr": 0.6593,
+        "avg_vol": 146471.5,
+        "last_vol": 73991.14
+      }
+    }
+  },
   "trail": {
     "entry_price": 83.49,
     "best_price": 83.6,
