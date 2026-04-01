@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-01T10:10:34.285598+00:00",
+  "generated_at": "2026-04-01T10:11:54.987624+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.33,
+  "price": 83.38,
   "usdt_balance": -298.63740621,
   "sol_balance": 5.0589969,
   "cad_balance": -298.63740621,
-  "margin_level": 1.3613737,
+  "margin_level": 1.3621199,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.19% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.13% below threshold",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (16%)"
+    "Price near BB lower band (19%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1914,7 +1914,7 @@
     "long_trades": 12,
     "short_trades": 21
   },
-  "run_count": 167,
+  "run_count": 168,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1946,7 +1946,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price fluctuating near the lower Bollinger Band, indicating a potential bounce, but the MACD below the signal line suggests bearish momentum. The EMA-20 is above the EMA-50, indicating an uptrend, but the price is below the EMA-20, which is a bearish sign. Overall, the market is indecisive, and a clear direction is yet to be established.",
+    "5m": "The 5-minute timeframe shows a slight decline in price, with a 0.44% change, indicating a short-term bearish bias.",
+    "15m": "The 15-minute timeframe displays a bullish 0.98% price increase, suggesting a potential short-term reversal.",
+    "30m": "The 30-minute timeframe exhibits a strong 3.6% price surge, indicating a bullish medium-term trend.",
+    "1h": "The 1-hour timeframe reveals a 1.03% price drop, signaling a bearish longer-term momentum.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential bounce off the lower Bollinger Band and a break above the EMA-20 to confirm a bullish trend reversal.",
+    "risk_warning": "The market's indecisive nature and conflicting signals increase the risk of whipsaws, and traders should exercise caution when entering or adjusting positions.",
+    "generated_at": "2026-04-01T10:11:53.840107+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.38,
+        "open": 83.75,
+        "high": 84.74,
+        "low": 83.14,
+        "change_pct": -0.44,
+        "atr": 0.1693,
+        "avg_vol": 12228.4,
+        "last_vol": 1380.07
+      },
+      "15m": {
+        "close": 83.38,
+        "open": 82.57,
+        "high": 84.74,
+        "low": 82.33,
+        "change_pct": 0.98,
+        "atr": 0.3686,
+        "avg_vol": 28669.28,
+        "last_vol": 10999.01
+      },
+      "30m": {
+        "close": 83.37,
+        "open": 80.47,
+        "high": 84.74,
+        "low": 80.28,
+        "change_pct": 3.6,
+        "atr": 0.4986,
+        "avg_vol": 85043.81,
+        "last_vol": 10999.33
+      },
+      "1h": {
+        "close": 83.37,
+        "open": 84.24,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": -1.03,
+        "atr": 0.6521,
+        "avg_vol": 146014.66,
+        "last_vol": 10999.33
+      }
+    }
+  },
   "trail": {
     "entry_price": 83.49,
     "best_price": 83.6,
