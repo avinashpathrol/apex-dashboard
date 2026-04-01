@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T23:36:58.464264+00:00",
+  "generated_at": "2026-04-01T23:38:49.260038+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.36,
+  "price": 81.33,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (34.0)"
+    "RSI oversold (33.5)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 139,
+  "run_count": 140,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,7 +2779,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a strong bearish bias. The RSI is oversold, which could lead to a potential bounce, but the overall trend remains bearish. The market is experiencing a steady decline in price, with decreasing volatility.",
+    "5m": "The 5-minute chart shows a sharp decline in price, with a change of -3.33% and a high ATR of 0.2086, indicating increased volatility.",
+    "15m": "The 15-minute chart confirms the downtrend, with the price closing below the open and a change of -2.73%, suggesting a strong bearish momentum.",
+    "30m": "The 30-minute chart shows a similar downtrend, with the price closing below the open and a change of -2.06%, indicating a steady decline in price.",
+    "1h": "The 1-hour chart reveals a bearish trend, with the price closing below the open and a change of -1.67%, confirming the overall downtrend.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a potential short entry on a bounce to the key level resistance at 86.65, with a stop loss above the recent high.",
+    "risk_warning": "A false breakout above the key level resistance could lead to a sharp reversal, so traders should be cautious and set tight stop losses.",
+    "generated_at": "2026-04-01T23:38:48.064466+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 81.34,
+        "open": 84.14,
+        "high": 84.43,
+        "low": 80.77,
+        "change_pct": -3.33,
+        "atr": 0.2086,
+        "avg_vol": 23182.76,
+        "last_vol": 5062.61
+      },
+      "15m": {
+        "close": 81.34,
+        "open": 83.62,
+        "high": 86.65,
+        "low": 80.77,
+        "change_pct": -2.73,
+        "atr": 0.4993,
+        "avg_vol": 58951.27,
+        "last_vol": 18252.46
+      },
+      "30m": {
+        "close": 81.34,
+        "open": 83.05,
+        "high": 86.65,
+        "low": 80.77,
+        "change_pct": -2.06,
+        "atr": 0.8657,
+        "avg_vol": 96424.17,
+        "last_vol": 18252.96
+      },
+      "1h": {
+        "close": 81.34,
+        "open": 82.72,
+        "high": 86.65,
+        "low": 80.08,
+        "change_pct": -1.67,
+        "atr": 1.1407,
+        "avg_vol": 185435.99,
+        "last_vol": 98512.06
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
