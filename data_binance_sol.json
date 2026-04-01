@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-01T14:22:38.355815+00:00",
+  "generated_at": "2026-04-01T14:23:53.966218+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.26,
-  "usdt_balance": 114.45876015,
-  "sol_balance": 0.0196449,
-  "cad_balance": 114.45876015,
-  "margin_level": 999.0,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 83.18,
+  "usdt_balance": 536.83989621,
+  "sol_balance": -5.0633551,
+  "cad_balance": 536.83989621,
+  "margin_level": 1.27353054,
+  "position": "SHORT",
+  "action": "SHORT",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "SL/TRAIL STOP HIT \u2705",
+  "status": "SHORT OPENED \u2705",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "\ud83d\uded1 Hard SL hit | entry=82.6500 sl=83.2511 price=83.2600 | ATR=0.4007",
-  "trend": "BULLISH",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
+  "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (49.2)",
-    "Price above EMA-20"
+    "RSI rising from low (47.7)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "EMA-20 below EMA-50 (downtrend)"
+    "EMA-20 below EMA-50 (downtrend)",
+    "Price below EMA-20"
   ],
   "trades": [
     {
@@ -1569,6 +1569,14 @@
       "qty": 5.14,
       "cost": 428.0592,
       "fee": 0.00514
+    },
+    {
+      "time": "2026-04-01T07:23:49.992000-07:00",
+      "action": "SELL",
+      "price": 83.18,
+      "qty": 5.083,
+      "cost": 422.80394,
+      "fee": 0.42280394
     }
   ],
   "closed_trades": [
@@ -2101,14 +2109,14 @@
     "long_trades": 15,
     "short_trades": 22
   },
-  "run_count": 366,
+  "run_count": 367,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -2121,7 +2129,11 @@
       "force_trail": false,
       "force_trail_at": "2026-04-01T06:36:36.854Z"
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 85.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -2131,11 +2143,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 83.18,
+    "best_price": 83.18,
+    "atr": 0.43357142857142605,
+    "sl": 83.83035714285714,
+    "trail_stop": 83.83035714285714,
     "active": false
   }
 }
