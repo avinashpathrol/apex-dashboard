@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-04-01T06:21:30.905053+00:00",
+  "generated_at": "2026-04-01T06:23:45.530999+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 84.32,
-  "usdt_balance": 127.14059997,
-  "sol_balance": 8.09e-05,
-  "cad_balance": 127.14059997,
-  "margin_level": 999.0,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 84.29,
+  "usdt_balance": -295.65804003,
+  "sol_balance": 5.0110649,
+  "cad_balance": -295.65804003,
+  "margin_level": 1.37304552,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 \ud83d\udcd0 Trailing stop hit | best=84.6363 trail_stop=84.4451 price=84.3200",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "\ud83d\udcd0 Trailing stop hit | best=84.6363 trail_stop=84.4451 price=84.3200",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
@@ -23,8 +23,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (71.3)",
-    "Price near BB upper band (92%)"
+    "RSI overbought (70.4)",
+    "Price near BB upper band (91%)"
   ],
   "trades": [
     {
@@ -1324,6 +1324,14 @@
       "cost": 423.48913,
       "fee": 0.42348913,
       "reason": "\ud83d\udcd0 Trailing stop hit | best=84.6363 trail_stop=84.4451 price=84.3200"
+    },
+    {
+      "time": "2026-03-31T23:22:43.032000-07:00",
+      "action": "BUY",
+      "price": 84.29,
+      "qty": 5.016,
+      "cost": 422.79864,
+      "fee": 0.005016
     }
   ],
   "closed_trades": [
@@ -1758,14 +1766,14 @@
     "long_trades": 11,
     "short_trades": 19
   },
-  "run_count": 12,
+  "run_count": 13,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -1778,7 +1786,11 @@
       "force_trail": false,
       "force_trail_at": "2026-04-01T06:21:09.600Z"
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 85.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -1786,13 +1798,68 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a potential continuation of the bullish trend. However, the RSI is overbought, which may lead to a correction. The market is currently experiencing a surge in momentum, with the 15m timeframe showing a significant increase in price.",
+    "5m": "The 5m timeframe is showing a slight pullback after reaching a high of 84.43, with a current price of 84.29, indicating a potential consolidation before the next move.",
+    "15m": "The 15m timeframe is indicating a strong bullish trend, with a 3.96% increase in price and a high of 84.43, suggesting a potential breakout above the current resistance level.",
+    "30m": "The 30m timeframe is showing a steady uptrend, with the price above the EMA-20 and a high of 84.43, indicating a potential continuation of the bullish trend.",
+    "1h": "The 1h timeframe is indicating a slight slowdown in momentum, with a 0.32% increase in price, but the overall trend remains bullish, with the price above the EMA-20.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.99,
+    "recommendation": "Traders should watch for a potential breakout above the 84.99 resistance level, which could lead to a further increase in price, but should also be cautious of a potential correction due to the overbought RSI.",
+    "risk_warning": "The RSI is overbought, which may lead to a correction, and traders should be prepared for a potential pullback.",
+    "generated_at": "2026-04-01T06:23:44.220286+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 84.29,
+        "open": 82.92,
+        "high": 84.43,
+        "low": 82.48,
+        "change_pct": 1.65,
+        "atr": 0.23,
+        "avg_vol": 9213.52,
+        "last_vol": 5613.44
+      },
+      "15m": {
+        "close": 84.29,
+        "open": 81.08,
+        "high": 84.43,
+        "low": 80.81,
+        "change_pct": 3.96,
+        "atr": 0.3664,
+        "avg_vol": 32766.57,
+        "last_vol": 21994.01
+      },
+      "30m": {
+        "close": 84.29,
+        "open": 83.41,
+        "high": 84.43,
+        "low": 80.08,
+        "change_pct": 1.06,
+        "atr": 0.5036,
+        "avg_vol": 89210.45,
+        "last_vol": 60102.24
+      },
+      "1h": {
+        "close": 84.29,
+        "open": 84.02,
+        "high": 84.99,
+        "low": 80.08,
+        "change_pct": 0.32,
+        "atr": 0.6957,
+        "avg_vol": 144981.9,
+        "last_vol": 60102.24
+      }
+    }
+  },
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 84.29,
+    "best_price": 84.29,
+    "atr": 0.3664285714285701,
+    "sl": 83.74035714285715,
+    "trail_stop": 83.74035714285715,
     "active": false
   }
 }
