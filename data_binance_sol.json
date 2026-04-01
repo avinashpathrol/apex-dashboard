@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T03:20:19.434695+00:00",
+  "generated_at": "2026-04-01T03:21:27.849758+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.26,
+  "price": 83.21,
   "usdt_balance": 123.15712351,
   "sol_balance": 0.0001869,
   "cad_balance": 123.15712351,
@@ -22,8 +22,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "MACD below signal (bearish)",
-    "Price near BB upper band (82%)"
+    "RSI falling from high (57.4)",
+    "MACD below signal (bearish)"
   ],
   "trades": [
     {
@@ -1567,7 +1567,7 @@
     "long_trades": 9,
     "short_trades": 19
   },
-  "run_count": 204,
+  "run_count": 205,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1594,62 +1594,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price hovering near the upper Bollinger Band, indicating potential overbought conditions, while the EMA-20 remains above the EMA-50, suggesting an ongoing uptrend. The MACD's position below the signal line adds to the bearish sentiment. Overall, the market is indecisive, awaiting a breakout or a reversal.",
-    "5m": "The 5-minute chart shows a slight increase in price, with a 0.64% change, indicating a mild bullish bias in the very short term.",
-    "15m": "The 15-minute chart displays a more pronounced bullish trend, with a 2.71% price increase, suggesting that buyers are gaining momentum.",
-    "30m": "The 30-minute chart reveals a minor correction, with a -0.41% change, potentially signaling a brief pause in the uptrend.",
-    "1h": "The 1-hour chart exhibits a bearish inclination, with a -0.61% change, as the price failed to sustain above the $84 level, indicating selling pressure.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.99,
-    "recommendation": "Traders should watch for a potential breakout above the $84.99 resistance or a breakdown below the $80.08 support to determine the next market direction.",
-    "risk_warning": "The proximity to the Bollinger Band's upper limit and the bearish MACD signal warn of a potential reversal, so traders should be cautious and set appropriate stop-loss levels.",
-    "generated_at": "2026-04-01T03:20:18.568520+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.26,
-        "open": 82.73,
-        "high": 83.58,
-        "low": 82.33,
-        "change_pct": 0.64,
-        "atr": 0.2079,
-        "avg_vol": 8453.26,
-        "last_vol": 4772.89
-      },
-      "15m": {
-        "close": 83.26,
-        "open": 81.06,
-        "high": 83.58,
-        "low": 80.4,
-        "change_pct": 2.71,
-        "atr": 0.3486,
-        "avg_vol": 38929.62,
-        "last_vol": 4772.89
-      },
-      "30m": {
-        "close": 83.26,
-        "open": 83.6,
-        "high": 83.91,
-        "low": 80.08,
-        "change_pct": -0.41,
-        "atr": 0.4793,
-        "avg_vol": 87779.06,
-        "last_vol": 31469.05
-      },
-      "1h": {
-        "close": 83.26,
-        "open": 83.77,
-        "high": 84.99,
-        "low": 80.08,
-        "change_pct": -0.61,
-        "atr": 0.9307,
-        "avg_vol": 144740.63,
-        "last_vol": 31469.05
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
