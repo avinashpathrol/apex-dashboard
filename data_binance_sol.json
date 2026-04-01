@@ -1,29 +1,28 @@
 {
-  "generated_at": "2026-04-01T03:43:32.241263+00:00",
+  "generated_at": "2026-04-01T03:44:43.644260+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.25,
-  "usdt_balance": 123.15712351,
-  "sol_balance": 0.0001869,
-  "cad_balance": 123.15712351,
-  "margin_level": 999.0,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 83.26,
+  "usdt_balance": -299.68793649,
+  "sol_balance": 5.0731089,
+  "cad_balance": -299.68793649,
+  "margin_level": 1.36085305,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 95,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "MACD bullish crossover | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
+    "MACD bullish crossover",
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
-  "bearish": [
-    "MACD below signal (bearish)"
-  ],
+  "bearish": [],
   "trades": [
     {
       "time": "2026-03-28T18:52:43.797000-07:00",
@@ -1160,6 +1159,142 @@
       "cost": 423.68256,
       "fee": 0.42368256,
       "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 1.154,
+      "cost": 96.09358,
+      "fee": 0.001154
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.121,
+      "cost": 10.07567,
+      "fee": 0.000121
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 1.201,
+      "cost": 100.00727,
+      "fee": 0.001201
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.103,
+      "cost": 8.57681,
+      "fee": 0.000103
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.2,
+      "cost": 16.654,
+      "fee": 0.0002
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.062,
+      "cost": 5.16274,
+      "fee": 6.2e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 0.064,
+      "cost": 5.32928,
+      "fee": 6.4e-05
+    },
+    {
+      "time": "2026-03-31T20:44:40.064000-07:00",
+      "action": "BUY",
+      "price": 83.27,
+      "qty": 1.597,
+      "cost": 132.98219,
+      "fee": 0.001597
     }
   ],
   "closed_trades": [
@@ -1566,7 +1701,7 @@
     "long_trades": 9,
     "short_trades": 19
   },
-  "run_count": 224,
+  "run_count": 225,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -1585,7 +1720,11 @@
       "bot_paused": false,
       "force_trail": false
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 85.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -1595,11 +1734,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 83.26,
+    "best_price": 83.26,
+    "atr": 0.3592857142857144,
+    "sl": 82.72107142857143,
+    "trail_stop": 82.72107142857143,
     "active": false
   }
 }
