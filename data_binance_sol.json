@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-01T14:14:09.904073+00:00",
+  "generated_at": "2026-04-01T14:15:27.273973+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.83,
+  "price": 83.04,
   "usdt_balance": 542.51796015,
   "sol_balance": -5.1152151,
   "cad_balance": 542.51796015,
-  "margin_level": 1.28069109,
+  "margin_level": 1.2791344,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 82,
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
@@ -18,8 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (39.9)",
-    "Price near BB lower band (7%)"
+    "RSI rising from low (45.2)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2080,7 +2079,7 @@
     "long_trades": 15,
     "short_trades": 21
   },
-  "run_count": 359,
+  "run_count": 360,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2112,7 +2111,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and the MACD below its signal line, indicating a bearish bias. However, the RSI is rising from a low level, which could suggest a potential bounce. The overall trend remains bearish, but traders should be cautious of a potential reversal.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a change of -0.4% and a relatively low ATR of 0.295.",
+    "15m": "The 15-minute chart indicates a minor decline in price, with a change of -0.11% and a moderate ATR of 0.4171.",
+    "30m": "The 30-minute chart shows a significant increase in price, with a change of 3.0% and a higher ATR of 0.5371, but this move may be losing momentum.",
+    "1h": "The 1-hour chart displays a decline in price, with a change of -1.73% and a higher ATR of 0.7036, confirming the bearish trend.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 84.76,
+    "recommendation": "Traders should watch for a potential bounce off the support level, but maintain a bearish bias and consider shorting on a bounce towards the resistance level.",
+    "risk_warning": "A strong bounce off the support level could lead to a reversal, so traders should set stop-losses and monitor the market closely.",
+    "generated_at": "2026-04-01T14:15:26.098136+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.03,
+        "open": 83.36,
+        "high": 83.73,
+        "low": 82.4,
+        "change_pct": -0.4,
+        "atr": 0.295,
+        "avg_vol": 11138.09,
+        "last_vol": 6871.29
+      },
+      "15m": {
+        "close": 83.03,
+        "open": 83.12,
+        "high": 84.74,
+        "low": 82.4,
+        "change_pct": -0.11,
+        "atr": 0.4171,
+        "avg_vol": 31403.47,
+        "last_vol": 6871.29
+      },
+      "30m": {
+        "close": 83.05,
+        "open": 80.63,
+        "high": 84.74,
+        "low": 80.4,
+        "change_pct": 3.0,
+        "atr": 0.5371,
+        "avg_vol": 70584.9,
+        "last_vol": 26919.06
+      },
+      "1h": {
+        "close": 83.05,
+        "open": 84.51,
+        "high": 84.76,
+        "low": 80.08,
+        "change_pct": -1.73,
+        "atr": 0.7036,
+        "avg_vol": 147108.32,
+        "last_vol": 26919.06
+      }
+    }
+  },
   "trail": {
     "entry_price": 82.65,
     "best_price": 82.5,
