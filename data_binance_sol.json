@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-01T20:02:58.893541+00:00",
+  "generated_at": "2026-04-01T20:04:43.615513+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.68,
+  "price": 83.43,
   "usdt_balance": 108.21525564,
   "sol_balance": 0.0005089,
   "cad_balance": 108.21525564,
@@ -16,7 +16,7 @@
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
-  "trend": "BULLISH",
+  "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)"
   ],
@@ -2555,7 +2555,7 @@
     "long_trades": 18,
     "short_trades": 25
   },
-  "run_count": 634,
+  "run_count": 635,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2583,7 +2583,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across timeframes, with the price trading below the EMA-20 but above the EMA-50, indicating a potential uptrend but with bearish pressure. The short-term timeframes show a slight increase in price, while the longer timeframes indicate a decrease. The market is waiting for a clear direction to emerge.",
+    "5m": "The 5-minute timeframe shows a slight increase in price with a small ATR, indicating low volatility and a potential consolidation phase.",
+    "15m": "The 15-minute timeframe indicates a decrease in price with a moderate ATR, suggesting a potential bearish bias in the short term.",
+    "30m": "The 30-minute timeframe shows a slight increase in price with a moderate ATR, indicating a potential balance between buyers and sellers.",
+    "1h": "The 1-hour timeframe indicates a slight increase in price with a relatively high ATR, suggesting a potential increase in volatility and a breakout from the current range.",
+    "key_level_support": 80.08,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a break above the key level resistance at 86.65 or a drop below the key level support at 80.08 to determine the next direction.",
+    "risk_warning": "Trading in a neutral market with mixed signals can be risky, and traders should be cautious of potential whipsaws and false breakouts.",
+    "generated_at": "2026-04-01T20:04:42.381348+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 83.43,
+        "open": 83.34,
+        "high": 86.65,
+        "low": 83.08,
+        "change_pct": 0.11,
+        "atr": 0.26,
+        "avg_vol": 25011.51,
+        "last_vol": 25458.89
+      },
+      "15m": {
+        "close": 83.43,
+        "open": 84.02,
+        "high": 86.65,
+        "low": 82.4,
+        "change_pct": -0.7,
+        "atr": 0.67,
+        "avg_vol": 48907.16,
+        "last_vol": 25458.89
+      },
+      "30m": {
+        "close": 83.43,
+        "open": 83.16,
+        "high": 86.65,
+        "low": 82.33,
+        "change_pct": 0.32,
+        "atr": 0.8921,
+        "avg_vol": 78085.6,
+        "last_vol": 25458.89
+      },
+      "1h": {
+        "close": 83.41,
+        "open": 83.15,
+        "high": 86.65,
+        "low": 80.08,
+        "change_pct": 0.31,
+        "atr": 0.9807,
+        "avg_vol": 166541.65,
+        "last_vol": 25608.43
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
