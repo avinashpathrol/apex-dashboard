@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-01T15:16:13.146399+00:00",
+  "generated_at": "2026-04-01T15:17:29.510552+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 83.17,
+  "price": 83.18,
   "usdt_balance": 536.83989621,
   "sol_balance": -5.0633551,
   "cad_balance": 536.83989621,
-  "margin_level": 1.27479794,
+  "margin_level": 1.27547538,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING SHORT \u2014 signals weak (2) but profit 0.01% below threshold",
+  "status": "HOLDING SHORT \u2014 signals weak (2) but profit 0.00% below threshold",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
@@ -2108,7 +2108,7 @@
     "long_trades": 15,
     "short_trades": 22
   },
-  "run_count": 408,
+  "run_count": 409,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2140,62 +2140,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 6,
-    "summary": "The market is currently experiencing a downtrend, with the price below the EMA-20 and EMA-20 below EMA-50, indicating bearish momentum across multiple timeframes. However, the MACD is above the signal line, which could be a sign of a potential bullish reversal. The overall trend is bearish, but with some bullish signals emerging.",
-    "5m": "The 5-minute chart shows a slight decline in price, with a small ATR indicating low volatility.",
-    "15m": "The 15-minute chart is showing a slight increase in price, but the overall trend is still bearish, with the price below the EMA-20.",
-    "30m": "The 30-minute chart shows a significant increase in price, with a higher ATR indicating increased volatility, but the price is still below the EMA-20.",
-    "1h": "The 1-hour chart is showing a decline in price, with a higher ATR indicating increased volatility, and the price is below the EMA-20, confirming the bearish trend.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.74,
-    "recommendation": "Traders should watch for a potential bullish reversal, but only if the price breaks above the EMA-20 and the MACD confirms the bullish signal.",
-    "risk_warning": "The market is highly volatile, and traders should be cautious of potential whipsaws and false signals.",
-    "generated_at": "2026-04-01T15:16:11.494549+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 83.15,
-        "open": 83.36,
-        "high": 83.73,
-        "low": 82.4,
-        "change_pct": -0.25,
-        "atr": 0.2686,
-        "avg_vol": 12013.36,
-        "last_vol": 1688.26
-      },
-      "15m": {
-        "close": 83.15,
-        "open": 83.08,
-        "high": 84.74,
-        "low": 82.4,
-        "change_pct": 0.08,
-        "atr": 0.4814,
-        "avg_vol": 32196.68,
-        "last_vol": 1688.26
-      },
-      "30m": {
-        "close": 83.15,
-        "open": 80.86,
-        "high": 84.74,
-        "low": 80.81,
-        "change_pct": 2.83,
-        "atr": 0.5493,
-        "avg_vol": 67242.2,
-        "last_vol": 37607.22
-      },
-      "1h": {
-        "close": 83.15,
-        "open": 84.22,
-        "high": 84.74,
-        "low": 80.08,
-        "change_pct": -1.27,
-        "atr": 0.7107,
-        "avg_vol": 148046.76,
-        "last_vol": 37607.22
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 83.18,
     "best_price": 82.87,
