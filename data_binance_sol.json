@@ -1,30 +1,28 @@
 {
-  "generated_at": "2026-04-01T13:45:00.351931+00:00",
+  "generated_at": "2026-04-01T13:46:14.855440+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.57,
-  "usdt_balance": -302.20894737,
-  "sol_balance": 5.1167849,
-  "cad_balance": -302.20894737,
-  "margin_level": 1.35258193,
-  "position": "LONG",
-  "action": "LONG",
-  "confidence": 85,
-  "risk": "LOW",
-  "status": "LONG OPENED \u2705",
+  "price": 82.67,
+  "usdt_balance": 37.79105263,
+  "sol_balance": 0.0007849,
+  "cad_balance": 37.79105263,
+  "margin_level": 999.0,
+  "position": null,
+  "action": "SHORT",
+  "confidence": 88,
+  "risk": "MEDIUM",
+  "status": "LONG CLOSED \u2014 SHORT queued next run \u23f3",
   "bot_paused": false,
-  "flip_pending": null,
-  "reason": "RSI oversold (34.4) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (-33%) | High volume confirms move",
+  "flip_pending": "SHORT",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI oversold (34.4)",
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (-33%)",
-    "High volume confirms move"
+    "Price near BB lower band (-17%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
+    "EMA-20 below EMA-50 (downtrend)",
     "Price below EMA-20"
   ],
   "trades": [
@@ -1474,6 +1472,15 @@
       "qty": 5.121,
       "cost": 422.89218,
       "fee": 0.005121
+    },
+    {
+      "time": "2026-04-01T06:46:11.079000-07:00",
+      "action": "SELL",
+      "price": 82.66,
+      "qty": 5.116,
+      "cost": 422.88856,
+      "fee": 0.42288856,
+      "reason": "Signal flipped to SHORT \u2014 waiting one cycle before re-entry"
     }
   ],
   "closed_trades": [
@@ -1966,26 +1973,40 @@
       "opened_at": "2026-04-01T06:00:10.209000-07:00",
       "closed_at": "2026-04-01T06:15:35.687000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 82.58,
+      "exit_price": 82.66,
+      "qty": 5.116,
+      "fee": 0.42800956,
+      "pnl": -0.0187,
+      "pnl_pct": 0.48,
+      "win": false,
+      "opened_at": "2026-04-01T06:44:11.195000-07:00",
+      "closed_at": "2026-04-01T06:46:11.079000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 35,
+    "closed_trades": 36,
     "wins": 16,
-    "losses": 19,
-    "win_rate": 45.71,
-    "net_profit": -1.4839,
-    "avg_profit_per_trade": -0.0424,
-    "long_trades": 14,
+    "losses": 20,
+    "win_rate": 44.44,
+    "net_profit": -1.5026,
+    "avg_profit_per_trade": -0.0417,
+    "long_trades": 15,
     "short_trades": 21
   },
-  "run_count": 336,
+  "run_count": 337,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -1998,11 +2019,7 @@
       "force_trail": false,
       "force_trail_at": "2026-04-01T06:36:36.854Z"
     },
-    "queued": {
-      "trade_amount_usdt": 85.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -2010,68 +2027,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing signs of a potential reversal, with the RSI indicating oversold conditions and the EMA-20 above EMA-50, suggesting an uptrend. The price is near the lower Bollinger Band, and high volume confirms the move. Across timeframes, the market is experiencing a mix of short-term declines and longer-term stability.",
-    "5m": "The 5-minute chart shows a decline of 1.49%, with a high volume confirming the move, indicating a potential short-term reversal.",
-    "15m": "The 15-minute chart exhibits a minor decline of 0.23%, with the price holding above the recent low, suggesting a potential stabilization.",
-    "30m": "The 30-minute chart displays a 0.3% increase, with the price bouncing off the lower Bollinger Band, indicating a potential bullish reversal.",
-    "1h": "The 1-hour chart shows a decline of 2.16%, with the price below the EMA-20, but the RSI oversold condition and high volume suggest a potential reversal.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 84.76,
-    "recommendation": "Traders should watch for a potential long entry above $82.57, with a target near the key resistance level of $84.76.",
-    "risk_warning": "A failure to hold above the key support level of $80.08 could lead to further declines.",
-    "generated_at": "2026-04-01T13:44:59.141039+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 82.57,
-        "open": 83.82,
-        "high": 83.95,
-        "low": 82.4,
-        "change_pct": -1.49,
-        "atr": 0.3807,
-        "avg_vol": 10930.4,
-        "last_vol": 49113.57
-      },
-      "15m": {
-        "close": 82.57,
-        "open": 82.76,
-        "high": 84.74,
-        "low": 82.4,
-        "change_pct": -0.23,
-        "atr": 0.4021,
-        "avg_vol": 30972.29,
-        "last_vol": 78969.38
-      },
-      "30m": {
-        "close": 82.57,
-        "open": 82.32,
-        "high": 84.74,
-        "low": 80.4,
-        "change_pct": 0.3,
-        "atr": 0.5507,
-        "avg_vol": 71631.19,
-        "last_vol": 79014.49
-      },
-      "1h": {
-        "close": 82.57,
-        "open": 84.39,
-        "high": 84.76,
-        "low": 80.08,
-        "change_pct": -2.16,
-        "atr": 0.7164,
-        "avg_vol": 148792.45,
-        "last_vol": 154635.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 82.57,
-    "best_price": 82.57,
+    "best_price": 82.67,
     "atr": 0.4021428571428558,
-    "sl": 81.9667857142857,
-    "trail_stop": 81.9667857142857,
+    "sl": null,
+    "trail_stop": null,
     "active": false
   }
 }
