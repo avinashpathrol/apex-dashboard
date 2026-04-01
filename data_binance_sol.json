@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-01T18:03:54.216847+00:00",
+  "generated_at": "2026-04-01T18:05:11.296090+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 84.04,
+  "price": 84.18,
   "usdt_balance": -308.33085129,
   "sol_balance": 4.9875089,
   "cad_balance": -308.33085129,
-  "margin_level": 1.3256635,
+  "margin_level": 1.32855441,
   "position": "LONG",
-  "action": "HOLD",
-  "confidence": 0,
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.79% below threshold",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
-    "EMA-20 above EMA-50 (uptrend)"
+    "EMA-20 above EMA-50 (uptrend)",
+    "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (50.3)",
-    "Price below EMA-20"
+    "RSI falling from high (51.9)"
   ],
   "trades": [
     {
@@ -2533,7 +2533,7 @@
     "long_trades": 17,
     "short_trades": 25
   },
-  "run_count": 541,
+  "run_count": 542,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2565,62 +2565,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 5,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price holding above $80 but struggling to break above $86, indicating a potential consolidation phase. The bullish MACD and EMA-20 above EMA-50 signals are being countered by the falling RSI and price below EMA-20. Overall, the market is waiting for a catalyst to break out of this neutral range.",
-    "5m": "The 5-minute chart shows a slight increase in price with a 1.4% change, but the ATR is relatively low, indicating reduced volatility.",
-    "15m": "The 15-minute chart displays a similar uptrend with a 1.12% change, but the price is still below the recent high, suggesting a lack of strong momentum.",
-    "30m": "The 30-minute chart reveals a 1.39% increase, but the price is struggling to stay above the EMA-20, which could be a key level for further upside.",
-    "1h": "The 1-hour chart shows a more significant 2.01% increase, but the RSI is falling from a high level, indicating potential overbought conditions.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a break above $86.65 or a drop below $80.08 to determine the next direction of the market.",
-    "risk_warning": "The current HOLD signal with 0% confidence indicates a high level of uncertainty, and traders should be cautious of potential whipsaws.",
-    "generated_at": "2026-04-01T18:03:52.892152+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 84.06,
-        "open": 82.9,
-        "high": 86.65,
-        "low": 82.4,
-        "change_pct": 1.4,
-        "atr": 0.5436,
-        "avg_vol": 25141.97,
-        "last_vol": 27343.07
-      },
-      "15m": {
-        "close": 84.05,
-        "open": 83.12,
-        "high": 86.65,
-        "low": 82.4,
-        "change_pct": 1.12,
-        "atr": 0.7543,
-        "avg_vol": 46312.32,
-        "last_vol": 27443.07
-      },
-      "30m": {
-        "close": 84.05,
-        "open": 82.9,
-        "high": 86.65,
-        "low": 82.33,
-        "change_pct": 1.39,
-        "atr": 0.845,
-        "avg_vol": 76042.64,
-        "last_vol": 27443.07
-      },
-      "1h": {
-        "close": 84.05,
-        "open": 82.39,
-        "high": 86.65,
-        "low": 80.08,
-        "change_pct": 2.01,
-        "atr": 0.9757,
-        "avg_vol": 165197.1,
-        "last_vol": 27450.06
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 84.71,
     "best_price": 85.08,
