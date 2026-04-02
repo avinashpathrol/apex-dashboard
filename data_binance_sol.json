@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T17:39:12.194342+00:00",
+  "generated_at": "2026-04-02T17:41:13.826904+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.05,
+  "price": 79.14,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -22,7 +22,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (51.5)",
+    "RSI falling from high (52.9)",
     "EMA-20 below EMA-50 (downtrend)"
   ],
   "trades": [
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 991,
+  "run_count": 992,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,7 +2779,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with some indicators suggesting a bullish trend while others indicate a downtrend. The price has been volatile, with a significant drop in the 30m and 1h timeframes, but has also shown some resilience in the 5m and 15m timeframes. Overall, the market is waiting for a clear direction to emerge.",
+    "5m": "The 5m timeframe shows a slight increase in price, with a 1.44% change, indicating some short-term bullish momentum.",
+    "15m": "The 15m timeframe shows a relatively stable price, with a 0.37% change, suggesting a lack of clear direction in the medium term.",
+    "30m": "The 30m timeframe shows a significant drop in price, with a -5.69% change, indicating a bearish trend in the shorter term.",
+    "1h": "The 1h timeframe shows a notable decline in price, with a -4.51% change, suggesting a stronger bearish influence in the longer term.",
+    "key_level_support": 76.7,
+    "key_level_resistance": 84.49,
+    "recommendation": "Traders should watch for a break above the key resistance level of 84.49 or a drop below the key support level of 76.7 to determine the next direction of the market.",
+    "risk_warning": "The high volatility and mixed signals in the market increase the risk of significant price swings, and traders should exercise caution when entering or exiting positions.",
+    "generated_at": "2026-04-02T17:41:12.667924+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.16,
+        "open": 78.04,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": 1.44,
+        "atr": 0.2693,
+        "avg_vol": 20491.1,
+        "last_vol": 803.54
+      },
+      "15m": {
+        "close": 79.16,
+        "open": 78.87,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": 0.37,
+        "atr": 0.5679,
+        "avg_vol": 42612.62,
+        "last_vol": 23008.66
+      },
+      "30m": {
+        "close": 79.16,
+        "open": 83.94,
+        "high": 84.49,
+        "low": 76.7,
+        "change_pct": -5.69,
+        "atr": 0.7757,
+        "avg_vol": 110138.47,
+        "last_vol": 23008.66
+      },
+      "1h": {
+        "close": 79.16,
+        "open": 82.9,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -4.51,
+        "atr": 0.8579,
+        "avg_vol": 186680.08,
+        "last_vol": 96146.73
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
