@@ -1,30 +1,29 @@
 {
-  "generated_at": "2026-04-02T08:00:10.300115+00:00",
+  "generated_at": "2026-04-02T08:02:02.430654+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.56,
+  "price": 79.46,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
   "margin_level": 999.0,
   "position": null,
   "action": "HOLD",
-  "confidence": 82,
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "RSI falling from high (50.6) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (95%)",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (50.6)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (95%)"
+    "Price near BB upper band (86%)"
   ],
   "trades": [
     {
@@ -2752,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 535,
+  "run_count": 536,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2780,7 +2779,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price hovering near the upper band of the Bollinger Bands, indicating potential overbought conditions. The MACD above the signal line and price above EMA-20 are bullish, but the EMA-20 below EMA-50 suggests a downtrend. Overall, the market is choppy and lacking clear direction.",
+    "5m": "The 5-minute chart shows a slight increase in price with a 0.68% change, indicating a potential short-term bullish momentum.",
+    "15m": "The 15-minute chart reveals a significant drop in price with a -6.23% change, suggesting a strong bearish correction.",
+    "30m": "The 30-minute chart displays a moderate decline in price with a -4.96% change, indicating a potential downtrend.",
+    "1h": "The 1-hour chart shows a minor decrease in price with a -1.34% change, suggesting a relatively stable market.",
+    "key_level_support": 78.3,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 86.65 or a breakdown below the key support level of 78.3 to determine the next market direction.",
+    "risk_warning": "Trading in a choppy market with mixed signals can be risky, and traders should exercise caution and consider reducing their position size.",
+    "generated_at": "2026-04-02T08:02:01.247106+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.47,
+        "open": 78.93,
+        "high": 79.67,
+        "low": 78.62,
+        "change_pct": 0.68,
+        "atr": 0.1386,
+        "avg_vol": 12096.97,
+        "last_vol": 2343.57
+      },
+      "15m": {
+        "close": 79.47,
+        "open": 84.75,
+        "high": 86.14,
+        "low": 78.3,
+        "change_pct": -6.23,
+        "atr": 0.3064,
+        "avg_vol": 63131.99,
+        "last_vol": 2343.57
+      },
+      "30m": {
+        "close": 79.47,
+        "open": 83.62,
+        "high": 86.65,
+        "low": 78.3,
+        "change_pct": -4.96,
+        "atr": 0.535,
+        "avg_vol": 115772.52,
+        "last_vol": 2343.57
+      },
+      "1h": {
+        "close": 79.47,
+        "open": 80.55,
+        "high": 86.65,
+        "low": 78.3,
+        "change_pct": -1.34,
+        "atr": 0.97,
+        "avg_vol": 206596.68,
+        "last_vol": 2343.57
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
