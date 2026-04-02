@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T00:54:59.363894+00:00",
+  "generated_at": "2026-04-02T00:56:11.051633+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.69,
+  "price": 81.66,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,7 +18,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (43.0)",
+    "RSI rising from low (42.2)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 200,
+  "run_count": 201,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2779,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a downtrend, with the price below the EMA-20, but showing some bullish signs such as a rising RSI and MACD above the signal line. The market is choppy across multiple timeframes, with mixed signals and no clear direction. The price is consolidating, waiting for a breakout or a trend reversal.",
-    "5m": "The 5-minute chart shows a decline in price, with a 2.55% change and a high ATR, indicating increased volatility.",
-    "15m": "The 15-minute chart indicates a similar downtrend, with a 1.9% change and a higher ATR, suggesting ongoing market uncertainty.",
-    "30m": "The 30-minute chart shows a slight decrease in price, with a 1.5% change, and the ATR is relatively high, indicating continued market fluctuations.",
-    "1h": "The 1-hour chart displays a more pronounced downtrend, with a 2.58% change and the highest ATR, signaling increased price movement and volatility.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a breakout above the key resistance level of 86.65 or a breakdown below the key support level of 80.08 to determine the next market direction.",
-    "risk_warning": "The high ATR values across multiple timeframes indicate increased market volatility, and traders should be cautious of potential large price swings.",
-    "generated_at": "2026-04-02T00:54:58.245010+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 81.68,
-        "open": 83.82,
-        "high": 83.97,
-        "low": 80.77,
-        "change_pct": -2.55,
-        "atr": 0.2179,
-        "avg_vol": 24123.5,
-        "last_vol": 21425.04
-      },
-      "15m": {
-        "close": 81.68,
-        "open": 83.26,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -1.9,
-        "atr": 0.4593,
-        "avg_vol": 60243.23,
-        "last_vol": 33675.16
-      },
-      "30m": {
-        "close": 81.68,
-        "open": 82.92,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -1.5,
-        "atr": 0.7257,
-        "avg_vol": 98652.29,
-        "last_vol": 85897.53
-      },
-      "1h": {
-        "close": 81.69,
-        "open": 83.85,
-        "high": 86.65,
-        "low": 80.08,
-        "change_pct": -2.58,
-        "atr": 1.1686,
-        "avg_vol": 187443.09,
-        "last_vol": 174609.57
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
