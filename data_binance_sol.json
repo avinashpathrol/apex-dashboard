@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T23:01:40.038537+00:00",
+  "generated_at": "2026-04-02T23:02:52.317297+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -11,14 +11,15 @@
   "position": null,
   "action": "SHORT",
   "confidence": 95,
-  "risk": "MEDIUM",
+  "risk": "LOW",
   "status": "SHORT FAILED \u274c",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
+  "reason": "RSI falling from high (50.1) | MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [],
   "bearish": [
+    "RSI falling from high (50.1)",
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
     "Price below EMA-20"
@@ -3153,7 +3154,7 @@
     "long_trades": 20,
     "short_trades": 27
   },
-  "run_count": 1246,
+  "run_count": 1247,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
