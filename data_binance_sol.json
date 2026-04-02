@@ -1,23 +1,25 @@
 {
-  "generated_at": "2026-04-02T18:09:52.517972+00:00",
+  "generated_at": "2026-04-02T18:11:29.612205+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.48,
+  "price": 78.61,
   "usdt_balance": 521.68320198,
   "sol_balance": -5.3510911,
   "cad_balance": 521.68320198,
-  "margin_level": 1.2424523,
+  "margin_level": 1.24002148,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 95,
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "HOLDING SHORT \u2014 MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
-  "bullish": [],
+  "bullish": [
+    "RSI rising from low (46.0)"
+  ],
   "bearish": [
     "MACD bearish crossover",
     "EMA-20 below EMA-50 (downtrend)",
@@ -3049,7 +3051,7 @@
     "long_trades": 20,
     "short_trades": 27
   },
-  "run_count": 1015,
+  "run_count": 1016,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -3081,7 +3083,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is currently exhibiting a downtrend across multiple timeframes, with the price below the EMA-20 and a bearish MACD crossover, but a rising RSI suggests potential for a short-term bounce. The market has been experiencing significant volatility, with large price swings in the 30m and 1h timeframes. Overall, the bearish signals dominate, but the rising RSI warrants caution.",
+    "5m": "The 5m timeframe shows a bullish candle with a 1.55% gain, indicating potential for short-term upside.",
+    "15m": "The 15m timeframe is showing a minor loss, but the price is still below the recent high, indicating a lack of strong bullish momentum.",
+    "30m": "The 30m timeframe exhibits a significant 6.04% drop, confirming the downtrend and bearish sentiment.",
+    "1h": "The 1h timeframe also shows a substantial 4.95% decline, further solidifying the bearish outlook.",
+    "key_level_support": 76.7,
+    "key_level_resistance": 79.88,
+    "recommendation": "Traders should watch for a potential short-term bounce towards the key resistance level, but maintain a bearish bias given the overall downtrend.",
+    "risk_warning": "A strong bullish breakout above 79.88 could invalidate the bearish thesis, so traders should be prepared to adjust their positions accordingly.",
+    "generated_at": "2026-04-02T18:11:28.390533+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 78.61,
+        "open": 77.41,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": 1.55,
+        "atr": 0.2443,
+        "avg_vol": 19057.52,
+        "last_vol": 1304.81
+      },
+      "15m": {
+        "close": 78.61,
+        "open": 79.25,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": -0.81,
+        "atr": 0.495,
+        "avg_vol": 42190.51,
+        "last_vol": 16783.45
+      },
+      "30m": {
+        "close": 78.61,
+        "open": 83.66,
+        "high": 84.43,
+        "low": 76.7,
+        "change_pct": -6.04,
+        "atr": 0.7836,
+        "avg_vol": 109242.05,
+        "last_vol": 16783.45
+      },
+      "1h": {
+        "close": 78.61,
+        "open": 82.7,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -4.95,
+        "atr": 0.8771,
+        "avg_vol": 185977.03,
+        "last_vol": 16783.45
+      }
+    }
+  },
   "trail": {
     "entry_price": 78.71,
     "best_price": 78.45,
