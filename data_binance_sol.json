@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T17:10:46.294558+00:00",
+  "generated_at": "2026-04-02T17:11:58.787006+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.2,
+  "price": 79.18,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 968,
+  "run_count": 969,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2779,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price holding above the EMA-20 but the RSI falling from a high level, indicating a potential consolidation phase. The shorter timeframes show a slight increase in price, while the longer timeframes indicate a downtrend. Overall, the market is indecisive, waiting for a clear direction.",
-    "5m": "The 5-minute chart shows a slight increase in price with a 1.25% change, indicating a short-term bullish momentum.",
-    "15m": "The 15-minute chart displays a moderate price increase with a 0.74% change, suggesting a continuation of the short-term uptrend.",
-    "30m": "The 30-minute chart reveals a significant price drop with a -6.18% change, indicating a strong bearish influence in the medium term.",
-    "1h": "The 1-hour chart shows a notable price decrease with a -4.43% change, confirming the presence of a downtrend in the longer term.",
-    "key_level_support": 76.7,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a break above the key resistance level of 86.65 or a drop below the key support level of 76.7 to determine the next market direction.",
-    "risk_warning": "The market's indecisive nature and mixed signals increase the risk of a false breakout, so traders should exercise caution and consider tightening stop-loss levels.",
-    "generated_at": "2026-04-02T17:10:45.121264+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 79.22,
-        "open": 78.24,
-        "high": 79.88,
-        "low": 76.7,
-        "change_pct": 1.25,
-        "atr": 0.275,
-        "avg_vol": 20903.3,
-        "last_vol": 8751.77
-      },
-      "15m": {
-        "close": 79.22,
-        "open": 78.64,
-        "high": 79.88,
-        "low": 76.7,
-        "change_pct": 0.74,
-        "atr": 0.6214,
-        "avg_vol": 44125.1,
-        "last_vol": 34285.2
-      },
-      "30m": {
-        "close": 79.22,
-        "open": 84.44,
-        "high": 85.09,
-        "low": 76.7,
-        "change_pct": -6.18,
-        "atr": 0.7386,
-        "avg_vol": 111562.08,
-        "last_vol": 34285.2
-      },
-      "1h": {
-        "close": 79.23,
-        "open": 82.9,
-        "high": 86.65,
-        "low": 76.7,
-        "change_pct": -4.43,
-        "atr": 0.8407,
-        "avg_vol": 185414.56,
-        "last_vol": 35401.71
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
