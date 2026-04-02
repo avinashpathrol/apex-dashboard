@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T16:50:01.880342+00:00",
+  "generated_at": "2026-04-02T16:51:14.078995+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -15,14 +15,14 @@
   "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "RSI falling from high (59.8) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (84%)",
+  "reason": "RSI falling from high (59.6) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (84%)",
   "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (59.8)",
+    "RSI falling from high (59.6)",
     "EMA-20 below EMA-50 (downtrend)",
     "Price near BB upper band (84%)"
   ],
@@ -2752,7 +2752,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 952,
+  "run_count": 953,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
