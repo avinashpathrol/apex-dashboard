@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T04:59:19.360742+00:00",
+  "generated_at": "2026-04-02T05:00:31.522217+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.85,
+  "price": 78.88,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,7 +18,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (32.5)",
+    "RSI oversold (33.4)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 392,
+  "run_count": 393,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2779,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is experiencing a downtrend across multiple timeframes, with the price currently below the EMA-20, but bullish signals such as RSI oversold and MACD above signal line are emerging, indicating potential for a reversal. The market is highly volatile, with significant price swings in recent timeframes. A breakout or bounce is possible, but the overall trend remains bearish for now.",
-    "5m": "The 5-minute chart shows a sharp decline, with a 2.87% drop in price, indicating intense selling pressure.",
-    "15m": "The 15-minute chart reveals a more pronounced downtrend, with a 4.89% decline and a failed attempt to break above the $86.65 resistance level.",
-    "30m": "The 30-minute chart displays a similar downtrend, with a 6.15% drop and a low of $78.3, suggesting strong bearish momentum.",
-    "1h": "The 1-hour chart shows a significant decline, with a 5.87% drop and a high of $86.65, indicating a potential reversal or bounce could occur if the price breaks above this level.",
-    "key_level_support": 78.3,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential bounce or breakout above the $86.65 resistance level, which could indicate a trend reversal.",
-    "risk_warning": "The high volatility and significant price swings in recent timeframes pose a significant risk to traders, and caution is advised.",
-    "generated_at": "2026-04-02T04:59:18.185824+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 78.85,
-        "open": 81.18,
-        "high": 81.77,
-        "low": 78.3,
-        "change_pct": -2.87,
-        "atr": 0.19,
-        "avg_vol": 26409.13,
-        "last_vol": 32091.48
-      },
-      "15m": {
-        "close": 78.85,
-        "open": 82.9,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -4.89,
-        "atr": 0.4871,
-        "avg_vol": 74167.47,
-        "last_vol": 58501.74
-      },
-      "30m": {
-        "close": 78.85,
-        "open": 84.02,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -6.15,
-        "atr": 0.7164,
-        "avg_vol": 120244.38,
-        "last_vol": 87924.73
-      },
-      "1h": {
-        "close": 78.85,
-        "open": 83.77,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -5.87,
-        "atr": 1.2729,
-        "avg_vol": 208701.43,
-        "last_vol": 165275.14
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
