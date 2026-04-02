@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T06:00:15.802909+00:00",
+  "generated_at": "2026-04-02T06:01:29.050549+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.25,
+  "price": 79.23,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -12,13 +12,12 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (42.1)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -2751,7 +2750,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 440,
+  "run_count": 441,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2778,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is experiencing a downtrend across multiple timeframes, but bullish signals such as a rising RSI and MACD above the signal line are emerging, indicating potential for a reversal. The price is currently below the EMA-20, which is below the EMA-50, confirming the downtrend. However, the market is not showing strong conviction in either direction, resulting in a neutral outlook.",
-    "5m": "The 5-minute chart shows a decline of 2.16% with a high ATR, indicating increased volatility and potential for further price movement.",
-    "15m": "The 15-minute chart displays a more significant decline of 4.76% with a higher ATR, suggesting that the downtrend is gaining momentum.",
-    "30m": "The 30-minute chart reveals a 6.15% decline with an even higher ATR, confirming the strength of the downtrend.",
-    "1h": "The 1-hour chart shows a 4.99% decline, with the ATR indicating increased volatility and potential for further price swings.",
-    "key_level_support": 78.3,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential bounce off the key support level at 78.3, which could be a buying opportunity if the bullish signals gain strength.",
-    "risk_warning": "The market is currently showing mixed signals, and traders should be cautious of a potential false breakout or reversal.",
-    "generated_at": "2026-04-02T06:00:14.317688+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 79.25,
-        "open": 81.0,
-        "high": 81.63,
-        "low": 78.3,
-        "change_pct": -2.16,
-        "atr": 0.2186,
-        "avg_vol": 25683.3,
-        "last_vol": 20447.19
-      },
-      "15m": {
-        "close": 79.25,
-        "open": 83.21,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -4.76,
-        "atr": 0.4293,
-        "avg_vol": 74593.02,
-        "last_vol": 41097.53
-      },
-      "30m": {
-        "close": 79.25,
-        "open": 84.44,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -6.15,
-        "atr": 0.6964,
-        "avg_vol": 119993.9,
-        "last_vol": 80053.04
-      },
-      "1h": {
-        "close": 79.25,
-        "open": 83.41,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -4.99,
-        "atr": 1.2743,
-        "avg_vol": 210015.17,
-        "last_vol": 153354.86
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
