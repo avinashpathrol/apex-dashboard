@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T18:04:54.480775+00:00",
+  "generated_at": "2026-04-02T18:06:08.698039+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 521.68320198,
   "sol_balance": -5.3510911,
   "cad_balance": 521.68320198,
-  "margin_level": 1.23911558,
+  "margin_level": 1.23807965,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
@@ -18,7 +18,7 @@
   "reason": "MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (46.9)"
+    "RSI rising from low (47.0)"
   ],
   "bearish": [
     "MACD bearish crossover",
@@ -3051,7 +3051,7 @@
     "long_trades": 20,
     "short_trades": 27
   },
-  "run_count": 1011,
+  "run_count": 1012,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -3086,10 +3086,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 78.71,
-    "best_price": 78.65,
+    "best_price": 78.63,
     "atr": 0.48071428571428704,
     "sl": 79.43107142857143,
-    "trail_stop": 79.37107142857144,
+    "trail_stop": 79.35107142857143,
     "active": false
   }
 }
