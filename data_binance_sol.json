@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T00:24:30.621938+00:00",
+  "generated_at": "2026-04-02T00:25:43.688823+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.15,
+  "price": 81.19,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (31.8)"
+    "RSI oversold (32.4)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 176,
+  "run_count": 177,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2779,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a strong bearish bias. The RSI is oversold, but the overall trend remains bearish. The market is experiencing a steady decline in price, with increasing volatility.",
-    "5m": "The 5-minute chart shows a sharp decline in price, with a change of -3.69% and a high ATR of 0.1943, indicating increased volatility.",
-    "15m": "The 15-minute chart confirms the downtrend, with the price closing below the opening price and a change of -2.43%, indicating a steady decline.",
-    "30m": "The 30-minute chart shows a similar downtrend, with the price closing below the opening price and a change of -2.7%, indicating a strong bearish bias.",
-    "1h": "The 1-hour chart shows a significant decline in price, with a change of -3.22% and a high ATR of 1.1336, indicating increased volatility and a strong downtrend.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential short entry on a retest of the key level resistance at 86.65, with a stop loss above the resistance level.",
-    "risk_warning": "Trading with high leverage can result in significant losses, so traders should adjust their positions accordingly and use proper risk management techniques.",
-    "generated_at": "2026-04-02T00:24:29.442932+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 81.15,
-        "open": 84.26,
-        "high": 84.43,
-        "low": 80.77,
-        "change_pct": -3.69,
-        "atr": 0.1943,
-        "avg_vol": 23496.57,
-        "last_vol": 15291.63
-      },
-      "15m": {
-        "close": 81.15,
-        "open": 83.17,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -2.43,
-        "atr": 0.4643,
-        "avg_vol": 59543.94,
-        "last_vol": 48244.93
-      },
-      "30m": {
-        "close": 81.15,
-        "open": 83.4,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -2.7,
-        "atr": 0.7386,
-        "avg_vol": 98101.22,
-        "last_vol": 78774.17
-      },
-      "1h": {
-        "close": 81.15,
-        "open": 83.85,
-        "high": 86.65,
-        "low": 80.08,
-        "change_pct": -3.22,
-        "atr": 1.1336,
-        "avg_vol": 185446.52,
-        "last_vol": 78774.17
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
