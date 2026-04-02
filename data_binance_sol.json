@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T03:58:30.715347+00:00",
+  "generated_at": "2026-04-02T03:59:42.575875+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.02,
+  "price": 78.99,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,7 +18,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (33.4)",
+    "RSI oversold (33.0)",
     "MACD bullish crossover"
   ],
   "bearish": [
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 344,
+  "run_count": 345,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2779,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is experiencing a downtrend across multiple timeframes, but bullish signals such as RSI oversold and MACD bullish crossover are emerging, indicating potential for a reversal. The price is currently below the EMA-20, which is below the EMA-50, confirming the downtrend. However, the market is not showing strong conviction in either direction, resulting in a neutral verdict.",
-    "5m": "The 5-minute chart shows a decline of 2.83% with a high ATR of 0.2536, indicating increased volatility.",
-    "15m": "The 15-minute chart displays a more significant drop of 5.05% with an ATR of 0.6757, suggesting a stronger downtrend.",
-    "30m": "The 30-minute chart reveals a decline of 5.33% with an ATR of 0.815, further confirming the downtrend.",
-    "1h": "The 1-hour chart shows a drop of 5.2% with an ATR of 1.3164, indicating a notable decrease in price.",
-    "key_level_support": 78.3,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential bullish reversal if the price breaks above the EMA-20 and holds above the key level support of 78.3.",
-    "risk_warning": "The market is currently showing mixed signals, and traders should exercise caution and consider reducing their position size to manage risk.",
-    "generated_at": "2026-04-02T03:58:29.467178+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 79.01,
-        "open": 81.31,
-        "high": 81.77,
-        "low": 78.3,
-        "change_pct": -2.83,
-        "atr": 0.2536,
-        "avg_vol": 26079.81,
-        "last_vol": 5100.37
-      },
-      "15m": {
-        "close": 79.01,
-        "open": 83.21,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -5.05,
-        "atr": 0.6757,
-        "avg_vol": 75035.31,
-        "last_vol": 28106.74
-      },
-      "30m": {
-        "close": 79.01,
-        "open": 83.46,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -5.33,
-        "atr": 0.815,
-        "avg_vol": 118611.06,
-        "last_vol": 132177.38
-      },
-      "1h": {
-        "close": 79.01,
-        "open": 83.34,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -5.2,
-        "atr": 1.3164,
-        "avg_vol": 206724.6,
-        "last_vol": 213823.62
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
