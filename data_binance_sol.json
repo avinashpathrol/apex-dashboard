@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T17:53:32.774342+00:00",
+  "generated_at": "2026-04-02T17:54:47.080292+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.76,
+  "price": 78.77,
   "usdt_balance": 99.32957838,
   "sol_balance": 0.0209089,
   "cad_balance": 99.32957838,
@@ -12,7 +12,7 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "SHORT CLOSED \u2014 signals faded, profit secured \u2705",
+  "status": "HOLD \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
@@ -3028,14 +3028,14 @@
     "long_trades": 19,
     "short_trades": 27
   },
-  "run_count": 1002,
+  "run_count": 1003,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -3058,9 +3058,9 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 78.96,
-    "best_price": 78.76,
-    "atr": 0.5392857142857161,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
     "sl": null,
     "trail_stop": null,
     "active": false
