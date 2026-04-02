@@ -1,23 +1,25 @@
 {
-  "generated_at": "2026-04-02T18:16:30.113656+00:00",
+  "generated_at": "2026-04-02T18:17:45.102020+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.76,
+  "price": 78.8,
   "usdt_balance": 521.68320198,
   "sol_balance": -5.3510911,
   "cad_balance": 521.68320198,
-  "margin_level": 1.23747538,
+  "margin_level": 1.23698691,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 95,
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
-  "bullish": [],
+  "bullish": [
+    "RSI rising from low (48.7)"
+  ],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
@@ -3049,7 +3051,7 @@
     "long_trades": 20,
     "short_trades": 27
   },
-  "run_count": 1020,
+  "run_count": 1021,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
