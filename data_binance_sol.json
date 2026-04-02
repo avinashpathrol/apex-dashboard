@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T00:09:16.956620+00:00",
+  "generated_at": "2026-04-02T00:10:30.568316+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 164,
+  "run_count": 165,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,62 +2779,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a bearish bias. The RSI is oversold, which could lead to a potential bounce, but the overall trend remains bearish. The market is experiencing a significant decline, with the 1-hour timeframe showing a -3.22% change.",
-    "5m": "The 5-minute timeframe is showing a sharp decline, with a -3.39% change and a low of 80.77, indicating strong bearish momentum.",
-    "15m": "The 15-minute timeframe is also bearish, with a -2.81% change and a low of 80.77, confirming the downtrend.",
-    "30m": "The 30-minute timeframe is showing a similar bearish trend, with a -2.7% change and a low of 80.77, indicating a strong downtrend.",
-    "1h": "The 1-hour timeframe is bearish, with a -3.22% change and a low of 80.08, indicating a significant decline in the market.",
-    "key_level_support": 80.08,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential short opportunity, with a target near the key level support at 80.08, and a stop-loss above the key level resistance at 86.65.",
-    "risk_warning": "The RSI is oversold, which could lead to a potential bounce, so traders should be cautious of a potential reversal.",
-    "generated_at": "2026-04-02T00:09:15.729332+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 81.15,
-        "open": 84.0,
-        "high": 84.43,
-        "low": 80.77,
-        "change_pct": -3.39,
-        "atr": 0.1793,
-        "avg_vol": 22822.0,
-        "last_vol": 6376.02
-      },
-      "15m": {
-        "close": 81.15,
-        "open": 83.5,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -2.81,
-        "atr": 0.4657,
-        "avg_vol": 59044.64,
-        "last_vol": 19474.42
-      },
-      "30m": {
-        "close": 81.15,
-        "open": 83.4,
-        "high": 86.65,
-        "low": 80.77,
-        "change_pct": -2.7,
-        "atr": 0.7286,
-        "avg_vol": 96865.81,
-        "last_vol": 19474.42
-      },
-      "1h": {
-        "close": 81.15,
-        "open": 83.85,
-        "high": 86.65,
-        "low": 80.08,
-        "change_pct": -3.22,
-        "atr": 1.1236,
-        "avg_vol": 184211.11,
-        "last_vol": 19474.42
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
