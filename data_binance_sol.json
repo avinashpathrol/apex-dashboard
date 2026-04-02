@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T15:52:39.137555+00:00",
+  "generated_at": "2026-04-02T15:54:39.318408+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.92,
+  "price": 78.96,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -22,7 +22,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (53.1)",
+    "RSI falling from high (53.5)",
     "EMA-20 below EMA-50 (downtrend)"
   ],
   "trades": [
@@ -2751,7 +2751,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 907,
+  "run_count": 908,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2779,7 +2779,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price consolidating after a recent downtrend. The MACD above the signal line and price above EMA-20 are bullish, but the falling RSI and EMA-20 below EMA-50 indicate a potential downtrend. The market is likely to remain choppy until a clear direction is established.",
+    "5m": "The 5-minute chart shows a slight increase in price with a low ATR, indicating a lack of volatility and momentum.",
+    "15m": "The 15-minute chart reveals a significant drop in price, with a higher ATR, suggesting increased volatility and potential for further downward movement.",
+    "30m": "The 30-minute chart displays a more pronounced downtrend, with the price falling below the opening price and a higher ATR, indicating increased market uncertainty.",
+    "1h": "The 1-hour chart shows a notable decline in price, with the ATR indicating moderate volatility, and the price action suggesting a potential continuation of the downtrend.",
+    "key_level_support": 76.7,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a break above the key resistance level of 86.65 or a drop below the key support level of 76.7 to establish a clear direction.",
+    "risk_warning": "The market's choppy conditions and conflicting signals increase the risk of false breakouts, so traders should exercise caution and consider tightening stop-loss levels.",
+    "generated_at": "2026-04-02T15:54:38.127396+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 78.95,
+        "open": 78.9,
+        "high": 79.73,
+        "low": 76.7,
+        "change_pct": 0.06,
+        "atr": 0.3336,
+        "avg_vol": 20842.48,
+        "last_vol": 10523.28
+      },
+      "15m": {
+        "close": 78.95,
+        "open": 80.86,
+        "high": 81.63,
+        "low": 76.7,
+        "change_pct": -2.36,
+        "atr": 0.6407,
+        "avg_vol": 54055.42,
+        "last_vol": 16792.79
+      },
+      "30m": {
+        "close": 78.95,
+        "open": 84.37,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -6.42,
+        "atr": 0.6929,
+        "avg_vol": 125666.48,
+        "last_vol": 58629.44
+      },
+      "1h": {
+        "close": 78.95,
+        "open": 82.39,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -4.18,
+        "atr": 0.8471,
+        "avg_vol": 193089.98,
+        "last_vol": 149722.4
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
