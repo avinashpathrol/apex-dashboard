@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-02T10:18:34.893106+00:00",
+  "generated_at": "2026-04-02T10:19:50.363819+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.91,
+  "price": 78.96,
   "usdt_balance": 99.26096208,
   "sol_balance": 0.0202699,
   "cad_balance": 99.26096208,
@@ -18,9 +18,9 @@
   "reason": "Blocked LONG \u2014 trend filter active (EMA-20 <= EMA-50) | 3 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (40.2)",
+    "RSI rising from low (41.5)",
     "MACD above signal (bullish)",
-    "Price near BB lower band (9%)"
+    "Price near BB lower band (15%)"
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
@@ -2752,7 +2752,7 @@
     "long_trades": 19,
     "short_trades": 26
   },
-  "run_count": 644,
+  "run_count": 645,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -2780,62 +2780,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a downtrend, with the price below the EMA-20, but showing some signs of potential reversal with the RSI rising from a low level and the MACD above the signal line. The price is also near the lower Bollinger Band, which could indicate a potential bounce. However, the overall trend remains bearish, and the market is waiting for a clear direction.",
-    "5m": "The 5-minute chart shows a slight increase in price, but the overall movement is minimal, indicating a lack of strong momentum.",
-    "15m": "The 15-minute chart displays a significant drop in price, with a change of -5.96%, indicating a strong bearish movement in the short term.",
-    "30m": "The 30-minute chart also shows a decline in price, with a change of -5.35%, further confirming the bearish trend in the medium term.",
-    "1h": "The 1-hour chart shows a decrease in price, but with a smaller change of -2.39%, suggesting that the bearish momentum might be slowing down.",
-    "key_level_support": 78.3,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential bounce off the lower Bollinger Band and a break above the EMA-20 to confirm a reversal in the trend.",
-    "risk_warning": "The market is currently in a downtrend, and any potential reversal is subject to significant volatility and risk.",
-    "generated_at": "2026-04-02T10:18:33.660120+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 78.92,
-        "open": 78.78,
-        "high": 79.67,
-        "low": 78.62,
-        "change_pct": 0.18,
-        "atr": 0.1586,
-        "avg_vol": 8634.31,
-        "last_vol": 5739.12
-      },
-      "15m": {
-        "close": 78.92,
-        "open": 83.92,
-        "high": 84.43,
-        "low": 78.3,
-        "change_pct": -5.96,
-        "atr": 0.2443,
-        "avg_vol": 57952.28,
-        "last_vol": 5739.56
-      },
-      "30m": {
-        "close": 78.92,
-        "open": 83.38,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -5.35,
-        "atr": 0.4407,
-        "avg_vol": 115688.49,
-        "last_vol": 32283.03
-      },
-      "1h": {
-        "close": 78.92,
-        "open": 80.85,
-        "high": 86.65,
-        "low": 78.3,
-        "change_pct": -2.39,
-        "atr": 0.8986,
-        "avg_vol": 198063.43,
-        "last_vol": 32283.03
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
