@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T22:03:50.227250+00:00",
+  "generated_at": "2026-04-03T22:05:02.836326+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "Price near BB upper band (85%)"
+    "Price near BB upper band (86%)"
   ],
   "trades": [
     {
@@ -4503,7 +4503,7 @@
     "long_trades": 24,
     "short_trades": 40
   },
-  "run_count": 2346,
+  "run_count": 2347,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
