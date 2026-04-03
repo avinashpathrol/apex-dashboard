@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-04-03T03:54:15.196126+00:00",
+  "generated_at": "2026-04-03T03:55:21.348393+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.14,
-  "usdt_balance": -329.71429299,
-  "sol_balance": 5.3235259,
-  "cad_balance": -329.71429299,
-  "margin_level": 1.26899148,
-  "position": "LONG",
+  "price": 79.02,
+  "usdt_balance": 90.54172032,
+  "sol_balance": 0.0005259,
+  "cad_balance": 90.54172032,
+  "margin_level": 999.0,
+  "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (1) but profit -0.28% below threshold",
+  "status": "HOLDING LONG \u2014 \ud83d\uded1 Hard SL hit | entry=79.3600 sl=79.0329 price=79.0200 | ATR=0.3271",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "\ud83d\uded1 Hard SL hit | entry=79.3600 sl=79.0329 price=79.0200 | ATR=0.3271",
   "trend": "BEARISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)"
@@ -2935,6 +2935,15 @@
       "qty": 5.328,
       "cost": 422.83008,
       "fee": 0.005328
+    },
+    {
+      "time": "2026-04-02T20:55:17.103000-07:00",
+      "action": "SELL",
+      "price": 79.03,
+      "qty": 5.323,
+      "cost": 420.67669,
+      "fee": 0.42067669,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=79.3600 sl=79.0329 price=79.0200 | ATR=0.3271"
     }
   ],
   "closed_trades": [
@@ -3719,7 +3728,7 @@
     "long_trades": 24,
     "short_trades": 31
   },
-  "run_count": 1481,
+  "run_count": 1482,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -3739,11 +3748,7 @@
       "force_trail": false,
       "force_trail_at": "2026-04-01T18:47:19.475Z"
     },
-    "queued": {
-      "trade_amount_usdt": 85.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -3753,11 +3758,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 79.36,
-    "best_price": 79.44,
-    "atr": 0.327142857142858,
-    "sl": 78.86928571428571,
-    "trail_stop": 78.94928571428571,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
     "active": false
   }
 }
