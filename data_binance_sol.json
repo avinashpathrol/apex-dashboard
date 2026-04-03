@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-03T04:30:01.494107+00:00",
+  "generated_at": "2026-04-03T04:31:14.867405+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.05,
+  "price": 79.03,
   "usdt_balance": 87.91626242,
   "sol_balance": 0.0002029,
   "cad_balance": 87.91626242,
@@ -12,18 +12,17 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 \ud83d\uded1 Hard SL hit | entry=79.4300 sl=79.0771 price=79.0500 | ATR=0.3529",
+  "status": "HOLD \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "\ud83d\uded1 Hard SL hit | entry=79.4300 sl=79.0771 price=79.0500 | ATR=0.3529",
+  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "Price below EMA-20",
-    "High volume confirms move"
+    "Price below EMA-20"
   ],
   "trades": [
     {
@@ -3760,14 +3759,14 @@
     "long_trades": 24,
     "short_trades": 32
   },
-  "run_count": 1510,
+  "run_count": 1511,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
