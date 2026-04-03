@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T07:47:49.641800+00:00",
+  "generated_at": "2026-04-03T07:50:02.962040+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (62.7)",
+    "RSI falling from high (62.4)",
     "Price near BB upper band (97%)"
   ],
   "trades": [
@@ -3837,7 +3837,7 @@
     "long_trades": 24,
     "short_trades": 33
   },
-  "run_count": 1667,
+  "run_count": 1668,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -3865,7 +3865,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing signs of a potential uptrend across multiple timeframes, with the MACD above the signal line and the EMA-20 above the EMA-50, indicating a bullish bias. However, the RSI is falling from a high level, suggesting a potential pullback. The price is currently near the upper Bollinger Band, which may act as resistance.",
+    "5m": "The 5-minute chart shows a slight increase in price, with a 0.67% change, indicating a short-term bullish momentum.",
+    "15m": "The 15-minute chart displays a similar trend, with the price closing higher than the open, and a 0.59% change, supporting the bullish outlook.",
+    "30m": "The 30-minute chart reveals a more significant price movement, with a 0.68% change, and the price bouncing off the lower end of the recent range, indicating a potential reversal.",
+    "1h": "The 1-hour chart shows a more bearish picture, with a -4.53% change, and the price falling from a higher level, which may be a sign of a larger correction.",
+    "key_level_support": 76.7,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a potential breakout above the recent high of 80.16, which could confirm the bullish trend and lead to further upside.",
+    "risk_warning": "A failure to hold above the key support level of 76.7 could lead to a larger correction, and traders should adjust their positions accordingly.",
+    "generated_at": "2026-04-03T07:50:01.661196+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.83,
+        "open": 79.3,
+        "high": 80.16,
+        "low": 78.99,
+        "change_pct": 0.67,
+        "atr": 0.1464,
+        "avg_vol": 7192.86,
+        "last_vol": 7128.82
+      },
+      "15m": {
+        "close": 79.83,
+        "open": 79.36,
+        "high": 80.16,
+        "low": 78.43,
+        "change_pct": 0.59,
+        "atr": 0.2457,
+        "avg_vol": 21365.18,
+        "last_vol": 7128.82
+      },
+      "30m": {
+        "close": 79.83,
+        "open": 79.29,
+        "high": 80.16,
+        "low": 76.7,
+        "change_pct": 0.68,
+        "atr": 0.4721,
+        "avg_vol": 61521.26,
+        "last_vol": 70703.53
+      },
+      "1h": {
+        "close": 79.83,
+        "open": 83.62,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -4.53,
+        "atr": 0.5879,
+        "avg_vol": 178867.0,
+        "last_vol": 88090.59
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
