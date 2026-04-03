@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-03T09:50:25.695517+00:00",
+  "generated_at": "2026-04-03T09:51:49.272912+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.01,
+  "price": 79.96,
   "usdt_balance": -335.16455984,
   "sol_balance": 5.2869919,
   "cad_balance": -335.16455984,
-  "margin_level": 1.2577478,
+  "margin_level": 1.25785292,
   "position": "LONG",
-  "action": "HOLD",
-  "confidence": 82,
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
@@ -23,8 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (59.5)",
-    "Price near BB upper band (82%)"
+    "RSI falling from high (58.4)"
   ],
   "trades": [
     {
@@ -4119,7 +4118,7 @@
     "long_trades": 24,
     "short_trades": 36
   },
-  "run_count": 1764,
+  "run_count": 1765,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -4151,7 +4150,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a bullish trend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a potential uptrend. However, the RSI is falling from a high, which may indicate a short-term correction. The overall trend remains bullish, with the price making higher highs and lows.",
+    "5m": "The 5-minute chart shows a slight increase in price, with a 0.82% change and a high of 80.21, indicating a short-term bullish momentum.",
+    "15m": "The 15-minute chart shows a stronger uptrend, with a 1.06% change and a high of 80.21, indicating a medium-term bullish momentum.",
+    "30m": "The 30-minute chart shows a significant uptrend, with a 1.32% change and a high of 80.21, indicating a longer-term bullish momentum.",
+    "1h": "The 1-hour chart shows a correction, with a -4.09% change and a low of 76.7, indicating a potential short-term bearish momentum.",
+    "key_level_support": 76.7,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a potential breakout above the key level resistance of 86.65, which could indicate a strong bullish trend.",
+    "risk_warning": "A failure to hold above the key level support of 76.7 could lead to a significant correction, so traders should be cautious and set stop-loss orders accordingly.",
+    "generated_at": "2026-04-03T09:51:48.061361+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.97,
+        "open": 79.32,
+        "high": 80.21,
+        "low": 79.06,
+        "change_pct": 0.82,
+        "atr": 0.165,
+        "avg_vol": 7468.96,
+        "last_vol": 2081.79
+      },
+      "15m": {
+        "close": 79.97,
+        "open": 79.13,
+        "high": 80.21,
+        "low": 78.63,
+        "change_pct": 1.06,
+        "atr": 0.31,
+        "avg_vol": 21275.36,
+        "last_vol": 6991.07
+      },
+      "30m": {
+        "close": 79.97,
+        "open": 78.93,
+        "high": 80.21,
+        "low": 76.7,
+        "change_pct": 1.32,
+        "atr": 0.3993,
+        "avg_vol": 62775.16,
+        "last_vol": 30092.52
+      },
+      "1h": {
+        "close": 79.97,
+        "open": 83.38,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -4.09,
+        "atr": 0.5657,
+        "avg_vol": 178614.92,
+        "last_vol": 110307.71
+      }
+    }
+  },
   "trail": {
     "entry_price": 79.9,
     "best_price": 80.07,
