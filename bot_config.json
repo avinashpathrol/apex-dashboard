@@ -2,7 +2,7 @@
   "trade_amount": 85,
   "leverage": 5,
   "updated_at": "2026-03-31T21:57:45.199Z",
-  "force_trail": true,
+  "force_trail": false,
   "force_trail_at": "2026-04-03T16:59:43.000Z",
   "close_requested": false
 }
