@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-03T14:40:42.204654+00:00",
+  "generated_at": "2026-04-03T14:41:54.978851+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.9,
+  "price": 79.87,
   "usdt_balance": 85.38667758,
   "sol_balance": 0.0004519,
   "cad_balance": 85.38667758,
@@ -22,7 +22,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (53.4)",
+    "RSI falling from high (52.7)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -4378,7 +4378,7 @@
     "long_trades": 24,
     "short_trades": 38
   },
-  "run_count": 1994,
+  "run_count": 1995,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -4406,62 +4406,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price holding above the EMA-20 but also showing a falling RSI and a bearish MACD signal, indicating a potential consolidation phase. The market is trying to find direction after a recent decline. Short-term trends are bullish, but longer-term trends are bearish.",
-    "5m": "The 5-minute chart shows a slight decline in price with a relatively low ATR, indicating a lack of strong momentum.",
-    "15m": "The 15-minute chart displays a bullish trend with a 1.22% price increase, but the RSI and MACD signals are not confirming this uptrend.",
-    "30m": "The 30-minute chart also shows a bullish trend with a 1.51% price increase, but the bearish MACD signal is a concern for the sustainability of this uptrend.",
-    "1h": "The 1-hour chart reveals a significant decline in price with a -4.46% change, indicating strong bearish momentum in the longer term.",
-    "key_level_support": 76.7,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a break above the key resistance level of 86.65 or a drop below the key support level of 76.7 to determine the next direction of the market.",
-    "risk_warning": "The mixed signals and potential consolidation phase increase the risk of a false breakout, so traders should be cautious with their positions.",
-    "generated_at": "2026-04-03T14:40:40.995808+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 79.9,
-        "open": 80.05,
-        "high": 80.91,
-        "low": 79.17,
-        "change_pct": -0.19,
-        "atr": 0.1743,
-        "avg_vol": 8930.07,
-        "last_vol": 4389.82
-      },
-      "15m": {
-        "close": 79.9,
-        "open": 78.94,
-        "high": 80.91,
-        "low": 78.82,
-        "change_pct": 1.22,
-        "atr": 0.3693,
-        "avg_vol": 24358.27,
-        "last_vol": 9604.91
-      },
-      "30m": {
-        "close": 79.9,
-        "open": 78.71,
-        "high": 80.91,
-        "low": 78.35,
-        "change_pct": 1.51,
-        "atr": 0.4893,
-        "avg_vol": 49264.53,
-        "last_vol": 9604.91
-      },
-      "1h": {
-        "close": 79.9,
-        "open": 83.63,
-        "high": 86.65,
-        "low": 76.7,
-        "change_pct": -4.46,
-        "atr": 0.6629,
-        "avg_vol": 174851.74,
-        "last_vol": 65297.14
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
