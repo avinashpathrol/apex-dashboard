@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-03T08:05:21.731231+00:00",
+  "generated_at": "2026-04-03T08:06:37.810685+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.99,
+  "price": 80.01,
   "usdt_balance": -333.44393606,
   "sol_balance": 5.2825879,
   "cad_balance": -333.44393606,
-  "margin_level": 1.26125458,
+  "margin_level": 1.26204932,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 82,
@@ -24,7 +24,7 @@
   ],
   "bearish": [
     "RSI overbought (66.1)",
-    "Price near BB upper band (100%)"
+    "Price near BB upper band (101%)"
   ],
   "trades": [
     {
@@ -3859,7 +3859,7 @@
     "long_trades": 24,
     "short_trades": 34
   },
-  "run_count": 1680,
+  "run_count": 1681,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -3891,68 +3891,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 7,
-    "summary": "The SOL/USDT market is showing a bullish trend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a potential continuation of the uptrend. However, the RSI is overbought, suggesting a possible correction. The market is currently experiencing a short-term pullback after a significant decline in the 1h timeframe.",
-    "5m": "The 5m timeframe is showing a slight increase in price, with a 0.97% change, indicating a potential continuation of the bullish trend.",
-    "15m": "The 15m timeframe is displaying a steady uptrend, with the price closing above the open and a 0.62% change, supporting the overall bullish sentiment.",
-    "30m": "The 30m timeframe is indicating a stronger uptrend, with a 1.12% change and the price closing above the open, further reinforcing the bullish outlook.",
-    "1h": "The 1h timeframe is showing a significant decline, with a -4.04% change, which may be a sign of a larger correction or a potential reversal.",
-    "key_level_support": 76.7,
-    "key_level_resistance": 86.65,
-    "recommendation": "Traders should watch for a potential bounce off the key level support at 76.7, which could confirm the continuation of the bullish trend.",
-    "risk_warning": "The overbought RSI and price near the BB upper band suggest a high risk of a correction, so traders should be cautious and consider adjusting their positions accordingly.",
-    "generated_at": "2026-04-03T08:05:20.549347+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.0,
-        "open": 79.23,
-        "high": 80.16,
-        "low": 78.99,
-        "change_pct": 0.97,
-        "atr": 0.1521,
-        "avg_vol": 7188.18,
-        "last_vol": 6522.68
-      },
-      "15m": {
-        "close": 80.01,
-        "open": 79.52,
-        "high": 80.16,
-        "low": 78.43,
-        "change_pct": 0.62,
-        "atr": 0.2471,
-        "avg_vol": 21563.21,
-        "last_vol": 6523.25
-      },
-      "30m": {
-        "close": 80.01,
-        "open": 79.12,
-        "high": 80.16,
-        "low": 76.7,
-        "change_pct": 1.12,
-        "atr": 0.445,
-        "avg_vol": 61780.67,
-        "last_vol": 6523.25
-      },
-      "1h": {
-        "close": 80.01,
-        "open": 83.38,
-        "high": 86.65,
-        "low": 76.7,
-        "change_pct": -4.04,
-        "atr": 0.5379,
-        "avg_vol": 176913.65,
-        "last_vol": 6523.25
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 79.97,
-    "best_price": 80.0,
+    "best_price": 80.01,
     "atr": 0.2557142857142866,
     "sl": 79.58642857142857,
-    "trail_stop": 79.61642857142857,
+    "trail_stop": 79.62642857142858,
     "active": false
   }
 }
