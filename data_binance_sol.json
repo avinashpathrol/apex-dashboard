@@ -1,30 +1,28 @@
 {
-  "generated_at": "2026-04-03T02:14:30.407620+00:00",
+  "generated_at": "2026-04-03T02:16:19.482248+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.14,
+  "price": 79.21,
   "usdt_balance": -327.20233729,
   "sol_balance": 5.3385129,
   "cad_balance": -327.20233729,
-  "margin_level": 1.27992452,
+  "margin_level": 1.28089205,
   "position": "LONG",
   "action": "LONG",
-  "confidence": 88,
+  "confidence": 95,
   "risk": "MEDIUM",
-  "status": "LONG OPENED \u2705",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
-  "trend": "BEARISH",
+  "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
-  "bearish": [
-    "RSI falling from high (50.9)"
-  ],
+  "bearish": [],
   "trades": [
     {
       "time": "2026-03-28T18:52:43.797000-07:00",
@@ -3479,14 +3477,14 @@
     "long_trades": 22,
     "short_trades": 29
   },
-  "run_count": 1401,
+  "run_count": 1402,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
@@ -3511,13 +3509,68 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a bullish momentum. The recent price action has been positive, with the 5m, 15m, and 30m timeframes showing gains. However, the 1h timeframe shows a significant drop, which may be a sign of a potential correction.",
+    "5m": "The 5m timeframe is showing a slight gain of 0.47%, with a relatively low ATR of 0.1964, indicating a calm market.",
+    "15m": "The 15m timeframe is showing a more significant gain of 0.8%, with a moderate ATR of 0.2786, indicating a slight increase in volatility.",
+    "30m": "The 30m timeframe is showing a gain of 0.43%, with a moderate ATR of 0.4229, indicating a steady uptrend.",
+    "1h": "The 1h timeframe is showing a significant drop of 5.06%, with a high ATR of 0.855, indicating a potential correction or reversal.",
+    "key_level_support": 76.7,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a potential pullback to the key level support at 76.7, which could be a buying opportunity.",
+    "risk_warning": "A break below the key level support at 76.7 could lead to a significant downturn, so traders should be cautious and set stop-loss orders accordingly.",
+    "generated_at": "2026-04-03T02:16:18.363630+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.21,
+        "open": 78.84,
+        "high": 79.79,
+        "low": 78.7,
+        "change_pct": 0.47,
+        "atr": 0.1964,
+        "avg_vol": 5441.22,
+        "last_vol": 433.6
+      },
+      "15m": {
+        "close": 79.21,
+        "open": 78.58,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": 0.8,
+        "atr": 0.2786,
+        "avg_vol": 35269.15,
+        "last_vol": 433.6
+      },
+      "30m": {
+        "close": 79.21,
+        "open": 78.87,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": 0.43,
+        "atr": 0.4229,
+        "avg_vol": 69413.14,
+        "last_vol": 18757.81
+      },
+      "1h": {
+        "close": 79.21,
+        "open": 83.43,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -5.06,
+        "atr": 0.855,
+        "avg_vol": 182515.21,
+        "last_vol": 18757.81
+      }
+    }
+  },
   "trail": {
     "entry_price": 79.14,
-    "best_price": 79.14,
+    "best_price": 79.21,
     "atr": 0.2814285714285733,
     "sl": 78.71785714285714,
-    "trail_stop": 78.71785714285714,
+    "trail_stop": 78.78785714285713,
     "active": false
   }
 }
