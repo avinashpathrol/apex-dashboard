@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-03T02:51:26.178339+00:00",
+  "generated_at": "2026-04-03T02:52:40.399702+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.12,
+  "price": 79.21,
   "usdt_balance": -329.39264163,
   "sol_balance": 5.3368539,
   "cad_balance": -329.39264163,
-  "margin_level": 1.27278802,
+  "margin_level": 1.27350449,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 signals weak (2) but profit -0.04% below threshold",
+  "status": "HOLDING LONG \u2014 signals weak (2) but profit 0.08% below threshold",
   "bot_paused": false,
   "flip_pending": null,
   "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
-  "trend": "BEARISH",
+  "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
@@ -3548,7 +3548,7 @@
     "long_trades": 23,
     "short_trades": 30
   },
-  "run_count": 1430,
+  "run_count": 1431,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -3583,10 +3583,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 79.15,
-    "best_price": 79.19,
+    "best_price": 79.21,
     "atr": 0.3057142857142868,
     "sl": 78.69142857142857,
-    "trail_stop": 78.73142857142857,
+    "trail_stop": 78.75142857142856,
     "active": false
   }
 }
