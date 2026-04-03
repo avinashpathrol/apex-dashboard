@@ -4,5 +4,6 @@
   "updated_at": "2026-03-31T21:57:45.199Z",
   "force_trail": false,
   "force_trail_at": "2026-04-03T16:59:43.000Z",
-  "close_requested": false
+  "close_requested": true,
+  "close_requested_at": "2026-04-03T17:19:27.007Z"
 }
