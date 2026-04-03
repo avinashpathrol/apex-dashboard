@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-03T12:30:26.137008+00:00",
+  "generated_at": "2026-04-03T12:31:39.075495+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.46,
+  "price": 79.93,
   "usdt_balance": 85.38667758,
   "sol_balance": 0.0004519,
   "cad_balance": 85.38667758,
@@ -11,21 +11,20 @@
   "position": null,
   "action": "HOLD",
   "confidence": 0,
-  "risk": "LOW",
-  "status": "HOLDING LONG \u2014 \ud83d\udcd0 Trailing stop hit | best=80.8300 trail_stop=80.6060 price=80.4600",
+  "risk": "MEDIUM",
+  "status": "HOLD \u2014 Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 1 bullish, 4 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "\ud83d\udcd0 Trailing stop hit | best=80.8300 trail_stop=80.6060 price=80.4600",
+  "reason": "Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 1 bullish, 4 bearish",
   "trend": "SIDEWAYS",
   "bullish": [
-    "MACD above signal (bullish)",
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
-    "High volume confirms move"
+    "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
-    "RSI overbought (67.0)",
-    "Price near BB upper band (114%)"
+    "RSI falling from high (52.1)",
+    "MACD bearish crossover",
+    "Price below EMA-20",
+    "High volume confirms move"
   ],
   "trades": [
     {
@@ -4380,14 +4379,14 @@
     "long_trades": 24,
     "short_trades": 38
   },
-  "run_count": 1891,
+  "run_count": 1892,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 85.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 85.0,
