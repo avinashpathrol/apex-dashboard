@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-03T01:42:12.714591+00:00",
+  "generated_at": "2026-04-03T01:43:26.755798+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.13,
+  "price": 79.17,
   "usdt_balance": -324.68468917,
   "sol_balance": 5.3328559,
   "cad_balance": -324.68468917,
-  "margin_level": 1.28709215,
+  "margin_level": 1.28692004,
   "position": "LONG",
   "action": "LONG",
   "confidence": 91,
@@ -24,7 +24,7 @@
     "High volume confirms move"
   ],
   "bearish": [
-    "RSI falling from high (51.0)"
+    "RSI falling from high (51.7)"
   ],
   "trades": [
     {
@@ -3336,7 +3336,7 @@
     "long_trades": 21,
     "short_trades": 28
   },
-  "run_count": 1375,
+  "run_count": 1376,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
