@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-03T04:00:12.077518+00:00",
+  "generated_at": "2026-04-03T04:02:04.060451+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.0,
+  "price": 79.04,
   "usdt_balance": 90.54172032,
   "sol_balance": 0.0005259,
   "cad_balance": 90.54172032,
@@ -18,7 +18,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (46.5)",
+    "RSI rising from low (47.7)",
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
@@ -3729,7 +3729,7 @@
     "long_trades": 24,
     "short_trades": 31
   },
-  "run_count": 1486,
+  "run_count": 1487,
   "trade_amount": 85.0,
   "min_signals": 3,
   "bot_config": {
@@ -3757,7 +3757,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the RSI rising from a low and the EMA-20 above EMA-50 indicating a potential uptrend, but the MACD below the signal line and price below EMA-20 suggesting bearish pressure. The market has seen a significant decline in the 1-hour timeframe but is attempting to recover in shorter timeframes. Overall, the market is indecisive and awaiting a breakout or a trend confirmation.",
+    "5m": "The 5-minute chart shows a slight increase in price with a small range, indicating a lack of conviction from buyers or sellers.",
+    "15m": "The 15-minute chart displays a more significant price increase, suggesting that buyers are starting to gain some momentum, but the overall trend remains uncertain.",
+    "30m": "The 30-minute chart indicates a minor uptick in price, but the movement is not strong enough to confirm a trend reversal or continuation.",
+    "1h": "The 1-hour chart reveals a substantial price drop, which may have exhausted some of the selling pressure, potentially setting the stage for a rebound or a consolidation phase.",
+    "key_level_support": 76.7,
+    "key_level_resistance": 86.65,
+    "recommendation": "Traders should watch for a breakout above the recent high of 79.88 or a breakdown below the support level of 76.7 to determine the next directional move.",
+    "risk_warning": "The market's indecisive nature and mixed signals increase the risk of whipsaws or false breakouts, so traders should exercise caution and consider tighter stop-loss levels.",
+    "generated_at": "2026-04-03T04:02:02.796215+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.04,
+        "open": 78.91,
+        "high": 79.79,
+        "low": 78.8,
+        "change_pct": 0.16,
+        "atr": 0.1629,
+        "avg_vol": 6958.24,
+        "last_vol": 2900.78
+      },
+      "15m": {
+        "close": 79.04,
+        "open": 77.45,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": 2.05,
+        "atr": 0.3307,
+        "avg_vol": 32622.56,
+        "last_vol": 2900.78
+      },
+      "30m": {
+        "close": 79.04,
+        "open": 78.82,
+        "high": 79.88,
+        "low": 76.7,
+        "change_pct": 0.28,
+        "atr": 0.4093,
+        "avg_vol": 64239.21,
+        "last_vol": 2900.78
+      },
+      "1h": {
+        "close": 79.04,
+        "open": 84.14,
+        "high": 86.65,
+        "low": 76.7,
+        "change_pct": -6.06,
+        "atr": 0.6529,
+        "avg_vol": 182651.82,
+        "last_vol": 2900.78
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
