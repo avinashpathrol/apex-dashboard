@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T23:00:46.651394+00:00",
+  "generated_at": "2026-04-03T23:00:56.874903+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -12,18 +12,18 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 1 bullish, 3 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 1 bullish, 3 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
+    "RSI rising from low (47.4)",
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "Price below EMA-20",
-    "High volume confirms move"
+    "Price below EMA-20"
   ],
   "trades": [
     {
@@ -4534,7 +4534,7 @@
     "long_trades": 24,
     "short_trades": 41
   },
-  "run_count": 2391,
+  "run_count": 1,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -4562,62 +4562,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is currently experiencing a bearish trend across multiple timeframes, with the price below the EMA-20 and a bearish MACD signal, despite the EMA-20 being above the EMA-50 indicating an uptrend, the overall momentum is downward. The high volume confirms the move, suggesting a strong bearish sentiment. The market is likely to continue its downward trend in the short term.",
-    "5m": "The 5-minute chart shows a slight decline in price with a small ATR, indicating a lack of momentum.",
-    "15m": "The 15-minute chart shows a moderate increase in price with a higher ATR, but the overall trend is still bearish.",
-    "30m": "The 30-minute chart shows a significant increase in price, but the price is still below the EMA-20, indicating a bearish trend.",
-    "1h": "The 1-hour chart shows a significant decline in price with a high ATR, confirming the bearish trend.",
-    "key_level_support": 76.7,
-    "key_level_resistance": 81.77,
-    "recommendation": "Traders should watch for a potential breakdown below the key support level of 76.7, which could lead to further downward momentum.",
-    "risk_warning": "Trading in a bearish market can result in significant losses, so traders should exercise caution and consider reducing their position size.",
-    "generated_at": "2026-04-03T23:00:45.490249+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.14,
-        "open": 80.17,
-        "high": 80.73,
-        "low": 79.87,
-        "change_pct": -0.04,
-        "atr": 0.115,
-        "avg_vol": 5909.28,
-        "last_vol": 128.83
-      },
-      "15m": {
-        "close": 80.14,
-        "open": 79.78,
-        "high": 80.91,
-        "low": 79.17,
-        "change_pct": 0.45,
-        "atr": 0.1936,
-        "avg_vol": 23562.04,
-        "last_vol": 137.19
-      },
-      "30m": {
-        "close": 80.14,
-        "open": 78.94,
-        "high": 80.91,
-        "low": 78.82,
-        "change_pct": 1.52,
-        "atr": 0.3014,
-        "avg_vol": 45614.36,
-        "last_vol": 137.19
-      },
-      "1h": {
-        "close": 80.14,
-        "open": 81.63,
-        "high": 81.77,
-        "low": 76.7,
-        "change_pct": -1.83,
-        "atr": 0.5657,
-        "avg_vol": 132824.62,
-        "last_vol": 137.19
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
