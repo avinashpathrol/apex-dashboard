@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T01:14:56.121510+00:00",
+  "generated_at": "2026-04-04T01:16:51.896981+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -19,7 +19,7 @@
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (10%)"
+    "Price near BB lower band (13%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -4534,7 +4534,7 @@
     "long_trades": 24,
     "short_trades": 41
   },
-  "run_count": 108,
+  "run_count": 109,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -4562,7 +4562,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with some indicators suggesting an uptrend and others indicating a bearish trend. The price is hovering near the lower band of the Bollinger Bands, which could lead to a bounce. However, the MACD is below the signal line, indicating a bearish momentum.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a small range and low volatility.",
+    "15m": "The 15-minute chart indicates a minor uptrend, with the price closing higher than the open and a moderate increase in volatility.",
+    "30m": "The 30-minute chart shows a more pronounced uptrend, with the price gaining over 1% and a notable increase in volatility.",
+    "1h": "The 1-hour chart reveals a stronger uptrend, with the price rising over 1.5% and a significant increase in volatility.",
+    "key_level_support": 79.17,
+    "key_level_resistance": 80.91,
+    "recommendation": "Traders should watch for a potential bounce off the lower Bollinger Band or a breakdown below the key support level.",
+    "risk_warning": "The conflicting signals across timeframes increase the risk of a false breakout, so traders should exercise caution and consider reducing position sizes.",
+    "generated_at": "2026-04-04T01:16:50.757388+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.12,
+        "open": 80.21,
+        "high": 80.73,
+        "low": 79.92,
+        "change_pct": -0.11,
+        "atr": 0.095,
+        "avg_vol": 5321.43,
+        "last_vol": 675.5
+      },
+      "15m": {
+        "close": 80.11,
+        "open": 79.85,
+        "high": 80.91,
+        "low": 79.17,
+        "change_pct": 0.33,
+        "atr": 0.1979,
+        "avg_vol": 22004.08,
+        "last_vol": 676.38
+      },
+      "30m": {
+        "close": 80.11,
+        "open": 79.17,
+        "high": 80.91,
+        "low": 78.85,
+        "change_pct": 1.19,
+        "atr": 0.28,
+        "avg_vol": 45592.75,
+        "last_vol": 16807.76
+      },
+      "1h": {
+        "close": 80.11,
+        "open": 78.87,
+        "high": 80.91,
+        "low": 76.7,
+        "change_pct": 1.57,
+        "atr": 0.5536,
+        "avg_vol": 116944.84,
+        "last_vol": 16807.76
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
