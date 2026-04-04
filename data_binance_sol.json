@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T22:34:06.396011+00:00",
+  "generated_at": "2026-04-04T22:35:22.128100+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -6220,7 +6220,7 @@
     "long_trades": 32,
     "short_trades": 51
   },
-  "run_count": 28,
+  "run_count": 29,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
