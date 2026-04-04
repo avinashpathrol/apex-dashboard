@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-04T10:51:08.873109+00:00",
+  "generated_at": "2026-04-04T10:52:57.382102+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.24,
+  "price": 80.27,
   "usdt_balance": 137.19148776,
   "sol_balance": 0.0006009,
   "cad_balance": 137.19148776,
@@ -5301,7 +5301,7 @@
     "long_trades": 31,
     "short_trades": 46
   },
-  "run_count": 569,
+  "run_count": 570,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5329,7 +5329,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently showing mixed signals across different timeframes, with a bullish MACD crossover and price above EMA-20, but also an EMA-20 below EMA-50 indicating a downtrend. The price has been fluctuating with a slight increase in the 1-hour timeframe, but overall momentum is lacking. The market is waiting for a clear direction to emerge.",
+    "5m": "The 5-minute chart shows a slight increase in price with a 0.09% change, indicating a neutral short-term trend.",
+    "15m": "The 15-minute chart shows a minor decrease in price with a -0.05% change, suggesting a lack of momentum in the medium-term.",
+    "30m": "The 30-minute chart shows a moderate increase in price with a 0.26% change, indicating some buying interest in the shorter-term.",
+    "1h": "The 1-hour chart shows a significant increase in price with a 2.5% change, indicating a bullish trend in the longer-term.",
+    "key_level_support": 79.17,
+    "key_level_resistance": 80.91,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 80.91 or a breakdown below the key support level of 79.17 to determine the next market direction.",
+    "risk_warning": "The lack of a clear trend and mixed signals across timeframes increases the risk of a false breakout or breakdown, so traders should exercise caution and set appropriate stop-loss levels.",
+    "generated_at": "2026-04-04T10:52:56.224752+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.27,
+        "open": 80.2,
+        "high": 80.54,
+        "low": 79.92,
+        "change_pct": 0.09,
+        "atr": 0.095,
+        "avg_vol": 2601.97,
+        "last_vol": 1413.09
+      },
+      "15m": {
+        "close": 80.27,
+        "open": 80.31,
+        "high": 80.73,
+        "low": 79.92,
+        "change_pct": -0.05,
+        "atr": 0.1357,
+        "avg_vol": 11659.31,
+        "last_vol": 5174.15
+      },
+      "30m": {
+        "close": 80.27,
+        "open": 80.06,
+        "high": 80.91,
+        "low": 79.17,
+        "change_pct": 0.26,
+        "atr": 0.1957,
+        "avg_vol": 34295.73,
+        "last_vol": 24015.47
+      },
+      "1h": {
+        "close": 80.27,
+        "open": 78.31,
+        "high": 80.91,
+        "low": 76.7,
+        "change_pct": 2.5,
+        "atr": 0.3214,
+        "avg_vol": 97438.39,
+        "last_vol": 44923.67
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
