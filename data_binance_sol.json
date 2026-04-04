@@ -1,26 +1,25 @@
 {
-  "generated_at": "2026-04-04T12:44:53.183254+00:00",
+  "generated_at": "2026-04-04T12:46:05.487129+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.05,
+  "price": 80.04,
   "usdt_balance": 137.19148776,
   "sol_balance": 0.0006009,
   "cad_balance": 137.19148776,
   "margin_level": 999.0,
   "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "action": "SHORT",
+  "confidence": 95,
   "risk": "MEDIUM",
   "status": "\u23f8\ufe0f PAUSED \u2014 new entries disabled via dashboard",
   "bot_paused": true,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
-  "bullish": [
-    "MACD above signal (bullish)"
-  ],
+  "bullish": [],
   "bearish": [
+    "MACD bearish crossover",
     "EMA-20 below EMA-50 (downtrend)",
     "Price below EMA-20"
   ],
@@ -5301,7 +5300,7 @@
     "long_trades": 31,
     "short_trades": 46
   },
-  "run_count": 659,
+  "run_count": 660,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
