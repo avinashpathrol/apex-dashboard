@@ -1,27 +1,28 @@
 {
-  "generated_at": "2026-04-04T18:29:24.707851+00:00",
+  "generated_at": "2026-04-04T18:30:38.876676+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.83,
+  "price": 80.82,
   "usdt_balance": -360.30771224,
   "sol_balance": 6.1394559,
   "cad_balance": -360.30771224,
-  "margin_level": 1.33959501,
+  "margin_level": 1.33951121,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "HOLDING LONG \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
+    "RSI falling from high (54.2)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -5315,7 +5316,7 @@
     "long_trades": 30,
     "short_trades": 48
   },
-  "run_count": 930,
+  "run_count": 931,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5347,62 +5348,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is showing a bullish trend across multiple timeframes, with the price above the EMA-20 and EMA-20 above EMA-50, indicating an uptrend. However, the MACD below the signal line is a bearish signal that needs to be monitored. The overall trend is bullish, but with caution due to the bearish MACD signal.",
-    "5m": "The 5m chart shows a slight increase in price with a 0.97% change, indicating a slow and steady uptrend.",
-    "15m": "The 15m chart shows a similar uptrend with a 0.72% change, confirming the bullish trend.",
-    "30m": "The 30m chart shows a stronger uptrend with a 0.89% change, further supporting the bullish verdict.",
-    "1h": "The 1h chart shows a significant 2.36% increase in price, indicating a strong bullish trend.",
-    "key_level_support": 79.57,
-    "key_level_resistance": 81.61,
-    "recommendation": "Traders should watch for a potential breakout above the key level resistance at 81.61, which could lead to further upside.",
-    "risk_warning": "A bearish MACD crossover could lead to a trend reversal, so traders should be cautious and set stop-loss orders accordingly.",
-    "generated_at": "2026-04-04T18:29:23.609146+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.83,
-        "open": 80.05,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.97,
-        "atr": 0.1086,
-        "avg_vol": 10726.66,
-        "last_vol": 1610.2
-      },
-      "15m": {
-        "close": 80.83,
-        "open": 80.25,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.72,
-        "atr": 0.3593,
-        "avg_vol": 16287.65,
-        "last_vol": 8675.19
-      },
-      "30m": {
-        "close": 80.84,
-        "open": 80.13,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.89,
-        "atr": 0.4086,
-        "avg_vol": 32235.69,
-        "last_vol": 39049.01
-      },
-      "1h": {
-        "close": 80.84,
-        "open": 78.98,
-        "high": 81.61,
-        "low": 78.63,
-        "change_pct": 2.36,
-        "atr": 0.4464,
-        "avg_vol": 78038.0,
-        "last_vol": 39049.01
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 80.96,
     "best_price": 81.12,
