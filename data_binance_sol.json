@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T21:29:40.626126+00:00",
+  "generated_at": "2026-04-04T21:30:57.557472+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -10,19 +10,19 @@
   "margin_level": 999.0,
   "position": null,
   "action": "HOLD",
-  "confidence": 88,
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 ATR 0.212 too small (min 0.22), market too choppy to cover fees",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
-    "High volume confirms move"
+    "Price above EMA-20"
   ],
   "bearish": [
+    "RSI falling from high (55.5)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -5293,7 +5293,7 @@
     "long_trades": 30,
     "short_trades": 45
   },
-  "run_count": 4,
+  "run_count": 5,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5321,7 +5321,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price holding above the EMA-20 but the RSI and MACD indicating potential bearishness. The short-term timeframes show a slight decline, while the 1-hour timeframe is still bullish. Overall, the market is indecisive and awaiting a breakout or reversal.",
+    "5m": "The 5-minute timeframe shows a minor decline of 0.36% with a narrow ATR, indicating low volatility and a lack of direction.",
+    "15m": "The 15-minute timeframe has a bullish close of 0.6% with a moderate ATR, suggesting some buying interest but not enough to overcome the bearish signals.",
+    "30m": "The 30-minute timeframe is also bullish with a 0.77% gain, but the ATR is increasing, which may indicate rising volatility and potential instability.",
+    "1h": "The 1-hour timeframe remains bullish with a 2.47% gain, but the RSI and MACD are bearish, warning of a potential reversal.",
+    "key_level_support": 79.57,
+    "key_level_resistance": 81.61,
+    "recommendation": "Traders should watch for a breakout above 81.61 or a breakdown below 79.57 to determine the next market direction.",
+    "risk_warning": "The conflicting signals and increasing ATR suggest a high-risk environment, and traders should be cautious with their positions.",
+    "generated_at": "2026-04-04T21:30:56.422558+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.94,
+        "open": 81.23,
+        "high": 81.32,
+        "low": 80.61,
+        "change_pct": -0.36,
+        "atr": 0.0886,
+        "avg_vol": 6718.96,
+        "last_vol": 389.44
+      },
+      "15m": {
+        "close": 80.94,
+        "open": 80.46,
+        "high": 81.61,
+        "low": 79.57,
+        "change_pct": 0.6,
+        "atr": 0.1864,
+        "avg_vol": 18506.43,
+        "last_vol": 389.44
+      },
+      "30m": {
+        "close": 80.94,
+        "open": 80.32,
+        "high": 81.61,
+        "low": 79.57,
+        "change_pct": 0.77,
+        "atr": 0.3836,
+        "avg_vol": 32280.04,
+        "last_vol": 389.44
+      },
+      "1h": {
+        "close": 80.94,
+        "open": 78.99,
+        "high": 81.61,
+        "low": 78.73,
+        "change_pct": 2.47,
+        "atr": 0.4593,
+        "avg_vol": 78280.97,
+        "last_vol": 112836.56
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
