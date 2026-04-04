@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T15:14:58.702755+00:00",
+  "generated_at": "2026-04-04T15:16:10.147993+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -9,23 +9,22 @@
   "cad_balance": 137.19148776,
   "margin_level": 999.0,
   "position": null,
-  "action": "LONG",
-  "confidence": 85,
-  "risk": "LOW",
-  "status": "\u23f8\ufe0f PAUSED \u2014 new entries disabled via dashboard",
+  "action": "HOLD",
+  "confidence": 82,
+  "risk": "MEDIUM",
+  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
   "bot_paused": true,
   "flip_pending": null,
-  "reason": "MACD bullish crossover | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
-    "MACD bullish crossover",
+    "MACD above signal (bullish)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
-    "High volume confirms move"
+    "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (74.1)",
-    "Price near BB upper band (145%)"
+    "RSI overbought (73.4)",
+    "Price near BB upper band (119%)"
   ],
   "trades": [
     {
@@ -5304,7 +5303,7 @@
     "long_trades": 31,
     "short_trades": 46
   },
-  "run_count": 777,
+  "run_count": 778,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
