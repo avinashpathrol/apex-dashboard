@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T11:38:21.528209+00:00",
+  "generated_at": "2026-04-04T11:39:34.118027+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -5301,7 +5301,7 @@
     "long_trades": 31,
     "short_trades": 46
   },
-  "run_count": 606,
+  "run_count": 607,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5329,62 +5329,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price holding above the EMA-20 but the EMA-20 below the EMA-50 indicating a downtrend. The short-term timeframes show a slight decline, while the 1-hour timeframe shows a significant increase. Overall, the market is indecisive and awaiting a breakout.",
-    "5m": "The 5-minute timeframe shows a slight decline of 0.15% with a high of 80.54 and a low of 79.92, indicating a narrow range.",
-    "15m": "The 15-minute timeframe is relatively flat with a 0.01% change, suggesting a lack of momentum in the short term.",
-    "30m": "The 30-minute timeframe shows a minor decline of 0.02% with a high of 80.91 and a low of 79.17, indicating some volatility.",
-    "1h": "The 1-hour timeframe shows a significant increase of 2.87% with a high of 80.91 and a low of 76.7, indicating a potential bullish trend.",
-    "key_level_support": 79.17,
-    "key_level_resistance": 80.91,
-    "recommendation": "Traders should watch for a breakout above 80.91 or a breakdown below 79.17 to determine the next direction.",
-    "risk_warning": "The market's indecisiveness and mixed signals increase the risk of a false breakout, so traders should exercise caution and set appropriate stop-loss levels.",
-    "generated_at": "2026-04-04T11:38:20.418066+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.21,
-        "open": 80.33,
-        "high": 80.54,
-        "low": 79.92,
-        "change_pct": -0.15,
-        "atr": 0.1021,
-        "avg_vol": 2754.08,
-        "last_vol": 589.45
-      },
-      "15m": {
-        "close": 80.21,
-        "open": 80.2,
-        "high": 80.73,
-        "low": 79.92,
-        "change_pct": 0.01,
-        "atr": 0.1386,
-        "avg_vol": 11591.87,
-        "last_vol": 3450.89
-      },
-      "30m": {
-        "close": 80.21,
-        "open": 80.23,
-        "high": 80.91,
-        "low": 79.17,
-        "change_pct": -0.02,
-        "atr": 0.1986,
-        "avg_vol": 33074.66,
-        "last_vol": 3451.5
-      },
-      "1h": {
-        "close": 80.21,
-        "open": 77.97,
-        "high": 80.91,
-        "low": 76.7,
-        "change_pct": 2.87,
-        "atr": 0.2964,
-        "avg_vol": 95035.91,
-        "last_vol": 29231.04
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
