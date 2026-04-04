@@ -2,6 +2,7 @@
   "trade_amount_usdt": 100,
   "trade_amount": 100,
   "leverage": 5,
-  "updated_at": "2026-04-03T21:59:22.034Z",
-  "close_requested": false
+  "updated_at": "2026-04-04T08:31:43.445Z",
+  "close_requested": false,
+  "bot_paused": true
 }
