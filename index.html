@@ -479,7 +479,7 @@ input:focus{border-color:#3f3f46;}
     </div>
     <div class="topbar-center">
       <div class="price-pill">
-        <span class="price-label">SOL/USDT</span>
+        <span class="price-label" id="top-price-label">SOL/USDT</span>
         <span class="price-val" id="t-price">—</span>
         <span class="action-pill hold" id="t-action">—</span>
       </div>
@@ -644,7 +644,7 @@ input:focus{border-color:#3f3f46;}
       </div>
 
       <div class="g5">
-        <div class="mcard"><div class="ml">SOL Price</div><div class="mv" id="m-price">—</div><div class="ms">USDT live</div></div>
+        <div class="mcard"><div class="ml" id="m-price-label">SOL Price</div><div class="mv" id="m-price">—</div><div class="ms">USDT live</div></div>
         <div class="mcard"><div class="ml">Last Signal</div><div class="mv" id="m-action">—</div><div class="ms" id="m-action-sub"></div></div>
         <div class="mcard"><div class="ml">USDT Balance</div><div class="mv" id="m-cad">—</div><div class="ms">margin wallet</div></div>
         <div class="mcard clickable-stat" onclick="openAllTrades()"><div class="ml">Total P&L ↗</div><div class="mv" id="m-pnl">—</div><div class="ms" id="m-pnl-sub"></div></div>
@@ -1009,8 +1009,8 @@ const SEEN_KEY='ax_seen2';
 const DASHBOARD_REPO='avinashpathrol/apex-dashboard';
 const BOT_CONFIG_FILE='bot_config.json';
 const SYMBOL_CONFIG={
-  SOL:  {file:'data_binance_sol.json',  binanceSymbol:'SOLUSDT',  label:'SOL/USDT',  icon:'◎'},
-  DOGE: {file:'data_binance_doge.json', binanceSymbol:'DOGEUSDT', label:'DOGE/USDT', icon:'Ð'},
+  SOL:  {file:'data_binance_sol.json',  binanceSymbol:'SOLUSDT',  label:'SOL/USDT',  icon:'◎', base:'SOL Price'},
+  DOGE: {file:'data_binance_doge.json', binanceSymbol:'DOGEUSDT', label:'DOGE/USDT', icon:'Ð',  base:'DOGE Price'},
 };
 let activeSymbol='SOL';
 let botConfig=null;
@@ -1301,7 +1301,7 @@ function updatePositionBanner(pos, price){
   banner.classList.add(isLong?'long-pos':'short-pos');
   qs('pb-ico').textContent=isLong?'🟢':'🔴';
   qs('pb-pulse').className='pb-pulse'+(isLong?'':' short');
-  qs('pb-label').textContent=pos+' — SOL/USDT';
+  qs('pb-label').textContent=pos+' — '+SYMBOL_CONFIG[activeSymbol].label;
   qs('pb-label').className='pb-label '+(isLong?'long':'short');
   qs('pb-sub').textContent='4x Margin · Entry '+(currentEntryPrice?fmtP(currentEntryPrice):'—');
   qs('pb-sub').className='pb-sub'+(isLong?'':' short');
@@ -1701,7 +1701,7 @@ function setChartMode(mode){
   if(mode==='normal'){
     if(btnN)btnN.style.cssText='background:#27272a;border:1px solid #3f3f46;border-radius:6px;padding:3px 10px;font-size:10px;color:#e8e8e8;cursor:pointer;font-weight:600;';
     if(btnT)btnT.style.cssText='background:#1c1c1f;border:1px solid #27272a;border-radius:6px;padding:3px 10px;font-size:10px;color:#52525b;cursor:pointer;';
-    setEl('chart-title','SOL/USDT Market View (24h)');
+    setEl('chart-title',`${SYMBOL_CONFIG[activeSymbol].label} Market View (24h)`);
     const tl=qs('trade-levels');if(tl)tl.style.display='none';
   } else {
     if(!currentPosition||!currentEntryPrice){showToast('warn','No open position','Position mode needs an active LONG or SHORT.'); chartMode='normal'; return;}
@@ -1790,7 +1790,10 @@ async function loadPrice(){
       fetch(`https://api.binance.com/api/v3/klines?symbol=${binSym}&interval=1h&limit=24`).then(r=>r.json()),
     ]);
     currentLivePriceUSDT=parseFloat(ticker.price);
-    const priceStr='$'+currentLivePriceUSDT.toFixed(2);
+    const decimals=activeSymbol==='DOGE'?5:2;
+    const priceStr='$'+currentLivePriceUSDT.toFixed(decimals);
+    setEl('top-price-label',SYMBOL_CONFIG[activeSymbol].label);
+    setEl('m-price-label',SYMBOL_CONFIG[activeSymbol].base);
     const pe=qs('m-price');
     if(pe){pe.textContent=priceStr;pe.classList.add('flash');setTimeout(()=>pe.classList.remove('flash'),500);}
     setEl('t-price',priceStr);
@@ -1971,6 +1974,11 @@ function switchSymbol(sym){
     dogeBtn.querySelector('span').style.background='#fbbf24';
     solBtn.classList.remove('active');
   }
+  // Update static labels
+  const cfg=SYMBOL_CONFIG[sym];
+  setEl('top-price-label', cfg.label);
+  setEl('m-price-label', cfg.base||sym+' Price');
+  setEl('chart-title', cfg.label+' Market View (24h)');
   // Clear cache and reload
   localStorage.removeItem('apex_data_cache');
   botData=null; currentPosition=null; currentEntryPrice=null;
