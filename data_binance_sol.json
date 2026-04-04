@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-04T21:46:10.091325+00:00",
+  "generated_at": "2026-04-04T21:47:25.727931+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.89,
+  "price": 80.91,
   "usdt_balance": 134.48969188,
   "sol_balance": 0.0001519,
   "cad_balance": 134.48969188,
@@ -12,17 +12,16 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (53.7)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -6220,7 +6219,7 @@
     "long_trades": 32,
     "short_trades": 51
   },
-  "run_count": 6,
+  "run_count": 7,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6248,62 +6247,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 5,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals, with the price holding above the EMA-20 but the RSI and MACD indicating potential bearish momentum. Across timeframes, the market has shown recent gains but with decreasing momentum. The overall trend is uncertain, requiring careful observation of key levels and indicators.",
-    "5m": "The 5-minute chart shows a slight decline in price, with a 0.15% decrease and a narrow ATR of 0.095, indicating low volatility.",
-    "15m": "The 15-minute chart displays a moderate increase in price, with a 0.7% gain and a rising ATR of 0.1879, suggesting growing volatility.",
-    "30m": "The 30-minute chart reveals a similar uptrend, with a 0.73% increase and an ATR of 0.3907, indicating sustained volatility.",
-    "1h": "The 1-hour chart shows a more significant price increase, with a 2.43% gain and an ATR of 0.4593, pointing to increased market activity.",
-    "key_level_support": 79.57,
-    "key_level_resistance": 81.61,
-    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 81.61 or a breakdown below the key support level of 79.57 to determine the next market direction.",
-    "risk_warning": "The mixed signals and uncertain trend pose a risk of whipsaws, and traders should exercise caution and consider adjusting their positions accordingly.",
-    "generated_at": "2026-04-04T21:46:09.017138+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.91,
-        "open": 81.03,
-        "high": 81.32,
-        "low": 80.61,
-        "change_pct": -0.15,
-        "atr": 0.095,
-        "avg_vol": 6762.79,
-        "last_vol": 4052.39
-      },
-      "15m": {
-        "close": 80.91,
-        "open": 80.35,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.7,
-        "atr": 0.1879,
-        "avg_vol": 18674.18,
-        "last_vol": 4052.39
-      },
-      "30m": {
-        "close": 80.91,
-        "open": 80.32,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.73,
-        "atr": 0.3907,
-        "avg_vol": 32615.04,
-        "last_vol": 16469.35
-      },
-      "1h": {
-        "close": 80.91,
-        "open": 78.99,
-        "high": 81.61,
-        "low": 78.73,
-        "change_pct": 2.43,
-        "atr": 0.4593,
-        "avg_vol": 78615.97,
-        "last_vol": 128916.46
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
