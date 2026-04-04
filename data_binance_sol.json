@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-04-04T07:08:51.730119+00:00",
+  "generated_at": "2026-04-04T07:10:04.518334+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.34,
+  "price": 80.35,
   "usdt_balance": 142.79429067,
   "sol_balance": 0.0003709,
   "cad_balance": 142.79429067,
   "margin_level": 999.0,
   "position": null,
   "action": "HOLD",
-  "confidence": 0,
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 \ud83d\uded1 Hard SL hit | entry=80.4800 sl=80.3521 price=80.3400 | ATR=0.1279",
+  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "\ud83d\uded1 Hard SL hit | entry=80.4800 sl=80.3521 price=80.3400 | ATR=0.1279",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
@@ -23,8 +23,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (55.3)",
-    "Price near BB upper band (81%)"
+    "RSI falling from high (56.0)",
+    "Price near BB upper band (84%)"
   ],
   "trades": [
     {
@@ -5091,14 +5091,14 @@
     "long_trades": 27,
     "short_trades": 47
   },
-  "run_count": 390,
+  "run_count": 391,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 100.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 100.0,
