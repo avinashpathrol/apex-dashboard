@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T22:45:24.995412+00:00",
+  "generated_at": "2026-04-04T22:46:50.924156+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -6221,7 +6221,7 @@
     "long_trades": 32,
     "short_trades": 51
   },
-  "run_count": 37,
+  "run_count": 38,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6249,7 +6249,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals, with the price holding above the EMA-20 but the RSI falling from high and MACD below the signal line, indicating a potential consolidation phase across multiple timeframes. The short-term timeframes show a slight upward movement, while the longer timeframes indicate a more significant increase. However, the overall trend is uncertain, and the market is waiting for a clear direction.",
+    "5m": "The 5-minute timeframe shows a minor increase of 0.05%, with the price fluctuating within a narrow range, indicating a lack of strong momentum.",
+    "15m": "The 15-minute timeframe displays a more significant increase of 0.87%, with the price attempting to break above the recent high, but the momentum is not strong enough to confirm a clear uptrend.",
+    "30m": "The 30-minute timeframe reveals a similar increase of 0.86%, with the price holding above the EMA-20, but the ATR is relatively high, suggesting potential volatility.",
+    "1h": "The 1-hour timeframe shows a more substantial increase of 2.61%, with the price breaking above the recent high, but the RSI and MACD indicate a potential pullback.",
+    "key_level_support": 79.57,
+    "key_level_resistance": 81.61,
+    "recommendation": "Traders should watch for a break above the key level resistance at 81.61 or a drop below the key level support at 79.57 to determine the next direction.",
+    "risk_warning": "The market is currently experiencing mixed signals, and traders should be cautious of potential whipsaws and adjust their positions accordingly.",
+    "generated_at": "2026-04-04T22:46:49.796724+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 81.0,
+        "open": 80.96,
+        "high": 81.32,
+        "low": 80.62,
+        "change_pct": 0.05,
+        "atr": 0.1021,
+        "avg_vol": 6987.3,
+        "last_vol": 405.58
+      },
+      "15m": {
+        "close": 81.0,
+        "open": 80.3,
+        "high": 81.61,
+        "low": 79.57,
+        "change_pct": 0.87,
+        "atr": 0.1486,
+        "avg_vol": 19945.94,
+        "last_vol": 405.58
+      },
+      "30m": {
+        "close": 81.0,
+        "open": 80.31,
+        "high": 81.61,
+        "low": 79.57,
+        "change_pct": 0.86,
+        "atr": 0.2971,
+        "avg_vol": 33308.33,
+        "last_vol": 8773.65
+      },
+      "1h": {
+        "close": 81.0,
+        "open": 78.94,
+        "high": 81.61,
+        "low": 78.8,
+        "change_pct": 2.61,
+        "atr": 0.4421,
+        "avg_vol": 79559.82,
+        "last_vol": 37325.92
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
