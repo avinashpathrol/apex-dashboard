@@ -519,10 +519,13 @@ input:focus{border-color:#3f3f46;}
     </div>
   </div>
 
-  <!-- Asset bar — SOL only -->
+  <!-- Asset bar — SOL / DOGE switcher -->
   <div class="asset-bar">
-    <button class="asset-btn sol active" id="ab-sol">
+    <button class="asset-btn sol active" id="ab-sol" onclick="switchSymbol('SOL')">
       <span class="asset-dot"></span> ◎ SOL
+    </button>
+    <button class="asset-btn" id="ab-doge" onclick="switchSymbol('DOGE')" style="background:#18181b;border:1px solid #27272a;border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600;color:#52525b;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .15s;">
+      <span style="width:7px;height:7px;border-radius:50%;background:#52525b;display:inline-block;"></span> Ð DOGE
     </button>
     <div style="margin-left:auto;display:flex;gap:6px;align-items:center;">
       <span id="ml-mini" style="display:none;background:#18181b;border:1px solid #27272a;border-radius:8px;padding:3px 10px;font-size:11px;color:#a1a1aa;display:flex;align-items:center;gap:5px;">
@@ -1005,6 +1008,11 @@ const NK='ax_notifs';
 const SEEN_KEY='ax_seen2';
 const DASHBOARD_REPO='avinashpathrol/apex-dashboard';
 const BOT_CONFIG_FILE='bot_config.json';
+const SYMBOL_CONFIG={
+  SOL:  {file:'data_binance_sol.json',  binanceSymbol:'SOLUSDT',  label:'SOL/USDT',  icon:'◎'},
+  DOGE: {file:'data_binance_doge.json', binanceSymbol:'DOGEUSDT', label:'DOGE/USDT', icon:'Ð'},
+};
+let activeSymbol='SOL';
 let botConfig=null;
 // allET = array of closed trade PAIRS (computed from raw BUY/SELL trades)
 let allET=[];
@@ -1721,9 +1729,10 @@ async function buildTechChart(){
   const interval=qs('tc-interval')?.value||'1h';
   const count=parseInt(qs('tc-candles')?.value||'100',10);
   const ivLabel={'15m':'15m','1h':'1H','4h':'4H','1d':'1D'}[interval]||interval;
-  setEl('tc-title','SOL/USDT · '+ivLabel);
+  const tcSym=SYMBOL_CONFIG[activeSymbol].binanceSymbol;
+  setEl('tc-title',`${SYMBOL_CONFIG[activeSymbol].label} · ${ivLabel}`);
   try{
-    const klines=await fetch(`https://api.binance.com/api/v3/klines?symbol=SOLUSDT&interval=${interval}&limit=${count}`).then(r=>r.json());
+    const klines=await fetch(`https://api.binance.com/api/v3/klines?symbol=${tcSym}&interval=${interval}&limit=${count}`).then(r=>r.json());
     const C=klines.map(k=>+k[4]),T=klines.map(k=>new Date(k[0]));
     const rsi=calcRSI(C,14),{macd,signal,hist}=calcMACD(C,12,26,9);
     const ema20=calcEMA(C,20),ema50=calcEMA(C,50);
@@ -1775,9 +1784,10 @@ async function buildTechChart(){
 // ── PRICE (Binance public API) ──
 async function loadPrice(){
   try{
+    const binSym=SYMBOL_CONFIG[activeSymbol].binanceSymbol;
     const [ticker,klines]=await Promise.all([
-      fetch('https://api.binance.com/api/v3/ticker/price?symbol=SOLUSDT').then(r=>r.json()),
-      fetch('https://api.binance.com/api/v3/klines?symbol=SOLUSDT&interval=1h&limit=24').then(r=>r.json()),
+      fetch(`https://api.binance.com/api/v3/ticker/price?symbol=${binSym}`).then(r=>r.json()),
+      fetch(`https://api.binance.com/api/v3/klines?symbol=${binSym}&interval=1h&limit=24`).then(r=>r.json()),
     ]);
     currentLivePriceUSDT=parseFloat(ticker.price);
     const priceStr='$'+currentLivePriceUSDT.toFixed(2);
@@ -1945,6 +1955,28 @@ function renderHistoryTable(closed){
 }
 
 // ── TAB SWITCHING ──
+function switchSymbol(sym){
+  if(sym===activeSymbol) return;
+  activeSymbol=sym;
+  // Update button styles
+  const solBtn=qs('ab-sol'), dogeBtn=qs('ab-doge');
+  if(sym==='SOL'){
+    solBtn.classList.add('active'); solBtn.style.cssText='';
+    dogeBtn.classList.remove('active');
+    dogeBtn.style.cssText='background:#18181b;border:1px solid #27272a;border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600;color:#52525b;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .15s;';
+    dogeBtn.querySelector('span').style.background='#52525b';
+  } else {
+    dogeBtn.classList.add('active');
+    dogeBtn.style.cssText='background:#1a1200;border:1px solid #a16207;border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600;color:#fbbf24;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .15s;';
+    dogeBtn.querySelector('span').style.background='#fbbf24';
+    solBtn.classList.remove('active');
+  }
+  // Clear cache and reload
+  localStorage.removeItem('apex_data_cache');
+  botData=null; currentPosition=null; currentEntryPrice=null;
+  load();
+}
+
 function switchTab(name,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
@@ -2285,7 +2317,8 @@ async function load(){
     if(cached){try{const c=JSON.parse(cached);if(Date.now()-c.ts<CACHE_TTL){botData=c.data;useCache=true;}}catch(e){}}
 
     if(!useCache){
-      const res=await fetch(`https://raw.githubusercontent.com/${DASHBOARD_REPO}/main/data_binance_sol.json?t=${Date.now()}`,{cache:'no-store'});
+      const symFile=SYMBOL_CONFIG[activeSymbol].file;
+      const res=await fetch(`https://raw.githubusercontent.com/${DASHBOARD_REPO}/main/${symFile}?t=${Date.now()}`,{cache:'no-store'});
       if(res.ok){botData=await res.json();try{localStorage.setItem(CACHE_KEY,JSON.stringify({ts:Date.now(),data:botData}));}catch(e){}}
       else{setEl('t-lastrun','Bot not started yet — check DigitalOcean server'); setEl('hist-loading','Bot is starting — check server logs.'); await loadPrice(); return;}
     }
