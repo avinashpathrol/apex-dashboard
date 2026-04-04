@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-04T20:15:24.497430+00:00",
+  "generated_at": "2026-04-04T20:16:36.180471+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.76,
+  "price": 80.78,
   "usdt_balance": 136.94465764,
   "sol_balance": 0.0004559,
   "cad_balance": 136.94465764,
@@ -12,16 +12,15 @@
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 1 bullish, 3 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 1 bullish, 3 bearish",
+  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
-    "RSI falling from high (50.5)",
     "MACD below signal (bearish)",
     "Price below EMA-20"
   ],
@@ -5303,7 +5302,7 @@
     "long_trades": 30,
     "short_trades": 47
   },
-  "run_count": 1014,
+  "run_count": 1015,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5331,62 +5330,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price fluctuating around the $80 level. The bullish EMA-20 above EMA-50 uptrend is countered by bearish RSI and MACD signals. Overall, the market is lacking a clear direction.",
-    "5m": "The 5-minute chart shows a slight decline in price, with a 0.42% decrease and a relatively low ATR of 0.1471.",
-    "15m": "The 15-minute chart indicates a moderate increase in price, with a 0.77% gain and a rising ATR of 0.25.",
-    "30m": "The 30-minute chart displays a similar uptrend, with a 0.71% increase and a higher ATR of 0.4464.",
-    "1h": "The 1-hour chart shows a more significant price increase, with a 2.28% gain and a moderate ATR of 0.4629.",
-    "key_level_support": 79.57,
-    "key_level_resistance": 81.61,
-    "recommendation": "Traders should watch for a breakout above the $81.61 resistance level or a breakdown below the $79.57 support level to determine the next market direction.",
-    "risk_warning": "The conflicting signals and lack of clear direction increase the risk of whipsaws, so traders should exercise caution and consider reducing position sizes.",
-    "generated_at": "2026-04-04T20:15:23.374471+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.77,
-        "open": 81.11,
-        "high": 81.35,
-        "low": 80.61,
-        "change_pct": -0.42,
-        "atr": 0.1471,
-        "avg_vol": 7164.44,
-        "last_vol": 3360.04
-      },
-      "15m": {
-        "close": 80.77,
-        "open": 80.15,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.77,
-        "atr": 0.25,
-        "avg_vol": 17147.81,
-        "last_vol": 18448.92
-      },
-      "30m": {
-        "close": 80.77,
-        "open": 80.2,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.71,
-        "atr": 0.4464,
-        "avg_vol": 31593.9,
-        "last_vol": 18450.58
-      },
-      "1h": {
-        "close": 80.77,
-        "open": 78.97,
-        "high": 81.61,
-        "low": 78.63,
-        "change_pct": 2.28,
-        "atr": 0.4629,
-        "avg_vol": 76697.8,
-        "last_vol": 18450.58
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
