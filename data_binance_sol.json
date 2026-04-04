@@ -1,70 +1,31 @@
 {
-  "generated_at": "2026-04-04T08:34:06.964654+00:00",
+  "generated_at": "2026-04-04T08:34:28.962583+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.17,
-  "usdt_balance": -358.422642,
-  "sol_balance": 6.1896009,
-  "cad_balance": -358.422642,
-  "margin_level": 1.34499734,
-  "position": "LONG",
+  "price": 80.16,
+  "usdt_balance": 137.19148776,
+  "sol_balance": 0.0006009,
+  "cad_balance": 137.19148776,
+  "margin_level": 999.0,
+  "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
+  "status": "HOLDING LONG \u2014 \ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307",
   "bot_paused": true,
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307",
   "trend": "SIDEWAYS",
   "bullish": [
-    "EMA-20 above EMA-50 (uptrend)"
+    "EMA-20 above EMA-50 (uptrend)",
+    "Price near BB lower band (17%)"
   ],
   "bearish": [
     "MACD bearish crossover",
     "Price below EMA-20"
   ],
   "trades": [
-    {
-      "time": "2026-03-28T18:52:43.797000-07:00",
-      "action": "BUY",
-      "price": 82.52,
-      "qty": 3.858,
-      "cost": 318.36216,
-      "fee": 0.003858
-    },
-    {
-      "time": "2026-03-28T20:06:35.351000-07:00",
-      "action": "SELL",
-      "price": 82.77,
-      "qty": 0.028,
-      "cost": 2.31756,
-      "fee": 0.00231756
-    },
-    {
-      "time": "2026-03-28T20:06:35.351000-07:00",
-      "action": "SELL",
-      "price": 82.77,
-      "qty": 0.073,
-      "cost": 6.04221,
-      "fee": 0.00604221
-    },
-    {
-      "time": "2026-03-28T20:06:35.351000-07:00",
-      "action": "SELL",
-      "price": 82.77,
-      "qty": 0.067,
-      "cost": 5.54559,
-      "fee": 0.00554559
-    },
-    {
-      "time": "2026-03-28T20:06:35.351000-07:00",
-      "action": "SELL",
-      "price": 82.77,
-      "qty": 3.686,
-      "cost": 305.09022,
-      "fee": 0.30509022
-    },
     {
       "time": "2026-03-28T22:53:31.447000-07:00",
       "action": "BUY",
@@ -4114,49 +4075,156 @@
       "qty": 6.195,
       "cost": 497.4585,
       "fee": 0.006195
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.066,
+      "cost": 5.29056,
+      "fee": 0.00529056,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.066,
+      "cost": 5.29056,
+      "fee": 0.00529056,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.067,
+      "cost": 5.37072,
+      "fee": 0.00537072,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.063,
+      "cost": 5.05008,
+      "fee": 0.00505008,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 1.248,
+      "cost": 100.03968,
+      "fee": 0.10003968,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 0.5,
+      "cost": 40.08,
+      "fee": 0.04008,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 2.357,
+      "cost": 188.93712,
+      "fee": 0.18893712,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
+    },
+    {
+      "time": "2026-04-04T01:34:24.800000-07:00",
+      "action": "SELL",
+      "price": 80.16,
+      "qty": 1.353,
+      "cost": 108.45648,
+      "fee": 0.10845648,
+      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3000 sl=80.1693 price=80.1600 | ATR=0.1307"
     }
   ],
   "closed_trades": [
     {
       "source": "binance",
       "side": "LONG",
-      "entry_price": 82.52,
-      "exit_price": 82.77,
-      "qty": 0.028,
-      "fee": 0.00617556,
-      "pnl": 0.0008,
-      "pnl_pct": 1.51,
-      "win": true,
-      "opened_at": "2026-03-28T18:52:43.797000-07:00",
-      "closed_at": "2026-03-28T20:06:35.351000-07:00",
-      "note": "Derived from margin trade history"
-    },
-    {
-      "source": "binance",
-      "side": "SHORT",
-      "entry_price": 82.77,
-      "exit_price": 82.78,
-      "qty": 0.073,
-      "fee": 0.00988821,
-      "pnl": -0.0106,
-      "pnl_pct": -0.06,
+      "entry_price": 82.78,
+      "exit_price": 82.75,
+      "qty": 3.842,
+      "fee": 0.3217715,
+      "pnl": -0.437,
+      "pnl_pct": -0.18,
       "win": false,
-      "opened_at": "2026-03-28T20:06:35.351000-07:00",
-      "closed_at": "2026-03-28T22:53:31.447000-07:00",
-      "note": "Derived from margin trade history"
-    },
-    {
-      "source": "binance",
-      "side": "SHORT",
-      "entry_price": 82.75,
-      "exit_price": 82.79,
-      "qty": 2.983,
-      "fee": 0.3209085,
-      "pnl": -0.4402,
-      "pnl_pct": -0.24,
-      "win": false,
-      "opened_at": "2026-03-28T22:59:55.460000-07:00",
-      "closed_at": "2026-03-28T23:05:22.339000-07:00",
+      "opened_at": "2026-03-28T22:53:31.447000-07:00",
+      "closed_at": "2026-03-28T22:59:55.460000-07:00",
       "note": "Derived from margin trade history"
     },
     {
@@ -4164,9 +4232,9 @@
       "side": "LONG",
       "entry_price": 82.79,
       "exit_price": 82.71,
-      "qty": 0.091,
-      "fee": 0.31786282,
-      "pnl": -0.3251,
+      "qty": 2.983,
+      "fee": 0.32075482,
+      "pnl": -0.5594,
       "pnl_pct": -0.48,
       "win": false,
       "opened_at": "2026-03-28T23:05:22.339000-07:00",
@@ -5208,19 +5276,33 @@
       "opened_at": "2026-04-04T01:07:11.468000-07:00",
       "closed_at": "2026-04-04T01:26:37.822000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 80.3,
+      "exit_price": 80.16,
+      "qty": 0.067,
+      "fee": 0.01156572,
+      "pnl": -0.0209,
+      "pnl_pct": -0.87,
+      "win": false,
+      "opened_at": "2026-04-04T01:27:53.271000-07:00",
+      "closed_at": "2026-04-04T01:34:24.800000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 78,
-    "wins": 20,
+    "closed_trades": 77,
+    "wins": 19,
     "losses": 58,
-    "win_rate": 25.64,
-    "net_profit": -24.0582,
-    "avg_profit_per_trade": -0.3084,
-    "long_trades": 30,
-    "short_trades": 48
+    "win_rate": 24.68,
+    "net_profit": -24.3004,
+    "avg_profit_per_trade": -0.3156,
+    "long_trades": 31,
+    "short_trades": 46
   },
-  "run_count": 460,
+  "run_count": 461,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5240,11 +5322,7 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": {
-      "trade_amount_usdt": 100.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -5254,11 +5332,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 80.3,
-    "best_price": 80.31,
-    "atr": 0.1307142857142846,
-    "sl": 80.10392857142857,
-    "trail_stop": 80.11392857142857,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
     "active": false
   }
 }
