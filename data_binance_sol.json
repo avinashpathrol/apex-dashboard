@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T20:28:33.928558+00:00",
+  "generated_at": "2026-04-04T20:30:29.636381+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -5302,7 +5302,7 @@
     "long_trades": 30,
     "short_trades": 47
   },
-  "run_count": 1025,
+  "run_count": 1026,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5330,7 +5330,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price holding above the EMA-20 but the MACD indicating a bearish trend. The short-term timeframes show a slight increase in price, while the longer timeframes indicate a more significant upward movement. However, the overall trend is uncertain due to conflicting signals.",
+    "5m": "The 5-minute timeframe shows a slight decline in price with a small range, indicating a lack of strong momentum in either direction.",
+    "15m": "The 15-minute timeframe displays a moderate increase in price with a relatively higher range, suggesting some buying interest but not enough to overcome the bearish MACD signal.",
+    "30m": "The 30-minute timeframe reveals a similar price action to the 15-minute timeframe, with the price moving upward but facing potential resistance from the bearish MACD indicator.",
+    "1h": "The 1-hour timeframe shows a more significant price increase, with the price breaking above the recent low and indicating a potential uptrend, but the MACD remains bearish, cautioning against a strong bullish bias.",
+    "key_level_support": 79.57,
+    "key_level_resistance": 81.61,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 81.61 or a breakdown below the key support level of 79.57 to determine the next direction of the market.",
+    "risk_warning": "The conflicting signals across timeframes increase the risk of a false breakout, so traders should exercise caution and consider reducing their position size.",
+    "generated_at": "2026-04-04T20:30:28.501825+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.8,
+        "open": 80.87,
+        "high": 81.35,
+        "low": 80.61,
+        "change_pct": -0.09,
+        "atr": 0.0979,
+        "avg_vol": 6643.85,
+        "last_vol": 1350.55
+      },
+      "15m": {
+        "close": 80.8,
+        "open": 80.17,
+        "high": 81.61,
+        "low": 79.57,
+        "change_pct": 0.79,
+        "atr": 0.2193,
+        "avg_vol": 16926.61,
+        "last_vol": 6390.56
+      },
+      "30m": {
+        "close": 80.8,
+        "open": 80.2,
+        "high": 81.61,
+        "low": 79.57,
+        "change_pct": 0.75,
+        "atr": 0.4464,
+        "avg_vol": 31728.68,
+        "last_vol": 24919.87
+      },
+      "1h": {
+        "close": 80.8,
+        "open": 78.97,
+        "high": 81.61,
+        "low": 78.63,
+        "change_pct": 2.32,
+        "atr": 0.4629,
+        "avg_vol": 76832.58,
+        "last_vol": 24919.87
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
