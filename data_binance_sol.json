@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-04-04T07:40:32.957251+00:00",
+  "generated_at": "2026-04-04T07:41:51.214252+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.28,
-  "usdt_balance": 141.44433831,
-  "sol_balance": 0.0001779,
-  "cad_balance": 141.44433831,
-  "margin_level": 999.0,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 80.3,
+  "usdt_balance": -356.07611169,
+  "sol_balance": 6.1889829,
+  "cad_balance": -356.07611169,
+  "margin_level": 1.35182939,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 95,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Dashboard close request executed",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "flip_pending": null,
-  "reason": "Dashboard close request executed",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
@@ -4071,6 +4071,14 @@
       "cost": 496.69236,
       "fee": 0.49669236,
       "reason": "Dashboard close request"
+    },
+    {
+      "time": "2026-04-04T00:41:47.354000-07:00",
+      "action": "BUY",
+      "price": 80.31,
+      "qty": 6.195,
+      "cost": 497.52045,
+      "fee": 0.006195
     }
   ],
   "closed_trades": [
@@ -5149,14 +5157,14 @@
     "long_trades": 28,
     "short_trades": 48
   },
-  "run_count": 415,
+  "run_count": 416,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 100.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 100.0,
@@ -5169,7 +5177,11 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 100.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -5179,11 +5191,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 80.33,
-    "best_price": 80.36,
-    "atr": 0.1328571428571418,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 80.3,
+    "best_price": 80.3,
+    "atr": 0.13357142857142787,
+    "sl": 80.09964285714285,
+    "trail_stop": 80.09964285714285,
     "active": false
   }
 }
