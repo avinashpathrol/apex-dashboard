@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-04T10:05:32.270447+00:00",
+  "generated_at": "2026-04-04T10:07:32.743675+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.09,
+  "price": 80.08,
   "usdt_balance": 137.19148776,
   "sol_balance": 0.0006009,
   "cad_balance": 137.19148776,
@@ -18,7 +18,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (44.8)"
+    "RSI rising from low (44.2)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -5302,7 +5302,7 @@
     "long_trades": 31,
     "short_trades": 46
   },
-  "run_count": 533,
+  "run_count": 534,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -5330,7 +5330,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing bearish signs across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a potential downtrend. However, the RSI is rising from a low level, which could suggest a potential bounce. The market is currently range-bound, with the price fluctuating between $79 and $81.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a small range and low volatility, indicating a lack of momentum.",
+    "15m": "The 15-minute chart shows a similar decline, with the price struggling to break above the $80.50 level, indicating a short-term resistance.",
+    "30m": "The 30-minute chart shows a more significant decline, with the price breaking below the $80 level, indicating a potential medium-term downtrend.",
+    "1h": "The 1-hour chart shows a bullish candle, but the price is still below the EMA-20, indicating that the uptrend may be losing momentum.",
+    "key_level_support": 79.17,
+    "key_level_resistance": 80.91,
+    "recommendation": "Traders should watch for a potential short entry if the price breaks below the $79.17 support level, with a target of $78.50.",
+    "risk_warning": "A false breakout below the support level could lead to a sharp reversal, so traders should set a stop-loss above the $80.50 level.",
+    "generated_at": "2026-04-04T10:07:31.569908+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.08,
+        "open": 80.2,
+        "high": 80.54,
+        "low": 79.92,
+        "change_pct": -0.15,
+        "atr": 0.0671,
+        "avg_vol": 2715.4,
+        "last_vol": 268.43
+      },
+      "15m": {
+        "close": 80.08,
+        "open": 80.11,
+        "high": 80.73,
+        "low": 79.92,
+        "change_pct": -0.04,
+        "atr": 0.135,
+        "avg_vol": 11699.57,
+        "last_vol": 3580.27
+      },
+      "30m": {
+        "close": 80.08,
+        "open": 80.15,
+        "high": 80.91,
+        "low": 79.17,
+        "change_pct": -0.09,
+        "atr": 0.1814,
+        "avg_vol": 34179.01,
+        "last_vol": 3580.27
+      },
+      "1h": {
+        "close": 80.08,
+        "open": 78.31,
+        "high": 80.91,
+        "low": 76.7,
+        "change_pct": 2.26,
+        "atr": 0.31,
+        "avg_vol": 96577.07,
+        "last_vol": 3580.27
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
