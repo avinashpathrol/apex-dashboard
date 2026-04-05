@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-05T09:13:36.038029+00:00",
+  "generated_at": "2026-04-05T09:14:54.835418+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.7,
+  "price": 79.68,
   "usdt_balance": 629.61405268,
   "sol_balance": -6.2231111,
   "cad_balance": 629.61405268,
-  "margin_level": 1.26909205,
+  "margin_level": 1.269272,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
@@ -19,7 +19,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (37.3)",
+    "RSI rising from low (36.3)",
     "MACD bullish crossover"
   ],
   "bearish": [
@@ -6497,7 +6497,7 @@
     "long_trades": 33,
     "short_trades": 52
   },
-  "run_count": 529,
+  "run_count": 530,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6529,7 +6529,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the RSI and MACD indicating potential for a reversal, while the EMA-20 and EMA-50 suggest a continued downtrend. The price is trading below the EMA-20, but the RSI is rising from a low level. The market is likely to remain choppy in the short term.",
+    "5m": "The 5-minute chart shows a slight decline in price with a moderate ATR, indicating a potential for further volatility.",
+    "15m": "The 15-minute chart displays a more significant price drop, with the ATR increasing, suggesting a possible escalation of selling pressure.",
+    "30m": "The 30-minute chart reveals a relatively stable price action, with the ATR remaining steady, indicating a potential pause in the downtrend.",
+    "1h": "The 1-hour chart shows a gradual decline in price, with the ATR increasing, indicating a potential for further downside movement.",
+    "key_level_support": 79.17,
+    "key_level_resistance": 81.61,
+    "recommendation": "Traders should watch for a potential bullish reversal if the price breaks above the EMA-20 and the RSI continues to rise.",
+    "risk_warning": "A failure to break above the key level resistance could lead to a further decline in price.",
+    "generated_at": "2026-04-05T09:14:53.699644+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.69,
+        "open": 80.47,
+        "high": 80.58,
+        "low": 79.41,
+        "change_pct": -0.97,
+        "atr": 0.0814,
+        "avg_vol": 6239.34,
+        "last_vol": 1706.85
+      },
+      "15m": {
+        "close": 79.69,
+        "open": 80.83,
+        "high": 81.32,
+        "low": 79.41,
+        "change_pct": -1.41,
+        "atr": 0.2371,
+        "avg_vol": 15179.94,
+        "last_vol": 8353.89
+      },
+      "30m": {
+        "close": 79.69,
+        "open": 80.04,
+        "high": 81.61,
+        "low": 79.41,
+        "change_pct": -0.44,
+        "atr": 0.2693,
+        "avg_vol": 35028.93,
+        "last_vol": 8353.89
+      },
+      "1h": {
+        "close": 79.69,
+        "open": 80.15,
+        "high": 81.61,
+        "low": 79.17,
+        "change_pct": -0.57,
+        "atr": 0.3136,
+        "avg_vol": 70091.25,
+        "last_vol": 8353.89
+      }
+    }
+  },
   "trail": {
     "entry_price": 79.62,
     "best_price": 79.56,
