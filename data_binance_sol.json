@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T02:44:48.523473+00:00",
+  "generated_at": "2026-04-05T02:46:04.373758+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -10,22 +10,19 @@
   "margin_level": 999.0,
   "position": null,
   "action": "HOLD",
-  "confidence": 91,
-  "risk": "LOW",
-  "status": "SKIPPED \u2014 ATR 0.1529 too small (min 0.22), market too choppy to cover fees",
+  "confidence": 95,
+  "risk": "MEDIUM",
+  "status": "SKIPPED \u2014 ATR 0.1450 too small (min 0.22), market too choppy to cover fees",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20 | High volume confirms move",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
-  "bullish": [
-    "RSI rising from low (41.7)"
-  ],
+  "bullish": [],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price below EMA-20",
-    "High volume confirms move"
+    "Price below EMA-20"
   ],
   "trades": [
     {
@@ -6222,7 +6219,7 @@
     "long_trades": 32,
     "short_trades": 51
   },
-  "run_count": 225,
+  "run_count": 226,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
