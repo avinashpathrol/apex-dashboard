@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T23:35:35.251543+00:00",
+  "generated_at": "2026-04-05T23:36:53.372797+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.91,
+  "price": 81.99,
   "position": null,
   "action": "LONG",
   "confidence": 85,
@@ -16,8 +16,8 @@
     "High volume confirms move"
   ],
   "bearish": [
-    "RSI overbought (77.5)",
-    "Price near BB upper band (118%)"
+    "RSI overbought (78.1)",
+    "Price near BB upper band (119%)"
   ],
   "trades": [
     {
@@ -7065,7 +7065,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 107,
+  "run_count": 108,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
