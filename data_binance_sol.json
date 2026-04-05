@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T04:52:51.147999+00:00",
+  "generated_at": "2026-04-05T04:54:07.435600+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -12,7 +12,7 @@
   "action": "HOLD",
   "confidence": 95,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 ATR 0.1186 too small (min 0.22), market too choppy to cover fees",
+  "status": "SKIPPED \u2014 ATR 0.1193 too small (min 0.22), market too choppy to cover fees",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
@@ -6219,7 +6219,7 @@
     "long_trades": 32,
     "short_trades": 51
   },
-  "run_count": 326,
+  "run_count": 327,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6247,62 +6247,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with bearish signals from the MACD and EMA indicators, and the price is currently below the EMA-20, indicating a strong bearish bias. The market is experiencing a slow decline, with the 1-hour timeframe showing a slight increase but the overall trend remains bearish. The short-term timeframes are also showing a decline in price, confirming the bearish trend.",
-    "5m": "The 5-minute timeframe is showing a decline in price, with a 0.42% decrease and a low of 80.37, indicating a strong bearish momentum.",
-    "15m": "The 15-minute timeframe is showing a slight increase in price, but the overall trend remains bearish, with the price still below the EMA-20 and the MACD below the signal line.",
-    "30m": "The 30-minute timeframe is showing a similar trend to the 15-minute timeframe, with the price below the EMA-20 and the MACD below the signal line, indicating a bearish bias.",
-    "1h": "The 1-hour timeframe is showing a slight increase in price, but the overall trend remains bearish, with the price still below the EMA-20 and the MACD below the signal line, indicating a potential reversal.",
-    "key_level_support": 79.06,
-    "key_level_resistance": 81.61,
-    "recommendation": "Traders should watch for a potential short entry opportunity, with a target price below the key level support of 79.06, and a stop-loss above the key level resistance of 81.61.",
-    "risk_warning": "Trading with high leverage can result in significant losses, and traders should exercise caution and set appropriate stop-loss levels to manage risk.",
-    "generated_at": "2026-04-05T04:52:49.969315+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 80.49,
-        "open": 80.83,
-        "high": 80.85,
-        "low": 80.37,
-        "change_pct": -0.42,
-        "atr": 0.0571,
-        "avg_vol": 2420.75,
-        "last_vol": 924.41
-      },
-      "15m": {
-        "close": 80.49,
-        "open": 80.05,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.55,
-        "atr": 0.1186,
-        "avg_vol": 19300.95,
-        "last_vol": 2499.7
-      },
-      "30m": {
-        "close": 80.49,
-        "open": 80.15,
-        "high": 81.61,
-        "low": 79.57,
-        "change_pct": 0.42,
-        "atr": 0.1879,
-        "avg_vol": 30840.01,
-        "last_vol": 12540.24
-      },
-      "1h": {
-        "close": 80.48,
-        "open": 79.33,
-        "high": 81.61,
-        "low": 79.06,
-        "change_pct": 1.45,
-        "atr": 0.4064,
-        "avg_vol": 72061.71,
-        "last_vol": 21364.69
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
