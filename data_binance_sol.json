@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T01:54:33.431359+00:00",
+  "generated_at": "2026-04-05T01:55:48.503600+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -20,7 +20,7 @@
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (6%)"
+    "Price near BB lower band (7%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -6221,7 +6221,7 @@
     "long_trades": 32,
     "short_trades": 51
   },
-  "run_count": 186,
+  "run_count": 187,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
