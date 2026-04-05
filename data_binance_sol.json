@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T13:03:04.247683+00:00",
+  "generated_at": "2026-04-05T13:04:19.881164+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.1,
+  "price": 79.11,
   "usdt_balance": 130.10707268,
   "sol_balance": 0.0246349,
   "cad_balance": 130.10707268,
@@ -19,7 +19,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (28.7)",
+    "RSI oversold (29.1)",
     "Price near BB lower band (1%)"
   ],
   "bearish": [
@@ -6506,7 +6506,7 @@
     "long_trades": 33,
     "short_trades": 52
   },
-  "run_count": 710,
+  "run_count": 711,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6534,62 +6534,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a strong bearish bias. The RSI is oversold, but the overall trend remains bearish. The price is near the lower Bollinger Band, which may provide some support.",
-    "5m": "The 5-minute chart shows a small decline in price, with a change of -0.63% and a high of 80.24, indicating some selling pressure.",
-    "15m": "The 15-minute chart reveals a more significant drop in price, with a change of -2.27% and a low of 78.8, suggesting increased bearish momentum.",
-    "30m": "The 30-minute chart displays a moderate decline in price, with a change of -1.15% and a high of 81.61, indicating some resistance at higher levels.",
-    "1h": "The 1-hour chart shows a steady decline in price, with a change of -1.42% and a low of 78.8, confirming the overall bearish trend.",
-    "key_level_support": 78.8,
-    "key_level_resistance": 81.61,
-    "recommendation": "Traders should watch for a potential short entry on a bounce towards the key resistance level of 81.61, with a stop-loss above the recent high.",
-    "risk_warning": "A false breakout above the resistance level could lead to a significant price reversal, so traders should be cautious and adjust their positions accordingly.",
-    "generated_at": "2026-04-05T13:03:03.074448+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 79.11,
-        "open": 79.61,
-        "high": 80.24,
-        "low": 78.8,
-        "change_pct": -0.63,
-        "atr": 0.1593,
-        "avg_vol": 4250.32,
-        "last_vol": 3647.89
-      },
-      "15m": {
-        "close": 79.11,
-        "open": 80.95,
-        "high": 81.06,
-        "low": 78.8,
-        "change_pct": -2.27,
-        "atr": 0.2,
-        "avg_vol": 12506.49,
-        "last_vol": 3647.89
-      },
-      "30m": {
-        "close": 79.11,
-        "open": 80.03,
-        "high": 81.61,
-        "low": 78.8,
-        "change_pct": -1.15,
-        "atr": 0.265,
-        "avg_vol": 36427.03,
-        "last_vol": 3647.89
-      },
-      "1h": {
-        "close": 79.11,
-        "open": 80.25,
-        "high": 81.61,
-        "low": 78.8,
-        "change_pct": -1.42,
-        "atr": 0.3821,
-        "avg_vol": 64917.25,
-        "last_vol": 3647.89
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
