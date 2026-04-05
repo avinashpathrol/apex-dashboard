@@ -1,37 +1,142 @@
 {
-  "generated_at": "2026-04-05T01:02:12.333235+00:00",
+  "generated_at": "2026-04-05T01:03:47.675867+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09178,
+  "price": 0.09177,
+  "usdt_balance": 134.48969188,
+  "sol_balance": 0.0,
+  "cad_balance": 134.48969188,
+  "margin_level": 999.0,
   "position": null,
-  "action": "LONG",
-  "confidence": 82,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "Idle \u2014 SOLUSDT active",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "bot_paused": false,
+  "paused_symbols": [],
+  "flip_pending": null,
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (42.3)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (5%)"
+    "Price near BB lower band (3%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
     "Price below EMA-20"
   ],
   "trades": [],
-  "closed_trades": [],
+  "closed_trades": [
+    {
+      "source": "manual",
+      "side": "SHORT",
+      "entry_price": 82.41,
+      "exit_price": 81.73,
+      "qty": 3.8,
+      "fee": 0.05,
+      "pnl": 2.534,
+      "pnl_pct": 4.13,
+      "win": true,
+      "opened_at": "2026-03-29T02:00:00-07:00",
+      "closed_at": "2026-03-29T10:41:00-07:00",
+      "note": "Manual short winning trade (~$2.6 profit)"
+    }
+  ],
   "performance": {
-    "closed_trades": 0,
-    "wins": 0,
+    "closed_trades": 1,
+    "wins": 1,
     "losses": 0,
-    "win_rate": 0.0,
-    "net_profit": 0,
-    "avg_profit_per_trade": 0.0,
+    "win_rate": 100.0,
+    "net_profit": 2.534,
+    "avg_profit_per_trade": 2.534,
     "long_trades": 0,
-    "short_trades": 0
+    "short_trades": 1
   },
-  "run_count": 145,
+  "run_count": 146,
   "trade_amount": 100.0,
+  "min_signals": 3,
+  "bot_config": {
+    "current": {
+      "trade_amount_usdt": 100.0,
+      "leverage": 5.0,
+      "source": "dashboard-config"
+    },
+    "dashboard_requested": {
+      "trade_amount_usdt": 100.0,
+      "leverage": 5.0,
+      "manual_reentry_cooldown_minutes": 10,
+      "updated_at": "2026-04-04T17:53:11.594Z",
+      "close_requested": false,
+      "close_requested_at": null,
+      "bot_paused": false,
+      "force_trail": false,
+      "force_trail_at": null
+    },
+    "queued": null
+  },
+  "cooldown": {
+    "side": null,
+    "until": 0,
+    "remaining_seconds": 0,
+    "minutes": 10
+  },
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price hovering near the lower Bollinger Band and the EMA-20 above EMA-50 indicating a potential uptrend, but the MACD below the signal line suggests bearish momentum. The short-term timeframes show a slight increase in price, while the longer timeframes indicate a more significant upward movement. However, the overall trend remains uncertain due to conflicting signals.",
+    "5m": "The 5-minute timeframe shows a minor decline in price with a small ATR, indicating low volatility and a lack of clear direction.",
+    "15m": "The 15-minute timeframe displays a moderate increase in price with a slightly higher ATR, suggesting some buying interest but still limited momentum.",
+    "30m": "The 30-minute timeframe exhibits a small increase in price with a moderate ATR, indicating a gradual upward movement but with limited conviction.",
+    "1h": "The 1-hour timeframe shows a more significant increase in price with a higher ATR, suggesting stronger buying interest and potential for further upside.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.0931,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 0.0931 or a breakdown below the key support level of 0.0899 to determine the next direction.",
+    "risk_warning": "The conflicting signals and low confidence in the bot signal indicate a high level of uncertainty, and traders should exercise caution when entering positions.",
+    "generated_at": "2026-04-05T01:03:46.551573+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0918,
+        "open": 0.0922,
+        "high": 0.0924,
+        "low": 0.0917,
+        "change_pct": -0.44,
+        "atr": 0.0001,
+        "avg_vol": 817771.18,
+        "last_vol": 179981.0
+      },
+      "15m": {
+        "close": 0.0918,
+        "open": 0.0908,
+        "high": 0.0931,
+        "low": 0.0907,
+        "change_pct": 1.02,
+        "atr": 0.0002,
+        "avg_vol": 3806450.02,
+        "last_vol": 179981.0
+      },
+      "30m": {
+        "close": 0.0918,
+        "open": 0.0912,
+        "high": 0.0931,
+        "low": 0.0907,
+        "change_pct": 0.6,
+        "atr": 0.0003,
+        "avg_vol": 6122199.29,
+        "last_vol": 179981.0
+      },
+      "1h": {
+        "close": 0.0918,
+        "open": 0.0904,
+        "high": 0.0931,
+        "low": 0.0899,
+        "change_pct": 1.54,
+        "atr": 0.0005,
+        "avg_vol": 14005861.5,
+        "last_vol": 179981.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
