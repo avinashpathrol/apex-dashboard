@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T04:49:00.241519+00:00",
+  "generated_at": "2026-04-05T04:50:16.001698+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -12,7 +12,7 @@
   "action": "HOLD",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 ATR 0.1171 too small (min 0.22), market too choppy to cover fees",
+  "status": "SKIPPED \u2014 ATR 0.1186 too small (min 0.22), market too choppy to cover fees",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
@@ -6221,7 +6221,7 @@
     "long_trades": 32,
     "short_trades": 51
   },
-  "run_count": 323,
+  "run_count": 324,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
