@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-05T23:14:13.527397+00:00",
+  "generated_at": "2026-04-05T23:15:46.059231+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09171,
+  "price": 0.09222,
   "usdt_balance": -377.50354917,
   "sol_balance": 5419.575,
   "cad_balance": -377.50354917,
-  "margin_level": 1.32007672,
+  "margin_level": 1.32597115,
   "position": "LONG",
   "action": "LONG",
   "confidence": 85,
@@ -25,8 +25,8 @@
     "High volume confirms move"
   ],
   "bearish": [
-    "RSI overbought (72.2)",
-    "Price near BB upper band (128%)"
+    "RSI overbought (77.1)",
+    "Price near BB upper band (125%)"
   ],
   "trades": [
     {
@@ -65,7 +65,7 @@
     "long_trades": 0,
     "short_trades": 1
   },
-  "run_count": 86,
+  "run_count": 87,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -97,13 +97,68 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and high volume confirming the move, but the RSI is overbought, indicating potential for a pullback. The MACD is above the signal line, and the EMA-20 is above the EMA-50, further supporting the bullish trend. However, the price is near the upper Bollinger Band, which may lead to a correction.",
+    "5m": "The 5-minute chart shows a strong bullish move with a 2.06% change and high volume, indicating a potential continuation of the uptrend.",
+    "15m": "The 15-minute chart confirms the bullish trend with a 2.26% change and the price above the EMA-20, but the RSI is overbought, warning of a potential pullback.",
+    "30m": "The 30-minute chart shows a slight slowdown in the uptrend with a 0.16% change, but the price is still above the EMA-20, indicating a potential consolidation before further movement.",
+    "1h": "The 1-hour chart displays a strong uptrend with a 0.91% change and the price above the EMA-20, but the RSI is overbought, and the price is near the upper Bollinger Band, indicating a potential correction.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0931,
+    "recommendation": "Traders should watch for a potential pullback to the key level support at 0.0897 and consider buying on a bounce or a break above the key level resistance at 0.0931.",
+    "risk_warning": "The RSI is overbought, and the price is near the upper Bollinger Band, which may lead to a sharp correction, so traders should set stop-loss orders and adjust their positions accordingly.",
+    "generated_at": "2026-04-05T23:15:44.903600+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0922,
+        "open": 0.0904,
+        "high": 0.0923,
+        "low": 0.0902,
+        "change_pct": 2.06,
+        "atr": 0.0003,
+        "avg_vol": 1449347.22,
+        "last_vol": 11322997.0
+      },
+      "15m": {
+        "close": 0.0922,
+        "open": 0.0902,
+        "high": 0.0923,
+        "low": 0.0897,
+        "change_pct": 2.26,
+        "atr": 0.0004,
+        "avg_vol": 4262649.18,
+        "last_vol": 11330667.0
+      },
+      "30m": {
+        "close": 0.0922,
+        "open": 0.0921,
+        "high": 0.0923,
+        "low": 0.0897,
+        "change_pct": 0.16,
+        "atr": 0.0005,
+        "avg_vol": 8693530.62,
+        "last_vol": 21066240.0
+      },
+      "1h": {
+        "close": 0.0922,
+        "open": 0.0914,
+        "high": 0.0931,
+        "low": 0.0897,
+        "change_pct": 0.91,
+        "atr": 0.0006,
+        "avg_vol": 14769361.19,
+        "last_vol": 21066395.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.0917,
-    "best_price": 0.09171,
+    "best_price": 0.09227,
     "atr": 0.00035285714285714385,
     "sl": 0.09117071428571429,
-    "trail_stop": 0.09118071428571428,
-    "active": false
+    "trail_stop": 0.09174071428571429,
+    "active": true
   }
 }
