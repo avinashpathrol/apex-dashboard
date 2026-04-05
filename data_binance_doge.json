@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T15:34:06.864508+00:00",
+  "generated_at": "2026-04-05T15:35:54.507751+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09107,
+  "price": 0.09094,
   "usdt_balance": 127.09910276,
   "sol_balance": 0.0,
   "cad_balance": 127.09910276,
@@ -16,16 +16,16 @@
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI overbought (69.0) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (117%) | High volume confirms move",
+  "reason": "RSI overbought (66.0) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (110%) | High volume confirms move",
   "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (69.0)",
+    "RSI overbought (66.0)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (117%)",
+    "Price near BB upper band (110%)",
     "High volume confirms move"
   ],
   "trades": [],
@@ -55,7 +55,7 @@
     "long_trades": 0,
     "short_trades": 1
   },
-  "run_count": 827,
+  "run_count": 828,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -83,7 +83,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing signs of a potential reversal across multiple timeframes, with the current price near the upper Bollinger Band and RSI indicating overbought conditions. The EMA-20 is below the EMA-50, confirming a downtrend, and the high volume confirms the recent move. However, the MACD above the signal line and price above EMA-20 are still bullish signals that need to be considered.",
+    "5m": "The 5-minute chart shows a slight increase in price, but the overall trend is still uncertain with a small ATR of 0.0002.",
+    "15m": "The 15-minute chart indicates a decrease in price, with a change of -0.92% and a slightly higher ATR of 0.0003, suggesting some volatility.",
+    "30m": "The 30-minute chart shows a more pronounced decrease in price, with a change of -1.04% and an ATR of 0.0004, indicating increased volatility.",
+    "1h": "The 1-hour chart confirms the downtrend, with a change of -1.16% and the highest ATR of 0.0005, suggesting higher volatility and potential for further decline.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0931,
+    "recommendation": "Traders should watch for a potential short entry, considering the bot signal with 85% confidence, and monitor the price action around the key support and resistance levels.",
+    "risk_warning": "A false breakout above the resistance level could lead to a significant price increase, so traders should set appropriate stop-loss levels to manage risk.",
+    "generated_at": "2026-04-05T15:35:53.432236+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0909,
+        "open": 0.0905,
+        "high": 0.0915,
+        "low": 0.0897,
+        "change_pct": 0.54,
+        "atr": 0.0002,
+        "avg_vol": 1933792.67,
+        "last_vol": 228335.0
+      },
+      "15m": {
+        "close": 0.0909,
+        "open": 0.0918,
+        "high": 0.0919,
+        "low": 0.0897,
+        "change_pct": -0.92,
+        "atr": 0.0003,
+        "avg_vol": 4817495.75,
+        "last_vol": 10822818.0
+      },
+      "30m": {
+        "close": 0.0909,
+        "open": 0.0919,
+        "high": 0.0931,
+        "low": 0.0897,
+        "change_pct": -1.04,
+        "atr": 0.0004,
+        "avg_vol": 9319317.71,
+        "last_vol": 10822818.0
+      },
+      "1h": {
+        "close": 0.0909,
+        "open": 0.092,
+        "high": 0.0931,
+        "low": 0.0897,
+        "change_pct": -1.16,
+        "atr": 0.0005,
+        "avg_vol": 14946443.15,
+        "last_vol": 27265410.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
