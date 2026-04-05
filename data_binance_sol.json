@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-05T13:30:20.038073+00:00",
+  "generated_at": "2026-04-05T13:31:36.485853+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.58,
+  "price": 78.59,
   "usdt_balance": 129.70683998,
   "sol_balance": 0.0243079,
   "cad_balance": 129.70683998,
   "margin_level": 999.0,
   "position": null,
   "action": "HOLD",
-  "confidence": 0,
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "SL/TRAIL STOP HIT \u2705",
+  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "\u2705 Fee-covered SL hit | entry=78.7000 sl=78.3065 price=78.5800 | ATR=0.2264",
+  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (18.0)",
+    "RSI oversold (18.6)",
     "Price near BB lower band (-4%)"
   ],
   "bearish": [
@@ -6555,14 +6555,14 @@
     "long_trades": 34,
     "short_trades": 52
   },
-  "run_count": 732,
+  "run_count": 733,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 100.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 100.0,
