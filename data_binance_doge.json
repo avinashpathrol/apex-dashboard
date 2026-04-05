@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-05T11:22:46.453295+00:00",
+  "generated_at": "2026-04-05T11:24:01.597415+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09037,
+  "price": 0.09035,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
   "status": "Idle \u2014 SOLUSDT active",
   "bullish": [
-    "RSI rising from low (44.0)",
+    "RSI rising from low (43.1)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -29,7 +29,7 @@
     "long_trades": 0,
     "short_trades": 0
   },
-  "run_count": 631,
+  "run_count": 632,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
