@@ -1,22 +1,23 @@
 {
-  "generated_at": "2026-04-05T04:12:16.409980+00:00",
+  "generated_at": "2026-04-05T04:13:32.487363+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0912,
+  "price": 0.09118,
   "position": null,
   "action": "SHORT",
-  "confidence": 82,
-  "risk": "MEDIUM",
+  "confidence": 85,
+  "risk": "LOW",
   "status": "Idle \u2014 SOLUSDT active",
   "bullish": [
-    "RSI oversold (29.2)",
-    "Price near BB lower band (4%)"
+    "RSI oversold (28.7)",
+    "Price near BB lower band (3%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price below EMA-20"
+    "Price below EMA-20",
+    "High volume confirms move"
   ],
   "trades": [],
   "closed_trades": [],
@@ -30,7 +31,7 @@
     "long_trades": 0,
     "short_trades": 0
   },
-  "run_count": 294,
+  "run_count": 295,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
