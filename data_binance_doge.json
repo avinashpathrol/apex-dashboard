@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T14:53:42.038618+00:00",
+  "generated_at": "2026-04-05T14:54:57.542276+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09022,
+  "price": 0.09021,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -28,7 +28,7 @@
     "long_trades": 0,
     "short_trades": 0
   },
-  "run_count": 795,
+  "run_count": 796,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
