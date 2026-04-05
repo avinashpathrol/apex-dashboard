@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-05T23:09:03.713409+00:00",
+  "generated_at": "2026-04-05T23:10:20.298873+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0917,
+  "price": 0.09165,
   "usdt_balance": -377.50354917,
   "sol_balance": 5419.575,
   "cad_balance": -377.50354917,
-  "margin_level": 1.30324004,
+  "margin_level": 1.32037026,
   "position": "LONG",
   "action": "LONG",
   "confidence": 85,
   "risk": "LOW",
-  "status": "LONG OPENED \u2705",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
@@ -25,8 +25,8 @@
     "High volume confirms move"
   ],
   "bearish": [
-    "RSI overbought (72.1)",
-    "Price near BB upper band (128%)"
+    "RSI overbought (71.4)",
+    "Price near BB upper band (126%)"
   ],
   "trades": [
     {
@@ -65,14 +65,14 @@
     "long_trades": 0,
     "short_trades": 1
   },
-  "run_count": 82,
+  "run_count": 83,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 100.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 100.0,
