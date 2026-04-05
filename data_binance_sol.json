@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-04-05T21:11:36.512911+00:00",
+  "generated_at": "2026-04-05T21:12:43.772694+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.99,
+  "price": 79.81,
   "usdt_balance": -368.2990993,
   "sol_balance": 6.2103339,
   "cad_balance": -368.2990993,
-  "margin_level": 1.32159825,
+  "margin_level": 1.31943258,
   "position": "LONG",
-  "action": "LONG",
-  "confidence": 88,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
+  "status": "HOLDING LONG \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
-  "trend": "SIDEWAYS",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "trend": "BEARISH",
   "bullish": [
     "MACD above signal (bullish)",
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20"
+    "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
-    "RSI falling from high (55.2)"
+    "RSI falling from high (50.4)",
+    "Price below EMA-20"
   ],
   "trades": [
     {
@@ -6842,7 +6842,7 @@
     "long_trades": 37,
     "short_trades": 53
   },
-  "run_count": 1089,
+  "run_count": 1090,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6874,7 +6874,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price holding above $79 after a recent decline, and the MACD indicating a bullish trend while the RSI suggests a potential reversal. The EMA-20 and EMA-50 are also indicating an uptrend, but the price is currently below the EMA-20. Overall, the market is waiting for a clear direction.",
+    "5m": "The 5-minute chart shows a slight increase in price with a small ATR, indicating low volatility and a potential consolidation.",
+    "15m": "The 15-minute chart displays a similar pattern to the 5-minute chart, with a small change in price and moderate ATR, suggesting a lack of strong momentum.",
+    "30m": "The 30-minute chart reveals a more significant decline in price, with a higher ATR, indicating increased volatility and potential selling pressure.",
+    "1h": "The 1-hour chart shows a moderate decline in price, with a relatively high ATR, suggesting that the market is experiencing increased volatility and uncertainty.",
+    "key_level_support": 78.52,
+    "key_level_resistance": 81.61,
+    "recommendation": "Traders should watch for a breakout above $81.61 or a breakdown below $78.52 to determine the next market direction.",
+    "risk_warning": "The current market conditions are highly uncertain, and traders should be cautious of potential whipsaws and false breakouts.",
+    "generated_at": "2026-04-05T21:12:42.182206+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 79.82,
+        "open": 79.7,
+        "high": 80.23,
+        "low": 79.37,
+        "change_pct": 0.15,
+        "atr": 0.1436,
+        "avg_vol": 4004.61,
+        "last_vol": 5487.9
+      },
+      "15m": {
+        "close": 79.82,
+        "open": 79.7,
+        "high": 80.33,
+        "low": 78.52,
+        "change_pct": 0.15,
+        "atr": 0.2429,
+        "avg_vol": 16157.28,
+        "last_vol": 13400.96
+      },
+      "30m": {
+        "close": 79.82,
+        "open": 80.92,
+        "high": 81.06,
+        "low": 78.52,
+        "change_pct": -1.36,
+        "atr": 0.4229,
+        "avg_vol": 29120.46,
+        "last_vol": 13478.87
+      },
+      "1h": {
+        "close": 79.82,
+        "open": 80.15,
+        "high": 81.61,
+        "low": 78.52,
+        "change_pct": -0.41,
+        "atr": 0.5393,
+        "avg_vol": 61392.39,
+        "last_vol": 13478.87
+      }
+    }
+  },
   "trail": {
     "entry_price": 80.03,
     "best_price": 80.06,
