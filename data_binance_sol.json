@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T10:44:34.185780+00:00",
+  "generated_at": "2026-04-05T10:46:03.290138+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.01,
+  "price": 80.0,
   "usdt_balance": 130.10707268,
   "sol_balance": 0.0246349,
   "cad_balance": 130.10707268,
@@ -16,16 +16,16 @@
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "EMA-20 below EMA-50 (downtrend) | Price near BB upper band (86%) | High volume confirms move",
+  "reason": "RSI falling from high (52.2) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (97%)",
   "trend": "BEARISH",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
+    "RSI falling from high (52.2)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (86%)",
-    "High volume confirms move"
+    "Price near BB upper band (97%)"
   ],
   "trades": [
     {
@@ -6506,7 +6506,7 @@
     "long_trades": 33,
     "short_trades": 52
   },
-  "run_count": 601,
+  "run_count": 602,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6534,7 +6534,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing signs of a potential downtrend across multiple timeframes, with the price nearing the upper Bollinger Band and the RSI falling from a high level. The EMA-20 is also below the EMA-50, indicating a bearish trend. However, the MACD is still above the signal line, which could suggest some bullish momentum.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a small change of -0.32% and a relatively low ATR of 0.0821.",
+    "15m": "The 15-minute chart reveals a more significant decline of -0.97%, with the price moving away from the recent high of 81.06.",
+    "30m": "The 30-minute chart indicates a minor decline of -0.25%, but the price is still below the recent high of 81.61, suggesting a potential reversal.",
+    "1h": "The 1-hour chart shows a small decline of -0.22%, with the price holding above the recent low of 79.17, but the overall trend is still bearish.",
+    "key_level_support": 79.17,
+    "key_level_resistance": 81.61,
+    "recommendation": "Traders should watch for a potential short entry if the price breaks below the key support level of 79.17, with a target of 75.00.",
+    "risk_warning": "A false breakout below 79.17 could lead to a sharp reversal, so traders should set a stop-loss above 81.61 to limit potential losses.",
+    "generated_at": "2026-04-05T10:46:02.072260+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 80.0,
+        "open": 80.26,
+        "high": 80.39,
+        "low": 79.41,
+        "change_pct": -0.32,
+        "atr": 0.0821,
+        "avg_vol": 5809.55,
+        "last_vol": 338.81
+      },
+      "15m": {
+        "close": 80.0,
+        "open": 80.78,
+        "high": 81.06,
+        "low": 79.41,
+        "change_pct": -0.97,
+        "atr": 0.1479,
+        "avg_vol": 14346.52,
+        "last_vol": 338.81
+      },
+      "30m": {
+        "close": 80.0,
+        "open": 80.2,
+        "high": 81.61,
+        "low": 79.41,
+        "change_pct": -0.25,
+        "atr": 0.285,
+        "avg_vol": 35017.42,
+        "last_vol": 23443.94
+      },
+      "1h": {
+        "close": 80.0,
+        "open": 80.18,
+        "high": 81.61,
+        "low": 79.17,
+        "change_pct": -0.22,
+        "atr": 0.3329,
+        "avg_vol": 69390.48,
+        "last_vol": 37828.46
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
