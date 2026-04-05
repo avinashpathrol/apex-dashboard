@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-05T23:48:29.568192+00:00",
+  "generated_at": "2026-04-05T23:49:37.721359+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09224,
+  "price": 0.09217,
   "usdt_balance": -377.50354917,
   "sol_balance": 5419.575,
   "cad_balance": -377.50354917,
-  "margin_level": 1.32819999,
+  "margin_level": 1.32908419,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 82,
@@ -24,8 +24,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (77.6)",
-    "Price near BB upper band (104%)"
+    "RSI overbought (76.9)",
+    "Price near BB upper band (102%)"
   ],
   "trades": [
     {
@@ -64,7 +64,7 @@
     "long_trades": 0,
     "short_trades": 1
   },
-  "run_count": 120,
+  "run_count": 121,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -82,7 +82,7 @@
       "close_requested_at": null,
       "bot_paused": false,
       "force_trail": false,
-      "force_trail_at": "2026-04-05T23:45:30.290Z"
+      "force_trail_at": "2026-04-05T23:49:26.272Z"
     },
     "queued": {
       "trade_amount_usdt": 100.0,
@@ -99,10 +99,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 0.09168,
-    "best_price": 0.09228,
+    "best_price": 0.09217,
     "atr": 0.0003864285714285723,
     "sl": 0.09110035714285714,
-    "trail_stop": 0.09170035714285714,
+    "trail_stop": 0.09159035714285714,
     "active": true
   }
 }
