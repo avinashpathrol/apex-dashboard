@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T10:21:50.210467+00:00",
+  "generated_at": "2026-04-05T10:23:05.933248+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -19,7 +19,7 @@
   "reason": "Blocked LONG \u2014 trend filter active (EMA-20 <= EMA-50) | 3 bullish, 1 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (47.0)",
+    "RSI rising from low (47.5)",
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
@@ -6505,7 +6505,7 @@
     "long_trades": 33,
     "short_trades": 52
   },
-  "run_count": 583,
+  "run_count": 584,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
