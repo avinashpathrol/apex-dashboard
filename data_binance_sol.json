@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T20:39:10.853070+00:00",
+  "generated_at": "2026-04-05T20:40:28.204310+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,12 +7,12 @@
   "usdt_balance": 129.1673807,
   "sol_balance": 0.0005499,
   "cad_balance": 129.1673807,
-  "margin_level": 986.15303676,
+  "margin_level": 986.08772935,
   "position": null,
   "action": "HOLD",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "\u23f8\ufe0f LOSS STREAK COOLDOWN \u2014 28m remaining (6 losses in a row)",
+  "status": "\u23f8\ufe0f LOSS STREAK COOLDOWN \u2014 27m remaining (6 losses in a row)",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
@@ -6819,7 +6819,7 @@
     "long_trades": 37,
     "short_trades": 52
   },
-  "run_count": 1064,
+  "run_count": 1065,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
