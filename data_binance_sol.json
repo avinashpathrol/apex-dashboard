@@ -1,32 +1,31 @@
 {
-  "generated_at": "2026-04-05T13:29:46.160040+00:00",
+  "generated_at": "2026-04-05T13:30:20.038073+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 78.6,
-  "usdt_balance": 627.07230998,
-  "sol_balance": -6.2963651,
-  "cad_balance": 627.07230998,
-  "margin_level": 1.26612049,
-  "position": "SHORT",
-  "action": "SHORT",
-  "confidence": 85,
-  "risk": "LOW",
-  "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20 | High volume confirms move",
+  "price": 78.58,
+  "usdt_balance": 129.70683998,
+  "sol_balance": 0.0243079,
+  "cad_balance": 129.70683998,
+  "margin_level": 999.0,
+  "position": null,
+  "action": "HOLD",
+  "confidence": 0,
+  "risk": "MEDIUM",
+  "status": "SL/TRAIL STOP HIT \u2705",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20 | High volume confirms move",
+  "reason": "\u2705 Fee-covered SL hit | entry=78.7000 sl=78.3065 price=78.5800 | ATR=0.2264",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (18.3)",
-    "Price near BB lower band (-15%)"
+    "RSI oversold (18.0)",
+    "Price near BB lower band (-4%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price below EMA-20",
-    "High volume confirms move"
+    "Price below EMA-20"
   ],
   "trades": [
     {
@@ -1296,8 +1295,7 @@
       "qty": 5.112,
       "cost": 423.68256,
       "fee": 0.42368256,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-03-31T20:44:40.064000-07:00",
@@ -5312,6 +5310,33 @@
       "cost": 497.4627,
       "fee": 0.4974627,
       "symbol": "SOLUSDT"
+    },
+    {
+      "time": "2026-04-05T06:30:12.036000-07:00",
+      "action": "BUY",
+      "price": 78.61,
+      "qty": 0.04,
+      "cost": 3.1444,
+      "fee": 4e-05,
+      "symbol": "SOLUSDT"
+    },
+    {
+      "time": "2026-04-05T06:30:12.036000-07:00",
+      "action": "BUY",
+      "price": 78.61,
+      "qty": 4.139,
+      "cost": 325.36679,
+      "fee": 0.004139,
+      "symbol": "SOLUSDT"
+    },
+    {
+      "time": "2026-04-05T06:30:12.036000-07:00",
+      "action": "BUY",
+      "price": 78.61,
+      "qty": 2.148,
+      "cost": 168.85428,
+      "fee": 0.002148,
+      "symbol": "SOLUSDT"
     }
   ],
   "closed_trades": [
@@ -6530,7 +6555,7 @@
     "long_trades": 34,
     "short_trades": 52
   },
-  "run_count": 731,
+  "run_count": 732,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6550,11 +6575,7 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": {
-      "trade_amount_usdt": 100.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -6564,11 +6585,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 78.7,
-    "best_price": 78.6,
-    "atr": 0.22642857142857156,
-    "sl": 79.03964285714287,
-    "trail_stop": 78.93964285714286,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
     "active": false
   }
 }
