@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T20:49:50.918183+00:00",
+  "generated_at": "2026-04-05T20:51:07.012647+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09066,
+  "price": 0.09074,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -14,7 +14,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "EMA-20 below EMA-50 (downtrend)"
+    "EMA-20 below EMA-50 (downtrend)",
+    "Price near BB upper band (93%)"
   ],
   "trades": [],
   "closed_trades": [],
@@ -28,7 +29,7 @@
     "long_trades": 0,
     "short_trades": 0
   },
-  "run_count": 1072,
+  "run_count": 1073,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
