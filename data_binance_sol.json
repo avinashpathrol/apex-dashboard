@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-05T15:20:15.393160+00:00",
+  "generated_at": "2026-04-05T15:21:30.872594+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.26,
+  "price": 79.29,
   "usdt_balance": 127.09910276,
   "sol_balance": 0.0240199,
   "cad_balance": 127.09910276,
@@ -19,7 +19,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (44.2)",
+    "RSI rising from low (45.1)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -6630,7 +6630,7 @@
     "long_trades": 35,
     "short_trades": 52
   },
-  "run_count": 816,
+  "run_count": 817,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -6658,62 +6658,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price trading below the EMA-20 but showing signs of a potential reversal with a rising RSI and MACD above the signal line. The short-term timeframes show a decline in price, while the longer-term indicators suggest a potential downtrend. Overall, the market is in a state of uncertainty, waiting for a clear direction.",
-    "5m": "The 5-minute chart shows a small loss of 0.81% with a moderate ATR, indicating a relatively calm market.",
-    "15m": "The 15-minute chart displays a more significant decline of 1.87% with a higher ATR, suggesting increased volatility.",
-    "30m": "The 30-minute chart reveals a downtrend with a 2.26% loss and a higher ATR, indicating a potential continuation of the bearish move.",
-    "1h": "The 1-hour chart shows a loss of 1.6% with the highest ATR among the timeframes, signaling a possible trend reversal or continuation.",
-    "key_level_support": 78.52,
-    "key_level_resistance": 81.61,
-    "recommendation": "Traders should watch for a break above the key resistance level of 81.61 or a drop below the key support level of 78.52 to determine the next market direction.",
-    "risk_warning": "Trading in a neutral market with mixed signals can be risky, and traders should be cautious with their positions and adjust their strategies accordingly.",
-    "generated_at": "2026-04-05T15:20:14.217424+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 79.27,
-        "open": 79.92,
-        "high": 80.24,
-        "low": 78.52,
-        "change_pct": -0.81,
-        "atr": 0.1021,
-        "avg_vol": 5394.48,
-        "last_vol": 120.11
-      },
-      "15m": {
-        "close": 79.27,
-        "open": 80.78,
-        "high": 80.81,
-        "low": 78.52,
-        "change_pct": -1.87,
-        "atr": 0.29,
-        "avg_vol": 14055.38,
-        "last_vol": 2422.99
-      },
-      "30m": {
-        "close": 79.27,
-        "open": 81.1,
-        "high": 81.35,
-        "low": 78.52,
-        "change_pct": -2.26,
-        "atr": 0.3393,
-        "avg_vol": 31951.72,
-        "last_vol": 15504.7
-      },
-      "1h": {
-        "close": 79.27,
-        "open": 80.56,
-        "high": 81.61,
-        "low": 78.52,
-        "change_pct": -1.6,
-        "atr": 0.4279,
-        "avg_vol": 63273.23,
-        "last_vol": 15504.7
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
