@@ -1,14 +1,23 @@
 {
-  "generated_at": "2026-04-05T22:00:12.106125+00:00",
+  "generated_at": "2026-04-05T22:01:26.779058+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 79.75,
+  "price": 79.73,
+  "usdt_balance": 126.1429637,
+  "sol_balance": 0.0003339,
+  "cad_balance": 126.1429637,
+  "margin_level": 955.42903313,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "Idle \u2014 DOGEUSDT active",
+  "status": "HOLD \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
+  "bot_paused": false,
+  "paused_symbols": [],
+  "flip_pending": null,
+  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "trend": "BEARISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)"
   ],
@@ -5655,6 +5664,20 @@
       "note": "Derived from margin trade history"
     },
     {
+      "source": "manual",
+      "side": "SHORT",
+      "entry_price": 82.41,
+      "exit_price": 81.73,
+      "qty": 3.8,
+      "fee": 0.05,
+      "pnl": 2.534,
+      "pnl_pct": 4.13,
+      "win": true,
+      "opened_at": "2026-03-29T02:00:00-07:00",
+      "closed_at": "2026-03-29T10:41:00-07:00",
+      "note": "Manual short winning trade (~$2.6 profit)"
+    },
+    {
       "source": "binance",
       "side": "SHORT",
       "entry_price": 82.06,
@@ -6818,17 +6841,44 @@
     }
   ],
   "performance": {
-    "closed_trades": 89,
-    "wins": 21,
+    "closed_trades": 90,
+    "wins": 22,
     "losses": 68,
-    "win_rate": 23.6,
-    "net_profit": -35.4742,
-    "avg_profit_per_trade": -0.3986,
+    "win_rate": 24.44,
+    "net_profit": -32.9402,
+    "avg_profit_per_trade": -0.366,
     "long_trades": 37,
-    "short_trades": 52
+    "short_trades": 53
   },
-  "run_count": 28,
+  "run_count": 29,
   "trade_amount": 100.0,
+  "min_signals": 3,
+  "bot_config": {
+    "current": {
+      "trade_amount_usdt": 100.0,
+      "leverage": 5.0,
+      "source": "dashboard-config"
+    },
+    "dashboard_requested": {
+      "trade_amount_usdt": 100.0,
+      "leverage": 5.0,
+      "manual_reentry_cooldown_minutes": 10,
+      "updated_at": "2026-04-04T17:53:11.594Z",
+      "close_requested": false,
+      "close_requested_at": null,
+      "bot_paused": false,
+      "force_trail": false,
+      "force_trail_at": null
+    },
+    "queued": null
+  },
+  "cooldown": {
+    "side": null,
+    "until": 0,
+    "remaining_seconds": 0,
+    "minutes": 10
+  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
