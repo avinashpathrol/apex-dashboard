@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T12:54:32.527191+00:00",
+  "generated_at": "2026-04-06T12:55:47.443403+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09246,
+  "price": 0.09248,
   "usdt_balance": 125.08733912,
   "sol_balance": 0.51,
   "cad_balance": 125.08733912,
-  "margin_level": 829.06279225,
+  "margin_level": 828.84712488,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -406,7 +406,7 @@
     "long_trades": 3,
     "short_trades": 4
   },
-  "run_count": 294,
+  "run_count": 295,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -434,62 +434,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price showing a slight increase in the short term but overall uncertainty. The EMA-20 being above EMA-50 suggests an uptrend, but the MACD below the signal line and price below EMA-20 indicate bearish pressure. The high volume confirms the recent move, but the overall trend is not clearly defined.",
-    "5m": "The 5-minute chart shows a slight increase in price with a 0.39% change, indicating a minor bullish movement in the very short term.",
-    "15m": "The 15-minute chart displays a more significant 2.09% price increase, suggesting a short-term bullish trend with the price moving above the opening price.",
-    "30m": "The 30-minute chart reveals a 3.0% increase, further supporting the short-term bullish view, but the overall trend remains uncertain due to conflicting signals.",
-    "1h": "The 1-hour chart shows a 1.58% increase, which, combined with other timeframes, suggests that while there is some upward momentum, the market lacks a strong directional bias.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a break above the key resistance level of 0.0936 or a drop below the support level of 0.0897 to determine the next significant move.",
-    "risk_warning": "Trading in a neutral market with conflicting signals increases the risk of false breakouts, so traders should be cautious with their positions and risk management.",
-    "generated_at": "2026-04-06T12:54:31.140210+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0925,
-        "open": 0.0921,
-        "high": 0.0935,
-        "low": 0.0919,
-        "change_pct": 0.39,
-        "atr": 0.0001,
-        "avg_vol": 2292687.22,
-        "last_vol": 3038196.0
-      },
-      "15m": {
-        "close": 0.0925,
-        "open": 0.0906,
-        "high": 0.0936,
-        "low": 0.0902,
-        "change_pct": 2.09,
-        "atr": 0.0003,
-        "avg_vol": 9102738.58,
-        "last_vol": 8864974.0
-      },
-      "30m": {
-        "close": 0.0925,
-        "open": 0.0898,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 3.0,
-        "atr": 0.0005,
-        "avg_vol": 14316669.54,
-        "last_vol": 15236313.0
-      },
-      "1h": {
-        "close": 0.0925,
-        "open": 0.091,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 1.58,
-        "atr": 0.0009,
-        "avg_vol": 23401195.06,
-        "last_vol": 32187070.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
