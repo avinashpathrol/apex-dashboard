@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T01:49:02.210179+00:00",
+  "generated_at": "2026-04-06T01:51:19.811476+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09236,
+  "price": 0.09223,
   "usdt_balance": 126.60911355,
   "sol_balance": 0.575,
   "cad_balance": 126.60911355,
-  "margin_level": 891.59141585,
+  "margin_level": 891.37245563,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
@@ -116,7 +116,7 @@
     "long_trades": 1,
     "short_trades": 1
   },
-  "run_count": 50,
+  "run_count": 51,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -148,7 +148,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is showing mixed signals across timeframes, with the current price holding above the EMA-20, but the MACD indicating a bearish crossover, suggesting a potential reversal, and the overall trend is uncertain with the bot signal having 0% confidence. The short-term timeframes are showing a slight uptrend, but the momentum is not strong. The market is likely to remain choppy until a clear direction is established.",
+    "5m": "The 5-minute timeframe is showing a slight increase in price with a 1.7% change, indicating some buying pressure.",
+    "15m": "The 15-minute timeframe is indicating a stronger uptrend with a 2.16% change, but the ATR is relatively low, suggesting limited volatility.",
+    "30m": "The 30-minute timeframe is showing a more subdued movement with a 0.9% change, indicating some consolidation.",
+    "1h": "The 1-hour timeframe is indicating a moderate uptrend with a 1.26% change, but the MACD bearish crossover is a concern.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0935,
+    "recommendation": "Traders should watch for a break below the key level support or a bounce off it to determine the next direction.",
+    "risk_warning": "The MACD bearish crossover and low bot signal confidence increase the risk of a potential downtrend.",
+    "generated_at": "2026-04-06T01:51:18.623367+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0922,
+        "open": 0.0907,
+        "high": 0.0935,
+        "low": 0.0902,
+        "change_pct": 1.7,
+        "atr": 0.0003,
+        "avg_vol": 4236603.07,
+        "last_vol": 35272.0
+      },
+      "15m": {
+        "close": 0.0922,
+        "open": 0.0903,
+        "high": 0.0935,
+        "low": 0.0897,
+        "change_pct": 2.16,
+        "atr": 0.0006,
+        "avg_vol": 7073586.62,
+        "last_vol": 3625422.0
+      },
+      "30m": {
+        "close": 0.0922,
+        "open": 0.0914,
+        "high": 0.0935,
+        "low": 0.0897,
+        "change_pct": 0.9,
+        "atr": 0.0007,
+        "avg_vol": 11954779.35,
+        "last_vol": 10649216.0
+      },
+      "1h": {
+        "close": 0.0922,
+        "open": 0.0911,
+        "high": 0.0935,
+        "low": 0.0897,
+        "change_pct": 1.26,
+        "atr": 0.0008,
+        "avg_vol": 18345603.25,
+        "last_vol": 61426366.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.09215,
     "best_price": 0.09236,
