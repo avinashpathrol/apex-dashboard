@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-06T21:10:11.626820+00:00",
+  "generated_at": "2026-04-06T21:11:12.722943+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.89,
+  "price": 81.84,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -3030,8 +3030,7 @@
       "qty": 5.338,
       "cost": 423.67706,
       "fee": 0.42367706,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcd0 Trailing stop hit | best=79.5400 trail_stop=79.3993 price=79.3700"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:19:57.411000-07:00",
@@ -7024,7 +7023,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 86,
+  "run_count": 87,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
