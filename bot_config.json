@@ -5,6 +5,6 @@
   "updated_at": "2026-04-04T17:53:11.594Z",
   "close_requested": false,
   "bot_paused": false,
-  "force_trail": true,
+  "force_trail": false,
   "force_trail_at": "2026-04-06T00:34:15.670Z"
 }
