@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-06T17:45:14.492051+00:00",
+  "generated_at": "2026-04-06T17:47:33.380494+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09184,
+  "price": 0.09185,
   "usdt_balance": 617.97826371,
   "sol_balance": -5416.062,
   "cad_balance": 617.97826371,
-  "margin_level": 1.2459148,
+  "margin_level": 1.24616791,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "SHORT OPENED \u2705",
+  "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
@@ -715,14 +715,14 @@
     "long_trades": 6,
     "short_trades": 5
   },
-  "run_count": 519,
+  "run_count": 520,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 100.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 100.0,
@@ -747,7 +747,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is currently exhibiting a downtrend across multiple timeframes, with bearish signals from the MACD and EMA indicators. The price is trading below the EMA-20, which is also below the EMA-50, confirming the downtrend. The current short position and bot signal with 88% confidence further support the bearish outlook.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a small ATR of 0.0002, indicating low volatility.",
+    "15m": "The 15-minute chart displays a more pronounced decline, with a 1.02% change and a slightly higher ATR of 0.0004, suggesting increasing bearish momentum.",
+    "30m": "The 30-minute chart shows a rebound from the lower price levels, with a 1.67% increase, but the overall trend remains bearish.",
+    "1h": "The 1-hour chart exhibits a relatively stable price action, with a small change of -0.43% and a moderate ATR of 0.0007, indicating a potential consolidation phase.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential breakdown below the key support level of 0.0897, which could lead to further downward momentum.",
+    "risk_warning": "A false breakout above the key resistance level of 0.0936 could result in a significant short squeeze, so traders should be cautious with their position sizing.",
+    "generated_at": "2026-04-06T17:47:31.989814+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0919,
+        "open": 0.0925,
+        "high": 0.093,
+        "low": 0.0916,
+        "change_pct": -0.69,
+        "atr": 0.0002,
+        "avg_vol": 1805933.67,
+        "last_vol": 65572.0
+      },
+      "15m": {
+        "close": 0.0919,
+        "open": 0.0928,
+        "high": 0.0935,
+        "low": 0.0916,
+        "change_pct": -1.02,
+        "atr": 0.0004,
+        "avg_vol": 5892869.73,
+        "last_vol": 65572.0
+      },
+      "30m": {
+        "close": 0.0919,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.0902,
+        "change_pct": 1.67,
+        "atr": 0.0005,
+        "avg_vol": 14566909.27,
+        "last_vol": 5282427.0
+      },
+      "1h": {
+        "close": 0.0919,
+        "open": 0.0922,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": -0.43,
+        "atr": 0.0007,
+        "avg_vol": 23405388.98,
+        "last_vol": 25951901.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.09184,
     "best_price": 0.09184,
