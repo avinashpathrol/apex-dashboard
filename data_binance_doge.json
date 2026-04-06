@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T10:51:43.941103+00:00",
+  "generated_at": "2026-04-06T10:53:01.984228+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09316,
+  "price": 0.0931,
   "usdt_balance": -369.19971904,
   "sol_balance": 5334.51,
   "cad_balance": -369.19971904,
-  "margin_level": 1.32423532,
+  "margin_level": 1.32342961,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 82,
@@ -24,8 +24,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (62.2)",
-    "Price near BB upper band (84%)"
+    "RSI falling from high (60.7)",
+    "Price near BB upper band (81%)"
   ],
   "trades": [
     {
@@ -383,7 +383,7 @@
     "long_trades": 2,
     "short_trades": 4
   },
-  "run_count": 203,
+  "run_count": 204,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -415,62 +415,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a bullish momentum. However, the RSI is falling from a high level, suggesting a potential pullback. The overall trend remains bullish, with the price making higher highs and lows.",
-    "5m": "The 5-minute chart shows a slight increase in price, with a 0.78% change, indicating a slow but steady uptrend.",
-    "15m": "The 15-minute chart displays a more significant price increase, with a 2.93% change, confirming the bullish trend.",
-    "30m": "The 30-minute chart shows a similar uptrend, with a 3.13% price change, and the price is still above the EMA-20, supporting the bullish view.",
-    "1h": "The 1-hour chart indicates a moderate price increase, with a 2.22% change, and the price is holding above the EMA-20, maintaining the bullish momentum.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential pullback to the key support level and consider buying on dips, as the overall trend remains bullish.",
-    "risk_warning": "A break below the key support level could lead to a reversal of the trend, so traders should set stop-loss orders accordingly.",
-    "generated_at": "2026-04-06T10:51:42.593779+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0932,
-        "open": 0.0924,
-        "high": 0.0935,
-        "low": 0.0917,
-        "change_pct": 0.78,
-        "atr": 0.0002,
-        "avg_vol": 2065813.48,
-        "last_vol": 173210.0
-      },
-      "15m": {
-        "close": 0.0932,
-        "open": 0.0905,
-        "high": 0.0936,
-        "low": 0.0902,
-        "change_pct": 2.93,
-        "atr": 0.0004,
-        "avg_vol": 8734888.65,
-        "last_vol": 5703389.0
-      },
-      "30m": {
-        "close": 0.0932,
-        "open": 0.0903,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 3.13,
-        "atr": 0.0005,
-        "avg_vol": 14246101.81,
-        "last_vol": 14583506.0
-      },
-      "1h": {
-        "close": 0.0932,
-        "open": 0.0911,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 2.22,
-        "atr": 0.0009,
-        "avg_vol": 22462892.79,
-        "last_vol": 27768461.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 0.09318,
     "best_price": 0.09338,
