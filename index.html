@@ -1113,18 +1113,15 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
   for(const t of sorted){
     const price = n(t.price);
     const qty   = n(t.qty);
-    const fee   = n(t.fee);
+    const fee   = price * qty * 0.001; // 0.1% fee in USDT (Binance t.fee is in base asset, unreliable)
 
     if(t.action === 'BUY'){
       if(openShort){
-        // Closing a SHORT: bought back borrowed SOL
-        // Aggregate multiple close fills into weighted avg
         const totalQty = openShort.closeQty ? openShort.closeQty + qty : qty;
         const avgClose = openShort.closeQty
           ? (openShort.closePrice * openShort.closeQty + price * qty) / totalQty
           : price;
         const closeFeeAcc = (openShort.closeFee||0) + fee;
-        // Check if more fills expected: if totalQty < openShort.qty, keep accumulating
         if(totalQty < openShort.qty * 0.99){
           openShort.closeQty = totalQty;
           openShort.closePrice = avgClose;
@@ -1133,8 +1130,8 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
           const entryPrice = openShort.price;
           const closePrice = avgClose;
           const tradeQty   = openShort.qty;
-          const pnl = (entryPrice - closePrice) * tradeQty;
           const totalFee = openShort.fee + closeFeeAcc;
+          const pnl = (entryPrice - closePrice) * tradeQty - totalFee;
           closed.push({
             time:        t.time,
             opened_at:   openShort.time,
@@ -1151,10 +1148,8 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
           openShort = null;
         }
       } else if(!openLong){
-        // Opening a LONG — first fill
         openLong = {price, time:t.time, qty, fee};
       } else {
-        // Additional fill for existing LONG entry — aggregate (weighted avg price)
         const totalQty = openLong.qty + qty;
         openLong.price = (openLong.price * openLong.qty + price * qty) / totalQty;
         openLong.qty   = totalQty;
@@ -1162,7 +1157,6 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
       }
     } else if(t.action === 'SELL'){
       if(openLong){
-        // Closing a LONG — aggregate multiple close fills
         const totalQty = openLong.closeQty ? openLong.closeQty + qty : qty;
         const avgClose = openLong.closeQty
           ? (openLong.closePrice * openLong.closeQty + price * qty) / totalQty
@@ -1176,8 +1170,8 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
           const entryPrice = openLong.price;
           const closePrice = avgClose;
           const tradeQty   = openLong.qty;
-          const pnl = (closePrice - entryPrice) * tradeQty;
           const totalFee = openLong.fee + closeFeeAcc;
+          const pnl = (closePrice - entryPrice) * tradeQty - totalFee;
           closed.push({
             time:        t.time,
             opened_at:   openLong.time,
@@ -1194,10 +1188,8 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
           openLong = null;
         }
       } else if(!openShort){
-        // Opening a SHORT — first fill
         openShort = {price, time:t.time, qty, fee};
       } else {
-        // Additional fill for existing SHORT entry — aggregate
         const totalQty = openShort.qty + qty;
         openShort.price = (openShort.price * openShort.qty + price * qty) / totalQty;
         openShort.qty   = totalQty;
