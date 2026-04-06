@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-06T22:08:04.147083+00:00",
+  "generated_at": "2026-04-06T22:10:05.418218+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 118.5456511,
   "sol_balance": 0.628,
   "cad_balance": 118.5456511,
-  "margin_level": 695.04672038,
+  "margin_level": 695.01784263,
   "position": null,
   "action": "HOLD",
   "confidence": 85,
@@ -1002,7 +1002,7 @@
     "long_trades": 7,
     "short_trades": 8
   },
-  "run_count": 40,
+  "run_count": 41,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1030,7 +1030,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with bearish signals dominating the technical indicators. The price is below the EMA-20 and EMA-50, and the MACD is below the signal line, confirming the bearish trend. However, the RSI is oversold, which could lead to a potential bounce.",
+    "5m": "The 5-minute chart shows a slight decline in price with a small ATR, indicating low volatility and a potential pause in the downtrend.",
+    "15m": "The 15-minute chart displays a more significant price drop with increasing volume, confirming the bearish move and suggesting further downside potential.",
+    "30m": "The 30-minute chart reveals a consolidation phase with a slight price decrease, indicating a potential continuation of the downtrend.",
+    "1h": "The 1-hour chart shows a clear downtrend with the price below the EMA-20 and EMA-50, and the MACD below the signal line, reinforcing the bearish outlook.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential short opportunity if the price breaks below the key support level, with a target near the lower Bollinger Band.",
+    "risk_warning": "A bounce from the oversold RSI level could lead to a false breakout, so traders should be cautious and set stop-loss orders accordingly.",
+    "generated_at": "2026-04-06T22:10:04.234956+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0913,
+        "open": 0.0918,
+        "high": 0.0922,
+        "low": 0.0912,
+        "change_pct": -0.49,
+        "atr": 0.0001,
+        "avg_vol": 1032798.93,
+        "last_vol": 2365044.0
+      },
+      "15m": {
+        "close": 0.0913,
+        "open": 0.092,
+        "high": 0.0935,
+        "low": 0.0912,
+        "change_pct": -0.74,
+        "atr": 0.0002,
+        "avg_vol": 5060505.68,
+        "last_vol": 8133946.0
+      },
+      "30m": {
+        "close": 0.0913,
+        "open": 0.0914,
+        "high": 0.0936,
+        "low": 0.0904,
+        "change_pct": -0.11,
+        "atr": 0.0004,
+        "avg_vol": 14445537.15,
+        "last_vol": 8133946.0
+      },
+      "1h": {
+        "close": 0.0913,
+        "open": 0.0921,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": -0.81,
+        "atr": 0.0006,
+        "avg_vol": 22506588.1,
+        "last_vol": 8133946.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
