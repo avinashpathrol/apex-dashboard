@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T20:27:45.675246+00:00",
+  "generated_at": "2026-04-06T20:29:03.352691+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09188,
+  "price": 0.09186,
   "usdt_balance": 615.11498344,
   "sol_balance": -5417.927,
   "cad_balance": 615.11498344,
-  "margin_level": 1.23932429,
+  "margin_level": 1.2394391,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
@@ -19,7 +19,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (41.4)"
+    "RSI rising from low (40.7)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -899,7 +899,7 @@
     "long_trades": 6,
     "short_trades": 7
   },
-  "run_count": 53,
+  "run_count": 54,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
