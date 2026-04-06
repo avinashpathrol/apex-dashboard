@@ -2391,7 +2391,7 @@ async function load(){
     totW=0;totL=0;totPnl=0;totFees=0;totLongs=0;totShorts=0;
     for(const t of allET){
       totPnl+=n(t.pnl); totFees+=n(t.fee);
-      if(n(t.pnl)>n(t.fee))totW++;else totL++;  // win = profit exceeds fees
+      if(n(t.pnl)>0)totW++;else totL++;
       if(t.type==='LONG')totLongs++;else totShorts++;
     }
     const tt=totW+totL,wr=tt>0?Math.round((totW/tt)*100):null;
