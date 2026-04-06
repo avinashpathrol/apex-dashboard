@@ -1,31 +1,29 @@
 {
-  "generated_at": "2026-04-06T01:23:11.799451+00:00",
+  "generated_at": "2026-04-06T01:24:29.952372+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09175,
+  "price": 0.09195,
   "usdt_balance": 126.60911355,
   "sol_balance": 0.575,
   "cad_balance": 126.60911355,
-  "margin_level": 891.35847157,
+  "margin_level": 890.79004777,
   "position": "LONG",
-  "action": "HOLD",
-  "confidence": 0,
+  "action": "LONG",
+  "confidence": 95,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
-    "EMA-20 above EMA-50 (uptrend)"
+    "EMA-20 above EMA-50 (uptrend)",
+    "Price above EMA-20"
   ],
-  "bearish": [
-    "RSI falling from high (52.8)",
-    "Price below EMA-20"
-  ],
+  "bearish": [],
   "trades": [
     {
       "time": "2026-04-05T16:08:59.665000-07:00",
@@ -117,7 +115,7 @@
     "long_trades": 1,
     "short_trades": 1
   },
-  "run_count": 29,
+  "run_count": 30,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -152,10 +150,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 0.09168,
-    "best_price": 0.09198,
+    "best_price": 0.09199,
     "atr": 0.0005607142857142865,
     "sl": 0.09083892857142857,
-    "trail_stop": 0.09113892857142858,
+    "trail_stop": 0.09114892857142858,
     "active": false
   }
 }
