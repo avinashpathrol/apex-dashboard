@@ -3,9 +3,8 @@
   "trade_amount": 100,
   "leverage": 5,
   "updated_at": "2026-04-04T17:53:11.594Z",
-  "close_requested": true,
+  "close_requested": false,
   "bot_paused": false,
   "force_trail": false,
-  "force_trail_at": "2026-04-06T00:34:15.670Z",
-  "close_requested_at": "2026-04-06T00:40:44.486Z"
+  "force_trail_at": "2026-04-06T00:34:15.670Z"
 }
