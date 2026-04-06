@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T12:08:32.580131+00:00",
+  "generated_at": "2026-04-06T12:09:51.011476+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09306,
+  "price": 0.0931,
   "usdt_balance": -369.19971904,
   "sol_balance": 5334.51,
   "cad_balance": -369.19971904,
-  "margin_level": 1.32277222,
+  "margin_level": 1.32322217,
   "position": "LONG",
   "action": "LONG",
   "confidence": 95,
@@ -380,7 +380,7 @@
     "long_trades": 2,
     "short_trades": 4
   },
-  "run_count": 259,
+  "run_count": 260,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -412,62 +412,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price consistently closing higher and the MACD above its signal line, indicating a bullish momentum. The EMA-20 is also above the EMA-50, further supporting the uptrend. The overall trend suggests a continued increase in price.",
-    "5m": "The 5-minute chart shows a slight pullback but the price is still holding above the EMA-20, indicating a potential continuation of the uptrend.",
-    "15m": "The 15-minute chart displays a strong bullish candle, with the price breaking above the previous high and the ATR increasing, suggesting a rise in volatility and potential further upside.",
-    "30m": "The 30-minute chart confirms the uptrend, with the price making higher highs and higher lows, and the EMA-20 acting as a support level.",
-    "1h": "The 1-hour chart shows a steady increase in price, with the MACD above its signal line and the price holding above the EMA-20, indicating a strong bullish trend.",
-    "key_level_support": 0.0917,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential breakout above the key level resistance at 0.0936, which could lead to further upside.",
-    "risk_warning": "A close below the key level support at 0.0917 could invalidate the bullish trend and lead to a potential reversal.",
-    "generated_at": "2026-04-06T12:08:31.240918+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0931,
-        "open": 0.0919,
-        "high": 0.0935,
-        "low": 0.0917,
-        "change_pct": 1.24,
-        "atr": 0.0001,
-        "avg_vol": 2005732.18,
-        "last_vol": 484696.0
-      },
-      "15m": {
-        "close": 0.0931,
-        "open": 0.0904,
-        "high": 0.0936,
-        "low": 0.0902,
-        "change_pct": 2.94,
-        "atr": 0.0003,
-        "avg_vol": 8763322.4,
-        "last_vol": 1550550.0
-      },
-      "30m": {
-        "close": 0.0931,
-        "open": 0.09,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 3.38,
-        "atr": 0.0005,
-        "avg_vol": 14386923.71,
-        "last_vol": 1550550.0
-      },
-      "1h": {
-        "close": 0.0931,
-        "open": 0.091,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 2.25,
-        "atr": 0.0008,
-        "avg_vol": 22763047.33,
-        "last_vol": 1555979.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 0.09318,
     "best_price": 0.09338,
