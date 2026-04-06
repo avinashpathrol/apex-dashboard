@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-06T03:25:20.105019+00:00",
+  "generated_at": "2026-04-06T03:26:38.452891+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -15,7 +15,8 @@
   ],
   "bearish": [
     "RSI falling from high (59.4)",
-    "MACD below signal (bearish)"
+    "MACD below signal (bearish)",
+    "High volume confirms move"
   ],
   "trades": [
     {
@@ -7063,7 +7064,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 125,
+  "run_count": 126,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
