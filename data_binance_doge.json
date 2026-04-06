@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T15:26:33.923479+00:00",
+  "generated_at": "2026-04-06T15:28:04.098099+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09253,
+  "price": 0.09256,
   "usdt_balance": 125.20251761,
   "sol_balance": 0.128,
   "cad_balance": 125.20251761,
-  "margin_level": 818.58412657,
+  "margin_level": 818.49555975,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -438,7 +438,7 @@
     "long_trades": 4,
     "short_trades": 4
   },
-  "run_count": 413,
+  "run_count": 414,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -466,7 +466,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price fluctuating below the EMA-20, indicating a potential downtrend, but the EMA-20 is still above the EMA-50, suggesting an overall uptrend. The market is struggling to find direction, leading to a neutral verdict. Short-term volatility is relatively low, with the ATR values indicating minimal price movements.",
+    "5m": "The 5-minute timeframe shows a slight decline in price, with a 0.79% change, indicating a minor bearish bias.",
+    "15m": "The 15-minute timeframe exhibits a similar bearish trend, with a 0.77% price decrease, but the overall movement remains relatively contained.",
+    "30m": "The 30-minute timeframe displays a more bullish outlook, with a 2.11% price increase, suggesting some buying interest in the market.",
+    "1h": "The 1-hour timeframe shows a moderate 0.78% price increase, indicating a slight bullish bias, but the overall trend remains uncertain.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 0.0936 or a breakdown below the key support level of 0.0897 to determine the next market direction.",
+    "risk_warning": "The low confidence level of the bot signal and mixed market signals across timeframes suggest a high level of uncertainty, and traders should exercise caution when entering positions.",
+    "generated_at": "2026-04-06T15:28:02.314872+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0926,
+        "open": 0.0933,
+        "high": 0.0934,
+        "low": 0.0921,
+        "change_pct": -0.79,
+        "atr": 0.0003,
+        "avg_vol": 2075958.0,
+        "last_vol": 776615.0
+      },
+      "15m": {
+        "close": 0.0926,
+        "open": 0.0933,
+        "high": 0.0936,
+        "low": 0.0915,
+        "change_pct": -0.77,
+        "atr": 0.0004,
+        "avg_vol": 7960902.68,
+        "last_vol": 2355097.0
+      },
+      "30m": {
+        "close": 0.0926,
+        "open": 0.0907,
+        "high": 0.0936,
+        "low": 0.0902,
+        "change_pct": 2.11,
+        "atr": 0.0005,
+        "avg_vol": 14399249.5,
+        "last_vol": 7305222.0
+      },
+      "1h": {
+        "close": 0.0926,
+        "open": 0.0919,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 0.78,
+        "atr": 0.0007,
+        "avg_vol": 23493091.83,
+        "last_vol": 7305222.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
