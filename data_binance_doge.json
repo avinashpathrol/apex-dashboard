@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-06T10:34:43.931178+00:00",
+  "generated_at": "2026-04-06T10:36:03.803357+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0933,
+  "price": 0.09324,
   "usdt_balance": -369.19971904,
   "sol_balance": 5334.51,
   "cad_balance": -369.19971904,
-  "margin_level": 1.32570512,
+  "margin_level": 1.32575515,
   "position": "LONG",
-  "action": "HOLD",
-  "confidence": 82,
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
@@ -24,8 +24,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (65.7)",
-    "Price near BB upper band (95%)"
+    "Price near BB upper band (92%)"
   ],
   "trades": [
     {
@@ -383,7 +382,7 @@
     "long_trades": 2,
     "short_trades": 4
   },
-  "run_count": 190,
+  "run_count": 191,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -415,7 +414,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a bullish momentum. The current price is near the upper Bollinger Band, which may lead to a potential pullback. However, the overall trend remains bullish, with the bot signal confirming a long position.",
+    "5m": "The 5-minute chart shows a slight increase in price, with a 0.79% change, indicating a slow but steady uptrend.",
+    "15m": "The 15-minute chart displays a more significant price increase, with a 3.0% change, confirming the bullish trend.",
+    "30m": "The 30-minute chart shows a similar uptrend, with a 3.22% change, and the price is still above the EMA-20, supporting the bullish momentum.",
+    "1h": "The 1-hour chart indicates a moderate price increase, with a 2.3% change, and the price is holding above the EMA-20, maintaining the overall bullish trend.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential pullback to the key level support at 0.0897, which could be a buying opportunity to reinforce the long position.",
+    "risk_warning": "A break below the key level support at 0.0897 could lead to a trend reversal, so traders should be prepared to adjust their positions accordingly.",
+    "generated_at": "2026-04-06T10:36:02.457794+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0932,
+        "open": 0.0925,
+        "high": 0.0935,
+        "low": 0.0917,
+        "change_pct": 0.79,
+        "atr": 0.0002,
+        "avg_vol": 1912360.4,
+        "last_vol": 167986.0
+      },
+      "15m": {
+        "close": 0.0932,
+        "open": 0.0905,
+        "high": 0.0936,
+        "low": 0.0902,
+        "change_pct": 3.0,
+        "atr": 0.0004,
+        "avg_vol": 8578003.38,
+        "last_vol": 3441785.0
+      },
+      "30m": {
+        "close": 0.0932,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 3.22,
+        "atr": 0.0005,
+        "avg_vol": 14013982.62,
+        "last_vol": 3441785.0
+      },
+      "1h": {
+        "close": 0.0932,
+        "open": 0.0911,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 2.3,
+        "atr": 0.0009,
+        "avg_vol": 22230773.6,
+        "last_vol": 16626740.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.09318,
     "best_price": 0.09337,
