@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T19:02:25.972689+00:00",
+  "generated_at": "2026-04-06T19:04:06.066616+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09206,
+  "price": 0.09204,
   "usdt_balance": 614.86549368,
   "sol_balance": -5395.505,
   "cad_balance": 614.86549368,
-  "margin_level": 1.24112683,
+  "margin_level": 1.24166731,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 95,
@@ -845,7 +845,7 @@
     "long_trades": 6,
     "short_trades": 6
   },
-  "run_count": 575,
+  "run_count": 576,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -877,7 +877,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong downtrend across multiple timeframes, with bearish signals from the MACD and EMA indicators. The price is currently below the EMA-20, indicating a short-term bearish bias. The market is likely to continue its downward momentum in the short term.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a small range and low volatility.",
+    "15m": "The 15-minute chart confirms the bearish trend, with a lower high and lower low, and increasing bearish momentum.",
+    "30m": "The 30-minute chart shows a brief bullish bounce, but the overall trend remains bearish, with the price still below the EMA-20.",
+    "1h": "The 1-hour chart indicates a neutral to bearish bias, with a narrow range and low volatility, but the overall trend is still downward.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential short entry on a bounce to the 0.0936 resistance level, with a stop loss above the EMA-20.",
+    "risk_warning": "A false breakout above the EMA-20 could lead to a sharp reversal, so traders should be cautious and adjust their positions accordingly.",
+    "generated_at": "2026-04-06T19:04:04.667092+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.092,
+        "open": 0.0924,
+        "high": 0.093,
+        "low": 0.0916,
+        "change_pct": -0.38,
+        "atr": 0.0001,
+        "avg_vol": 1522245.63,
+        "last_vol": 1047675.0
+      },
+      "15m": {
+        "close": 0.092,
+        "open": 0.0924,
+        "high": 0.0935,
+        "low": 0.0916,
+        "change_pct": -0.42,
+        "atr": 0.0003,
+        "avg_vol": 5377642.4,
+        "last_vol": 1047675.0
+      },
+      "30m": {
+        "close": 0.092,
+        "open": 0.0905,
+        "high": 0.0936,
+        "low": 0.0902,
+        "change_pct": 1.68,
+        "atr": 0.0005,
+        "avg_vol": 14607628.1,
+        "last_vol": 1047675.0
+      },
+      "1h": {
+        "close": 0.092,
+        "open": 0.092,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 0.01,
+        "atr": 0.0006,
+        "avg_vol": 22469863.25,
+        "last_vol": 1047675.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.09219,
     "best_price": 0.09204,
