@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-06T20:21:21.003498+00:00",
+  "generated_at": "2026-04-06T20:22:37.924890+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09184,
+  "price": 0.0918,
   "usdt_balance": 615.11498344,
   "sol_balance": -5417.927,
   "cad_balance": 615.11498344,
-  "margin_level": 1.24013851,
+  "margin_level": 1.24022761,
   "position": "SHORT",
   "action": "SHORT",
-  "confidence": 88,
+  "confidence": 95,
   "risk": "MEDIUM",
   "status": "HOLDING SHORT \u2014 MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bot_paused": false,
@@ -18,9 +18,7 @@
   "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
-  "bullish": [
-    "RSI rising from low (40.1)"
-  ],
+  "bullish": [],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
@@ -899,7 +897,7 @@
     "long_trades": 6,
     "short_trades": 7
   },
-  "run_count": 48,
+  "run_count": 49,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -931,62 +929,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 7,
-    "summary": "The SOL/USDT market is currently showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a bearish bias. However, the RSI is rising from a low level, which could suggest a potential bounce. The overall trend remains bearish, but traders should be cautious of a potential reversal.",
-    "5m": "The 5-minute chart shows a small decline in price, with a slight increase in volatility, indicating a potential continuation of the downtrend.",
-    "15m": "The 15-minute chart confirms the downtrend, with the price failing to break above the EMA-20, and the MACD remaining below the signal line.",
-    "30m": "The 30-minute chart shows a slight bounce in price, but the overall trend remains bearish, with the EMA-20 below the EMA-50.",
-    "1h": "The 1-hour chart indicates a consolidation phase, with the price trading below the EMA-20, and the MACD below the signal line, suggesting a potential continuation of the downtrend.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential bounce off the key level support at 0.0897, but maintain a bearish bias until the price breaks above the key level resistance at 0.0936.",
-    "risk_warning": "Traders should be cautious of a potential trend reversal if the RSI continues to rise and breaks above 50.",
-    "generated_at": "2026-04-06T20:21:19.845169+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0918,
-        "open": 0.0927,
-        "high": 0.093,
-        "low": 0.0916,
-        "change_pct": -0.91,
-        "atr": 0.0001,
-        "avg_vol": 1240168.83,
-        "last_vol": 9927.0
-      },
-      "15m": {
-        "close": 0.0918,
-        "open": 0.0925,
-        "high": 0.0935,
-        "low": 0.0916,
-        "change_pct": -0.72,
-        "atr": 0.0003,
-        "avg_vol": 5208878.47,
-        "last_vol": 742984.0
-      },
-      "30m": {
-        "close": 0.0918,
-        "open": 0.0907,
-        "high": 0.0936,
-        "low": 0.0902,
-        "change_pct": 1.27,
-        "atr": 0.0005,
-        "avg_vol": 14696963.06,
-        "last_vol": 2804227.0
-      },
-      "1h": {
-        "close": 0.0918,
-        "open": 0.0921,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": -0.3,
-        "atr": 0.0006,
-        "avg_vol": 22555470.92,
-        "last_vol": 2804227.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 0.09182,
     "best_price": 0.09167,
