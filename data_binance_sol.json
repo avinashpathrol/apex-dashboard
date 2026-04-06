@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-06T17:07:28.385778+00:00",
+  "generated_at": "2026-04-06T17:08:22.233053+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.63,
+  "price": 81.71,
   "position": null,
   "action": "LONG",
   "confidence": 82,
   "risk": "MEDIUM",
   "status": "Idle \u2014 DOGEUSDT active",
   "bullish": [
-    "RSI rising from low (36.7)",
+    "RSI rising from low (39.0)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (-9%)"
+    "Price near BB lower band (-3%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2159,8 +2159,7 @@
       "qty": 0.062,
       "cost": 5.1212,
       "fee": 0.0051212,
-      "symbol": "SOLUSDT",
-      "reason": "Dashboard close request"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-01T13:33:39.387000-07:00",
@@ -2169,8 +2168,7 @@
       "qty": 0.062,
       "cost": 5.1212,
       "fee": 0.0051212,
-      "symbol": "SOLUSDT",
-      "reason": "Dashboard close request"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-01T13:33:39.387000-07:00",
@@ -2179,8 +2177,7 @@
       "qty": 0.122,
       "cost": 10.0772,
       "fee": 0.0100772,
-      "symbol": "SOLUSDT",
-      "reason": "Dashboard close request"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-01T13:33:39.387000-07:00",
@@ -2189,8 +2186,7 @@
       "qty": 0.091,
       "cost": 7.5166,
       "fee": 0.0075166,
-      "symbol": "SOLUSDT",
-      "reason": "Dashboard close request"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-01T13:33:39.387000-07:00",
@@ -2199,8 +2195,7 @@
       "qty": 0.073,
       "cost": 6.0298,
       "fee": 0.0060298,
-      "symbol": "SOLUSDT",
-      "reason": "Dashboard close request"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-01T13:33:39.387000-07:00",
@@ -2209,8 +2204,7 @@
       "qty": 0.067,
       "cost": 5.5342,
       "fee": 0.0055342,
-      "symbol": "SOLUSDT",
-      "reason": "Dashboard close request"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-01T13:33:39.387000-07:00",
@@ -2219,8 +2213,7 @@
       "qty": 4.609,
       "cost": 380.7034,
       "fee": 0.3807034,
-      "symbol": "SOLUSDT",
-      "reason": "Dashboard close request"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-01T13:45:13.998000-07:00",
@@ -7053,7 +7046,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 490,
+  "run_count": 491,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
