@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T11:35:42.387255+00:00",
+  "generated_at": "2026-04-06T11:37:58.670941+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09291,
+  "price": 0.09292,
   "usdt_balance": -369.19971904,
   "sol_balance": 5334.51,
   "cad_balance": -369.19971904,
-  "margin_level": 1.32069783,
+  "margin_level": 1.32064127,
   "position": "LONG",
   "action": "LONG",
   "confidence": 95,
@@ -380,7 +380,7 @@
     "long_trades": 2,
     "short_trades": 4
   },
-  "run_count": 236,
+  "run_count": 237,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -412,7 +412,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price consistently closing above the EMA-20 and EMA-50, indicating a bullish momentum. The MACD is also above the signal line, further confirming the bullish trend. The overall sentiment remains positive, with the bot signal indicating a high confidence level for a long position.",
+    "5m": "The 5-minute chart shows a slight increase in price, with a 0.78% change, indicating a slow but steady upward movement.",
+    "15m": "The 15-minute chart displays a more significant price increase, with a 2.46% change, suggesting a moderate bullish momentum.",
+    "30m": "The 30-minute chart reveals a strong uptrend, with a 3.12% price change, indicating a robust bullish sentiment.",
+    "1h": "The 1-hour chart shows a steady upward movement, with a 2.14% price change, confirming the overall bullish trend.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential breakout above the key level resistance at 0.0936, which could lead to further upside momentum.",
+    "risk_warning": "However, a failure to hold above the key level support at 0.0897 could lead to a reversal of the trend, and traders should be prepared to adjust their positions accordingly.",
+    "generated_at": "2026-04-06T11:37:57.356585+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0929,
+        "open": 0.0922,
+        "high": 0.0935,
+        "low": 0.0917,
+        "change_pct": 0.78,
+        "atr": 0.0001,
+        "avg_vol": 2099283.58,
+        "last_vol": 285067.0
+      },
+      "15m": {
+        "close": 0.0929,
+        "open": 0.0907,
+        "high": 0.0936,
+        "low": 0.0902,
+        "change_pct": 2.46,
+        "atr": 0.0004,
+        "avg_vol": 8876797.1,
+        "last_vol": 974896.0
+      },
+      "30m": {
+        "close": 0.0929,
+        "open": 0.0901,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 3.12,
+        "atr": 0.0005,
+        "avg_vol": 14513814.67,
+        "last_vol": 974896.0
+      },
+      "1h": {
+        "close": 0.0929,
+        "open": 0.091,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 2.14,
+        "atr": 0.0009,
+        "avg_vol": 22750617.48,
+        "last_vol": 13290437.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.09318,
     "best_price": 0.09338,
