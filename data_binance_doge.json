@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T04:38:43.932933+00:00",
+  "generated_at": "2026-04-06T04:40:59.019063+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09279,
+  "price": 0.09278,
   "usdt_balance": 126.60911355,
   "sol_balance": 0.575,
   "cad_balance": 126.60911355,
-  "margin_level": 892.54313218,
+  "margin_level": 892.7776568,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
@@ -116,7 +116,7 @@
     "long_trades": 1,
     "short_trades": 1
   },
-  "run_count": 183,
+  "run_count": 184,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -148,7 +148,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 6,
+    "summary": "The SOL/USDT market is showing signs of an uptrend across multiple timeframes, with the price above the EMA-20 and the EMA-20 above the EMA-50, indicating a bullish trend, but the MACD below the signal line is a bearish signal that needs to be monitored. The market is experiencing a steady increase in price, with the 15m and 1h timeframes showing significant gains. However, the low confidence level of the bot signal and the bearish MACD signal suggest caution.",
+    "5m": "The 5m timeframe is showing a slight increase in price, with a 0.63% change and a high of 0.0936, indicating a potential for further upward movement.",
+    "15m": "The 15m timeframe is indicating a strong bullish trend, with a 2.74% price increase and a high of 0.0936, suggesting that the uptrend may continue.",
+    "30m": "The 30m timeframe is showing a steady increase in price, with a 1.98% change and a high of 0.0936, indicating a potential for further upward movement.",
+    "1h": "The 1h timeframe is indicating a bullish trend, with a 1.8% price increase and a high of 0.0936, suggesting that the uptrend may continue in the short term.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential breakout above the key level resistance of 0.0936, which could indicate further upward movement.",
+    "risk_warning": "The low confidence level of the bot signal and the bearish MACD signal suggest that traders should be cautious and consider adjusting their positions accordingly.",
+    "generated_at": "2026-04-06T04:40:57.821184+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0928,
+        "open": 0.0922,
+        "high": 0.0936,
+        "low": 0.0915,
+        "change_pct": 0.63,
+        "atr": 0.0002,
+        "avg_vol": 4733781.12,
+        "last_vol": 1788.0
+      },
+      "15m": {
+        "close": 0.0928,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.09,
+        "change_pct": 2.74,
+        "atr": 0.0005,
+        "avg_vol": 7962843.68,
+        "last_vol": 5745472.0
+      },
+      "30m": {
+        "close": 0.0928,
+        "open": 0.091,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 1.98,
+        "atr": 0.0008,
+        "avg_vol": 13971356.92,
+        "last_vol": 5745472.0
+      },
+      "1h": {
+        "close": 0.0928,
+        "open": 0.0911,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 1.8,
+        "atr": 0.0009,
+        "avg_vol": 20408263.88,
+        "last_vol": 14001243.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.09168,
     "best_price": 0.09285,
