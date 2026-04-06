@@ -1,30 +1,29 @@
 {
-  "generated_at": "2026-04-06T09:01:41.695741+00:00",
+  "generated_at": "2026-04-06T09:03:07.756431+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0922,
+  "price": 0.09226,
   "usdt_balance": 126.60911355,
   "sol_balance": 0.575,
   "cad_balance": 126.60911355,
-  "margin_level": 887.2635092,
+  "margin_level": 887.31211349,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (49.4)",
-    "EMA-20 above EMA-50 (uptrend)"
+    "EMA-20 above EMA-50 (uptrend)",
+    "Price above EMA-20"
   ],
   "bearish": [
-    "MACD below signal (bearish)",
-    "Price below EMA-20"
+    "MACD below signal (bearish)"
   ],
   "trades": [
     {
@@ -117,7 +116,7 @@
     "long_trades": 1,
     "short_trades": 1
   },
-  "run_count": 120,
+  "run_count": 121,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -145,7 +144,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mixed signal environment, with both bullish and bearish indicators present across different timeframes, resulting in a neutral outlook. The price has been trending upwards in the shorter timeframes but lacks strong momentum. Overall, the market is awaiting a breakout or a trend reversal signal.",
+    "5m": "The 5-minute timeframe shows a slight decline in price, indicating a potential short-term bearish bias.",
+    "15m": "The 15-minute timeframe displays a bullish trend with a 2.14% price increase, suggesting a possible uptrend.",
+    "30m": "The 30-minute timeframe also exhibits a bullish trend with a 2.11% price increase, further supporting the uptrend notion.",
+    "1h": "The 1-hour timeframe shows a moderate 1.33% price increase, indicating a slower but still upward trend.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a breakout above the resistance level of 0.0936 or a breakdown below the support level of 0.0897 to determine the next market direction.",
+    "risk_warning": "Trading in a neutral market environment with mixed signals can be risky, so traders should exercise caution and consider reducing their position sizes.",
+    "generated_at": "2026-04-06T09:03:06.270607+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0923,
+        "open": 0.0924,
+        "high": 0.0929,
+        "low": 0.0917,
+        "change_pct": -0.09,
+        "atr": 0.0002,
+        "avg_vol": 1377705.43,
+        "last_vol": 1393196.0
+      },
+      "15m": {
+        "close": 0.0923,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.0902,
+        "change_pct": 2.14,
+        "atr": 0.0003,
+        "avg_vol": 7799988.12,
+        "last_vol": 1393196.0
+      },
+      "30m": {
+        "close": 0.0923,
+        "open": 0.0904,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 2.11,
+        "atr": 0.0005,
+        "avg_vol": 12975091.5,
+        "last_vol": 1393196.0
+      },
+      "1h": {
+        "close": 0.0923,
+        "open": 0.0911,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 1.33,
+        "atr": 0.0008,
+        "avg_vol": 21192579.08,
+        "last_vol": 1393196.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
