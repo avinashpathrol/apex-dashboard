@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-06T01:46:09.040104+00:00",
+  "generated_at": "2026-04-06T02:51:22.551849+00:00",
   "symbol": "XETHZCAD",
-  "price": 2956.27,
+  "price": 2978.09,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "BUY",
@@ -15,7 +15,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (70.0)"
+    "RSI overbought (70.9)"
   ],
   "trades": [
     {
