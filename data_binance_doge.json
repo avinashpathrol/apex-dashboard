@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T11:22:39.631896+00:00",
+  "generated_at": "2026-04-06T11:23:57.629304+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09289,
+  "price": 0.09298,
   "usdt_balance": -369.19971904,
   "sol_balance": 5334.51,
   "cad_balance": -369.19971904,
-  "margin_level": 1.32072735,
+  "margin_level": 1.32127904,
   "position": "LONG",
   "action": "LONG",
   "confidence": 95,
@@ -380,7 +380,7 @@
     "long_trades": 2,
     "short_trades": 4
   },
-  "run_count": 226,
+  "run_count": 227,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -412,62 +412,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price consistently closing higher and the MACD above the signal line, indicating a bullish momentum. The EMA-20 is also above the EMA-50, further supporting the uptrend. The overall trend suggests a continuation of the bullish movement.",
-    "5m": "The 5-minute chart shows a slight increase in price with a 0.88% change, indicating a steady bullish movement.",
-    "15m": "The 15-minute chart displays a more significant price increase of 2.57%, confirming the bullish trend and suggesting a potential breakout.",
-    "30m": "The 30-minute chart reveals a 2.81% price increase, with the price reaching a high of 0.0936, indicating a strong bullish momentum.",
-    "1h": "The 1-hour chart shows a 2.11% price increase, with the price maintaining its position above the EMA-20, supporting the overall bullish trend.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential breakout above the key level resistance of 0.0936, which could lead to further bullish movement.",
-    "risk_warning": "A failure to maintain the price above the key level support of 0.0897 could lead to a reversal of the trend.",
-    "generated_at": "2026-04-06T11:22:38.277786+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0929,
-        "open": 0.0921,
-        "high": 0.0935,
-        "low": 0.0917,
-        "change_pct": 0.88,
-        "atr": 0.0002,
-        "avg_vol": 2102893.65,
-        "last_vol": 1683538.0
-      },
-      "15m": {
-        "close": 0.0929,
-        "open": 0.0906,
-        "high": 0.0936,
-        "low": 0.0902,
-        "change_pct": 2.57,
-        "atr": 0.0004,
-        "avg_vol": 8928270.52,
-        "last_vol": 2166538.0
-      },
-      "30m": {
-        "close": 0.0929,
-        "open": 0.0903,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 2.81,
-        "atr": 0.0005,
-        "avg_vol": 14476041.38,
-        "last_vol": 9314882.0
-      },
-      "1h": {
-        "close": 0.0929,
-        "open": 0.091,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 2.11,
-        "atr": 0.0009,
-        "avg_vol": 22667793.42,
-        "last_vol": 9314882.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 0.09318,
     "best_price": 0.09338,
