@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-07T11:53:29.305473+00:00",
+  "generated_at": "2026-04-07T11:54:45.133938+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09051,
+  "price": 0.09045,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 655.5186487,
+  "margin_level": 655.63765898,
   "position": null,
   "action": "HOLD",
-  "confidence": 95,
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "SKIPPED \u2014 SHORT blocked for DOGE (long-only mode)",
   "bot_paused": false,
@@ -18,7 +18,9 @@
   "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
-  "bullish": [],
+  "bullish": [
+    "Price near BB lower band (18%)"
+  ],
   "bearish": [
     "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)",
@@ -1214,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 496,
+  "run_count": 497,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
