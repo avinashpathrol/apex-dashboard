@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-07T20:58:36.087439+00:00",
+  "generated_at": "2026-04-07T20:59:54.067475+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.94,
+  "price": 81.92,
   "position": null,
   "action": "LONG",
   "confidence": 82,
@@ -15,7 +15,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (77.5)",
+    "RSI overbought (77.0)",
     "Price near BB upper band (86%)"
   ],
   "trades": [
@@ -3689,8 +3689,7 @@
       "qty": 1.208,
       "cost": 96.60376,
       "fee": 0.09660376,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3699,8 +3698,7 @@
       "qty": 0.666,
       "cost": 53.26002,
       "fee": 0.05326002,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3709,8 +3707,7 @@
       "qty": 0.078,
       "cost": 6.23766,
       "fee": 0.00623766,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3719,8 +3716,7 @@
       "qty": 0.069,
       "cost": 5.51793,
       "fee": 0.00551793,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3729,8 +3725,7 @@
       "qty": 0.063,
       "cost": 5.03811,
       "fee": 0.00503811,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3739,8 +3734,7 @@
       "qty": 0.375,
       "cost": 29.98875,
       "fee": 0.02998875,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3749,8 +3743,7 @@
       "qty": 0.066,
       "cost": 5.27802,
       "fee": 0.00527802,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3759,8 +3752,7 @@
       "qty": 0.066,
       "cost": 5.27802,
       "fee": 0.00527802,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:50:09.519000-07:00",
@@ -3769,8 +3761,7 @@
       "qty": 2.671,
       "cost": 213.59987,
       "fee": 0.21359987,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.2800 sl=79.9893 price=79.9700 | ATR=0.2907"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T05:00:35.731000-07:00",
@@ -6963,7 +6954,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 919,
+  "run_count": 920,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
