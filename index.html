@@ -1836,7 +1836,7 @@ function buildCal(tbd){
   qs('cal-grid').innerHTML=h;
 }
 function chMonth(d){ calM+=d; if(calM>11){calM=0;calY++;} if(calM<0){calM=11;calY--;} buildCal(window._tbd||{}); }
-function byDay(et){ const m={}; for(const t of et){ const d=new Date(t.time); const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); if(!m[k])m[k]={pnl:0,count:0}; m[k].pnl+=n(t.pnl); m[k].count++; } return m; }
+function byDay(et){ const m={}; for(const t of et){ const iso=t.closed_at||t.time; const d=new Date(iso); const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); if(!m[k])m[k]={pnl:0,count:0}; m[k].pnl+=n(t.pnl); m[k].count++; } return m; }
 
 // ── PERIOD RETURNS ──
 function selPeriod(el,p){ document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active')); el.classList.add('active'); updPeriod(p); }
