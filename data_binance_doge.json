@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T01:00:58.779003+00:00",
+  "generated_at": "2026-04-07T01:02:15.799512+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 615.43982832,
   "sol_balance": -5488.875,
   "cad_balance": 615.43982832,
-  "margin_level": 1.23989125,
+  "margin_level": 1.24080626,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
@@ -1060,7 +1060,7 @@
     "long_trades": 7,
     "short_trades": 9
   },
-  "run_count": 174,
+  "run_count": 175,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1092,62 +1092,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a downtrend, but oversold conditions and bullish MACD signals suggest a potential reversal. However, the price remains below the EMA-20, indicating ongoing bearish pressure. Across timeframes, the market is exhibiting mixed signals, making it challenging to determine a clear direction.",
-    "5m": "The 5-minute chart shows a slight decline, with a 1.28% drop in price, indicating short-term bearish momentum.",
-    "15m": "The 15-minute chart reveals a more significant decline, with a 2.64% drop in price, suggesting increasing bearish pressure.",
-    "30m": "The 30-minute chart exhibits a similar downtrend, with a 1.77% drop in price, but the ATR is increasing, indicating rising volatility.",
-    "1h": "The 1-hour chart shows a relatively smaller decline, with a 0.94% drop in price, potentially indicating a slowing of bearish momentum.",
-    "key_level_support": 0.0899,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential bullish reversal if the price breaks above the EMA-20 and the key level resistance at 0.0936.",
-    "risk_warning": "A failure to break above the key level resistance could lead to further declines, and traders should be prepared for increased volatility.",
-    "generated_at": "2026-04-07T01:00:57.612446+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0907,
-        "open": 0.0919,
-        "high": 0.092,
-        "low": 0.0899,
-        "change_pct": -1.28,
-        "atr": 0.0002,
-        "avg_vol": 3673953.62,
-        "last_vol": 597746.0
-      },
-      "15m": {
-        "close": 0.0907,
-        "open": 0.0931,
-        "high": 0.0934,
-        "low": 0.0899,
-        "change_pct": -2.64,
-        "atr": 0.0003,
-        "avg_vol": 7069377.57,
-        "last_vol": 597746.0
-      },
-      "30m": {
-        "close": 0.0907,
-        "open": 0.0923,
-        "high": 0.0936,
-        "low": 0.0899,
-        "change_pct": -1.77,
-        "atr": 0.0004,
-        "avg_vol": 13994915.44,
-        "last_vol": 597746.0
-      },
-      "1h": {
-        "close": 0.0907,
-        "open": 0.0915,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": -0.94,
-        "atr": 0.0006,
-        "avg_vol": 25727836.12,
-        "last_vol": 597746.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 0.09063,
     "best_price": 0.09047,
