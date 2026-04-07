@@ -1,25 +1,26 @@
 {
-  "generated_at": "2026-04-07T12:17:51.348571+00:00",
+  "generated_at": "2026-04-07T12:19:27.921673+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09025,
+  "price": 0.09039,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 659.4546692,
+  "margin_level": 658.9072846,
   "position": null,
   "action": "HOLD",
-  "confidence": 88,
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 SHORT blocked for DOGE (long-only mode)",
+  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "Price near BB lower band (7%)"
+    "RSI rising from low (41.6)",
+    "Price near BB lower band (17%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1216,7 +1217,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 515,
+  "run_count": 516,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,7 +1245,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a bearish bias. The RSI is rising from a low, but the overall trend remains bearish. The price is near the lower Bollinger Band, which could lead to a bounce, but the bearish signals dominate.",
+    "5m": "The 5-minute chart shows a slight decline, with a small ATR, indicating low volatility and a potential for a breakout.",
+    "15m": "The 15-minute chart displays a more significant decline, with a larger ATR, suggesting increased volatility and a stronger bearish trend.",
+    "30m": "The 30-minute chart reveals a notable downtrend, with the price below the EMA-20 and EMA-50, confirming the bearish bias.",
+    "1h": "The 1-hour chart shows a slight increase, but the overall trend remains bearish, with the price below the EMA-20 and the MACD below the signal line.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential short entry on a bounce to the key level resistance at 0.0936, with a stop-loss above the resistance level.",
+    "risk_warning": "A false breakout above the key level resistance could lead to a significant price increase, so traders should adjust their positions accordingly.",
+    "generated_at": "2026-04-07T12:19:26.499078+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0904,
+        "open": 0.0907,
+        "high": 0.0915,
+        "low": 0.0901,
+        "change_pct": -0.37,
+        "atr": 0.0002,
+        "avg_vol": 2112560.47,
+        "last_vol": 1883297.0
+      },
+      "15m": {
+        "close": 0.0904,
+        "open": 0.0914,
+        "high": 0.0916,
+        "low": 0.0899,
+        "change_pct": -1.15,
+        "atr": 0.0004,
+        "avg_vol": 7670041.67,
+        "last_vol": 1883297.0
+      },
+      "30m": {
+        "close": 0.0904,
+        "open": 0.0925,
+        "high": 0.093,
+        "low": 0.0899,
+        "change_pct": -2.25,
+        "atr": 0.0004,
+        "avg_vol": 12845128.27,
+        "last_vol": 11938992.0
+      },
+      "1h": {
+        "close": 0.0904,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 0.09,
+        "atr": 0.0005,
+        "avg_vol": 26844374.62,
+        "last_vol": 11938992.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
