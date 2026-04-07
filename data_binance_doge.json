@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T04:19:36.137174+00:00",
+  "generated_at": "2026-04-07T04:21:20.022865+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09035,
+  "price": 0.09036,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 654.45138648,
+  "margin_level": 654.36223293,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -19,9 +19,9 @@
   "reason": "Blocked LONG \u2014 trend filter active (EMA-20 <= EMA-50) | 3 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (34.3)",
+    "RSI oversold (34.5)",
     "MACD above signal (bullish)",
-    "Price near BB lower band (-0%)"
+    "Price near BB lower band (1%)"
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
@@ -1217,7 +1217,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 143,
+  "run_count": 144,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1245,7 +1245,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals, with the price hovering near the lower Bollinger Band and the RSI in oversold territory, but also below the EMA-20 and EMA-50, indicating a downtrend. The market is choppy across multiple timeframes, with minimal price changes. A breakout or reversal is likely to occur soon, but the direction is uncertain.",
+    "5m": "The 5-minute chart shows a slight increase in price, but the overall movement is minimal, with a small ATR of 0.0001.",
+    "15m": "The 15-minute chart indicates a downtrend, with a 2.17% price decrease and a higher ATR of 0.0002, suggesting increased volatility.",
+    "30m": "The 30-minute chart also shows a downtrend, with a 2.4% price decrease and an ATR of 0.0004, indicating moderate volatility.",
+    "1h": "The 1-hour chart shows a slight decrease in price, with a 0.39% change and an ATR of 0.0005, suggesting a relatively calm market.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 0.0936 or a breakdown below the key support level of 0.0897 to determine the next market direction.",
+    "risk_warning": "Trading in a choppy market with mixed signals can result in significant losses, so traders should exercise caution and consider reducing their position size.",
+    "generated_at": "2026-04-07T04:21:18.656902+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0904,
+        "open": 0.0903,
+        "high": 0.091,
+        "low": 0.0902,
+        "change_pct": 0.09,
+        "atr": 0.0001,
+        "avg_vol": 1855333.57,
+        "last_vol": 154242.0
+      },
+      "15m": {
+        "close": 0.0904,
+        "open": 0.0924,
+        "high": 0.093,
+        "low": 0.0899,
+        "change_pct": -2.17,
+        "atr": 0.0002,
+        "avg_vol": 6440996.32,
+        "last_vol": 737129.0
+      },
+      "30m": {
+        "close": 0.0904,
+        "open": 0.0926,
+        "high": 0.0935,
+        "low": 0.0899,
+        "change_pct": -2.4,
+        "atr": 0.0004,
+        "avg_vol": 12422514.88,
+        "last_vol": 6049096.0
+      },
+      "1h": {
+        "close": 0.0904,
+        "open": 0.0907,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": -0.39,
+        "atr": 0.0005,
+        "avg_vol": 26274174.46,
+        "last_vol": 6049096.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
