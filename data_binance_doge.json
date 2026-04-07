@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T13:19:37.523343+00:00",
+  "generated_at": "2026-04-07T13:21:00.969084+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0906,
+  "price": 0.09061,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 654.5564448,
+  "margin_level": 654.67482331,
   "position": null,
   "action": "HOLD",
   "confidence": 95,
@@ -1214,7 +1214,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 563,
+  "run_count": 564,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1242,7 +1242,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is exhibiting a strong downtrend across multiple timeframes, with bearish signals from the MACD and EMA indicators. The price is consistently below the EMA-20, indicating a short-term bearish bias. The market is likely to continue its downward momentum in the near term.",
+    "5m": "The 5-minute chart shows a slight decline in price with a narrow range, indicating a potential pause in the downtrend.",
+    "15m": "The 15-minute chart reveals a more pronounced decline, with the price dropping below the opening level and increasing the likelihood of further downside.",
+    "30m": "The 30-minute chart displays a significant drop in price, with a loss of nearly 2%, confirming the bearish trend and increasing the chances of further decline.",
+    "1h": "The 1-hour chart shows a minor rebound, but the overall trend remains bearish, with the price still below the key resistance level.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.093,
+    "recommendation": "Traders should watch for a potential short entry on a retest of the 0.0915 level, with a stop-loss above 0.093.",
+    "risk_warning": "A false breakout above 0.093 could lead to a significant reversal, so traders should be cautious and adjust their positions accordingly.",
+    "generated_at": "2026-04-07T13:20:59.515694+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0906,
+        "open": 0.0907,
+        "high": 0.0915,
+        "low": 0.0901,
+        "change_pct": -0.07,
+        "atr": 0.0002,
+        "avg_vol": 2047706.17,
+        "last_vol": 13200.0
+      },
+      "15m": {
+        "close": 0.0906,
+        "open": 0.0907,
+        "high": 0.0915,
+        "low": 0.0899,
+        "change_pct": -0.13,
+        "atr": 0.0004,
+        "avg_vol": 7606258.95,
+        "last_vol": 482687.0
+      },
+      "30m": {
+        "close": 0.0906,
+        "open": 0.0924,
+        "high": 0.093,
+        "low": 0.0899,
+        "change_pct": -1.92,
+        "atr": 0.0004,
+        "avg_vol": 12729382.21,
+        "last_vol": 4935272.0
+      },
+      "1h": {
+        "close": 0.0906,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.0899,
+        "change_pct": 0.38,
+        "atr": 0.0005,
+        "avg_vol": 26867004.56,
+        "last_vol": 4935272.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
