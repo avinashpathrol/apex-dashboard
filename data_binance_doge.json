@@ -1,31 +1,32 @@
 {
-  "generated_at": "2026-04-07T22:32:24.549754+00:00",
+  "generated_at": "2026-04-07T22:33:43.389909+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09305,
-  "usdt_balance": 107.32852765,
-  "sol_balance": 0.246,
-  "cad_balance": 107.32852765,
-  "margin_level": 539.37889064,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 82,
-  "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
+  "price": 0.09372,
+  "usdt_balance": -390.24339235,
+  "sol_balance": 5302.938,
+  "cad_balance": -390.24339235,
+  "margin_level": 1.27129311,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 85,
+  "risk": "LOW",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20"
+    "Price above EMA-20",
+    "High volume confirms move"
   ],
   "bearish": [
-    "RSI overbought (68.0)",
-    "Price near BB upper band (84%)"
+    "RSI overbought (73.9)",
+    "Price near BB upper band (105%)"
   ],
   "trades": [
     {
@@ -1569,6 +1570,33 @@
       "fee": 0.4941748,
       "symbol": "DOGEUSDT",
       "reason": "\ud83d\uded1 Hard SL hit | entry=0.0934 sl=0.0930 price=0.0928 | ATR=0.0005"
+    },
+    {
+      "time": "2026-04-07T15:33:39.378000-07:00",
+      "action": "BUY",
+      "price": 0.09374,
+      "qty": 12.0,
+      "cost": 1.12488,
+      "fee": 0.012,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-07T15:33:39.378000-07:00",
+      "action": "BUY",
+      "price": 0.09374,
+      "qty": 12.0,
+      "cost": 1.12488,
+      "fee": 0.012,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-07T15:33:39.378000-07:00",
+      "action": "BUY",
+      "price": 0.09374,
+      "qty": 5284.0,
+      "cost": 495.32216,
+      "fee": 5.284,
+      "symbol": "DOGEUSDT"
     }
   ],
   "closed_trades": [
@@ -2045,7 +2073,7 @@
     "long_trades": 14,
     "short_trades": 19
   },
-  "run_count": 992,
+  "run_count": 993,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2065,7 +2093,11 @@
       "force_trail": false,
       "force_trail_at": "2026-04-07T21:09:23.543Z"
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 100.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -2075,11 +2107,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 0.09372,
+    "best_price": 0.09372,
+    "atr": 0.0005014285714285713,
+    "sl": 0.09296785714285714,
+    "trail_stop": 0.09296785714285714,
     "active": false
   }
 }
