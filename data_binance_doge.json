@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T11:16:12.223335+00:00",
+  "generated_at": "2026-04-07T11:17:38.702024+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09078,
+  "price": 0.09077,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 655.22042607,
+  "margin_level": 655.3422655,
   "position": null,
   "action": "HOLD",
   "confidence": 88,
@@ -19,7 +19,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (49.7)"
+    "RSI rising from low (49.5)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 467,
+  "run_count": 468,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,7 +1244,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a bearish bias. However, the RSI is rising from a low level, which could suggest a potential bounce. The overall trend remains bearish, but traders should be cautious of a potential reversal.",
+    "5m": "The 5-minute chart shows a slight increase in price, but the overall trend remains bearish, with the price still below the EMA-20.",
+    "15m": "The 15-minute chart shows a decline in price, with a loss of 1.28%, indicating a strong bearish momentum.",
+    "30m": "The 30-minute chart shows a downtrend, with the price below the EMA-20 and EMA-50, indicating a bearish bias.",
+    "1h": "The 1-hour chart shows a slight increase in price, but the overall trend remains bearish, with the price still below the EMA-20 and MACD below the signal line.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential short entry on a bounce to the key level resistance at 0.0936, with a stop loss above the resistance level.",
+    "risk_warning": "Traders should be cautious of a potential reversal, as the RSI is rising from a low level, and adjust their positions accordingly.",
+    "generated_at": "2026-04-07T11:17:37.358313+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0908,
+        "open": 0.0904,
+        "high": 0.0915,
+        "low": 0.0902,
+        "change_pct": 0.4,
+        "atr": 0.0002,
+        "avg_vol": 2328562.95,
+        "last_vol": 2421812.0
+      },
+      "15m": {
+        "close": 0.0908,
+        "open": 0.092,
+        "high": 0.092,
+        "low": 0.0899,
+        "change_pct": -1.28,
+        "atr": 0.0003,
+        "avg_vol": 7496525.62,
+        "last_vol": 2421812.0
+      },
+      "30m": {
+        "close": 0.0908,
+        "open": 0.093,
+        "high": 0.0931,
+        "low": 0.0899,
+        "change_pct": -2.44,
+        "atr": 0.0004,
+        "avg_vol": 12879349.38,
+        "last_vol": 18383190.0
+      },
+      "1h": {
+        "close": 0.0908,
+        "open": 0.09,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 0.83,
+        "atr": 0.0005,
+        "avg_vol": 27372853.71,
+        "last_vol": 18383190.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
