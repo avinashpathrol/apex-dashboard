@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T09:45:23.315495+00:00",
+  "generated_at": "2026-04-07T09:46:39.288138+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09139,
+  "price": 0.09127,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 646.19433645,
+  "margin_level": 646.56729523,
   "position": null,
   "action": "HOLD",
   "confidence": 82,
@@ -16,16 +16,16 @@
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI overbought (67.5) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (112%)",
+  "reason": "RSI falling from high (63.6) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (95%)",
   "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (67.5)",
+    "RSI falling from high (63.6)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (112%)"
+    "Price near BB upper band (95%)"
   ],
   "trades": [
     {
@@ -1217,7 +1217,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 396,
+  "run_count": 397,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1245,62 +1245,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 7,
-    "summary": "The SOL/USDT market is showing signs of a potential reversal across multiple timeframes, with bearish signals outweighing bullish ones, indicating a possible downtrend. The current price is near the upper Bollinger Band, and the RSI is overbought, suggesting a correction may be imminent. The EMA-20 is below the EMA-50, further supporting the bearish outlook.",
-    "5m": "The 5-minute chart shows a slight increase in price, but the overall trend is still uncertain, with a small ATR indicating low volatility.",
-    "15m": "The 15-minute chart reveals a decline in price, with a negative change and a relatively low ATR, suggesting a potential continuation of the downtrend.",
-    "30m": "The 30-minute chart displays a more significant drop in price, with a higher ATR, indicating increased volatility and a possible acceleration of the bearish trend.",
-    "1h": "The 1-hour chart shows a slight increase in price, but the overall trend is still bearish, with the EMA-20 below the EMA-50 and the price near the upper Bollinger Band.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential short entry near the current price, with a target near the key level support and a stop-loss above the key level resistance.",
-    "risk_warning": "A false breakout above the key level resistance could lead to a significant price increase, so traders should be cautious and adjust their positions accordingly.",
-    "generated_at": "2026-04-07T09:45:22.007754+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0914,
-        "open": 0.0908,
-        "high": 0.0915,
-        "low": 0.0902,
-        "change_pct": 0.66,
-        "atr": 0.0002,
-        "avg_vol": 2011367.63,
-        "last_vol": 1372046.0
-      },
-      "15m": {
-        "close": 0.0914,
-        "open": 0.0922,
-        "high": 0.0922,
-        "low": 0.0899,
-        "change_pct": -0.87,
-        "atr": 0.0002,
-        "avg_vol": 6730032.45,
-        "last_vol": 3466515.0
-      },
-      "30m": {
-        "close": 0.0914,
-        "open": 0.0931,
-        "high": 0.0934,
-        "low": 0.0899,
-        "change_pct": -1.88,
-        "atr": 0.0003,
-        "avg_vol": 12548666.02,
-        "last_vol": 3466515.0
-      },
-      "1h": {
-        "close": 0.0914,
-        "open": 0.0903,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 1.23,
-        "atr": 0.0005,
-        "avg_vol": 26358370.92,
-        "last_vol": 17287949.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
