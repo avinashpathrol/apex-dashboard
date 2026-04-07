@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T14:21:13.624255+00:00",
+  "generated_at": "2026-04-07T14:22:35.911675+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09031,
+  "price": 0.09045,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 658.82677194,
+  "margin_level": 658.10095992,
   "position": null,
   "action": "HOLD",
   "confidence": 88,
@@ -19,7 +19,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (41.6)"
+    "RSI rising from low (45.9)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 611,
+  "run_count": 612,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,7 +1244,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a strong bearish bias. The RSI is rising from a low, but this has not yet translated into a significant price reversal. The market is likely to continue its downward momentum unless a strong bullish signal emerges.",
+    "5m": "The 5-minute chart shows a small decline in price, with a low change of -0.74% and a narrow ATR of 0.0002, indicating a lack of volatility.",
+    "15m": "The 15-minute chart reveals a slight decline in price, with a change of -0.14% and a moderate ATR of 0.0003, suggesting a gradual downward trend.",
+    "30m": "The 30-minute chart displays a more significant decline in price, with a change of -2.52% and a higher ATR of 0.0005, indicating increased bearish momentum.",
+    "1h": "The 1-hour chart shows a small decline in price, with a change of -0.21% and a moderate ATR of 0.0005, suggesting a continuation of the downtrend.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential short entry opportunity, given the strong bearish signal and the bot's 88% confidence in a short position.",
+    "risk_warning": "However, traders should be cautious of a potential bullish reversal, as indicated by the rising RSI, and adjust their positions accordingly to manage risk.",
+    "generated_at": "2026-04-07T14:22:34.527121+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0905,
+        "open": 0.0911,
+        "high": 0.0915,
+        "low": 0.0901,
+        "change_pct": -0.74,
+        "atr": 0.0002,
+        "avg_vol": 2210421.4,
+        "last_vol": 1810534.0
+      },
+      "15m": {
+        "close": 0.0905,
+        "open": 0.0906,
+        "high": 0.0915,
+        "low": 0.0901,
+        "change_pct": -0.14,
+        "atr": 0.0003,
+        "avg_vol": 6020942.62,
+        "last_vol": 3020905.0
+      },
+      "30m": {
+        "close": 0.0905,
+        "open": 0.0928,
+        "high": 0.093,
+        "low": 0.0899,
+        "change_pct": -2.52,
+        "atr": 0.0005,
+        "avg_vol": 12766954.98,
+        "last_vol": 16756325.0
+      },
+      "1h": {
+        "close": 0.0905,
+        "open": 0.0907,
+        "high": 0.0936,
+        "low": 0.0899,
+        "change_pct": -0.21,
+        "atr": 0.0005,
+        "avg_vol": 27093891.4,
+        "last_vol": 16756325.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
