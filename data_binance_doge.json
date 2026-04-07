@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T13:05:39.539479+00:00",
+  "generated_at": "2026-04-07T13:06:55.583628+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 653.40545052,
+  "margin_level": 652.90073139,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -1215,7 +1215,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 552,
+  "run_count": 553,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1243,62 +1243,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is currently exhibiting bearish tendencies across multiple timeframes, with the price struggling to maintain momentum above key moving averages. The MACD below the signal line and EMA-20 below EMA-50 further reinforce the downtrend. However, the price is still holding above recent lows, indicating potential for a bounce.",
-    "5m": "The 5-minute chart shows a neutral candles pattern with minimal price movement, indicating a lack of conviction from traders.",
-    "15m": "The 15-minute chart displays a bearish bias, with the price failing to close above the recent high and instead forming a lower high.",
-    "30m": "The 30-minute chart reveals a more pronounced downtrend, with the price dropping below the opening price and forming a lower low.",
-    "1h": "The 1-hour chart shows a slight bullish rebound, but the overall trend remains bearish, with the price still below the recent high.",
-    "key_level_support": 0.0899,
-    "key_level_resistance": 0.093,
-    "recommendation": "Traders should watch for a potential bounce off the key support level, but be cautious of the overall bearish trend and consider shorting opportunities if the price fails to break above resistance.",
-    "risk_warning": "Trading in a bearish market can result in significant losses if not managed properly, so it's essential to set stop-losses and limit position sizes.",
-    "generated_at": "2026-04-07T13:05:38.093960+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0907,
-        "open": 0.0907,
-        "high": 0.0915,
-        "low": 0.0901,
-        "change_pct": -0.01,
-        "atr": 0.0002,
-        "avg_vol": 2017511.9,
-        "last_vol": 680512.0
-      },
-      "15m": {
-        "close": 0.0907,
-        "open": 0.091,
-        "high": 0.0915,
-        "low": 0.0899,
-        "change_pct": -0.31,
-        "atr": 0.0004,
-        "avg_vol": 7688075.95,
-        "last_vol": 1201736.0
-      },
-      "30m": {
-        "close": 0.0907,
-        "open": 0.0924,
-        "high": 0.093,
-        "low": 0.0899,
-        "change_pct": -1.79,
-        "atr": 0.0004,
-        "avg_vol": 12651600.21,
-        "last_vol": 1201736.0
-      },
-      "1h": {
-        "close": 0.0907,
-        "open": 0.0903,
-        "high": 0.0936,
-        "low": 0.0899,
-        "change_pct": 0.51,
-        "atr": 0.0005,
-        "avg_vol": 26789222.56,
-        "last_vol": 1201736.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
