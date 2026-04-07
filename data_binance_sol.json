@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T22:19:30.710319+00:00",
+  "generated_at": "2026-04-07T22:20:40.728641+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -3896,8 +3896,7 @@
       "qty": 6.184,
       "cost": 495.6476,
       "fee": 0.4956476,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=80.3700 sl=80.1693 price=80.1500 | ATR=0.2007"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T20:11:27.591000-07:00",
@@ -6944,7 +6943,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 982,
+  "run_count": 983,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
