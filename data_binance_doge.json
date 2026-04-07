@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T06:22:55.947389+00:00",
+  "generated_at": "2026-04-07T06:24:30.375088+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09024,
+  "price": 0.09029,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 656.15534767,
+  "margin_level": 656.00421688,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -20,7 +20,7 @@
   "trend": "BEARISH",
   "bullish": [
     "MACD above signal (bullish)",
-    "Price near BB lower band (-3%)"
+    "Price near BB lower band (5%)"
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 239,
+  "run_count": 240,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,7 +1244,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mixed signal environment with both bullish and bearish indicators present across different timeframes, leading to a neutral outlook. The price is near the lower Bollinger Band, which could indicate a potential bounce, but the EMA-20 is below the EMA-50, suggesting a downtrend. The market is waiting for a clear direction as the bot signal shows 0% confidence.",
+    "5m": "The 5-minute chart shows a slight decline in price with a small ATR, indicating low volatility and a lack of clear direction.",
+    "15m": "The 15-minute chart displays a more significant price drop, with a 2.63% change, suggesting that sellers are gaining control in the short term.",
+    "30m": "The 30-minute chart also shows a decline in price, but the ATR is slightly higher, indicating increasing volatility as the timeframe expands.",
+    "1h": "The 1-hour chart presents a slightly bullish picture with a 0.22% price increase, but this is not enough to override the bearish signals from shorter timeframes.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a break above the key resistance level of 0.0936 or a drop below the support level of 0.0897 to determine the next market direction.",
+    "risk_warning": "Trading in a neutral market with mixed signals increases the risk of false breakouts, so traders should be cautious and consider reducing their position sizes.",
+    "generated_at": "2026-04-07T06:24:29.033828+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0903,
+        "open": 0.0907,
+        "high": 0.0908,
+        "low": 0.0902,
+        "change_pct": -0.46,
+        "atr": 0.0001,
+        "avg_vol": 1454607.9,
+        "last_vol": 1360193.0
+      },
+      "15m": {
+        "close": 0.0903,
+        "open": 0.0927,
+        "high": 0.093,
+        "low": 0.0899,
+        "change_pct": -2.63,
+        "atr": 0.0002,
+        "avg_vol": 6430720.85,
+        "last_vol": 4055679.0
+      },
+      "30m": {
+        "close": 0.0903,
+        "open": 0.0922,
+        "high": 0.0935,
+        "low": 0.0899,
+        "change_pct": -2.03,
+        "atr": 0.0003,
+        "avg_vol": 12648017.77,
+        "last_vol": 16050277.0
+      },
+      "1h": {
+        "close": 0.0903,
+        "open": 0.0901,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 0.22,
+        "atr": 0.0005,
+        "avg_vol": 25893327.25,
+        "last_vol": 16050277.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
