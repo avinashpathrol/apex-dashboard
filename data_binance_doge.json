@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-07T19:49:21.175071+00:00",
+  "generated_at": "2026-04-07T19:49:52.986810+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09212,
-  "usdt_balance": -384.69773614,
-  "sol_balance": 5427.45,
-  "cad_balance": -384.69773614,
-  "margin_level": 1.2927322,
-  "position": "LONG",
-  "action": "LONG",
-  "confidence": 85,
+  "price": 0.09205,
+  "usdt_balance": 114.46648997,
+  "sol_balance": 0.45,
+  "cad_balance": 114.46648997,
+  "margin_level": 610.53163774,
+  "position": null,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "LOW",
-  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "status": "HOLDING LONG \u2014 \ud83d\udcd0 Trailing stop hit | best=0.0923 trail_stop=0.0921 price=0.0921",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0923 trail_stop=0.0921 price=0.0921",
   "trend": "SIDEWAYS",
   "bullish": [
     "MACD above signal (bullish)",
@@ -25,8 +25,8 @@
     "High volume confirms move"
   ],
   "bearish": [
-    "RSI overbought (69.0)",
-    "Price near BB upper band (96%)"
+    "RSI overbought (68.2)",
+    "Price near BB upper band (93%)"
   ],
   "trades": [
     {
@@ -1255,6 +1255,16 @@
       "cost": 497.46256,
       "fee": 5.432,
       "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-07T12:49:47.973000-07:00",
+      "action": "SELL",
+      "price": 0.09207,
+      "qty": 5427.0,
+      "cost": 499.66389,
+      "fee": 0.49966389,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0923 trail_stop=0.0921 price=0.0921"
     }
   ],
   "closed_trades": [
@@ -1605,7 +1615,7 @@
     "long_trades": 9,
     "short_trades": 15
   },
-  "run_count": 866,
+  "run_count": 867,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1625,11 +1635,7 @@
       "force_trail": false,
       "force_trail_at": "2026-04-06T06:12:45.759Z"
     },
-    "queued": {
-      "trade_amount_usdt": 100.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -1639,11 +1645,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 0.09158,
-    "best_price": 0.09231,
-    "atr": 0.00040214285714285585,
-    "sl": 0.0909767857142857,
-    "trail_stop": 0.09170678571428571,
-    "active": true
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
+    "active": false
   }
 }
