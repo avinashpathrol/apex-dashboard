@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T01:15:04.066628+00:00",
+  "generated_at": "2026-04-07T01:16:25.767038+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09069,
+  "price": 0.09073,
   "usdt_balance": 615.43982832,
   "sol_balance": -5488.875,
   "cad_balance": 615.43982832,
-  "margin_level": 1.23986249,
+  "margin_level": 1.23936528,
   "position": "SHORT",
   "action": "HOLD",
   "confidence": 0,
@@ -19,7 +19,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI oversold (33.2)",
+    "RSI rising from low (35.1)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -1060,7 +1060,7 @@
     "long_trades": 7,
     "short_trades": 9
   },
-  "run_count": 185,
+  "run_count": 186,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1092,7 +1092,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the RSI and MACD indicating a potential reversal, but the EMA-20 and EMA-50 suggesting a continued downtrend. The price is trading below the EMA-20, which may indicate further downward pressure. However, the rising RSI from a low level could be a sign of a potential bounce.",
+    "5m": "The 5-minute chart shows a slight decline in price with a moderate ATR, indicating a lack of strong momentum in either direction.",
+    "15m": "The 15-minute chart reveals a more significant price drop, with a higher ATR, suggesting increased volatility and potential for further downward movement.",
+    "30m": "The 30-minute chart displays a similar price decline as the 15-minute chart, but with a slightly higher ATR, indicating sustained volatility.",
+    "1h": "The 1-hour chart shows a relatively smaller price decline, with a higher ATR, suggesting that the market may be consolidating before a potential larger move.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential bounce off the key support level, but be cautious of a further decline if the price breaks below this level.",
+    "risk_warning": "The low confidence level of the bot signal and mixed market signals increase the risk of a false breakout or sudden reversal.",
+    "generated_at": "2026-04-07T01:16:24.565871+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0907,
+        "open": 0.0918,
+        "high": 0.092,
+        "low": 0.0899,
+        "change_pct": -1.2,
+        "atr": 0.0002,
+        "avg_vol": 3715242.35,
+        "last_vol": 485765.0
+      },
+      "15m": {
+        "close": 0.0907,
+        "open": 0.0933,
+        "high": 0.0934,
+        "low": 0.0899,
+        "change_pct": -2.72,
+        "atr": 0.0003,
+        "avg_vol": 7018433.13,
+        "last_vol": 496144.0
+      },
+      "30m": {
+        "close": 0.0907,
+        "open": 0.0923,
+        "high": 0.0936,
+        "low": 0.0899,
+        "change_pct": -1.68,
+        "atr": 0.0004,
+        "avg_vol": 14095195.58,
+        "last_vol": 5411193.0
+      },
+      "1h": {
+        "close": 0.0907,
+        "open": 0.0915,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": -0.85,
+        "atr": 0.0006,
+        "avg_vol": 25828116.27,
+        "last_vol": 5411193.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.09063,
     "best_price": 0.09047,
