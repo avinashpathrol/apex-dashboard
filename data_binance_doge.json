@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T08:12:20.499263+00:00",
+  "generated_at": "2026-04-07T08:13:36.138497+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09084,
+  "price": 0.09077,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 652.07854831,
+  "margin_level": 652.0776391,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -24,7 +24,7 @@
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (107%)"
+    "Price near BB upper band (98%)"
   ],
   "trades": [
     {
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 324,
+  "run_count": 325,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,62 +1244,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price hovering near the upper band of the Bollinger Bands, indicating potential overbought conditions. The MACD above the signal line and price above EMA-20 suggest bullish momentum, while the EMA-20 below EMA-50 indicates a downtrend. Overall, the market is indecisive, waiting for a breakout or reversal.",
-    "5m": "The 5-minute chart shows a slight increase in price with a 0.36% change, indicating a potential short-term bullish trend.",
-    "15m": "The 15-minute chart displays a -1.24% change, suggesting a minor bearish correction, which may be a normal pullback in an overall uptrend.",
-    "30m": "The 30-minute chart reveals a -1.44% change, further emphasizing the bearish correction, but the price is still above the EMA-20, indicating potential support.",
-    "1h": "The 1-hour chart shows a 0.53% increase, which may indicate a bullish reversal, but the overall trend is still uncertain.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a breakout above 0.0936 or a breakdown below 0.0897 to determine the next trend direction.",
-    "risk_warning": "Trading near the upper band of the Bollinger Bands may result in a significant price reversal, so traders should be cautious and set appropriate stop-loss levels.",
-    "generated_at": "2026-04-07T08:12:19.152132+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0908,
-        "open": 0.0905,
-        "high": 0.091,
-        "low": 0.0902,
-        "change_pct": 0.36,
-        "atr": 0.0001,
-        "avg_vol": 1875920.52,
-        "last_vol": 281623.0
-      },
-      "15m": {
-        "close": 0.0908,
-        "open": 0.092,
-        "high": 0.0922,
-        "low": 0.0899,
-        "change_pct": -1.24,
-        "atr": 0.0002,
-        "avg_vol": 6677894.1,
-        "last_vol": 5572504.0
-      },
-      "30m": {
-        "close": 0.0908,
-        "open": 0.0922,
-        "high": 0.0935,
-        "low": 0.0899,
-        "change_pct": -1.44,
-        "atr": 0.0003,
-        "avg_vol": 13082539.17,
-        "last_vol": 5572504.0
-      },
-      "1h": {
-        "close": 0.0908,
-        "open": 0.0904,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 0.53,
-        "atr": 0.0005,
-        "avg_vol": 26072004.48,
-        "last_vol": 5572504.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
