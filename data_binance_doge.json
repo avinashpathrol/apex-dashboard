@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T01:31:52.692692+00:00",
+  "generated_at": "2026-04-07T01:33:06.581570+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09077,
+  "price": 0.09079,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 653.34845251,
+  "margin_level": 653.20796414,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -19,7 +19,7 @@
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (37.0)",
+    "RSI rising from low (37.9)",
     "MACD above signal (bullish)"
   ],
   "bearish": [
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 12,
+  "run_count": 13,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,62 +1244,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price trending downwards in the short-term but showing potential for a reversal. The RSI is rising from a low level, indicating potential for a bounce, while the EMA-20 below EMA-50 suggests a downtrend. Overall, the market is in a state of flux, and a clear direction has not been established.",
-    "5m": "The 5-minute chart shows a decline in price with a slight increase in volatility, as indicated by the ATR of 0.0002.",
-    "15m": "The 15-minute chart reveals a more pronounced decline in price, with a change of -2.47% and a slightly higher ATR of 0.0003.",
-    "30m": "The 30-minute chart also shows a decline in price, with a similar change to the 15-minute chart, but with a higher ATR of 0.0004.",
-    "1h": "The 1-hour chart indicates a relatively smaller decline in price, with a change of -0.83% and a higher ATR of 0.0006.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential bounce off the support level of 0.0897, which could be a buying opportunity if the RSI continues to rise and the MACD remains above the signal line.",
-    "risk_warning": "However, if the price breaks below the support level, it could lead to a further decline, and traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-04-07T01:31:51.509404+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0908,
-        "open": 0.092,
-        "high": 0.092,
-        "low": 0.0899,
-        "change_pct": -1.29,
-        "atr": 0.0002,
-        "avg_vol": 3758477.37,
-        "last_vol": 461895.0
-      },
-      "15m": {
-        "close": 0.0908,
-        "open": 0.0931,
-        "high": 0.0933,
-        "low": 0.0899,
-        "change_pct": -2.47,
-        "atr": 0.0003,
-        "avg_vol": 6944279.87,
-        "last_vol": 461895.0
-      },
-      "30m": {
-        "close": 0.0908,
-        "open": 0.0931,
-        "high": 0.0936,
-        "low": 0.0899,
-        "change_pct": -2.46,
-        "atr": 0.0004,
-        "avg_vol": 13919952.06,
-        "last_vol": 461895.0
-      },
-      "1h": {
-        "close": 0.0908,
-        "open": 0.0915,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": -0.83,
-        "atr": 0.0006,
-        "avg_vol": 25920427.12,
-        "last_vol": 9842114.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
