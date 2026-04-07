@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-07T20:00:19.040799+00:00",
+  "generated_at": "2026-04-07T20:01:41.851471+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 81.76,
+  "price": 81.98,
   "position": null,
   "action": "LONG",
   "confidence": 82,
@@ -15,8 +15,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (79.6)",
-    "Price near BB upper band (102%)"
+    "RSI overbought (80.8)",
+    "Price near BB upper band (107%)"
   ],
   "trades": [
     {
@@ -3554,8 +3554,7 @@
       "qty": 0.508,
       "cost": 40.71112,
       "fee": 0.04071112,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3564,8 +3563,7 @@
       "qty": 0.063,
       "cost": 5.04882,
       "fee": 0.00504882,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3574,8 +3572,7 @@
       "qty": 0.069,
       "cost": 5.52966,
       "fee": 0.00552966,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3584,8 +3581,7 @@
       "qty": 0.066,
       "cost": 5.28924,
       "fee": 0.00528924,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3594,8 +3590,7 @@
       "qty": 0.066,
       "cost": 5.28924,
       "fee": 0.00528924,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3604,8 +3599,7 @@
       "qty": 3.9,
       "cost": 312.546,
       "fee": 0.312546,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3614,8 +3608,7 @@
       "qty": 0.08,
       "cost": 6.4112,
       "fee": 0.0064112,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3624,8 +3617,7 @@
       "qty": 0.067,
       "cost": 5.36938,
       "fee": 0.00536938,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3634,8 +3626,7 @@
       "qty": 0.067,
       "cost": 5.36938,
       "fee": 0.00536938,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3644,8 +3635,7 @@
       "qty": 0.067,
       "cost": 5.36938,
       "fee": 0.00536938,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3654,8 +3644,7 @@
       "qty": 0.067,
       "cost": 5.36938,
       "fee": 0.00536938,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3664,8 +3653,7 @@
       "qty": 0.067,
       "cost": 5.36938,
       "fee": 0.00536938,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3674,8 +3662,7 @@
       "qty": 0.067,
       "cost": 5.36938,
       "fee": 0.00536938,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T03:59:58.244000-07:00",
@@ -3684,8 +3671,7 @@
       "qty": 0.132,
       "cost": 10.57848,
       "fee": 0.01057848,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcc9 Signal fade exit | bullish signals dropped to 2/3 | profit=0.30% (above fee threshold)"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T04:01:17.223000-07:00",
@@ -6977,7 +6963,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 875,
+  "run_count": 876,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
