@@ -1,32 +1,31 @@
 {
-  "generated_at": "2026-04-07T22:58:53.491083+00:00",
+  "generated_at": "2026-04-07T23:00:10.734220+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09496,
+  "price": 0.09519,
   "usdt_balance": -387.87692279,
   "sol_balance": 5256.387,
   "cad_balance": -387.87692279,
-  "margin_level": 1.27994995,
+  "margin_level": 1.28294533,
   "position": "LONG",
-  "action": "LONG",
-  "confidence": 85,
-  "risk": "LOW",
-  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "action": "HOLD",
+  "confidence": 82,
+  "risk": "MEDIUM",
+  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
-    "High volume confirms move"
+    "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (81.0)",
-    "Price near BB upper band (121%)"
+    "RSI overbought (82.0)",
+    "Price near BB upper band (111%)"
   ],
   "trades": [
     {
@@ -2363,7 +2362,7 @@
     "long_trades": 15,
     "short_trades": 21
   },
-  "run_count": 1013,
+  "run_count": 1014,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2398,10 +2397,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 0.09456,
-    "best_price": 0.09496,
+    "best_price": 0.09519,
     "atr": 0.0005878571428571419,
     "sl": 0.0936782142857143,
-    "trail_stop": 0.09407821428571429,
-    "active": false
+    "trail_stop": 0.09430821428571429,
+    "active": true
   }
 }
