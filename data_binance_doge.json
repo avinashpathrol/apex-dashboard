@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-07T21:05:54.780340+00:00",
+  "generated_at": "2026-04-07T21:06:16.690314+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09215,
-  "usdt_balance": -385.28860961,
-  "sol_balance": 5396.274,
-  "cad_balance": -385.28860961,
-  "margin_level": 1.28417149,
-  "position": "LONG",
-  "action": "LONG",
-  "confidence": 88,
+  "price": 0.0925,
+  "usdt_balance": 113.34226039,
+  "sol_balance": 0.274,
+  "cad_balance": 113.34226039,
+  "margin_level": 585.29606635,
+  "position": null,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
+  "status": "HOLDING LONG \u2014 \u2705 Fee-covered SL hit | entry=0.0921 sl=0.0926 price=0.0925 | ATR=0.0004",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
+  "reason": "\u2705 Fee-covered SL hit | entry=0.0921 sl=0.0926 price=0.0925 | ATR=0.0004",
   "trend": "BULLISH",
   "bullish": [
     "MACD above signal (bullish)",
@@ -24,7 +24,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (65.4)"
+    "RSI overbought (70.1)",
+    "Price near BB upper band (88%)"
   ],
   "trades": [
     {
@@ -1428,6 +1429,16 @@
       "cost": 474.56163,
       "fee": 5.151,
       "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-07T14:06:11.609000-07:00",
+      "action": "SELL",
+      "price": 0.0925,
+      "qty": 5396.0,
+      "cost": 499.13,
+      "fee": 0.49913,
+      "symbol": "DOGEUSDT",
+      "reason": "\u2705 Fee-covered SL hit | entry=0.0921 sl=0.0926 price=0.0925 | ATR=0.0004"
     }
   ],
   "closed_trades": [
@@ -1822,19 +1833,33 @@
       "opened_at": "2026-04-07T13:59:45.238000-07:00",
       "closed_at": "2026-04-07T14:01:06.210000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "LONG",
+      "entry_price": 0.09213,
+      "exit_price": 0.0925,
+      "qty": 11.0,
+      "fee": 0.50014343,
+      "pnl": -0.4961,
+      "pnl_pct": 2.01,
+      "win": false,
+      "opened_at": "2026-04-07T14:01:06.210000-07:00",
+      "closed_at": "2026-04-07T14:06:11.609000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 28,
+    "closed_trades": 29,
     "wins": 4,
-    "losses": 24,
-    "win_rate": 14.29,
-    "net_profit": -3.0908,
-    "avg_profit_per_trade": -0.1104,
-    "long_trades": 11,
+    "losses": 25,
+    "win_rate": 13.79,
+    "net_profit": -3.5869,
+    "avg_profit_per_trade": -0.1237,
+    "long_trades": 12,
     "short_trades": 17
   },
-  "run_count": 924,
+  "run_count": 925,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1851,14 +1876,10 @@
       "close_requested": false,
       "close_requested_at": null,
       "bot_paused": false,
-      "force_trail": true,
+      "force_trail": false,
       "force_trail_at": "2026-04-07T21:05:50.230Z"
     },
-    "queued": {
-      "trade_amount_usdt": 100.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -1866,68 +1887,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a strong uptrend across multiple timeframes, with the price above the EMA-20 and MACD above the signal line, indicating a bullish momentum. However, the RSI is overbought, which may lead to a potential correction. The overall trend remains bullish, with the price making higher highs and higher lows.",
-    "5m": "The 5-minute chart shows a strong bullish candle, with the price increasing by 1.8% and the ATR indicating high volatility.",
-    "15m": "The 15-minute chart confirms the bullish trend, with the price closing above the opening price and the ATR indicating increasing volatility.",
-    "30m": "The 30-minute chart shows a slight slowdown in the bullish momentum, with the price increasing by only 0.75%, but still above the EMA-20.",
-    "1h": "The 1-hour chart indicates a strong bullish trend, with the price closing above the opening price and the ATR indicating high volatility, but the RSI is overbought, which may lead to a correction.",
-    "key_level_support": 0.0899,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential correction to the key level support at 0.0899, and consider taking profits or adjusting their positions accordingly.",
-    "risk_warning": "The RSI is overbought, which may lead to a sharp correction, so traders should be cautious and adjust their risk management strategies.",
-    "generated_at": "2026-04-07T21:05:53.424123+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0921,
-        "open": 0.0905,
-        "high": 0.0927,
-        "low": 0.0904,
-        "change_pct": 1.8,
-        "atr": 0.0002,
-        "avg_vol": 3610332.67,
-        "last_vol": 1327491.0
-      },
-      "15m": {
-        "close": 0.0921,
-        "open": 0.0905,
-        "high": 0.0927,
-        "low": 0.0901,
-        "change_pct": 1.86,
-        "atr": 0.0004,
-        "avg_vol": 7633749.1,
-        "last_vol": 1327491.0
-      },
-      "30m": {
-        "close": 0.0921,
-        "open": 0.0915,
-        "high": 0.0927,
-        "low": 0.0899,
-        "change_pct": 0.75,
-        "atr": 0.0005,
-        "avg_vol": 15752696.44,
-        "last_vol": 1329802.0
-      },
-      "1h": {
-        "close": 0.0921,
-        "open": 0.0914,
-        "high": 0.0936,
-        "low": 0.0899,
-        "change_pct": 0.8,
-        "atr": 0.0007,
-        "avg_vol": 30071273.0,
-        "last_vol": 1329802.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
-    "entry_price": 0.0921,
-    "best_price": 0.09218,
-    "atr": 0.0003721428571428556,
-    "sl": 0.09154178571428571,
-    "trail_stop": 0.09162178571428571,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
     "active": false
   }
 }
