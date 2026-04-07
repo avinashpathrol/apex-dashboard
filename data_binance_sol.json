@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-07T19:16:51.697350+00:00",
+  "generated_at": "2026-04-07T19:17:24.416420+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.82,
+  "price": 80.84,
   "position": null,
   "action": "LONG",
   "confidence": 82,
@@ -15,8 +15,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (72.2)",
-    "Price near BB upper band (102%)"
+    "RSI overbought (72.3)",
+    "Price near BB upper band (103%)"
   ],
   "trades": [
     {
@@ -3257,8 +3257,7 @@
       "qty": 0.067,
       "cost": 5.34928,
       "fee": 0.00534928,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcd0 Trailing stop hit | best=80.1200 trail_stop=79.8540 price=79.8500"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T00:44:07.878000-07:00",
@@ -3267,8 +3266,7 @@
       "qty": 0.067,
       "cost": 5.34928,
       "fee": 0.00534928,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcd0 Trailing stop hit | best=80.1200 trail_stop=79.8540 price=79.8500"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T00:44:07.878000-07:00",
@@ -3277,8 +3275,7 @@
       "qty": 2.696,
       "cost": 215.24864,
       "fee": 0.21524864,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcd0 Trailing stop hit | best=80.1200 trail_stop=79.8540 price=79.8500"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T00:44:07.878000-07:00",
@@ -3287,8 +3284,7 @@
       "qty": 0.066,
       "cost": 5.26944,
       "fee": 0.00526944,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcd0 Trailing stop hit | best=80.1200 trail_stop=79.8540 price=79.8500"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T00:44:07.878000-07:00",
@@ -3297,8 +3293,7 @@
       "qty": 0.066,
       "cost": 5.26944,
       "fee": 0.00526944,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcd0 Trailing stop hit | best=80.1200 trail_stop=79.8540 price=79.8500"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T00:44:07.878000-07:00",
@@ -3307,8 +3302,7 @@
       "qty": 2.36,
       "cost": 188.4224,
       "fee": 0.1884224,
-      "symbol": "SOLUSDT",
-      "reason": "\ud83d\udcd0 Trailing stop hit | best=80.1200 trail_stop=79.8540 price=79.8500"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T00:53:39.183000-07:00",
@@ -7007,7 +7001,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 840,
+  "run_count": 841,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
