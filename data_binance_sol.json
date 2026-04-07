@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-07T01:20:33.965009+00:00",
+  "generated_at": "2026-04-07T01:21:34.883608+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 80.04,
+  "price": 80.09,
   "position": null,
   "action": "SHORT",
   "confidence": 88,
   "risk": "MEDIUM",
   "status": "Idle \u2014 DOGEUSDT active",
   "bullish": [
-    "RSI oversold (34.6)"
+    "RSI rising from low (36.4)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -3076,8 +3076,7 @@
       "qty": 1.401,
       "cost": 111.04326,
       "fee": 0.11104326,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3086,8 +3085,7 @@
       "qty": 0.623,
       "cost": 49.37898,
       "fee": 0.04937898,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3096,8 +3094,7 @@
       "qty": 0.064,
       "cost": 5.07264,
       "fee": 0.00507264,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3106,8 +3103,7 @@
       "qty": 0.07,
       "cost": 5.5482,
       "fee": 0.0055482,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3116,8 +3112,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3126,8 +3121,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3136,8 +3130,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3146,8 +3139,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3156,8 +3148,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3166,8 +3157,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3176,8 +3166,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3186,8 +3175,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3196,8 +3184,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3206,8 +3193,7 @@
       "qty": 0.067,
       "cost": 5.31042,
       "fee": 0.00531042,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T19:55:20.614000-07:00",
@@ -3216,8 +3202,7 @@
       "qty": 2.508,
       "cost": 198.78408,
       "fee": 0.19878408,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=79.1500 sl=79.3083 price=79.2700 | ATR=0.3057"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-02T20:00:13.509000-07:00",
@@ -7023,7 +7008,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 3,
+  "run_count": 4,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
