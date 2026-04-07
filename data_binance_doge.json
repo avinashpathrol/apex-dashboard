@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T16:55:20.912027+00:00",
+  "generated_at": "2026-04-07T16:56:50.377884+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0906,
+  "price": 0.09063,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 651.13846452,
+  "margin_level": 651.08402996,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (51.2)",
+    "RSI falling from high (52.0)",
     "EMA-20 below EMA-50 (downtrend)"
   ],
   "trades": [
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 731,
+  "run_count": 732,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,7 +1244,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price hovering around $0.0906. The MACD is above the signal line, indicating a bullish trend, but the RSI is falling from a high level, suggesting a potential downtrend. The market is likely to remain choppy in the short term.",
+    "5m": "The 5-minute chart shows a neutral trend with a small change of 0.06% and a low ATR of 0.0002.",
+    "15m": "The 15-minute chart indicates a slight bullish bias with a 0.2% change and a moderate ATR of 0.0003.",
+    "30m": "The 30-minute chart reveals a bearish trend with a -1.47% change and a higher ATR of 0.0005.",
+    "1h": "The 1-hour chart shows a neutral trend with a 0.06% change and a moderate ATR of 0.0005.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of $0.0936 or a breakdown below the key support level of $0.0899 to determine the next market direction.",
+    "risk_warning": "The market is currently choppy, and traders should be cautious of potential whipsaws and adjust their positions accordingly.",
+    "generated_at": "2026-04-07T16:56:49.027414+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0906,
+        "open": 0.0906,
+        "high": 0.0909,
+        "low": 0.0901,
+        "change_pct": 0.06,
+        "atr": 0.0002,
+        "avg_vol": 1717076.8,
+        "last_vol": 57434.0
+      },
+      "15m": {
+        "close": 0.0906,
+        "open": 0.0905,
+        "high": 0.0915,
+        "low": 0.0901,
+        "change_pct": 0.2,
+        "atr": 0.0003,
+        "avg_vol": 5437587.17,
+        "last_vol": 746381.0
+      },
+      "30m": {
+        "close": 0.0906,
+        "open": 0.092,
+        "high": 0.0923,
+        "low": 0.0899,
+        "change_pct": -1.47,
+        "atr": 0.0005,
+        "avg_vol": 12771865.69,
+        "last_vol": 5593522.0
+      },
+      "1h": {
+        "close": 0.0906,
+        "open": 0.0906,
+        "high": 0.0936,
+        "low": 0.0899,
+        "change_pct": 0.06,
+        "atr": 0.0005,
+        "avg_vol": 26944771.15,
+        "last_vol": 13139079.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
