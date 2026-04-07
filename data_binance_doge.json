@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T10:31:30.818850+00:00",
+  "generated_at": "2026-04-07T10:32:47.456422+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09064,
+  "price": 0.0907,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 651.01648478,
+  "margin_level": 651.28592328,
   "position": null,
   "action": "HOLD",
   "confidence": 88,
@@ -19,7 +19,7 @@
   "reason": "MACD bearish crossover | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (45.5)"
+    "RSI rising from low (47.1)"
   ],
   "bearish": [
     "MACD bearish crossover",
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 432,
+  "run_count": 433,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,62 +1244,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 8,
-    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and a bearish MACD crossover, indicating a potential shorting opportunity. The RSI is rising from a low, but the overall trend remains bearish. The market is experiencing a gradual decline in price, with increasing selling pressure.",
-    "5m": "The 5-minute chart shows a neutral candles pattern with minimal price movement, indicating a potential pause before the next move.",
-    "15m": "The 15-minute chart displays a bearish candlestick pattern, with a decline in price and an increase in selling pressure, confirming the downtrend.",
-    "30m": "The 30-minute chart reveals a downtrend with the price below the EMA-20 and EMA-50, indicating a strong bearish bias.",
-    "1h": "The 1-hour chart shows a slight bullish rebound, but the overall trend remains bearish, with the price still below the EMA-20 and EMA-50.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential shorting opportunity, with a target near the key level support and a stop-loss above the key level resistance.",
-    "risk_warning": "The market may experience a sudden reversal, so traders should be cautious and adjust their positions accordingly.",
-    "generated_at": "2026-04-07T10:31:29.475734+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0906,
-        "open": 0.0906,
-        "high": 0.0915,
-        "low": 0.0902,
-        "change_pct": 0.08,
-        "atr": 0.0002,
-        "avg_vol": 2207060.2,
-        "last_vol": 75635.0
-      },
-      "15m": {
-        "close": 0.0906,
-        "open": 0.0919,
-        "high": 0.092,
-        "low": 0.0899,
-        "change_pct": -1.41,
-        "atr": 0.0003,
-        "avg_vol": 6949997.78,
-        "last_vol": 75635.0
-      },
-      "30m": {
-        "close": 0.0906,
-        "open": 0.0929,
-        "high": 0.0931,
-        "low": 0.0899,
-        "change_pct": -2.43,
-        "atr": 0.0004,
-        "avg_vol": 12319770.04,
-        "last_vol": 75635.0
-      },
-      "1h": {
-        "close": 0.0906,
-        "open": 0.0903,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 0.32,
-        "atr": 0.0005,
-        "avg_vol": 26660342.92,
-        "last_vol": 18072129.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
