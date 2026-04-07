@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T06:55:13.728170+00:00",
+  "generated_at": "2026-04-07T06:56:29.333652+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09072,
+  "price": 0.0907,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 653.89354664,
+  "margin_level": 654.11609225,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -24,7 +24,7 @@
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (94%)"
+    "Price near BB upper band (91%)"
   ],
   "trades": [
     {
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 264,
+  "run_count": 265,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,62 +1244,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mixed signal environment, with both bullish and bearish indicators present across different timeframes, resulting in a neutral outlook. The price is hovering near the upper band of the Bollinger Bands, indicating potential overbought conditions. However, the MACD above the signal line and price above EMA-20 suggest some bullish momentum.",
-    "5m": "The 5-minute chart shows a slight increase in price, with a 0.34% change, indicating a minor bullish bias.",
-    "15m": "The 15-minute chart reveals a downtrend, with a 2.28% decrease in price, suggesting bearish pressure.",
-    "30m": "The 30-minute chart displays a moderate decrease in price, with a 1.39% change, indicating a bearish leaning.",
-    "1h": "The 1-hour chart shows a slight increase in price, with a 0.7% change, indicating a minor bullish bias.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential breakout above the 0.0936 resistance level or a breakdown below the 0.0897 support level to determine the next market direction.",
-    "risk_warning": "The mixed signal environment and proximity to the Bollinger Bands' upper limit increase the risk of a potential price reversal.",
-    "generated_at": "2026-04-07T06:55:12.365737+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0907,
-        "open": 0.0904,
-        "high": 0.0908,
-        "low": 0.0902,
-        "change_pct": 0.34,
-        "atr": 0.0001,
-        "avg_vol": 1650118.3,
-        "last_vol": 2594462.0
-      },
-      "15m": {
-        "close": 0.0907,
-        "open": 0.0928,
-        "high": 0.0929,
-        "low": 0.0899,
-        "change_pct": -2.28,
-        "atr": 0.0002,
-        "avg_vol": 6656313.75,
-        "last_vol": 4667650.0
-      },
-      "30m": {
-        "close": 0.0907,
-        "open": 0.092,
-        "high": 0.0935,
-        "low": 0.0899,
-        "change_pct": -1.39,
-        "atr": 0.0003,
-        "avg_vol": 12839280.62,
-        "last_vol": 10698820.0
-      },
-      "1h": {
-        "close": 0.0907,
-        "open": 0.0901,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 0.7,
-        "atr": 0.0005,
-        "avg_vol": 26313084.31,
-        "last_vol": 36198616.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
