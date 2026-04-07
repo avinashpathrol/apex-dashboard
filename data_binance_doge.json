@@ -1,29 +1,28 @@
 {
-  "generated_at": "2026-04-07T13:35:01.700746+00:00",
+  "generated_at": "2026-04-07T13:36:19.273586+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09066,
+  "price": 0.09072,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 654.56165646,
+  "margin_level": 654.72171504,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (49.8)",
+    "MACD bullish crossover",
     "Price above EMA-20"
   ],
   "bearish": [
-    "MACD below signal (bearish)",
     "EMA-20 below EMA-50 (downtrend)"
   ],
   "trades": [
@@ -1216,7 +1215,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 575,
+  "run_count": 576,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,7 +1243,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals, with a MACD bullish crossover and price above EMA-20, but also an EMA-20 below EMA-50 indicating a downtrend. The price is fluctuating across different timeframes, with a slight increase in the 15m and 1h timeframes, but a decrease in the 30m timeframe. The overall trend is uncertain, and the market is waiting for a clear direction.",
+    "5m": "The 5m timeframe shows a slight decrease in price, with a small ATR of 0.0002, indicating low volatility.",
+    "15m": "The 15m timeframe shows a slight increase in price, with a 0.33% change, and a moderate ATR of 0.0004, indicating some buying interest.",
+    "30m": "The 30m timeframe shows a decrease in price, with a 2.16% change, and a moderate ATR of 0.0004, indicating some selling pressure.",
+    "1h": "The 1h timeframe shows a slight increase in price, with a 0.5% change, and a moderate ATR of 0.0005, indicating some buying interest.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a breakout above the 0.0936 resistance level or a breakdown below the 0.0899 support level to determine the next direction.",
+    "risk_warning": "The market is currently experiencing mixed signals, and traders should be cautious of potential whipsaws and false breakouts.",
+    "generated_at": "2026-04-07T13:36:17.893737+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0907,
+        "open": 0.0908,
+        "high": 0.0915,
+        "low": 0.0901,
+        "change_pct": -0.11,
+        "atr": 0.0002,
+        "avg_vol": 2078363.3,
+        "last_vol": 244531.0
+      },
+      "15m": {
+        "close": 0.0907,
+        "open": 0.0904,
+        "high": 0.0915,
+        "low": 0.0899,
+        "change_pct": 0.33,
+        "atr": 0.0004,
+        "avg_vol": 7511669.05,
+        "last_vol": 1676317.0
+      },
+      "30m": {
+        "close": 0.0907,
+        "open": 0.0927,
+        "high": 0.093,
+        "low": 0.0899,
+        "change_pct": -2.16,
+        "atr": 0.0004,
+        "avg_vol": 12591675.25,
+        "last_vol": 1676317.0
+      },
+      "1h": {
+        "close": 0.0907,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.0899,
+        "change_pct": 0.5,
+        "atr": 0.0005,
+        "avg_vol": 26956317.98,
+        "last_vol": 9222316.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
