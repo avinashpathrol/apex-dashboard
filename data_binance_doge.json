@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-07T18:47:15.862084+00:00",
+  "generated_at": "2026-04-07T18:48:32.076958+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09131,
+  "price": 0.09127,
   "usdt_balance": 111.44810765,
   "sol_balance": 0.777,
   "cad_balance": 111.44810765,
-  "margin_level": 611.94947014,
+  "margin_level": 611.89211041,
   "position": null,
   "action": "HOLD",
   "confidence": 91,
   "risk": "LOW",
-  "status": "\u23f8\ufe0f LOSS STREAK COOLDOWN \u2014 25m remaining on DOGEUSDT",
+  "status": "\u23f8\ufe0f LOSS STREAK COOLDOWN \u2014 24m remaining on DOGEUSDT",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
@@ -25,7 +25,7 @@
     "High volume confirms move"
   ],
   "bearish": [
-    "RSI falling from high (58.0)"
+    "RSI falling from high (57.1)"
   ],
   "trades": [
     {
@@ -1403,7 +1403,7 @@
     "long_trades": 8,
     "short_trades": 12
   },
-  "run_count": 817,
+  "run_count": 818,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
