@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T15:55:01.370496+00:00",
+  "generated_at": "2026-04-07T15:56:17.261383+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0904,
+  "price": 0.09044,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 654.45798822,
+  "margin_level": 654.25980046,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -1215,7 +1215,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 684,
+  "run_count": 685,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1243,62 +1243,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BEARISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is currently experiencing a downtrend, with the price below the EMA-20 and EMA-50, indicating bearish momentum across multiple timeframes. The MACD above the signal line is a bullish signal, but its confidence is 0%, reducing its impact. Overall, the market is leaning towards a bearish outlook, but with some potential for a reversal.",
-    "5m": "The 5-minute timeframe shows a slight decline in price, with a small ATR of 0.0002, indicating low volatility.",
-    "15m": "The 15-minute timeframe displays a more pronounced decline, with a 0.32% change and an ATR of 0.0003, suggesting increasing bearish pressure.",
-    "30m": "The 30-minute timeframe reveals a significant 2.34% drop, with an ATR of 0.0005, indicating a strong bearish trend.",
-    "1h": "The 1-hour timeframe shows a relatively stable price, with a minimal 0.02% change and an ATR of 0.0005, potentially indicating a short-term consolidation.",
-    "key_level_support": 0.0899,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential breakdown below the key support level of 0.0899, which could lead to further bearish momentum.",
-    "risk_warning": "A false breakout or sudden reversal could result in significant losses, so traders should exercise caution and set appropriate stop-loss levels.",
-    "generated_at": "2026-04-07T15:55:00.042636+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0904,
-        "open": 0.0906,
-        "high": 0.0909,
-        "low": 0.0901,
-        "change_pct": -0.17,
-        "atr": 0.0002,
-        "avg_vol": 1936854.15,
-        "last_vol": 537493.0
-      },
-      "15m": {
-        "close": 0.0904,
-        "open": 0.0907,
-        "high": 0.0915,
-        "low": 0.0901,
-        "change_pct": -0.32,
-        "atr": 0.0003,
-        "avg_vol": 5494515.27,
-        "last_vol": 1232235.0
-      },
-      "30m": {
-        "close": 0.0904,
-        "open": 0.0926,
-        "high": 0.0929,
-        "low": 0.0899,
-        "change_pct": -2.34,
-        "atr": 0.0005,
-        "avg_vol": 12777236.52,
-        "last_vol": 4215778.0
-      },
-      "1h": {
-        "close": 0.0904,
-        "open": 0.0904,
-        "high": 0.0936,
-        "low": 0.0899,
-        "change_pct": 0.02,
-        "atr": 0.0005,
-        "avg_vol": 26848635.38,
-        "last_vol": 16976383.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
