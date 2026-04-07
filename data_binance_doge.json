@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T12:48:55.685996+00:00",
+  "generated_at": "2026-04-07T12:50:20.489302+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09031,
+  "price": 0.09036,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 656.04934628,
+  "margin_level": 656.18823134,
   "position": null,
   "action": "HOLD",
   "confidence": 88,
@@ -19,7 +19,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "Price near BB lower band (15%)"
+    "Price near BB lower band (19%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 539,
+  "run_count": 540,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,7 +1244,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is showing a bearish trend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a potential downtrend. The current price is near the lower Bollinger Band, which may provide some support. However, the overall momentum is bearish, suggesting a potential short opportunity.",
+    "5m": "The 5-minute chart shows a slight decline in price, with a small range and low volatility, indicating a potential pause before a further move down.",
+    "15m": "The 15-minute chart displays a more significant decline, with a 1.09% drop in price, suggesting a bearish momentum building up.",
+    "30m": "The 30-minute chart reveals a 2.35% drop in price, with the EMA-20 below the EMA-50, confirming the downtrend.",
+    "1h": "The 1-hour chart shows a slight rebound, but the overall trend remains bearish, with the price below the EMA-20 and MACD below the signal line.",
+    "key_level_support": 0.0897,
+    "key_level_resistance": 0.0936,
+    "recommendation": "Traders should watch for a potential short entry if the price breaks below the key support level of 0.0897, with a target near the lower Bollinger Band.",
+    "risk_warning": "A false breakout above the key resistance level of 0.0936 could lead to a significant reversal, so traders should be cautious and set proper stop-loss levels.",
+    "generated_at": "2026-04-07T12:50:19.080688+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0904,
+        "open": 0.0906,
+        "high": 0.0915,
+        "low": 0.0901,
+        "change_pct": -0.26,
+        "atr": 0.0002,
+        "avg_vol": 1990932.57,
+        "last_vol": 6803.0
+      },
+      "15m": {
+        "close": 0.0904,
+        "open": 0.0914,
+        "high": 0.0915,
+        "low": 0.0899,
+        "change_pct": -1.09,
+        "atr": 0.0004,
+        "avg_vol": 7689165.18,
+        "last_vol": 1364907.0
+      },
+      "30m": {
+        "close": 0.0904,
+        "open": 0.0925,
+        "high": 0.093,
+        "low": 0.0899,
+        "change_pct": -2.35,
+        "atr": 0.0004,
+        "avg_vol": 12575594.44,
+        "last_vol": 3827627.0
+      },
+      "1h": {
+        "close": 0.0904,
+        "open": 0.0903,
+        "high": 0.0936,
+        "low": 0.0897,
+        "change_pct": 0.06,
+        "atr": 0.0005,
+        "avg_vol": 26964365.06,
+        "last_vol": 17698533.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
