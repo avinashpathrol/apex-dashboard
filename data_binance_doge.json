@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-07T08:58:32.849021+00:00",
+  "generated_at": "2026-04-07T08:59:49.128981+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09102,
+  "price": 0.09098,
   "usdt_balance": 115.61250837,
   "sol_balance": 0.609,
   "cad_balance": 115.61250837,
-  "margin_level": 649.68087176,
+  "margin_level": 650.18233009,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -17,14 +17,14 @@
   "paused_symbols": [],
   "flip_pending": null,
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
-  "trend": "SIDEWAYS",
+  "trend": "BEARISH",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (116%)"
+    "Price near BB upper band (112%)"
   ],
   "trades": [
     {
@@ -1216,7 +1216,7 @@
     "long_trades": 8,
     "short_trades": 10
   },
-  "run_count": 360,
+  "run_count": 361,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -1244,62 +1244,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with some indicators suggesting a bullish trend while others indicate a downtrend. The price is hovering near the upper band of the Bollinger Bands, which could lead to a potential reversal. However, the MACD is above the signal line, which is a bullish sign.",
-    "5m": "The 5-minute chart shows a slight increase in price with a 0.71% change, indicating a potential short-term bullish momentum.",
-    "15m": "The 15-minute chart shows a decline in price with a -1.14% change, suggesting a potential short-term bearish momentum.",
-    "30m": "The 30-minute chart shows a decline in price with a -2.16% change, indicating a potential medium-term bearish trend.",
-    "1h": "The 1-hour chart shows a slight increase in price with a 0.74% change, indicating a potential short-term bullish momentum.",
-    "key_level_support": 0.0897,
-    "key_level_resistance": 0.0936,
-    "recommendation": "Traders should watch for a potential breakout above the 0.0936 resistance level or a breakdown below the 0.0897 support level to determine the next market direction.",
-    "risk_warning": "The market is highly volatile, and traders should be cautious of potential whipsaws and adjust their positions accordingly.",
-    "generated_at": "2026-04-07T08:58:31.259537+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.091,
-        "open": 0.0904,
-        "high": 0.091,
-        "low": 0.0902,
-        "change_pct": 0.71,
-        "atr": 0.0001,
-        "avg_vol": 1903028.47,
-        "last_vol": 1469922.0
-      },
-      "15m": {
-        "close": 0.091,
-        "open": 0.0921,
-        "high": 0.0922,
-        "low": 0.0899,
-        "change_pct": -1.14,
-        "atr": 0.0002,
-        "avg_vol": 6602421.17,
-        "last_vol": 3202566.0
-      },
-      "30m": {
-        "close": 0.091,
-        "open": 0.093,
-        "high": 0.0935,
-        "low": 0.0899,
-        "change_pct": -2.16,
-        "atr": 0.0003,
-        "avg_vol": 13115924.15,
-        "last_vol": 4952806.0
-      },
-      "1h": {
-        "close": 0.091,
-        "open": 0.0904,
-        "high": 0.0936,
-        "low": 0.0897,
-        "change_pct": 0.74,
-        "atr": 0.0005,
-        "avg_vol": 26240449.44,
-        "last_vol": 13657862.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
