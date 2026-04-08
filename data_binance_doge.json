@@ -1,28 +1,29 @@
 {
-  "generated_at": "2026-04-08T00:59:31.576741+00:00",
+  "generated_at": "2026-04-08T01:00:46.622850+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09422,
+  "price": 0.09414,
   "usdt_balance": 107.74971937,
   "sol_balance": 0.906,
   "cad_balance": 107.74971937,
-  "margin_level": 521.55534435,
+  "margin_level": 521.55810526,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
     "Price above EMA-20"
   ],
   "bearish": [
+    "RSI falling from high (57.7)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -2506,7 +2507,7 @@
     "long_trades": 16,
     "short_trades": 23
   },
-  "run_count": 1107,
+  "run_count": 1108,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2534,62 +2535,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is showing signs of an uptrend across multiple timeframes, with the price above the EMA-20 and the EMA-20 above the EMA-50, indicating a bullish bias. However, the MACD below the signal line is a bearish signal that needs to be monitored. The overall trend is bullish, but with caution due to the bearish MACD signal.",
-    "5m": "The 5-minute chart shows a strong bullish move with a 1.99% change and a high above 0.0961.",
-    "15m": "The 15-minute chart confirms the bullish trend with a 3.69% change and a high above 0.0961, indicating increasing buying pressure.",
-    "30m": "The 30-minute chart also shows a bullish trend with a 3.87% change, but the ATR is relatively low at 0.0009, indicating limited volatility.",
-    "1h": "The 1-hour chart shows a moderate bullish move with a 2.08% change, but the ATR is slightly higher at 0.001, indicating increasing volatility.",
-    "key_level_support": 0.0901,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential breakout above 0.0961, which could lead to further upside, but also be cautious of a potential pullback to the key support level at 0.0901.",
-    "risk_warning": "The bearish MACD signal below the signal line poses a risk of a potential trend reversal, and traders should be prepared to adjust their positions accordingly.",
-    "generated_at": "2026-04-08T00:59:30.247366+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0942,
-        "open": 0.0924,
-        "high": 0.0961,
-        "low": 0.0921,
-        "change_pct": 1.99,
-        "atr": 0.0004,
-        "avg_vol": 10934984.77,
-        "last_vol": 10721300.0
-      },
-      "15m": {
-        "close": 0.0942,
-        "open": 0.0909,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 3.69,
-        "atr": 0.0008,
-        "avg_vol": 15962090.47,
-        "last_vol": 24281938.0
-      },
-      "30m": {
-        "close": 0.0942,
-        "open": 0.0907,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 3.87,
-        "atr": 0.0009,
-        "avg_vol": 23633866.31,
-        "last_vol": 44841425.0
-      },
-      "1h": {
-        "close": 0.0942,
-        "open": 0.0923,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.08,
-        "atr": 0.001,
-        "avg_vol": 38674186.0,
-        "last_vol": 99091584.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
