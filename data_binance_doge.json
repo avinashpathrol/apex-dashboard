@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T15:53:03.777346+00:00",
+  "generated_at": "2026-04-08T15:54:24.245336+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09344,
+  "price": 0.09346,
   "usdt_balance": 90.26718815,
   "sol_balance": 0.528,
   "cad_balance": 90.26718815,
-  "margin_level": 422.60115589,
+  "margin_level": 422.55193531,
   "position": null,
   "action": "HOLD",
   "confidence": 88,
@@ -19,7 +19,7 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI rising from low (40.2)"
+    "RSI rising from low (40.5)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -3345,7 +3345,7 @@
     "long_trades": 20,
     "short_trades": 29
   },
-  "run_count": 1797,
+  "run_count": 1798,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -3373,7 +3373,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with the price below the EMA-20 and MACD below the signal line, indicating a bearish bias. However, the RSI is rising from a low level, which could suggest a potential bounce. The market is currently experiencing a short-term pullback after a brief rally.",
+    "5m": "The 5-minute chart shows a small decline with a 1% change, indicating a minor bearish move.",
+    "15m": "The 15-minute chart displays a similar bearish trend with a 1.05% decline, confirming the short-term downtrend.",
+    "30m": "The 30-minute chart reveals a 3.08% increase, which could be a relief rally, but the overall trend remains bearish.",
+    "1h": "The 1-hour chart shows a 1.21% increase, but the price is still below the EMA-20, indicating a bearish bias.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a potential short entry if the price breaks below the key support level of 0.0899.",
+    "risk_warning": "A false breakout below the support level could result in a significant price reversal, so traders should set stop-loss orders accordingly.",
+    "generated_at": "2026-04-08T15:54:22.729499+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0935,
+        "open": 0.0944,
+        "high": 0.0951,
+        "low": 0.0926,
+        "change_pct": -1.0,
+        "atr": 0.0003,
+        "avg_vol": 4365161.32,
+        "last_vol": 2404396.0
+      },
+      "15m": {
+        "close": 0.0935,
+        "open": 0.0945,
+        "high": 0.0956,
+        "low": 0.0926,
+        "change_pct": -1.05,
+        "atr": 0.0005,
+        "avg_vol": 9521581.43,
+        "last_vol": 5248223.0
+      },
+      "30m": {
+        "close": 0.0935,
+        "open": 0.0907,
+        "high": 0.0961,
+        "low": 0.0904,
+        "change_pct": 3.08,
+        "atr": 0.0007,
+        "avg_vol": 28630629.73,
+        "last_vol": 10266406.0
+      },
+      "1h": {
+        "close": 0.0935,
+        "open": 0.0923,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 1.21,
+        "atr": 0.0007,
+        "avg_vol": 41447747.9,
+        "last_vol": 25710356.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
