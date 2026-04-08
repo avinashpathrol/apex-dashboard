@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T18:13:00.251403+00:00",
+  "generated_at": "2026-04-08T18:14:16.223776+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09382,
+  "price": 0.09383,
   "usdt_balance": 90.26718815,
   "sol_balance": 0.528,
   "cad_balance": 90.26718815,
-  "margin_level": 421.82617319,
+  "margin_level": 421.7756334,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -3344,7 +3344,7 @@
     "long_trades": 20,
     "short_trades": 29
   },
-  "run_count": 1906,
+  "run_count": 1907,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -3372,62 +3372,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with some indicators suggesting a bullish trend while others indicate a downtrend. The price is trading above the EMA-20, but the EMA-20 is below the EMA-50, indicating a potential downtrend. Overall, the market is choppy and lacks a clear direction.",
-    "5m": "The 5-minute chart shows a slight decline in price, with a 1.04% change and a high ATR of 0.0002, indicating increased volatility.",
-    "15m": "The 15-minute chart also shows a decline in price, with a 0.92% change and a moderate ATR of 0.0003, suggesting a potential continuation of the downtrend.",
-    "30m": "The 30-minute chart shows a significant increase in price, with a 2.92% change and a higher ATR of 0.0006, indicating a potential bullish reversal.",
-    "1h": "The 1-hour chart shows a moderate increase in price, with a 2.04% change and a moderate ATR of 0.0007, suggesting a potential bullish trend.",
-    "key_level_support": 0.0926,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a breakout above the key resistance level of 0.0961 or a breakdown below the key support level of 0.0926 to determine the next market direction.",
-    "risk_warning": "Trading in a choppy market can result in significant losses, so traders should exercise caution and consider reducing their position size.",
-    "generated_at": "2026-04-08T18:12:58.871112+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0938,
-        "open": 0.0948,
-        "high": 0.0951,
-        "low": 0.0926,
-        "change_pct": -1.04,
-        "atr": 0.0002,
-        "avg_vol": 2923194.8,
-        "last_vol": 333344.0
-      },
-      "15m": {
-        "close": 0.0938,
-        "open": 0.0947,
-        "high": 0.0956,
-        "low": 0.0926,
-        "change_pct": -0.92,
-        "atr": 0.0003,
-        "avg_vol": 8971739.5,
-        "last_vol": 1641170.0
-      },
-      "30m": {
-        "close": 0.0938,
-        "open": 0.0912,
-        "high": 0.0961,
-        "low": 0.091,
-        "change_pct": 2.92,
-        "atr": 0.0006,
-        "avg_vol": 27983268.29,
-        "last_vol": 1641170.0
-      },
-      "1h": {
-        "close": 0.0938,
-        "open": 0.0919,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.04,
-        "atr": 0.0007,
-        "avg_vol": 41173388.54,
-        "last_vol": 1641170.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
