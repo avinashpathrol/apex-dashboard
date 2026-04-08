@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T11:05:56.483166+00:00",
+  "generated_at": "2026-04-08T11:07:11.403426+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0945,
+  "price": 0.0946,
   "usdt_balance": 99.35138738,
   "sol_balance": 0.512,
   "cad_balance": 99.35138738,
-  "margin_level": 470.24384168,
+  "margin_level": 470.23594206,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -19,7 +19,7 @@
   "reason": "Blocked SHORT \u2014 trend filter active (EMA-20 >= EMA-50) | 2 bullish, 3 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (47.4)",
+    "RSI rising from low (49.5)",
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
@@ -2947,7 +2947,7 @@
     "long_trades": 17,
     "short_trades": 27
   },
-  "run_count": 1576,
+  "run_count": 1577,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
