@@ -1,25 +1,24 @@
 {
-  "generated_at": "2026-04-08T12:47:28.281392+00:00",
+  "generated_at": "2026-04-08T12:48:51.101938+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09427,
+  "price": 0.09424,
   "usdt_balance": 99.35138738,
   "sol_balance": 0.512,
   "cad_balance": 99.35138738,
-  "margin_level": 469.30824331,
+  "margin_level": 469.36824929,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "status": "HOLD \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (45.6)",
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
@@ -2946,7 +2945,7 @@
     "long_trades": 17,
     "short_trades": 27
   },
-  "run_count": 1655,
+  "run_count": 1656,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2974,7 +2973,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is currently experiencing mixed signals across different timeframes, with the price showing a slight increase in the 15m and 30m timeframes but struggling to maintain momentum, while the 5m and 1h timeframes indicate a more neutral or slightly bearish trend. The EMA-20 being above EMA-50 suggests an uptrend, but the MACD below the signal line and price below EMA-20 indicate bearish pressure. Overall, the market is indecisive and lacks a clear direction.",
+    "5m": "The 5m timeframe shows a slight decline in price with a small ATR, indicating low volatility and a lack of strong market momentum.",
+    "15m": "The 15m timeframe indicates a slight increase in price with a moderate ATR, suggesting some buying interest but not enough to overcome the overall bearish signals.",
+    "30m": "The 30m timeframe shows a more significant price increase with a moderate ATR, indicating a potential short-term bullish trend, but it needs to be confirmed by higher timeframes.",
+    "1h": "The 1h timeframe indicates a moderate price increase with a relatively high ATR, suggesting some volatility and potential for further movement, but the overall trend remains uncertain.",
+    "key_level_support": 0.0928,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a break above the key resistance level of 0.0961 or a drop below the key support level of 0.0928 to determine the next market direction.",
+    "risk_warning": "Trading in a neutral market with mixed signals can be risky, and traders should be cautious and consider reducing their position size until a clearer trend emerges.",
+    "generated_at": "2026-04-08T12:48:49.679748+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0942,
+        "open": 0.0945,
+        "high": 0.0956,
+        "low": 0.0937,
+        "change_pct": -0.29,
+        "atr": 0.0002,
+        "avg_vol": 3711336.25,
+        "last_vol": 2565625.0
+      },
+      "15m": {
+        "close": 0.0942,
+        "open": 0.0934,
+        "high": 0.0961,
+        "low": 0.0928,
+        "change_pct": 0.91,
+        "atr": 0.0004,
+        "avg_vol": 15494626.57,
+        "last_vol": 2565625.0
+      },
+      "30m": {
+        "close": 0.0942,
+        "open": 0.0906,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 4.01,
+        "atr": 0.0005,
+        "avg_vol": 26620219.21,
+        "last_vol": 8883466.0
+      },
+      "1h": {
+        "close": 0.0942,
+        "open": 0.0924,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 2.0,
+        "atr": 0.0007,
+        "avg_vol": 39358937.23,
+        "last_vol": 27032046.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
