@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T06:08:14.563702+00:00",
+  "generated_at": "2026-04-08T06:09:30.592137+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09478,
+  "price": 0.09477,
   "usdt_balance": 104.94711102,
   "sol_balance": 0.664,
   "cad_balance": 104.94711102,
-  "margin_level": 505.69846152,
+  "margin_level": 505.51410418,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (56.4)",
+    "RSI falling from high (56.2)",
     "MACD below signal (bearish)"
   ],
   "trades": [
@@ -2540,7 +2540,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1346,
+  "run_count": 1347,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2568,62 +2568,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 5,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals across different timeframes, with the price holding above the EMA-20 but the RSI falling from a high level. The market has seen a recent uptrend, but the MACD is below the signal line, indicating potential bearish momentum. Overall, the market is in a state of flux, and traders should be cautious.",
-    "5m": "The 5-minute chart shows a slight increase in price with a 0.35% change, but the ATR is relatively low at 0.0002, indicating low volatility.",
-    "15m": "The 15-minute chart displays a more significant price increase of 4.64% with a higher ATR of 0.0003, suggesting a potential short-term uptrend.",
-    "30m": "The 30-minute chart also shows a notable price increase of 4.53% with an ATR of 0.0005, further supporting the short-term bullish case.",
-    "1h": "The 1-hour chart indicates a moderate price increase of 2.91% with an ATR of 0.001, which may be a sign of a larger trend reversal.",
-    "key_level_support": 0.0901,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 0.0961 or a breakdown below the key support level of 0.0901 to determine the next market direction.",
-    "risk_warning": "The conflicting signals across timeframes increase the risk of a false breakout, and traders should be prepared for potential whipsaws.",
-    "generated_at": "2026-04-08T06:08:13.164199+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0948,
-        "open": 0.0945,
-        "high": 0.0951,
-        "low": 0.0941,
-        "change_pct": 0.35,
-        "atr": 0.0002,
-        "avg_vol": 2301219.13,
-        "last_vol": 221713.0
-      },
-      "15m": {
-        "close": 0.0948,
-        "open": 0.0906,
-        "high": 0.0961,
-        "low": 0.0903,
-        "change_pct": 4.64,
-        "atr": 0.0003,
-        "avg_vol": 16041273.28,
-        "last_vol": 7169423.0
-      },
-      "30m": {
-        "close": 0.0948,
-        "open": 0.0907,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.53,
-        "atr": 0.0005,
-        "avg_vol": 24492231.02,
-        "last_vol": 7169423.0
-      },
-      "1h": {
-        "close": 0.0948,
-        "open": 0.0921,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.91,
-        "atr": 0.001,
-        "avg_vol": 37108619.56,
-        "last_vol": 7169423.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
