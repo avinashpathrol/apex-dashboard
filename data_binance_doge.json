@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T05:51:16.509601+00:00",
+  "generated_at": "2026-04-08T05:52:48.254125+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09494,
+  "price": 0.09489,
   "usdt_balance": 104.94711102,
   "sol_balance": 0.664,
   "cad_balance": 104.94711102,
-  "margin_level": 505.31708219,
+  "margin_level": 505.23919802,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -24,7 +24,7 @@
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "Price near BB upper band (86%)"
+    "Price near BB upper band (81%)"
   ],
   "trades": [
     {
@@ -2540,7 +2540,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1333,
+  "run_count": 1334,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2568,7 +2568,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 6,
+    "summary": "The SOL/USDT market is showing signs of an uptrend across multiple timeframes, with the price above the EMA-20 and a recent 5.09% increase in the 15m timeframe. However, the MACD below the signal line and the price near the upper Bollinger Band suggest potential for a pullback. The overall trend remains bullish, but with caution.",
+    "5m": "The 5m timeframe shows a slight increase of 0.72% with a narrow range, indicating a potential pause in the uptrend.",
+    "15m": "The 15m timeframe displays a notable 5.09% increase, with the price reaching a high of 0.0961, suggesting strong bullish momentum.",
+    "30m": "The 30m timeframe also shows a significant 4.92% increase, with the price maintaining above the EMA-20, further supporting the bullish trend.",
+    "1h": "The 1h timeframe indicates a 3.04% increase, with the price holding above the recent low of 0.0899, suggesting a potential higher low formation.",
+    "key_level_support": 0.0901,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a potential pullback to the key support level of 0.0901, which could offer a buying opportunity.",
+    "risk_warning": "A break below the key support level of 0.0901 could lead to a reversal of the uptrend, so traders should be cautious and set appropriate stop-loss levels.",
+    "generated_at": "2026-04-08T05:52:46.829138+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0949,
+        "open": 0.0942,
+        "high": 0.0951,
+        "low": 0.0939,
+        "change_pct": 0.72,
+        "atr": 0.0001,
+        "avg_vol": 2453430.27,
+        "last_vol": 701749.0
+      },
+      "15m": {
+        "close": 0.0949,
+        "open": 0.0903,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 5.09,
+        "atr": 0.0003,
+        "avg_vol": 15970451.83,
+        "last_vol": 1677141.0
+      },
+      "30m": {
+        "close": 0.0949,
+        "open": 0.0905,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 4.92,
+        "atr": 0.0006,
+        "avg_vol": 24820372.31,
+        "last_vol": 5159896.0
+      },
+      "1h": {
+        "close": 0.095,
+        "open": 0.0922,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 3.04,
+        "atr": 0.001,
+        "avg_vol": 37394156.83,
+        "last_vol": 18044659.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
