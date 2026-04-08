@@ -1,27 +1,26 @@
 {
-  "generated_at": "2026-04-08T12:02:22.430161+00:00",
+  "generated_at": "2026-04-08T12:03:38.248086+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09428,
+  "price": 0.09424,
   "usdt_balance": 99.35138738,
   "sol_balance": 0.512,
   "cad_balance": 99.35138738,
-  "margin_level": 469.92520999,
+  "margin_level": 470.02282514,
   "position": null,
   "action": "HOLD",
-  "confidence": 82,
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI rising from low (45.0) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (20%)",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (45.0)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (20%)"
+    "Price near BB lower band (16%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2947,7 +2946,7 @@
     "long_trades": 17,
     "short_trades": 27
   },
-  "run_count": 1620,
+  "run_count": 1621,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2975,62 +2974,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 7,
-    "summary": "The SOL/USDT market is showing signs of a potential uptrend across multiple timeframes, with the price nearing the lower Bollinger Band and the RSI rising from a low level. The EMA-20 is above the EMA-50, indicating a bullish trend. However, the MACD is below the signal line, which could be a bearish signal.",
-    "5m": "The 5-minute chart shows a slight decline in price, but the overall trend is still uncertain.",
-    "15m": "The 15-minute chart indicates a strong bullish move, with a 1.95% increase in price and a high above the previous candle.",
-    "30m": "The 30-minute chart confirms the bullish trend, with a 3.99% increase in price and a high above the previous two candles.",
-    "1h": "The 1-hour chart shows a moderate bullish move, with a 2.06% increase in price and a high above the previous candle.",
-    "key_level_support": 0.0924,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential long entry if the price breaks above the key resistance level of 0.0961.",
-    "risk_warning": "However, a failure to break above the resistance level could lead to a sharp decline in price.",
-    "generated_at": "2026-04-08T12:02:21.086557+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0943,
-        "open": 0.0945,
-        "high": 0.0956,
-        "low": 0.0937,
-        "change_pct": -0.24,
-        "atr": 0.0002,
-        "avg_vol": 3543989.18,
-        "last_vol": 138972.0
-      },
-      "15m": {
-        "close": 0.0943,
-        "open": 0.0925,
-        "high": 0.0961,
-        "low": 0.0924,
-        "change_pct": 1.95,
-        "atr": 0.0004,
-        "avg_vol": 15770553.93,
-        "last_vol": 138972.0
-      },
-      "30m": {
-        "close": 0.0943,
-        "open": 0.0907,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 3.99,
-        "atr": 0.0005,
-        "avg_vol": 26302812.65,
-        "last_vol": 138972.0
-      },
-      "1h": {
-        "close": 0.0943,
-        "open": 0.0924,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.06,
-        "atr": 0.0007,
-        "avg_vol": 38798664.85,
-        "last_vol": 138972.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
