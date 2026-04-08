@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T09:10:28.637318+00:00",
+  "generated_at": "2026-04-08T09:12:46.125952+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09478,
+  "price": 0.0948,
   "usdt_balance": -342.79328898,
   "sol_balance": 4718.941,
   "cad_balance": -342.79328898,
-  "margin_level": 1.29547355,
+  "margin_level": 1.29560312,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
@@ -23,7 +23,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI falling from high (55.1)",
+    "RSI falling from high (55.8)",
     "MACD below signal (bearish)",
     "High volume confirms move"
   ],
@@ -2564,7 +2564,7 @@
     "long_trades": 16,
     "short_trades": 25
   },
-  "run_count": 1488,
+  "run_count": 1489,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2596,7 +2596,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 4,
+    "summary": "The SOL/USDT market is showing mixed signals across timeframes, with the current price holding above the EMA-20 but RSI and MACD indicating potential bearish momentum. The recent price action has been choppy, with the 15m and 30m timeframes showing significant gains, but the 5m and 1h timeframes indicating a slowdown. Overall, the market is at a crossroads, waiting for a decisive move.",
+    "5m": "The 5m timeframe is showing a slight decline in price, with a minor loss of 0.18% and a low ATR of 0.0002, indicating a lack of momentum.",
+    "15m": "The 15m timeframe is bullish, with a 3.28% gain and a higher high, but the momentum may be waning as the price is struggling to break above the recent high.",
+    "30m": "The 30m timeframe is also bullish, with a 3.86% gain and a higher high, but the RSI and MACD are starting to show bearish divergences, which could lead to a reversal.",
+    "1h": "The 1h timeframe is showing a more subdued price action, with a 1.87% gain and a lower ATR, indicating a potential loss of momentum and a need for a breakout to sustain the uptrend.",
+    "key_level_support": 0.0901,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a breakout above the key resistance level of 0.0961 or a breakdown below the key support level of 0.0901 to determine the next direction of the market.",
+    "risk_warning": "The mixed signals and potential bearish divergences in the RSI and MACD indicate a higher risk of a reversal, and traders should be cautious and adjust their positions accordingly.",
+    "generated_at": "2026-04-08T09:12:44.745994+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0948,
+        "open": 0.095,
+        "high": 0.0951,
+        "low": 0.0943,
+        "change_pct": -0.18,
+        "atr": 0.0002,
+        "avg_vol": 1897812.42,
+        "last_vol": 306115.0
+      },
+      "15m": {
+        "close": 0.0948,
+        "open": 0.0918,
+        "high": 0.0961,
+        "low": 0.091,
+        "change_pct": 3.28,
+        "atr": 0.0003,
+        "avg_vol": 15904119.4,
+        "last_vol": 7269712.0
+      },
+      "30m": {
+        "close": 0.0948,
+        "open": 0.0913,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 3.86,
+        "atr": 0.0004,
+        "avg_vol": 24594726.79,
+        "last_vol": 7269712.0
+      },
+      "1h": {
+        "close": 0.0948,
+        "open": 0.0931,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 1.87,
+        "atr": 0.0008,
+        "avg_vol": 37071173.75,
+        "last_vol": 7269712.0
+      }
+    }
+  },
   "trail": {
     "entry_price": 0.0948,
     "best_price": 0.09495,
