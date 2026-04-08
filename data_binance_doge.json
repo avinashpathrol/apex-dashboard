@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T18:43:42.199318+00:00",
+  "generated_at": "2026-04-08T18:44:57.758132+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09343,
+  "price": 0.09335,
   "usdt_balance": 90.26718815,
   "sol_balance": 0.528,
   "cad_balance": 90.26718815,
-  "margin_level": 423.28698625,
+  "margin_level": 423.53247276,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -3344,7 +3344,7 @@
     "long_trades": 20,
     "short_trades": 29
   },
-  "run_count": 1930,
+  "run_count": 1931,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -3372,62 +3372,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mixed trend across different timeframes, with some indicators suggesting a bullish outlook while others indicate a downtrend. The price is below the EMA-20, which is a bearish signal, but the MACD is above the signal line, indicating a potential bullish reversal. However, the overall trend remains uncertain, and the market is likely to remain choppy in the short term.",
-    "5m": "The 5-minute chart shows a decline in price, with a 1.41% drop and a high ATR of 0.0002, indicating increased volatility.",
-    "15m": "The 15-minute chart also shows a decline in price, with a 1.23% drop and a moderate ATR of 0.0003, suggesting a potential continuation of the downtrend.",
-    "30m": "The 30-minute chart shows a slight increase in price, with a 1.95% gain and a higher ATR of 0.0006, indicating a potential bullish reversal.",
-    "1h": "The 1-hour chart shows a moderate increase in price, with a 1.62% gain and a higher ATR of 0.0008, suggesting a potential uptrend.",
-    "key_level_support": 0.0899,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential breakout above the key level resistance at 0.0961, which could indicate a bullish trend reversal.",
-    "risk_warning": "The market is currently experiencing high volatility, and traders should be cautious of potential whipsaws and adjust their positions accordingly.",
-    "generated_at": "2026-04-08T18:43:40.788923+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0934,
-        "open": 0.0948,
-        "high": 0.0948,
-        "low": 0.0926,
-        "change_pct": -1.41,
-        "atr": 0.0002,
-        "avg_vol": 2682711.43,
-        "last_vol": 2622656.0
-      },
-      "15m": {
-        "close": 0.0934,
-        "open": 0.0946,
-        "high": 0.0956,
-        "low": 0.0926,
-        "change_pct": -1.23,
-        "atr": 0.0003,
-        "avg_vol": 8970813.25,
-        "last_vol": 4004202.0
-      },
-      "30m": {
-        "close": 0.0934,
-        "open": 0.0916,
-        "high": 0.0961,
-        "low": 0.0911,
-        "change_pct": 1.95,
-        "atr": 0.0006,
-        "avg_vol": 27536199.67,
-        "last_vol": 4004202.0
-      },
-      "1h": {
-        "close": 0.0934,
-        "open": 0.0919,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 1.62,
-        "atr": 0.0008,
-        "avg_vol": 41408181.21,
-        "last_vol": 12911218.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
