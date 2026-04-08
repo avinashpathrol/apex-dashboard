@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T07:40:32.553071+00:00",
+  "generated_at": "2026-04-08T07:41:48.223940+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09443,
+  "price": 0.09447,
   "usdt_balance": 104.94711102,
   "sol_balance": 0.664,
   "cad_balance": 104.94711102,
-  "margin_level": 508.8391103,
+  "margin_level": 508.50066329,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -20,7 +20,7 @@
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (1%)"
+    "Price near BB lower band (6%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2540,7 +2540,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1418,
+  "run_count": 1419,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2568,62 +2568,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals, with the price near the lower Bollinger Band and the EMA-20 above EMA-50, but the MACD is below the signal line, indicating a potential reversal, and the price is below the EMA-20, suggesting bearish momentum. The market has seen a recent uptrend in the 15m and 30m timeframes, but the overall trend is uncertain. The ATR values indicate low volatility across all timeframes.",
-    "5m": "The 5m timeframe shows a slight decline in price with low volatility, indicating a lack of strong market momentum.",
-    "15m": "The 15m timeframe displays a notable uptrend with a 4.2% price increase, suggesting bullish interest in the market.",
-    "30m": "The 30m timeframe also exhibits an uptrend with a 4.15% price increase, further supporting the bullish case.",
-    "1h": "The 1h timeframe shows a moderate uptrend with a 2.45% price increase, but the price is still below the EMA-20, indicating bearish pressure.",
-    "key_level_support": 0.0899,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential breakout above the EMA-20 or a breakdown below the lower Bollinger Band to determine the next market direction.",
-    "risk_warning": "The low confidence level of the bot signal and the conflicting bullish and bearish signals suggest high market uncertainty and potential for sudden price movements.",
-    "generated_at": "2026-04-08T07:40:31.226928+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0944,
-        "open": 0.0945,
-        "high": 0.0951,
-        "low": 0.0943,
-        "change_pct": -0.12,
-        "atr": 0.0001,
-        "avg_vol": 2134788.35,
-        "last_vol": 6887.0
-      },
-      "15m": {
-        "close": 0.0944,
-        "open": 0.0906,
-        "high": 0.0961,
-        "low": 0.0906,
-        "change_pct": 4.2,
-        "atr": 0.0003,
-        "avg_vol": 16265495.68,
-        "last_vol": 3550176.0
-      },
-      "30m": {
-        "close": 0.0944,
-        "open": 0.0907,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.15,
-        "atr": 0.0004,
-        "avg_vol": 24537903.38,
-        "last_vol": 3550176.0
-      },
-      "1h": {
-        "close": 0.0944,
-        "open": 0.0922,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.45,
-        "atr": 0.0009,
-        "avg_vol": 37590813.96,
-        "last_vol": 16565734.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
