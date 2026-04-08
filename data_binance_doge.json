@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-08T00:14:01.223971+00:00",
+  "generated_at": "2026-04-08T00:15:19.963043+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.095,
+  "price": 0.0948,
   "usdt_balance": -384.59943863,
   "sol_balance": 5243.906,
   "cad_balance": -384.59943863,
-  "margin_level": 1.28841261,
+  "margin_level": 1.28713204,
   "position": "LONG",
-  "action": "HOLD",
-  "confidence": 82,
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
   "status": "HOLDING LONG \u2014 MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20",
   "bot_paused": false,
@@ -24,8 +24,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (69.0)",
-    "Price near BB upper band (81%)"
+    "RSI overbought (66.5)"
   ],
   "trades": [
     {
@@ -2498,7 +2497,7 @@
     "long_trades": 16,
     "short_trades": 23
   },
-  "run_count": 1071,
+  "run_count": 1072,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2533,10 +2532,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 0.09477,
-    "best_price": 0.095,
+    "best_price": 0.09513,
     "atr": 0.0007578571428571435,
     "sl": 0.09363321428571428,
-    "trail_stop": 0.09386321428571429,
+    "trail_stop": 0.09399321428571429,
     "active": false
   }
 }
