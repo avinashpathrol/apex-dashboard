@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T06:22:13.759378+00:00",
+  "generated_at": "2026-04-08T06:23:36.559933+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09494,
+  "price": 0.09495,
   "usdt_balance": 104.94711102,
   "sol_balance": 0.664,
   "cad_balance": 104.94711102,
-  "margin_level": 505.17759937,
+  "margin_level": 505.34088698,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -24,7 +24,7 @@
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "Price near BB upper band (81%)"
+    "Price near BB upper band (82%)"
   ],
   "trades": [
     {
@@ -2540,7 +2540,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1357,
+  "run_count": 1358,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2568,7 +2568,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "NEUTRAL",
+    "strength": 5,
+    "summary": "The SOL/USDT market is currently experiencing a mix of bullish and bearish signals, with the price trading near the upper Bollinger Band and the MACD below the signal line, indicating potential for a reversal, while the EMA-20 above EMA-50 suggests an ongoing uptrend. The price has been increasing across multiple timeframes, but the confidence in the bot signal is 0%, indicating uncertainty. The market is likely to remain volatile in the short term.",
+    "5m": "The 5-minute chart shows a slight increase in price with a 0.8% change, indicating a slow and potentially consolidating market.",
+    "15m": "The 15-minute chart displays a more significant 4.96% price increase, suggesting a short-term bullish momentum.",
+    "30m": "The 30-minute chart reveals a 4.72% price increase, further supporting the short-term uptrend.",
+    "1h": "The 1-hour chart shows a 3.09% price increase, indicating a slightly weaker but still present bullish trend.",
+    "key_level_support": 0.0901,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 0.0961 or a breakdown below the key support level of 0.0901 to determine the next market direction.",
+    "risk_warning": "The low confidence in the bot signal and mixed market signals increase the risk of a potential market reversal, so traders should exercise caution and consider adjusting their positions accordingly.",
+    "generated_at": "2026-04-08T06:23:35.164253+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.095,
+        "open": 0.0942,
+        "high": 0.0951,
+        "low": 0.0941,
+        "change_pct": 0.8,
+        "atr": 0.0002,
+        "avg_vol": 2209401.25,
+        "last_vol": 2000465.0
+      },
+      "15m": {
+        "close": 0.095,
+        "open": 0.0905,
+        "high": 0.0961,
+        "low": 0.0903,
+        "change_pct": 4.96,
+        "atr": 0.0003,
+        "avg_vol": 16030762.73,
+        "last_vol": 3595886.0
+      },
+      "30m": {
+        "close": 0.095,
+        "open": 0.0907,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 4.72,
+        "atr": 0.0005,
+        "avg_vol": 24630361.12,
+        "last_vol": 13799668.0
+      },
+      "1h": {
+        "close": 0.095,
+        "open": 0.0921,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 3.09,
+        "atr": 0.001,
+        "avg_vol": 37246749.67,
+        "last_vol": 13799668.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
