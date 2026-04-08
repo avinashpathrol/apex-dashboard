@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T11:51:52.935143+00:00",
+  "generated_at": "2026-04-08T11:53:09.124564+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09427,
+  "price": 0.09424,
   "usdt_balance": 99.35138738,
   "sol_balance": 0.512,
   "cad_balance": 99.35138738,
-  "margin_level": 470.37435921,
+  "margin_level": 470.17039591,
   "position": null,
   "action": "HOLD",
   "confidence": 82,
@@ -16,12 +16,12 @@
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI rising from low (44.7) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (16%)",
+  "reason": "RSI rising from low (44.1) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (13%)",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (44.7)",
+    "RSI rising from low (44.1)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (16%)"
+    "Price near BB lower band (13%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2947,7 +2947,7 @@
     "long_trades": 17,
     "short_trades": 27
   },
-  "run_count": 1612,
+  "run_count": 1613,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
