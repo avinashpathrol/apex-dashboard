@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T01:13:20.327766+00:00",
+  "generated_at": "2026-04-08T01:14:53.970134+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 107.74971937,
   "sol_balance": 0.906,
   "cad_balance": 107.74971937,
-  "margin_level": 520.3841644,
+  "margin_level": 520.29605306,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -2506,7 +2506,7 @@
     "long_trades": 16,
     "short_trades": 23
   },
-  "run_count": 1118,
+  "run_count": 1119,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2534,7 +2534,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 6,
+    "summary": "The market is showing signs of an uptrend across multiple timeframes, with the price above the EMA-20 and EMA-20 above EMA-50, indicating a bullish trend, but the MACD below the signal line suggests caution. The recent price movements have been positive, with gains in the 5m, 15m, and 30m timeframes. However, the overall confidence in the bot signal is low, which may indicate a potential reversal.",
+    "5m": "The 5m timeframe is showing a strong bullish movement with a 2.29% gain and a high above 0.0961.",
+    "15m": "The 15m timeframe is also bullish, with a 4.28% gain and the price holding above the opening price.",
+    "30m": "The 30m timeframe is showing a similar pattern, with a 4.52% gain and the price maintaining its upward momentum.",
+    "1h": "The 1h timeframe is relatively neutral, with a 1.78% gain, but the price is still above the opening price, indicating a slightly bullish bias.",
+    "key_level_support": 0.0901,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a potential breakout above 0.0961, which could lead to further gains, but also be cautious of a potential reversal due to the low confidence in the bot signal.",
+    "risk_warning": "The low confidence in the bot signal and the bearish MACD signal suggest a higher risk of a potential reversal, so traders should be prepared to adjust their positions accordingly.",
+    "generated_at": "2026-04-08T01:14:52.657636+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0945,
+        "open": 0.0924,
+        "high": 0.0961,
+        "low": 0.0921,
+        "change_pct": 2.29,
+        "atr": 0.0003,
+        "avg_vol": 10326958.38,
+        "last_vol": 2877733.0
+      },
+      "15m": {
+        "close": 0.0945,
+        "open": 0.0906,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 4.28,
+        "atr": 0.0008,
+        "avg_vol": 16022019.02,
+        "last_vol": 10908912.0
+      },
+      "30m": {
+        "close": 0.0945,
+        "open": 0.0904,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 4.52,
+        "atr": 0.0009,
+        "avg_vol": 23668526.44,
+        "last_vol": 10908912.0
+      },
+      "1h": {
+        "close": 0.0945,
+        "open": 0.0929,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 1.78,
+        "atr": 0.001,
+        "avg_vol": 37578855.69,
+        "last_vol": 10908912.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
