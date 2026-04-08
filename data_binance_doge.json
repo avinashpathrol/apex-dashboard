@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T16:54:57.496702+00:00",
+  "generated_at": "2026-04-08T16:56:15.653021+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09348,
+  "price": 0.09355,
   "usdt_balance": 90.26718815,
   "sol_balance": 0.528,
   "cad_balance": 90.26718815,
-  "margin_level": 422.65783632,
+  "margin_level": 422.55938424,
   "position": null,
   "action": "HOLD",
   "confidence": 95,
@@ -3343,7 +3343,7 @@
     "long_trades": 20,
     "short_trades": 29
   },
-  "run_count": 1845,
+  "run_count": 1846,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -3371,7 +3371,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 8,
+    "summary": "The SOL/USDT market is exhibiting a strong downtrend across multiple timeframes, with bearish signals from the MACD and EMA indicators, and the current price is below the EMA-20, indicating a potential continuation of the downward trend. The short-term timeframes show a decline in price, with the 5m and 15m charts showing a decrease in value. The overall trend suggests a bearish outlook for the market.",
+    "5m": "The 5m chart shows a minor decline of 0.69% with a low of 0.0926, indicating a potential for further downside.",
+    "15m": "The 15m chart displays a more significant drop of 1.39% with a low of 0.0926, reinforcing the bearish sentiment.",
+    "30m": "The 30m chart exhibits a 2.8% increase, but this is likely a minor correction within the larger downtrend, as the price remains below the EMA-20.",
+    "1h": "The 1h chart shows a 1.7% increase, but the overall trend remains bearish, with the price still below the EMA-20 and the MACD below the signal line.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a potential short entry opportunity, as the bot signal indicates a high confidence level for a short position.",
+    "risk_warning": "The market can be volatile, and traders should set stop-loss orders to limit potential losses.",
+    "generated_at": "2026-04-08T16:56:14.202942+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0935,
+        "open": 0.0942,
+        "high": 0.0951,
+        "low": 0.0926,
+        "change_pct": -0.69,
+        "atr": 0.0001,
+        "avg_vol": 3381230.1,
+        "last_vol": 721450.0
+      },
+      "15m": {
+        "close": 0.0935,
+        "open": 0.0949,
+        "high": 0.0956,
+        "low": 0.0926,
+        "change_pct": -1.39,
+        "atr": 0.0004,
+        "avg_vol": 9178566.47,
+        "last_vol": 3937674.0
+      },
+      "30m": {
+        "close": 0.0935,
+        "open": 0.091,
+        "high": 0.0961,
+        "low": 0.0906,
+        "change_pct": 2.8,
+        "atr": 0.0006,
+        "avg_vol": 28660332.35,
+        "last_vol": 7316217.0
+      },
+      "1h": {
+        "close": 0.0935,
+        "open": 0.092,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 1.7,
+        "atr": 0.0007,
+        "avg_vol": 41440963.02,
+        "last_vol": 13428219.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
