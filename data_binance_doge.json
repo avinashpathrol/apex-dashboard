@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T09:58:44.990943+00:00",
+  "generated_at": "2026-04-08T10:00:06.124599+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -7,7 +7,7 @@
   "usdt_balance": 102.61186002,
   "sol_balance": 0.941,
   "cad_balance": 102.61186002,
-  "margin_level": 492.10632564,
+  "margin_level": 492.06864889,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -2602,7 +2602,7 @@
     "long_trades": 16,
     "short_trades": 25
   },
-  "run_count": 1524,
+  "run_count": 1525,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2630,62 +2630,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is showing signs of an uptrend across multiple timeframes, with the price above the EMA-20 and a recent increase in value. However, the MACD below the signal line indicates some bearish pressure. The overall trend is bullish, but with caution due to the mixed signals.",
-    "5m": "The 5-minute chart shows a slight increase in price with a small ATR, indicating low volatility and a potential for a breakout.",
-    "15m": "The 15-minute chart displays a more significant price increase with a higher ATR, suggesting a moderate level of volatility and a possible continuation of the uptrend.",
-    "30m": "The 30-minute chart reveals a notable price surge with a relatively high ATR, indicating increased volatility and a strong bullish momentum.",
-    "1h": "The 1-hour chart shows a moderate price increase with a higher ATR, signifying a potential for further growth but with caution due to the bearish MACD signal.",
-    "key_level_support": 0.0901,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential breakout above the key resistance level of 0.0961, which could lead to further upside momentum.",
-    "risk_warning": "The bearish MACD signal below the signal line poses a risk of a trend reversal, and traders should be prepared for a potential downturn.",
-    "generated_at": "2026-04-08T09:58:43.593783+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0948,
-        "open": 0.0945,
-        "high": 0.095,
-        "low": 0.0943,
-        "change_pct": 0.23,
-        "atr": 0.0002,
-        "avg_vol": 2032490.03,
-        "last_vol": 3344452.0
-      },
-      "15m": {
-        "close": 0.0948,
-        "open": 0.0913,
-        "high": 0.0961,
-        "low": 0.0911,
-        "change_pct": 3.79,
-        "atr": 0.0003,
-        "avg_vol": 15646292.57,
-        "last_vol": 5597562.0
-      },
-      "30m": {
-        "close": 0.0948,
-        "open": 0.0906,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.59,
-        "atr": 0.0004,
-        "avg_vol": 24961145.12,
-        "last_vol": 12940671.0
-      },
-      "1h": {
-        "close": 0.0948,
-        "open": 0.0931,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 1.84,
-        "atr": 0.0008,
-        "avg_vol": 37577393.15,
-        "last_vol": 31568243.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
