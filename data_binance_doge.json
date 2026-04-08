@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T04:19:34.452401+00:00",
+  "generated_at": "2026-04-08T04:20:52.647137+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09496,
+  "price": 0.09497,
   "usdt_balance": -389.71608063,
   "sol_balance": 5237.664,
   "cad_balance": -389.71608063,
-  "margin_level": 1.27354329,
+  "margin_level": 1.2735238,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
@@ -2529,7 +2529,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1262,
+  "run_count": 1263,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2561,68 +2561,13 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 6,
-    "summary": "The market is showing signs of an uptrend with the price above EMA-20 and EMA-20 above EMA-50, despite a bearish MACD signal. The recent price action across timeframes indicates a potential continuation of the uptrend. However, the low confidence level of the bot signal and bearish MACD signal warrant caution.",
-    "5m": "The 5m timeframe shows a minor pullback with a -0.69% change, indicating a potential short-term consolidation.",
-    "15m": "The 15m timeframe displays a strong bullish move with a 4.85% increase, suggesting a potential breakout.",
-    "30m": "The 30m timeframe also shows a bullish trend with a 4.66% gain, supporting the uptrend narrative.",
-    "1h": "The 1h timeframe indicates a moderate bullish move with a 2.73% increase, confirming the overall uptrend.",
-    "key_level_support": 0.0901,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential breakout above the key level resistance at 0.0961 to confirm the continuation of the uptrend.",
-    "risk_warning": "A failure to hold above the key level support at 0.0901 could lead to a reversal of the trend.",
-    "generated_at": "2026-04-08T04:19:33.059464+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.095,
-        "open": 0.0956,
-        "high": 0.0961,
-        "low": 0.0937,
-        "change_pct": -0.69,
-        "atr": 0.0002,
-        "avg_vol": 5436286.42,
-        "last_vol": 560108.0
-      },
-      "15m": {
-        "close": 0.095,
-        "open": 0.0906,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.85,
-        "atr": 0.0003,
-        "avg_vol": 16040896.38,
-        "last_vol": 560108.0
-      },
-      "30m": {
-        "close": 0.095,
-        "open": 0.0907,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.66,
-        "atr": 0.0007,
-        "avg_vol": 24730878.5,
-        "last_vol": 14163734.0
-      },
-      "1h": {
-        "close": 0.095,
-        "open": 0.0924,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.73,
-        "atr": 0.001,
-        "avg_vol": 36965154.83,
-        "last_vol": 14163734.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": 0.09489,
-    "best_price": 0.09498,
+    "best_price": 0.095,
     "atr": 0.0003542857142857157,
     "sl": 0.09435857142857143,
-    "trail_stop": 0.09444857142857142,
+    "trail_stop": 0.09446857142857143,
     "active": false
   }
 }
