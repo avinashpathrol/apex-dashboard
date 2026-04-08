@@ -2376,10 +2376,28 @@ async function load(){
       setChartMode('normal');
     }
 
-    // ── KEY FIX: Build closed trade pairs from raw trades ──
-    allET=buildClosedTrades(allKT, leverage, tradeAmount);
-    // DOGE is long-only — filter out any historical SHORT trades from before long-only mode
-    if(activeSymbol==='DOGE') allET=allET.filter(t=>t.type==='LONG');
+    // ── Use bot pre-computed closed_trades from JSON (authoritative source) ──
+    if(botData.closed_trades && botData.closed_trades.length>0){
+      allET=botData.closed_trades.map(t=>({
+        time:       t.closed_at||t.opened_at,
+        opened_at:  t.opened_at,
+        closed_at:  t.closed_at,
+        type:       t.side,
+        entry_price:n(t.entry_price),
+        exit_price: n(t.exit_price),
+        qty:        n(t.qty),
+        pnl:        n(t.pnl),
+        fee:        n(t.fee),
+        leverage:   leverage,
+        collateral: tradeAmount,
+      }));
+      // DOGE long-only — filter historical shorts
+      if(activeSymbol==='DOGE') allET=allET.filter(t=>t.type==='LONG');
+    } else {
+      // Fallback: build from raw trade history
+      allET=buildClosedTrades(allKT, leverage, tradeAmount);
+      if(activeSymbol==='DOGE') allET=allET.filter(t=>t.type==='LONG');
+    }
 
     // ── Compute performance from closed trades (fee-adjusted win%) ──
     totW=0;totL=0;totPnl=0;totFees=0;totLongs=0;totShorts=0;
