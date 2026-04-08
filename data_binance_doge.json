@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T05:06:34.065603+00:00",
+  "generated_at": "2026-04-08T05:07:49.745863+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0946,
+  "price": 0.09459,
   "usdt_balance": 104.94711102,
   "sol_balance": 0.664,
   "cad_balance": 104.94711102,
-  "margin_level": 505.81320924,
+  "margin_level": 505.89069186,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -2539,7 +2539,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1298,
+  "run_count": 1299,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2567,62 +2567,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "NEUTRAL",
-    "strength": 4,
-    "summary": "The SOL/USDT market is showing mixed signals across timeframes, with short-term uptrend indicators but bearish MACD, resulting in a neutral outlook. The price has been volatile, with a 4.51% increase in the 15m timeframe but a -0.37% decrease in the 5m timeframe. Overall, the market is waiting for a clear direction.",
-    "5m": "The 5m timeframe shows a slight decrease in price, indicating a potential short-term reversal.",
-    "15m": "The 15m timeframe is bullish, with a 4.51% increase in price and a higher high, suggesting a possible uptrend.",
-    "30m": "The 30m timeframe also shows a bullish trend, with a 4.48% increase in price and a higher high, supporting the uptrend.",
-    "1h": "The 1h timeframe is slightly bullish, with a 2.66% increase in price, but the momentum is slowing down.",
-    "key_level_support": 0.0901,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a break above the key resistance level of 0.0961 or a drop below the key support level of 0.0901 to determine the next market direction.",
-    "risk_warning": "Trading in a neutral market can be risky, and traders should be prepared for potential whipsaws and false breakouts.",
-    "generated_at": "2026-04-08T05:06:32.666684+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0946,
-        "open": 0.095,
-        "high": 0.0951,
-        "low": 0.0937,
-        "change_pct": -0.37,
-        "atr": 0.0001,
-        "avg_vol": 3266504.92,
-        "last_vol": 108889.0
-      },
-      "15m": {
-        "close": 0.0946,
-        "open": 0.0905,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.51,
-        "atr": 0.0003,
-        "avg_vol": 15946210.5,
-        "last_vol": 2628945.0
-      },
-      "30m": {
-        "close": 0.0946,
-        "open": 0.0905,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.48,
-        "atr": 0.0007,
-        "avg_vol": 24883311.88,
-        "last_vol": 2628945.0
-      },
-      "1h": {
-        "close": 0.0946,
-        "open": 0.0922,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.66,
-        "atr": 0.0009,
-        "avg_vol": 37073960.17,
-        "last_vol": 2675219.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
