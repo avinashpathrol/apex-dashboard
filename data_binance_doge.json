@@ -1,26 +1,27 @@
 {
-  "generated_at": "2026-04-08T08:54:37.197893+00:00",
+  "generated_at": "2026-04-08T08:55:57.194682+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09476,
-  "usdt_balance": 104.94711102,
-  "sol_balance": 0.664,
-  "cad_balance": 104.94711102,
-  "margin_level": 508.77008987,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 0.0948,
+  "usdt_balance": -342.79328898,
+  "sol_balance": 4718.941,
+  "cad_balance": -342.79328898,
+  "margin_level": 1.2954754,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
   "trend": "BULLISH",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20"
+    "Price above EMA-20",
+    "High volume confirms move"
   ],
   "bearish": [
     "MACD below signal (bearish)"
@@ -1965,6 +1966,15 @@
       "fee": 0.49515835,
       "symbol": "DOGEUSDT",
       "reason": "\ud83d\uded1 Hard SL hit | entry=0.0949 sl=0.0945 price=0.0945 | ATR=0.0004"
+    },
+    {
+      "time": "2026-04-08T01:55:52.926000-07:00",
+      "action": "BUY",
+      "price": 0.0948,
+      "qty": 4723.0,
+      "cost": 447.7404,
+      "fee": 4.723,
+      "symbol": "DOGEUSDT"
     }
   ],
   "closed_trades": [
@@ -2527,19 +2537,33 @@
       "opened_at": "2026-04-07T17:44:20.367000-07:00",
       "closed_at": "2026-04-07T21:06:51.321000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "SHORT",
+      "entry_price": 0.09455,
+      "exit_price": 0.0948,
+      "qty": 4723.0,
+      "fee": 0.94289875,
+      "pnl": -2.1236,
+      "pnl_pct": -1.32,
+      "win": false,
+      "opened_at": "2026-04-07T22:01:24.431000-07:00",
+      "closed_at": "2026-04-08T01:55:52.926000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 40,
+    "closed_trades": 41,
     "wins": 4,
-    "losses": 36,
-    "win_rate": 10.0,
-    "net_profit": -16.7958,
-    "avg_profit_per_trade": -0.4199,
+    "losses": 37,
+    "win_rate": 9.76,
+    "net_profit": -18.9194,
+    "avg_profit_per_trade": -0.4614,
     "long_trades": 16,
-    "short_trades": 24
+    "short_trades": 25
   },
-  "run_count": 1476,
+  "run_count": 1477,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2559,7 +2583,11 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 90.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -2569,11 +2597,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 0.0948,
+    "best_price": 0.0948,
+    "atr": 0.0002707142857142878,
+    "sl": 0.09439392857142856,
+    "trail_stop": 0.09439392857142856,
     "active": false
   }
 }
