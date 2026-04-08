@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T07:25:06.774457+00:00",
+  "generated_at": "2026-04-08T07:26:22.995936+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09477,
+  "price": 0.09483,
   "usdt_balance": 104.94711102,
   "sol_balance": 0.664,
   "cad_balance": 104.94711102,
-  "margin_level": 506.86398179,
+  "margin_level": 506.95553922,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -2539,7 +2539,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1406,
+  "run_count": 1407,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2567,62 +2567,7 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": {
-    "verdict": "BULLISH",
-    "strength": 6,
-    "summary": "The SOL/USDT market is showing signs of a short-term uptrend, with the price above the EMA-20 and a recent increase in value across multiple timeframes. However, the MACD below the signal line indicates some bearish pressure. The overall trend is bullish, but with caution due to the mixed signals.",
-    "5m": "The 5-minute chart shows a slight increase in price, with a 0.19% change and a high of 0.0951, indicating some buying interest.",
-    "15m": "The 15-minute chart displays a more significant price increase, with a 4.48% change and a high of 0.0961, suggesting a short-term bullish momentum.",
-    "30m": "The 30-minute chart also shows a notable price increase, with a 4.61% change and a high of 0.0961, further supporting the short-term uptrend.",
-    "1h": "The 1-hour chart indicates a moderate price increase, with a 2.83% change and a high of 0.0961, confirming the bullish trend.",
-    "key_level_support": 0.0906,
-    "key_level_resistance": 0.0961,
-    "recommendation": "Traders should watch for a potential breakout above the 0.0961 resistance level, which could lead to further upside.",
-    "risk_warning": "However, the MACD bearish signal and potential trend reversal should not be ignored, and traders should be prepared for a possible change in market direction.",
-    "generated_at": "2026-04-08T07:25:05.411353+00:00",
-    "timeframes": {
-      "5m": {
-        "close": 0.0948,
-        "open": 0.0946,
-        "high": 0.0951,
-        "low": 0.0943,
-        "change_pct": 0.19,
-        "atr": 0.0001,
-        "avg_vol": 2158457.85,
-        "last_vol": 2686717.0
-      },
-      "15m": {
-        "close": 0.0948,
-        "open": 0.0907,
-        "high": 0.0961,
-        "low": 0.0906,
-        "change_pct": 4.48,
-        "atr": 0.0003,
-        "avg_vol": 16253083.92,
-        "last_vol": 3113216.0
-      },
-      "30m": {
-        "close": 0.0948,
-        "open": 0.0906,
-        "high": 0.0961,
-        "low": 0.0901,
-        "change_pct": 4.61,
-        "atr": 0.0004,
-        "avg_vol": 24668309.85,
-        "last_vol": 10973887.0
-      },
-      "1h": {
-        "close": 0.0948,
-        "open": 0.0922,
-        "high": 0.0961,
-        "low": 0.0899,
-        "change_pct": 2.83,
-        "atr": 0.0009,
-        "avg_vol": 37474317.15,
-        "last_vol": 10973887.0
-      }
-    }
-  },
+  "ai_analysis": null,
   "trail": {
     "entry_price": null,
     "best_price": null,
