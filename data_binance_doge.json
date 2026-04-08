@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-04-08T14:47:45.793877+00:00",
+  "generated_at": "2026-04-08T14:49:03.096544+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09296,
+  "price": 0.09329,
   "usdt_balance": 90.26718815,
   "sol_balance": 0.528,
   "cad_balance": 90.26718815,
-  "margin_level": 424.12960753,
+  "margin_level": 423.63452574,
   "position": null,
   "action": "HOLD",
-  "confidence": 0,
+  "confidence": 82,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 \ud83d\uded1 Hard SL hit | entry=0.0935 sl=0.0930 price=0.0930 | ATR=0.0005",
+  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "\ud83d\uded1 Hard SL hit | entry=0.0935 sl=0.0930 price=0.0930 | ATR=0.0005",
+  "reason": "RSI oversold (32.8) | EMA-20 above EMA-50 (uptrend) | Price near BB lower band (-6%)",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI oversold (29.7)",
-    "Price near BB lower band (-17%)"
+    "RSI oversold (32.8)",
+    "EMA-20 above EMA-50 (uptrend)",
+    "Price near BB lower band (-6%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
-    "EMA-20 below EMA-50 (downtrend)",
     "Price below EMA-20"
   ],
   "trades": [
@@ -3346,14 +3346,14 @@
     "long_trades": 20,
     "short_trades": 29
   },
-  "run_count": 1747,
+  "run_count": 1748,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 90.0,
       "leverage": 5.0,
-      "source": "locked-open-trade"
+      "source": "dashboard-config"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 90.0,
