@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T15:06:30.689629+00:00",
+  "generated_at": "2026-04-08T15:07:48.673761+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0929,
+  "price": 0.09299,
   "usdt_balance": 90.26718815,
   "sol_balance": 0.528,
   "cad_balance": 90.26718815,
-  "margin_level": 424.26808546,
+  "margin_level": 424.24579031,
   "position": null,
   "action": "HOLD",
   "confidence": 82,
@@ -19,8 +19,8 @@
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI oversold (29.2)",
-    "Price near BB lower band (-8%)"
+    "RSI oversold (30.9)",
+    "Price near BB lower band (-5%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -3346,7 +3346,7 @@
     "long_trades": 20,
     "short_trades": 29
   },
-  "run_count": 1761,
+  "run_count": 1762,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -3374,7 +3374,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BEARISH",
+    "strength": 7,
+    "summary": "The SOL/USDT market is showing a downtrend across multiple timeframes, with bearish signals dominating the technical indicators. The price is below the EMA-20 and the MACD is below the signal line, indicating a strong bearish momentum. However, the RSI is oversold, which could lead to a potential bounce.",
+    "5m": "The 5-minute chart shows a significant drop in price, with a change of -2.24% and a high ATR of 0.0004, indicating increased volatility.",
+    "15m": "The 15-minute chart also shows a decline in price, with a change of -1.48% and a moderate ATR of 0.0005, suggesting a continuation of the downtrend.",
+    "30m": "The 30-minute chart shows a slight recovery in price, with a change of 2.87% and a moderate ATR of 0.0006, but the overall trend remains bearish.",
+    "1h": "The 1-hour chart shows a relatively stable price, with a change of 0.69% and a moderate ATR of 0.0007, indicating a potential consolidation before the next move.",
+    "key_level_support": 0.0899,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a potential short entry on a breakdown below the key support level of 0.0899, with a target of 0.0850.",
+    "risk_warning": "A false breakout below the support level could lead to a significant price reversal, so traders should set a stop-loss above 0.0920 to limit potential losses.",
+    "generated_at": "2026-04-08T15:07:47.253015+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.093,
+        "open": 0.0951,
+        "high": 0.0953,
+        "low": 0.0926,
+        "change_pct": -2.24,
+        "atr": 0.0004,
+        "avg_vol": 4366750.65,
+        "last_vol": 1140727.0
+      },
+      "15m": {
+        "close": 0.093,
+        "open": 0.0944,
+        "high": 0.0956,
+        "low": 0.0926,
+        "change_pct": -1.48,
+        "atr": 0.0005,
+        "avg_vol": 10207722.32,
+        "last_vol": 3440687.0
+      },
+      "30m": {
+        "close": 0.093,
+        "open": 0.0904,
+        "high": 0.0961,
+        "low": 0.0903,
+        "change_pct": 2.87,
+        "atr": 0.0006,
+        "avg_vol": 28294388.65,
+        "last_vol": 3440687.0
+      },
+      "1h": {
+        "close": 0.093,
+        "open": 0.0923,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 0.69,
+        "atr": 0.0007,
+        "avg_vol": 40983819.1,
+        "last_vol": 3441774.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
