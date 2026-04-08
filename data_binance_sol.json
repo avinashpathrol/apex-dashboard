@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-08T05:00:09.533946+00:00",
+  "generated_at": "2026-04-08T05:01:32.456310+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 84.55,
+  "price": 84.49,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -11,10 +11,11 @@
   "status": "Idle \u2014 DOGEUSDT active",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20"
+    "Price near BB lower band (18%)"
   ],
   "bearish": [
-    "MACD below signal (bearish)"
+    "MACD below signal (bearish)",
+    "Price below EMA-20"
   ],
   "trades": [
     {
@@ -4227,8 +4228,7 @@
       "qty": 6.181,
       "cost": 497.38507,
       "fee": 0.49738507,
-      "symbol": "SOLUSDT",
-      "reason": "\u2705 Fee-covered SL hit | entry=80.4000 sl=80.5608 price=80.4800 | ATR=0.1200"
+      "symbol": "SOLUSDT"
     },
     {
       "time": "2026-04-03T23:56:36.565000-07:00",
@@ -6923,7 +6923,7 @@
     "long_trades": 38,
     "short_trades": 55
   },
-  "run_count": 1293,
+  "run_count": 1294,
   "trade_amount": 100.0,
   "trail": {
     "entry_price": null,
