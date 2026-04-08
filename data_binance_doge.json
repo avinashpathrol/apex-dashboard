@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-08T00:03:35.009696+00:00",
+  "generated_at": "2026-04-08T00:04:54.751121+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09509,
-  "usdt_balance": 112.84829137,
-  "sol_balance": 0.155,
-  "cad_balance": 112.84829137,
-  "margin_level": 545.80531363,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 82,
+  "price": 0.09477,
+  "usdt_balance": -384.59943863,
+  "sol_balance": 5243.906,
+  "cad_balance": -384.59943863,
+  "margin_level": 1.28633425,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 confidence 82% below minimum 85%",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
@@ -24,8 +24,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (69.5)",
-    "Price near BB upper band (83%)"
+    "RSI overbought (66.5)"
   ],
   "trades": [
     {
@@ -1929,6 +1928,15 @@
       "fee": 0.4967652,
       "symbol": "DOGEUSDT",
       "reason": "\u2705 Fee-covered SL hit | entry=0.0951 sl=0.0956 price=0.0955 | ATR=0.0006"
+    },
+    {
+      "time": "2026-04-07T17:04:50.116000-07:00",
+      "action": "BUY",
+      "price": 0.09477,
+      "qty": 5249.0,
+      "cost": 497.44773,
+      "fee": 5.249,
+      "symbol": "DOGEUSDT"
     }
   ],
   "closed_trades": [
@@ -2463,19 +2471,33 @@
       "opened_at": "2026-04-07T16:08:41.240000-07:00",
       "closed_at": "2026-04-07T16:21:59.501000-07:00",
       "note": "Derived from margin trade history"
+    },
+    {
+      "source": "binance",
+      "side": "SHORT",
+      "entry_price": 0.09544,
+      "exit_price": 0.09477,
+      "qty": 11.0,
+      "fee": 0.49849757,
+      "pnl": -0.4911,
+      "pnl_pct": 3.51,
+      "win": false,
+      "opened_at": "2026-04-07T16:21:59.501000-07:00",
+      "closed_at": "2026-04-07T17:04:50.116000-07:00",
+      "note": "Derived from margin trade history"
     }
   ],
   "performance": {
-    "closed_trades": 38,
+    "closed_trades": 39,
     "wins": 4,
-    "losses": 34,
-    "win_rate": 10.53,
-    "net_profit": -10.5966,
-    "avg_profit_per_trade": -0.2789,
+    "losses": 35,
+    "win_rate": 10.26,
+    "net_profit": -11.0877,
+    "avg_profit_per_trade": -0.2843,
     "long_trades": 16,
-    "short_trades": 22
+    "short_trades": 23
   },
-  "run_count": 1063,
+  "run_count": 1064,
   "trade_amount": 100.0,
   "min_signals": 3,
   "bot_config": {
@@ -2495,7 +2517,11 @@
       "force_trail": false,
       "force_trail_at": "2026-04-07T21:09:23.543Z"
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 100.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -2505,11 +2531,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 0.09477,
+    "best_price": 0.09477,
+    "atr": 0.0007578571428571435,
+    "sl": 0.09363321428571428,
+    "trail_stop": 0.09363321428571428,
     "active": false
   }
 }
