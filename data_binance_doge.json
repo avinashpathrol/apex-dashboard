@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T08:09:52.178465+00:00",
+  "generated_at": "2026-04-08T08:11:14.442467+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09469,
+  "price": 0.09464,
   "usdt_balance": 104.94711102,
   "sol_balance": 0.664,
   "cad_balance": 104.94711102,
-  "margin_level": 508.41845229,
+  "margin_level": 508.48516618,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -2539,7 +2539,7 @@
     "long_trades": 16,
     "short_trades": 24
   },
-  "run_count": 1441,
+  "run_count": 1442,
   "trade_amount": 90.0,
   "min_signals": 3,
   "bot_config": {
@@ -2567,7 +2567,62 @@
     "remaining_seconds": 0,
     "minutes": 10
   },
-  "ai_analysis": null,
+  "ai_analysis": {
+    "verdict": "BULLISH",
+    "strength": 6,
+    "summary": "The SOL/USDT market is showing signs of an uptrend across multiple timeframes, with the price above the EMA-20 and a recent 4% increase in the 15m and 30m timeframes. However, the MACD below the signal line indicates some bearish pressure. The overall trend is bullish, but with caution due to the mixed signals.",
+    "5m": "The 5m timeframe is showing a slight increase in price, but with low volatility and a small ATR, indicating a potential consolidation.",
+    "15m": "The 15m timeframe has seen a significant 4% price increase, with the price breaking above the recent high, indicating strong bullish momentum.",
+    "30m": "The 30m timeframe is also showing a 4% price increase, with the price holding above the EMA-20, confirming the bullish trend.",
+    "1h": "The 1h timeframe has seen a more modest 1.81% price increase, but the price is still above the EMA-20, indicating a bullish bias.",
+    "key_level_support": 0.0901,
+    "key_level_resistance": 0.0961,
+    "recommendation": "Traders should watch for a potential breakout above the key level resistance at 0.0961, which could confirm the bullish trend.",
+    "risk_warning": "However, the MACD below the signal line indicates some bearish pressure, so traders should be cautious and set stop-loss orders accordingly.",
+    "generated_at": "2026-04-08T08:11:13.078384+00:00",
+    "timeframes": {
+      "5m": {
+        "close": 0.0946,
+        "open": 0.0945,
+        "high": 0.0951,
+        "low": 0.0944,
+        "change_pct": 0.14,
+        "atr": 0.0001,
+        "avg_vol": 1969421.17,
+        "last_vol": 164791.0
+      },
+      "15m": {
+        "close": 0.0946,
+        "open": 0.091,
+        "high": 0.0961,
+        "low": 0.0906,
+        "change_pct": 4.0,
+        "atr": 0.0003,
+        "avg_vol": 16320542.88,
+        "last_vol": 2332389.0
+      },
+      "30m": {
+        "close": 0.0946,
+        "open": 0.091,
+        "high": 0.0961,
+        "low": 0.0901,
+        "change_pct": 4.01,
+        "atr": 0.0004,
+        "avg_vol": 24491541.48,
+        "last_vol": 2332389.0
+      },
+      "1h": {
+        "close": 0.0946,
+        "open": 0.093,
+        "high": 0.0961,
+        "low": 0.0899,
+        "change_pct": 1.81,
+        "atr": 0.0008,
+        "avg_vol": 37504282.17,
+        "last_vol": 2332389.0
+      }
+    }
+  },
   "trail": {
     "entry_price": null,
     "best_price": null,
