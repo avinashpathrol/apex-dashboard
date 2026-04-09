@@ -1,31 +1,32 @@
 {
-  "generated_at": "2026-04-09T22:16:25.147844+00:00",
+  "generated_at": "2026-04-09T22:17:42.057064+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 84.89,
+  "price": 85.74,
   "usdt_balance": -266.735194,
   "sol_balance": 4.1158539,
   "cad_balance": -266.735194,
-  "margin_level": 1.29410991,
+  "margin_level": 1.30675863,
   "position": "LONG",
   "action": "LONG",
-  "confidence": 88,
-  "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 EMA-9 above EMA-21 (momentum up) | Strong bullish candle (91% body) | Breaking 20-candle high ($84.7200)",
+  "confidence": 91,
+  "risk": "LOW",
+  "status": "HOLDING LONG \u2014 EMA-9 above EMA-21 (momentum up) | Strong bullish candle (78% body) | Breaking 20-candle high ($84.7200) | High volume confirms move",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "EMA-9 above EMA-21 (momentum up) | Strong bullish candle (91% body) | Breaking 20-candle high ($84.7200)",
+  "reason": "EMA-9 above EMA-21 (momentum up) | Strong bullish candle (78% body) | Breaking 20-candle high ($84.7200) | High volume confirms move",
   "trend": "BULLISH",
   "bullish": [
     "EMA-9 above EMA-21 (momentum up)",
-    "Strong bullish candle (91% body)",
-    "Breaking 20-candle high ($84.7200)"
+    "Strong bullish candle (78% body)",
+    "Breaking 20-candle high ($84.7200)",
+    "High volume confirms move"
   ],
   "bearish": [
-    "RSI overbought (68.4)"
+    "RSI overbought (78.8)"
   ],
   "trades": [
     {
@@ -6395,7 +6396,7 @@
     "long_trades": 4,
     "short_trades": 7
   },
-  "run_count": 217,
+  "run_count": 218,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
@@ -6431,10 +6432,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 84.55,
-    "best_price": 84.9,
+    "best_price": 85.83,
     "atr": 0.22357142857142825,
     "sl": 84.21464285714285,
-    "trail_stop": 84.56464285714286,
+    "trail_stop": 85.49464285714285,
     "active": true
   }
 }
