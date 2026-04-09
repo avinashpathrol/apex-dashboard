@@ -1216,13 +1216,12 @@ function updatePositionBanner(pos, price){
   qs('pb-pulse').className='pb-pulse'+(isLong?'':' short');
   qs('pb-label').textContent=pos+' — '+SYMBOL_CONFIG[activeSymbol].label;
   qs('pb-label').className='pb-label '+(isLong?'long':'short');
+  const collateral=n(botData?.trade_amount,0);
+  const lev=n(botData?.leverage,0);
   const entryDecimals=activeSymbol==='DOGE'?5:2;
   const entryFmt=currentEntryPrice?'$'+currentEntryPrice.toFixed(entryDecimals):'—';
   qs('pb-sub').textContent=lev+'x Margin · Entry '+entryFmt;
   qs('pb-sub').className='pb-sub'+(isLong?'':' short');
-
-  const collateral=n(botData?.trade_amount,80);
-  const lev=n(botData?.leverage,4);
   qs('pb-collateral').textContent='$'+collateral.toFixed(2);
   qs('pb-effective').textContent='$'+(collateral*lev).toFixed(2);
 
