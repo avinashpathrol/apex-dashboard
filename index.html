@@ -643,7 +643,7 @@ input:focus{border-color:#3f3f46;}
 
       <div class="g3" style="margin-bottom:8px;">
         <div class="mcard"><div class="ml">Position</div><div class="mv" id="m-position" style="font-size:16px;">—</div><div class="ms" id="m-position-sub"></div></div>
-        <div class="mcard"><div class="ml">Leverage</div><div class="mv" id="m-leverage" style="color:#818cf8;">4x</div><div class="ms">cross margin</div></div>
+        <div class="mcard"><div class="ml">Leverage</div><div class="mv" id="m-leverage" style="color:#818cf8;">—</div><div class="ms">cross margin</div></div>
         <div class="mcard"><div class="ml">Margin Level</div><div class="mv" id="m-margin-level">—</div><div class="ms" id="m-margin-sub"></div></div>
       </div>
 
@@ -1216,7 +1216,9 @@ function updatePositionBanner(pos, price){
   qs('pb-pulse').className='pb-pulse'+(isLong?'':' short');
   qs('pb-label').textContent=pos+' — '+SYMBOL_CONFIG[activeSymbol].label;
   qs('pb-label').className='pb-label '+(isLong?'long':'short');
-  qs('pb-sub').textContent='4x Margin · Entry '+(currentEntryPrice?fmtP(currentEntryPrice):'—');
+  const entryDecimals=activeSymbol==='DOGE'?5:2;
+  const entryFmt=currentEntryPrice?'$'+currentEntryPrice.toFixed(entryDecimals):'—';
+  qs('pb-sub').textContent=lev+'x Margin · Entry '+entryFmt;
   qs('pb-sub').className='pb-sub'+(isLong?'':' short');
 
   const collateral=n(botData?.trade_amount,80);
