@@ -1,32 +1,32 @@
 {
-  "generated_at": "2026-04-09T17:27:18.001848+00:00",
+  "generated_at": "2026-04-09T17:28:35.353144+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09269,
+  "price": 0.09272,
   "usdt_balance": 432.87689411,
   "sol_balance": -3756.18,
   "cad_balance": 432.87689411,
-  "margin_level": 1.24747855,
+  "margin_level": 1.24821645,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 91,
   "risk": "LOW",
-  "status": "SHORT OPENED \u2705",
+  "status": "HOLDING SHORT \u2014 RSI falling from high (53.6) | StochRSI bearish crossover (K=56) | MACD bearish crossover | Strong bearish candle (69% body)",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI falling from high (53.2) | StochRSI bearish crossover (K=55) | MACD bearish crossover | Strong bearish candle (77% body)",
+  "reason": "RSI falling from high (53.6) | StochRSI bearish crossover (K=56) | MACD bearish crossover | Strong bearish candle (69% body)",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "RSI falling from high (53.2)",
-    "StochRSI bearish crossover (K=55)",
+    "RSI falling from high (53.6)",
+    "StochRSI bearish crossover (K=56)",
     "MACD bearish crossover",
-    "Strong bearish candle (77% body)"
+    "Strong bearish candle (69% body)"
   ],
   "trades": [
     {
@@ -3170,14 +3170,14 @@
     "long_trades": 0,
     "short_trades": 6
   },
-  "run_count": 508,
+  "run_count": 509,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 70.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 70.0,
