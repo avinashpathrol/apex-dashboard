@@ -2322,12 +2322,28 @@ async function load(){
   }
 }
 
+async function autoSelectActiveSymbol(){
+  // Check both symbol files and switch to whichever has an open position
+  try{
+    const files=Object.entries(SYMBOL_CONFIG);
+    for(const [sym,cfg] of files){
+      const res=await fetch(`https://raw.githubusercontent.com/${DASHBOARD_REPO}/main/${cfg.file}?t=${Date.now()}`,{cache:'no-store'});
+      if(!res.ok) continue;
+      const d=await res.json();
+      if(d.position&&d.position!=='None'&&d.position!==null){
+        if(sym!==activeSymbol) switchSymbol(sym);
+        return;
+      }
+    }
+  }catch(e){}
+  // No active position — stay on SOL (default)
+}
+
 async function startApp(){
   qs('setup').style.display='none';
   qs('app').style.display='flex';
-  renderNotifs(); updBadge();
-  if(Notification.permission==='granted'){const btn=qs('nd-push-btn');if(btn){btn.textContent='✅ Push Enabled';btn.classList.add('done');}}
   startCD();
+  await autoSelectActiveSymbol();
   load();
   if(aInt)clearInterval(aInt);
   aInt=setInterval(()=>{load();startCD();},SECS*1000);
