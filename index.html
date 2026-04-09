@@ -439,6 +439,14 @@ input:focus{border-color:#3f3f46;}
           </select>
         </div>
       </div>
+      <div style="margin-bottom:10px;">
+        <div class="slabel" style="margin:0 0 4px;">Signal Strength (80–100%)</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <input id="cfg-conf" type="range" min="80" max="100" step="1" style="flex:1;accent-color:#818cf8;" oninput="qs('cfg-conf-val').textContent=this.value+'%'" />
+          <span id="cfg-conf-val" style="font-size:13px;font-weight:700;color:#818cf8;min-width:36px;">80%</span>
+        </div>
+        <div style="font-size:10px;color:#52525b;margin-top:3px;">Lower = more trades · Higher = stronger signals only</div>
+      </div>
       <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px;">
         <button class="cbtn" style="margin:0;" onclick="saveBotConfig()">💾 Save Bot Settings</button>
       </div>
@@ -2088,8 +2096,10 @@ async function loadBotConfig(force=false){
 function applyConfigUI(liveTradeAmount, liveLeverage, position){
   const desiredTrade=n(botConfig&&botConfig.trade_amount, liveTradeAmount||80);
   const desiredLev=n(botConfig&&botConfig.leverage, liveLeverage||4);
+  const desiredConf=n(botConfig&&botConfig.min_confidence, botData&&botData.min_confidence)||80;
   if(qs('cfg-trade') && document.activeElement!==qs('cfg-trade')) qs('cfg-trade').value=desiredTrade;
   if(qs('cfg-lev') && document.activeElement!==qs('cfg-lev')) qs('cfg-lev').value=String(desiredLev);
+  if(qs('cfg-conf') && document.activeElement!==qs('cfg-conf')){ qs('cfg-conf').value=desiredConf; setEl('cfg-conf-val',desiredConf+'%'); }
   setEl('cfg-live', `$${n(liveTradeAmount,80).toFixed(0)} · ${n(liveLeverage,4)}x`);
   setEl('cfg-next', `$${desiredTrade.toFixed(0)} · ${desiredLev}x`);
   if(position && (desiredTrade!==n(liveTradeAmount,80) || desiredLev!==n(liveLeverage,4))){
@@ -2104,14 +2114,16 @@ function applyConfigUI(liveTradeAmount, liveLeverage, position){
 async function saveBotConfig(){
   const tradeAmount=Number(qs('cfg-trade').value||0);
   const leverage=Number(qs('cfg-lev').value||0);
+  const minConf=Number(qs('cfg-conf').value||80);
   if(!(tradeAmount>0)){ addNotif('warn','Invalid trade size','Enter a trade size greater than 0.'); return; }
   if(![3,5].includes(leverage)){ addNotif('warn','Invalid leverage','Choose 3x or 5x.'); return; }
   if(!GH){ addNotif('warn','GitHub token missing','Unlock again so the dashboard can save config to GitHub.'); return; }
 
   const cfg={
     trade_amount_usdt: tradeAmount,
-    trade_amount: tradeAmount,  // kept for dashboard display compatibility
+    trade_amount: tradeAmount,
     leverage,
+    min_confidence: minConf,
     updated_at: new Date().toISOString()
   };
 
