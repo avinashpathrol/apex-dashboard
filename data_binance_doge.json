@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-09T22:17:44.944124+00:00",
+  "generated_at": "2026-04-09T22:19:01.696803+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09487,
+  "price": 0.09473,
   "position": null,
   "action": "LONG",
   "confidence": 92,
@@ -12,12 +12,12 @@
   "bullish": [
     "MACD bullish crossover",
     "EMA-9 above EMA-21 (momentum up)",
-    "Strong bullish candle (83% body)",
+    "Strong bullish candle (67% body)",
     "Breaking 20-candle high ($0.0944)",
     "High volume confirms move"
   ],
   "bearish": [
-    "RSI overbought (73.3)"
+    "RSI overbought (71.4)"
   ],
   "trades": [
     {
@@ -3780,7 +3780,7 @@
     "long_trades": 8,
     "short_trades": 36
   },
-  "run_count": 218,
+  "run_count": 219,
   "trade_amount": 70.0,
   "trail": {
     "entry_price": null,
