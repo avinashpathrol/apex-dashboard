@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-09T02:21:35.507325+00:00",
+  "generated_at": "2026-04-09T02:22:16.409203+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.0918,
-  "usdt_balance": 88.75182875,
-  "sol_balance": 0.709,
-  "cad_balance": 88.75182875,
-  "margin_level": 414.70397739,
-  "position": null,
-  "action": "HOLD",
+  "price": 0.09176,
+  "usdt_balance": 436.5948875,
+  "sol_balance": -3794.291,
+  "cad_balance": 436.5948875,
+  "margin_level": 1.25902086,
+  "position": "SHORT",
+  "action": "SHORT",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "\u23f8\ufe0f LOSS STREAK COOLDOWN \u2014 28m remaining on DOGEUSDT",
+  "status": "SHORT OPENED \u2705",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (39.3)"
+    "RSI rising from low (38.5)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
@@ -2683,6 +2683,15 @@
       "fee": 0.00018368,
       "symbol": "DOGEUSDT",
       "reason": "\ud83d\uded1 Hard SL hit | entry=0.0916 sl=0.0919 price=0.0919 | ATR=0.0004"
+    },
+    {
+      "time": "2026-04-08T19:22:13.153000-07:00",
+      "action": "SELL",
+      "price": 0.09175,
+      "qty": 3795.0,
+      "cost": 348.19125,
+      "fee": 0.34819125,
+      "symbol": "DOGEUSDT"
     }
   ],
   "closed_trades": [
@@ -3243,7 +3252,7 @@
     "long_trades": 8,
     "short_trades": 31
   },
-  "run_count": 18,
+  "run_count": 1,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
@@ -3263,7 +3272,11 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 70.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -3273,11 +3286,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 0.09176,
+    "best_price": 0.09176,
+    "atr": 0.000412142857142856,
+    "sl": 0.09237821428571427,
+    "trail_stop": 0.09237821428571427,
     "active": false
   }
 }
