@@ -1535,12 +1535,14 @@ function buildPriceChart(klines){
 
     if(tl){
       tl.style.display='block';
-      setEl('tl-entry','$'+currentEntryPrice.toFixed(2));
-      const curEl=qs('tl-current');if(curEl){curEl.textContent='$'+cur.toFixed(2);curEl.style.color=move>=0?'#22c55e':'#f87171';}
+      const pd=activeSymbol==='DOGE'?5:2;
+      const fp=v=>'$'+Number(v).toFixed(pd);
+      setEl('tl-entry',fp(currentEntryPrice));
+      const curEl=qs('tl-current');if(curEl){curEl.textContent=fp(cur);curEl.style.color=move>=0?'#22c55e':'#f87171';}
       const pnlEl=qs('tl-pnl');if(pnlEl){pnlEl.textContent=(pnlU>=0?'+':'')+pnlU.toFixed(2)+' USDT';pnlEl.style.color=pnlU>=0?'#22c55e':'#f87171';}
-      setEl('tl-sl','$'+sl.toFixed(2));   setEl('tl-sl-pct', isLong?'-'+slPct+'%':'+'+slPct+'%');
-      setEl('tl-tp1','$'+tp1.toFixed(2)); setEl('tl-tp1-pct',isLong?'+'+tp1Pct+'%':'-'+tp1Pct+'%');
-      setEl('tl-tp2','$'+tp2.toFixed(2)); setEl('tl-tp2-pct',isLong?'+'+tp2Pct+'%':'-'+tp2Pct+'%');
+      setEl('tl-sl',fp(sl));   setEl('tl-sl-pct', isLong?'-'+slPct+'%':'+'+slPct+'%');
+      setEl('tl-tp1',fp(tp1)); setEl('tl-tp1-pct',isLong?'+'+tp1Pct+'%':'-'+tp1Pct+'%');
+      setEl('tl-tp2',fp(tp2)); setEl('tl-tp2-pct',isLong?'+'+tp2Pct+'%':'-'+tp2Pct+'%');
       const action=botData?.action||'HOLD';
       const sigEl=qs('tl-signal');
       if(sigEl){sigEl.textContent=action;sigEl.style.color=action==='LONG'?'#22c55e':action==='SHORT'?'#f87171':'#fbbf24';}
@@ -1553,8 +1555,8 @@ function buildPriceChart(klines){
         const lockedUSDT=(lockedMove/100)*col;
         if(trailRow) trailRow.style.display='block';
         if(trailInactive) trailInactive.style.display='none';
-        setEl('tl-best','$'+n(trail.best_price).toFixed(2));
-        setEl('tl-trail-stop','$'+trailStop.toFixed(2));
+        setEl('tl-best',fp(n(trail.best_price)));
+        setEl('tl-trail-stop',fp(trailStop));
         const lockedEl=qs('tl-locked-pnl');
         if(lockedEl){lockedEl.textContent=(lockedUSDT>=0?'+':'')+lockedUSDT.toFixed(2)+' USDT';lockedEl.style.color=lockedUSDT>=0?'#22c55e':'#f87171';}
       } else {
@@ -1563,7 +1565,7 @@ function buildPriceChart(klines){
         // Show how far price needs to move to activate trail
         if(trail?.atr && currentEntryPrice){
           const needed=isLong?currentEntryPrice+n(trail.atr):currentEntryPrice-n(trail.atr);
-          setEl('tl-trail-needed','$'+needed.toFixed(2));
+          setEl('tl-trail-needed',fp(needed));
         }
       }
     }
