@@ -625,13 +625,6 @@ input:focus{border-color:#3f3f46;}
       </div>
 
       <!-- Cooldown banner -->
-      <div id="cooldown-banner" style="display:none;background:#1c1a0a;border:1px solid #854f0b;border-radius:10px;padding:10px 14px;margin-bottom:8px;align-items:center;gap:10px;">
-        <span style="font-size:18px;">🕒</span>
-        <div>
-          <div style="font-size:12px;font-weight:700;color:#fbbf24;" id="cooldown-title">Cooldown active</div>
-          <div style="font-size:11px;color:#a1a1aa;margin-top:2px;" id="cooldown-sub">—</div>
-        </div>
-      </div>
 
       <div class="g5">
         <div class="mcard"><div class="ml" id="m-price-label">SOL Price</div><div class="mv" id="m-price">—</div><div class="ms">USDT live</div></div>
@@ -2256,19 +2249,6 @@ async function load(){
     // ── Pause banner (from live bot data) ──
     if(botData.bot_paused !== undefined||botData.paused_symbols) applyPauseUI(botData.paused_symbols||(botData.bot_paused?['SOL','DOGE']:[]));
 
-    // ── Cooldown banner ──
-    const cd=botData.cooldown||{};
-    const cdBanner=qs('cooldown-banner');
-    if(cdBanner){
-      if(cd.remaining_seconds>0&&cd.side){
-        const mins=Math.floor(cd.remaining_seconds/60), secs=cd.remaining_seconds%60;
-        setEl('cooldown-title',`🕒 ${cd.side} re-entry blocked — manual close detected`);
-        setEl('cooldown-sub',`${mins}m ${secs}s remaining · Opposite side still allowed`);
-        cdBanner.style.display='flex';
-      } else {
-        cdBanner.style.display='none';
-      }
-    }
 
     updateMarginLevel(marginLevel);
 
