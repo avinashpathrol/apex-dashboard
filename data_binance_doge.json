@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-04-09T16:06:32.794596+00:00",
+  "generated_at": "2026-04-09T16:07:49.713258+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.093,
+  "price": 0.09295,
   "usdt_balance": 431.22826133,
   "sol_balance": -3743.418,
   "cad_balance": 431.22826133,
-  "margin_level": 1.24401375,
+  "margin_level": 1.24455903,
   "position": "SHORT",
   "action": "SHORT",
   "confidence": 88,
   "risk": "MEDIUM",
-  "status": "SHORT OPENED \u2705",
+  "status": "HOLDING SHORT \u2014 RSI falling from high (67.4) | StochRSI bearish crossover (K=76) | Strong bearish candle (82% body)",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI overbought (68.8) | StochRSI bearish crossover (K=77) | Strong bearish candle (85% body)",
+  "reason": "RSI falling from high (67.4) | StochRSI bearish crossover (K=76) | Strong bearish candle (82% body)",
   "trend": "SIDEWAYS",
   "bullish": [
     "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "RSI overbought (68.8)",
-    "StochRSI bearish crossover (K=77)",
-    "Strong bearish candle (85% body)"
+    "RSI falling from high (67.4)",
+    "StochRSI bearish crossover (K=76)",
+    "Strong bearish candle (82% body)"
   ],
   "trades": [
     {
@@ -2984,14 +2984,14 @@
     "long_trades": 0,
     "short_trades": 5
   },
-  "run_count": 445,
+  "run_count": 446,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 70.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 70.0,
@@ -3020,10 +3020,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 0.09299,
-    "best_price": 0.09299,
+    "best_price": 0.09295,
     "atr": 0.00039857142857142966,
     "sl": 0.09358785714285715,
-    "trail_stop": 0.09358785714285715,
+    "trail_stop": 0.09354785714285715,
     "active": false
   }
 }
