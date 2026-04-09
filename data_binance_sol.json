@@ -1,30 +1,31 @@
 {
-  "generated_at": "2026-04-09T20:00:39.929243+00:00",
+  "generated_at": "2026-04-09T20:01:57.304969+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 84.16,
+  "price": 84.33,
   "usdt_balance": -265.90825171,
   "sol_balance": 4.1279729,
   "cad_balance": -265.90825171,
-  "margin_level": 1.28993706,
+  "margin_level": 1.29181549,
   "position": "LONG",
-  "action": "HOLD",
-  "confidence": 0,
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
+  "status": "HOLDING LONG \u2014 EMA-9 above EMA-21 (momentum up) | Strong bullish candle (68% body) | Breaking 20-candle high ($84.3100)",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "EMA-9 above EMA-21 (momentum up) | Strong bullish candle (68% body) | Breaking 20-candle high ($84.3100)",
   "trend": "BULLISH",
   "bullish": [
-    "EMA-9 above EMA-21 (momentum up)"
+    "EMA-9 above EMA-21 (momentum up)",
+    "Strong bullish candle (68% body)",
+    "Breaking 20-candle high ($84.3100)"
   ],
   "bearish": [
-    "RSI falling from high (56.7)",
-    "StochRSI overbought (K=96)"
+    "StochRSI overbought (K=97)"
   ],
   "trades": [
     {
@@ -6290,7 +6291,7 @@
     "long_trades": 3,
     "short_trades": 7
   },
-  "run_count": 111,
+  "run_count": 112,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
@@ -6326,10 +6327,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 84.28,
-    "best_price": 84.28,
+    "best_price": 84.34,
     "atr": 0.2842857142857146,
     "sl": 83.85357142857143,
-    "trail_stop": 83.85357142857143,
+    "trail_stop": 83.91357142857143,
     "active": false
   }
 }
