@@ -2372,11 +2372,9 @@ async function load(){
         collateral: tradeAmount,
       }));
       // DOGE long-only — filter historical shorts
-      if(activeSymbol==='DOGE') allET=allET.filter(t=>t.type==='LONG');
     } else {
       // Fallback: build from raw trade history
       allET=buildClosedTrades(allKT, leverage, tradeAmount);
-      if(activeSymbol==='DOGE') allET=allET.filter(t=>t.type==='LONG');
     }
 
     // ── Compute performance from closed trades (fee-adjusted win%) ──
