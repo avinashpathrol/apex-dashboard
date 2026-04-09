@@ -809,7 +809,7 @@ input:focus{border-color:#3f3f46;}
         <div class="card">
           <div class="card-title">Binance fee tracker</div>
           <div class="fee-row"><span class="fee-lbl">Fees all time</span><span class="fee-val" id="fee-total">—</span></div>
-          <div class="fee-row"><span class="fee-lbl">Fee rate</span><span class="fee-val ok">~0.1% / side</span></div>
+          <div class="fee-row"><span class="fee-lbl">Fee rate</span><span class="fee-val ok">~0.075% / side (BNB)</span></div>
           <div class="fee-row"><span class="fee-lbl">vs Kraken</span><span class="fee-val ok">2.6x cheaper</span></div>
         </div>
       </div>
@@ -1032,7 +1032,7 @@ function buildClosedTrades(rawTrades, leverage, tradeAmountUSDT){
   for(const t of sorted){
     const price = n(t.price);
     const qty   = n(t.qty);
-    const fee   = price * qty * 0.001; // 0.1% fee in USDT (Binance t.fee is in base asset, unreliable)
+    const fee   = price * qty * 0.00075; // 0.075% fee (BNB discount applied)
 
     if(t.action === 'BUY'){
       if(openShort){
@@ -1929,7 +1929,7 @@ function openCloseModal(){
     const collateral=n(botData?.trade_amount,85);
     const qty=(collateral*lev)/currentEntryPrice;
     const gross=isLong?(price-currentEntryPrice)*qty:(currentEntryPrice-price)*qty;
-    const fee=(currentEntryPrice+price)*qty*0.001;
+    const fee=(currentEntryPrice+price)*qty*0.00075;
     const net=gross-fee;
     const pnlEl=qs('close-pnl');
     pnlEl.textContent=(gross>=0?'+':'')+'$'+gross.toFixed(2)+' USDT';
