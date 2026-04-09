@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-04-09T22:20:15.635415+00:00",
+  "generated_at": "2026-04-09T22:20:45.030259+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 85.4,
-  "usdt_balance": -266.735194,
-  "sol_balance": 4.1158539,
-  "cad_balance": -266.735194,
-  "margin_level": 1.30206809,
-  "position": "LONG",
+  "price": 85.3,
+  "usdt_balance": 83.9232965,
+  "sol_balance": 0.0008539,
+  "cad_balance": 83.9232965,
+  "margin_level": 352.33931764,
+  "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
+  "status": "HOLDING LONG \u2014 \ud83d\udcd0 Trailing stop hit | best=85.8300 trail_stop=85.3820 price=85.3000",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
+  "reason": "\ud83d\udcd0 Trailing stop hit | best=85.8300 trail_stop=85.3820 price=85.3000",
   "trend": "BULLISH",
   "bullish": [
     "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "RSI overbought (75.8)",
-    "StochRSI overbought (K=99)"
+    "RSI overbought (71.4)",
+    "StochRSI overbought (K=94)"
   ],
   "trades": [
     {
@@ -6236,6 +6236,16 @@
       "cost": 307.5929,
       "fee": 0.003638,
       "symbol": "SOLUSDT"
+    },
+    {
+      "time": "2026-04-09T15:20:41.518000-07:00",
+      "action": "SELL",
+      "price": 85.3,
+      "qty": 4.115,
+      "cost": 351.0095,
+      "fee": 0.3510095,
+      "symbol": "SOLUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=85.8300 trail_stop=85.3820 price=85.3000"
     }
   ],
   "closed_trades": [
@@ -6382,19 +6392,32 @@
       "opened_at": "2026-04-09T19:59:22.047834+00:00",
       "closed_at": "2026-04-09T20:16:11.067659+00:00",
       "note": "Signal flipped to SHORT \u2014 waiting one cycle before re-entry"
+    },
+    {
+      "source": "bot",
+      "side": "LONG",
+      "entry_price": 84.55,
+      "exit_price": 85.3,
+      "qty": 4.115,
+      "fee": 0.6993,
+      "pnl": 2.387,
+      "win": true,
+      "opened_at": "2026-04-09T22:09:59.626585+00:00",
+      "closed_at": "2026-04-09T22:20:41.579535+00:00",
+      "note": "\ud83d\udcd0 Trailing stop hit | best=85.8300 trail_stop=85.3820 price=85.3000"
     }
   ],
   "performance": {
-    "closed_trades": 11,
-    "wins": 3,
+    "closed_trades": 12,
+    "wins": 4,
     "losses": 8,
-    "win_rate": 27.27,
-    "net_profit": -6.347,
-    "avg_profit_per_trade": -0.577,
-    "long_trades": 4,
+    "win_rate": 33.33,
+    "net_profit": -3.96,
+    "avg_profit_per_trade": -0.33,
+    "long_trades": 5,
     "short_trades": 7
   },
-  "run_count": 220,
+  "run_count": 221,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
@@ -6415,11 +6438,7 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": {
-      "trade_amount_usdt": 70.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -6429,11 +6448,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 84.55,
-    "best_price": 85.83,
-    "atr": 0.22357142857142825,
-    "sl": 84.21464285714285,
-    "trail_stop": 85.49464285714285,
-    "active": true
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
+    "active": false
   }
 }
