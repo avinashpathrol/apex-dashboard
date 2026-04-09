@@ -1,27 +1,28 @@
 {
-  "generated_at": "2026-04-09T23:52:30.113772+00:00",
+  "generated_at": "2026-04-09T23:53:45.410060+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09245,
+  "price": 0.09256,
   "usdt_balance": 79.1520376,
   "sol_balance": 0.848,
   "cad_balance": 79.1520376,
-  "margin_level": 332.68629665,
+  "margin_level": 332.55551505,
   "position": null,
   "action": "HOLD",
-  "confidence": 0,
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "SKIPPED \u2014 LONG blocked for DOGE, 1h trend is SIDEWAYS (needs confirmed uptrend)",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "RSI oversold (29.2) | StochRSI oversold (K=6) | Strong bullish candle (91% body)",
   "trend": "SIDEWAYS",
   "bullish": [
-    "RSI oversold (25.6)",
-    "StochRSI oversold (K=0)"
+    "RSI oversold (29.2)",
+    "StochRSI oversold (K=6)",
+    "Strong bullish candle (91% body)"
   ],
   "bearish": [
     "EMA-9 below EMA-21 (momentum down)"
@@ -3648,7 +3649,7 @@
     "long_trades": 8,
     "short_trades": 7
   },
-  "run_count": 297,
+  "run_count": 298,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
