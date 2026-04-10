@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-04-10T15:53:22.979676+00:00",
+  "generated_at": "2026-04-10T15:54:40.804341+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09343,
+  "price": 0.09334,
   "usdt_balance": -272.338042,
   "sol_balance": 3723.749,
   "cad_balance": -272.338042,
-  "margin_level": 1.26918499,
+  "margin_level": 1.26847556,
   "position": "LONG",
-  "action": "LONG",
-  "confidence": 95,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 RSI rising from low (46.1) | StochRSI oversold (K=2) | EMA-9 above EMA-21 (momentum up)",
+  "status": "HOLDING LONG \u2014 Mixed signals \u2014 1 bullish, 1 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI rising from low (46.1) | StochRSI oversold (K=2) | EMA-9 above EMA-21 (momentum up)",
+  "reason": "Mixed signals \u2014 1 bullish, 1 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (46.1)",
-    "StochRSI oversold (K=2)",
-    "EMA-9 above EMA-21 (momentum up)"
+    "StochRSI oversold (K=0)"
   ],
-  "bearish": [],
+  "bearish": [
+    "EMA-9 crossed below EMA-21"
+  ],
   "trades": [
     {
       "time": "2026-04-05T16:08:59.665000-07:00",
@@ -3996,7 +3996,7 @@
     "long_trades": 10,
     "short_trades": 7
   },
-  "run_count": 1066,
+  "run_count": 1067,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
