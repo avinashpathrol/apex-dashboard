@@ -1,29 +1,30 @@
 {
-  "generated_at": "2026-04-10T16:20:31.493671+00:00",
+  "generated_at": "2026-04-10T16:21:40.650860+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09398,
-  "usdt_balance": -273.84065006,
-  "sol_balance": 3724.022,
-  "cad_balance": -273.84065006,
-  "margin_level": 1.27176484,
-  "position": "LONG",
+  "price": 0.09383,
+  "usdt_balance": 75.19564426,
+  "sol_balance": 0.022,
+  "cad_balance": 75.19564426,
+  "margin_level": 309.98799093,
+  "position": null,
   "action": "HOLD",
   "confidence": 0,
   "risk": "MEDIUM",
-  "status": "HOLDING LONG \u2014 Mixed signals \u2014 1 bullish, 1 bearish",
+  "status": "HOLDING LONG \u2014 \ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 1 bullish, 1 bearish",
+  "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938",
   "trend": "BULLISH",
   "bullish": [
     "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "RSI falling from high (58.3)"
+    "RSI falling from high (54.9)",
+    "Strong bearish candle (86% body)"
   ],
   "trades": [
     {
@@ -465,8 +466,7 @@
       "qty": 5405.0,
       "cost": 496.2871,
       "fee": 0.4962871,
-      "symbol": "DOGEUSDT",
-      "reason": "Signal flipped to SHORT \u2014 waiting one cycle before re-entry"
+      "symbol": "DOGEUSDT"
     },
     {
       "time": "2026-04-06T10:45:10.457000-07:00",
@@ -4031,6 +4031,116 @@
       "cost": 48.20988,
       "fee": 0.516,
       "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 12.0,
+      "cost": 1.12584,
+      "fee": 0.00112584,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 21.0,
+      "cost": 1.97022,
+      "fee": 0.00197022,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 22.0,
+      "cost": 2.06404,
+      "fee": 0.00206404,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 66.0,
+      "cost": 6.19212,
+      "fee": 0.00619212,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 12.0,
+      "cost": 1.12584,
+      "fee": 0.00112584,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 12.0,
+      "cost": 1.12584,
+      "fee": 0.00112584,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 2281.0,
+      "cost": 214.00342,
+      "fee": 0.21400342,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 12.0,
+      "cost": 1.12584,
+      "fee": 0.00112584,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 12.0,
+      "cost": 1.12584,
+      "fee": 0.00112584,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 12.0,
+      "cost": 1.12584,
+      "fee": 0.00112584,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
+    },
+    {
+      "time": "2026-04-10T09:21:37.043000-07:00",
+      "action": "SELL",
+      "price": 0.09382,
+      "qty": 1262.0,
+      "cost": 118.40084,
+      "fee": 0.11840084,
+      "symbol": "DOGEUSDT",
+      "reason": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
     }
   ],
   "closed_trades": [
@@ -4268,19 +4378,32 @@
       "opened_at": "2026-04-10T15:52:04.010468+00:00",
       "closed_at": "2026-04-10T15:57:09.870560+00:00",
       "note": "\ud83d\uded1 Hard SL hit | entry=0.0935 sl=0.0933 price=0.0932 | ATR=0.0003"
+    },
+    {
+      "source": "bot",
+      "side": "LONG",
+      "entry_price": 0.09343,
+      "exit_price": 0.09382,
+      "qty": 3724.0,
+      "fee": 0.6976,
+      "pnl": 0.7548,
+      "win": true,
+      "opened_at": "2026-04-10T16:01:00.401339+00:00",
+      "closed_at": "2026-04-10T16:21:37.119286+00:00",
+      "note": "\ud83d\udcd0 Trailing stop hit | best=0.0941 trail_stop=0.0938 price=0.0938"
     }
   ],
   "performance": {
-    "closed_trades": 18,
-    "wins": 4,
+    "closed_trades": 19,
+    "wins": 5,
     "losses": 14,
-    "win_rate": 22.22,
-    "net_profit": -13.4451,
-    "avg_profit_per_trade": -0.747,
-    "long_trades": 11,
+    "win_rate": 26.32,
+    "net_profit": -12.6903,
+    "avg_profit_per_trade": -0.6679,
+    "long_trades": 12,
     "short_trades": 7
   },
-  "run_count": 1087,
+  "run_count": 1088,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
@@ -4301,11 +4424,7 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": {
-      "trade_amount_usdt": 70.0,
-      "leverage": 5.0,
-      "applies_when_flat": true
-    }
+    "queued": null
   },
   "cooldown": {
     "side": null,
@@ -4315,11 +4434,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": 0.09343,
-    "best_price": 0.09407,
-    "atr": 0.0003278571428571436,
-    "sl": 0.09293821428571428,
-    "trail_stop": 0.09357821428571428,
-    "active": true
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
+    "active": false
   }
 }
