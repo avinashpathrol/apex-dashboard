@@ -1,28 +1,27 @@
 {
-  "generated_at": "2026-04-10T10:51:06.299015+00:00",
+  "generated_at": "2026-04-10T10:52:22.150341+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09219,
+  "price": 0.09214,
   "usdt_balance": 79.1520376,
   "sol_balance": 0.848,
   "cad_balance": 79.1520376,
-  "margin_level": 333.76979591,
+  "margin_level": 333.81911873,
   "position": null,
   "action": "HOLD",
-  "confidence": 88,
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 ATR 0.0001 too small (min 0.00025), market too choppy to cover fees",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI rising from low (42.6) | StochRSI oversold (K=9) | Strong bullish candle (80% body)",
+  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (42.6)",
-    "StochRSI oversold (K=9)",
-    "Strong bullish candle (80% body)"
+    "RSI rising from low (40.2)",
+    "StochRSI oversold (K=2)"
   ],
   "bearish": [
     "EMA-9 below EMA-21 (momentum down)"
@@ -3649,7 +3648,7 @@
     "long_trades": 8,
     "short_trades": 7
   },
-  "run_count": 824,
+  "run_count": 825,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
