@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T21:48:17.065880+00:00",
+  "generated_at": "2026-04-10T21:49:31.636213+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -8,7 +8,7 @@
   "usdt_balance": 73.81009153,
   "sol_balance": 0.361,
   "cad_balance": 73.81009153,
-  "margin_level": 302.22307037,
+  "margin_level": 302.21792421,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -4552,7 +4552,7 @@
     "long_trades": 13,
     "short_trades": 7
   },
-  "run_count": 1346,
+  "run_count": 1347,
   "trade_amount": 70.0,
   "min_signals": 3,
   "bot_config": {
