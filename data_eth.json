@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-11T13:18:59.083424+00:00",
+  "generated_at": "2026-04-11T13:43:18.809280+00:00",
   "symbol": "XETHZCAD",
-  "price": 3096.56,
+  "price": 3101.59,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "HOLD",
@@ -10,8 +10,8 @@
   "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
   "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "bullish": [
-    "EMA-20 above EMA-50 (uptrend)",
-    "Price near BB lower band (11%)"
+    "RSI rising from low (47.5)",
+    "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
