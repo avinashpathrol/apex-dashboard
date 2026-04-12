@@ -1,6 +1,7 @@
 {
-  "trade_amount_usdt": 70,
-  "trade_amount": 70,
+  "trade_amount_usdt": 60,
+  "trade_amount": 60,
   "leverage": 5,
-  "updated_at": "2026-04-09T02:05:46.919Z"
+  "min_confidence": 80,
+  "updated_at": "2026-04-12T12:04:03.067Z"
 }
