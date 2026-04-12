@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T18:57:36.981572+00:00",
+  "generated_at": "2026-04-12T19:25:01.024128+00:00",
   "symbol": "SOLCAD",
   "price": 114.03,
   "cad_balance": 0.0078,
@@ -14,8 +14,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (85%)"
+    "RSI falling from high (56.9)",
+    "EMA-20 below EMA-50 (downtrend)"
   ],
   "trades": [
     {
