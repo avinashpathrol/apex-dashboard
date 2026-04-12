@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-12T09:42:53.768412+00:00",
+  "generated_at": "2026-04-12T09:44:08.165606+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.26,
+  "price": 82.22,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -7452,7 +7452,7 @@
     "long_trades": 61,
     "short_trades": 25
   },
-  "run_count": 3073,
+  "run_count": 3074,
   "trade_amount": 70.0,
   "trail": {
     "entry_price": null,
