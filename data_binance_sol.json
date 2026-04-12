@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-12T11:37:54.878058+00:00",
+  "generated_at": "2026-04-12T11:39:09.693593+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.26,
+  "price": 82.25,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -13,7 +13,7 @@
     "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "StochRSI overbought (K=90)"
+    "StochRSI overbought (K=89)"
   ],
   "trades": [
     {
@@ -7453,7 +7453,7 @@
     "long_trades": 61,
     "short_trades": 25
   },
-  "run_count": 3165,
+  "run_count": 3166,
   "trade_amount": 70.0,
   "trail": {
     "entry_price": null,
