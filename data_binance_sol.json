@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-12T11:07:56.770639+00:00",
+  "generated_at": "2026-04-12T11:09:11.973842+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 82.12,
+  "price": 82.15,
   "position": null,
   "action": "LONG",
   "confidence": 91,
   "risk": "LOW",
   "status": "Idle \u2014 DOGEUSDT active",
   "bullish": [
-    "RSI rising from low (45.8)",
-    "StochRSI bullish crossover (K=24)",
-    "Strong bullish candle (81% body)",
+    "RSI rising from low (47.5)",
+    "StochRSI bullish crossover (K=27)",
+    "Strong bullish candle (87% body)",
     "High volume confirms move"
   ],
   "bearish": [
@@ -7456,7 +7456,7 @@
     "long_trades": 61,
     "short_trades": 25
   },
-  "run_count": 3141,
+  "run_count": 3142,
   "trade_amount": 70.0,
   "trail": {
     "entry_price": null,
