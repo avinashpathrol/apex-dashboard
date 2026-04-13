@@ -1,30 +1,32 @@
 {
-  "generated_at": "2026-04-13T23:25:57.033474+00:00",
+  "generated_at": "2026-04-13T23:27:12.368112+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.0941,
+  "price": 0.09429,
   "usdt_balance": -225.0329522,
   "sol_balance": 3169.013,
   "cad_balance": -225.0329522,
-  "margin_level": 1.30399541,
+  "margin_level": 1.30585407,
   "position": "LONG",
   "action": "LONG",
-  "confidence": 95,
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "LONG OPENED \u2705",
+  "status": "HOLDING LONG \u2014 StochRSI oversold (K=16) | EMA-9 above EMA-21 (momentum up) | Strong bullish candle (91% body)",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "StochRSI oversold (K=8) | EMA-9 above EMA-21 (momentum up) | Strong bullish candle (71% body)",
+  "reason": "StochRSI oversold (K=16) | EMA-9 above EMA-21 (momentum up) | Strong bullish candle (91% body)",
   "trend": "BULLISH",
   "bullish": [
-    "StochRSI oversold (K=8)",
+    "StochRSI oversold (K=16)",
     "EMA-9 above EMA-21 (momentum up)",
-    "Strong bullish candle (71% body)"
+    "Strong bullish candle (91% body)"
   ],
-  "bearish": [],
+  "bearish": [
+    "RSI overbought (71.2)"
+  ],
   "trades": [
     {
       "time": "2026-04-05T16:08:59.665000-07:00",
@@ -4684,14 +4686,14 @@
     "long_trades": 14,
     "short_trades": 7
   },
-  "run_count": 4882,
+  "run_count": 4883,
   "trade_amount": 60.0,
   "min_signals": 3,
   "bot_config": {
     "current": {
       "trade_amount_usdt": 60.0,
       "leverage": 5.0,
-      "source": "dashboard-config"
+      "source": "locked-open-trade"
     },
     "dashboard_requested": {
       "trade_amount_usdt": 60.0,
@@ -4720,10 +4722,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 0.09414,
-    "best_price": 0.09414,
+    "best_price": 0.09429,
     "atr": 0.0002942857142857152,
     "sl": 0.09369857142857142,
-    "trail_stop": 0.09369857142857142,
+    "trail_stop": 0.09384857142857142,
     "active": false
   }
 }
