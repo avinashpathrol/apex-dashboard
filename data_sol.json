@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-04-13T16:38:10.636992+00:00",
+  "generated_at": "2026-04-13T17:17:24.861306+00:00",
   "symbol": "SOLCAD",
-  "price": 115.14,
+  "price": 115.03,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
-  "action": "BUY",
-  "confidence": 88,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
-  "status": "SKIPPED \u2014 balance issue",
-  "reason": "EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 2 bearish",
+  "reason": "Mixed signals \u2014 2 bullish, 2 bearish",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
-    "High volume confirms move"
+    "Price above EMA-20"
   ],
   "bearish": [
-    "MACD below signal (bearish)"
+    "RSI falling from high (55.7)",
+    "MACD bearish crossover"
   ],
   "trades": [
     {
