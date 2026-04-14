@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T06:41:43.166545+00:00",
+  "generated_at": "2026-04-14T06:42:58.828047+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -8,7 +8,7 @@
   "usdt_balance": 69.93912329,
   "sol_balance": 0.673,
   "cad_balance": 69.93912329,
-  "margin_level": 279.44624832,
+  "margin_level": 279.42680667,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -21,7 +21,7 @@
   "trend": "BULLISH",
   "bullish": [],
   "bearish": [
-    "StochRSI overbought (K=83)",
+    "StochRSI overbought (K=84)",
     "EMA-9 below EMA-21 (momentum down)"
   ],
   "trades": [
@@ -4930,7 +4930,7 @@
     "long_trades": 17,
     "short_trades": 7
   },
-  "run_count": 5229,
+  "run_count": 5230,
   "trade_amount": 60.0,
   "min_signals": 3,
   "bot_config": {
