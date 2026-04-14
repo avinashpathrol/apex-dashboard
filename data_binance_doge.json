@@ -1,27 +1,28 @@
 {
-  "generated_at": "2026-04-14T15:30:56.275021+00:00",
+  "generated_at": "2026-04-14T15:32:15.712492+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09541,
-  "usdt_balance": 62.61365776,
-  "sol_balance": 0.847,
-  "cad_balance": 62.61365776,
-  "margin_level": 242.72081442,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 0.09558,
+  "usdt_balance": -235.88268224,
+  "sol_balance": 3120.724,
+  "cad_balance": -235.88268224,
+  "margin_level": 1.25693348,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 88,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 1 bearish",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 1 bearish",
+  "reason": "RSI rising from low (47.2) | StochRSI oversold (K=6) | Strong bullish candle (69% body)",
   "trend": "BULLISH",
   "bullish": [
-    "RSI rising from low (44.8)",
-    "StochRSI oversold (K=3)"
+    "RSI rising from low (47.2)",
+    "StochRSI oversold (K=6)",
+    "Strong bullish candle (69% body)"
   ],
   "bearish": [
     "EMA-9 below EMA-21 (momentum down)"
@@ -5248,6 +5249,87 @@
       "fee": 0.1557501,
       "symbol": "DOGEUSDT",
       "reason": "\ud83d\uded1 Hard SL hit | entry=0.0957 sl=0.0953 price=0.0953 | ATR=0.0006"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 11.0,
+      "cost": 1.05138,
+      "fee": 0.011,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 11.0,
+      "cost": 1.05138,
+      "fee": 0.011,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 11.0,
+      "cost": 1.05138,
+      "fee": 0.011,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 16.0,
+      "cost": 1.52928,
+      "fee": 0.016,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 11.0,
+      "cost": 1.05138,
+      "fee": 0.011,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 11.0,
+      "cost": 1.05138,
+      "fee": 0.011,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 11.0,
+      "cost": 1.05138,
+      "fee": 0.011,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 12.0,
+      "cost": 1.14696,
+      "fee": 0.012,
+      "symbol": "DOGEUSDT"
+    },
+    {
+      "time": "2026-04-14T08:32:12.583000-07:00",
+      "action": "BUY",
+      "price": 0.09558,
+      "qty": 3029.0,
+      "cost": 289.51182,
+      "fee": 3.029,
+      "symbol": "DOGEUSDT"
     }
   ],
   "closed_trades": [
@@ -5666,7 +5748,7 @@
     "long_trades": 24,
     "short_trades": 7
   },
-  "run_count": 5649,
+  "run_count": 5650,
   "trade_amount": 60.0,
   "min_signals": 3,
   "bot_config": {
@@ -5687,7 +5769,11 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 60.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -5697,11 +5783,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 0.09558,
+    "best_price": 0.09558,
+    "atr": 0.0005557142857142854,
+    "sl": 0.09474642857142856,
+    "trail_stop": 0.09474642857142856,
     "active": false
   }
 }
