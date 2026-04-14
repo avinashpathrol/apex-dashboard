@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-14T14:01:54.248259+00:00",
+  "generated_at": "2026-04-14T14:02:45.245364+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.0975,
+  "price": 0.09746,
   "usdt_balance": -230.57518052,
   "sol_balance": 3053.068,
   "cad_balance": -230.57518052,
-  "margin_level": 1.27591727,
+  "margin_level": 1.27934505,
   "position": "LONG",
   "action": "HOLD",
   "confidence": 0,
@@ -24,7 +24,7 @@
     "Breaking 20-candle high ($0.0973)"
   ],
   "bearish": [
-    "RSI overbought (86.4)",
+    "RSI overbought (86.2)",
     "StochRSI overbought (K=100)"
   ],
   "trades": [
@@ -5442,7 +5442,7 @@
     "long_trades": 21,
     "short_trades": 7
   },
-  "run_count": 5577,
+  "run_count": 5578,
   "trade_amount": 60.0,
   "min_signals": 3,
   "bot_config": {
