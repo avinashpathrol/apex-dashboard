@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-15T06:18:01.679888+00:00",
+  "generated_at": "2026-04-15T07:01:29.953405+00:00",
   "symbol": "XETHZCAD",
-  "price": 3195.25,
+  "price": 3194.44,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "SELL",
@@ -10,7 +10,7 @@
   "status": "SKIPPED \u2014 balance issue",
   "reason": "MACD below signal (bearish) | EMA-20 below EMA-50 (downtrend) | Price below EMA-20",
   "bullish": [
-    "Price near BB lower band (11%)"
+    "Price near BB lower band (18%)"
   ],
   "bearish": [
     "MACD below signal (bearish)",
