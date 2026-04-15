@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-15T23:25:49.284803+00:00",
+  "generated_at": "2026-04-15T23:55:10.238942+00:00",
   "symbol": "SOLCAD",
-  "price": 116.62,
+  "price": 116.63,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "HOLD",
   "confidence": 88,
   "risk": "MEDIUM",
   "status": "SKIPPED \u2014 1H trend is BULLISH, holding position",
-  "reason": "RSI falling from high (50.7) | MACD below signal (bearish) | Price below EMA-20",
+  "reason": "RSI falling from high (50.8) | MACD below signal (bearish) | Price below EMA-20",
   "bullish": [
     "EMA-20 above EMA-50 (uptrend)"
   ],
   "bearish": [
-    "RSI falling from high (50.7)",
+    "RSI falling from high (50.8)",
     "MACD below signal (bearish)",
     "Price below EMA-20"
   ],
