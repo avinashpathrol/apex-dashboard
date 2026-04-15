@@ -1,33 +1,30 @@
 {
-  "generated_at": "2026-04-15T17:05:04.545890+00:00",
+  "generated_at": "2026-04-15T17:06:48.515087+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09472,
+  "price": 0.09475,
   "usdt_balance": -236.46728024,
   "sol_balance": 3148.047,
   "cad_balance": -236.46728024,
-  "margin_level": 1.25599551,
+  "margin_level": 1.25632254,
   "position": "LONG",
-  "action": "LONG",
-  "confidence": 85,
-  "risk": "LOW",
-  "status": "HOLDING LONG \u2014 EMA-9 above EMA-21 (momentum up) | Strong bullish candle (77% body) | Breaking 20-candle high ($0.0945) | High volume confirms move",
+  "action": "HOLD",
+  "confidence": 0,
+  "risk": "MEDIUM",
+  "status": "HOLDING LONG \u2014 Mixed signals \u2014 1 bullish, 2 bearish",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "EMA-9 above EMA-21 (momentum up) | Strong bullish candle (77% body) | Breaking 20-candle high ($0.0945) | High volume confirms move",
+  "reason": "Mixed signals \u2014 1 bullish, 2 bearish",
   "trend": "BULLISH",
   "bullish": [
-    "EMA-9 above EMA-21 (momentum up)",
-    "Strong bullish candle (77% body)",
-    "Breaking 20-candle high ($0.0945)",
-    "High volume confirms move"
+    "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "RSI overbought (68.5)",
-    "StochRSI overbought (K=87)"
+    "RSI overbought (69.3)",
+    "StochRSI overbought (K=97)"
   ],
   "trades": [
     {
@@ -5882,7 +5879,7 @@
     "long_trades": 28,
     "short_trades": 7
   },
-  "run_count": 6694,
+  "run_count": 6695,
   "trade_amount": 60.0,
   "min_signals": 3,
   "bot_config": {
@@ -5918,10 +5915,10 @@
   "ai_analysis": null,
   "trail": {
     "entry_price": 0.09471,
-    "best_price": 0.09472,
+    "best_price": 0.09479,
     "atr": 0.0002600000000000003,
     "sl": 0.09432,
-    "trail_stop": 0.09433,
+    "trail_stop": 0.0944,
     "active": false
   }
 }
