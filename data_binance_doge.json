@@ -1,21 +1,19 @@
 {
-  "generated_at": "2026-04-15T18:06:53.834638+00:00",
+  "generated_at": "2026-04-15T18:08:41.193827+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 0.09526,
+  "price": 0.09518,
   "position": null,
-  "action": "LONG",
-  "confidence": 88,
+  "action": "HOLD",
+  "confidence": 0,
   "risk": "MEDIUM",
   "status": "Idle \u2014 SOLUSDT active",
   "bullish": [
-    "EMA-9 above EMA-21 (momentum up)",
-    "Strong bullish candle (100% body)",
-    "Breaking 20-candle high ($0.0952)"
+    "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "RSI overbought (70.3)"
+    "RSI overbought (69.0)"
   ],
   "trades": [
     {
@@ -1492,8 +1490,7 @@
       "qty": 5320.0,
       "cost": 494.1748,
       "fee": 0.4941748,
-      "symbol": "DOGEUSDT",
-      "reason": "\ud83d\uded1 Hard SL hit | entry=0.0934 sl=0.0930 price=0.0928 | ATR=0.0005"
+      "symbol": "DOGEUSDT"
     },
     {
       "time": "2026-04-07T15:33:39.378000-07:00",
@@ -6375,7 +6372,7 @@
     "long_trades": 8,
     "short_trades": 60
   },
-  "run_count": 6734,
+  "run_count": 6735,
   "trade_amount": 60.0,
   "trail": {
     "entry_price": null,
