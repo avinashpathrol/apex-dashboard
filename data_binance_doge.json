@@ -1,27 +1,28 @@
 {
-  "generated_at": "2026-04-15T20:30:22.635552+00:00",
+  "generated_at": "2026-04-15T20:32:02.186747+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.0955,
-  "usdt_balance": 60.41919694,
-  "sol_balance": 0.958,
-  "cad_balance": 60.41919694,
-  "margin_level": 226.8725692,
-  "position": null,
-  "action": "HOLD",
-  "confidence": 0,
+  "price": 0.09573,
+  "usdt_balance": -238.06694306,
+  "sol_balance": 3115.84,
+  "cad_balance": -238.06694306,
+  "margin_level": 1.2491029,
+  "position": "LONG",
+  "action": "LONG",
+  "confidence": 95,
   "risk": "MEDIUM",
-  "status": "HOLD \u2014 Mixed signals \u2014 2 bullish, 0 bearish",
+  "status": "LONG OPENED \u2705",
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "Mixed signals \u2014 2 bullish, 0 bearish",
+  "reason": "StochRSI oversold (K=9) | EMA-9 above EMA-21 (momentum up) | Strong bullish candle (81% body)",
   "trend": "BULLISH",
   "bullish": [
-    "StochRSI oversold (K=3)",
-    "EMA-9 above EMA-21 (momentum up)"
+    "StochRSI oversold (K=9)",
+    "EMA-9 above EMA-21 (momentum up)",
+    "Strong bullish candle (81% body)"
   ],
   "bearish": [],
   "trades": [
@@ -5432,6 +5433,15 @@
       "fee": 0.29742485,
       "symbol": "DOGEUSDT",
       "reason": "\ud83d\uded1 Hard SL hit | entry=0.0966 sl=0.0965 price=0.0964 | ATR=0.0003"
+    },
+    {
+      "time": "2026-04-15T13:31:53.027000-07:00",
+      "action": "BUY",
+      "price": 0.09573,
+      "qty": 3118.0,
+      "cost": 298.48614,
+      "fee": 3.118,
+      "symbol": "DOGEUSDT"
     }
   ],
   "closed_trades": [
@@ -5941,7 +5951,7 @@
     "long_trades": 31,
     "short_trades": 7
   },
-  "run_count": 6825,
+  "run_count": 6826,
   "trade_amount": 60.0,
   "min_signals": 3,
   "bot_config": {
@@ -5962,7 +5972,11 @@
       "force_trail": false,
       "force_trail_at": null
     },
-    "queued": null
+    "queued": {
+      "trade_amount_usdt": 60.0,
+      "leverage": 5.0,
+      "applies_when_flat": true
+    }
   },
   "cooldown": {
     "side": null,
@@ -5972,11 +5986,11 @@
   },
   "ai_analysis": null,
   "trail": {
-    "entry_price": null,
-    "best_price": null,
-    "atr": null,
-    "sl": null,
-    "trail_stop": null,
+    "entry_price": 0.09573,
+    "best_price": 0.09573,
+    "atr": 0.0003471428571428554,
+    "sl": 0.09520928571428572,
+    "trail_stop": 0.09520928571428572,
     "active": false
   }
 }
