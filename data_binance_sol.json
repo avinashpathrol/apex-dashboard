@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T19:25:18.424445+00:00",
+  "generated_at": "2026-04-15T19:27:05.028092+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
@@ -14,7 +14,7 @@
   ],
   "bearish": [
     "RSI falling from high (60.7)",
-    "Strong bearish candle (100% body)"
+    "Strong bearish candle (75% body)"
   ],
   "trades": [
     {
@@ -7487,7 +7487,7 @@
     "long_trades": 62,
     "short_trades": 25
   },
-  "run_count": 6782,
+  "run_count": 6783,
   "trade_amount": 60.0,
   "trail": {
     "entry_price": null,
