@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T15:45:31.122008+00:00",
+  "generated_at": "2026-04-16T16:21:41.312166+00:00",
   "symbol": "SOLCAD",
   "price": 118.93,
   "cad_balance": 0.0078,
@@ -15,7 +15,7 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "Price near BB upper band (94%)"
+    "Price near BB upper band (86%)"
   ],
   "trades": [
     {
