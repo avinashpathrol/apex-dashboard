@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-16T15:38:26.370240+00:00",
+  "generated_at": "2026-04-16T15:39:43.601524+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 86.86,
+  "price": 86.78,
   "position": null,
   "action": "HOLD",
   "confidence": 0,
@@ -14,7 +14,7 @@
     "Breaking 20-candle high ($86.6000)"
   ],
   "bearish": [
-    "RSI overbought (70.8)",
+    "RSI overbought (70.1)",
     "StochRSI overbought (K=88)"
   ],
   "trades": [
@@ -7488,7 +7488,7 @@
     "long_trades": 62,
     "short_trades": 25
   },
-  "run_count": 7705,
+  "run_count": 7706,
   "trade_amount": 60.0,
   "trail": {
     "entry_price": null,
