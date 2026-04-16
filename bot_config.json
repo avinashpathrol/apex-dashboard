@@ -3,8 +3,9 @@
   "trade_amount": 60,
   "leverage": 5,
   "min_confidence": 80,
-  "updated_at": "2026-04-12T12:04:08.830Z",
+  "updated_at": "2026-04-16T23:53:05.499Z",
   "paused_symbols": [
-    "SOL"
+    "SOL",
+    "DOGE"
   ]
 }
