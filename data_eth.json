@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-17T17:06:16.132495+00:00",
+  "generated_at": "2026-04-17T17:27:58.645007+00:00",
   "symbol": "XETHZCAD",
-  "price": 3353.0,
+  "price": 3318.88,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "HOLD",
@@ -14,8 +14,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (68.9)",
-    "MACD bearish crossover"
+    "RSI falling from high (54.6)",
+    "MACD below signal (bearish)"
   ],
   "trades": [
     {
