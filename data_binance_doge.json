@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-18T20:33:46.415589+00:00",
+  "generated_at": "2026-04-18T20:35:02.440932+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
   "min_confidence": 80,
-  "price": 0.09474,
+  "price": 0.09477,
   "usdt_balance": 59.14919329,
   "sol_balance": 0.84,
   "cad_balance": 59.14919329,
-  "margin_level": 218.705132,
+  "margin_level": 218.7026079,
   "position": null,
   "action": "HOLD",
   "confidence": 88,
@@ -17,12 +17,12 @@
   "bot_paused": false,
   "paused_symbols": [],
   "flip_pending": null,
-  "reason": "RSI rising from low (44.8) | StochRSI bullish crossover (K=45) | Strong bullish candle (67% body)",
+  "reason": "RSI rising from low (46.1) | StochRSI bullish crossover (K=45) | Strong bullish candle (85% body)",
   "trend": "BEARISH",
   "bullish": [
-    "RSI rising from low (44.8)",
+    "RSI rising from low (46.1)",
     "StochRSI bullish crossover (K=45)",
-    "Strong bullish candle (67% body)"
+    "Strong bullish candle (85% body)"
   ],
   "bearish": [
     "EMA-9 below EMA-21 (momentum down)"
@@ -5995,7 +5995,7 @@
     "long_trades": 32,
     "short_trades": 7
   },
-  "run_count": 10231,
+  "run_count": 10232,
   "trade_amount": 60.0,
   "min_signals": 3,
   "bot_config": {
