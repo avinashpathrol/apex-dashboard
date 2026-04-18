@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-18T17:39:06.616933+00:00",
+  "generated_at": "2026-04-18T17:55:14.211156+00:00",
   "symbol": "XETHZCAD",
-  "price": 3240.54,
+  "price": 3241.43,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "BUY",
   "confidence": 88,
   "risk": "MEDIUM",
   "status": "SKIPPED \u2014 balance issue",
-  "reason": "RSI rising from low (48.5) | MACD above signal (bullish) | Price above EMA-20",
+  "reason": "RSI rising from low (49.4) | MACD above signal (bullish) | Price above EMA-20",
   "bullish": [
-    "RSI rising from low (48.5)",
+    "RSI rising from low (49.4)",
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
