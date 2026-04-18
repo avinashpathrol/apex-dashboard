@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-18T22:56:01.603292+00:00",
+  "generated_at": "2026-04-18T22:57:17.158214+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
   "leverage": 5.0,
-  "price": 86.28,
+  "price": 86.27,
   "position": null,
   "action": "SHORT",
   "confidence": 88,
@@ -13,9 +13,9 @@
     "EMA-9 above EMA-21 (momentum up)"
   ],
   "bearish": [
-    "RSI falling from high (57.1)",
-    "StochRSI overbought (K=93)",
-    "Strong bearish candle (100% body)"
+    "RSI falling from high (56.4)",
+    "StochRSI overbought (K=92)",
+    "Strong bearish candle (75% body)"
   ],
   "trades": [
     {
@@ -7488,7 +7488,7 @@
     "long_trades": 62,
     "short_trades": 25
   },
-  "run_count": 10344,
+  "run_count": 10345,
   "trade_amount": 60.0,
   "trail": {
     "entry_price": null,
