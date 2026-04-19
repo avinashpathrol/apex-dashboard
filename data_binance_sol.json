@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-19T16:20:00.874950+00:00",
+  "generated_at": "2026-04-19T16:21:09.711443+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 86.11,
+  "price": 86.12,
   "usdt_balance": 59.14919329,
   "sol_balance": 0.0003279,
-  "margin_level": 220.46718142,
+  "margin_level": 220.50728394,
   "leverage": 5.0,
   "trade_amount": 40.0,
   "position": null,
@@ -19,12 +19,12 @@
   "reason": "ADX 37.1 trending but +DI/20.6 vs -DI/19.3 conflicts with EMA21(85.96)/EMA50(86.48) \u2014 waiting for alignment",
   "indicators": {
     "adx": 37.11,
-    "adx_pos": 20.65,
-    "adx_neg": 19.34,
-    "ema21": 85.9607,
-    "ema50": 86.4778,
-    "rsi": 50.16,
-    "atr": 0.6734
+    "adx_pos": 20.6,
+    "adx_neg": 19.3,
+    "ema21": 85.9625,
+    "ema50": 86.4786,
+    "rsi": 50.44,
+    "atr": 0.6749
   },
   "closed_trades": [],
   "performance": {
@@ -45,5 +45,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 479
+  "run_count": 480
 }
