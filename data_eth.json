@@ -1,21 +1,23 @@
 {
-  "generated_at": "2026-04-19T15:24:00.013783+00:00",
+  "generated_at": "2026-04-19T15:41:17.144889+00:00",
   "symbol": "XETHZCAD",
-  "price": 3208.58,
+  "price": 3189.47,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
-  "action": "BUY",
-  "confidence": 95,
-  "risk": "LOW",
+  "action": "SELL",
+  "confidence": 82,
+  "risk": "MEDIUM",
   "status": "SKIPPED \u2014 balance issue",
-  "reason": "MACD above signal (bullish) | EMA-20 above EMA-50 (uptrend) | Price above EMA-20 | High volume confirms move",
+  "reason": "MACD bearish crossover | Price below EMA-20 | High volume confirms move",
   "bullish": [
-    "MACD above signal (bullish)",
     "EMA-20 above EMA-50 (uptrend)",
-    "Price above EMA-20",
+    "Price near BB lower band (17%)"
+  ],
+  "bearish": [
+    "MACD bearish crossover",
+    "Price below EMA-20",
     "High volume confirms move"
   ],
-  "bearish": [],
   "trades": [
     {
       "time": "2026-03-22T18:33:36.940644-07:00",
