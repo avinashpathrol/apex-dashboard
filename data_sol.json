@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-19T14:23:14.176521+00:00",
+  "generated_at": "2026-04-19T14:54:50.766364+00:00",
   "symbol": "SOLCAD",
-  "price": 118.6,
+  "price": 118.87,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "BUY",
@@ -15,8 +15,8 @@
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (68.7)",
-    "Price near BB upper band (84%)"
+    "RSI overbought (67.6)",
+    "Price near BB upper band (81%)"
   ],
   "trades": [
     {
