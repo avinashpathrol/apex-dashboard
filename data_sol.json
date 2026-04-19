@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-19T12:25:10.429032+00:00",
+  "generated_at": "2026-04-19T12:58:37.643113+00:00",
   "symbol": "SOLCAD",
-  "price": 117.65,
+  "price": 117.62,
   "cad_balance": 0.0078,
   "btc_balance": 0.0,
   "action": "SELL",
   "confidence": 85,
   "risk": "LOW",
   "status": "SKIPPED \u2014 balance issue",
-  "reason": "RSI overbought (66.4) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (102%) | High volume confirms move",
+  "reason": "RSI overbought (65.1) | EMA-20 below EMA-50 (downtrend) | Price near BB upper band (89%) | High volume confirms move",
   "bullish": [
     "MACD above signal (bullish)",
     "Price above EMA-20"
   ],
   "bearish": [
-    "RSI overbought (66.4)",
+    "RSI overbought (65.1)",
     "EMA-20 below EMA-50 (downtrend)",
-    "Price near BB upper band (102%)",
+    "Price near BB upper band (89%)",
     "High volume confirms move"
   ],
   "trades": [
