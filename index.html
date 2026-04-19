@@ -19,42 +19,49 @@
     --accent:  #6366f1;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; min-height: 100vh; }
+  body { background: var(--bg); color: var(--text); font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; min-height: 100vh; -webkit-text-size-adjust: 100%; }
 
-  header { background: var(--card); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
-  header h1 { font-size: 16px; font-weight: 700; letter-spacing: 0.05em; }
+  header { background: var(--card); border-bottom: 1px solid var(--border); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+  header h1 { font-size: 15px; font-weight: 700; letter-spacing: 0.05em; }
   header h1 span { color: var(--accent); }
-  .header-right { display: flex; align-items: center; gap: 12px; }
-  .last-update { font-size: 11px; color: var(--muted); }
-  #pause-btn { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer; font-size: 12px; font-family: inherit; }
+  .header-right { display: flex; align-items: center; gap: 8px; }
+  .last-update { font-size: 10px; color: var(--muted); display: none; }
+  @media (min-width: 480px) { .last-update { display: block; } }
+  #pause-btn { padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer; font-size: 12px; font-family: inherit; }
   #pause-btn:hover, #pause-btn.paused { border-color: var(--yellow); color: var(--yellow); }
   .gear-btn { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 7px; padding: 6px 10px; cursor: pointer; font-size: 14px; }
   .gear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-  main { max-width: 960px; margin: 0 auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 16px; }
+  main { max-width: 960px; margin: 0 auto; padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+  @media (min-width: 600px) { main { padding: 20px 16px; gap: 16px; } }
 
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  @media (min-width: 600px) { .card { padding: 16px; } }
   .card-title { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
 
   /* Position Banner */
-  #pos-banner { border-radius: 10px; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border: 1px solid var(--border); background: var(--card); }
+  #pos-banner { border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--border); background: var(--card); }
+  @media (min-width: 600px) { #pos-banner { flex-direction: row; align-items: center; justify-content: space-between; padding: 18px 20px; } }
   #pos-banner.long  { border-color: #166534; background: #052e16; }
   #pos-banner.short { border-color: #7f1d1d; background: #2d0a0a; }
   .pos-left { display: flex; flex-direction: column; gap: 4px; }
-  #pos-label { font-size: 20px; font-weight: 700; }
+  #pos-label { font-size: 18px; font-weight: 700; }
+  @media (min-width: 480px) { #pos-label { font-size: 20px; } }
   #pos-sub   { font-size: 12px; color: var(--muted); }
-  .pos-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .pos-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (min-width: 480px) { .pos-stats { display: flex; gap: 20px; flex-wrap: wrap; } }
   .pos-stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-  .pos-stat-val { font-size: 16px; font-weight: 600; margin-top: 2px; }
+  .pos-stat-val { font-size: 15px; font-weight: 600; margin-top: 2px; }
   .pos-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-  .btn { padding: 8px 16px; border-radius: 7px; border: none; cursor: pointer; font-size: 12px; font-family: inherit; font-weight: 600; }
+  .btn { padding: 10px 18px; border-radius: 7px; border: none; cursor: pointer; font-size: 13px; font-family: inherit; font-weight: 600; min-height: 44px; }
   .btn-danger { background: #dc2626; color: #fff; }
   .btn-yellow { background: var(--yellow); color: #000; }
 
   /* Price + Signal grid */
   .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 600px) { .row2 { grid-template-columns: 1fr; } }
-  .price-big { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; }
+  .price-big { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+  @media (min-width: 480px) { .price-big { font-size: 36px; } }
   .price-change { font-size: 13px; margin-top: 4px; }
   .signal-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
   .signal-long  { background: #166534; color: var(--green); }
@@ -93,9 +100,10 @@
   .perf-footer { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: var(--muted); padding: 8px 0; border-top: 1px solid var(--border); }
 
   /* Trade table */
-  table { width: 100%; border-collapse: collapse; }
-  th { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; text-align: left; padding: 0 8px 8px; border-bottom: 1px solid var(--border); }
-  td { padding: 9px 8px; border-bottom: 1px solid var(--border); }
+  #trades-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  th { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; text-align: left; padding: 0 8px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 9px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
   tr:last-child td { border-bottom: none; }
   .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; }
   .badge-long  { background: #052e16; color: var(--green); }
