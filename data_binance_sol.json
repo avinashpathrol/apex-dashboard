@@ -1,48 +1,63 @@
 {
-  "generated_at": "2026-04-20T07:20:27.261681+00:00",
+  "generated_at": "2026-04-20T07:21:50.664840+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 84.86,
-  "usdt_balance": 257.87042314,
+  "price": 85.4,
+  "usdt_balance": 55.10258314,
   "leverage": 5.0,
   "trade_amount": 40.0,
-  "position": "SHORT",
+  "position": null,
   "active_qty": 2.365,
   "trade_opened_at": "2026-04-20T06:30:52.217795+00:00",
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLDING SHORT | BEARISH \u2014 waiting for EMA21 bounce: price -0.03% from EMA21 (need 0\u20131.8% below)",
+  "status": "CLOSED \u2705",
   "bot_paused": false,
   "regime": "TRENDING",
   "trend_direction": "BEARISH",
-  "reason": "BEARISH \u2014 waiting for EMA21 bounce: price -0.03% from EMA21 (need 0\u20131.8% below)",
+  "reason": "BEARISH \u2014 waiting for EMA21 bounce: price -0.67% from EMA21 (need 0\u20131.8% below)",
   "indicators": {
-    "adx": 29.38,
-    "adx_pos": 16.74,
-    "adx_neg": 26.73,
-    "ema21": 84.790784,
-    "ema50": 85.580518,
-    "rsi": 48.28,
-    "atr": 0.690559
+    "adx": 28.3,
+    "adx_pos": 21.53,
+    "adx_neg": 25.19,
+    "ema21": 84.844421,
+    "ema50": 85.603655,
+    "rsi": 53.75,
+    "atr": 0.732702
   },
-  "closed_trades": [],
+  "closed_trades": [
+    {
+      "source": "bot",
+      "symbol": "SOLUSDT",
+      "side": "SHORT",
+      "entry_price": 84.11,
+      "exit_price": 85.34,
+      "qty": 2.376,
+      "fee": 0.401688,
+      "pnl": -3.324168,
+      "win": false,
+      "opened_at": "2026-04-20T06:30:52.217795+00:00",
+      "closed_at": "2026-04-20T07:21:45.110381+00:00",
+      "note": "\ud83d\uded1 Hard SL hit | entry=84.110000 sl=85.126786 price=85.400000"
+    }
+  ],
   "performance": {
-    "closed_trades": 0,
+    "closed_trades": 1,
     "wins": 0,
-    "losses": 0,
+    "losses": 1,
     "win_rate": 0.0,
-    "net_profit": 0,
-    "avg_pnl": 0.0,
-    "best_trade": 0.0,
-    "worst_trade": 0.0
+    "net_profit": -3.3242,
+    "avg_pnl": -3.3242,
+    "best_trade": -3.3242,
+    "worst_trade": -3.3242
   },
   "trail": {
-    "entry_price": 84.11,
-    "best_price": 84.11,
-    "atr": 0.6778571428571435,
-    "sl": 85.12678571,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
     "trail_stop": null,
     "active": false
   },
-  "run_count": 43
+  "run_count": 44
 }
