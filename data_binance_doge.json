@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-20T19:09:27.686830+00:00",
+  "generated_at": "2026-04-20T19:10:41.779218+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
-  "price": 0.0956,
+  "price": 0.09555,
   "usdt_balance": 51.70370407,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -18,12 +18,12 @@
   "reason": "ADX 20.4 < 22.0 \u2014 market choppy, no entry",
   "indicators": {
     "adx": 20.43,
-    "adx_pos": 23.56,
-    "adx_neg": 11.52,
-    "ema21": 0.094729,
-    "ema50": 0.095014,
-    "rsi": 60.2,
-    "atr": 0.000749
+    "adx_pos": 23.5,
+    "adx_neg": 11.49,
+    "ema21": 0.094724,
+    "ema50": 0.095012,
+    "rsi": 59.43,
+    "atr": 0.000751
   },
   "closed_trades": [],
   "performance": {
@@ -44,5 +44,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 606
+  "run_count": 607
 }
