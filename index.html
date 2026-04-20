@@ -131,6 +131,7 @@
   <div class="header-right">
     <div id="refresh-spinner"></div>
     <span class="last-update" id="last-update">—</span>
+    <button class="gear-btn" onclick="fetchData()" title="Refresh now">↻</button>
     <button class="gear-btn" onclick="openSettings()">⚙</button>
     <button id="pause-btn" onclick="togglePause()">⏸ Pause</button>
   </div>
@@ -281,7 +282,7 @@
 'use strict';
 
 const DATA_FILE   = 'data_binance_btc.json';
-const RAW_BASE    = 'https://raw.githubusercontent.com/avinashpathrol/apex-dashboard/main/';
+const DATA_API    = 'https://api.github.com/repos/avinashpathrol/apex-dashboard/contents/data_binance_btc.json';
 const CONFIG_API  = 'https://api.github.com/repos/avinashpathrol/apex-dashboard/contents/bot_config.json';
 const GH_TOKEN    = '';
 const REFRESH_MS  = 12000;
@@ -313,9 +314,12 @@ function hideErr()    { qs('#error-bar').style.display = 'none'; }
 async function fetchData() {
   qs('#refresh-spinner').style.display = 'block';
   try {
-    const r = await fetch(RAW_BASE + DATA_FILE + '?t=' + Date.now(), { cache: 'no-store' });
+    const hdrs = Object.assign({'Accept':'application/vnd.github+json'},
+      GH_TOKEN ? {Authorization:'token '+GH_TOKEN} : {});
+    const r = await fetch(DATA_API + '?t=' + Date.now(), {headers: hdrs, cache: 'no-store'});
     if (!r.ok) throw new Error('HTTP ' + r.status);
-    botData = await r.json();
+    const j = await r.json();
+    botData = JSON.parse(atob(j.content.replace(/\n/g,'')));
     hideErr();
     render(botData);
     qs('#last-update').textContent = 'Updated ' + new Date().toLocaleTimeString();
