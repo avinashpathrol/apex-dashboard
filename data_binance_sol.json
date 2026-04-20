@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-20T17:18:25.368037+00:00",
+  "generated_at": "2026-04-20T17:19:46.982001+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 85.92,
-  "usdt_balance": 253.95260407,
+  "price": 86.1,
+  "usdt_balance": 51.70370407,
   "leverage": 5.0,
   "trade_amount": 40.0,
-  "position": "SHORT",
+  "position": null,
   "active_qty": 2.347,
   "trade_opened_at": "2026-04-20T07:37:48.899053+00:00",
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLDING SHORT | ADX 15.0 < 22.0 \u2014 market choppy, no entry",
+  "status": "CLOSED \u2705",
   "bot_paused": false,
   "regime": "CHOPPY",
   "trend_direction": "NEUTRAL",
-  "reason": "ADX 15.0 < 22.0 \u2014 market choppy, no entry",
+  "reason": "ADX 15.1 < 22.0 \u2014 market choppy, no entry",
   "indicators": {
-    "adx": 14.96,
-    "adx_pos": 14.42,
-    "adx_neg": 14.81,
-    "ema21": 85.102221,
-    "ema50": 85.47429,
-    "rsi": 57.73,
-    "atr": 0.783294
+    "adx": 15.09,
+    "adx_pos": 15.57,
+    "adx_neg": 14.61,
+    "ema21": 85.119494,
+    "ema50": 85.481741,
+    "rsi": 59.16,
+    "atr": 0.794009
   },
   "closed_trades": [
     {
@@ -39,25 +39,39 @@
       "opened_at": "2026-04-20T06:30:52.217795+00:00",
       "closed_at": "2026-04-20T07:21:45.110381+00:00",
       "note": "\ud83d\uded1 Hard SL hit | entry=84.110000 sl=85.126786 price=85.400000"
+    },
+    {
+      "source": "bot",
+      "symbol": "SOLUSDT",
+      "side": "SHORT",
+      "entry_price": 84.81,
+      "exit_price": 86.1,
+      "qty": 2.349,
+      "fee": 0.401298,
+      "pnl": -3.431508,
+      "win": false,
+      "opened_at": "2026-04-20T07:37:48.899053+00:00",
+      "closed_at": "2026-04-20T17:19:41.402660+00:00",
+      "note": "\ud83d\uded1 Hard SL hit | entry=84.810000 sl=85.927500 price=86.100000"
     }
   ],
   "performance": {
-    "closed_trades": 1,
+    "closed_trades": 2,
     "wins": 0,
-    "losses": 1,
+    "losses": 2,
     "win_rate": 0.0,
-    "net_profit": -3.3242,
-    "avg_pnl": -3.3242,
+    "net_profit": -6.7557,
+    "avg_pnl": -3.3779,
     "best_trade": -3.3242,
-    "worst_trade": -3.3242
+    "worst_trade": -3.4315
   },
   "trail": {
-    "entry_price": 84.81,
-    "best_price": 84.45,
-    "atr": 0.7450000000000015,
-    "sl": 85.9275,
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
     "trail_stop": null,
     "active": false
   },
-  "run_count": 515
+  "run_count": 516
 }
