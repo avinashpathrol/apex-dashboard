@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-04-20T00:59:01.657744+00:00",
+  "generated_at": "2026-04-20T01:00:10.944333+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 84.02,
+  "price": 84.03,
   "usdt_balance": 59.14919329,
   "sol_balance": 0.0003279,
-  "margin_level": 222.41692787,
+  "margin_level": 222.51412863,
   "leverage": 5.0,
   "trade_amount": 40.0,
   "position": null,
   "active_qty": null,
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLD \u2014 ATR $0.74 too low (min $1.50) \u2014 not enough movement to cover fees",
+  "status": "HOLD \u2014 ATR $0.69 too low (min $1.50) \u2014 not enough movement to cover fees",
   "bot_paused": false,
   "regime": "TRENDING",
   "trend_direction": "BEARISH",
-  "reason": "ATR $0.74 too low (min $1.50) \u2014 not enough movement to cover fees",
+  "reason": "ATR $0.69 too low (min $1.50) \u2014 not enough movement to cover fees",
   "indicators": {
-    "adx": 32.72,
-    "adx_pos": 16.11,
-    "adx_neg": 32.11,
-    "ema21": 85.1358,
-    "ema50": 85.9469,
-    "rsi": 35.03,
-    "atr": 0.7395
+    "adx": 32.84,
+    "adx_pos": 16.0,
+    "adx_neg": 31.91,
+    "ema21": 85.0336,
+    "ema50": 85.8754,
+    "rsi": 35.2,
+    "atr": 0.6909
   },
   "closed_trades": [],
   "performance": {
@@ -45,5 +45,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 931
+  "run_count": 932
 }
