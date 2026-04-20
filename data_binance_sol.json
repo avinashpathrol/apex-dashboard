@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-20T06:26:49.616051+00:00",
+  "generated_at": "2026-04-20T06:27:11.667277+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 83.98,
+  "price": 83.99,
   "usdt_balance": 59.14919329,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -11,18 +11,18 @@
   "trade_opened_at": null,
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLD \u2014 BEARISH \u2014 waiting for EMA21 bounce: candle high $84.04000 not near EMA21 $84.74423",
+  "status": "HOLD \u2014 BEARISH \u2014 waiting for EMA21 bounce: candle high $84.04000 not near EMA21 $84.74514",
   "bot_paused": false,
   "regime": "TRENDING",
   "trend_direction": "BEARISH",
-  "reason": "BEARISH \u2014 waiting for EMA21 bounce: candle high $84.04000 not near EMA21 $84.74423",
+  "reason": "BEARISH \u2014 waiting for EMA21 bounce: candle high $84.04000 not near EMA21 $84.74514",
   "indicators": {
     "adx": 30.23,
     "adx_pos": 16.23,
     "adx_neg": 29.95,
-    "ema21": 84.74423,
-    "ema50": 85.593498,
-    "rsi": 38.3,
+    "ema21": 84.745139,
+    "ema50": 85.59389,
+    "rsi": 38.44,
     "atr": 0.663676
   },
   "closed_trades": [],
@@ -44,5 +44,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 3
+  "run_count": 1
 }
