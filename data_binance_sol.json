@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-20T17:31:59.018832+00:00",
+  "generated_at": "2026-04-20T17:33:11.706239+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 85.72,
+  "price": 85.66,
   "usdt_balance": 51.70370407,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -20,9 +20,9 @@
     "adx": 15.09,
     "adx_pos": 15.57,
     "adx_neg": 14.61,
-    "ema21": 85.08404,
-    "ema50": 85.466447,
-    "rsi": 56.13,
+    "ema21": 85.078585,
+    "ema50": 85.464094,
+    "rsi": 55.62,
     "atr": 0.794009
   },
   "closed_trades": [
@@ -73,5 +73,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 526
+  "run_count": 527
 }
