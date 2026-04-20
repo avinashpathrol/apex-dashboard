@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-20T07:19:10.072276+00:00",
+  "generated_at": "2026-04-20T07:20:27.261681+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 84.7,
+  "price": 84.86,
   "usdt_balance": 257.87042314,
   "leverage": 5.0,
   "trade_amount": 40.0,
   "position": "SHORT",
   "active_qty": 2.365,
   "trade_opened_at": "2026-04-20T06:30:52.217795+00:00",
-  "action": "SHORT",
-  "confidence": 75,
-  "status": "HOLDING SHORT | Bounce to EMA21 in downtrend | ADX 29.5 | RSI 47.0 | dist 0.09% below EMA21 | -DI 26.9 > +DI 16.1",
+  "action": "HOLD",
+  "confidence": 0,
+  "status": "HOLDING SHORT | BEARISH \u2014 waiting for EMA21 bounce: price -0.03% from EMA21 (need 0\u20131.8% below)",
   "bot_paused": false,
   "regime": "TRENDING",
   "trend_direction": "BEARISH",
-  "reason": "Bounce to EMA21 in downtrend | ADX 29.5 | RSI 47.0 | dist 0.09% below EMA21 | -DI 26.9 > +DI 16.1",
+  "reason": "BEARISH \u2014 waiting for EMA21 bounce: price -0.03% from EMA21 (need 0\u20131.8% below)",
   "indicators": {
-    "adx": 29.53,
-    "adx_pos": 16.14,
-    "adx_neg": 26.93,
-    "ema21": 84.779875,
-    "ema50": 85.575812,
-    "rsi": 47.0,
-    "atr": 0.685559
+    "adx": 29.38,
+    "adx_pos": 16.74,
+    "adx_neg": 26.73,
+    "ema21": 84.790784,
+    "ema50": 85.580518,
+    "rsi": 48.28,
+    "atr": 0.690559
   },
   "closed_trades": [],
   "performance": {
@@ -44,5 +44,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 42
+  "run_count": 43
 }
