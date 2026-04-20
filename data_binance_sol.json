@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-20T09:46:00.379238+00:00",
+  "generated_at": "2026-04-20T09:47:17.822783+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 85.13,
+  "price": 85.23,
   "usdt_balance": 253.95260407,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -11,19 +11,19 @@
   "trade_opened_at": "2026-04-20T07:37:48.899053+00:00",
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLDING SHORT | ADX 23.9 trending but +DI/22.2 vs -DI/21.7 conflicts with EMA21/EMA50 \u2014 waiting for alignment",
+  "status": "HOLDING SHORT | ADX 24.0 trending but +DI/22.5 vs -DI/21.7 conflicts with EMA21/EMA50 \u2014 waiting for alignment",
   "bot_paused": false,
   "regime": "TRENDING",
   "trend_direction": "MIXED",
-  "reason": "ADX 23.9 trending but +DI/22.2 vs -DI/21.7 conflicts with EMA21/EMA50 \u2014 waiting for alignment",
+  "reason": "ADX 24.0 trending but +DI/22.5 vs -DI/21.7 conflicts with EMA21/EMA50 \u2014 waiting for alignment",
   "indicators": {
-    "adx": 23.93,
-    "adx_pos": 22.22,
-    "adx_neg": 21.75,
-    "ema21": 84.806547,
-    "ema50": 85.530135,
-    "rsi": 51.88,
-    "atr": 0.731956
+    "adx": 23.97,
+    "adx_pos": 22.45,
+    "adx_neg": 21.69,
+    "ema21": 84.815638,
+    "ema50": 85.534057,
+    "rsi": 52.89,
+    "atr": 0.734099
   },
   "closed_trades": [
     {
@@ -59,5 +59,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 158
+  "run_count": 159
 }
