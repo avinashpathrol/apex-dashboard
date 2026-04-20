@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-20T21:05:33.704762+00:00",
+  "generated_at": "2026-04-20T21:06:46.978245+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 86.06,
+  "price": 86.17,
   "usdt_balance": 51.70370407,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -11,19 +11,19 @@
   "trade_opened_at": "2026-04-20T07:37:48.899053+00:00",
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLD \u2014 ADX 12.6 < 22.0 \u2014 market choppy, no entry",
+  "status": "HOLD \u2014 ADX 12.7 < 22.0 \u2014 market choppy, no entry",
   "bot_paused": false,
   "regime": "CHOPPY",
   "trend_direction": "NEUTRAL",
-  "reason": "ADX 12.6 < 22.0 \u2014 market choppy, no entry",
+  "reason": "ADX 12.7 < 22.0 \u2014 market choppy, no entry",
   "indicators": {
-    "adx": 12.58,
-    "adx_pos": 14.15,
-    "adx_neg": 13.61,
-    "ema21": 85.363845,
-    "ema50": 85.604182,
-    "rsi": 58.3,
-    "atr": 0.688064
+    "adx": 12.69,
+    "adx_pos": 14.45,
+    "adx_neg": 13.5,
+    "ema21": 85.373845,
+    "ema50": 85.608496,
+    "rsi": 59.26,
+    "atr": 0.693778
   },
   "closed_trades": [
     {
@@ -73,5 +73,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 701
+  "run_count": 702
 }
