@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-20T21:18:59.519996+00:00",
+  "generated_at": "2026-04-20T21:20:12.826662+00:00",
   "symbol": "DOGEUSDT",
   "exchange": "Binance Margin",
-  "price": 0.09547,
+  "price": 0.09546,
   "usdt_balance": 51.70370407,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -11,19 +11,19 @@
   "trade_opened_at": null,
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLD \u2014 ATR 0.000750 too low (min 0.0008) \u2014 not enough movement to cover fees",
+  "status": "HOLD \u2014 ATR 0.000753 too low (min 0.0008) \u2014 not enough movement to cover fees",
   "bot_paused": false,
   "regime": "TRENDING",
   "trend_direction": "NEUTRAL",
-  "reason": "ATR 0.000750 too low (min 0.0008) \u2014 not enough movement to cover fees",
+  "reason": "ATR 0.000753 too low (min 0.0008) \u2014 not enough movement to cover fees",
   "indicators": {
     "adx": 23.22,
-    "adx_pos": 23.8,
-    "adx_neg": 9.93,
-    "ema21": 0.094882,
+    "adx_pos": 23.71,
+    "adx_neg": 9.9,
+    "ema21": 0.094881,
     "ema50": 0.095102,
-    "rsi": 57.17,
-    "atr": 0.00075
+    "rsi": 57.05,
+    "atr": 0.000753
   },
   "closed_trades": [],
   "performance": {
@@ -44,5 +44,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 712
+  "run_count": 713
 }
