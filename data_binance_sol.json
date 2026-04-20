@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-20T15:06:40.309486+00:00",
+  "generated_at": "2026-04-20T15:07:56.439260+00:00",
   "symbol": "SOLUSDT",
   "exchange": "Binance Margin",
-  "price": 84.56,
+  "price": 84.54,
   "usdt_balance": 253.95260407,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -11,19 +11,19 @@
   "trade_opened_at": "2026-04-20T07:37:48.899053+00:00",
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLDING SHORT | ADX 16.9 < 22.0 \u2014 market choppy, no entry",
+  "status": "HOLDING SHORT | ADX 17.0 < 22.0 \u2014 market choppy, no entry",
   "bot_paused": false,
   "regime": "CHOPPY",
   "trend_direction": "NEUTRAL",
-  "reason": "ADX 16.9 < 22.0 \u2014 market choppy, no entry",
+  "reason": "ADX 17.0 < 22.0 \u2014 market choppy, no entry",
   "indicators": {
-    "adx": 16.87,
-    "adx_pos": 17.06,
-    "adx_neg": 17.93,
-    "ema21": 84.8733,
-    "ema50": 85.410423,
-    "rsi": 44.82,
-    "atr": 0.723294
+    "adx": 17.01,
+    "adx_pos": 16.94,
+    "adx_neg": 18.49,
+    "ema21": 84.872391,
+    "ema50": 85.410031,
+    "rsi": 44.71,
+    "atr": 0.728294
   },
   "closed_trades": [
     {
@@ -53,11 +53,11 @@
   },
   "trail": {
     "entry_price": 84.81,
-    "best_price": 84.5,
+    "best_price": 84.45,
     "atr": 0.7450000000000015,
     "sl": 85.9275,
     "trail_stop": null,
     "active": false
   },
-  "run_count": 411
+  "run_count": 412
 }
