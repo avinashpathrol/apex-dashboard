@@ -1,30 +1,31 @@
 {
-  "generated_at": "2026-04-21T05:00:00.000000+00:00",
+  "generated_at": "2026-04-21T05:07:41.546030+00:00",
   "symbol": "PAXGUSDT",
   "exchange": "Binance Margin",
-  "price": 0.0,
-  "usdt_balance": 0.0,
+  "price": 4774.35,
+  "usdt_balance": -146.79326873,
   "leverage": 5.0,
-  "trade_amount": 40.0,
+  "trade_amount": 10.0,
   "position": null,
   "active_qty": null,
   "trade_opened_at": null,
   "action": "HOLD",
   "confidence": 0,
-  "status": "Initializing...",
+  "status": "HOLD \u2014 ADX 19.9 < 25.0 \u2014 market choppy, no entry",
   "bot_paused": false,
-  "regime": "UNKNOWN",
+  "regime": "CHOPPY",
   "trend_direction": "NEUTRAL",
-  "reason": "Bot starting up — first run pending",
+  "reason": "ADX 19.9 < 25.0 \u2014 market choppy, no entry",
   "indicators": {
-    "adx": 0.0,
-    "adx_pos": 0.0,
-    "adx_neg": 0.0,
-    "ema21": 0.0,
-    "ema50": 0.0,
-    "rsi": 0.0,
-    "atr": 0.0
+    "adx": 19.87,
+    "adx_pos": 17.05,
+    "adx_neg": 23.83,
+    "ema21": 4789.607569,
+    "ema50": 4787.775585,
+    "rsi": 40.73,
+    "atr": 12.09183
   },
+  "sentiment": null,
   "closed_trades": [],
   "performance": {
     "closed_trades": 0,
@@ -44,5 +45,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 0
+  "run_count": 1
 }
