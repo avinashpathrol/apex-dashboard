@@ -1,8 +1,1 @@
-{
-  "trade_amount_usdt": 40,
-  "trade_amount": 40,
-  "leverage": 5,
-  "bot_paused": false,
-  "paused_symbols": [],
-  "updated_at": "2026-04-19T06:50:00.000Z"
-}
+{"trade_amount_usdt":10,"trade_amount":10,"leverage":5,"bot_paused":false,"paused_symbols":[],"updated_at":"2026-04-21T04:52:00.000Z"}
