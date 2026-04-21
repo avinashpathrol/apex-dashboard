@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>APEX v2 — BTC Bot</title>
+<title>APEX v2 — BTC + Gold</title>
 <style>
   :root {
     --bg:     #0d0f14;
@@ -17,7 +17,12 @@
     --yellow: #eab308;
     --blue:   #3b82f6;
     --accent: #f7931a;
+    --gold:   #ffd700;
   }
+  .tabs { display: flex; gap: 4px; padding: 8px 16px; background: var(--card); border-bottom: 1px solid var(--border); }
+  .tab-btn { padding: 6px 16px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; font-family: inherit; font-weight: 600; min-height: 36px; transition: all .2s; }
+  .tab-btn.active-btc  { border-color: var(--accent); color: var(--accent); background: rgba(247,147,26,.08); }
+  .tab-btn.active-gold { border-color: var(--gold);   color: var(--gold);   background: rgba(255,215,0,.08); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'SF Mono','Fira Code',monospace; font-size: 13px; min-height: 100vh; -webkit-text-size-adjust: 100%; }
 
@@ -127,7 +132,7 @@
 <body>
 
 <header>
-  <h1>APEX <span>v2</span> &nbsp;·&nbsp; BTC/USDT</h1>
+  <h1>APEX <span>v2</span> &nbsp;·&nbsp; BTC + Gold</h1>
   <div class="header-right">
     <div id="refresh-spinner"></div>
     <span class="last-update" id="last-update">—</span>
@@ -136,6 +141,10 @@
     <button id="pause-btn" onclick="togglePause()">⏸ Pause</button>
   </div>
 </header>
+<div class="tabs">
+  <button class="tab-btn active-btc" id="tab-btc"  onclick="switchTab('btc')">₿ BTC/USDT</button>
+  <button class="tab-btn"            id="tab-gold" onclick="switchTab('gold')">🥇 Gold (PAXG)</button>
+</div>
 
 <main>
   <div id="error-bar"></div>
@@ -232,7 +241,7 @@
 
   <!-- Performance -->
   <div class="card">
-    <div class="card-title">Performance — BTC/USDT</div>
+    <div class="card-title" id="perf-title">Performance</div>
     <div class="perf-grid">
       <div class="perf-cell"><div class="perf-num" id="pf-trades">0</div><div class="perf-lbl">Trades</div></div>
       <div class="perf-cell"><div class="perf-num" id="pf-winrate">—</div><div class="perf-lbl">Win Rate</div></div>
@@ -248,7 +257,7 @@
 
   <!-- Closed Trades -->
   <div class="card">
-    <div class="card-title">Closed Trades — BTC/USDT</div>
+    <div class="card-title" id="trades-title">Closed Trades</div>
     <div id="trades-wrap"><div class="empty-state">No closed trades yet</div></div>
   </div>
 
@@ -281,18 +290,30 @@
 <script>
 'use strict';
 
-const DATA_FILE   = 'data_binance_btc.json';
-const DATA_API    = 'https://api.github.com/repos/avinashpathrol/apex-dashboard/contents/data_binance_btc.json';
+const SOURCES = {
+  btc:  { api: 'https://api.github.com/repos/avinashpathrol/apex-dashboard/contents/data_binance_btc.json',  symbol: 'BTCUSDT',  label: 'BTC/USDT',       priceDecimals: 2 },
+  gold: { api: 'https://api.github.com/repos/avinashpathrol/apex-dashboard/contents/data_binance_paxg.json', symbol: 'PAXGUSDT', label: 'Gold (PAXG/USDT)', priceDecimals: 2 },
+};
 const CONFIG_API  = 'https://api.github.com/repos/avinashpathrol/apex-dashboard/contents/bot_config.json';
 const GH_TOKEN    = '';
 const REFRESH_MS  = 12000;
-const DECIMALS    = 2;
 
+let activeTab = 'btc';
 let botData   = null;
 let prevPrice = null;
 let paused    = false;
 let heldInterval = null;
 let entryTs      = null;
+
+function switchTab(tab) {
+  activeTab = tab;
+  prevPrice = null;
+  botData   = null;
+  if (heldInterval) { clearInterval(heldInterval); heldInterval = null; entryTs = null; }
+  qs('#tab-btc').className  = 'tab-btn' + (tab === 'btc'  ? ' active-btc'  : '');
+  qs('#tab-gold').className = 'tab-btn' + (tab === 'gold' ? ' active-gold' : '');
+  fetchData();
+}
 
 const qs  = (s, el = document) => el.querySelector(s);
 const n   = (v, d = 0) => { const f = parseFloat(v); return isNaN(f) ? d : f; };
@@ -314,9 +335,10 @@ function hideErr()    { qs('#error-bar').style.display = 'none'; }
 async function fetchData() {
   qs('#refresh-spinner').style.display = 'block';
   try {
+    const src  = SOURCES[activeTab];
     const hdrs = Object.assign({'Accept':'application/vnd.github+json'},
       GH_TOKEN ? {Authorization:'token '+GH_TOKEN} : {});
-    const r = await fetch(DATA_API + '?t=' + Date.now(), {headers: hdrs, cache: 'no-store'});
+    const r = await fetch(src.api + '?t=' + Date.now(), {headers: hdrs, cache: 'no-store'});
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const j = await r.json();
     botData = JSON.parse(atob(j.content.replace(/\n/g,'')));
@@ -331,6 +353,9 @@ async function fetchData() {
 
 function render(d) {
   if (!d) return;
+  const lbl = SOURCES[activeTab].label;
+  qs('#perf-title').textContent   = 'Performance — ' + lbl;
+  qs('#trades-title').textContent = 'Closed Trades — ' + lbl;
 
   // Price
   const price = n(d.price);
@@ -361,7 +386,7 @@ function render(d) {
     const qty  = n(d.active_qty, 0);
     const lev  = n(d.leverage, 5);
     const upnl = pos === 'LONG' ? (price - ep) * qty : (ep - price) * qty;
-    qs('#pos-label').textContent = (pos === 'LONG' ? '🟢 LONG' : '🔴 SHORT') + ' — BTC/USDT';
+    qs('#pos-label').textContent = (pos === 'LONG' ? '🟢 LONG' : '🔴 SHORT') + ' — ' + SOURCES[activeTab].label;
     qs('#pos-sub').textContent   = lev.toFixed(0) + 'x Margin · Entry $' + ep.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
     qs('#st-entry').textContent   = '$' + ep.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
     qs('#st-current').textContent = '$' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
@@ -378,7 +403,7 @@ function render(d) {
     qs('#trail-card').style.display = 'block';
     renderTrail(d.trail, pos);
   } else {
-    qs('#pos-label').textContent    = '⬜ FLAT — BTC/USDT';
+    qs('#pos-label').textContent    = '⬜ FLAT — ' + SOURCES[activeTab].label;
     qs('#pos-sub').textContent      = 'No open position · waiting for ADX regime + EMA21 pullback';
     qs('#pos-stats').style.display  = 'none';
     qs('#close-btn').style.display  = 'none';
@@ -451,7 +476,8 @@ function render(d) {
   qs('#pf-worst').textContent  = pf.worst_trade != null ? sgn(pf.worst_trade) + n(pf.worst_trade).toFixed(3) + ' USDT' : '—';
 
   renderTrades(d.closed_trades || []);
-  qs('#status-bar').textContent = '₿ BTC/USDT · Run #' + (d.run_count || '?') + ' · ' + (d.status || '—');
+  const icon = activeTab === 'gold' ? '🥇' : '₿';
+  qs('#status-bar').textContent = icon + ' ' + SOURCES[activeTab].label + ' · Run #' + (d.run_count || '?') + ' · ' + (d.status || '—');
   paused = !!d.bot_paused;
   qs('#pause-btn').textContent = paused ? '▶ Resume' : '⏸ Pause';
   qs('#pause-btn').className   = paused ? 'paused' : '';
@@ -509,17 +535,19 @@ async function writeConfig(patch) {
 
 async function closePosition() {
   if (!botData?.position) return;
-  if (!confirm('Close ' + botData.position + ' BTC/USDT at market?')) return;
+  const sym = SOURCES[activeTab].symbol;
+  if (!confirm('Close ' + botData.position + ' ' + SOURCES[activeTab].label + ' at market?')) return;
   try {
-    await writeConfig({close_requested: true, close_requested_at: new Date().toISOString(), close_symbol: 'BTCUSDT'});
+    await writeConfig({close_requested: true, close_requested_at: new Date().toISOString(), close_symbol: sym});
     qs('#status-bar').textContent = '📱 Close sent — bot executes within 60s';
   } catch(e) { showErr('Close failed: ' + e.message); }
 }
 
 async function forceTrail() {
   if (!botData?.position) return;
+  const sym = SOURCES[activeTab].symbol;
   try {
-    await writeConfig({force_trail: true, force_trail_at: new Date().toISOString(), force_trail_symbol: 'BTCUSDT'});
+    await writeConfig({force_trail: true, force_trail_at: new Date().toISOString(), force_trail_symbol: sym});
     qs('#status-bar').textContent = '🔒 Force trail sent — locks next cycle';
   } catch(e) { showErr('Force trail failed: ' + e.message); }
 }

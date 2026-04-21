@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-04-21T05:00:00.000000+00:00",
+  "symbol": "PAXGUSDT",
+  "exchange": "Binance Margin",
+  "price": 0.0,
+  "usdt_balance": 0.0,
+  "leverage": 5.0,
+  "trade_amount": 40.0,
+  "position": null,
+  "active_qty": null,
+  "trade_opened_at": null,
+  "action": "HOLD",
+  "confidence": 0,
+  "status": "Initializing...",
+  "bot_paused": false,
+  "regime": "UNKNOWN",
+  "trend_direction": "NEUTRAL",
+  "reason": "Bot starting up — first run pending",
+  "indicators": {
+    "adx": 0.0,
+    "adx_pos": 0.0,
+    "adx_neg": 0.0,
+    "ema21": 0.0,
+    "ema50": 0.0,
+    "rsi": 0.0,
+    "atr": 0.0
+  },
+  "closed_trades": [],
+  "performance": {
+    "closed_trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0,
+    "net_profit": 0,
+    "avg_pnl": 0.0,
+    "best_trade": 0.0,
+    "worst_trade": 0.0
+  },
+  "trail": {
+    "entry_price": null,
+    "best_price": null,
+    "atr": null,
+    "sl": null,
+    "trail_stop": null,
+    "active": false
+  },
+  "run_count": 0
+}
