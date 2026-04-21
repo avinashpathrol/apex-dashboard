@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-21T00:46:41.258577+00:00",
+  "generated_at": "2026-04-21T00:47:53.476622+00:00",
   "symbol": "BTCUSDT",
   "exchange": "Binance Margin",
-  "price": 75919.49,
+  "price": 75992.3,
   "usdt_balance": -146.79326873,
   "leverage": 5.0,
   "trade_amount": 40.0,
   "position": "LONG",
   "active_qty": 0.00261,
   "trade_opened_at": "2026-04-20T22:09:52.573055+00:00",
-  "action": "HOLD",
-  "confidence": 0,
-  "status": "HOLDING LONG | ADX 24.8 < 25.0 \u2014 market choppy, no entry",
+  "action": "LONG",
+  "confidence": 70,
+  "status": "HOLDING LONG | Pullback to EMA21 in uptrend | ADX 25.0 | RSI 58.1 | dist 0.53% above EMA21 | +DI 23.4 > -DI 17.1",
   "bot_paused": false,
-  "regime": "CHOPPY",
-  "trend_direction": "NEUTRAL",
-  "reason": "ADX 24.8 < 25.0 \u2014 market choppy, no entry",
+  "regime": "TRENDING",
+  "trend_direction": "BULLISH",
+  "reason": "Pullback to EMA21 in uptrend | ADX 25.0 | RSI 58.1 | dist 0.53% above EMA21 | +DI 23.4 > -DI 17.1",
   "indicators": {
-    "adx": 24.83,
-    "adx_pos": 22.5,
-    "adx_neg": 17.35,
-    "ema21": 75581.716128,
-    "ema50": 75457.832481,
-    "rsi": 57.08,
-    "atr": 479.647371
+    "adx": 25.01,
+    "adx_pos": 23.41,
+    "adx_neg": 17.15,
+    "ema21": 75588.335219,
+    "ema50": 75460.687775,
+    "rsi": 58.06,
+    "atr": 485.369514
   },
   "closed_trades": [],
   "performance": {
@@ -44,5 +44,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 133
+  "run_count": 134
 }
