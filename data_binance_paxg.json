@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-21T05:11:30.030014+00:00",
+  "generated_at": "2026-04-21T05:12:45.829590+00:00",
   "symbol": "PAXGUSDT",
   "exchange": "Binance Margin",
-  "price": 4775.13,
+  "price": 4774.15,
   "usdt_balance": -146.79326873,
   "leverage": 5.0,
   "trade_amount": 10.0,
@@ -20,9 +20,9 @@
     "adx": 19.87,
     "adx_pos": 17.05,
     "adx_neg": 23.83,
-    "ema21": 4789.678478,
-    "ema50": 4787.806174,
-    "rsi": 41.18,
+    "ema21": 4789.589388,
+    "ema50": 4787.767742,
+    "rsi": 40.63,
     "atr": 12.09183
   },
   "sentiment": null,
@@ -45,5 +45,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 4
+  "run_count": 5
 }
