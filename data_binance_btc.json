@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-21T01:28:21.695352+00:00",
+  "generated_at": "2026-04-21T01:29:32.817210+00:00",
   "symbol": "BTCUSDT",
   "exchange": "Binance Margin",
-  "price": 76003.84,
+  "price": 76050.01,
   "usdt_balance": -146.79326873,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -20,9 +20,9 @@
     "adx": 24.77,
     "adx_pos": 25.2,
     "adx_neg": 16.37,
-    "ema21": 75634.381337,
-    "ema50": 75484.547642,
-    "rsi": 57.67,
+    "ema21": 75638.5777,
+    "ema50": 75486.357838,
+    "rsi": 58.52,
     "atr": 472.082136
   },
   "closed_trades": [],
@@ -44,5 +44,5 @@
     "trail_stop": null,
     "active": false
   },
-  "run_count": 168
+  "run_count": 169
 }
