@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-21T01:05:44.362086+00:00",
+  "generated_at": "2026-04-21T01:06:55.422470+00:00",
   "symbol": "BTCUSDT",
   "exchange": "Binance Margin",
-  "price": 76131.32,
+  "price": 76234.1,
   "usdt_balance": -146.79326873,
   "leverage": 5.0,
   "trade_amount": 40.0,
@@ -11,19 +11,19 @@
   "trade_opened_at": "2026-04-20T22:09:52.573055+00:00",
   "action": "HOLD",
   "confidence": 0,
-  "status": "HOLDING LONG | ADX 24.5 < 25.0 \u2014 market choppy, no entry",
+  "status": "HOLDING LONG | ADX 24.7 < 25.0 \u2014 market choppy, no entry",
   "bot_paused": false,
   "regime": "CHOPPY",
   "trend_direction": "NEUTRAL",
-  "reason": "ADX 24.5 < 25.0 \u2014 market choppy, no entry",
+  "reason": "ADX 24.7 < 25.0 \u2014 market choppy, no entry",
   "indicators": {
-    "adx": 24.48,
-    "adx_pos": 23.79,
-    "adx_neg": 16.81,
-    "ema21": 75645.844064,
-    "ema50": 75489.492348,
-    "rsi": 59.83,
-    "atr": 459.92285
+    "adx": 24.71,
+    "adx_pos": 25.01,
+    "adx_neg": 16.54,
+    "ema21": 75655.314064,
+    "ema50": 75493.577446,
+    "rsi": 61.13,
+    "atr": 467.36285
   },
   "closed_trades": [],
   "performance": {
@@ -38,11 +38,11 @@
   },
   "trail": {
     "entry_price": 76052.48,
-    "best_price": 76131.32,
+    "best_price": 76234.11,
     "atr": 541.1557142857158,
     "sl": 75240.74642857,
     "trail_stop": null,
     "active": false
   },
-  "run_count": 149
+  "run_count": 150
 }
